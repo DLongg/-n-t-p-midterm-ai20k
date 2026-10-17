@@ -1,0 +1,192 @@
+=== TỔNG HỢP TOÀN BỘ CÂU HỎI QUIZ: 05_Day05 ===
+Tổng số câu: 10 câu
+
+CÂU 01 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép từng sự cố với lớp bất định chính.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Người dùng hỏi 'đặt giúp chuyến sớm' nhưng không nêu ngày/điểm đi
+    * Cùng một prompt và ngữ cảnh nhưng hai lần trả lời khác cách diễn đạt
+    * Công cụ tra chính sách trả về hai bản dữ liệu khác nhau
+    * Prompt thiếu dữ kiện, đồng thời công cụ trả về dữ liệu đã cũ
+  [Cột phải / Ý nghĩa]:
+    -> Kết hợp đầu vào và quy trình
+    -> Đầu ra
+    -> Quy trình
+    -> Đầu vào
+
+Gợi ý / Hướng dẫn giải:
+  💡 Xem bất định đến từ dữ kiện người dùng thiếu, từ đầu ra của model, hay từ dữ liệu/công cụ thay đổi.
+
+============================================================
+CÂU 02 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Ứng dụng không đổi mã nguồn.
+Từ 12/8, câu trả lời bắt đầu dùng chính sách cũ.
+Phiên bản model và mã băm prompt giữ nguyên;
+chỉ mục retrieval được tạo lại từ bộ tài liệu có 30% tệp đã hết hạn.
+
+Câu hỏi:
+Chẩn đoán nào được bằng chứng hỗ trợ mạnh nhất?
+
+Các lựa chọn:
+  A. Trôi lệch của prompt
+  B. Trôi lệch ở ngữ cảnh hoặc dữ liệu
+  C. Trôi lệch của model
+  D. Trôi lệch trong phân bố người dùng
+
+Gợi ý / Hướng dẫn giải:
+  💡 So sánh những thành phần thay đổi đúng vào thời điểm hành vi thay đổi.
+
+============================================================
+CÂU 03 [MULTI_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Sự cố: trợ lý HR tự tin xếp CV thiếu trường `years_experience`; bộ phân tích vẫn cho qua và HR không có cách sửa.
+
+Câu hỏi:
+Chọn các biện pháp can thiệp trực tiếp phù hợp.
+
+Các lựa chọn:
+  A. Thêm tình huống CV thiếu trường vào bộ đánh giá
+  B. Cho HR chỉnh sửa hoặc từ chối, đồng thời lưu vết chỉnh sửa
+  C. Thêm kiểm tra đầu vào/schema cho trường bắt buộc
+  D. Đổi slogan marketing
+  E. Tăng temperature
+
+Gợi ý / Hướng dẫn giải:
+  💡 Chọn biện pháp ở ba chỗ: phát hiện lỗi, giúp người dùng khôi phục và kiểm chứng lại; bỏ các thay đổi không liên quan.
+
+============================================================
+CÂU 04 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Nhóm làm AI ghi chú họp.
+Bằng chứng: model đã tóm tắt 30 bản chép lời đạt tiêu chí; 8/8 người dùng hiểu UI; chưa ai đồng ý trả tiền; chi phí dự kiến thấp.
+
+Câu hỏi:
+Giả định then chốt nào cần kiểm tra trước?
+
+Các lựa chọn:
+  A. Mức độ mô phỏng: mockup có tạo cảm giác giống sản phẩm thật không?
+  B. Giá trị/kinh doanh: người dùng có đủ nhu cầu để trả tiền hay không?
+  C. Khả năng sử dụng: người dùng có hoàn thành luồng mà không cần trợ giúp không?
+  D. Tính khả thi: model có tạo bản tóm tắt đạt tiêu chí một cách ổn định không?
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tìm giả định vừa quyết định sản phẩm có thể tồn tại hay không, vừa chưa được kiểm chứng.
+
+============================================================
+CÂU 05 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép loại tài liệu với nhãn phù hợp nhất theo mô tả.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Notebook chứng minh OCR đọc được 50 ảnh mẫu
+    * Mockup có thể bấm để kiểm tra luồng
+    * Bản dùng được từ đầu đến cuối cho một tác vụ cốt lõi
+    * Giải pháp gần hoàn chỉnh chạy với một khoa trong 2 tuần
+  [Cột phải / Ý nghĩa]:
+    -> Kiểm chứng tính khả thi
+    -> Sản phẩm tối thiểu khả dụng
+    -> Thử nghiệm phạm vi hẹp
+    -> Bản mẫu tương tác
+
+Gợi ý / Hướng dẫn giải:
+  💡 Trước hết xác định đang kiểm một phần hay toàn bộ luồng, rồi xem mức độ hoàn chỉnh của nó.
+
+============================================================
+CÂU 06 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Câu hỏi:
+MVP nào cho trợ lý học tập là lát cắt từ đầu đến cuối tốt nhất?
+
+Các lựa chọn:
+  A. Cho một sinh viên tải một PDF, hỏi một câu, nhận câu trả lời có nguồn và báo sai khi cần
+  B. Hỗ trợ mọi môn, mọi loại tệp và toàn bộ bài tập nhưng chưa có đường khôi phục dùng được từ đầu đến cuối
+  C. Chứng minh model trả lời tốt với nhiều prompt trong notebook rồi gọi thành phần đó là một sản phẩm đã dùng được
+  D. Xây dựng đầy đủ đăng nhập, cơ sở dữ liệu vector, bảng điều khiển và phân tích dữ liệu nhưng chưa có tác vụ nào để người dùng đi trọn luồng và nhận kết quả
+
+Gợi ý / Hướng dẫn giải:
+  💡 Chọn phương án mà người dùng có thể đi hết một luồng để nhận một kết quả, dù phạm vi rất hẹp.
+
+============================================================
+CÂU 07 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép giả định với phương pháp kiểm chứng phù hợp nhất.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Người dùng có hiểu luồng sửa đầu ra không?
+    * Có đủ người quan tâm để đăng ký không?
+    * Người dùng có trả tiền cho dịch vụ trước khi tự động hóa không?
+    * Luồng mới có giảm thời gian hoàn thành không?
+  [Cột phải / Ý nghĩa]:
+    -> Quan sát khả năng sử dụng
+    -> So sánh có đối chứng
+    -> Kiểm tra nhu cầu bằng trang giới thiệu
+    -> Concierge/Wizard-of-Oz
+
+Gợi ý / Hướng dẫn giải:
+  💡 Bắt đầu từ điều cần chứng minh, không bắt đầu từ công cụ dễ dùng nhất.
+
+============================================================
+CÂU 08 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép quan sát với lớp lỗi chính.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Trang giới thiệu hứa đặt vé nhưng bot chỉ cung cấp FAQ
+    * 'Linh tinh' bị hiểu như một từ khóa cụ thể
+    * Bot dẫn một liên kết chung vì công cụ không có dữ liệu chuyến đi
+    * Bot sai và không có cách chỉnh sửa hoặc chuyển cho người xử lý
+  [Cột phải / Ý nghĩa]:
+    -> UX khôi phục
+    -> Ý định
+    -> Cam kết
+    -> Dữ liệu/công cụ
+
+Gợi ý / Hướng dẫn giải:
+  💡 Hỏi lỗi xảy ra trước, trong hay sau khi tạo đầu ra.
+
+============================================================
+CÂU 09 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Câu hỏi:
+Phát hiện nào có thể chuyển thành hành động và kiểm chứng tốt nhất?
+
+Các lựa chọn:
+  A. Khi người dùng hỏi hủy vé nhưng thiếu mã đặt chỗ, bot bịa trạng thái; họ có thể hủy nhầm. Lỗi ở đầu vào/dữ liệu và khôi phục; thêm bước yêu cầu mã đặt chỗ và tình huống kiểm thử thiếu mã.
+  B. Khi bot trả lời tệ trong nhiều tình huống, chuyển sang model mạnh hơn; kỳ vọng chất lượng sẽ tăng, rồi theo dõi mức đánh giá tổng sau khi phát hành để kiểm tra.
+  C. Khi người dùng không thích trải nghiệm sử dụng, người thiết kế làm lại giao diện đẹp và đơn giản hơn; sau đó hỏi vài người dùng xem họ có thích bản mới hay không.
+  D. Khi bot thiếu dữ liệu ở một số câu hỏi, thu toàn bộ nhật ký thô của người dùng rồi huấn luyện lại; chỉ tăng lượng dữ liệu không tự sửa được lỗi đó khi vận hành thực tế.
+
+Gợi ý / Hướng dẫn giải:
+  💡 Một quyết định sản phẩm phải chỉ rõ tình huống kiểm thử nào sẽ thay đổi.
+
+============================================================
+CÂU 10 [MULTI_SELECT] (Độ khó: medium)
+Đề bài:
+Câu hỏi:
+Lát cắt nào nên xây dựng vì đã vượt qua ngưỡng bằng chứng?
+
+Các lựa chọn:
+  A. Từ 8 nhật ký đặt chỗ cho thấy người lần đầu bỏ ở bước so giá: cho họ nhập ngày/ngân sách, AI gợi ý 2 lựa chọn từ dữ liệu hiện có, báo khi dữ liệu thiếu và cho sửa
+  B. Từ 12 quan sát của chủ cửa hàng: AI gợi ý một nhãn hóa đơn, khi độ tin cậy thấp thì hỏi lại và cho người dùng sửa trước khi lưu
+  C. AI assistant cho mọi nhu cầu du lịch
+  D. Bot y tế tổng quát vì thị trường lớn
+  E. Ý tưởng chưa có người dùng cụ thể nhưng bản trình diễn model tốt
+
+Gợi ý / Hướng dẫn giải:
+  💡 Kiểm lần lượt người dùng, tác vụ, hành động của AI, lỗi và bằng chứng.
+
+============================================================

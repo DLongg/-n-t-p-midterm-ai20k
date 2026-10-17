@@ -1,0 +1,2726 @@
+=====================================================================================
+VLEARN - KHÓA 4 PHASE 1: NỀN TẢNG & MINI HACKATHON
+DAY 07: NGÂN HÀNG ĐỀ THI MỞ RỘNG TOÀN DIỆN (108 CÂU HỎI & HƯỚNG DẪN GIẢI CHI TIẾT)
+=====================================================================================
+
+THỐNG KÊ NGÂN HÀNG ĐỀ THI Day 07:
+- Tổng số câu hỏi trong ngân hàng: 108 câu (Bao phủ 42 chủ đề kiến thức / Knowledge Components)
+- Số câu hỏi trắc nghiệm tương tác trực tuyến (Servable): 63 câu
+- Số câu tự luận / viết code thực hành (Short Text): 45 câu
+- Lượt thi kiểm tra chuẩn Vlearn: Mỗi lượt rút ngẫu nhiên 10 câu.
+
+=====================================================================================
+
+=====================================================================================
+CÂU 001 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q001 (Độ khó: Dễ | Điểm: 5)
+Chủ đề kiến thức (KC): [kc-ai-data-delivery-route-selection] Ai Data Delivery Route Selection
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép tác vụ với cách cung cấp dữ liệu phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Ba đoạn chính sách đã có sẵn trong lời nhắc
+  (2) Kho 50.000 chính sách riêng tư, đổi hằng tuần, cần trích dẫn
+  (3) Tra trạng thái đơn hàng hiện tại
+  (4) Ổn định giọng trả lời qua nhiều yêu cầu
+  (5) Tác vụ đã đủ bằng mô hình và dữ liệu đầu vào hiện tại
+
+Cột Phải (Lựa chọn ghép):
+  (A) Ngữ cảnh trực tiếp
+  (B) Retrieval
+  (C) Tool/API
+  (D) Fine-tuning
+  (E) Không cần dữ liệu bên ngoài
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Ba đoạn chính sách đã có sẵn trong lời nhắc ===> Ghép với: 
+• Cặp 2: Kho 50.000 chính sách riêng tư, đổi hằng tuần, cần trích dẫn ===> Ghép với: 
+• Cặp 3: Tra trạng thái đơn hàng hiện tại ===> Ghép với: 
+• Cặp 4: Ổn định giọng trả lời qua nhiều yêu cầu ===> Ghép với: 
+• Cặp 5: Tác vụ đã đủ bằng mô hình và dữ liệu đầu vào hiện tại ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Cách cung cấp dữ liệu phụ thuộc ý nghĩa và độ mới; fine-tuning không phải kho thông tin cập nhật.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi dữ liệu nhỏ hay lớn, tĩnh hay thời gian thực, và mục tiêu là thông tin hay hành vi.
+
+=====================================================================================
+CÂU 002 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q002 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ai-data-delivery-route-selection] Ai Data Delivery Route Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Trợ lý nhân sự phải trả lời chính sách nội bộ có trích dẫn và tra số ngày phép còn lại theo thời gian thực. Kho chính sách đổi hằng tháng; số dư đổi sau mỗi giao dịch.
+
+Câu hỏi:
+Chọn cách cung cấp dữ liệu cho từng nguồn và giải thích vì sao không dùng một cách duy nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một nguồn là kho tri thức; nguồn kia là trạng thái vận hành.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một nguồn là kho tri thức; nguồn kia là trạng thái vận hành.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một nguồn là kho tri thức; nguồn kia là trạng thái vận hành.
+
+=====================================================================================
+CÂU 003 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q003 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-data-classification-by-access-semantics] Ai Data Classification By Access Semantics
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép nguồn dữ liệu với loại dữ liệu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Sổ tay chính sách tuyển sinh
+  (2) Trạng thái phiếu yêu cầu vừa thay đổi
+  (3) Ngôn ngữ ưa thích của người học trong phiên chat
+
+Cột Phải (Lựa chọn ghép):
+  (A) Dữ liệu tri thức
+  (B) Dữ liệu vận hành
+  (C) Dữ liệu ngữ cảnh
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Sổ tay chính sách tuyển sinh ===> Ghép với: 
+• Cặp 2: Trạng thái phiếu yêu cầu vừa thay đổi ===> Ghép với: 
+• Cặp 3: Ngôn ngữ ưa thích của người học trong phiên chat ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Chính sách là tri thức tham chiếu; phiếu yêu cầu là trạng thái vận hành; lựa chọn ngôn ngữ là ngữ cảnh của phiên chat.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân loại theo thứ nguồn biểu diễn, không theo định dạng tệp.
+
+=====================================================================================
+CÂU 004 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q004 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ai-data-classification-by-access-semantics] Ai Data Classification By Access Semantics
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một bảng có `course_policy`, `seat_remaining`, `student_language`. `student_language` chỉ là lựa chọn ngôn ngữ cho phiên chat hiện tại, không phải hồ sơ lưu lâu dài.
+
+Câu hỏi:
+Phân loại ba trường dữ liệu, nêu bên phụ trách, nhịp cập nhật và cách truy cập phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi trạng thái của ai/cái gì và nó thay đổi khi nào.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi trạng thái của ai/cái gì và nó thay đổi khi nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi trạng thái của ai/cái gì và nó thay đổi khi nào.
+
+=====================================================================================
+CÂU 005 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q005 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-retrieval-data-inventory-governance] Retrieval Data Inventory Governance
+=====================================================================================
+ĐỀ BÀI:
+Một danh mục có ba nguồn: sổ tay công khai đã có phiên bản; đoạn chat nội bộ có email, chưa rõ người phụ trách; trang hỏi đáp do bộ phận hỗ trợ cập nhật hằng tuần.
+
+Ghép từng nguồn với quyết định đúng trước khi đưa vào kho truy xuất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Sổ tay công khai đã có phiên bản, do Phòng học vụ sở hữu và cho phép truy cập
+  (2) Đoạn chat nội bộ có email, chưa rõ người phụ trách
+  (3) Trang hỏi đáp do bộ phận hỗ trợ sở hữu, được cập nhật hằng tuần
+
+Cột Phải (Lựa chọn ghép):
+  (A) Đưa vào sau khi ghi người phụ trách, quyền truy cập, phiên bản và lịch làm mới
+  (B) Đánh dấu chờ xử lý hoặc loại ra cho đến khi rõ quyền và người phụ trách
+  (C) Ghi người phụ trách và lịch cập nhật trước khi quyết định đưa vào theo chính sách
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Sổ tay công khai đã có phiên bản, do Phòng học vụ sở hữu và cho phép truy cập ===> Ghép với: 
+• Cặp 2: Đoạn chat nội bộ có email, chưa rõ người phụ trách ===> Ghép với: 
+• Cặp 3: Trang hỏi đáp do bộ phận hỗ trợ sở hữu, được cập nhật hằng tuần ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Mỗi nguồn cần một quyết định có căn cứ riêng; đọc được nội dung không tự tạo quyền sử dụng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không index nguồn chỉ vì đọc được file.
+
+=====================================================================================
+CÂU 006 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q006 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-preembedding-sensitive-data-transformation] Preembedding Sensitive Data Transformation
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép nhu cầu truy xuất với phép biến đổi tối thiểu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Không cần danh tính cá nhân
+  (2) Cần nối các bản ghi của cùng một người nhưng không cần biết tên
+  (3) Chỉ cần nhóm tuổi
+  (4) Cần giữ vai trò nhưng bỏ tên thật
+
+Cột Phải (Lựa chọn ghép):
+  (A) Loại bỏ
+  (B) Mã băm ổn định
+  (C) Khái quát hóa
+  (D) Thay bằng tên giữ chỗ thể hiện vai trò
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Không cần danh tính cá nhân ===> Ghép với: 
+• Cặp 2: Cần nối các bản ghi của cùng một người nhưng không cần biết tên ===> Ghép với: 
+• Cặp 3: Chỉ cần nhóm tuổi ===> Ghép với: 
+• Cặp 4: Cần giữ vai trò nhưng bỏ tên thật ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Chọn phép biến đổi theo ích lợi cần giữ: loại bỏ, nối ẩn danh, giá trị khái quát hoặc vai trò ngữ nghĩa.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bắt đầu từ yêu cầu truy vấn: cần bỏ, che, khái quát hay giữ trường nào?
+
+=====================================================================================
+CÂU 007 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q007 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-preembedding-sensitive-data-transformation] Preembedding Sensitive Data Transformation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Tập phản hồi tư vấn có `advisor_name`, `student_email`, `support_case_id`, `program` và `issue_category`. Bài kiểm thử chỉ cần so sánh các vấn đề phổ biến theo chương trình; không cần nối các phản hồi của cùng một người học.
+
+Câu hỏi:
+Thiết kế phép biến đổi trước khi tạo embeddings.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mục tiêu chỉ là so sánh nhóm chương trình và loại vấn đề, không phải theo dõi một người hay một ca hỗ trợ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mục tiêu chỉ là so sánh nhóm chương trình và loại vấn đề, không phải theo dõi một người hay một ca hỗ trợ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mục tiêu chỉ là so sánh nhóm chương trình và loại vấn đề, không phải theo dõi một người hay một ca hỗ trợ.
+
+=====================================================================================
+CÂU 008 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q008 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-public-corpus-source-provenance] Public Corpus Source Provenance
+=====================================================================================
+ĐỀ BÀI:
+Nhóm thu thập 12 trang chính sách công khai của một trường.
+
+Ghép mỗi việc cần kiểm soát với cách thực hiện phù hợp để nguồn gốc của từng tệp có thể được kiểm tra lại.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Quyền truy cập
+  (2) Phạm vi thu thập
+  (3) Nguồn gốc của từng tệp
+
+Cột Phải (Lựa chọn ghép):
+  (A) Kiểm tra điều khoản và `robots.txt`; không vượt qua màn hình đăng nhập
+  (B) Chỉ lấy đúng URL đã duyệt, với tốc độ hợp lý
+  (C) Lưu URL gốc, thời điểm lấy, phiên bản hoặc mã băm và căn cứ quyền sử dụng
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Quyền truy cập ===> Ghép với: 
+• Cặp 2: Phạm vi thu thập ===> Ghép với: 
+• Cặp 3: Nguồn gốc của từng tệp ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Công khai không đồng nghĩa được sử dụng vô điều kiện: từng tệp cần truy ngược được về URL, phiên bản và căn cứ quyền sử dụng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người kiểm tra phải lần lại được tệp, nguồn gốc, phiên bản và quyết định đã đưa ra.
+
+=====================================================================================
+CÂU 009 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q009 (Độ khó: Dễ | Điểm: 5)
+Chủ đề kiến thức (KC): [kc-document-type-extractor-routing] Document Type Extractor Routing
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép dữ liệu đầu vào với cách xử lý.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) PDF số có lớp chữ
+  (2) PDF chỉ gồm ảnh quét
+  (3) Bài viết HTML
+  (4) Tệp `.pdf` nhưng chữ ký tệp là ZIP của bộ Office
+  (5) Dạng tệp nhị phân không hỗ trợ
+
+Cột Phải (Lựa chọn ghép):
+  (A) Trình phân tích lớp chữ của PDF
+  (B) Luồng OCR
+  (C) Trình phân tích/làm sạch HTML
+  (D) Dùng trình phân tích tài liệu Office và ghi nhật ký việc đuôi tệp không khớp nội dung
+  (E) Từ chối dạng không hỗ trợ và nêu lý do
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: PDF số có lớp chữ ===> Ghép với: 
+• Cặp 2: PDF chỉ gồm ảnh quét ===> Ghép với: 
+• Cặp 3: Bài viết HTML ===> Ghép với: 
+• Cặp 4: Tệp `.pdf` nhưng chữ ký tệp là ZIP của bộ Office ===> Ghép với: 
+• Cặp 5: Dạng tệp nhị phân không hỗ trợ ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Dạng nội dung thực tế quyết định bộ trích xuất; trường hợp không khớp hoặc không hỗ trợ phải truy vết được.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm MIME, chữ ký tệp và nội dung thực; đừng chỉ tin phần mở rộng.
+
+=====================================================================================
+CÂU 010 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q010 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-document-type-extractor-routing] Document Type Extractor Routing
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+`manual.pdf` trả MIME `application/pdf` nhưng việc trích xuất chữ rỗng; khi hiển thị trang thì thấy chữ nằm trong ảnh.
+
+Câu hỏi:
+Nêu cách nhận diện, cách xử lý, cách kiểm tra và nhật ký cần giữ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: PDF là định dạng bao chứa; kiểm tra xem có lớp chữ hay chỉ có ảnh.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: PDF là định dạng bao chứa; kiểm tra xem có lớp chữ hay chỉ có ảnh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 PDF là định dạng bao chứa; kiểm tra xem có lớp chữ hay chỉ có ảnh.
+
+=====================================================================================
+CÂU 011 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q011 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-extracted-text-quality-repair] Extracted Text Quality Repair
+=====================================================================================
+ĐỀ BÀI:
+Văn bản trích xuất có lỗi `retrievai`, tiêu đề lặp ở mọi trang, hai cột bị xen dòng và một con số mờ. Ghép từng lỗi với cách xử lý được phép.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Ảnh gốc xác nhận `retrievai` là `retrieval`
+  (2) Tiêu đề lặp ở mọi trang
+  (3) Hai cột bị xen dòng
+  (4) Con số vẫn mờ trên ảnh gốc
+
+Cột Phải (Lựa chọn ghép):
+  (A) Sửa theo ảnh gốc và lưu dấu vết sửa
+  (B) Loại tiêu đề lặp, đồng thời lưu quy tắc đã áp dụng
+  (C) Dựng lại thứ tự đọc theo bố cục ảnh gốc
+  (D) Đánh dấu chưa đọc được, không đoán giá trị
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Ảnh gốc xác nhận `retrievai` là `retrieval` ===> Ghép với: 
+• Cặp 2: Tiêu đề lặp ở mọi trang ===> Ghép với: 
+• Cặp 3: Hai cột bị xen dòng ===> Ghép với: 
+• Cặp 4: Con số vẫn mờ trên ảnh gốc ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Chỉ sửa phần có bằng chứng từ nguồn; thông tin không đọc được phải tiếp tục được đánh dấu bất định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ sửa điều nguồn cho phép xác minh.
+
+=====================================================================================
+CÂU 012 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q012 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-llm-document-representation-selection] Llm Document Representation Selection
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép nguồn với dạng biểu diễn phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Chính sách có tiêu đề/danh sách/bảng đơn giản
+  (2) Trang có bố cục/bảng phức tạp cần giữ quan hệ DOM
+  (3) Nhật ký kể lại sự việc gần như không có cấu trúc
+  (4) Danh mục có trường dữ liệu/lược đồ ổn định
+
+Cột Phải (Lựa chọn ghép):
+  (A) Markdown
+  (B) HTML đã làm sạch
+  (C) Văn bản thuần
+  (D) JSON/YAML
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Chính sách có tiêu đề/danh sách/bảng đơn giản ===> Ghép với: 
+• Cặp 2: Trang có bố cục/bảng phức tạp cần giữ quan hệ DOM ===> Ghép với: 
+• Cặp 3: Nhật ký kể lại sự việc gần như không có cấu trúc ===> Ghép với: 
+• Cặp 4: Danh mục có trường dữ liệu/lược đồ ổn định ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Dạng biểu diễn cần giữ đúng cấu trúc cần thiết với chi phí hợp lý.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không có một định dạng tốt nhất cho mọi tài liệu.
+
+=====================================================================================
+CÂU 013 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q013 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-llm-document-representation-selection] Llm Document Representation Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một chính sách có tiêu đề lồng nhau, bảng ngoại lệ đơn giản và nhiều thành phần điều hướng HTML. Câu hỏi cần trả đúng ngoại lệ theo từng mục.
+
+Câu hỏi:
+Chọn dạng biểu diễn, nêu phần giữ/bỏ và giải thích chi phí biểu diễn chấp nhận được.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Truy vấn phụ thuộc ngoại lệ thuộc mục nào.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Truy vấn phụ thuộc ngoại lệ thuộc mục nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Truy vấn phụ thuộc ngoại lệ thuộc mục nào.
+
+=====================================================================================
+CÂU 014 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q014 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-document-semantic-structure-preservation] Document Semantic Structure Preservation
+=====================================================================================
+ĐỀ BÀI:
+Một trang có tiêu đề `Hoàn phí`, điều kiện chung, bảng hạn chót và ghi chú “chỉ áp dụng cho học viên trao đổi”. Bản văn bản thuần đặt ghi chú giữa các điều kiện chung.
+
+Cách biểu diễn nào giữ đúng ý nghĩa?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giữ ghi chú như điều kiện chung cho toàn mục Hoàn phí.
+[B] Giữ tiêu đề và bảng có cấu trúc; gắn ghi chú vào hàng hoặc chương trình học viên trao đổi mà nó bổ nghĩa.
+[C] Bỏ ghi chú vì văn bản thuần không giữ được vị trí chính xác.
+[D] Chuyển bảng thành một câu dài và gắn ghi chú vào cuối trang.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [B]
+[B] Giữ tiêu đề và bảng có cấu trúc; gắn ghi chú vào hàng hoặc chương trình học viên trao đổi mà nó bổ nghĩa.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Ngoại lệ phải gắn đúng thành phần mà nó bổ nghĩa; làm phẳng sai vị trí có thể biến ngoại lệ cục bộ thành quy định chung.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Điều quan trọng không chỉ là từ ngữ mà là ngoại lệ thuộc mục nào.
+
+=====================================================================================
+CÂU 015 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q015 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-document-metadata-contract] Retrieval Document Metadata Contract
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Kho chính sách cần lọc theo khoa, ngôn ngữ và học kỳ.
+
+Câu hỏi:
+Viết quy ước metadata, tập giá trị cho phép và hai quy tắc từ chối.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một trường dữ liệu chỉ hữu ích khi danh tính và tập giá trị nhất quán.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một trường dữ liệu chỉ hữu ích khi danh tính và tập giá trị nhất quán.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một trường dữ liệu chỉ hữu ích khi danh tính và tập giá trị nhất quán.
+
+=====================================================================================
+CÂU 016 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q016 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-fixed-window-chunk-arithmetic] Fixed Window Chunk Arithmetic
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Tài liệu dài 1.050 ký tự, `chunk_size=400`, `overlap=100`.
+
+Câu hỏi:
+Tính bước, các vị trí bắt đầu, độ dài chunk cuối và số chunk.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Cửa sổ tiến theo bước, không theo chunk_size.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Cửa sổ tiến theo bước, không theo chunk_size.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cửa sổ tiến theo bước, không theo chunk_size.
+
+=====================================================================================
+CÂU 017 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q017 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-fixed-window-chunk-arithmetic] Fixed Window Chunk Arithmetic
+=====================================================================================
+ĐỀ BÀI:
+`length=1050`, `chunk_size=250`, `overlap=0`. Kết quả nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Vị trí bắt đầu là 0, 250, 500, 750; tạo bốn chunk và bỏ 50 ký tự cuối.
+[B] Vị trí bắt đầu là 0, 250, 500, 750, 1000; tạo năm chunk, chunk cuối có 50 ký tự.
+[C] Vị trí bắt đầu là 0, 250, 500, 750, 1000, 1250; tạo thêm một chunk rỗng.
+[D] Vị trí bắt đầu là 0, 125, 250, 375, 500, 625, 750, 875 vì overlap bằng 0.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Sau bốn chunk đầy đủ vẫn còn 50 ký tự cần được phủ.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Sau bốn chunk đầy đủ vẫn còn 50 ký tự cần được phủ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Sau bốn chunk đầy đủ vẫn còn 50 ký tự cần được phủ.
+
+=====================================================================================
+CÂU 018 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q018 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-fixed-window-chunk-arithmetic] Fixed Window Chunk Arithmetic
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+`chunk_size=200`, `overlap=200`. Điều gì sai?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] bước bằng 0 nên cửa sổ không tiến; phải yêu cầu `0 ≤ overlap < chunk_size`
+[B] Tạo đúng một chunk 200 ký tự rồi dừng cho mọi tài liệu dài hơn cửa sổ
+[C] Overlap bằng kích thước giữ continuity tối đa mà không tăng trùng lặp hoặc tính toán
+[D] Chỉ cần tăng top-k ở truy xuất để vòng lặp chia chunk tự động tiến và dừng
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tính `step=chunk_size-overlap`.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính `step=chunk_size-overlap`.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính `step=chunk_size-overlap`.
+
+=====================================================================================
+CÂU 019 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q019 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-sentence-boundary-chunker-implementation] Sentence Boundary Chunker Implementation
+=====================================================================================
+ĐỀ BÀI:
+Quy ước tách câu hỗ trợ `. `, `! `, `? `, `.` ngay trước dấu xuống dòng và dấu chấm ở cuối văn bản; mỗi chunk có tối đa hai câu. Ghép yêu cầu với điều kiện kiểm thử đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Giữ nguyên nội dung câu
+  (2) Không đảo thứ tự
+  (3) Giới hạn nhóm
+  (4) dữ liệu đầu vào rỗng
+
+Cột Phải (Lựa chọn ghép):
+  (A) Các câu ghép lại theo thứ tự vẫn giữ nguyên nội dung và dấu câu của từng câu.
+  (B) Các câu xuất hiện theo cùng thứ tự như đầu vào.
+  (C) Không chunk nào chứa quá hai câu.
+  (D) Trả danh sách rỗng, không trả chuỗi rỗng hay giá trị không phải danh sách.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Giữ nguyên nội dung câu ===> Ghép với: 
+• Cặp 2: Không đảo thứ tự ===> Ghép với: 
+• Cặp 3: Giới hạn nhóm ===> Ghép với: 
+• Cặp 4: dữ liệu đầu vào rỗng ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Bộ chia theo câu phải bảo toàn nội dung từng câu và thứ tự, giới hạn nhóm, đồng thời xử lý dữ liệu đầu vào rỗng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo quy ước dấu kết thúc cụ thể và nhóm tuần tự.
+
+=====================================================================================
+CÂU 020 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d07-q020 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-recursive-separator-chunker-implementation] Recursive Separator Chunker Implementation
+=====================================================================================
+ĐỀ BÀI:
+Bộ chia đệ quy dùng thứ tự ưu tiên `["\n\n", "\n", ". ", " ", ""]`. Sắp xếp các bước khi một phần văn bản vẫn dài hơn giới hạn kích thước.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Thử dấu phân tách có thứ tự ưu tiên cao nhất còn lại trên phần văn bản quá dài.
+  - [B] Giữ các phần không vượt giới hạn theo đúng thứ tự.
+  - [C] Đệ quy phần còn quá dài bằng dấu phân tách thứ tự ưu tiên thấp hơn.
+  - [D] Khi hết dấu phân tách hữu ích, chia theo ký tự với độ dài bị chặn để luôn kết thúc.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Mỗi lời gọi đệ quy phải giảm dấu phân tách hoặc giảm chiều dài phần văn bản.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi lời gọi đệ quy phải giảm dấu phân tách hoặc giảm chiều dài phần văn bản.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi lời gọi đệ quy phải giảm dấu phân tách hoặc giảm chiều dài phần văn bản.
+
+=====================================================================================
+CÂU 021 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q021 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-heading-section-chunker-design] Heading Section Chunker Design
+=====================================================================================
+ĐỀ BÀI:
+Ghép yêu cầu của chính sách có tiêu đề lồng nhau với thiết kế chunk phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Mục không vượt ngân sách kích thước
+  (2) Mục vượt ngân sách kích thước
+  (3) Chunk thuộc `# Học phí > ## Hoàn phí > ### Sinh viên trao đổi`
+  (4) Ghi chú ngoại lệ ở cuối mục
+
+Cột Phải (Lựa chọn ghép):
+  (A) Giữ mục làm một đơn vị chính.
+  (B) Chia phụ bên trong mục, vẫn giữ đường dẫn tiêu đề cho mọi phần con.
+  (C) Lưu đường dẫn tiêu đề đó trong metadata của chunk.
+  (D) Giữ ghi chú cùng mục hoặc gắn rõ nó bổ nghĩa cho phần nào.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Chia phụ không được làm mất tổ tiên của tiêu đề.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chia phụ không được làm mất tổ tiên của tiêu đề.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chia phụ không được làm mất tổ tiên của tiêu đề.
+
+=====================================================================================
+CÂU 022 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q022 (Độ khó: Dễ | Điểm: 5)
+Chủ đề kiến thức (KC): [kc-chunking-strategy-fit-selection] Chunking Strategy Fit Selection
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép loại tài liệu với chiến lược khởi đầu hợp lý.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) FAQ ngắn, mỗi mục độc lập
+  (2) Chính sách có tiêu đề lồng nhau và ngoại lệ
+  (3) Nguồn mã nguồn cần giữ hàm/lớp
+  (4) PDF bảng nhiều cột
+  (5) Văn bản tường thuật dài, không có tiêu đề rõ
+
+Cột Phải (Lựa chọn ghép):
+  (A) Theo mục FAQ
+  (B) Theo cấu trúc tiêu đề
+  (C) Theo cấu trúc mã nguồn
+  (D) Theo bố cục trang
+  (E) Đệ quy hoặc theo câu, rồi đánh giá
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi ranh giới tự nhiên của nguồn nằm ở đâu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi ranh giới tự nhiên của nguồn nằm ở đâu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi ranh giới tự nhiên của nguồn nằm ở đâu.
+
+=====================================================================================
+CÂU 023 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q023 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-chunking-strategy-fit-selection] Chunking Strategy Fit Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một bộ câu hỏi kiểm thử đã đóng băng hỏi về ngoại lệ trong sổ tay. Cửa sổ cố định thường truy xuất điều kiện nhưng thiếu ngoại lệ; chunk theo heading dài đôi khi trộn hai chính sách.
+
+Câu hỏi:
+Đề xuất chiến lược kết hợp và bằng chứng quyết định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hai lỗi cần hai kiểm soát: phạm vi và mục quá lớn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hai lỗi cần hai kiểm soát: phạm vi và mục quá lớn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hai lỗi cần hai kiểm soát: phạm vi và mục quá lớn.
+
+=====================================================================================
+CÂU 024 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q024 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-chunking-strategy-fit-selection] Chunking Strategy Fit Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một chiến lược tạo ít chunk nhất nhưng top-k bỏ sót mọi truy vấn về ngoại lệ. Kết luận nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giữ chiến lược vì lưu trữ thấp phải được ưu tiên hơn toàn bộ truy xuất bằng chứng
+[B] Đổi hoặc kết hợp chiến lược vì số lượng chunk không chứng minh chất lượng truy xuất
+[C] Tăng nhiệt độ sinh để mô hình tự suy ra mọi ngoại lệ bị bỏ sót khi truy xuất
+[D] Kết luận bộ câu hỏi kiểm thử sai vì chiến lược có độ dài trung bình và số chunk đẹp hơn
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mục tiêu là trả truy vấn đúng, không tối thiểu hóa số lượng chunk.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mục tiêu là trả truy vấn đúng, không tối thiểu hóa số lượng chunk.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mục tiêu là trả truy vấn đúng, không tối thiểu hóa số lượng chunk.
+
+=====================================================================================
+CÂU 025 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q025 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-chunk-overlap-policy] Chunk Overlap Policy
+=====================================================================================
+ĐỀ BÀI:
+Văn bản dài 1.000 ký tự, `chunk_size=300`. Ghép overlap với đánh đổi đúng nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) overlap = 0
+  (2) overlap = 50
+  (3) overlap = 250
+
+Cột Phải (Lựa chọn ghép):
+  (A) bước 300; ít trùng lặp nhưng có thể cắt mất liên hệ qua ranh giới.
+  (B) bước 250; có một vùng lặp giới hạn để kiểm tra query đi qua ranh giới.
+  (C) bước 50; nhiều chunk gần trùng, tăng chi phí lưu trữ và truy xuất lặp.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tính bước trước rồi nghĩ số lần cùng văn bản xuất hiện.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính bước trước rồi nghĩ số lần cùng văn bản xuất hiện.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính bước trước rồi nghĩ số lần cùng văn bản xuất hiện.
+
+=====================================================================================
+CÂU 026 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q026 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-chunk-overlap-policy] Chunk Overlap Policy
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Truy vấn cần điều kiện ở cuối chunk A và ngoại lệ ở đầu chunk B. Overlap 0 bỏ sót; 40 ký tự truy xuất đủ; 180 ký tự trả ba chunk gần trùng.
+
+Câu hỏi:
+Chọn chính sách và nêu cách kiểm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mức nhỏ nhất đã giữ đủ mối liên hệ là ứng viên mạnh.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mức nhỏ nhất đã giữ đủ mối liên hệ là ứng viên mạnh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mức nhỏ nhất đã giữ đủ mối liên hệ là ứng viên mạnh.
+
+=====================================================================================
+CÂU 027 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q027 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-chunking-comparator-implementation] Chunking Comparator Implementation
+=====================================================================================
+ĐỀ BÀI:
+Bộ so sánh chạy cửa sổ cố định, câu và đệ quy trên cùng văn bản. Ghép yêu cầu tái tạo được với dữ liệu đầu ra phải lưu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Biết kết quả thuộc chiến lược nào
+  (2) Kiểm lại ranh giới và tính mạch lạc của từng chunk
+  (3) Kiểm lại số chunk và độ dài trung bình
+  (4) Bảo đảm phép so sánh công bằng giữa các chiến lược
+
+Cột Phải (Lựa chọn ghép):
+  (A) Tên chiến lược ổn định cho từng kết quả
+  (B) Các chunk thực tế theo đúng thứ tự
+  (C) Số liệu tính trực tiếp từ các chunk đã lưu
+  (D) Cùng văn bản đầu vào và cùng bộ tham số
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Nếu không giữ các chunk, người kiểm tra không thể kiểm lại số liệu và tính mạch lạc.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nếu không giữ các chunk, người kiểm tra không thể kiểm lại số liệu và tính mạch lạc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu không giữ các chunk, người kiểm tra không thể kiểm lại số liệu và tính mạch lạc.
+
+=====================================================================================
+CÂU 028 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q028 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-embedding-semantic-space-explanation] Embedding Semantic Space Explanation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Truy vấn “gia hạn sách” truy xuất “renew borrowed materials” dù không trùng từ. Giải thích tốt nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] embedding học biểu diễn nơi ý nghĩa liên quan có vị trí hình học gần; vẫn phải kiểm nguồn sự thật
+[B] Mỗi chiều vector lần lượt mang một sự thật đọc được như “gia hạn”, “sách”, “thư viện”
+[C] độ tương đồng cao chứng minh đoạn được truy xuất luôn đúng và đang còn hiệu lực
+[D] vector store tự tạo câu trả lời có căn cứ hoàn chỉnh mà không cần đưa ngữ cảnh vào bộ sinh
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách khớp ngữ nghĩa khỏi sự thật.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách khớp ngữ nghĩa khỏi sự thật.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách khớp ngữ nghĩa khỏi sự thật.
+
+=====================================================================================
+CÂU 029 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q029 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-embedding-semantic-space-explanation] Embedding Semantic Space Explanation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai chunk có cosine 0,91 và 0,87; chunk 0,91 chứa chính sách cũ, chunk 0,87 là phiên bản hiện hành.
+
+Câu hỏi:
+Giải thích embedding hỗ trợ gì và không hỗ trợ kết luận gì.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một vector không biết chính sách nào đang có hiệu lực.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một vector không biết chính sách nào đang có hiệu lực.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một vector không biết chính sách nào đang có hiệu lực.
+
+=====================================================================================
+CÂU 030 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d07-q030 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-embedding-encoder-flow-tracing] Embedding Encoder Flow Tracing
+=====================================================================================
+ĐỀ BÀI:
+Sắp xếp luồng tạo embeddings cho một văn bản.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Pooling hoặc chọn token states
+  - [B] Tokenize dữ liệu đầu vào
+  - [C] Xuất ra một vector
+  - [D] Encoder tạo contextual token representations
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Pooling chỉ xảy ra sau khi đã có token representations.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Pooling chỉ xảy ra sau khi đã có token representations.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Pooling chỉ xảy ra sau khi đã có token representations.
+
+=====================================================================================
+CÂU 031 [🟡 Tính toán điền số (Numeric)] - Mã: d07-q031 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-cosine-similarity-computation] Cosine Similarity Computation
+=====================================================================================
+ĐỀ BÀI:
+Với `a=[1,2]`, `b=[2,0]`, nhập cosine similarity làm tròn ba chữ số.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mẫu số là tích hai độ lớn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là tích hai độ lớn.
+
+=====================================================================================
+CÂU 032 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q032 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-cosine-similarity-computation] Cosine Similarity Computation
+=====================================================================================
+ĐỀ BÀI:
+Ghép trường hợp kiểm thử cosine trong phạm vi các vector cùng số chiều với hành vi mong đợi của cài đặt.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Cùng một vector khác 0
+  (2) Hai vector trực giao
+  (3) Hai vector ngược hướng
+  (4) Một zero vector
+
+Cột Phải (Lựa chọn ghép):
+  (A) Trả 1.
+  (B) Trả 0.
+  (C) Trả -1.
+  (D) Trả giá trị an toàn 0 theo quy ước, không chia cho 0.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Kiểm cả hình học của vector và trường hợp mẫu số bằng 0.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm cả hình học của vector và trường hợp mẫu số bằng 0.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm cả hình học của vector và trường hợp mẫu số bằng 0.
+
+=====================================================================================
+CÂU 033 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q033 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-cosine-score-interpretation] Cosine Score Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Cùng truy vấn, A=0,82; B=0,61; C=-0,10 trong cùng chỉ mục/mô hình. Kết luận nào an toàn nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] A gần hơn B và C theo hình học này; mức liên quan vẫn cần kiểm tra
+[B] A chắc chắn đúng sự thật và còn hiệu lực chỉ vì cosine lớn hơn 0,8
+[C] C luôn là nội dung đối nghĩa trong mọi mô hình embeddings và mọi kho tài liệu
+[D] B luôn không liên quan với mọi truy vấn vì điểm hiện tại nhỏ hơn ngưỡng 0,7
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So tương đối trước, tránh luật số chung.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So tương đối trước, tránh luật số chung.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So tương đối trước, tránh luật số chung.
+
+=====================================================================================
+CÂU 034 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q034 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-cosine-score-interpretation] Cosine Score Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Cùng một truy vấn, chunk A có cosine 0,84 nhưng là câu rất chung; chunk B có cosine 0,80, chứa câu trả lời cụ thể và cùng mô hình embeddings/chỉ mục.
+
+Câu hỏi:
+Nêu điều mà điểm số cho biết, điều nó chưa chứng minh, và một thử nghiệm kế tiếp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ phân biệt điểm quan sát được và nguyên nhân mới là giả thuyết.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ phân biệt điểm quan sát được và nguyên nhân mới là giả thuyết.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ phân biệt điểm quan sát được và nguyên nhân mới là giả thuyết.
+
+=====================================================================================
+CÂU 035 [🟡 Tính toán điền số (Numeric)] - Mã: d07-q035 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-euclidean-distance-computation] Euclidean Distance Computation
+=====================================================================================
+ĐỀ BÀI:
+Với `a=[1,2,3]`, `b=[4,2,-1]`, tự tính rồi nhập Euclidean distance.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Bình phương từng chênh lệch trước khi cộng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bình phương từng chênh lệch trước khi cộng.
+
+=====================================================================================
+CÂU 036 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q036 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-vector-metric-selection] Vector Metric Selection
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép yêu cầu với thước đo ưu tiên.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Chỉ hướng quan trọng, độ dài vector không mang nghĩa
+  (2) Độ lớn tuyệt đối của vector phải ảnh hưởng đến khoảng cách
+  (3) Muốn hướng cùng độ lớn đều làm điểm tăng
+
+Cột Phải (Lựa chọn ghép):
+  (A) Cosine
+  (B) Euclidean/L2
+  (C) Dot product
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi độ lớn có mang tín hiệu không.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi độ lớn có mang tín hiệu không.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi độ lớn có mang tín hiệu không.
+
+=====================================================================================
+CÂU 037 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q037 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-vector-metric-selection] Vector Metric Selection
+=====================================================================================
+ĐỀ BÀI:
+Chỉ mục hiện lưu vector đã L2-normalize và backend được cấu hình cosine. Nhóm muốn dùng dot product với truy vấn thô từ mô hình mới. Kết luận nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có thể đổi riêng thước đo của truy vấn mà giữ nguyên chỉ mục và mô hình.
+[B] Dot product luôn tương đương cosine kể cả với vector chưa normalize.
+[C] Phải xác nhận metric, cách normalize và mô hình của cả kho tài liệu/truy vấn; nếu đổi mô hình thì tạo lại embeddings và xây lại chỉ mục trước khi chuyển đổi.
+[D] Chỉ cần tăng top-k để bù khác biệt không gian vector.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Cùng số chiều chưa chắc cùng không gian đã học.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Cùng số chiều chưa chắc cùng không gian đã học.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cùng số chiều chưa chắc cùng không gian đã học.
+
+=====================================================================================
+CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q038 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-embedding-model-evidence-selection] Embedding Model Evidence Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+mô hình A: độ bao phủ@5 0,86, p95 45ms, 768d. mô hình B: độ bao phủ@5 0,88, p95 190ms, 3072d. SLO p95≤100ms; kho tài liệu Việt–Anh 5M các chunk. Bộ kiểm thử đại diện gồm truy vấn tiếng Việt và tiếng Anh; chi phí tạo lại embeddings cần được tính trước chuyển đổi.
+
+Câu hỏi:
+Chọn mô hình cho phát hành hiện tại, nêu hạn chế và điều kiện để xem lại lựa chọn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một mô hình không đáp ứng độ trễ SLO không phải lựa chọn mặc định.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một mô hình không đáp ứng độ trễ SLO không phải lựa chọn mặc định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một mô hình không đáp ứng độ trễ SLO không phải lựa chọn mặc định.
+
+=====================================================================================
+CÂU 039 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q039 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-embedding-model-evidence-selection] Embedding Model Evidence Selection
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Khi đổi mô hình embeddings cho kho tài liệu đã chỉ mục, hành động nào đúng nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chỉ đổi truy vấn embedder rồi tiếp tục tìm kiếm trực tiếp trên toàn bộ vectors cũ
+[B] Re-embed kho tài liệu và xây chỉ mục tương thích trước chuyển đổi
+[C] Trộn vectors hai mô hình vào cùng bộ sưu tập nếu số chiều tình cờ bằng nhau
+[D] Chỉ tăng top-k và giảm threshold để bù mọi incompatibility giữa hai không gian
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Vector giống chiều không có nghĩa cùng hệ tọa độ.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Vector giống chiều không có nghĩa cùng hệ tọa độ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Vector giống chiều không có nghĩa cùng hệ tọa độ.
+
+=====================================================================================
+CÂU 040 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q040 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-store-record-contract] Vector Store Record Contract
+=====================================================================================
+ĐỀ BÀI:
+Ghép thành phần của bản ghi kho vector cho một chunk thuộc `policy-17`, mục `Refund`, phiên bản `v3` với mục đích của nó.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Danh tính ổn định của chunk/tài liệu
+  (2) Embedding vector
+  (3) metadata: mục, phiên bản, nguồn URL
+  (4) chunk văn bản
+
+Cột Phải (Lựa chọn ghép):
+  (A) cập nhật/xóa đúng bản ghi và không lẫn phiên bản.
+  (B) Tính similarity khi tìm kiếm.
+  (C) lọc, trích dẫn và vòng đời kiểm tra.
+  (D) Nội dung được trả về để kiểm mức liên quan/trích dẫn.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách thông tin nguồn khỏi trạng thái của một truy vấn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách thông tin nguồn khỏi trạng thái của một truy vấn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách thông tin nguồn khỏi trạng thái của một truy vấn.
+
+=====================================================================================
+CÂU 041 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q041 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-vector-store-backend-initialization] Vector Store Backend Initialization
+=====================================================================================
+ĐỀ BÀI:
+Chroma import thành công nhưng tạo bộ sưu tập thất bại; code vẫn đặt `_use_chroma=True`. Ghép vấn đề trạng thái với cách xử lý hoặc kiểm thử cần có.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Công bố backend Chroma đang hoạt động
+  (2) Cho phép phương án dự phòng
+  (3) Tạo bộ sưu tập thất bại
+
+Cột Phải (Lựa chọn ghép):
+  (A) Chỉ thực hiện sau khi bộ sưu tập đã tạo hoặc mở thành công
+  (B) Đặt lại trạng thái rõ ràng và xác nhận phương án dự phòng rỗng hoặc đúng quy ước
+  (C) Dừng sớm hoặc ghi nhật ký rõ backend/bộ sưu tập trước thao tác đầu tiên
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Phân biệt import thư viện, tạo bộ sưu tập và thời điểm backend thực sự sẵn sàng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt import thư viện, tạo bộ sưu tập và thời điểm backend thực sự sẵn sàng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt import thư viện, tạo bộ sưu tập và thời điểm backend thực sự sẵn sàng.
+
+=====================================================================================
+CÂU 042 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q042 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-vector-store-document-addition] Vector Store Document Addition
+=====================================================================================
+ĐỀ BÀI:
+Kho rỗng nhận 2 tài liệu rồi thêm 3 tài liệu. Ghép điều kiện kiểm thử với hành vi vòng đời đúng của `add_documents`.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Sau lần thêm đầu
+  (2) Sau lần thêm thứ hai
+  (3) Mỗi bản ghi mới
+
+Cột Phải (Lựa chọn ghép):
+  (A) Có hai bản ghi với danh tính và metadata truy vết được.
+  (B) Có năm bản ghi, không reset hoặc ghi đè trạng thái cũ.
+  (C) Có tài liệu/chunk danh tính, văn bản, embedding và metadata hợp lệ.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Kiểm các trường của bản ghi và trạng thái bộ sưu tập trước/sau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm các trường của bản ghi và trạng thái bộ sưu tập trước/sau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm các trường của bản ghi và trạng thái bộ sưu tập trước/sau.
+
+=====================================================================================
+CÂU 043 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d07-q043 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-semantic-search-implementation] Vector Semantic Search Implementation
+=====================================================================================
+ĐỀ BÀI:
+Sắp xếp các bước của semantic search trong bộ nhớ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Tạo embedding cho truy vấn bằng embedder đã cấu hình.
+  - [B] Tính điểm giữa vector truy vấn và các vector đã lưu.
+  - [C] Sắp xếp theo điểm giảm dần và lấy tối đa top-k kết quả.
+  - [D] Trả nội dung, metadata và điểm của các kết quả.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Chưa thể xếp hạng khi chưa có điểm giữa vector truy vấn và vector đã lưu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chưa thể xếp hạng khi chưa có điểm giữa vector truy vấn và vector đã lưu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chưa thể xếp hạng khi chưa có điểm giữa vector truy vấn và vector đã lưu.
+
+=====================================================================================
+CÂU 044 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q044 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-semantic-search-implementation] Vector Semantic Search Implementation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Kho A có 2 bản ghi, nhưng truy vấn yêu cầu `top_k=5`; kho B rỗng. Khi điểm bằng nhau, quy ước sắp xếp tiếp theo `record_id` tăng dần.
+
+Câu hỏi:
+Nêu kết quả mong đợi cho mỗi kho và quy tắc sắp xếp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: top-k không tạo thêm bản ghi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: top-k không tạo thêm bản ghi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 top-k không tạo thêm bản ghi.
+
+=====================================================================================
+CÂU 045 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q045 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-search-metadata-prefilter] Vector Search Metadata Prefilter
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Khi không lọc, kết quả hạng 1 là Marketing điểm .95; kết quả Engineering tốt nhất điểm .90. Truy vấn yêu cầu `department=engineering`, `top_k=1`.
+
+Câu hỏi:
+So sánh lọc trước khi xếp hạng với xếp hạng trước khi lọc.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Áp top-k sau khi đã xác định candidate hợp lệ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Áp top-k sau khi đã xác định candidate hợp lệ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Áp top-k sau khi đã xác định candidate hợp lệ.
+
+=====================================================================================
+CÂU 046 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q046 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-search-metadata-prefilter] Vector Search Metadata Prefilter
+=====================================================================================
+ĐỀ BÀI:
+Ghép điều kiện của `search_with_filter` với hành vi đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) `metadata_filter=None`
+  (2) tập được phép rỗng
+  (3) lọc có hai key-value
+  (4) bản ghi thiếu một key được yêu cầu
+
+Cột Phải (Lựa chọn ghép):
+  (A) Tương đương tìm kiếm thường.
+  (B) Trả [].
+  (C) bản ghi phải match mọi điều kiện trước khi xếp hạng.
+  (D) Không match.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Một bản ghi chỉ đủ điều kiện khi thỏa đủ condition.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một bản ghi chỉ đủ điều kiện khi thỏa đủ condition.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một bản ghi chỉ đủ điều kiện khi thỏa đủ condition.
+
+=====================================================================================
+CÂU 047 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q047 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-vector-store-document-deletion] Vector Store Document Deletion
+=====================================================================================
+ĐỀ BÀI:
+Kho có A::0, A::1, A::2, B::0. API `delete_document(doc_id)` trả số bản ghi đã xóa; nếu không còn bản ghi khớp, API trả 0. Gọi `delete_document("A")` hai lần. Hành vi nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Lần một chỉ xóa A::0; lần hai xóa A::1.
+[B] Lần một xóa toàn bộ A::0, A::1, A::2 và giữ B::0; lần hai trả 0, không thay đổi kho.
+[C] Lần một xóa mọi bản ghi vì A là tiền tố ngắn nhất.
+[D] Lần hai là lỗi bắt buộc vì tài liệu đã không còn.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Match ở tài liệu danh tính, không ở chunk ID duy nhất.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Match ở tài liệu danh tính, không ở chunk ID duy nhất.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Match ở tài liệu danh tính, không ở chunk ID duy nhất.
+
+=====================================================================================
+CÂU 048 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q048 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-control-tuning] Retrieval Control Tuning
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+`k=2` bỏ sót bằng chứng thứ ba; `k=8` thêm 5 chunk nhiễu; `threshold=0.85` trả rỗng ở 30% truy vấn; filter theo semester cũ che đáp án mới.
+
+Câu hỏi:
+Lập tuning plan.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi experiment chỉ đổi một control rồi mới kết hợp các thay đổi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi experiment chỉ đổi một control rồi mới kết hợp các thay đổi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi experiment chỉ đổi một control rồi mới kết hợp các thay đổi.
+
+=====================================================================================
+CÂU 049 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q049 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-retrieval-control-tuning] Retrieval Control Tuning
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Ngưỡng 0,85 trả rỗng cho 30% truy vấn, còn hạ ngưỡng làm tăng kết quả nhiễu.
+
+Câu hỏi:
+Quyết định nào phù hợp nhất khi điều chỉnh ngưỡng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giữ threshold và bắt generator tự trả lời mọi câu còn lại mà không có context
+[B] Đánh giá recall/no-result consequence rồi chọn threshold cùng fallback rõ
+[C] Hạ threshold về 0 cho mọi corpus để không còn bất kỳ empty result nào
+[D] Kết luận cosine 0,8 là cutoff universal áp được cho mọi model và domain
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giữ một biến thay đổi và xác định rõ hành vi khi không có kết quả.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ một biến thay đổi và xác định rõ hành vi khi không có kết quả.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ một biến thay đổi và xác định rõ hành vi khi không có kết quả.
+
+=====================================================================================
+CÂU 050 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q050 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-store-deployment-selection] Vector Store Deployment Selection
+=====================================================================================
+ĐỀ BÀI:
+Ghép constraint với deployment class phù hợp để bắt đầu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Prototype local nhỏ, một process
+  (2) Team đã vận hành Postgres và cần joins/filter
+  (3) Dữ liệu phải on-prem, team có ops
+  (4) Cần scale nhanh, ít ops, chấp nhận vendor
+
+Cột Phải (Lựa chọn ghép):
+  (A) Embedded
+  (B) Existing DB extension
+  (C) Self-hosted service
+  (D) Managed service
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi rõ ai chịu trách nhiệm backup, scaling và availability.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi rõ ai chịu trách nhiệm backup, scaling và availability.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi rõ ai chịu trách nhiệm backup, scaling và availability.
+
+=====================================================================================
+CÂU 051 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q051 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-store-deployment-selection] Vector Store Deployment Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Startup có 2 kỹ sư, 10M vectors, cần HA/backup, metadata filter; policy cho phép cloud nhưng latency theo region phải thấp.
+
+Câu hỏi:
+Chọn deployment class và nêu các thông tin phụ thuộc phiên bản cần kiểm tra trước khi quyết định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng biến tên vendor hoặc giá hiện tại thành kiến thức cố định.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng biến tên vendor hoặc giá hiện tại thành kiến thức cố định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng biến tên vendor hoặc giá hiện tại thành kiến thức cố định.
+
+=====================================================================================
+CÂU 052 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q052 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-rag-offline-online-phase-separation] Rag Offline Online Phase Separation
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép thao tác với đúng giai đoạn trong hai pha offline/online.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Extract/clean nguồn
+  (2) Chunk/embed/index
+  (3) Embed user query
+  (4) Search/filter/select ngữ cảnh
+
+Cột Phải (Lựa chọn ghép):
+  (A) Offline — nguồn normalization
+  (B) Offline — index construction
+  (C) Online — query encoding
+  (D) Online — bằng chứng retrieval
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Xác định thao tác được kích hoạt bởi nguồn thay đổi hay bởi câu hỏi người dùng, sau đó xét thứ tự trong pha đó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định thao tác được kích hoạt bởi nguồn thay đổi hay bởi câu hỏi người dùng, sau đó xét thứ tự trong pha đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định thao tác được kích hoạt bởi nguồn thay đổi hay bởi câu hỏi người dùng, sau đó xét thứ tự trong pha đó.
+
+=====================================================================================
+CÂU 053 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q053 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-rag-offline-online-phase-separation] Rag Offline Online Phase Separation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+App re-extract và re-embed toàn corpus ở mọi câu hỏi; khi policy đổi, cache query vẫn dùng index cũ.
+
+Câu hỏi:
+Thiết kế kích hoạt và ranh giới đầu ra đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đóng băng đầu ra nào ở giữa hai pha?
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đóng băng đầu ra nào ở giữa hai pha?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đóng băng đầu ra nào ở giữa hai pha?
+
+=====================================================================================
+CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q054 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ingestion-chunk-metadata-propagation] Ingestion Chunk Metadata Propagation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+File có metadata đầu tệp `doc_id: library`, `audience: student`, `source_url: ...`; phần nội dung tạo ba chunk.
+
+Câu hỏi:
+Nêu danh tính bản ghi/metadata từng chunk và điều kiện kiểm tra.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một document-level field phải xuất hiện ở mọi chunk cần dùng nó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một document-level field phải xuất hiện ở mọi chunk cần dùng nó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một document-level field phải xuất hiện ở mọi chunk cần dùng nó.
+
+=====================================================================================
+CÂU 055 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q055 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-knowledge-retrieval-memory-routing] Knowledge Retrieval Memory Routing
+=====================================================================================
+ĐỀ BÀI:
+Ghép từng loại information với route phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Policy học vụ dùng cho mọi sinh viên
+  (2) Câu hỏi vừa trước trong cuộc hội thoại
+  (3) Preference “trả lời ngắn” được user cho phép lưu
+
+Cột Phải (Lựa chọn ghép):
+  (A) Knowledge retrieval
+  (B) Short-term ngữ cảnh
+  (C) Governed long-term memory
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi đây là thông tin thực chung hay state của user/session.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi đây là thông tin thực chung hay state của user/session.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi đây là thông tin thực chung hay state của user/session.
+
+=====================================================================================
+CÂU 056 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q056 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-knowledge-retrieval-memory-routing] Knowledge Retrieval Memory Routing
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một kho vector chứa cả policy và ghi chú “Lan đang stress, hãy ưu tiên dễ”.
+
+Câu hỏi:
+Tách quy ước đọc/cập nhật và nêu rủi ro nếu query chung.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một record trả lời “thế giới nói gì”; record kia trả lời “người dùng này đang ở trạng thái nào”.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một record trả lời “thế giới nói gì”; record kia trả lời “người dùng này đang ở trạng thái nào”.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một record trả lời “thế giới nói gì”; record kia trả lời “người dùng này đang ở trạng thái nào”.
+
+=====================================================================================
+CÂU 057 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q057 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-grounded-context-prompt-assembly] Grounded Context Prompt Assembly
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Retrieved chunks gồm C1 policy hiện hành, C2 blog không nguồn, C3 policy cũ. Query hỏi deadline mới.
+
+Câu hỏi:
+Thiết kế cách chọn context và answer contract.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Điểm truy xuất không thay thế điều kiện đủ dùng/nguồn chính.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Điểm truy xuất không thay thế điều kiện đủ dùng/nguồn chính.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Điểm truy xuất không thay thế điều kiện đủ dùng/nguồn chính.
+
+=====================================================================================
+CÂU 058 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q058 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-grounded-context-prompt-assembly] Grounded Context Prompt Assembly
+=====================================================================================
+ĐỀ BÀI:
+Nếu retrieved context không chứa câu trả lời, behavior nào đúng nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Cho model dùng kiến thức nền nhưng vẫn cite chunk gần nhất
+[B] Trả rõ ràng không đủ thông tin/yêu cầu làm rõ theo contract
+[C] Tăng temperature để tìm câu trả lời
+[D] Bịa citation từ metadata
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Citation không thể thay một thông tin thực không có trong ngữ cảnh.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Citation không thể thay một thông tin thực không có trong ngữ cảnh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Citation không thể thay một thông tin thực không có trong ngữ cảnh.
+
+=====================================================================================
+CÂU 059 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q059 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-benchmark-query-gold-design] Retrieval Benchmark Query Gold Design
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Kho dữ liệu có policy library cho student/staff và course registration.
+
+Câu hỏi:
+Thiết kế ba dòng kiểm thử, trong đó một row phụ thuộc metadata; nêu quy tắc đóng băng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi gold phải chỉ về nguồn cụ thể trước experiment.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi gold phải chỉ về nguồn cụ thể trước experiment.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi gold phải chỉ về nguồn cụ thể trước experiment.
+
+=====================================================================================
+CÂU 060 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q060 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-ranking-metric-computation] Retrieval Ranking Metric Computation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Top-5 có mức liên quan `[1,0,1,0,0]`; cả kho có 4 tài liệu liên quan.
+
+Câu hỏi:
+Tính Precision@5, Recall@5, MRR và diễn giải ngắn điều gì cho thấy kết quả nhiễu hoặc mục tiêu bị bỏ sót.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: MRR chỉ nhìn rank của relevant đầu tiên.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: MRR chỉ nhìn rank của relevant đầu tiên.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 MRR chỉ nhìn rank của relevant đầu tiên.
+
+=====================================================================================
+CÂU 061 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q061 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-ranking-metric-computation] Retrieval Ranking Metric Computation
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ghép metric với câu hỏi failure nó nhấn mạnh.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Bao nhiêu result trong top-k là relevant?
+  (2) Đã lấy được bao nhiêu trong toàn bộ relevant set?
+  (3) Relevant đầu tiên đến sớm không?
+  (4) Graded mức liên quan có được xếp đúng thứ tự?
+
+Cột Phải (Lựa chọn ghép):
+  (A) Precision@k
+  (B) Recall@k
+  (C) MRR
+  (D) NDCG
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách độ sạch, độ bao phủ, lần trúng đầu tiên và thứ tự có mức liên quan.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách độ sạch, độ bao phủ, lần trúng đầu tiên và thứ tự có mức liên quan.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách độ sạch, độ bao phủ, lần trúng đầu tiên và thứ tự có mức liên quan.
+
+=====================================================================================
+CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q062 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieved-chunk-coherence-evaluation] Retrieved Chunk Coherence Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Chunk A kết thúc “Được hoàn phí nếu…”; chunk B bắt đầu bằng mức tiền nhưng thiếu điều kiện. Chunk C chứa hai policy không liên quan.
+
+Câu hỏi:
+Chấm tính mạch lạc và đề xuất sửa đúng lớp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi defect cần một boundary-level repair riêng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi defect cần một boundary-level repair riêng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi defect cần một boundary-level repair riêng.
+
+=====================================================================================
+CÂU 063 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q063 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-metadata-filter-utility-evaluation] Metadata Filter Utility Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Không lọc, top-3 có 2 relevant records đúng audience. Filter `audience=student` cho 3 relevant records nhưng bỏ một policy đúng vì metadata thiếu audience.
+
+Câu hỏi:
+Đánh giá utility của filter và quyết định bước tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách lỗi của filter logic khỏi lỗi metadata độ bao phủ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách lỗi của filter logic khỏi lỗi metadata độ bao phủ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách lỗi của filter logic khỏi lỗi metadata độ bao phủ.
+
+=====================================================================================
+CÂU 064 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q064 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-metadata-filter-utility-evaluation] Metadata Filter Utility Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Filter theo department không đổi result nào trên 20 metadata-dependent queries vì mọi record đều có cùng department.
+
+Câu hỏi:
+Kết luận nào đúng nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Filter đã chứng minh rất hiệu quả dù ứng viên set trước và sau hoàn toàn giống nhau
+[B] Trường không có discriminatory utility trong corpus/test này; cân nhắc remove hoặc redesign
+[C] Tăng top-k đủ lớn sẽ tự làm field department có thêm giá trị phân biệt ứng viên
+[D] Gán ngẫu nhiên department cho các record để tạo khác biệt quan sát được trong A/B test
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một filter chỉ hữu ích nếu field phân biệt ứng viên phù hợp.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một filter chỉ hữu ích nếu field phân biệt ứng viên phù hợp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một filter chỉ hữu ích nếu field phân biệt ứng viên phù hợp.
+
+=====================================================================================
+CÂU 065 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q065 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-failure-layer-diagnosis] Retrieval Failure Layer Diagnosis
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Gold answer có trong source. Extracted text làm mất bảng chứa answer; index và search chỉ nhận bản text thiếu. Generator trả “không có thông tin”.
+
+Câu hỏi:
+Xác định earliest defect, phương án thay thế và rerun.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo gold fact từ source tới extracted corpus trước khi nhìn model.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo gold fact từ source tới extracted corpus trước khi nhìn model.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo gold fact từ source tới extracted corpus trước khi nhìn model.
+
+=====================================================================================
+CÂU 066 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q066 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-failure-layer-diagnosis] Retrieval Failure Layer Diagnosis
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mục tiêu là tìm câu trả lời hiện hành cho học viên kỳ `semester=2026`. Bản ghi đáp án chuẩn có `department=engineering`, `semester=2026`. Lần chạy không lọc đưa bản ghi này lên hạng 1; lần chạy dùng bộ lọc `department=engineering`, `semester=2025` lại không trả kết quả.
+
+Câu hỏi:
+Chẩn đoán lỗi và nêu phép kiểm hoặc cách sửa tối thiểu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nếu unfiltered result đã đúng, failure nằm ở eligibility control.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nếu unfiltered result đã đúng, failure nằm ở eligibility control.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu unfiltered result đã đúng, failure nằm ở eligibility control.
+
+=====================================================================================
+CÂU 067 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q067 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-retrieval-failure-layer-diagnosis] Retrieval Failure Layer Diagnosis
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Team cùng lúc đổi corpus, chunk size, embedding model, top-k và prompt; score tăng.
+
+Câu hỏi:
+Kết luận nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Đã chứng minh chunk size là nguyên nhân duy nhất làm toàn bộ score tăng
+[B] Không xác định được layer nào gây tăng; cần thử nghiệm chỉ đổi một biến trên frozen benchmark
+[C] Embedding model chắc chắn là nguyên nhân vì nó trực tiếp tạo vector mới cho search
+[D] Có thể giữ khẳng định nhân quả về một layer bất kỳ nếu aggregate cuối cùng đủ đẹp
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Muốn locate cause phải giữ các layer khác cố định.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Muốn locate cause phải giữ các layer khác cố định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Muốn locate cause phải giữ các layer khác cố định.
+
+=====================================================================================
+CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q068 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-controlled-retrieval-strategy-experiment] Controlled Retrieval Strategy Experiment
+=====================================================================================
+ĐỀ BÀI:
+So sánh heading chunking với fixed-300 cho cùng handbook.
+
+Câu hỏi:
+Thiết kế experiment table và decision rule mà không overclaim.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Aggregate gần bằng nhau vẫn có thể che strategy thắng ở từng query class.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Aggregate gần bằng nhau vẫn có thể che strategy thắng ở từng query class.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Aggregate gần bằng nhau vẫn có thể che strategy thắng ở từng query class.
+
+=====================================================================================
+CÂU 069 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q069 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-data-inventory-governance] Retrieval Data Inventory Governance
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Nhóm có bốn nguồn: tài liệu kỹ thuật công khai có giấy phép rõ; xuất dữ liệu CRM chứa số điện thoại nhưng người phụ trách chưa duyệt; nhật ký thay đổi do Engineering sở hữu, cập nhật mỗi phát hành; thư mục cá nhân không biết nguồn gốc.
+
+Câu hỏi:
+Hoàn thiện danh mục decision cho bốn nguồn và nêu điểm chặn trước khi index.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đối với từng nguồn, tách “đọc được” khỏi “được phép và phù hợp để index”.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đối với từng nguồn, tách “đọc được” khỏi “được phép và phù hợp để index”.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối với từng nguồn, tách “đọc được” khỏi “được phép và phù hợp để index”.
+
+=====================================================================================
+CÂU 070 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q070 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-public-corpus-source-provenance] Public Corpus Source Provenance
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+tập ứng viên gồm 6 trang hướng dẫn công khai, 2 tệp PDF công khai tải từ trang có version và 1 trang khác yêu cầu đăng nhập. Nhóm chưa có quyền tái sử dụng nội dung sau đăng nhập.
+
+Câu hỏi:
+Thiết kế thu thập ranh giới và sổ theo dõi để một người kiểm tra tái tạo corpus mà không vượt quyền.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Reviewer cần biết tệp đến từ đâu, phiên bản nào và dựa trên quyền nào.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Reviewer cần biết tệp đến từ đâu, phiên bản nào và dựa trên quyền nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Reviewer cần biết tệp đến từ đâu, phiên bản nào và dựa trên quyền nào.
+
+=====================================================================================
+CÂU 071 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q071 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-extracted-text-quality-repair] Extracted Text Quality Repair
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+OCR trả `Top-k = S`, footer “Internal draft” lặp ở mọi trang và một bảng hai cột bị ghép thành từng dòng xen kẽ. Ảnh nguồn xác nhận ký tự là `5`, nhưng tiêu đề cột thứ hai bị che mất.
+
+Câu hỏi:
+Nêu các sửa đổi được phép, phần phải giữ uncertainty và bằng chứng kiểm lại.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi sửa đổi cần chỉ ra vùng nguồn nào xác nhận nó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi sửa đổi cần chỉ ra vùng nguồn nào xác nhận nó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi sửa đổi cần chỉ ra vùng nguồn nào xác nhận nó.
+
+=====================================================================================
+CÂU 072 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q072 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-document-semantic-structure-preservation] Document Semantic Structure Preservation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một trang có hai mục `Học bổng` và `Gia hạn`. Khi trích xuất thành văn bản thuần, điều kiện “chỉ áp dụng khi GPA ≥ 3.2” của mục Học bổng lại bị đặt sau mục Gia hạn. Bảng trên trang ghép từng loại học bổng với mức hỗ trợ.
+
+Câu hỏi:
+Dựng biểu diễn chuẩn hóa để điều kiện GPA và bảng không bị gắn nhầm sang mục Gia hạn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hãy xác định điều kiện GPA thuộc mục nào trước khi quyết định cách lưu nó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hãy xác định điều kiện GPA thuộc mục nào trước khi quyết định cách lưu nó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy xác định điều kiện GPA thuộc mục nào trước khi quyết định cách lưu nó.
+
+=====================================================================================
+CÂU 073 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q073 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-document-metadata-contract] Retrieval Document Metadata Contract
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Đợt nhập dữ liệu có hai bản ghi cùng `doc_id=policy-9`, cùng `source_url` và cùng `document_version=v3`; một bản ghi dùng `department=CS`, bản ghi kia dùng `department=computer-science`. Bản ghi thứ ba có tiêu đề nhưng thiếu `source_url`.
+
+Câu hỏi:
+Theo quy ước metadata, bản ghi nào cần bị từ chối hoặc đưa vào vùng chờ, cần chuẩn hóa gì và vì sao?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kiểm danh tính, tập giá trị và nguồn gốc riêng biệt.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm danh tính, tập giá trị và nguồn gốc riêng biệt.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm danh tính, tập giá trị và nguồn gốc riêng biệt.
+
+=====================================================================================
+CÂU 074 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q074 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-sentence-boundary-chunker-implementation] Sentence Boundary Chunker Implementation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Quy ước nhận các dấu kết thúc câu `. `, `! `, `? `, dấu chấm ngay trước dấu xuống dòng và dấu kết thúc ở cuối đầu vào; `max_sentences_per_chunk=3`.
+
+Dữ liệu đầu vào:
+`Một. Hai! Ba? Bốn.`
+`Năm.`
+
+Câu hỏi:
+Nêu các câu, các chunk đầu ra và ba điều kiện kiểm thử cho trường hợp biên độc lập.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách câu trước rồi mới nhóm tối đa ba câu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách câu trước rồi mới nhóm tối đa ba câu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách câu trước rồi mới nhóm tối đa ba câu.
+
+=====================================================================================
+CÂU 075 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q075 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-recursive-separator-chunker-implementation] Recursive Separator Chunker Implementation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+`size=18`, thứ tự ưu tiên là `["\n\n", "\n", ". ", " ", ""]`. Một mục dài 42 ký tự không có dấu xuống dòng. Tách bằng `. ` cho P1 dài 12 ký tự và P2 dài 28 ký tự; P2 tách tiếp bằng dấu cách thành P2a dài 14 và P2b dài 13 ký tự.
+
+Câu hỏi:
+Theo dõi nhánh đệ quy, liệt kê các phần đầu ra theo thứ tự và nêu bất biến bảo đảm kết thúc.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi hai đại lượng phải giảm: dấu phân tách còn lại và chiều dài phần văn bản.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo dõi hai đại lượng phải giảm: dấu phân tách còn lại và chiều dài phần văn bản.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi hai đại lượng phải giảm: dấu phân tách còn lại và chiều dài phần văn bản.
+
+=====================================================================================
+CÂU 076 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q076 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-heading-section-chunker-design] Heading Section Chunker Design
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Sổ tay có `# Tuyển sinh`, hai mục `## Hồ sơ` và `## Học bổng`; dưới Học bổng có `### Điều kiện` dài vượt ngân sách kích thước và một ghi chú ngoại lệ ở cuối.
+
+Câu hỏi:
+Thiết kế chunk và metadata để truy vấn ngoại lệ vẫn truy đúng phạm vi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một chunk con vẫn phải biết toàn bộ tổ tiên tiêu đề và phạm vi của ghi chú.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một chunk con vẫn phải biết toàn bộ tổ tiên tiêu đề và phạm vi của ghi chú.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một chunk con vẫn phải biết toàn bộ tổ tiên tiêu đề và phạm vi của ghi chú.
+
+=====================================================================================
+CÂU 077 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q077 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-chunking-comparator-implementation] Chunking Comparator Implementation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Bộ so sánh báo cửa sổ cố định: số lượng=8, độ dài trung bình=120; câu: số lượng=6, độ dài trung bình=150; đệ quy: số lượng=7, độ dài trung bình≈128,6. Nhưng cửa sổ cố định chạy trên văn bản thô 960 ký tự, hai chiến lược còn lại chạy trên văn bản đã làm sạch 900 ký tự; đầu ra không giữ các chunk thực tế.
+
+Câu hỏi:
+Kiểm tra phép so sánh và thiết kế lần chạy lại tối thiểu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hai con số đẹp không đủ nếu dữ liệu đầu vào và thô đầu ra không cùng quy ước.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hai con số đẹp không đủ nếu dữ liệu đầu vào và thô đầu ra không cùng quy ước.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hai con số đẹp không đủ nếu dữ liệu đầu vào và thô đầu ra không cùng quy ước.
+
+=====================================================================================
+CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q078 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-embedding-encoder-flow-tracing] Embedding Encoder Flow Tracing
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Embedder có giới hạn đầu vào 8 token. Văn bản tạo 12 token; pipeline cắt còn 8, bộ mã hóa sinh 8 trạng thái token, mean-pool rồi chuẩn hóa thành vector.
+
+Câu hỏi:
+Theo dõi luồng và chỉ ra thông tin nào có thể mất trước khi vector được tạo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xác định giai đoạn đầu tiên không còn nhìn thấy bốn token cuối.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định giai đoạn đầu tiên không còn nhìn thấy bốn token cuối.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định giai đoạn đầu tiên không còn nhìn thấy bốn token cuối.
+
+=====================================================================================
+CÂU 079 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q079 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-euclidean-distance-computation] Euclidean Distance Computation
+=====================================================================================
+ĐỀ BÀI:
+`u=[-1,2,4]`, `v=[2,-2,4]`. Cách tính khoảng cách Euclidean nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Cộng các chênh lệch: -3 + 4 + 0 = 1.
+[B] Tính √((-3)² + 4² + 0²) = 5.
+[C] Tính dot product rồi chia cho hai norm.
+[D] Chỉ so chiều có chênh lệch lớn nhất nên khoảng cách = 4.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dấu của chênh lệch mất đi sau bước bình phương.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Dấu của chênh lệch mất đi sau bước bình phương.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dấu của chênh lệch mất đi sau bước bình phương.
+
+=====================================================================================
+CÂU 080 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q080 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-store-record-contract] Vector Store Record Contract
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai chunk có cùng nội dung “Hạn nộp là 30/9” nhưng thuộc `policy-v2` và `policy-v3`; chỉ v3 còn hiệu lực.
+
+Câu hỏi:
+Thiết kế bản ghi danh tính/metadata để tìm kiếm, trích dẫn và vòng đời không trộn hai phiên bản.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: danh tính phải cho phép giữ, lọc và xóa từng phiên bản độc lập.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: danh tính phải cho phép giữ, lọc và xóa từng phiên bản độc lập.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 danh tính phải cho phép giữ, lọc và xóa từng phiên bản độc lập.
+
+=====================================================================================
+CÂU 081 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q081 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-store-backend-initialization] Vector Store Backend Initialization
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Cấu hình yêu cầu bộ sưu tập `policies-v3` và embedder E3. máy khách khởi tạo được nhưng trả bộ sưu tập `policies-v2` gắn E2; bộ nhớ phương án dự phòng đang chứa dữ liệu test cũ.
+
+Câu hỏi:
+Nêu dừng sớm/phương án dự phòng hành vi và khởi động các điều kiện kiểm thử an toàn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Trạng thái sẵn sàng phải xác nhận cả danh tính của bộ sưu tập lẫn embedder.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Trạng thái sẵn sàng phải xác nhận cả danh tính của bộ sưu tập lẫn embedder.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trạng thái sẵn sàng phải xác nhận cả danh tính của bộ sưu tập lẫn embedder.
+
+=====================================================================================
+CÂU 082 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q082 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-vector-store-document-addition] Vector Store Document Addition
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+kho đang có bản ghi `X::0`. Lần thêm thứ nhất nhận `A::0` và `B::0` có cùng nội dung “Chính sách hoàn tiền” nhưng metadata/doc_id khác nhau. Lần thêm thứ hai nhận `A::1` với nội dung khác.
+
+Câu hỏi:
+Nêu bản ghi tạo mới, trạng thái và các điều kiện kiểm thử sau hai lần thêm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: nội dung bằng nhau không thay thế bản ghi danh tính; theo dõi trạng thái trước và sau từng lần thêm.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: nội dung bằng nhau không thay thế bản ghi danh tính; theo dõi trạng thái trước và sau từng lần thêm.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 nội dung bằng nhau không thay thế bản ghi danh tính; theo dõi trạng thái trước và sau từng lần thêm.
+
+=====================================================================================
+CÂU 083 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q083 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-vector-store-document-deletion] Vector Store Document Deletion
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+kho có `P::0`, `P::1`, `P::2`, `Q::0`; metadata của ba bản ghi đầu đều có `doc_id=P`. Một giao diện truyền nhầm chunk ID `P::1` vào API vốn nhận tài liệu ID.
+
+Câu hỏi:
+Nêu hành vi đúng, kiểm soát cần có và trạng thái sau khi xóa P hợp lệ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tên API cho biết đơn vị phải bị xóa là tài liệu hay một chunk.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tên API cho biết đơn vị phải bị xóa là tài liệu hay một chunk.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tên API cho biết đơn vị phải bị xóa là tài liệu hay một chunk.
+
+=====================================================================================
+CÂU 084 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q084 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ingestion-chunk-metadata-propagation] Ingestion Chunk Metadata Propagation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+metadata đầu tệp có `doc_id=refund`, `source_url=/v4`, `audience=staff`; phần nội dung được chia thành hai chunk. Chunk thứ hai mất `audience` và cả hai chunk đều dùng `chunk_index=0`.
+
+Câu hỏi:
+Chẩn đoán hậu quả và nêu bản ghi đã sửa và điều kiện kiểm tra.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So từng trường cấp tài liệu và trường cấp chunk trên cả hai bản ghi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So từng trường cấp tài liệu và trường cấp chunk trên cả hai bản ghi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng trường cấp tài liệu và trường cấp chunk trên cả hai bản ghi.
+
+=====================================================================================
+CÂU 085 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q085 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-benchmark-query-gold-design] Retrieval Benchmark Query Gold Design
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một bản nháp bộ kiểm thử có truy vấn “Chính sách nào tốt nhất?”, đáp án chuẩn do model tự viết, tài liệu mong đợi để trống; sau khi Chiến lược B thắng, nhóm sửa hai truy vấn để giống đầu ra của B.
+
+Câu hỏi:
+Rà soát các lỗi và viết lại quy trình bộ kiểm thử.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mọi thành phần nào bị thay sau khi nhìn kết quả đều có thể gây rò rỉ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mọi thành phần nào bị thay sau khi nhìn kết quả đều có thể gây rò rỉ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mọi thành phần nào bị thay sau khi nhìn kết quả đều có thể gây rò rỉ.
+
+=====================================================================================
+CÂU 086 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q086 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieved-chunk-coherence-evaluation] Retrieved Chunk Coherence Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Truy vấn hỏi “Ai được miễn phí trễ hạn?”. Top 3: R1 chỉ có danh sách đối tượng nhưng thiếu tiêu đề; R2 có tiêu đề đúng nhưng câu ngoại lệ bị cắt sau “trừ khi”; R3 hoàn chỉnh nhưng thuộc quy ước khác.
+
+Câu hỏi:
+Chấm từng chunk về độ đầy đủ ngữ nghĩa/mức liên quan và đề xuất sửa theo lớp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một chunk có thể đọc trôi chảy nhưng vẫn thuộc sai quy ước.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một chunk có thể đọc trôi chảy nhưng vẫn thuộc sai quy ước.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một chunk có thể đọc trôi chảy nhưng vẫn thuộc sai quy ước.
+
+=====================================================================================
+CÂU 087 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q087 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-controlled-retrieval-strategy-experiment] Controlled Retrieval Strategy Experiment
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Trên 20 truy vấn đã đóng băng, chia chunk theo tiêu đề thắng 6/8 truy vấn về ngoại lệ nhưng thua cửa sổ cố định-300 ở 5/6 FAQ ngắn; 6 truy vấn còn lại hòa. Tổng hợp Recall@5 lần lượt 0,80 và 0,79.
+
+Câu hỏi:
+Diễn giải kết quả, nêu quy tắc quyết định và thử nghiệm tiếp theo mà không overclaim.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng để một tổng hợp gần bằng nhau xóa mất bên thắng/bên thua theo lớp truy vấn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng để một tổng hợp gần bằng nhau xóa mất bên thắng/bên thua theo lớp truy vấn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng để một tổng hợp gần bằng nhau xóa mất bên thắng/bên thua theo lớp truy vấn.
+
+=====================================================================================
+CÂU 088 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q088 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-data-classification-by-access-semantics] Ai Data Classification By Access Semantics
+=====================================================================================
+ĐỀ BÀI:
+Trợ lý chỉ nhận `student_language` khi người học chọn ngôn ngữ cho phiên chat hiện tại; giá trị bị bỏ khi phiên kết thúc. Cách xử lý nào phù hợp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Dùng như dữ liệu ngữ cảnh của phiên chat, theo chính sách truy cập của phiên.
+[B] Đọc trực tiếp như trạng thái vận hành thay đổi sau mỗi giao dịch.
+[C] Quản lý phiên bản như một chính sách tham chiếu của khóa học.
+[D] Đưa vào kho truy xuất như tài liệu để trích dẫn.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xem giá trị tồn tại bao lâu và được dùng trong phạm vi nào.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xem giá trị tồn tại bao lâu và được dùng trong phạm vi nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xem giá trị tồn tại bao lâu và được dùng trong phạm vi nào.
+
+=====================================================================================
+CÂU 089 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q089 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-preembedding-sensitive-data-transformation] Preembedding Sensitive Data Transformation
+=====================================================================================
+ĐỀ BÀI:
+Nhóm đã tạo embeddings từ đoạn chat còn nguyên email và số điện thoại. Kết luận nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Embeddings tự động làm dữ liệu ẩn danh nên không cần xử lý thêm.
+[B] Cần áp dụng biến đổi phù hợp trước khi tạo embeddings; embeddings không tự xóa rủi ro định danh.
+[C] Chỉ cần đổi tên tệp chứa embeddings là đủ.
+[D] Có thể bỏ toàn bộ kiểm soát vì đoạn chat dùng nội bộ.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xét xem email và số điện thoại còn xuất hiện trước khi embeddings được tạo.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xét xem email và số điện thoại còn xuất hiện trước khi embeddings được tạo.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xét xem email và số điện thoại còn xuất hiện trước khi embeddings được tạo.
+
+=====================================================================================
+CÂU 090 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q090 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-retrieval-document-metadata-contract] Retrieval Document Metadata Contract
+=====================================================================================
+ĐỀ BÀI:
+Bản ghi nào đáp ứng quy ước metadata để có thể lọc, trích dẫn và cập nhật đáng tin cậy?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] `doc_id=policy-9`, không có URL gốc, `department=CS hoặc computer-science`
+[B] `doc_id=policy-9`, URL gốc, thời điểm lấy, phiên bản, căn cứ quyền, `department=computer-science` theo tập giá trị cho phép
+[C] Hai bản ghi cùng `doc_id=policy-9`; dùng tiêu đề khác nhau để phân biệt
+[D] Có URL và tiêu đề, còn `doc_id` để trống để hệ thống tự suy đoán
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm riêng `doc_id`, URL nguồn và tập giá trị được phép của `department`.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm riêng `doc_id`, URL nguồn và tập giá trị được phép của `department`.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm riêng `doc_id`, URL nguồn và tập giá trị được phép của `department`.
+
+=====================================================================================
+CÂU 091 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q091 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-sentence-boundary-chunker-implementation] Sentence Boundary Chunker Implementation
+=====================================================================================
+ĐỀ BÀI:
+Với dữ liệu đầu vào có dấu câu lẫn dấu xuống dòng, ghép điều kiện kiểm thử của bộ chia theo câu với cách xác minh.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Giới hạn số câu trong một chunk
+  (2) Bảo toàn câu và thứ tự
+  (3) Khoảng trắng ở đầu/cuối
+  (4) Dữ liệu đầu vào rỗng
+
+Cột Phải (Lựa chọn ghép):
+  (A) Không chunk nào vượt `max_sentences_per_chunk`
+  (B) Các câu và dấu câu xuất hiện theo đúng thứ tự đầu vào
+  (C) Mỗi chunk được bỏ khoảng trắng thừa ở đầu và cuối
+  (D) Trả danh sách rỗng
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Đọc từng bất biến rồi tìm đúng phép kiểm xác minh bất biến đó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đọc từng bất biến rồi tìm đúng phép kiểm xác minh bất biến đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đọc từng bất biến rồi tìm đúng phép kiểm xác minh bất biến đó.
+
+=====================================================================================
+CÂU 092 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q092 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-recursive-separator-chunker-implementation] Recursive Separator Chunker Implementation
+=====================================================================================
+ĐỀ BÀI:
+Khi bộ chia đệ quy gặp một token dài hơn giới hạn kích thước và không còn dấu phân tách hữu ích, ghép yêu cầu với hành vi cần có.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Token vẫn phải ngắn dần
+  (2) Các phần đầu ra phải đúng thứ tự
+  (3) Thuật toán phải dừng
+
+Cột Phải (Lựa chọn ghép):
+  (A) Chuyển sang chia theo ký tự có giới hạn
+  (B) Giữ thứ tự văn bản qua các phần đầu ra
+  (C) Không gọi lại mãi với cùng dữ liệu và cùng thứ tự ưu tiên
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Xác định cơ chế làm dữ liệu ngắn dần, bảo toàn thứ tự và chặn lặp vô hạn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định cơ chế làm dữ liệu ngắn dần, bảo toàn thứ tự và chặn lặp vô hạn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định cơ chế làm dữ liệu ngắn dần, bảo toàn thứ tự và chặn lặp vô hạn.
+
+=====================================================================================
+CÂU 093 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q093 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-cosine-score-interpretation] Cosine Score Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Ba nhận định dưới đây nói về điểm tương đồng. Ghép từng tình huống với kết luận được dữ kiện hỗ trợ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Cùng truy vấn, mô hình và chỉ mục: A=0,82; B=0,61
+  (2) Một mô hình khác cho C điểm 0,90 với cùng truy vấn
+  (3) Một đội muốn dùng ngưỡng 0,70 cho mọi mô hình và mọi kho
+
+Cột Phải (Lựa chọn ghép):
+  (A) A xếp trên B trong xếp hạng của quy ước hiện tại
+  (B) Không so sánh trực tiếp 0,90 với các điểm của mô hình/chỉ mục khác
+  (C) Cần hiệu chuẩn bằng đánh giá phù hợp, không khẳng định ngưỡng phổ quát
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Mỗi điểm chỉ có ý nghĩa trong đúng mô hình, chỉ mục và cách đánh giá đã nêu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi điểm chỉ có ý nghĩa trong đúng mô hình, chỉ mục và cách đánh giá đã nêu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi điểm chỉ có ý nghĩa trong đúng mô hình, chỉ mục và cách đánh giá đã nêu.
+
+=====================================================================================
+CÂU 094 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q094 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-euclidean-distance-computation] Euclidean Distance Computation
+=====================================================================================
+ĐỀ BÀI:
+truy vấn Q có khoảng cách tới A là 2, tới B là 5 và tới C là 3 trong cùng không gian vector. Thứ tự gần đến xa đúng là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] A, C, B
+[B] B, C, A
+[C] C, A, B vì 3 lớn hơn 2
+[D] Không thể xếp vì Euclidean không dùng cho vector
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Sắp xếp từ khoảng cách nhỏ nhất đến lớn nhất: 2, rồi 3, rồi 5.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Sắp xếp từ khoảng cách nhỏ nhất đến lớn nhất: 2, rồi 3, rồi 5.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Sắp xếp từ khoảng cách nhỏ nhất đến lớn nhất: 2, rồi 3, rồi 5.
+
+=====================================================================================
+CÂU 095 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q095 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-vector-metric-selection] Vector Metric Selection
+=====================================================================================
+ĐỀ BÀI:
+mô hình đầu ra đã L2-chuẩn hóa và backend quy ước dùng cosine. Lựa chọn nào ít rủi ro nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Trộn thô vector của mô hình khác vào bộ sưu tập hiện tại.
+[B] Giữ mô hình, chuẩn hóa và thước đo tương thích cho kho tài liệu lẫn truy vấn; chuyển đổi cần re-embed/reindex.
+[C] Đổi thước đo chỉ cho truy vấn vì dimension giống nhau.
+[D] Dùng thước đo có điểm lớn nhất trên một truy vấn bất kỳ.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mô hình, cách chuẩn hóa và thước đo phải khớp ở cả tài liệu lẫn truy vấn.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mô hình, cách chuẩn hóa và thước đo phải khớp ở cả tài liệu lẫn truy vấn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mô hình, cách chuẩn hóa và thước đo phải khớp ở cả tài liệu lẫn truy vấn.
+
+=====================================================================================
+CÂU 096 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q096 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-embedding-model-evidence-selection] Embedding Model Evidence Selection
+=====================================================================================
+ĐỀ BÀI:
+Trước khi chuyển mô hình embeddings cho 5M chunk, ghép quyết định cần chốt với bằng chứng hoặc kế hoạch tương ứng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Chọn mô hình theo nhu cầu truy vấn thực tế
+  (2) Chấp nhận chi phí vận hành của chuyển đổi
+  (3) Tránh trộn hai không gian vector trong kho
+  (4) Kiểm soát sự cố sau khi chuyển đổi
+
+Cột Phải (Lựa chọn ghép):
+  (A) Benchmark theo ngôn ngữ và loại truy vấn đại diện
+  (B) Đánh giá SLO độ trễ cùng chi phí lưu trữ, tạo lại embeddings và lập chỉ mục
+  (C) Lập kế hoạch tạo lại embeddings cho toàn kho trước khi chuyển
+  (D) Đặt tiêu chí quay lui hoặc không chuyển nếu quy ước không đạt
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách bốn việc: đánh giá chất lượng, chi phí, tạo lại toàn kho và phương án quay lui.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách bốn việc: đánh giá chất lượng, chi phí, tạo lại toàn kho và phương án quay lui.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách bốn việc: đánh giá chất lượng, chi phí, tạo lại toàn kho và phương án quay lui.
+
+=====================================================================================
+CÂU 097 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q097 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-vector-store-record-contract] Vector Store Record Contract
+=====================================================================================
+ĐỀ BÀI:
+Ghép sự kiện vòng đời với trường bản ghi cần dùng để kiểm tra đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Hiển thị trích dẫn cho kết quả
+  (2) Cập nhật `policy-17` lên phiên bản mới
+  (3) Xóa toàn bộ các chunk của một tài liệu
+
+Cột Phải (Lựa chọn ghép):
+  (A) nguồn URL, mục, phiên bản và danh tính tài liệu/chunk.
+  (B) tài liệu danh tính + phiên bản để thay đúng bản ghi.
+  (C) tài liệu danh tính liên kết mọi chunk cần xóa.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Mỗi thao tác cần đúng trường metadata để truy vết, cập nhật hoặc xóa.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi thao tác cần đúng trường metadata để truy vết, cập nhật hoặc xóa.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi thao tác cần đúng trường metadata để truy vết, cập nhật hoặc xóa.
+
+=====================================================================================
+CÂU 098 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d07-q098 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-vector-store-backend-initialization] Vector Store Backend Initialization
+=====================================================================================
+ĐỀ BÀI:
+Sắp xếp khởi động kiểm tra cho backend kho vector.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Khởi tạo máy khách/backend theo cấu hình.
+  - [B] Mở hoặc tạo đúng bộ sưu tập.
+  - [C] Xác minh bộ sưu tập, embedder, thước đo và trạng thái rỗng/phương án dự phòng.
+  - [D] Chỉ sau đó công bố đang hoạt động backend cho tìm kiếm/thêm.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Trạng thái đang hoạt động chỉ được công bố sau khi backend, bộ sưu tập và cấu hình đã được xác minh.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Trạng thái đang hoạt động chỉ được công bố sau khi backend, bộ sưu tập và cấu hình đã được xác minh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trạng thái đang hoạt động chỉ được công bố sau khi backend, bộ sưu tập và cấu hình đã được xác minh.
+
+=====================================================================================
+CÂU 099 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q099 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-vector-store-document-addition] Vector Store Document Addition
+=====================================================================================
+ĐỀ BÀI:
+Kho đã có `A::0` với nội dung cũ. Lần thêm mới đưa một bản ghi cũng có `record_id=A::0` nhưng nội dung khác. Quy ước không cho phép ghi đè im lặng. Điều kiện kiểm thử nào đúng nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Ghi đè A::0 vì `record_id` trùng nên hệ thống tự chọn bản mới.
+[B] Tạo A::0 thứ hai để giữ cả hai bản ghi cùng danh tính.
+[C] Từ chối hoặc báo lỗi xung đột danh tính trước khi thay đổi kho; chỉ cập nhật qua luồng có quy ước rõ ràng.
+[D] Đổi ngẫu nhiên `record_id` của bản cũ mà không ghi dấu vết.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đặt câu hỏi: hai nội dung khác nhau có được phép dùng cùng một danh tính ổn định hay không?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đặt câu hỏi: hai nội dung khác nhau có được phép dùng cùng một danh tính ổn định hay không?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đặt câu hỏi: hai nội dung khác nhau có được phép dùng cùng một danh tính ổn định hay không?
+
+=====================================================================================
+CÂU 100 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q100 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-vector-semantic-search-implementation] Vector Semantic Search Implementation
+=====================================================================================
+ĐỀ BÀI:
+Kho có ba bản ghi điểm 0,9; 0,9; 0,7. Quy ước phân giải đồng điểm theo `record_id` tăng dần và `top_k=2`. Dữ liệu kiểm thử nào kiểm tra đúng hành vi khi đồng điểm?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chỉ kiểm bản ghi điểm 0,7 bị loại.
+[B] Gán hai bản ghi 0,9 có record_id đảo thứ tự rồi kiểm tra kết quả theo record_id tăng dần.
+[C] Tăng top_k lên 100 để đồng điểm tự biến mất.
+[D] Chỉ kiểm điểm lớn nhất không âm.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Muốn kiểm quy tắc đồng điểm, dữ liệu kiểm thử phải có đúng các điểm bằng nhau.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Muốn kiểm quy tắc đồng điểm, dữ liệu kiểm thử phải có đúng các điểm bằng nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Muốn kiểm quy tắc đồng điểm, dữ liệu kiểm thử phải có đúng các điểm bằng nhau.
+
+=====================================================================================
+CÂU 101 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q101 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-vector-search-metadata-prefilter] Vector Search Metadata Prefilter
+=====================================================================================
+ĐỀ BÀI:
+Lọc yêu cầu `department=engineering` và `semester=2026`. Bản ghi R có department đúng nhưng thiếu semester; bản ghi S có cả hai đúng. Kết quả đủ điều kiện đúng là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] R và S đều khớp vì chỉ cần một điều kiện đúng.
+[B] Chỉ S khớp; R thiếu trường bắt buộc.
+[C] Chỉ R khớp vì thiếu trường được coi là ký tự đại diện.
+[D] Không bản ghi nào khớp vì lọc có hai điều kiện.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Lọc nhiều điều kiện dùng đồng thời tất cả điều kiện bắt buộc.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Lọc nhiều điều kiện dùng đồng thời tất cả điều kiện bắt buộc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Lọc nhiều điều kiện dùng đồng thời tất cả điều kiện bắt buộc.
+
+=====================================================================================
+CÂU 102 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q102 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-vector-store-document-deletion] Vector Store Document Deletion
+=====================================================================================
+ĐỀ BÀI:
+Sau khi `policy-v3` thay `policy-v2`, ghép mục tiêu vòng đời với thao tác cần có để kho không trả về chính sách cũ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Kết quả tìm kiếm thông thường chỉ dùng chính sách hiện hành
+  (2) Trích dẫn một kết quả từ v3 phải phân biệt rõ với v2
+  (3) Dọn dữ liệu v2 khi hết thời gian lưu giữ
+
+Cột Phải (Lựa chọn ghép):
+  (A) Lọc theo phiên bản hoặc trạng thái hiệu lực trước khi trả kết quả
+  (B) Giữ `doc_id`, phiên bản và URL nguồn trong metadata/kết quả
+  (C) Xóa theo danh tính tài liệu có phiên bản để chỉ tác động v2
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách ba nhu cầu: lọc bản hiện hành, trích dẫn đúng bản và dọn đúng bản cũ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách ba nhu cầu: lọc bản hiện hành, trích dẫn đúng bản và dọn đúng bản cũ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách ba nhu cầu: lọc bản hiện hành, trích dẫn đúng bản và dọn đúng bản cũ.
+
+=====================================================================================
+CÂU 103 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q103 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-retrieval-control-tuning] Retrieval Control Tuning
+=====================================================================================
+ĐỀ BÀI:
+k=2 bỏ bằng chứng thứ ba; k=8 thêm nhiều chunk nhiễu. Khi giữ ngưỡng/lọc cố định, bước thử tiếp theo tốt nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Đổi đồng thời k, ngưỡng và mô hình embeddings.
+[B] So k=2, 3, 4 trên cùng bộ truy vấn đã đóng băng rồi ghi độ bao phủ và bằng chứng trùng lặp.
+[C] Chọn k=8 vì nhiều chunk luôn tốt hơn.
+[D] Bỏ bộ kiểm thử vì điểm truy xuất thay đổi theo truy vấn.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dựa vào bằng chứng của từng bước, không đổi nhiều biến kiểm soát cùng lúc.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Dựa vào bằng chứng của từng bước, không đổi nhiều biến kiểm soát cùng lúc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dựa vào bằng chứng của từng bước, không đổi nhiều biến kiểm soát cùng lúc.
+
+=====================================================================================
+CÂU 104 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q104 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ingestion-chunk-metadata-propagation] Ingestion Chunk Metadata Propagation
+=====================================================================================
+ĐỀ BÀI:
+Tệp có `doc_id=library`, `audience=student`, `source_url=...` và tạo ba chunk. Ghép trường trong bản ghi với điều kiện kiểm tra đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Danh tính chunk
+  (2) Metadata được kế thừa
+  (3) Chỉ số chunk
+
+Cột Phải (Lựa chọn ghép):
+  (A) Mỗi chunk có danh tính ổn định liên kết tới tài liệu library.
+  (B) Cả ba giữ audience và source_url để lọc và trích dẫn.
+  (C) Có giá trị 0, 1, 2 duy nhất trong cùng tài liệu/phiên bản.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: So từng trường cấp tài liệu với trường cấp chunk trên cả ba chunk.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So từng trường cấp tài liệu với trường cấp chunk trên cả ba chunk.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng trường cấp tài liệu với trường cấp chunk trên cả ba chunk.
+
+=====================================================================================
+CÂU 105 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q105 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-grounded-context-prompt-assembly] Grounded Context Prompt Assembly
+=====================================================================================
+ĐỀ BÀI:
+Kết quả truy xuất gồm C1 là chính sách hiện hành có URL, C2 là blog không nguồn, C3 là chính sách cũ. Ghép tình trạng với cách chọn ngữ cảnh có căn cứ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) C1 có phiên bản và trạng thái hiệu lực hiện hành
+  (2) C2 không có nguồn để trích dẫn
+  (3) C3 là chính sách cũ cho hạn chót mới
+  (4) Không còn bằng chứng đủ sau khi sàng lọc
+
+Cột Phải (Lựa chọn ghép):
+  (A) Dùng làm nguồn chính nếu trả lời đúng truy vấn.
+  (B) Loại hoặc hạ ưu tiên, không dùng làm nguồn chính.
+  (C) Không dùng làm nguồn chính cho hạn chót hiện hành.
+  (D) Trả không đủ thông tin thay vì suy đoán.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách câu hỏi “có phải nguồn đáng tin để dùng không?” khỏi “điểm có cao không?”.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách câu hỏi “có phải nguồn đáng tin để dùng không?” khỏi “điểm có cao không?”.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách câu hỏi “có phải nguồn đáng tin để dùng không?” khỏi “điểm có cao không?”.
+
+=====================================================================================
+CÂU 106 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q106 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-benchmark-query-gold-design] Retrieval Benchmark Query Gold Design
+=====================================================================================
+ĐỀ BÀI:
+Ghép trường của bộ kiểm thử với vai trò cần được khóa trước khi so chiến lược.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) truy vấn
+  (2) Tài liệu/chunk mong đợi
+  (3) Ràng buộc metadata
+  (4) Quy tắc đóng băng
+
+Cột Phải (Lựa chọn ghép):
+  (A) Nêu nhu cầu trả lời cụ thể, không mơ hồ.
+  (B) Xác định bằng chứng đáp án chuẩn trước khi đánh giá.
+  (C) Nêu đối tượng, phiên bản và bộ lọc phải thỏa.
+  (D) Không sửa truy vấn/đáp án chuẩn sau khi đã thấy bên thắng.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Câu hỏi, đáp án chuẩn, bằng chứng và điều kiện metadata phải được khóa trước khi chạy.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Câu hỏi, đáp án chuẩn, bằng chứng và điều kiện metadata phải được khóa trước khi chạy.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Câu hỏi, đáp án chuẩn, bằng chứng và điều kiện metadata phải được khóa trước khi chạy.
+
+=====================================================================================
+CÂU 107 [🟡 Tính toán điền số (Numeric)] - Mã: d07-q107 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-retrieval-ranking-metric-computation] Retrieval Ranking Metric Computation
+=====================================================================================
+ĐỀ BÀI:
+mức liên quan top-3 là `[2,0,1]`; top-3 lý tưởng là `[2,1,0]`. Dùng `DCG=Σ(2^rel−1)/log2(rank+1)`, nhập NDCG@3 làm tròn ba chữ số.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính DCG của xếp hạng thực tế và IDCG của xếp hạng lý tưởng trước khi chia.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính DCG của xếp hạng thực tế và IDCG của xếp hạng lý tưởng trước khi chia.
+
+=====================================================================================
+CÂU 108 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q108 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-retrieved-chunk-coherence-evaluation] Retrieved Chunk Coherence Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Ghép lỗi của chunk được truy xuất với lớp sửa chữa phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Điều kiện bị cắt qua ranh giới
+  (2) Chunk trộn hai chính sách không liên quan
+  (3) Chunk thiếu tiêu đề hoặc ngoại lệ cần thiết
+
+Cột Phải (Lựa chọn ghép):
+  (A) Điều chỉnh ranh giới/overlap và kiểm truy vấn đi qua ranh giới.
+  (B) Sửa chiến lược chia theo mục.
+  (C) Giữ đường dẫn tiêu đề và đủ ngữ cảnh trong chunk.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Xác định ý nghĩa bị mất ở ranh giới, mục hay tiêu đề trước khi chọn lớp sửa.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định ý nghĩa bị mất ở ranh giới, mục hay tiêu đề trước khi chọn lớp sửa.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định ý nghĩa bị mất ở ranh giới, mục hay tiêu đề trước khi chọn lớp sửa.

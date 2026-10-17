@@ -1,0 +1,206 @@
+=== TỔNG HỢP TOÀN BỘ CÂU HỎI QUIZ: 07_Day07 ===
+Tổng số câu: 10 câu
+
+CÂU 01 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép tác vụ với cách cung cấp dữ liệu phù hợp nhất.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Ba đoạn chính sách đã có sẵn trong lời nhắc
+    * Kho 50.000 chính sách riêng tư, đổi hằng tuần, cần trích dẫn
+    * Tra trạng thái đơn hàng hiện tại
+    * Ổn định giọng trả lời qua nhiều yêu cầu
+    * Tác vụ đã đủ bằng mô hình và dữ liệu đầu vào hiện tại
+  [Cột phải / Ý nghĩa]:
+    -> Retrieval
+    -> Tool/API
+    -> Fine-tuning
+    -> Không cần dữ liệu bên ngoài
+    -> Ngữ cảnh trực tiếp
+
+Gợi ý / Hướng dẫn giải:
+  💡 Hỏi dữ liệu nhỏ hay lớn, tĩnh hay thời gian thực, và mục tiêu là thông tin hay hành vi.
+
+============================================================
+CÂU 02 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép nguồn dữ liệu với loại dữ liệu.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Sổ tay chính sách tuyển sinh
+    * Trạng thái phiếu yêu cầu vừa thay đổi
+    * Ngôn ngữ ưa thích của người học trong phiên chat
+  [Cột phải / Ý nghĩa]:
+    -> Dữ liệu vận hành
+    -> Dữ liệu tri thức
+    -> Dữ liệu ngữ cảnh
+
+Gợi ý / Hướng dẫn giải:
+  💡 Phân loại theo thứ nguồn biểu diễn, không theo định dạng tệp.
+
+============================================================
+CÂU 03 [MATCHING] (Độ khó: medium)
+Đề bài:
+Một danh mục có ba nguồn: sổ tay công khai đã có phiên bản; đoạn chat nội bộ có email, chưa rõ người phụ trách; trang hỏi đáp do bộ phận hỗ trợ cập nhật hằng tuần.
+
+Ghép từng nguồn với quyết định đúng trước khi đưa vào kho truy xuất.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Sổ tay công khai đã có phiên bản, do Phòng học vụ sở hữu và cho phép truy cập
+    * Đoạn chat nội bộ có email, chưa rõ người phụ trách
+    * Trang hỏi đáp do bộ phận hỗ trợ sở hữu, được cập nhật hằng tuần
+  [Cột phải / Ý nghĩa]:
+    -> Đưa vào sau khi ghi người phụ trách, quyền truy cập, phiên bản và lịch làm mới
+    -> Ghi người phụ trách và lịch cập nhật trước khi quyết định đưa vào theo chính sách
+    -> Đánh dấu chờ xử lý hoặc loại ra cho đến khi rõ quyền và người phụ trách
+
+Gợi ý / Hướng dẫn giải:
+  💡 Không index nguồn chỉ vì đọc được file.
+
+============================================================
+CÂU 04 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép nhu cầu truy xuất với phép biến đổi tối thiểu.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Không cần danh tính cá nhân
+    * Cần nối các bản ghi của cùng một người nhưng không cần biết tên
+    * Chỉ cần nhóm tuổi
+    * Cần giữ vai trò nhưng bỏ tên thật
+  [Cột phải / Ý nghĩa]:
+    -> Thay bằng tên giữ chỗ thể hiện vai trò
+    -> Khái quát hóa
+    -> Loại bỏ
+    -> Mã băm ổn định
+
+Gợi ý / Hướng dẫn giải:
+  💡 Bắt đầu từ yêu cầu truy vấn: cần bỏ, che, khái quát hay giữ trường nào?
+
+============================================================
+CÂU 05 [MATCHING] (Độ khó: medium)
+Đề bài:
+Nhóm thu thập 12 trang chính sách công khai của một trường.
+
+Ghép mỗi việc cần kiểm soát với cách thực hiện phù hợp để nguồn gốc của từng tệp có thể được kiểm tra lại.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Quyền truy cập
+    * Phạm vi thu thập
+    * Nguồn gốc của từng tệp
+  [Cột phải / Ý nghĩa]:
+    -> Chỉ lấy đúng URL đã duyệt, với tốc độ hợp lý
+    -> Kiểm tra điều khoản và `robots.txt`; không vượt qua màn hình đăng nhập
+    -> Lưu URL gốc, thời điểm lấy, phiên bản hoặc mã băm và căn cứ quyền sử dụng
+
+Gợi ý / Hướng dẫn giải:
+  💡 Người kiểm tra phải lần lại được tệp, nguồn gốc, phiên bản và quyết định đã đưa ra.
+
+============================================================
+CÂU 06 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép dữ liệu đầu vào với cách xử lý.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * PDF số có lớp chữ
+    * PDF chỉ gồm ảnh quét
+    * Bài viết HTML
+    * Tệp `.pdf` nhưng chữ ký tệp là ZIP của bộ Office
+    * Dạng tệp nhị phân không hỗ trợ
+  [Cột phải / Ý nghĩa]:
+    -> Dùng trình phân tích tài liệu Office và ghi nhật ký việc đuôi tệp không khớp nội dung
+    -> Từ chối dạng không hỗ trợ và nêu lý do
+    -> Luồng OCR
+    -> Trình phân tích lớp chữ của PDF
+    -> Trình phân tích/làm sạch HTML
+
+Gợi ý / Hướng dẫn giải:
+  💡 Kiểm MIME, chữ ký tệp và nội dung thực; đừng chỉ tin phần mở rộng.
+
+============================================================
+CÂU 07 [MATCHING] (Độ khó: medium)
+Đề bài:
+Văn bản trích xuất có lỗi `retrievai`, tiêu đề lặp ở mọi trang, hai cột bị xen dòng và một con số mờ. Ghép từng lỗi với cách xử lý được phép.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Ảnh gốc xác nhận `retrievai` là `retrieval`
+    * Tiêu đề lặp ở mọi trang
+    * Hai cột bị xen dòng
+    * Con số vẫn mờ trên ảnh gốc
+  [Cột phải / Ý nghĩa]:
+    -> Đánh dấu chưa đọc được, không đoán giá trị
+    -> Loại tiêu đề lặp, đồng thời lưu quy tắc đã áp dụng
+    -> Dựng lại thứ tự đọc theo bố cục ảnh gốc
+    -> Sửa theo ảnh gốc và lưu dấu vết sửa
+
+Gợi ý / Hướng dẫn giải:
+  💡 Chỉ sửa điều nguồn cho phép xác minh.
+
+============================================================
+CÂU 08 [MATCHING] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ghép nguồn với dạng biểu diễn phù hợp nhất.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Chính sách có tiêu đề/danh sách/bảng đơn giản
+    * Trang có bố cục/bảng phức tạp cần giữ quan hệ DOM
+    * Nhật ký kể lại sự việc gần như không có cấu trúc
+    * Danh mục có trường dữ liệu/lược đồ ổn định
+  [Cột phải / Ý nghĩa]:
+    -> JSON/YAML
+    -> HTML đã làm sạch
+    -> Văn bản thuần
+    -> Markdown
+
+Gợi ý / Hướng dẫn giải:
+  💡 Không có một định dạng tốt nhất cho mọi tài liệu.
+
+============================================================
+CÂU 09 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Một trang có tiêu đề `Hoàn phí`, điều kiện chung, bảng hạn chót và ghi chú “chỉ áp dụng cho học viên trao đổi”. Bản văn bản thuần đặt ghi chú giữa các điều kiện chung.
+
+Cách biểu diễn nào giữ đúng ý nghĩa?
+
+Các lựa chọn:
+  A. Giữ ghi chú như điều kiện chung cho toàn mục Hoàn phí.
+  B. Chuyển bảng thành một câu dài và gắn ghi chú vào cuối trang.
+  C. Bỏ ghi chú vì văn bản thuần không giữ được vị trí chính xác.
+  D. Giữ tiêu đề và bảng có cấu trúc; gắn ghi chú vào hàng hoặc chương trình học viên trao đổi mà nó bổ nghĩa.
+
+Gợi ý / Hướng dẫn giải:
+  💡 Điều quan trọng không chỉ là từ ngữ mà là ngoại lệ thuộc mục nào.
+
+============================================================
+CÂU 10 [MATCHING] (Độ khó: medium)
+Đề bài:
+Quy ước tách câu hỗ trợ `. `, `! `, `? `, `.` ngay trước dấu xuống dòng và dấu chấm ở cuối văn bản; mỗi chunk có tối đa hai câu. Ghép yêu cầu với điều kiện kiểm thử đúng.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Giữ nguyên nội dung câu
+    * Không đảo thứ tự
+    * Giới hạn nhóm
+    * dữ liệu đầu vào rỗng
+  [Cột phải / Ý nghĩa]:
+    -> Không chunk nào chứa quá hai câu.
+    -> Trả danh sách rỗng, không trả chuỗi rỗng hay giá trị không phải danh sách.
+    -> Các câu ghép lại theo thứ tự vẫn giữ nguyên nội dung và dấu câu của từng câu.
+    -> Các câu xuất hiện theo cùng thứ tự như đầu vào.
+
+Gợi ý / Hướng dẫn giải:
+  💡 Theo quy ước dấu kết thúc cụ thể và nhóm tuần tự.
+
+============================================================

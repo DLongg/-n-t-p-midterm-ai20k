@@ -1,0 +1,481 @@
+[
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Artifact phải chứng minh thành công/lỗi của đúng ranh giới.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-foundations",
+    "max_points": 4,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Source→ingest"
+        },
+        {
+          "id": "x2",
+          "text": "Raw→canonical"
+        },
+        {
+          "id": "x3",
+          "text": "Canonical→publish"
+        },
+        {
+          "id": "x4",
+          "text": "Alert→response"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r1",
+          "text": "Manifest có source/version/count"
+        },
+        {
+          "id": "r3",
+          "text": "Kết quả quality/sign-off + ID snapshot đang hoạt động"
+        },
+        {
+          "id": "r4",
+          "text": "Bản ghi runbook sự cố có owner"
+        },
+        {
+          "id": "r2",
+          "text": "So sánh trước/sau transform + kết quả contract"
+        }
+      ],
+      "prompt": "Ghép lần bàn giao với artifact bằng chứng phù hợp nhất.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      }
+    },
+    "question_id": "d10-q004",
+    "primary_kc_id": "kc-data-pipeline-owner-artifact-assignment",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Agent chỉ thấy artifact sau activation, không thấy raw tự động.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-architecture",
+    "max_points": 6,
+    "interaction": {
+      "type": "ordering",
+      "prompt": "Sắp data path và ranh giới publish theo đúng thứ tự.",
+      "options": [
+        {
+          "text": "Source",
+          "option_id": "o4"
+        },
+        {
+          "text": "Ingestion",
+          "option_id": "o5"
+        },
+        {
+          "text": "Raw storage",
+          "option_id": "o3"
+        },
+        {
+          "text": "Kích hoạt serving index",
+          "option_id": "o7"
+        },
+        {
+          "text": "Canonical storage",
+          "option_id": "o1"
+        },
+        {
+          "text": "Agent retrieval",
+          "option_id": "o2"
+        },
+        {
+          "text": "Transform sang canonical data",
+          "option_id": "o6"
+        }
+      ],
+      "presentation_policy": {
+        "do_not_expose_option_ids": true,
+        "shuffle_initial_order_at_delivery": true
+      }
+    },
+    "question_id": "d10-q008",
+    "primary_kc_id": "kc-ai-data-pipeline-boundary-model",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Xác định raw được phép nằm đâu và compute nằm đâu.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-architecture",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nRaw data chứa PII không được phép vào warehouse; compute ở target hạn chế; quy tắc transform ổn định. Chọn pattern?",
+      "choices": [
+        {
+          "text": "ELT: load toàn bộ raw PII vào target rồi tính sau",
+          "choice_id": "b"
+        },
+        {
+          "text": "CDC vì rule ổn định",
+          "choice_id": "d"
+        },
+        {
+          "text": "ETL: transform/redact trước load, giữ raw ở vùng được phép riêng",
+          "choice_id": "a"
+        },
+        {
+          "text": "Streaming vì PII",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d10-q010",
+    "primary_kc_id": "kc-etl-elt-tradeoff-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Real-time chỉ đáng khi độ trễ gây hại.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-architecture",
+    "max_points": 4,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Policy PDF đổi mỗi tháng, SLA 24h"
+        },
+        {
+          "id": "x2",
+          "text": "Fraud event cần phản ứng <2s"
+        },
+        {
+          "id": "x3",
+          "text": "Phân tích theo ngày nhưng cảnh báo gian lận cần theo thời gian thực"
+        },
+        {
+          "id": "x4",
+          "text": "Nguồn nhỏ cập nhật tuần"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r2",
+          "text": "Streaming liên tục"
+        },
+        {
+          "id": "r3",
+          "text": "Hybrid: stream gian lận + batch phân tích"
+        },
+        {
+          "id": "r4",
+          "text": "Batch theo tuần"
+        },
+        {
+          "id": "r1",
+          "text": "Batch theo ngày"
+        }
+      ],
+      "prompt": "Ghép trường hợp sử dụng với cadence hợp lý.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      }
+    },
+    "question_id": "d10-q012",
+    "primary_kc_id": "kc-batch-streaming-ingestion-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Consumer cần current state hay từng change?",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "DB có update/delete liên tục, consumer cần lịch sử thay đổi và độ trễ <10s; source hỗ trợ log. Chọn?",
+      "choices": [
+        {
+          "text": "Snapshot tuần",
+          "choice_id": "b"
+        },
+        {
+          "text": "CDC với offset/lag/schema/poison monitoring",
+          "choice_id": "a"
+        },
+        {
+          "text": "Offset pagination",
+          "choice_id": "c"
+        },
+        {
+          "text": "OCR",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d10-q014",
+    "primary_kc_id": "kc-snapshot-cdc-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Fetched không đồng nghĩa processed successfully.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Các trang theo updated_at: p1≤10:00 thành công, p2≤10:05 thất bại, p3 chưa chạy. Checkpoint an toàn?",
+      "choices": [
+        {
+          "text": "10:00 và chạy lại p2",
+          "choice_id": "a"
+        },
+        {
+          "text": "10:10 để tránh lặp",
+          "choice_id": "d"
+        },
+        {
+          "text": "Job start time",
+          "choice_id": "c"
+        },
+        {
+          "text": "10:05 vì đã lấy p2",
+          "choice_id": "b"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d10-q016",
+    "primary_kc_id": "kc-incremental-watermark-checkpoint",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Khi có Retry-After hợp lệ, không tự chọn delay ngắn hơn.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "numeric_input",
+      "prompt": "Bối cảnh:\nAPI trả 429 với `Retry-After: 12`. Đây là attempt 2/4; header hợp lệ.\n\nCâu hỏi:\nDelay tối thiểu trước attempt kế tiếp là bao nhiêu?",
+      "required_unit": "giây"
+    },
+    "question_id": "d10-q019",
+    "primary_kc_id": "kc-api-rate-limit-backoff-jitter",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Insert/delete làm vị trí offset thay đổi.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Feed có insert/delete liên tục giữa các request và API cấp opaque stable cursor. Chọn gì?",
+      "choices": [
+        {
+          "text": "Cursor, lưu cursor và contract về thứ tự",
+          "choice_id": "a"
+        },
+        {
+          "text": "Offset vì page number dễ đọc",
+          "choice_id": "b"
+        },
+        {
+          "text": "Random sample",
+          "choice_id": "d"
+        },
+        {
+          "text": "Restart full feed mỗi page",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d10-q022",
+    "primary_kc_id": "kc-api-cursor-offset-pagination-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tách last success khỏi failed unit identity.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-ingestion",
+    "max_points": 4,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nCác trang C1,C2,C3,C4; C1,C2 thành công, C3 timeout, C4 chưa lấy. Cách giữ checkpoint và replay nào an toàn nhất?",
+      "choices": [
+        {
+          "text": "Chạy lại từ C1 mỗi khi một trang timeout",
+          "choice_id": "d"
+        },
+        {
+          "text": "Lưu C3 cùng lỗi/lần thử, giữ checkpoint ở C2, chạy lại C3 idempotent rồi mới lấy C4",
+          "choice_id": "a"
+        },
+        {
+          "text": "Bỏ C3 và lấy C4 để pipeline không bị chậm",
+          "choice_id": "c"
+        },
+        {
+          "text": "Đặt checkpoint ở C4 để lần sau không lặp dữ liệu",
+          "choice_id": "b"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d10-q024",
+    "primary_kc_id": "kc-partial-page-failure-replay",
+    "grading_method": "criterion_rubric",
+    "question_version": 1,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Filename là location, không phải authority.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day10-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "`policy.pdf` được rename thành `leave-policy.pdf` nhưng bytes/hash và effective date không đổi. Xử lý?",
+      "choices": [
+        {
+          "text": "Serve cả hai như active",
+          "choice_id": "c"
+        },
+        {
+          "text": "Giữ logical document/version, cập nhật alias/path provenance",
+          "choice_id": "a"
+        },
+        {
+          "text": "Chọn file mới theo mtime",
+          "choice_id": "d"
+        },
+        {
+          "text": "Tạo policy version mới chỉ vì filename",
+          "choice_id": "b"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d10-q026",
+    "primary_kc_id": "kc-document-logical-version-authority",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  }
+]

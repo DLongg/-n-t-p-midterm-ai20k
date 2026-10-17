@@ -1,0 +1,188 @@
+=== TỔNG HỢP TOÀN BỘ CÂU HỎI QUIZ: 13_Day13-monitoring-logging-observability ===
+Tổng số câu: 10 câu
+
+CÂU 01 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Dashboard đã alert khi error rate >5%. Hôm nay user báo một kiểu sai mới nhưng mọi threshold đã biết đều xanh.
+
+Câu hỏi:
+Cách tiếp cận nào đúng với câu hỏi mới?
+
+Các lựa chọn:
+  A. Điều tra câu hỏi mới từ telemetry
+  B. Thêm một threshold error rate khác rồi gọi đó là observability
+  C. Bỏ toàn bộ monitoring vì nó chỉ trả lời known failures
+  D. Đổi sang vendor observability khác mà không đổi evidence
+
+Gợi ý / Hướng dẫn giải:
+  💡 Đối chiếu các lựa chọn với: Predefined indicator, Known failure mode.
+
+============================================================
+CÂU 02 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+API trả 200, P95 ổn và CPU thấp nhưng chi phí tăng gấp ba, tool-call success chỉ 60% và câu trả lời bắt đầu bịa.
+
+Câu hỏi:
+Kết luận nào đầy đủ nhất?
+
+Các lựa chọn:
+  A. Cần signal riêng cho cost, tool và quality
+  B. Chỉ latency đủ đại diện mọi failure của AI service
+  C. HTTP 200 và CPU thấp chứng minh agent khỏe
+  D. Tăng log level sẽ tự phát hiện hallucination
+
+Gợi ý / Hướng dẫn giải:
+  💡 Đối chiếu các lựa chọn với: Correctness dù status success, Work tính tiền theo token.
+
+============================================================
+CÂU 03 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+Incident bắt đầu 09:00, alert lúc 09:08, mitigation hoàn tất 09:38.
+
+Câu hỏi:
+MTTD và MTTR nào đúng nếu MTTR tính từ detection tới recovery?
+
+Các lựa chọn:
+  A. MTTD 8 phút; MTTR 30 phút
+  B. Cả hai đều 38 phút
+  C. MTTD 38 phút; MTTR 8 phút
+  D. MTTD 30 phút; MTTR 38 phút
+
+Gợi ý / Hướng dẫn giải:
+  💡 Đối chiếu các lựa chọn với: Observe-analyze-act, So với objective.
+
+============================================================
+CÂU 04 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Câu hỏi là “request req-42 chậm ở bước model hay retrieval, và payload nào gây lỗi?”.
+
+Câu hỏi:
+Bộ signal tối thiểu phù hợp?
+
+Các lựa chọn:
+  A. Chỉ CPU host
+  B. Chỉ thumbs-up của user
+  C. Chỉ counter tổng request
+  D. Trace + correlated log
+
+Gợi ý / Hướng dẫn giải:
+  💡 Đối chiếu các lựa chọn với: Aggregate metric, Detailed event log.
+
+============================================================
+CÂU 05 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+Latency, traffic, error và saturation đều tốt; 20% câu trả lời lại trái policy source.
+
+Câu hỏi:
+Signal nào trực tiếp lấp khoảng trống?
+
+Các lựa chọn:
+  A. Tăng log retention nhưng không chấm output
+  B. Chỉ theo dõi HTTP status
+  C. Thêm host uptime
+  D. Sampled online quality evaluation
+
+Gợi ý / Hướng dẫn giải:
+  💡 Đối chiếu các lựa chọn với: HTTP success khác correctness, Output quality chưa chứng minh.
+
+============================================================
+CÂU 06 [MATCHING] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+Một AI service theo dõi bốn loại evidence.
+
+Câu hỏi:
+Ghép measurement với metric family chính.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * TTFT P95
+    * Tool-call failure rate
+    * Cost per task
+    * Sampled groundedness
+  [Cột phải / Ý nghĩa]:
+    -> Reliability
+    -> Performance
+    -> Quality
+    -> Cost
+
+Gợi ý / Hướng dẫn giải:
+  💡 Hỏi mỗi measurement đang mô tả tốc độ, outcome, tiền hay chất lượng.
+
+============================================================
+CÂU 07 [MATCHING] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+User báo agent chậm và worker queue có dấu hiệu saturation.
+
+Câu hỏi:
+Ghép signal với vai trò điều tra.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Request rate
+    * Request error rate
+    * Request duration
+    * Worker utilization
+    * Queue saturation
+  [Cột phải / Ý nghĩa]:
+    -> RED latency symptom
+    -> USE resource use
+    -> RED traffic
+    -> USE pressure
+    -> RED failure symptom
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tách user-visible request signal khỏi resource signal.
+
+============================================================
+CÂU 08 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+100 request đã sort; request thứ 95 mất 4,8s, median 1,2s; TTFT P95 là 0,7s.
+
+Câu hỏi:
+Diễn giải nào đúng?
+
+Các lựa chọn:
+  A. TTFT 0,7s nghĩa total latency 0,7s
+  B. 95% request chậm hơn 4,8s
+  C. Completion P95≈4,8s; TTFT P95≈0,7s
+  D. P95 là trung bình của 95 request đầu
+
+Gợi ý / Hướng dẫn giải:
+  💡 Đối chiếu các lựa chọn với: Median, P95/P99 tail.
+
+============================================================
+CÂU 09 [NUMERIC_INPUT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Mỗi lượt chat độc lập có 1% khả năng latency vượt 5s. User thực hiện 10 lượt.
+
+Câu hỏi:
+Tính xác suất gặp ít nhất một lượt vượt 5s, làm tròn hai chữ số phần trăm.
+
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tính xác suất không có tail ở cả 10 lượt trước.
+
+============================================================
+CÂU 10 [ORDERING] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Xếp signal từ rẻ/nhanh nhưng evidence yếu hơn tới chậm/đắt nhưng gần outcome hơn.
+
+Câu hỏi:
+Sắp thứ tự layer.
+
+Các bước cần sắp xếp thứ tự:
+
+Gợi ý / Hướng dẫn giải:
+  💡 Xếp theo cost/lag/evidence strength, không coi layer nào là truth tuyệt đối.
+
+============================================================

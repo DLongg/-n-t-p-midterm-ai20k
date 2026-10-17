@@ -1,0 +1,3840 @@
+=====================================================================================
+VLEARN - KHÓA 4 PHASE 1: NỀN TẢNG & MINI HACKATHON
+DAY 01: NGÂN HÀNG ĐỀ THI MỞ RỘNG TOÀN DIỆN (150 CÂU HỎI & HƯỚNG DẪN GIẢI CHI TIẾT)
+=====================================================================================
+
+THỐNG KÊ NGÂN HÀNG ĐỀ THI Day 01:
+- Tổng số câu hỏi trong ngân hàng: 150 câu (Bao phủ 57 chủ đề kiến thức / Knowledge Components)
+- Số câu hỏi trắc nghiệm tương tác trực tuyến (Servable): 101 câu
+- Số câu tự luận / viết code thực hành (Short Text): 49 câu
+- Lượt thi kiểm tra chuẩn Vlearn: Mỗi lượt rút ngẫu nhiên 15 câu.
+
+=====================================================================================
+
+=====================================================================================
+CÂU 001 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q001 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-taxonomy-relations] Ai Taxonomy Relations
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+1. Một mô hình dùng bảng số liệu để dự đoán khách hàng có rời bỏ dịch vụ hay không.
+2. Một mô hình dùng mạng nơ-ron để tạo ảnh từ mô tả bằng văn bản.
+3. Một mô hình ngôn ngữ dự đoán token kế tiếp.
+
+Câu hỏi:
+Chọn mọi phát biểu đúng về quan hệ giữa AI, machine learning, deep learning, generative AI và LLM.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] LLM là mô hình nền tảng chuyên về ngôn ngữ, không bao quát toàn bộ AI.
+[B] Hệ thống (2) là AI tạo sinh (`generative AI`) và dùng deep learning.
+[C] Cả ba đều nằm trong phạm vi AI.
+[D] Hệ thống (1) thuộc AI tạo sinh vì nó tạo ra một dự báo.
+[E] LLM là tên gọi chung cho mọi hệ thống AI dùng dữ liệu.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 CHỌN CẢ 3 ĐÁP ÁN ĐÚNG: A, B, C
+[A] LLM là mô hình nền tảng chuyên về ngôn ngữ, không bao quát toàn bộ AI.
+[B] Hệ thống (2) là AI tạo sinh (`generative AI`) và dùng deep learning.
+[C] Cả ba đều nằm trong phạm vi AI.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Hệ thống (1) là ML dạng bảng (discriminative/predictive); hệ thống (2) và (3) thuộc Generative AI. Cả ba đều nằm trong phạm vi AI. LLM là một nhánh tập trung vào ngôn ngữ, không đại diện cho toàn bộ AI.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xét cả phạm vi bao-hàm lẫn việc hệ thống đang dự báo, sinh nội dung hay xử lý ngôn ngữ.
+
+=====================================================================================
+CÂU 002 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q002 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-taxonomy-relations] Ai Taxonomy Relations
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mỗi mô tả dưới đây thuộc một phạm vi trong hệ AI.
+
+Câu hỏi:
+Ghép mỗi mô tả với nhãn hẹp nhất phù hợp. Một phạm vi hẹp vẫn có thể nằm trong các phạm vi rộng hơn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Thuật toán cây quyết định học từ dữ liệu để phân loại hồ sơ
+  (2) Mạng nơ-ron nhiều tầng tạo nhạc
+  (3) Mô hình quy mô lớn sinh và xử lý ngôn ngữ
+
+Cột Phải (Lựa chọn ghép):
+  (A) Học máy (`machine learning`)
+  (B) AI tạo sinh (`generative AI`) dùng deep learning
+  (C) LLM (mô hình ngôn ngữ lớn)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Chọn nhãn hẹp nhất được mô tả trực tiếp, không chọn nhãn rộng chỉ vì cũng đúng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chọn nhãn hẹp nhất được mô tả trực tiếp, không chọn nhãn rộng chỉ vì cũng đúng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn nhãn hẹp nhất được mô tả trực tiếp, không chọn nhãn rộng chỉ vì cũng đúng.
+
+=====================================================================================
+CÂU 003 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q003 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-system-behavior-classification] Ai System Behavior Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một hệ thống nhận email và trả về một trong hai nhãn `spam` hoặc `không spam`. Nó không sinh nội dung mới và không tự thực hiện hành động tiếp theo.
+
+Câu hỏi:
+Hành vi chính của hệ thống thuộc loại nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Phân loại (`discriminative`)
+[B] Sinh nội dung (`generative`), vì đầu ra được biểu diễn bằng văn bản
+[C] Dự báo liên tục, vì nhãn có thể được mã hóa thành số
+[D] Tác nhân (`agentic`), vì hệ thống nhận đầu vào rồi trả kết quả
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [A]
+[A] Phân loại (`discriminative`)
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Hệ thống chọn giữa các nhãn có sẵn nên hành vi là discriminative.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Quan sát loại đầu ra: chọn nhãn, tạo nội dung mới hay theo đuổi mục tiêu qua nhiều hành động?
+
+=====================================================================================
+CÂU 004 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q004 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-system-behavior-classification] Ai System Behavior Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một ứng dụng nhận mục tiêu “đặt lịch họp”, tự kiểm tra lịch rảnh của bốn người, đề xuất giờ, gửi lời mời qua công cụ và xác nhận trạng thái gửi.
+
+Câu hỏi:
+Hành vi của toàn hệ thống được phân loại đúng nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chủ yếu sinh nội dung (`generative`), vì hệ thống tạo lời mời
+[B] Có hành vi tác nhân (`agentic`)
+[C] Truy vấn cơ sở dữ liệu, vì hệ thống đọc lịch trước khi chọn giờ
+[D] Phân loại (`discriminative`), vì hệ thống phải chọn một giờ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xem hệ thống chỉ tạo một đầu ra hay còn quan sát và hành động qua nhiều bước để đạt mục tiêu.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xem hệ thống chỉ tạo một đầu ra hay còn quan sát và hành động qua nhiều bước để đạt mục tiêu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xem hệ thống chỉ tạo một đầu ra hay còn quan sát và hành động qua nhiều bước để đạt mục tiêu.
+
+=====================================================================================
+CÂU 005 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q005 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-system-behavior-classification] Ai System Behavior Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một hệ thống sinh nội dung chưa tự động trở thành agent.
+
+Câu hỏi:
+Chọn các hệ thống có hành vi sinh nội dung (`generative`) nhưng chưa có đủ dấu hiệu để gọi là agent.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Hệ thống lập kế hoạch, gọi công cụ tìm kiếm và lặp lại đến khi có đủ bằng chứng.
+[B] Mô hình tạo ảnh từ mô tả, rồi kết thúc.
+[C] Mô hình phân loại cảm xúc tích cực hoặc tiêu cực.
+[D] Mô hình viết một đoạn mô tả sản phẩm từ yêu cầu rồi kết thúc.
+[E] Mô hình dự báo xác suất vỡ nợ.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đừng gọi một hệ thống là agent chỉ vì nó có thể sinh nội dung. Tìm các trường hợp tạo nội dung mới rồi kết thúc sau một lượt xử lý.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng gọi một hệ thống là agent chỉ vì nó có thể sinh nội dung. Tìm các trường hợp tạo nội dung mới rồi kết thúc sau một lượt xử lý.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng gọi một hệ thống là agent chỉ vì nó có thể sinh nội dung. Tìm các trường hợp tạo nội dung mới rồi kết thúc sau một lượt xử lý.
+
+=====================================================================================
+CÂU 006 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q006 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-paradigm-shift-explanation] Ai Paradigm Shift Explanation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Dòng chuyển dịch: hệ chuyên gia (`expert systems`) → học máy thống kê (`statistical machine learning`) → deep learning.
+
+Câu hỏi:
+Giải thích hai chuyển dịch sau:
+1. Điểm nghẽn nào trong việc viết quy tắc và mã hóa tri thức thủ công khiến hệ chuyên gia khó mở rộng?
+2. Deep learning đã giảm bớt phần việc thủ công nào của giai đoạn học máy thống kê?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Với mỗi mũi tên, hỏi: phần việc nào đang do con người làm thủ công và phương pháp sau chuyển phần việc đó sang đâu?
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Với mỗi mũi tên, hỏi: phần việc nào đang do con người làm thủ công và phương pháp sau chuyển phần việc đó sang đâu?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Với mỗi mũi tên, hỏi: phần việc nào đang do con người làm thủ công và phương pháp sau chuyển phần việc đó sang đâu?
+
+=====================================================================================
+CÂU 007 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q007 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-paradigm-shift-explanation] Ai Paradigm Shift Explanation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một nhóm nói: “Mô hình tạo sinh quy mô lớn trở nên khả thi chỉ vì có thêm nhiều quy tắc tốt hơn.”
+
+Câu hỏi:
+Phản biện nào phù hợp nhất với chuyển dịch đã học?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Đúng; Transformer chủ yếu giúp chạy một bộ quy tắc thủ công lớn hơn nhanh hơn.
+[B] Chưa đúng; chỉ cần thay bằng kho tài liệu lớn hơn, không cần thay cách mô hình học.
+[C] Chưa đúng; mô hình học biểu diễn từ dữ liệu lớn, nhờ năng lực tính toán và Transformer thay vì chỉ mở rộng quy tắc.
+[D] Đúng; chỉ cần bổ sung thêm quy tắc do chuyên gia thiết kế để mở rộng sang nhiều lĩnh vực.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So sánh việc viết quy tắc thủ công với việc để mô hình học biểu diễn từ dữ liệu.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So sánh việc viết quy tắc thủ công với việc để mô hình học biểu diễn từ dữ liệu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So sánh việc viết quy tắc thủ công với việc để mô hình học biểu diễn từ dữ liệu.
+
+=====================================================================================
+CÂU 008 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q008 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-llm-product-versus-foundation-model] Llm Product Versus Foundation Model
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một chatbot doanh nghiệp gồm mô hình nền tảng (`foundation model`) và lớp ứng dụng bao quanh.
+
+Câu hỏi:
+Ghép từng chức năng với thành phần chịu trách nhiệm trực tiếp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Dự đoán token kế tiếp từ ngữ cảnh đầu vào
+  (2) Truy xuất quy định nội bộ trước khi gửi ngữ cảnh cho mô hình
+  (3) Lưu lịch sử trao đổi theo từng tài khoản
+  (4) Hiển thị nút đánh giá hữu ích trong giao diện
+
+Cột Phải (Lựa chọn ghép):
+  (A) Lớp ứng dụng/sản phẩm
+  (B) Mô hình nền tảng (`foundation model`)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Dự đoán token kế tiếp từ ngữ cảnh đầu vào ===> Ghép với: 
+• Cặp 2: Truy xuất quy định nội bộ trước khi gửi ngữ cảnh cho mô hình ===> Ghép với: 
+• Cặp 3: Lưu lịch sử trao đổi theo từng tài khoản ===> Ghép với: 
+• Cặp 4: Hiển thị nút đánh giá hữu ích trong giao diện ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Mô hình nền tảng trực tiếp dự đoán token kế tiếp. Việc truy xuất quy định, lưu lịch sử theo tài khoản và hiển thị giao diện thuộc lớp ứng dụng bao quanh mô hình.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi chức năng đó có còn tồn tại nếu chỉ giữ lại mô hình nền tảng và một lần suy luận tối thiểu hay không.
+
+=====================================================================================
+CÂU 009 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q009 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-llm-product-versus-foundation-model] Llm Product Versus Foundation Model
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một nhóm thay mô hình nền tảng nhưng giữ nguyên ứng dụng web.
+
+Câu hỏi:
+Những thành phần nào vẫn thuộc lớp ứng dụng/sản phẩm và cần nhóm tự vận hành?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Cơ chế attention bên trong mô hình
+[B] Quy tắc kiểm duyệt do ứng dụng áp dụng
+[C] Trọng số và xác suất token bên trong mô hình
+[D] Xác thực và hạn ngạch theo người dùng
+[E] Giao diện trò chuyện
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách chức năng do ứng dụng tổ chức quanh mô hình khỏi cơ chế bên trong chính mô hình đó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách chức năng do ứng dụng tổ chức quanh mô hình khỏi cơ chế bên trong chính mô hình đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách chức năng do ứng dụng tổ chức quanh mô hình khỏi cơ chế bên trong chính mô hình đó.
+
+=====================================================================================
+CÂU 010 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q010 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-capability-level-classification] Agent Capability Level Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hệ thống A gọi LLM một lần để viết email. Hệ thống B nhận mục tiêu, lập kế hoạch, gọi CRM và lịch, ghi nhận trạng thái rồi điều chỉnh kế hoạch.
+
+Câu hỏi:
+Phát biểu nào đúng nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] A có thể được xem là agent vì email dẫn tới hành động; B chỉ là ứng dụng gọi LLM.
+[B] Cả A và B đều là ứng dụng LLM, khác nhau chủ yếu ở nội dung đầu ra.
+[C] Một hệ chỉ được gọi là agent khi mô hình và công cụ đều do cùng hệ thống tự xây dựng.
+[D] A là ứng dụng gọi LLM một lượt; B là agent vì có kế hoạch, công cụ và trạng thái.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm đặc điểm cho phép hệ thống tiếp tục hành động sau phản hồi đầu tiên.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm đặc điểm cho phép hệ thống tiếp tục hành động sau phản hồi đầu tiên.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm đặc điểm cho phép hệ thống tiếp tục hành động sau phản hồi đầu tiên.
+
+=====================================================================================
+CÂU 011 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q011 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-agent-capability-level-classification] Agent Capability Level Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một trợ lý hiện có:
+- Chỉ dẫn hệ thống (`system prompt`).
+- Khả năng truy xuất câu hỏi thường gặp (FAQ).
+- Bộ nhớ của 5 lượt trao đổi gần nhất.
+- Không tự gọi công cụ.
+- Không lập kế hoạch nhiều bước.
+
+Câu hỏi:
+- Xếp hệ thống trên trục từ LLM độc lập đến agent tự chủ.
+- Nêu hai tính năng làm nó mạnh hơn LLM độc lập.
+- Nêu một năng lực còn thiếu để nó trở thành agent dùng công cụ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Liệt kê tính năng đã có, rồi kiểm tra xem hệ thống có thể hành động và quan sát kết quả của hành động đó hay không.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Liệt kê tính năng đã có, rồi kiểm tra xem hệ thống có thể hành động và quan sát kết quả của hành động đó hay không.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Liệt kê tính năng đã có, rồi kiểm tra xem hệ thống có thể hành động và quan sát kết quả của hành động đó hay không.
+
+=====================================================================================
+CÂU 012 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q012 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-loop-relationship-tracing] Agent Loop Relationship Tracing
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một agent tra cứu tồn kho đã nhận mục tiêu: tìm kho còn hàng cho mã SP-17.
+
+Câu hỏi:
+Sắp xếp một vòng xử lý hợp lý, bắt đầu từ lúc đã nhận mục tiêu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Nhận kết quả từ công cụ: kho A còn 0, kho B còn 4
+  - [B] Cập nhật trạng thái hoặc bộ nhớ bằng lượng tồn vừa nhận
+  - [C] Lý luận: cần kiểm tra tồn kho
+  - [D] Gọi công cụ `inventory.check`
+  - [E] Đánh giá đã đạt mục tiêu chưa; nếu chưa, lập kế hoạch bước tiếp theo
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 THỨ TỰ QUY TRÌNH CHUẨN XÁC:
+Bước 1: Lý luận: cần kiểm tra tồn kho
+Bước 2: Gọi công cụ `inventory.check`
+Bước 3: Nhận kết quả từ công cụ: kho A còn 0, kho B còn 4
+Bước 4: Cập nhật trạng thái hoặc bộ nhớ bằng lượng tồn vừa nhận
+Bước 5: Đánh giá đã đạt mục tiêu chưa; nếu chưa, lập kế hoạch bước tiếp theo
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Reasoning chọn tool, tool tạo observation, observation cập nhật state rồi agent kiểm tra dừng hoặc lặp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phải nhận được kết quả từ công cụ trước khi có thể cập nhật trạng thái bằng kết quả đó.
+
+=====================================================================================
+CÂU 013 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q013 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-loop-relationship-tracing] Agent Loop Relationship Tracing
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Vết thực thi (`trace`) ghi: Mục tiêu → lý luận: chọn `search` → gọi `search` → cập nhật bộ nhớ “đã tìm thấy 3 nguồn” → quyết định dừng.
+
+Câu hỏi:
+Bước nào bị thiếu rõ nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Nhận kết quả trả về từ công cụ `search` trước khi cập nhật bộ nhớ
+[B] Xóa mục tiêu khỏi trạng thái sau khi gửi yêu cầu tìm kiếm
+[C] Chuyển sang mô hình khác nếu phản hồi đầu tiên chưa đủ
+[D] Thêm chỉ dẫn hệ thống mới để kết thúc vòng lặp
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm tra nguồn gốc của con số `3 nguồn`.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra nguồn gốc của con số `3 nguồn`.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra nguồn gốc của con số `3 nguồn`.
+
+=====================================================================================
+CÂU 014 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q014 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-loop-relationship-tracing] Agent Loop Relationship Tracing
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một agent hỗ trợ đổi vé đã có mục tiêu và thông tin đặt chỗ.
+
+Câu hỏi:
+Sắp xếp các bước còn lại theo thứ tự hợp lý.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Nhận kết quả: đổi vé thành công, mã mới `X9`
+  - [B] Lập kế hoạch gọi công cụ đổi vé cho chuyến đã chọn
+  - [C] Gọi công cụ `ticket.change`
+  - [D] Cập nhật trạng thái đặt vé thành `X9`
+  - [E] Thông báo kết quả rồi dừng vì mục tiêu đã đạt
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Không cập nhật trạng thái đặt vé trước khi công cụ xác nhận đổi vé thành công.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không cập nhật trạng thái đặt vé trước khi công cụ xác nhận đổi vé thành công.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không cập nhật trạng thái đặt vé trước khi công cụ xác nhận đổi vé thành công.
+
+=====================================================================================
+CÂU 015 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q015 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-next-token-generation-loop] Next Token Generation Loop
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Mô hình đang viết tiếp câu `Hôm nay trời`. Hãy sắp xếp các bước của một vòng sinh tự hồi quy.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Nối token vừa chọn vào ngữ cảnh hiện có
+  - [B] Tính phân phối xác suất cho token kế tiếp từ ngữ cảnh hiện tại
+  - [C] Kiểm tra điều kiện dừng; nếu chưa dừng thì lặp
+  - [D] Chọn một token theo quy tắc lấy mẫu
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 THỨ TỰ QUY TRÌNH CHUẨN XÁC:
+Bước 1: Tính phân phối xác suất cho token kế tiếp từ ngữ cảnh hiện tại
+Bước 2: Chọn một token theo quy tắc lấy mẫu
+Bước 3: Nối token vừa chọn vào ngữ cảnh hiện có
+Bước 4: Kiểm tra điều kiện dừng; nếu chưa dừng thì lặp
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Mỗi vòng dùng context hiện tại để dự đoán distribution, chọn token, append token và tiếp tục cho đến điều kiện dừng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không thể nối token vào ngữ cảnh trước khi đã chọn nó từ phân phối xác suất.
+
+=====================================================================================
+CÂU 016 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q016 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-next-token-generation-loop] Next Token Generation Loop
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Sau khi mô hình chọn token `mưa`, đầu vào cho lần dự đoán kế tiếp thay đổi thế nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Lần sinh tiếp theo không cần dùng token `mưa` vì token đã được chọn
+[B] Ngữ cảnh mới có thêm token `mưa`
+[C] Mô hình chỉ giữ token `mưa` và bỏ ngữ cảnh trước đó
+[D] Mô hình có thể cập nhật trọng số sau khi chọn token
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt việc cập nhật chuỗi đầu vào với việc cập nhật trọng số của mô hình.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt việc cập nhật chuỗi đầu vào với việc cập nhật trọng số của mô hình.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt việc cập nhật chuỗi đầu vào với việc cập nhật trọng số của mô hình.
+
+=====================================================================================
+CÂU 017 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q017 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-tokenization-unit-effects] Tokenization Unit Effects
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện:
+- Hai chuỗi đều có 5 từ.
+- Chuỗi A được mã hóa thành 7 token.
+- Chuỗi B được mã hóa thành 13 token.
+- Mỗi chuỗi lặp 1.000 lần trong lời nhắc.
+
+Yêu cầu:
+Giải thích vì sao không thể chỉ đếm từ để dự báo lượng ngữ cảnh sử dụng, và cho biết chuỗi nào tốn ngữ cảnh hơn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nhân số token của mỗi chuỗi với số lần lặp; đừng dùng số từ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nhân số token của mỗi chuỗi với số lần lặp; đừng dùng số từ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhân số token của mỗi chuỗi với số lần lặp; đừng dùng số từ.
+
+=====================================================================================
+CÂU 018 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q018 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-tokenization-unit-effects] Tokenization Unit Effects
+=====================================================================================
+ĐỀ BÀI:
+Hai cách biểu diễn cùng một dữ liệu:
+- JSON có nhiều dấu nháy, dấu ngoặc và khóa lặp lại: 820 token.
+- Bảng rút gọn: 510 token.
+
+Giả định:
+Thông tin cần cho nhiệm vụ vẫn được giữ lại.
+
+Câu hỏi:
+Kết luận nào hợp lý nhất khi vận hành?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Hai định dạng dùng gần như cùng số token vì nội dung tương đương
+[B] JSON thường chính xác hơn nên chênh lệch token có thể bỏ qua
+[C] Bảng rút gọn tiết kiệm 310 token ngữ cảnh cho mỗi lần gửi
+[D] Chỉ số dòng và số cột là đại diện gần đúng cho số token
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dung lượng ngữ cảnh được tính theo token của cách biểu diễn dữ liệu, không theo ý nghĩa trừu tượng.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Dung lượng ngữ cảnh được tính theo token của cách biểu diễn dữ liệu, không theo ý nghĩa trừu tượng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dung lượng ngữ cảnh được tính theo token của cách biểu diễn dữ liệu, không theo ý nghĩa trừu tượng.
+
+=====================================================================================
+CÂU 019 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q019 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-tokenization-unit-effects] Tokenization Unit Effects
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Những yếu tố nào có thể làm hai đoạn mang nghĩa tương tự tạo số token khác nhau?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Màu nền của trình soạn thảo không được gửi vào mô hình
+[B] Dấu câu và khoảng trắng
+[C] Ngôn ngữ và vốn từ mà tokenizer đã học
+[D] Cách tách mảnh từ
+[E] Mã nguồn hoặc JSON có ký hiệu cấu trúc
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ xét những đặc trưng thực sự nằm trong chuỗi đầu vào của tokenizer.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ xét những đặc trưng thực sự nằm trong chuỗi đầu vào của tokenizer.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ xét những đặc trưng thực sự nằm trong chuỗi đầu vào của tokenizer.
+
+=====================================================================================
+CÂU 020 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q020 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-tokenizer-based-token-counting] Tokenizer Based Token Counting
+=====================================================================================
+ĐỀ BÀI:
+Mã nguồn:
+```python
+def count_tokens(text, model_x):
+    enc = tokenizer_for_model(model_x)
+    return len(enc.encode(text))
+```
+
+Câu hỏi:
+Vì sao cách này đáng tin cậy hơn `len(text.split())`?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Vì `split()` có thể ước lượng chi phí dựa trên số từ trước khi gửi
+[B] Vì `encode()` nén văn bản trước khi gửi nên mô hình nhận ít thông tin hơn
+[C] Vì mỗi từ sau `split()` thường tương ứng với một token trong mô hình
+[D] Vì tokenizer dùng đúng cách mã hóa của mô hình và đếm các đơn vị mô hình thực sự nhận
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So sánh đơn vị mà `split()` đếm với đơn vị mà mô hình xử lý.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So sánh đơn vị mà `split()` đếm với đơn vị mà mô hình xử lý.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So sánh đơn vị mà `split()` đếm với đơn vị mà mô hình xử lý.
+
+=====================================================================================
+CÂU 021 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q021 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-tokenizer-based-token-counting] Tokenizer Based Token Counting
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện:
+- Dự án dùng mô hình `alpha-chat`.
+- Hàm lại gọi `encoding_for_model('beta-chat')`.
+- Dữ kiện kiểm thử: `alpha-chat` mã hóa chuỗi thành 11 token; `beta-chat` thành 9 token.
+
+Yêu cầu:
+Nêu lỗi và số token đúng phải trả về.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tên mô hình gửi trong yêu cầu và tên mô hình dùng để chọn cách mã hóa phải nhất quán.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tên mô hình gửi trong yêu cầu và tên mô hình dùng để chọn cách mã hóa phải nhất quán.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tên mô hình gửi trong yêu cầu và tên mô hình dùng để chọn cách mã hóa phải nhất quán.
+
+=====================================================================================
+CÂU 022 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q022 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-temperature-distribution-control] Temperature Distribution Control
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ứng dụng cần tạo mã phân loại nội bộ theo đúng định dạng; kết quả cần ổn định giữa các lần chạy. Nếu các yếu tố khác giữ nguyên, cấu hình nào phù hợp hơn?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Temperature thấp
+[B] Bỏ giới hạn đầu ra và tăng temperature
+[C] Đổi temperature ngẫu nhiên ở mỗi yêu cầu
+[D] Temperature rất cao
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [A]
+[A] Temperature thấp
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Temperature thấp làm distribution sắc hơn và thường phù hợp output cần ổn định; không phải bảo đảm tuyệt đối.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhiệm vụ này ưu tiên tính lặp lại hơn sự đa dạng.
+
+=====================================================================================
+CÂU 023 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q023 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-temperature-distribution-control] Temperature Distribution Control
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Cùng một lời nhắc được chạy 10 lần. Nhóm kết quả X gần như giống nhau; nhóm Y đa dạng hơn nhưng có thêm câu lạc đề. Nếu chỉ temperature thay đổi, nhận định nào hợp lý nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Temperature hầu như không làm thay đổi độ biến thiên nếu lời nhắc giữ nguyên
+[B] Y có temperature cao hơn X
+[C] Hai nhóm có thể khác cửa sổ ngữ cảnh nên mới đa dạng
+[D] X có temperature cao hơn Y
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So sánh nhóm nào có kết quả đa dạng hơn dựa trên đầu ra quan sát được.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So sánh nhóm nào có kết quả đa dạng hơn dựa trên đầu ra quan sát được.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So sánh nhóm nào có kết quả đa dạng hơn dựa trên đầu ra quan sát được.
+
+=====================================================================================
+CÂU 024 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q024 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-temperature-distribution-control] Temperature Distribution Control
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Nhóm đang nghĩ 20 khẩu hiệu và muốn kết quả đa dạng hơn, nhưng đầu ra hiện lặp lại gần như nguyên câu. Hãy đề xuất thay đổi temperature theo hướng nào và nêu một rủi ro cần theo dõi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đổi tham số theo hướng làm phân phối xác suất bớt tập trung, rồi nêu cái giá của sự biến thiên cao hơn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đổi tham số theo hướng làm phân phối xác suất bớt tập trung, rồi nêu cái giá của sự biến thiên cao hơn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đổi tham số theo hướng làm phân phối xác suất bớt tập trung, rồi nêu cái giá của sự biến thiên cao hơn.
+
+=====================================================================================
+CÂU 025 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q025 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-top-p-candidate-filtering] Top P Candidate Filtering
+=====================================================================================
+ĐỀ BÀI:
+Xác suất các token đã được sắp theo thứ tự giảm dần:
+- token_1 = 0,42
+- token_2 = 0,28
+- token_3 = 0,18
+- token_4 = 0,12
+
+Câu hỏi:
+Với `top-p = 0,75`, tập token nhỏ nhất được giữ lại gồm những token nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] token_2
+[B] token_4
+[C] token_3
+[D] token_1
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 CHỌN CẢ 3 ĐÁP ÁN ĐÚNG: A, C, D
+[A] token_2
+[C] token_3
+[D] token_1
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  token_1 + token_2 = 0,70, chưa đạt 0,75. Thêm token_3 thì tổng là 0,88, nên tập nhỏ nhất được giữ lại là {token_1, token_2, token_3}.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cộng từ token có xác suất cao nhất xuống cho đến khi tổng lần đầu đạt hoặc vượt p.
+
+=====================================================================================
+CÂU 026 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q026 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-top-p-candidate-filtering] Top P Candidate Filtering
+=====================================================================================
+ĐỀ BÀI:
+Xác suất các token đã được sắp theo thứ tự giảm dần:
+- K = 0,50
+- L = 0,20
+- M = 0,15
+- N = 0,10
+- P = 0,05
+
+Câu hỏi:
+Với `top-p = 0,68`, tập token nhỏ nhất được giữ lại gồm những token nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] N
+[B] L
+[C] P
+[D] M
+[E] K
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Dừng ở token làm tổng xác suất tích lũy lần đầu đạt hoặc vượt ngưỡng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Dừng ở token làm tổng xác suất tích lũy lần đầu đạt hoặc vượt ngưỡng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dừng ở token làm tổng xác suất tích lũy lần đầu đạt hoặc vượt ngưỡng.
+
+=====================================================================================
+CÂU 027 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q027 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-top-p-candidate-filtering] Top P Candidate Filtering
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Giữ nguyên logits và temperature. Khi giảm top-p từ 0,95 xuống 0,60, thay đổi trực tiếp nào thường xảy ra?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tập token có thể rộng hơn vì ngưỡng thấp cho phép giữ thêm token xác suất thấp
+[B] Cửa sổ ngữ cảnh tăng vì top-p thấp dành thêm dung lượng cho đầu ra được sinh
+[C] Tập token được giữ thường hẹp hơn vì tổng xác suất tích lũy đạt ngưỡng sớm hơn
+[D] Mô hình giảm xác suất của các token ngoài tập được giữ trong mọi lần sinh sau
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hình dung tổng xác suất tích lũy sẽ đạt ngưỡng sớm hay muộn khi top-p nhỏ đi.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hình dung tổng xác suất tích lũy sẽ đạt ngưỡng sớm hay muộn khi top-p nhỏ đi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hình dung tổng xác suất tích lũy sẽ đạt ngưỡng sớm hay muộn khi top-p nhỏ đi.
+
+=====================================================================================
+CÂU 028 [🟡 Tính toán điền số (Numeric)] - Mã: d01-q028 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-output-token-cap-control] Output Token Cap Control
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Một lần gọi có ngân sách tối đa 2.400 token đầu ra cho 12 bản tóm tắt độc lập và chia đều ngân sách. Giới hạn đầu ra tối đa cho mỗi bản là bao nhiêu?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: token
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chia ngân sách đầu ra cho số bản tóm tắt độc lập.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chia ngân sách đầu ra cho số bản tóm tắt độc lập.
+
+=====================================================================================
+CÂU 029 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q029 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-output-token-cap-control] Output Token Cap Control
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Nhóm đặt `max_output_tokens=120` cho một báo cáo dài. Phản hồi dừng giữa câu. Kết luận nào là hợp lý nhất từ dữ kiện này?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giới hạn đầu ra chỉ ảnh hưởng sau khi mô hình hoàn tất nội dung
+[B] Đầu ra dừng đúng 120 token cho thấy nội dung đã gần hoàn tất
+[C] Temperature thấp có thể là nguyên nhân chính khiến câu cuối bị bỏ dở
+[D] Có thể chạm giới hạn đầu ra; cần xem lý do kết thúc
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt cấu hình trước khi gọi với thông tin cho biết lý do dừng sau khi nhận phản hồi.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt cấu hình trước khi gọi với thông tin cho biết lý do dừng sau khi nhận phản hồi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt cấu hình trước khi gọi với thông tin cho biết lý do dừng sau khi nhận phản hồi.
+
+=====================================================================================
+CÂU 030 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q030 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-generation-stop-sequence-control] Generation Stop Sequence Control
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ứng dụng yêu cầu mô hình sinh phần `ANSWER:` rồi dừng trước khi bắt đầu `SOURCES:`. Stop sequence nào trực tiếp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] `SOURCES:`
+[B] Một số token bất kỳ
+[C] Temperature=0
+[D] `ANSWER:`
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Stop sequence là chuỗi đánh dấu điểm mà mô hình không nên sinh tiếp.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Stop sequence là chuỗi đánh dấu điểm mà mô hình không nên sinh tiếp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Stop sequence là chuỗi đánh dấu điểm mà mô hình không nên sinh tiếp.
+
+=====================================================================================
+CÂU 031 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q031 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-generation-stop-sequence-control] Generation Stop Sequence Control
+=====================================================================================
+ĐỀ BÀI:
+Quy ước dữ liệu:
+- Mỗi bản ghi có dạng `name|score`.
+- Chuỗi `<END_RECORD>` đánh dấu kết thúc một bản ghi.
+- Ứng dụng chỉ cần bản ghi đầu tiên.
+
+Chuỗi dự kiến:
+`Lan|8<END_RECORD>Minh|9`
+
+Yêu cầu:
+Nêu stop sequence và phần đầu ra được giữ lại.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm chuỗi ký tự phân cách hai bản ghi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm chuỗi ký tự phân cách hai bản ghi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm chuỗi ký tự phân cách hai bản ghi.
+
+=====================================================================================
+CÂU 032 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q032 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-context-window-budgeting] Context Window Budgeting
+=====================================================================================
+ĐỀ BÀI:
+Ngân sách cửa sổ ngữ cảnh:
+- Cửa sổ ngữ cảnh: 128.000 token.
+- Lời nhắc hệ thống và người dùng: 3.000 token.
+- Lịch sử hội thoại: 24.000 token.
+- Ngữ cảnh truy xuất: 70.000 token.
+- Giới hạn đầu ra: 40.000 token.
+
+Yêu cầu:
+1. Xác định lần gọi có vừa cửa sổ ngữ cảnh không.
+2. Nếu phải giữ giới hạn đầu ra, tính số token đầu vào tối thiểu cần giảm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Lập một phép tính gồm lời nhắc + lịch sử hội thoại + ngữ cảnh truy xuất + giới hạn đầu ra.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Lập một phép tính gồm lời nhắc + lịch sử hội thoại + ngữ cảnh truy xuất + giới hạn đầu ra.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Lập một phép tính gồm lời nhắc + lịch sử hội thoại + ngữ cảnh truy xuất + giới hạn đầu ra.
+
+=====================================================================================
+CÂU 033 [🟡 Tính toán điền số (Numeric)] - Mã: d01-q033 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-context-window-budgeting] Context Window Budgeting
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Cửa sổ ngữ cảnh có 32.000 token. Lời nhắc là 2.500 token, lịch sử hội thoại là 8.500 token, ngữ cảnh truy xuất là 12.000 token và giới hạn đầu ra là 6.000 token. Còn dư bao nhiêu token?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: token
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Cộng mọi thành phần trước rồi lấy dung lượng cửa sổ trừ đi tổng đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cộng mọi thành phần trước rồi lấy dung lượng cửa sổ trừ đi tổng đó.
+
+=====================================================================================
+CÂU 034 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q034 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-context-window-budgeting] Context Window Budgeting
+=====================================================================================
+ĐỀ BÀI:
+Ngân sách cửa sổ ngữ cảnh:
+- Cửa sổ ngữ cảnh: 16.000 token.
+- Lời nhắc: 2.000 token.
+- Lịch sử hội thoại: 6.000 token.
+- Bằng chứng truy xuất: 7.000 token, phải giữ nguyên.
+- Giới hạn đầu ra: 4.000 token, có thể giảm tối đa 2.000 token.
+- Lịch sử hội thoại có thể tóm tắt.
+
+Câu hỏi:
+Hành động nào đủ để lần gọi vừa cửa sổ ngữ cảnh mà vẫn giữ các ràng buộc?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có thể giữ nguyên mọi phần vì tổng token đầu vào chưa vượt 16.000
+[B] Giảm giới hạn đầu ra 2.000 token và giảm lịch sử hội thoại thêm 1.000 token
+[C] Chỉ giảm giới hạn đầu ra 1.000 token và giữ nguyên mọi phần khác
+[D] Xóa 3.000 token bằng chứng truy xuất dù bằng chứng phải giữ nguyên
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tính phần vượt trước, rồi loại các phương án làm mất phần bằng chứng phải giữ.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính phần vượt trước, rồi loại các phương án làm mất phần bằng chứng phải giữ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính phần vượt trước, rồi loại các phương án làm mất phần bằng chứng phải giữ.
+
+=====================================================================================
+CÂU 035 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q035 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-long-context-information-placement] Long Context Information Placement
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Lời nhắc dài 90.000 token vẫn nằm trong cửa sổ ngữ cảnh. Một quy tắc bắt buộc nằm giữa hàng chục trang nhật ký và mô hình thường bỏ qua nó. Cách sửa nào nhắm đúng vấn đề nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Thêm một phần nhật ký cuối lời nhắc để quy tắc có thêm ngữ cảnh
+[B] Khi đã vừa cửa sổ, có thể giữ nguyên vị trí quy tắc vì attention dùng mọi token tương đương
+[C] Truy xuất riêng quy tắc liên quan và đặt nó gần nhiệm vụ, trong một phần có nhãn rõ ràng
+[D] Tăng giới hạn đầu ra để quy tắc ở giữa được chú ý hơn
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [C]
+[C] Truy xuất riêng quy tắc liên quan và đặt nó gần nhiệm vụ, trong một phần có nhãn rõ ràng
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Nằm trong cửa sổ ngữ cảnh không bảo đảm mô hình chú ý và sử dụng mọi phần như nhau. Truy xuất riêng rồi tổ chức lại bằng chứng liên quan giúp giảm hiện tượng thông tin quan trọng bị chìm ở giữa ngữ cảnh dài.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách bài toán dung lượng khỏi bài toán mô hình có tìm và sử dụng được bằng chứng hay không.
+
+=====================================================================================
+CÂU 036 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q036 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-long-context-information-placement] Long Context Information Placement
+=====================================================================================
+ĐỀ BÀI:
+Tình huống:
+Ứng dụng cần trả lời về một điều khoản trong tài liệu chính sách dài 400 trang và hiện gửi toàn bộ tài liệu theo thứ tự gốc.
+
+Yêu cầu:
+1. Đề xuất một thay đổi về cách truy xuất hoặc tổ chức thông tin.
+2. Nêu thông tin phải giữ để câu trả lời vẫn kiểm chứng được.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giảm phần không liên quan nhưng đừng biến bằng chứng thành một kết luận không còn truy được nguồn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giảm phần không liên quan nhưng đừng biến bằng chứng thành một kết luận không còn truy được nguồn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giảm phần không liên quan nhưng đừng biến bằng chứng thành một kết luận không còn truy được nguồn.
+
+=====================================================================================
+CÂU 037 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q037 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-knowledge-cutoff-response] Knowledge Cutoff Response
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Người dùng hỏi: “Giá API và endpoint của mô hình đang áp dụng hôm nay là gì?” Cách xử lý nào phù hợp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Ước giá hiện tại từ số tham số, rồi hỏi người dùng nếu cần endpoint
+[B] Trả lời từ trí nhớ mô hình và ghi rõ đó là mức tham khảo
+[C] Dùng một blog gần đây và xem đó là nguồn chính cho cả giá lẫn endpoint
+[D] Dùng tài liệu chính thức hiện hành hoặc công cụ tra cứu, rồi ghi thời điểm kiểm tra
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm dấu hiệu cho thấy câu trả lời có thể đã thay đổi sau thời điểm mô hình được huấn luyện.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm dấu hiệu cho thấy câu trả lời có thể đã thay đổi sau thời điểm mô hình được huấn luyện.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm dấu hiệu cho thấy câu trả lời có thể đã thay đổi sau thời điểm mô hình được huấn luyện.
+
+=====================================================================================
+CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q038 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-knowledge-cutoff-response] Knowledge Cutoff Response
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Một mô hình được hỏi ai đang giữ chức vụ CEO của công ty X ở thời điểm hiện tại. Hãy viết quy trình trả lời an toàn trong 2–3 bước.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Câu trả lời cần cả bước lấy dữ kiện mới và cách nói rõ độ mới của dữ kiện.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Câu trả lời cần cả bước lấy dữ kiện mới và cách nói rõ độ mới của dữ kiện.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Câu trả lời cần cả bước lấy dữ kiện mới và cách nói rõ độ mới của dữ kiện.
+
+=====================================================================================
+CÂU 039 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q039 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-hallucination-evidence-verification] Hallucination Evidence Verification
+=====================================================================================
+ĐỀ BÀI:
+Nguồn A:
+“Thử nghiệm trên 40 người cho thấy thời gian hoàn thành trung vị giảm 8%.”
+
+Câu trả lời của LLM:
+“Nghiên cứu chứng minh công cụ tăng năng suất 30% cho mọi nhóm người dùng.”
+
+Yêu cầu:
+- Chỉ ra hai chỗ kết luận vượt quá bằng chứng.
+- Viết lại nhận định phù hợp với nguồn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So từng thành phần: mẫu thử, chỉ số đo, mức tác động và phạm vi kết luận.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So từng thành phần: mẫu thử, chỉ số đo, mức tác động và phạm vi kết luận.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng thành phần: mẫu thử, chỉ số đo, mức tác động và phạm vi kết luận.
+
+=====================================================================================
+CÂU 040 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q040 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-hallucination-evidence-verification] Hallucination Evidence Verification
+=====================================================================================
+ĐỀ BÀI:
+Nhận định và trích dẫn:
+- LLM viết: `hệ thống dùng reinforcement learning`.
+- Trích dẫn đi kèm: `[Nguồn B, tr. 4]`.
+
+Nội dung nguồn:
+- Trang 4 chỉ mô tả supervised fine-tuning.
+- Reinforcement learning chỉ xuất hiện ở trang 9.
+
+Câu hỏi:
+Đánh giá nào đúng nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Trích dẫn trang 4 không hỗ trợ nhận định; phải đổi sang trang 9 nếu nội dung trang 9 thực sự phù hợp
+[B] Trích dẫn trang 4 vẫn hợp lệ vì một trang khác trong cùng tài liệu có nhắc reinforcement learning
+[C] Nếu nhận định đúng theo kiến thức chung thì bất kỳ trích dẫn nào trong cùng PDF cũng đều hỗ trợ được
+[D] Không cần kiểm tra trang cụ thể nếu tài liệu dài và tiêu đề nghe có liên quan đến huấn luyện
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm tra bằng chứng đúng tại vị trí được trích dẫn, không dùng kiến thức ở trang khác để sửa hộ.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra bằng chứng đúng tại vị trí được trích dẫn, không dùng kiến thức ở trang khác để sửa hộ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra bằng chứng đúng tại vị trí được trích dẫn, không dùng kiến thức ở trang khác để sửa hộ.
+
+=====================================================================================
+CÂU 041 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q041 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-hallucination-evidence-verification] Hallucination Evidence Verification
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Hai nguồn được cung cấp mâu thuẫn: nguồn chính thức ghi giới hạn 100 yêu cầu/phút, tài liệu SDK cũ ghi 60. Hãy viết câu trả lời không âm thầm chọn một con số và nêu bước tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng dùng nguồn này để âm thầm sửa nguồn kia; hãy giữ nguồn gốc từng số và tìm khác biệt về phiên bản hoặc thời điểm.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng dùng nguồn này để âm thầm sửa nguồn kia; hãy giữ nguồn gốc từng số và tìm khác biệt về phiên bản hoặc thời điểm.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng dùng nguồn này để âm thầm sửa nguồn kia; hãy giữ nguồn gốc từng số và tìm khác biệt về phiên bản hoặc thời điểm.
+
+=====================================================================================
+CÂU 042 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q042 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-multimodal-token-abstraction] Multimodal Token Abstraction
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng loại dữ liệu với ví dụ phù hợp nhất về đơn vị biểu diễn đầu vào trong một mô hình đa phương thức.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Văn bản
+  (2) Hình ảnh
+  (3) Âm thanh
+
+Cột Phải (Lựa chọn ghép):
+  (A) Khung hoặc đoạn âm thanh được mã hóa thành token
+  (B) Mảnh từ hoặc mã định danh token
+  (C) Mảnh ảnh hoặc token hình ảnh
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tìm đơn vị rời rạc hoặc từng đoạn mà mô hình xử lý sau bước tiền xử lý.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm đơn vị rời rạc hoặc từng đoạn mà mô hình xử lý sau bước tiền xử lý.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm đơn vị rời rạc hoặc từng đoạn mà mô hình xử lý sau bước tiền xử lý.
+
+=====================================================================================
+CÂU 043 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q043 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-multimodal-token-abstraction] Multimodal Token Abstraction
+=====================================================================================
+ĐỀ BÀI:
+Tình huống:
+Một hệ đa phương thức nhận đồng thời câu hỏi bằng văn bản và một ảnh biểu đồ.
+
+Phạm vi:
+Không cần đọc giá trị cụ thể trong biểu đồ.
+
+Yêu cầu:
+1. Phần nào trong cơ chế `context + attention` có thể dùng chung?
+2. Phần nào không nên coi là giống hệt giữa hai loại dữ liệu?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách hai tầng: dữ liệu ban đầu được mã hóa thế nào và mô hình liên kết các biểu diễn sau mã hóa ra sao.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách hai tầng: dữ liệu ban đầu được mã hóa thế nào và mô hình liên kết các biểu diễn sau mã hóa ra sao.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách hai tầng: dữ liệu ban đầu được mã hóa thế nào và mô hình liên kết các biểu diễn sau mã hóa ra sao.
+
+=====================================================================================
+CÂU 044 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q044 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-emergent-world-representation-evidence] Emergent World Representation Evidence
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Trong nghiên cứu về mô hình chơi Othello, ghép mỗi quan sát với điều mà nó hỗ trợ trực tiếp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Mô hình dự đoán nước đi hợp lệ với độ chính xác cao
+  (2) Linear probe đọc được trạng thái bàn cờ từ activation
+  (3) Can thiệp vào activation làm thay đổi nước đi theo trạng thái bàn cờ đã sửa
+
+Cột Phải (Lựa chọn ghép):
+  (A) Có thể giải mã thông tin từ biểu diễn
+  (B) Trạng thái được biểu diễn có liên hệ nhân quả
+  (C) Hiệu năng dự đoán hành vi
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Mô hình dự đoán nước đi hợp lệ với độ chính xác cao ===> Ghép với: 
+• Cặp 2: Linear probe đọc được trạng thái bàn cờ từ activation ===> Ghép với: 
+• Cặp 3: Can thiệp vào activation làm thay đổi nước đi theo trạng thái bàn cờ đã sửa ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Dự đoán nước đi cho bằng chứng về hiệu năng hành vi; probe cho thấy thông tin có thể giải mã từ biểu diễn; can thiệp làm mạnh thêm bằng chứng nhân quả về biểu diễn đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi xem mỗi phép đo chỉ quan sát tương quan, hay chủ động thay đổi biểu diễn rồi xem hành vi có đổi không.
+
+=====================================================================================
+CÂU 045 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q045 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-emergent-world-representation-evidence] Emergent World Representation Evidence
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Từ ba quan sát về dự đoán, probe và can thiệp trong một trò chơi, kết luận nào vượt quá bằng chứng nhiều nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Activation chứa thông tin liên quan đến trạng thái bàn cờ
+[B] Mô hình đã có hiểu biết có ý thức và world model tổng quát cho mọi lĩnh vực
+[C] Hiệu năng hành vi tốt một mình là bằng chứng yếu hơn việc kết hợp probe và can thiệp khi đánh giá biểu diễn nội tại
+[D] Can thiệp vào biểu diễn có thể ảnh hưởng đến nước đi
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giữ kết luận trong đúng phạm vi và đúng loại cơ chế đã được đo.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ kết luận trong đúng phạm vi và đúng loại cơ chế đã được đo.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ kết luận trong đúng phạm vi và đúng loại cơ chế đã được đo.
+
+=====================================================================================
+CÂU 046 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q046 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-emergent-world-representation-evidence] Emergent World Representation Evidence
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Một probe đọc được biến Z từ trạng thái ẩn (`hidden state`) với độ chính xác cao, nhưng khi can thiệp theo hướng biểu diễn của Z thì đầu ra không đổi. Hãy nêu kết luận nào được hỗ trợ và điều nào chưa được hỗ trợ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Probe trả lời câu hỏi “có đọc được không”; can thiệp trả lời một câu hỏi khác về quan hệ nhân quả.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Probe trả lời câu hỏi “có đọc được không”; can thiệp trả lời một câu hỏi khác về quan hệ nhân quả.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Probe trả lời câu hỏi “có đọc được không”; can thiệp trả lời một câu hỏi khác về quan hệ nhân quả.
+
+=====================================================================================
+CÂU 047 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q047 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-token-embedding-role] Token Embedding Role
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Trong quy trình `token IDs → ? → cộng thông tin vị trí → các khối Transformer`, thành phần `?` làm nhiệm vụ gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chọn token cuối cùng trước khi đưa vào lớp attention
+[B] Sắp xếp token theo vị trí mà không cần thêm tín hiệu vị trí
+[C] Ánh xạ mỗi token ID sang một vector embedding được học
+[D] Tính chi phí API từ token ID
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [C]
+[C] Ánh xạ mỗi token ID sang một vector embedding được học
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Token embedding biến ID rời rạc thành vector biểu diễn; positional information được thêm riêng trong pipeline đã cho.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thành phần đứng ngay sau token IDs phải tạo biểu diễn liên tục cho mô hình.
+
+=====================================================================================
+CÂU 048 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q048 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-token-embedding-role] Token Embedding Role
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Hai chuỗi dùng cùng ba token nhưng đổi thứ tự. Nếu chỉ dùng token embedding và bỏ mọi tín hiệu vị trí, mỗi token vẫn có thông tin nào và bị thiếu thông tin nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách câu hỏi `token nào?` khỏi câu hỏi `token ở vị trí nào?`.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách câu hỏi `token nào?` khỏi câu hỏi `token ở vị trí nào?`.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách câu hỏi `token nào?` khỏi câu hỏi `token ở vị trí nào?`.
+
+=====================================================================================
+CÂU 049 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q049 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-positional-encoding-role] Positional Encoding Role
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Hai câu `chó cắn mèo` và `mèo cắn chó` chứa cùng tập token nhưng nghĩa khác. Positional encoding giúp làm điều gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tự tạo thêm dữ liệu huấn luyện khi thứ tự token thay đổi
+[B] Mở rộng cửa sổ ngữ cảnh để giữ hai câu phân biệt
+[C] Gộp các token embedding thành một vector theo thứ tự
+[D] Bổ sung thông tin vị trí để attention phân biệt quan hệ theo thứ tự
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Cùng danh tính token nhưng vai trò có thể thay đổi theo vị trí trong câu.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Cùng danh tính token nhưng vai trò có thể thay đổi theo vị trí trong câu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cùng danh tính token nhưng vai trò có thể thay đổi theo vị trí trong câu.
+
+=====================================================================================
+CÂU 050 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q050 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-positional-encoding-role] Positional Encoding Role
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Sắp xếp luồng đầu vào tối giản trước attention.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Cộng hoặc kết hợp thông tin vị trí
+  - [B] Tra token embedding từ token IDs
+  - [C] Đưa các biểu diễn vào khối attention
+  - [D] Tách văn bản thành token IDs
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Attention cần nhận biểu diễn đã mang cả danh tính token và vị trí.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Attention cần nhận biểu diễn đã mang cả danh tính token và vị trí.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Attention cần nhận biểu diễn đã mang cả danh tính token và vị trí.
+
+=====================================================================================
+CÂU 051 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q051 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-attention-qkv-role] Attention Qkv Role
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng thành phần của attention với vai trò khái niệm tương ứng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Query
+  (2) Key
+  (3) Value
+
+Cột Phải (Lựa chọn ghép):
+  (A) Biểu diễn dùng để so mức phù hợp với Query
+  (B) Biểu diễn cho biết vị trí hiện tại đang tìm thông tin gì
+  (C) Nội dung được cộng theo trọng số attention
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Query ===> Ghép với: 
+• Cặp 2: Key ===> Ghép với: 
+• Cặp 3: Value ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Q và K tạo điểm tương thích; các trọng số từ những điểm đó được dùng để tổng hợp V.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một cặp dùng để quyết định `nhìn đâu`; thành phần còn lại mang `lấy nội dung gì`.
+
+=====================================================================================
+CÂU 052 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q052 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-attention-qkv-role] Attention Qkv Role
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Tại token hiện tại, mô hình cần quyết định token nguồn nào liên quan nhất trước khi lấy nội dung. Phép so sánh nào trực tiếp tạo điểm attention?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Query của token hiện tại với các Key của token nguồn
+[B] Value của token nguồn với logits đầu ra ở bước dự đoán cuối
+[C] Positional encoding của câu với thông tin xác thực API dùng để gọi mô hình
+[D] Từng cặp Value nguồn với nhau trước khi tạo biểu diễn Query
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách bước so khớp khỏi bước lấy nội dung.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách bước so khớp khỏi bước lấy nội dung.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách bước so khớp khỏi bước lấy nội dung.
+
+=====================================================================================
+CÂU 053 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q053 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-attention-qkv-role] Attention Qkv Role
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Trong câu `Lan đặt chiếc cốc lên bàn vì nó dễ vỡ`, token `nó` cần lấy thông tin từ một từ hoặc cụm từ đứng trước. Hãy mô tả vai trò Q, K và V ở mức khái niệm khi attention xử lý quan hệ này.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mô tả cơ chế, không cần kết luận chắc chắn `nó` chỉ ai hoặc cái gì.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mô tả cơ chế, không cần kết luận chắc chắn `nó` chỉ ai hoặc cái gì.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mô tả cơ chế, không cần kết luận chắc chắn `nó` chỉ ai hoặc cái gì.
+
+=====================================================================================
+CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q054 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-scaled-dot-product-attention-calculation] Scaled Dot Product Attention Calculation
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện:
+- `d_k = 2`
+- `Q = [1, 0]`
+- `K₁ = [√2, 0]`, `K₂ = [0, 0]`
+- `V₁ = [1, 0]`, `V₂ = [0, 1]`
+
+Yêu cầu:
+Tính các điểm sau khi chia tỷ lệ, trọng số softmax và đầu ra attention; làm tròn đến 3 chữ số.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính hai tích vô hướng trước, rồi chia mỗi điểm cho √d_k. Sau softmax, dùng hai trọng số để nhân với V₁, V₂ rồi cộng theo từng chiều.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính hai tích vô hướng trước, rồi chia mỗi điểm cho √d_k. Sau softmax, dùng hai trọng số để nhân với V₁, V₂ rồi cộng theo từng chiều.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính hai tích vô hướng trước, rồi chia mỗi điểm cho √d_k. Sau softmax, dùng hai trọng số để nhân với V₁, V₂ rồi cộng theo từng chiều.
+
+=====================================================================================
+CÂU 055 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q055 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-scaled-dot-product-attention-calculation] Scaled Dot Product Attention Calculation
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện:
+- `d_k = 4`
+- `Q = [1, 1]`
+- `K₁ = [2, 0]`, `K₂ = [0, 1]`
+- `V₁ = [2, 0]`, `V₂ = [0, 3]`
+
+Yêu cầu:
+Tính các điểm sau khi chia tỷ lệ, trọng số softmax và đầu ra attention; làm tròn đến 3 chữ số.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ở đây √d_k = 2; sau khi có trọng số vẫn phải cộng có trọng số hai vector Value.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Ở đây √d_k = 2; sau khi có trọng số vẫn phải cộng có trọng số hai vector Value.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ở đây √d_k = 2; sau khi có trọng số vẫn phải cộng có trọng số hai vector Value.
+
+=====================================================================================
+CÂU 056 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q056 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-attention-weight-interpretation] Attention Weight Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Với query token `bank`, trọng số attention tới ba token nguồn là `river`: 0,62; `money`: 0,10; `the`: 0,28. Diễn giải trực tiếp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Trọng số của `money` cho thấy token đó ít liên quan trong mọi head và tầng
+[B] Trong head và tầng này, biểu diễn của `bank` nhận đóng góp lớn nhất từ `river` trong ba token
+[C] Trọng số này cho thấy `bank` đang dùng duy nhất nghĩa liên quan đến sông
+[D] Giá trị 0,62 là xác suất câu trả lời cuối của mô hình đúng về mặt thực tế
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giữ kết luận trong đúng head, đúng tầng và đúng ba token được quan sát.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ kết luận trong đúng head, đúng tầng và đúng ba token được quan sát.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ kết luận trong đúng head, đúng tầng và đúng ba token được quan sát.
+
+=====================================================================================
+CÂU 057 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q057 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-attention-weight-interpretation] Attention Weight Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Một attention head đặt trọng số 0,70 từ đại từ `cô ấy` tới `Mai`, 0,20 tới `Lan` và 0,10 tới dấu chấm. Hãy nêu quan hệ mạnh nhất và một giới hạn của kết luận từ map này.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Trả lời hai phần: trọng số lớn nhất là bao nhiêu và trọng số đó không tự chứng minh điều gì.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Trả lời hai phần: trọng số lớn nhất là bao nhiêu và trọng số đó không tự chứng minh điều gì.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trả lời hai phần: trọng số lớn nhất là bao nhiêu và trọng số đó không tự chứng minh điều gì.
+
+=====================================================================================
+CÂU 058 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q058 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-causal-attention-masking] Causal Attention Masking
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Chuỗi có các vị trí 1, 2, 3, 4. Với causal self-attention, query ở vị trí 2 phải che các vị trí key nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] 1
+[B] 3
+[C] 2
+[D] 4
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 CHỌN CẢ 2 ĐÁP ÁN ĐÚNG: B, D
+[B] 3
+[D] 4
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Query ở vị trí 2 được nhìn các vị trí nhỏ hơn hoặc bằng 2, nên phải che các vị trí tương lai 3 và 4.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Decoder nhân quả chỉ dùng token hiện tại và quá khứ để dự đoán token tiếp theo.
+
+=====================================================================================
+CÂU 059 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q059 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-causal-attention-masking] Causal Attention Masking
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Khi đang huấn luyện để dự đoán token ở vị trí 5, vì sao attention tới token thật ở vị trí 6 phải bị chặn?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Che vị trí 6 làm giảm số tầng cần chạy trong bước đó
+[B] Vị trí 6 được xem là padding trong chuỗi huấn luyện
+[C] Nếu nhìn vị trí 6, mô hình nhận thông tin tương lai vốn không có khi suy luận tự hồi quy
+[D] Causal masking chỉ giữ token tại vị trí 5 và bỏ token trước đó
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So sánh dữ liệu có sẵn ở bước huấn luyện với dữ liệu thật sự có khi sinh tuần tự.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So sánh dữ liệu có sẵn ở bước huấn luyện với dữ liệu thật sự có khi sinh tuần tự.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So sánh dữ liệu có sẵn ở bước huấn luyện với dữ liệu thật sự có khi sinh tuần tự.
+
+=====================================================================================
+CÂU 060 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q060 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-causal-attention-masking] Causal Attention Masking
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Một mask cho query ở vị trí 3 cho phép các key {1, 2, 3, 4}. Lỗi gì xảy ra trong decoder nhân quả?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Key 1 phải bị chặn vì query chỉ được nhìn các key gần nó
+[B] Self key 3 không được dùng vì query chỉ nhìn vị trí nhỏ hơn
+[C] Mask này hợp lệ vì causal chỉ áp dụng ở các bước sinh
+[D] Key 4 làm rò rỉ thông tin tương lai
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So sánh từng chỉ số key với chỉ số query.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So sánh từng chỉ số key với chỉ số query.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So sánh từng chỉ số key với chỉ số query.
+
+=====================================================================================
+CÂU 061 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q061 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-multihead-attention-purpose] Multihead Attention Purpose
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Trong cùng một tầng, head A chú ý quan hệ chủ ngữ–động từ còn head B chú ý token gần nhất. Lợi ích nào được minh họa?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Các head chạy song song có thể nắm bắt những quan hệ khác nhau
+[B] Các head nên dùng cùng attention map vì cùng nhận một chuỗi
+[C] Mỗi head học một tầng biểu diễn nối tiếp sau head trước
+[D] Multi-head attention có thể thay phần feed-forward và residual khi đủ head
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt chiều rộng song song của nhiều head với chiều sâu của nhiều tầng.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt chiều rộng song song của nhiều head với chiều sâu của nhiều tầng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt chiều rộng song song của nhiều head với chiều sâu của nhiều tầng.
+
+=====================================================================================
+CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q062 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-multihead-attention-purpose] Multihead Attention Purpose
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Một học viên nói: “Transformer có 8 heads nghĩa là có 8 layers xử lý nối tiếp.” Hãy sửa phát biểu và nêu mục đích của 8 heads.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Layer nói về độ sâu; head nói về các góc nhìn attention bên trong layer.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Layer nói về độ sâu; head nói về các góc nhìn attention bên trong layer.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Layer nói về độ sâu; head nói về các góc nhìn attention bên trong layer.
+
+=====================================================================================
+CÂU 063 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q063 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-transformer-block-information-flow] Transformer Block Information Flow
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Theo quy ước post-norm rút gọn chỉ dùng trong câu hỏi này, sắp xếp luồng chính của một khối Transformer ở mức thành phần.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Tầng feed-forward
+  - [B] Tầng attention
+  - [C] Đường residual và normalization quanh attention
+  - [D] Đường residual và normalization quanh feed-forward
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 THỨ TỰ QUY TRÌNH CHUẨN XÁC:
+Bước 1: Tầng attention
+Bước 2: Đường residual và normalization quanh attention
+Bước 3: Tầng feed-forward
+Bước 4: Đường residual và normalization quanh feed-forward
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Theo quy ước đã nêu: attention rồi đến residual + normalization, sau đó feed-forward rồi đến residual + normalization. Kiến trúc pre-norm đặt normalization ở vị trí khác và không phải mục tiêu của câu này.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hai tầng chính là attention và feed-forward; mỗi tầng có đường residual và normalization liên quan.
+
+=====================================================================================
+CÂU 064 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q064 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-transformer-block-information-flow] Transformer Block Information Flow
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Sơ đồ rút gọn có `x → Attention(x) → Add → y`, nhưng cổng `Add` chỉ nhận `Attention(x)`. Để biểu diễn đúng đường residual quanh attention, sơ đồ thiếu đường nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Một tokenizer mới biến đầu ra attention trở lại token IDs trước phép cộng
+[B] Đường tắt mang đầu vào ban đầu của tầng tới phép cộng residual
+[C] Một đường bỏ mask toàn bộ token tương lai trước khi residual được tính
+[D] Một nhánh retry của API chạy lại attention nếu đầu ra khác đầu vào ban đầu
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Residual nghĩa là giữ một đường đi tắt của biểu diễn trước tầng biến đổi.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Residual nghĩa là giữ một đường đi tắt của biểu diễn trước tầng biến đổi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Residual nghĩa là giữ một đường đi tắt của biểu diễn trước tầng biến đổi.
+
+=====================================================================================
+CÂU 065 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q065 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-transformer-block-information-flow] Transformer Block Information Flow
+=====================================================================================
+ĐỀ BÀI:
+Dấu vết của biểu diễn `x`:
+- Attention tạo `a`.
+- Residual thứ nhất tạo `r₁`.
+- Feed-forward tạo `f`.
+- Residual thứ hai tạo `r₂`.
+
+Yêu cầu:
+Sắp xếp các bước theo đúng thứ tự qua khối Transformer.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] f = FFN(r₁)
+  - [B] a = Attention(x)
+  - [C] r₂ = Norm(r₁ + f)
+  - [D] r₁ = Norm(x + a)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Theo dõi biến nào phải được tạo trước khi xuất hiện ở vế phải.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo dõi biến nào phải được tạo trước khi xuất hiện ở vế phải.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi biến nào phải được tạo trước khi xuất hiện ở vế phải.
+
+=====================================================================================
+CÂU 066 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q066 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-transformer-architecture-family-comparison] Transformer Architecture Family Comparison
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng đường attention với nguồn thông tin mà nó truy cập trong Transformer encoder–decoder chuẩn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Self-attention của encoder
+  (2) Causal self-attention của decoder
+  (3) Cross-attention của decoder
+
+Cột Phải (Lựa chọn ghép):
+  (A) Đầu ra encoder khi decoder sinh token đích
+  (B) Các vị trí token đích hiện tại hoặc quá khứ
+  (C) Các vị trí nguồn trong đầu vào encoder
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách chuỗi nguồn khỏi tiền tố token đích, rồi hỏi đường nào nối hai phía.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách chuỗi nguồn khỏi tiền tố token đích, rồi hỏi đường nào nối hai phía.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách chuỗi nguồn khỏi tiền tố token đích, rồi hỏi đường nào nối hai phía.
+
+=====================================================================================
+CÂU 067 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q067 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-transformer-architecture-family-comparison] Transformer Architecture Family Comparison
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Một mô hình nhận lời nhắc trong cùng một chuỗi và sinh token tiếp theo theo kiểu tự hồi quy, không có ngăn xếp encoder riêng hoặc cross-attention. Họ kiến trúc nào phù hợp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Mạng tích chập
+[B] Encoder–decoder với cross-attention bắt buộc
+[C] Transformer chỉ có decoder
+[D] Chỉ encoder để phân loại
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm tra có hai ngăn xếp nguồn/đích và cross-attention, hay chỉ một ngăn xếp nhân quả.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra có hai ngăn xếp nguồn/đích và cross-attention, hay chỉ một ngăn xếp nhân quả.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra có hai ngăn xếp nguồn/đích và cross-attention, hay chỉ một ngăn xếp nhân quả.
+
+=====================================================================================
+CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q068 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-transformer-architecture-family-comparison] Transformer Architecture Family Comparison
+=====================================================================================
+ĐỀ BÀI:
+Hai tình huống:
+- Dịch một câu bằng encoder–decoder.
+- Hoàn thành lời nhắc bằng Transformer chỉ có decoder.
+
+Yêu cầu:
+So sánh luồng thông tin và nêu thông tin nguồn đi vào token đích mới qua đường nào ở mỗi họ kiến trúc.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hình dung hai cấu trúc: hai ngăn xếp nối bằng cross-attention so với một chuỗi nhân quả duy nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hình dung hai cấu trúc: hai ngăn xếp nối bằng cross-attention so với một chuỗi nhân quả duy nhất.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hình dung hai cấu trúc: hai ngăn xếp nối bằng cross-attention so với một chuỗi nhân quả duy nhất.
+
+=====================================================================================
+CÂU 069 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q069 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-llm-training-stage-classification] Llm Training Stage Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mỗi mô tả biểu diễn một kiểu dữ liệu hoặc mục tiêu huấn luyện.
+
+Câu hỏi:
+Ghép từng mô tả với giai đoạn huấn luyện phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Dự đoán token kế tiếp trên kho văn bản web lớn
+  (2) Học từ cặp chỉ dẫn và câu trả lời mẫu
+  (3) Ưu tiên câu trả lời được con người chọn hơn câu trả lời bị loại
+
+Cột Phải (Lựa chọn ghép):
+  (A) Căn chỉnh theo ưu tiên (preference alignment)
+  (B) Tinh chỉnh theo chỉ dẫn / tinh chỉnh có giám sát (instruction tuning / SFT)
+  (C) Tiền huấn luyện (pre-training)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Dự đoán token kế tiếp trên kho văn bản web lớn ===> Ghép với: 
+• Cặp 2: Học từ cặp chỉ dẫn và câu trả lời mẫu ===> Ghép với: 
+• Cặp 3: Ưu tiên câu trả lời được con người chọn hơn câu trả lời bị loại ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Tiền huấn luyện dùng kho văn bản để dự đoán token kế tiếp; tinh chỉnh theo chỉ dẫn dùng câu trả lời mẫu; căn chỉnh theo ưu tiên dùng các so sánh được chọn/bị loại.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhìn vào loại giám sát: văn bản thô, câu trả lời mẫu hay so sánh được chọn/bị loại.
+
+=====================================================================================
+CÂU 070 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q070 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-llm-training-stage-classification] Llm Training Stage Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một tập dữ liệu gồm một chỉ dẫn, hai câu trả lời A/B và nhãn người đánh giá thích A hơn B.
+
+Câu hỏi:
+Giai đoạn nào sử dụng trực tiếp loại tín hiệu này?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giải mã khi suy luận (inference-time decoding)
+[B] Tiền huấn luyện trên kho văn bản thô (pre-training)
+[C] Tách token (tokenization)
+[D] Căn chỉnh theo ưu tiên (preference alignment)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dữ liệu không chỉ có một câu trả lời đích; nó so sánh hai câu trả lời.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Dữ liệu không chỉ có một câu trả lời đích; nó so sánh hai câu trả lời.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dữ liệu không chỉ có một câu trả lời đích; nó so sánh hai câu trả lời.
+
+=====================================================================================
+CÂU 071 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q071 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-llm-training-stage-classification] Llm Training Stage Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một nhóm huấn luyện mô hình trên hàng nghìn cặp `chỉ dẫn → câu trả lời mẫu do giảng viên viết`. Không có cặp `được chọn/bị loại`.
+
+Yêu cầu:
+1. Phân loại giai đoạn huấn luyện.
+2. Nêu vì sao đây chưa phải là căn chỉnh theo ưu tiên.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một câu trả lời mẫu khác với nhãn cho biết người đánh giá thích câu trả lời nào hơn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một câu trả lời mẫu khác với nhãn cho biết người đánh giá thích câu trả lời nào hơn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một câu trả lời mẫu khác với nhãn cho biết người đánh giá thích câu trả lời nào hơn.
+
+=====================================================================================
+CÂU 072 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q072 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-rlhf-preference-pipeline] Rlhf Preference Pipeline
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Đã có mô hình được tiền huấn luyện.
+
+Yêu cầu:
+Sắp xếp quy trình RLHF giản lược theo đúng thứ tự.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Tối ưu policy (mô hình chính sách) để tăng điểm thưởng do reward model dự đoán
+  - [B] Thu thập câu trả lời mẫu do con người viết và tinh chỉnh có giám sát
+  - [C] Thu thập đánh giá ưu tiên giữa các câu trả lời do mô hình sinh
+  - [D] Huấn luyện reward model từ các nhãn ưu tiên
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 THỨ TỰ QUY TRÌNH CHUẨN XÁC:
+Bước 1: Thu thập câu trả lời mẫu do con người viết và tinh chỉnh có giám sát
+Bước 2: Thu thập đánh giá ưu tiên giữa các câu trả lời do mô hình sinh
+Bước 3: Huấn luyện reward model từ các nhãn ưu tiên
+Bước 4: Tối ưu policy (mô hình chính sách) để tăng điểm thưởng do reward model dự đoán
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Câu trả lời mẫu tạo policy đã tinh chỉnh có giám sát; các so sánh huấn luyện reward model; sau đó policy được tối ưu theo tín hiệu điểm thưởng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Reward model phải được huấn luyện trước khi policy có thể tối ưu theo điểm thưởng do nó dự đoán.
+
+=====================================================================================
+CÂU 073 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q073 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-rlhf-preference-pipeline] Rlhf Preference Pipeline
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng thành phần với vai trò tương ứng trong RLHF (học tăng cường từ phản hồi của con người).
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Câu trả lời mẫu do con người viết
+  (2) Nhãn ưu tiên A hơn B
+  (3) Mô hình thưởng (reward model)
+  (4) Mô hình chính sách (policy)
+
+Cột Phải (Lựa chọn ghép):
+  (A) Tín hiệu xếp hạng các câu trả lời
+  (B) Đích giám sát cho hành vi ban đầu
+  (C) Ước lượng điểm thưởng cho câu trả lời
+  (D) Mô hình sinh câu trả lời được tối ưu
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Phân biệt dữ liệu giám sát, mô hình chấm điểm và mô hình sinh câu trả lời.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt dữ liệu giám sát, mô hình chấm điểm và mô hình sinh câu trả lời.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt dữ liệu giám sát, mô hình chấm điểm và mô hình sinh câu trả lời.
+
+=====================================================================================
+CÂU 074 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q074 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-rlhf-preference-pipeline] Rlhf Preference Pipeline
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một quy trình (pipeline) có dữ liệu ưu tiên nhưng bỏ bước huấn luyện reward model, rồi vẫn tuyên bố đang chạy đúng quy trình RLHF có reward model.
+
+Câu hỏi:
+Vấn đề trực tiếp là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Thiếu mô hình chuyển dữ liệu ưu tiên thành tín hiệu điểm thưởng cho bước tối ưu policy
+[B] Quy trình không thể bắt đầu từ mô hình đã tiền huấn luyện sau khi thu thập ưu tiên
+[C] Nhãn ưu tiên tự biến thành logits của token nên không cần mục tiêu trung gian
+[D] Bộ tách token không hoạt động vì cặp ưu tiên không chứa kho văn bản tiền huấn luyện
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hỏi thành phần nào biến các so sánh ưu tiên thành một hàm chấm điểm có thể dùng được.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi thành phần nào biến các so sánh ưu tiên thành một hàm chấm điểm có thể dùng được.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi thành phần nào biến các so sánh ưu tiên thành một hàm chấm điểm có thể dùng được.
+
+=====================================================================================
+CÂU 075 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q075 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-dpo-direct-preference-optimization] Dpo Direct Preference Optimization
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai quy trình (pipeline) đều dùng cặp câu trả lời `được chọn/bị loại`:
+- Quy trình X huấn luyện reward model, sau đó tối ưu policy bằng học tăng cường.
+- Quy trình Y tối ưu policy trực tiếp từ cặp ưu tiên với một policy tham chiếu.
+
+Câu hỏi:
+Quy trình Y là phương pháp nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tiền huấn luyện
+[B] DPO (Direct Preference Optimization)
+[C] Huấn luyện bộ tách token
+[D] RLHF có reward model, giống hệt X
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm pipeline không có bước huấn luyện reward model riêng và vòng lặp tối ưu policy bằng RL.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm pipeline không có bước huấn luyện reward model riêng và vòng lặp tối ưu policy bằng RL.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm pipeline không có bước huấn luyện reward model riêng và vòng lặp tối ưu policy bằng RL.
+
+=====================================================================================
+CÂU 076 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q076 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-dpo-direct-preference-optimization] Dpo Direct Preference Optimization
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Quy trình RLHF có reward model gồm hai bước:
+1. Dùng dữ liệu ưu tiên để huấn luyện một reward model riêng.
+2. Tối ưu policy bằng học tăng cường.
+
+Câu hỏi:
+So với quy trình trên, DPO không cần những thành phần nào như các giai đoạn riêng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Các cặp câu trả lời được chọn/bị loại
+[B] Vòng lặp tối ưu policy bằng RL dựa trên reward model
+[C] Policy/mô hình cần tối ưu
+[D] Policy tham chiếu hoặc tín hiệu regularization
+[E] Reward model riêng được huấn luyện từ dữ liệu ưu tiên
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đừng loại bỏ các cặp ưu tiên chỉ vì phương pháp này được gọi là trực tiếp.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng loại bỏ các cặp ưu tiên chỉ vì phương pháp này được gọi là trực tiếp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng loại bỏ các cặp ưu tiên chỉ vì phương pháp này được gọi là trực tiếp.
+
+=====================================================================================
+CÂU 077 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q077 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-alignment-safety-limit] Alignment Safety Limit
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một báo cáo viết: “Mô hình đã qua RLHF nên không thể tạo ra đầu ra nguy hiểm.”
+
+Câu hỏi:
+Đánh giá nhận định này: phần nào có thể được hỗ trợ, và vì sao kết luận tuyệt đối là không hợp lệ?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Phân biệt việc giảm tần suất lỗi trong một bài đánh giá với việc lỗi không thể xảy ra.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt việc giảm tần suất lỗi trong một bài đánh giá với việc lỗi không thể xảy ra.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt việc giảm tần suất lỗi trong một bài đánh giá với việc lỗi không thể xảy ra.
+
+=====================================================================================
+CÂU 078 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q078 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-alignment-safety-limit] Alignment Safety Limit
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mô hình đạt 99% trên một bài đánh giá an toàn cố định.
+
+Câu hỏi:
+Kết luận nào phù hợp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Kết quả cho thấy mô hình an toàn trên các trường hợp sử dụng vì phân phối triển khai tương tự bài đánh giá
+[B] Có thể tạm bỏ qua phân tích lỗi hiếm nếu tỷ lệ đạt đã rất cao
+[C] Kết quả cho thấy hiệu năng cao trên bài đánh giá đó; vẫn cần kiểm thử trên phân phối và kiểu tấn công khác
+[D] Có thể giảm đáng kể việc theo dõi sau triển khai vì bài đánh giá trước triển khai đã đạt 99%
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giữ phạm vi đối tượng và nhiệm vụ trong kết luận trùng với phạm vi của bài đánh giá.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ phạm vi đối tượng và nhiệm vụ trong kết luận trùng với phạm vi của bài đánh giá.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ phạm vi đối tượng và nhiệm vụ trong kết luận trùng với phạm vi của bài đánh giá.
+
+=====================================================================================
+CÂU 079 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q079 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-alignment-safety-limit] Alignment Safety Limit
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Sau khi căn chỉnh theo ưu tiên, nhóm muốn đánh giá an toàn kỹ hơn.
+
+Câu hỏi:
+Những bằng chứng nào vẫn cần thu thập?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chỉ biết tên phương pháp là DPO
+[B] Đánh giá trên phân phối và trường hợp sử dụng khi triển khai
+[C] Theo dõi dạng lỗi và mức độ không chắc chắn
+[D] Red-team bằng các lời nhắc đối kháng
+[E] Kiểm tra mức tuân thủ chính sách (policy) theo tiêu chí cụ thể
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn bằng chứng quan sát hành vi trong nhiều điều kiện; đừng coi tên thuật toán là bảo chứng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chọn bằng chứng quan sát hành vi trong nhiều điều kiện; đừng coi tên thuật toán là bảo chứng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn bằng chứng quan sát hành vi trong nhiều điều kiện; đừng coi tên thuật toán là bảo chứng.
+
+=====================================================================================
+CÂU 080 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q080 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-model-improvement-axis-classification] Model Improvement Axis Classification
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép mỗi thay đổi với trục cải tiến phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Tăng kho dữ liệu và năng lực tính toán cho việc dự đoán token kế tiếp
+  (2) Tinh chỉnh theo chỉ dẫn/ưu tiên sau khi có mô hình nền (base model)
+  (3) Giữ nguyên trọng số (weights), cho mô hình thực hiện thêm nhiều bước suy luận/tìm kiếm khi trả lời
+
+Cột Phải (Lựa chọn ghép):
+  (A) Tính toán tại thời điểm suy luận (test-time compute)
+  (B) Hậu huấn luyện (post-training)
+  (C) Tiền huấn luyện (pre-training)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi thay đổi xảy ra trước mô hình nền, sau mô hình nền hay trong lúc suy luận.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi thay đổi xảy ra trước mô hình nền, sau mô hình nền hay trong lúc suy luận.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi thay đổi xảy ra trước mô hình nền, sau mô hình nền hay trong lúc suy luận.
+
+=====================================================================================
+CÂU 081 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q081 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-model-improvement-axis-classification] Model Improvement Axis Classification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hệ thống giữ nguyên checkpoint nhưng với mỗi truy vấn (query) sinh 8 lời giải ứng viên rồi dùng bộ kiểm chứng (verifier) chọn một.
+
+Câu hỏi:
+Hãy phân loại trục cải tiến và nêu bằng chứng quyết định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kiểm tra xem bộ tối ưu (optimizer) có cập nhật trọng số trước triển khai hay hệ thống chỉ làm thêm việc cho từng truy vấn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra xem bộ tối ưu (optimizer) có cập nhật trọng số trước triển khai hay hệ thống chỉ làm thêm việc cho từng truy vấn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra xem bộ tối ưu (optimizer) có cập nhật trọng số trước triển khai hay hệ thống chỉ làm thêm việc cho từng truy vấn.
+
+=====================================================================================
+CÂU 082 [🟡 Tính toán điền số (Numeric)] - Mã: d01-q082 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-token-cost-calculation] Api Token Cost Calculation
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện giả định:
+- Giá token đầu vào: 2 USD / 1.000.000 token.
+- Giá token đầu ra: 8 USD / 1.000.000 token.
+- Một request dùng 120.000 token đầu vào và 30.000 token đầu ra.
+
+Câu hỏi:
+Tổng chi phí là bao nhiêu?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính token đầu vào và đầu ra riêng theo đúng đơn giá, rồi mới cộng hai khoản.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính token đầu vào và đầu ra riêng theo đúng đơn giá, rồi mới cộng hai khoản.
+
+=====================================================================================
+CÂU 083 [🟡 Tính toán điền số (Numeric)] - Mã: d01-q083 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-token-cost-calculation] Api Token Cost Calculation
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện giả định:
+- Cùng một request dùng 800.000 token đầu vào và 200.000 token đầu ra.
+- Nhà cung cấp A tính 0,50 USD / 1.000.000 token đầu vào và 1,50 USD / 1.000.000 token đầu ra.
+- Nhà cung cấp B tính 0,70 USD / 1.000.000 token đầu vào và 1,00 USD / 1.000.000 token đầu ra.
+
+Câu hỏi:
+A rẻ hơn B bao nhiêu USD cho request này?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính tổng chi phí của từng nhà cung cấp bằng hai đơn giá riêng, rồi lấy chi phí của B trừ chi phí của A.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính tổng chi phí của từng nhà cung cấp bằng hai đơn giá riêng, rồi lấy chi phí của B trừ chi phí của A.
+
+=====================================================================================
+CÂU 084 [🟡 Tính toán điền số (Numeric)] - Mã: d01-q084 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-token-cost-calculation] Api Token Cost Calculation
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện giả định:
+- Một lô gồm 50 request giống nhau.
+- Mỗi request dùng 4.000 token đầu vào và 1.000 token đầu ra.
+- Đơn giá đầu vào: 3 USD / 1.000.000 token.
+- Đơn giá đầu ra: 9 USD / 1.000.000 token.
+
+Câu hỏi:
+Tổng chi phí của cả lô là bao nhiêu?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nhân số token của một request với 50 trước, rồi áp riêng hai đơn giá.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhân số token của một request với 50 trước, rồi áp riêng hai đơn giá.
+
+=====================================================================================
+CÂU 085 [🟡 Tính toán điền số (Numeric)] - Mã: d01-q085 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-repeated-context-cost-growth] Repeated Context Cost Growth
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện:
+- Ba lượt trò chuyện đều gửi lại toàn bộ lịch sử.
+- Token đầu vào của từng lượt: 1.000, 1.800 và 2.600.
+- Mỗi lượt sinh 400 token đầu ra.
+
+Câu hỏi:
+Tổng số token được hạch toán qua ba request là bao nhiêu?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: token
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hạch toán từng request riêng; phần lịch sử được gửi lại vẫn được tính trong request mới.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hạch toán từng request riêng; phần lịch sử được gửi lại vẫn được tính trong request mới.
+
+=====================================================================================
+CÂU 086 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q086 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-repeated-context-cost-growth] Repeated Context Cost Growth
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một system prompt dài 2.000 token được gửi lại nguyên vẹn trong 100 request. Bỏ qua các phần khác.
+
+Câu hỏi:
+Nó đóng góp bao nhiêu token đầu vào được hạch toán, và vì sao không phải chỉ 2.000 token?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết 2.000 token cho mỗi request rồi cộng đủ 100 request.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết 2.000 token cho mỗi request rồi cộng đủ 100 request.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết 2.000 token cho mỗi request rồi cộng đủ 100 request.
+
+=====================================================================================
+CÂU 087 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q087 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-repeated-context-cost-growth] Repeated Context Cost Growth
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Những thay đổi nào có thể giảm chi phí do lặp lại ngữ cảnh mà vẫn cần kiểm tra chất lượng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tóm tắt có kiểm soát phần lịch sử cũ
+[B] Lược bỏ các chỉ dẫn cần thiết để giảm token
+[C] Giữ nguyên toàn bộ nhật ký ở mỗi request
+[D] Giới hạn số lượt lịch sử được giữ nguyên văn
+[E] Chỉ truy xuất đoạn tài liệu liên quan cho mỗi request
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Giảm phần lặp không liên quan, nhưng không được xóa mù quáng dữ kiện bắt buộc.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giảm phần lặp không liên quan, nhưng không được xóa mù quáng dữ kiện bắt buộc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giảm phần lặp không liên quan, nhưng không được xóa mù quáng dữ kiện bắt buộc.
+
+=====================================================================================
+CÂU 088 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q088 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-model-tier-constraint-selection] Model Tier Constraint Selection
+=====================================================================================
+ĐỀ BÀI:
+Hồ sơ model giả định:
+- Tier S: rẻ/nhanh, ngữ cảnh 32k, chất lượng tốt cho việc trích xuất đơn giản.
+- Tier M: giá vừa, ngữ cảnh 128k, khả năng suy luận tốt.
+- Tier L: đắt/chậm, khả năng suy luận mạnh nhất.
+
+Tác vụ:
+- Hợp đồng có 90k token đầu vào, giới hạn đầu ra 8k token.
+- Cần khả năng suy luận vừa.
+- Ngân sách hạn chế.
+
+Câu hỏi:
+Chọn tier phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tier S vì rẻ/nhanh, dù hợp đồng vượt giới hạn ngữ cảnh 32k
+[B] Tier S
+[C] Tier L vì khả năng suy luận vượt mức cần thiết dù ngân sách hạn chế
+[D] Tier M
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Loại hồ sơ vi phạm giới hạn bắt buộc về ngữ cảnh trước khi so sánh chi phí và chất lượng.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Loại hồ sơ vi phạm giới hạn bắt buộc về ngữ cảnh trước khi so sánh chi phí và chất lượng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Loại hồ sơ vi phạm giới hạn bắt buộc về ngữ cảnh trước khi so sánh chi phí và chất lượng.
+
+=====================================================================================
+CÂU 089 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q089 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-model-tier-constraint-selection] Model Tier Constraint Selection
+=====================================================================================
+ĐỀ BÀI:
+Hồ sơ model giả định:
+- Tier S: rẻ/nhanh, ngữ cảnh 32k.
+- Tier M: giá vừa, ngữ cảnh 128k.
+- Tier L: đắt/chậm, khả năng suy luận mạnh nhất.
+
+Tác vụ:
+- Prompt dài 4k token.
+- Phân loại chuẩn hóa hàng triệu request.
+- Độ trễ và chi phí là ưu tiên.
+- Tier S đã đạt ngưỡng chất lượng qua bài đánh giá.
+
+Câu hỏi:
+Chọn tier nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tier S
+[B] Tier L vì khả năng suy luận mạnh nhất
+[C] Chưa thể chọn tier vì chưa biết số tham số
+[D] Tier M vì ngữ cảnh lớn hơn dù không cần
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Sau khi đạt ngưỡng chất lượng, đừng trả thêm cho năng lực mà tác vụ không sử dụng.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Sau khi đạt ngưỡng chất lượng, đừng trả thêm cho năng lực mà tác vụ không sử dụng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Sau khi đạt ngưỡng chất lượng, đừng trả thêm cho năng lực mà tác vụ không sử dụng.
+
+=====================================================================================
+CÂU 090 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q090 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-controlled-model-comparison-design] Controlled Model Comparison Design
+=====================================================================================
+ĐỀ BÀI:
+Thiết kế so sánh hiện tại:
+- Model A: prompt tiếng Việt, temperature bằng 0; độ trễ tính cả thời gian khởi tạo client.
+- Model B: prompt tiếng Anh ngắn hơn, temperature bằng 1; độ trễ không tính thời gian khởi tạo client.
+- Mỗi model chỉ chạy một lần.
+
+Câu hỏi:
+Chọn tất cả biến gây nhiễu cần sửa.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Ranh giới đo độ trễ khác nhau
+[B] Chỉ chạy một lần nên chưa đo được biến thiên
+[C] Hai model có danh tính khác nhau — đây là biến chủ đích cần so sánh
+[D] Temperature khác nhau
+[E] Prompt và ngôn ngữ khác nhau
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Giữ mọi yếu tố ngoài danh tính model càng nhất quán càng tốt.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ mọi yếu tố ngoài danh tính model càng nhất quán càng tốt.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ mọi yếu tố ngoài danh tính model càng nhất quán càng tốt.
+
+=====================================================================================
+CÂU 091 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q091 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-controlled-model-comparison-design] Controlled Model Comparison Design
+=====================================================================================
+ĐỀ BÀI:
+Thiết kế so sánh hiện tại:
+- Model A và B dùng prompt khác ngôn ngữ.
+- Temperature khác nhau.
+- Mỗi model chỉ chạy một lần.
+- Ranh giới đo thời gian khác nhau.
+
+Yêu cầu:
+Sửa thành một quy trình thử nghiệm tối thiểu có thể so sánh; nêu ít nhất bốn biến kiểm soát hoặc trường thông tin cần lưu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nhóm biến kiểm soát theo dữ liệu đầu vào, thiết lập sinh, số lần lặp và cách đo.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nhóm biến kiểm soát theo dữ liệu đầu vào, thiết lập sinh, số lần lặp và cách đo.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhóm biến kiểm soát theo dữ liệu đầu vào, thiết lập sinh, số lần lặp và cách đo.
+
+=====================================================================================
+CÂU 092 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q092 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-controlled-model-comparison-design] Controlled Model Comparison Design
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Một schema kết quả cần lưu những gì để kiểm tra lại một phép so sánh model?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] model_id và prompt/case_id
+[B] Đầu ra thô và điểm chất lượng/bằng chứng rubric
+[C] Ghi tên `winner`, còn chi tiết cấu hình để ở nơi khác
+[D] Ranh giới/kết quả độ trễ và lượng token sử dụng
+[E] Các tham số sinh
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Giữ đủ dữ liệu để người khác tái lập lý do một model được chọn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ đủ dữ liệu để người khác tái lập lý do một model được chọn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ đủ dữ liệu để người khác tái lập lý do một model được chọn.
+
+=====================================================================================
+CÂU 093 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q093 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-llm-access-mode-selection] Llm Access Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng trường hợp sử dụng với chế độ truy cập phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Cá nhân hỏi đáp thủ công, không cần tích hợp
+  (2) IDE cần gợi ý code theo repository
+  (3) Phần backend của sản phẩm gọi model theo từng request
+  (4) Tổ chức cần giữ trọng số và suy luận trong hạ tầng riêng, đồng thời chấp nhận tự vận hành
+
+Cột Phải (Lựa chọn ghép):
+  (A) Tự vận hành (self-hosted)
+  (B) Trợ lý lập trình (coding assistant)
+  (C) Giao diện trò chuyện (Chat UI)
+  (D) API do nhà cung cấp vận hành (hosted API)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi ai gọi model, qua giao diện nào và ai chịu trách nhiệm về hạ tầng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi ai gọi model, qua giao diện nào và ai chịu trách nhiệm về hạ tầng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi ai gọi model, qua giao diện nào và ai chịu trách nhiệm về hạ tầng.
+
+=====================================================================================
+CÂU 094 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q094 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-llm-access-mode-selection] Llm Access Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một bệnh viện yêu cầu dữ liệu không rời hạ tầng kiểm soát, cần kiểm tra quá trình suy luận và có đội vận hành GPU.
+
+Câu hỏi:
+Chọn chế độ truy cập ưu tiên và nêu đánh đổi chính.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Chọn chế độ thỏa điều kiện dữ liệu trước, rồi nêu chi phí vận hành đi kèm.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chọn chế độ thỏa điều kiện dữ liệu trước, rồi nêu chi phí vận hành đi kèm.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn chế độ thỏa điều kiện dữ liệu trước, rồi nêu chi phí vận hành đi kèm.
+
+=====================================================================================
+CÂU 095 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q095 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-llm-access-mode-selection] Llm Access Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một nhóm muốn thử ý tưởng trong 30 phút, chỉ dùng vài prompt thủ công và chưa cần viết code hay tích hợp.
+
+Câu hỏi:
+Chế độ nào có ít chi phí chuẩn bị nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tự dựng cụm suy luận
+[B] Giao diện trò chuyện (Chat UI)
+[C] Viết backend API cho môi trường chính thức
+[D] Dùng trợ lý lập trình cho tác vụ này
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Chọn giao diện đáp ứng trường hợp sử dụng hiện tại, không tối ưu cho nhu cầu chưa có.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chọn giao diện đáp ứng trường hợp sử dụng hiện tại, không tối ưu cho nhu cầu chưa có.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn giao diện đáp ứng trường hợp sử dụng hiện tại, không tối ưu cho nhu cầu chưa có.
+
+=====================================================================================
+CÂU 096 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q096 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-model-total-versus-active-parameters] Model Total Versus Active Parameters
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+- Model D là dense: tổng 20B tham số, khoảng 20B tham số hoạt động ở mỗi token.
+- Model M là MoE: tổng 80B tham số, bộ định tuyến chỉ kích hoạt 10B tham số ở mỗi token.
+
+Yêu cầu:
+1. Phân biệt tổng số tham số (`total parameters`) và số tham số hoạt động (`active parameters`).
+2. Giải thích vì sao không thể kết luận M luôn tốn lượng tính toán gấp 4 chỉ từ tổng số tham số.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách số tham số được lưu khỏi số tham số đi qua phép tính ở mỗi token.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách số tham số được lưu khỏi số tham số đi qua phép tính ở mỗi token.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách số tham số được lưu khỏi số tham số đi qua phép tính ở mỗi token.
+
+=====================================================================================
+CÂU 097 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q097 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-model-total-versus-active-parameters] Model Total Versus Active Parameters
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Thông tin được công bố chỉ có `Model X: 300B total parameters`, không nêu số tham số hoạt động, kiến trúc hay độ trễ.
+
+Câu hỏi:
+Kết luận nào được dữ kiện này hỗ trợ?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có thể khẳng định model này phục vụ nhanh hơn các model 70B dù chưa có dữ liệu độ trễ hay phần cứng
+[B] Có thể khẳng định toàn bộ 300B tham số đều hoạt động ở mỗi token dù chưa biết kiến trúc
+[C] Biết quy mô tổng số tham số; chưa đủ để suy ra lượng tính toán mỗi token hay độ trễ
+[D] Có thể khẳng định chất lượng cao hơn các model nhỏ do có 300B tham số, không cần đánh giá theo tác vụ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Chỉ kết luận thuộc tính được đo trực tiếp; hãy liệt kê các siêu dữ liệu còn thiếu.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ kết luận thuộc tính được đo trực tiếp; hãy liệt kê các siêu dữ liệu còn thiếu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ kết luận thuộc tính được đo trực tiếp; hãy liệt kê các siêu dữ liệu còn thiếu.
+
+=====================================================================================
+CÂU 098 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q098 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-model-choice-from-task-evidence] Model Choice From Task Evidence
+=====================================================================================
+ĐỀ BÀI:
+Tiêu chí theo thứ tự:
+1. JSON hợp lệ — bắt buộc.
+2. Đủ 4 trường — bắt buộc.
+3. Sau đó mới tối ưu độ trễ.
+
+Kết quả:
+- Model A: 10/10 JSON hợp lệ, 10/10 đủ trường, thời gian trung vị 1,8 giây.
+- Model B: 10/10 JSON hợp lệ, 7/10 đủ trường, thời gian trung vị 1,1 giây.
+
+Yêu cầu:
+Chọn model và giải thích.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Loại model vi phạm tiêu chí bắt buộc trước khi so sánh độ trễ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Loại model vi phạm tiêu chí bắt buộc trước khi so sánh độ trễ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Loại model vi phạm tiêu chí bắt buộc trước khi so sánh độ trễ.
+
+=====================================================================================
+CÂU 099 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q099 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-model-choice-from-task-evidence] Model Choice From Task Evidence
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai model C và D cùng đạt 18/20 theo rubric, chênh lệch độ trễ nằm trong nhiễu đo và chi phí chưa được ghi nhận.
+
+Câu hỏi:
+Có nên tuyên bố model thắng không? Nêu bước tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi chỉ số nào thực sự phân biệt hai model vượt qua nhiễu đo.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi chỉ số nào thực sự phân biệt hai model vượt qua nhiễu đo.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi chỉ số nào thực sự phân biệt hai model vượt qua nhiễu đo.
+
+=====================================================================================
+CÂU 100 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q100 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-model-choice-from-task-evidence] Model Choice From Task Evidence
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Tác vụ hỗ trợ trò chuyện ưu tiên độ chính xác thực tế, sau đó mới đến chi phí. Model E đạt 94% độ chính xác, giá 0,04 USD/ca; model F đạt 88%, giá 0,01 USD/ca. Ngưỡng độ chính xác là 92%.
+
+Câu hỏi:
+Chọn model nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Cần biết tổng số tham số trước rồi mới có thể dùng độ chính xác và chi phí
+[B] Hai model hòa vì đều có thể sinh văn bản cho tác vụ hỗ trợ trò chuyện
+[C] F, vì chi phí thấp hơn dù chưa đạt ngưỡng độ chính xác
+[D] E, vì F không đạt ngưỡng độ chính xác
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Áp dụng ngưỡng trước, rồi mới tối ưu chỉ số phụ như chi phí.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Áp dụng ngưỡng trước, rồi mới tối ưu chỉ số phụ như chi phí.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Áp dụng ngưỡng trước, rồi mới tối ưu chỉ số phụ như chi phí.
+
+=====================================================================================
+CÂU 101 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q101 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-benchmark-validity-analysis] Benchmark Validity Analysis
+=====================================================================================
+ĐỀ BÀI:
+Nhận định của nhà cung cấp:
+“Model đứng đầu benchmark kiến thức trắc nghiệm tiếng Anh nên là lựa chọn tốt nhất cho chatbot pháp lý tiếng Việt.”
+
+Yêu cầu:
+- Nêu ít nhất hai khoảng trống về hiệu lực.
+- Nêu bằng chứng cần bổ sung.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So từng khía cạnh của benchmark với workload thật: ngôn ngữ, lĩnh vực, cách tương tác và chỉ số.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So từng khía cạnh của benchmark với workload thật: ngôn ngữ, lĩnh vực, cách tương tác và chỉ số.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng khía cạnh của benchmark với workload thật: ngôn ngữ, lĩnh vực, cách tương tác và chỉ số.
+
+=====================================================================================
+CÂU 102 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q102 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-benchmark-validity-analysis] Benchmark Validity Analysis
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Benchmark chỉ gồm câu ngắn một lượt, còn workload cần hội thoại 20 lượt với các lần gọi công cụ.
+
+Câu hỏi:
+Nhận định `điểm benchmark cao ⇒ tốt nhất cho workload` đang thiếu bằng chứng quan trọng nhất nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Bằng chứng trên trạng thái nhiều lượt và việc dùng công cụ gần với workload
+[B] Một logo benchmark lớn hơn để chứng minh độ uy tín của bảng điểm
+[C] Dùng tổng số tham số thay cho việc đo hành vi trong hội thoại
+[D] Thêm nhiều câu hỏi cùng benchmark một lượt nhưng thay đổi màu và thứ tự hiển thị
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm năng lực có trong triển khai nhưng hoàn toàn vắng khỏi benchmark.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm năng lực có trong triển khai nhưng hoàn toàn vắng khỏi benchmark.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm năng lực có trong triển khai nhưng hoàn toàn vắng khỏi benchmark.
+
+=====================================================================================
+CÂU 103 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q103 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-benchmark-validity-analysis] Benchmark Validity Analysis
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+- Model đạt điểm gần tuyệt đối trên benchmark công khai đã tồn tại nhiều năm.
+- Có nghi ngờ các câu hỏi của benchmark đã xuất hiện trong dữ liệu huấn luyện.
+
+Yêu cầu:
+1. Nêu vì sao nghi ngờ này làm nhận định yếu đi.
+2. Đề xuất một cách kiểm tra bổ sung.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi model có thể đã thấy chính câu hỏi hoặc đáp án trước bài đánh giá hay không.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi model có thể đã thấy chính câu hỏi hoặc đáp án trước bài đánh giá hay không.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi model có thể đã thấy chính câu hỏi hoặc đáp án trước bài đánh giá hay không.
+
+=====================================================================================
+CÂU 104 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q104 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-credential-hygiene] Api Credential Hygiene
+=====================================================================================
+ĐỀ BÀI:
+Dự án ban đầu:
+- `app.py` chứa `API_KEY='sk-live-...'`.
+- `.env` được commit.
+- `.env.example` chỉ chứa `API_KEY=`.
+- Code đọc `os.environ['API_KEY']`.
+
+Câu hỏi:
+Chọn tất cả vấn đề hoặc hành động đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giữ .env.example không có giá trị thật
+[B] Xóa secret hard-code khỏi app.py
+[C] Bỏ theo dõi .env và thêm vào .gitignore
+[D] Khi thiếu biến môi trường, báo lỗi cấu hình rõ trước lời gọi mạng
+[E] In API key vào log để debug
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Phân biệt file cấu hình mẫu với file chứa credential thật, rồi kiểm tra cách xử lý khi biến môi trường không tồn tại.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt file cấu hình mẫu với file chứa credential thật, rồi kiểm tra cách xử lý khi biến môi trường không tồn tại.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt file cấu hình mẫu với file chứa credential thật, rồi kiểm tra cách xử lý khi biến môi trường không tồn tại.
+
+=====================================================================================
+CÂU 105 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q105 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-credential-hygiene] Api Credential Hygiene
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ứng dụng đọc `os.getenv('API_KEY')` và nhận `None`, nhưng vẫn gửi request rồi nhận lỗi xác thực khó hiểu. Cách xử lý cấu hình nào phù hợp hơn?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Hard-code một key mặc định vào source để tránh lỗi cấu hình
+[B] Kiểm tra ngay sau khi load và báo rõ `API_KEY` đang thiếu trước network call
+[C] Chuyển `None` thành chuỗi rồi dùng như credential để request vẫn chạy
+[D] In toàn bộ environment variables ra log để tìm key bị thiếu
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách lỗi cấu hình cục bộ khỏi lỗi do server trả sau lời gọi mạng.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách lỗi cấu hình cục bộ khỏi lỗi do server trả sau lời gọi mạng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách lỗi cấu hình cục bộ khỏi lỗi do server trả sau lời gọi mạng.
+
+=====================================================================================
+CÂU 106 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q106 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-credential-hygiene] Api Credential Hygiene
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Viết cấu hình tối thiểu cho phát triển cục bộ: key thật nằm ở đâu, code lấy bằng cách nào, kho mã giữ file mẫu nào và file nào phải bỏ theo dõi?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kho mã chỉ cần contract về tên biến, không cần giá trị thật.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kho mã chỉ cần contract về tên biến, không cần giá trị thật.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kho mã chỉ cần contract về tên biến, không cần giá trị thật.
+
+=====================================================================================
+CÂU 107 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q107 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-request-construction] Api Request Construction
+=====================================================================================
+ĐỀ BÀI:
+Hợp đồng (contract) giả định:
+`client.chat.create(model, messages, temperature, max_output_tokens)`
+
+Yêu cầu request:
+- Model: `m1`.
+- System: `Bạn là trợ giảng`.
+- User: `Giải thích token`.
+- Temperature: 0,2.
+- Giới hạn output: 200.
+
+Câu hỏi:
+Lệnh gọi nào khớp contract?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] `client.chat.create(model='m1', messages=[{'role':'user','content':'Bạn là trợ giảng; Giải thích token'}], temperature=200, max_output_tokens=0.2)`
+[B] `client.responses.delete(model='m1', messages=[{'role':'user','content':'Giải thích token'}], temperature=0.2, max_output_tokens=200)`
+[C] `client.chat.create(model='m1', messages=[{'role':'system','content':'Bạn là trợ giảng'},{'role':'user','content':'Giải thích token'}], temperature=0.2, max_output_tokens=200)`
+[D] `client.chat.create(model='m1', prompt='Giải thích token', system='Bạn là trợ giảng', temperature=0.2, max_tokens=200)`
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu từng trường với chữ ký hàm được cung cấp; không dùng trí nhớ về SDK khác.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đối chiếu từng trường với chữ ký hàm được cung cấp; không dùng trí nhớ về SDK khác.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu từng trường với chữ ký hàm được cung cấp; không dùng trí nhớ về SDK khác.
+
+=====================================================================================
+CÂU 108 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q108 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-request-construction] Api Request Construction
+=====================================================================================
+ĐỀ BÀI:
+Hợp đồng (contract) giả định:
+`client.chat.create(model, messages, temperature, max_output_tokens)`
+
+Ràng buộc:
+- `messages` đặt system trước user.
+- `temperature` nằm trong [0, 2].
+- `max_output_tokens` là số nguyên dương.
+- System: `Bạn là trợ giảng`.
+- User: `Giải thích token`.
+- Temperature: 0,2; giới hạn output: 200.
+
+Lệnh gọi cần kiểm tra:
+```python
+client.chat.create(
+    model='m1',
+    messages=[
+        {'role':'user','content':'Bạn là trợ giảng'},
+        {'role':'system','content':'Giải thích token'}
+    ],
+    temperature=200,
+    max_output_tokens=0.2
+)
+```
+
+Yêu cầu:
+Chọn tất cả nhận xét đúng về lệnh gọi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Phương thức đúng contract
+[B] temperature và giới hạn output bị tráo giá trị
+[C] Phải xóa trường model
+[D] System và user content bị đặt sai role
+[E] Message order không đúng system trước user
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: So cả tên trường lẫn ý nghĩa/giá trị được đặt vào trường đó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So cả tên trường lẫn ý nghĩa/giá trị được đặt vào trường đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So cả tên trường lẫn ý nghĩa/giá trị được đặt vào trường đó.
+
+=====================================================================================
+CÂU 109 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q109 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-request-construction] Api Request Construction
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Hợp đồng của provider quy định trường `max_output_tokens`; mã ban đầu lại gửi `max_tokens`. Không dùng tài liệu ngoài. Hãy nêu sửa đổi và vì sao không nên đoán alias sẽ hoạt động.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tên khái niệm giống nhau không đảm bảo tên trường giống nhau giữa các SDK/provider.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tên khái niệm giống nhau không đảm bảo tên trường giống nhau giữa các SDK/provider.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tên khái niệm giống nhau không đảm bảo tên trường giống nhau giữa các SDK/provider.
+
+=====================================================================================
+CÂU 110 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q110 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-response-content-extraction] Api Response Content Extraction
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Mẫu response: `{'choices':[{'message':{'content':'Xin chào'},'finish_reason':'stop'}],'usage':{'total_tokens':9}}`. Biểu thức nào lấy đúng văn bản được sinh?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] `response['choices'][0]['message']` để lấy chuỗi text hoàn chỉnh
+[B] `response['choices'][0]['finish_reason']` vì đây là trường mô tả trạng thái trả về
+[C] `response['usage']['total_tokens']` vì đây là trường chứa phần output được sinh
+[D] `response['choices'][0]['message']['content']`
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đi theo cấu trúc choice → message → content.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đi theo cấu trúc choice → message → content.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đi theo cấu trúc choice → message → content.
+
+=====================================================================================
+CÂU 111 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q111 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-response-content-extraction] Api Response Content Extraction
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Mẫu response có `choices=[]`. Hàm hiện tại truy cập index 0 và bị lỗi. Hãy nêu cách xử lý chủ động mà không tự bịa nội dung.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách trạng thái `không có nội dung` khỏi trường hợp nội dung là chuỗi rỗng hợp lệ nếu contract cho phép.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách trạng thái `không có nội dung` khỏi trường hợp nội dung là chuỗi rỗng hợp lệ nếu contract cho phép.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách trạng thái `không có nội dung` khỏi trường hợp nội dung là chuỗi rỗng hợp lệ nếu contract cho phép.
+
+=====================================================================================
+CÂU 112 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q112 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-response-content-extraction] Api Response Content Extraction
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Mẫu response của Provider Y: `{'result':{'output_text':'42'},'metrics':{'tokens':5}}`. Theo contract này, trường nào là nội dung được sinh?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] `result.output_text`
+[B] Một trường `choices` không tồn tại trong mẫu này
+[C] `metrics.tokens`
+[D] Toàn bộ metrics
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Không sao chép path của provider trước; đọc object hiện có.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không sao chép path của provider trước; đọc object hiện có.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không sao chép path của provider trước; đọc object hiện có.
+
+=====================================================================================
+CÂU 113 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q113 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-token-usage-reading] Api Token Usage Reading
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Mẫu usage: `usage={'prompt_tokens':120,'completion_tokens':30,'total_tokens':150}`. Hãy báo số token đầu vào, đầu ra và tổng theo đúng ý nghĩa của từng trường.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Provider này dùng `prompt` cho đầu vào và `completion` cho phần output được sinh.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Provider này dùng `prompt` cho đầu vào và `completion` cho phần output được sinh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Provider này dùng `prompt` cho đầu vào và `completion` cho phần output được sinh.
+
+=====================================================================================
+CÂU 114 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q114 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-token-usage-reading] Api Token Usage Reading
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Provider Z dùng `input_tokens=80`, `output_tokens=20`, `total_tokens=100`. Nhận xét nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] input_tokens là model ID
+[B] Cả ba đều là trường thống kê việc sử dụng token
+[C] output_tokens là nguyên văn câu trả lời
+[D] total_tokens là finish reason
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tên có chữ `output` không đồng nghĩa trường đó chứa văn bản output.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tên có chữ `output` không đồng nghĩa trường đó chứa văn bản output.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tên có chữ `output` không đồng nghĩa trường đó chứa văn bản output.
+
+=====================================================================================
+CÂU 115 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q115 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-finish-reason-diagnosis] Api Finish Reason Diagnosis
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng `finish_reason` giả định với cách xử lý trực tiếp phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) stop
+  (2) length
+  (3) tool_call
+
+Cột Phải (Lựa chọn ghép):
+  (A) Kết thúc bình thường theo điều kiện dừng; vẫn kiểm tra nội dung nếu cần
+  (B) Chuyển sang thực thi/phân phối tool theo contract
+  (C) Đánh dấu có thể bị cắt và cân nhắc giới hạn output, prompt hoặc phần tiếp tục
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Một `finish_reason` nói về kết thúc bình thường, một về giới hạn output, một về chuyển quyền thực thi hành động.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một `finish_reason` nói về kết thúc bình thường, một về giới hạn output, một về chuyển quyền thực thi hành động.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một `finish_reason` nói về kết thúc bình thường, một về giới hạn output, một về chuyển quyền thực thi hành động.
+
+=====================================================================================
+CÂU 116 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q116 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-finish-reason-diagnosis] Api Finish Reason Diagnosis
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Response kết thúc bằng `... bước cuối là` và `finish_reason='length'`. Hành động nào phù hợp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Nối thêm phần văn bản do ứng dụng tự tạo rồi trình bày như phần còn thiếu
+[B] Tạo API key mới rồi retry, vì vấn đề có thể nằm ở cấu hình credential
+[C] Đánh dấu là bị cắt; không trình bày như câu trả lời hoàn chỉnh và điều chỉnh hoặc retry có kiểm soát
+[D] Hiển thị phần text hiện có như câu trả lời hoàn chỉnh vì content không rỗng
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hãy ưu tiên metadata thay vì đoán chỉ từ dấu câu cuối.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hãy ưu tiên metadata thay vì đoán chỉ từ dấu câu cuối.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy ưu tiên metadata thay vì đoán chỉ từ dấu câu cuối.
+
+=====================================================================================
+CÂU 117 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q117 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-finish-reason-diagnosis] Api Finish Reason Diagnosis
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Response có text `Tôi sẽ kiểm tra lịch` và `finish_reason='tool_call'` kèm đối số tool hợp lệ. Hãy nêu trạng thái và bước xử lý tiếp theo; đừng coi text là kết quả cuối.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi ai chịu trách nhiệm thực thi hành động và khi nào kết quả quan sát được đưa lại cho model.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi ai chịu trách nhiệm thực thi hành động và khi nào kết quả quan sát được đưa lại cho model.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi ai chịu trách nhiệm thực thi hành động và khi nào kết quả quan sát được đưa lại cho model.
+
+=====================================================================================
+CÂU 118 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q118 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-latency-measurement] Api Latency Measurement
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Với request không streaming, đoạn code nào đo đúng nhất độ trễ của lời gọi API thuần?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] `start=now(); load_10GB_data(); response=client.call(req); render(); elapsed=now()-start`
+[B] `elapsed=response.usage.total_tokens`
+[C] `response=client.call(req); start=now(); elapsed=now()-start`
+[D] `start=now(); response=client.call(req); elapsed=now()-start`
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Bắt đầu ngay trước lời gọi mạng và kết thúc ngay sau khi lời gọi trả về.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Bắt đầu ngay trước lời gọi mạng và kết thúc ngay sau khi lời gọi trả về.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bắt đầu ngay trước lời gọi mạng và kết thúc ngay sau khi lời gọi trả về.
+
+=====================================================================================
+CÂU 119 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q119 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-latency-measurement] Api Latency Measurement
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Nhóm báo Model A mất 1,2 giây và B mất 0,9 giây, nhưng phép đo của A gồm 0,5 giây khởi tạo client còn B dùng lại client. Có thể kết luận lời gọi mạng của B nhanh hơn không? Hãy sửa quy trình đo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách độ trễ khởi tạo khỏi độ trễ lời gọi trước khi so sánh.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách độ trễ khởi tạo khỏi độ trễ lời gọi trước khi so sánh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách độ trễ khởi tạo khỏi độ trễ lời gọi trước khi so sánh.
+
+=====================================================================================
+CÂU 120 [🟡 Tính toán điền số (Numeric)] - Mã: d01-q120 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-latency-measurement] Api Latency Measurement
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Timer ngay trước lời gọi là 12,350 giây và ngay sau lời gọi là 13,925 giây. Độ trễ của lời gọi thuần là bao nhiêu?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: giây
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Thời gian trôi qua = thời điểm kết thúc − thời điểm bắt đầu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thời gian trôi qua = thời điểm kết thúc − thời điểm bắt đầu.
+
+=====================================================================================
+CÂU 121 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q121 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-system-user-message-separation] System User Message Separation
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng nội dung với role phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Luôn trả lời như trợ giảng, không tiết lộ secret
+  (2) Hãy giải thích attention cho tôi bằng ví dụ
+  (3) System message phải xuất hiện trước user message
+
+Cột Phải (Lựa chọn ghép):
+  (A) User content
+  (B) System content
+  (C) Ràng buộc thứ tự, không phải nội dung yêu cầu của người học
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi instruction nào phải giữ nguyên qua nhiều task của user.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi instruction nào phải giữ nguyên qua nhiều task của user.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi instruction nào phải giữ nguyên qua nhiều task của user.
+
+=====================================================================================
+CÂU 122 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q122 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-system-user-message-separation] System User Message Separation
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Tạo danh sách hai message cho persona `Bạn là trợ giảng ngắn gọn` và task hiện tại `Tóm tắt đoạn văn này`. Nêu đúng thứ tự và role.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Thông tin bền vững đi trước; yêu cầu của lượt này đi sau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Thông tin bền vững đi trước; yêu cầu của lượt này đi sau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thông tin bền vững đi trước; yêu cầu của lượt này đi sau.
+
+=====================================================================================
+CÂU 123 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q123 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-four-layer-prompt-composition] Four Layer Prompt Composition
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép đoạn prompt với lớp chức năng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Bạn là chuyên viên phân tích, chỉ dùng bằng chứng được cung cấp
+  (2) Câu hỏi: Vì sao doanh thu giảm?
+  (3) Bảng doanh thu Q1–Q4: ...
+  (4) Trả JSON gồm `cause` và `evidence_row`
+
+Cột Phải (Lựa chọn ghép):
+  (A) Hợp đồng output
+  (B) Input hiện tại của user
+  (C) Chỉ dẫn system về cách model hành xử
+  (D) Context hỗ trợ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Mỗi lớp trả lời một câu: model hành xử ra sao, user muốn gì, dùng dữ kiện nào và output phải có dạng gì.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi lớp trả lời một câu: model hành xử ra sao, user muốn gì, dùng dữ kiện nào và output phải có dạng gì.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi lớp trả lời một câu: model hành xử ra sao, user muốn gì, dùng dữ kiện nào và output phải có dạng gì.
+
+=====================================================================================
+CÂU 124 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q124 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-four-layer-prompt-composition] Four Layer Prompt Composition
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Prompt có role, task và tài liệu đầy đủ nhưng model lúc trả văn xuôi, lúc trả markdown, còn bộ phân tích downstream cần JSON gồm hai trường. Lớp nào thiếu rõ nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Hợp đồng output quy định JSON schema và các ràng buộc định dạng
+[B] User input mô tả lại cùng task dù prompt đã có đầy đủ
+[C] Context bổ sung thêm tài liệu dù evidence hiện đã đầy đủ
+[D] Tên persona dài hơn nhưng không quy định cấu trúc response
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xác định thành phần downstream đang lỗi vì thiếu loại constraint nào.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định thành phần downstream đang lỗi vì thiếu loại constraint nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định thành phần downstream đang lỗi vì thiếu loại constraint nào.
+
+=====================================================================================
+CÂU 125 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q125 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-four-layer-prompt-composition] Four Layer Prompt Composition
+=====================================================================================
+ĐỀ BÀI:
+Nhiệm vụ (task):
+Dựa trên đoạn chính sách được cung cấp, trả lời câu hỏi của nhân viên.
+
+Hợp đồng đầu ra (output contract):
+Trả đúng ba trường (fields): `answer`, `quote`, `uncertainty`.
+
+Yêu cầu:
+Soạn prompt đủ bốn lớp. Không cần cú pháp (syntax) của provider.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết bốn nhãn trước, rồi điền đúng một nhiệm vụ cho mỗi nhãn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết bốn nhãn trước, rồi điền đúng một nhiệm vụ cho mỗi nhãn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết bốn nhãn trước, rồi điền đúng một nhiệm vụ cho mỗi nhãn.
+
+=====================================================================================
+CÂU 126 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q126 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-provider-api-contract-mapping] Provider Api Contract Mapping
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Request của Provider A: `{model, messages:[{role:'system',content:S},{role:'user',content:U}]}`. Request của Provider B: `{model_id, system:S, input:U}`. Ghép các trường theo ý nghĩa từ A sang B.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) model
+  (2) messages.system.content
+  (3) messages.user.content
+
+Cột Phải (Lựa chọn ghép):
+  (A) model_id
+  (B) system
+  (C) input
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Đừng ghép theo vị trí trong object; hãy ghép theo chức năng của giá trị.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng ghép theo vị trí trong object; hãy ghép theo chức năng của giá trị.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng ghép theo vị trí trong object; hãy ghép theo chức năng của giá trị.
+
+=====================================================================================
+CÂU 127 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q127 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-provider-api-contract-mapping] Provider Api Contract Mapping
+=====================================================================================
+ĐỀ BÀI:
+Provider A response:
+- `choices[0].message.content`
+- `usage.prompt_tokens`
+- `usage.completion_tokens`
+
+Provider B response:
+- `result.text`
+- `metrics.input_tokens`
+- `metrics.output_tokens`
+
+Yêu cầu:
+Ghép các field theo ngữ nghĩa tương ứng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) choices[0].message.content
+  (2) usage.prompt_tokens
+  (3) usage.completion_tokens
+
+Cột Phải (Lựa chọn ghép):
+  (A) result.text
+  (B) metrics.output_tokens
+  (C) metrics.input_tokens
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách đường dẫn content khỏi hai trường thống kê token.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách đường dẫn content khỏi hai trường thống kê token.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách đường dẫn content khỏi hai trường thống kê token.
+
+=====================================================================================
+CÂU 128 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q128 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-provider-api-contract-mapping] Provider Api Contract Mapping
+=====================================================================================
+ĐỀ BÀI:
+Provider A:
+- Request: `{model, messages:[system:S, user:U]}`.
+- Response: `{choices[0].message.content, usage.prompt_tokens, usage.completion_tokens}`.
+
+Provider B:
+- Request: `{model_id, system, input}`.
+- Response: `{result.text, metrics.input_tokens, metrics.output_tokens}`.
+
+Ánh xạ mã model:
+A:`a-1` ↔ B:`b-7`
+
+Tương tác cần chuyển:
+- A dùng `a-1`.
+- S = `Trả ngắn`; U = `Giải thích token`.
+- Response A: text = `Đơn vị xử lý`, prompt = 12, completion = 4.
+
+Yêu cầu:
+Ghi request của B và các trường response tương ứng của B.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ghép theo ý nghĩa của từng trường; riêng model ID phải dùng mapping đã cho trong đề.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Ghép theo ý nghĩa của từng trường; riêng model ID phải dùng mapping đã cho trong đề.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ghép theo ý nghĩa của từng trường; riêng model ID phải dùng mapping đã cho trong đề.
+
+=====================================================================================
+CÂU 129 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q129 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-local-causal-model-inference] Local Causal Model Inference
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Sắp xếp quy trình (pipeline) suy luận cơ bản của causal language model chạy cục bộ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Giải mã các token ID được sinh thành text
+  - [B] Nạp tokenizer và causal LM tương thích
+  - [C] Tokenize/encode prompt thành tensor
+  - [D] Gọi generate với giới hạn output
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Theo dõi kiểu dữ liệu: text → token ID/tensor → ID được sinh → text.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo dõi kiểu dữ liệu: text → token ID/tensor → ID được sinh → text.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi kiểu dữ liệu: text → token ID/tensor → ID được sinh → text.
+
+=====================================================================================
+CÂU 130 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q130 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-local-causal-model-inference] Local Causal Model Inference
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Code nạp tokenizer của checkpoint `model-A` nhưng nạp trọng số từ `model-B`; kích thước vocabulary khác nhau. Lỗi thiết kế trực tiếp là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Temperature quá thấp nên tokenizer tạo vocabulary khác với trọng số đã nạp
+[B] Tokenizer và model không tương thích; token ID có thể ghép sai hoặc vượt phạm vi
+[C] Pipeline phải decode prompt thành text lần nữa trước khi tokenizer có thể encode
+[D] Dùng hosted API để tránh phải ghép tokenizer với model local
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Token ID chỉ có ý nghĩa trong vocabulary mà model đã được huấn luyện.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Token ID chỉ có ý nghĩa trong vocabulary mà model đã được huấn luyện.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Token ID chỉ có ý nghĩa trong vocabulary mà model đã được huấn luyện.
+
+=====================================================================================
+CÂU 131 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q131 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-local-causal-model-inference] Local Causal Model Inference
+=====================================================================================
+ĐỀ BÀI:
+Mã khung (giả sử biến `prompt` đã chứa nội dung cần xử lý):
+```python
+tokenizer, model = load_same_checkpoint(name)
+inputs = ___
+ids = model.generate(**inputs, max_new_tokens=40)
+text = ___
+```
+
+Yêu cầu:
+Điền hai bước còn thiếu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hai chỗ trống nằm ở hai phía của `generate`: text→tensor và ID→text.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hai chỗ trống nằm ở hai phía của `generate`: text→tensor và ID→text.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hai chỗ trống nằm ở hai phía của `generate`: text→tensor và ID→text.
+
+=====================================================================================
+CÂU 132 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q132 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-stream-chunk-processing] Stream Chunk Processing
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Các delta của stream theo thứ tự: `None`, `'Xin'`, `''`, `' chào'`, `'!'`. Ứng dụng phải phát/ghép thành text nào và bỏ chunk nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ khoảng trắng nằm trong delta có nội dung `' chào'`.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ khoảng trắng nằm trong delta có nội dung `' chào'`.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ khoảng trắng nằm trong delta có nội dung `' chào'`.
+
+=====================================================================================
+CÂU 133 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q133 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-stream-chunk-processing] Stream Chunk Processing
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Code `return stream` được dùng trong khi bên gọi cần một chuỗi hoàn chỉnh. Vấn đề là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Phải tăng temperature trước khi iterator có thể tự chuyển thành chuỗi cuối
+[B] Response streaming cần được đọc qua các event trước khi bên gọi nhận được text
+[C] Iterator/event chưa được duyệt, các delta nội dung chưa được trích xuất hoặc ghép lại
+[D] Đối tượng stream có thể dùng trực tiếp như văn bản hoàn chỉnh dù chưa đọc event nào
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt đối tượng truyền tải với từng phần dữ liệu nội dung.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt đối tượng truyền tải với từng phần dữ liệu nội dung.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt đối tượng truyền tải với từng phần dữ liệu nội dung.
+
+=====================================================================================
+CÂU 134 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q134 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-stream-chunk-processing] Stream Chunk Processing
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Các delta nội dung đến theo số thứ tự: (3,'C'), (1,'A'), (2,'B') vì bộ kiểm thử giao chúng ngoài thứ tự. Contract yêu cầu phát theo số thứ tự. Hãy sắp thứ tự phát.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] delta thứ tự 3: C
+  - [B] delta thứ tự 1: A
+  - [C] delta thứ tự 2: B
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Dùng số thứ tự, không dùng thứ tự các phần tử đến.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Dùng số thứ tự, không dùng thứ tự các phần tử đến.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dùng số thứ tự, không dùng thứ tự các phần tử đến.
+
+=====================================================================================
+CÂU 135 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d01-q135 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-streaming-ux-mode-selection] Streaming Ux Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Ghép từng tình huống với chế độ ưu tiên phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Cuộc trò chuyện dài, người dùng chấp nhận đọc dần
+  (2) JSON phải được kiểm tra toàn bộ trước khi hệ thống tài chính nhận
+  (3) Xử lý theo lô ở chế độ ngoại tuyến, không có người chờ
+
+Cột Phải (Lựa chọn ghép):
+  (A) Thu thập theo lô đơn giản; không cần hiển thị kết quả từng phần
+  (B) Dùng truyền kết quả từng phần (`streaming`) để hiển thị dần cho người dùng
+  (C) Giữ toàn bộ kết quả (output) rồi kiểm tra trước khi chuyển cho hệ thống tiếp nhận phía sau
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi kết quả từng phần có an toàn và hữu ích trước khi hoàn tất hay không.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi kết quả từng phần có an toàn và hữu ích trước khi hoàn tất hay không.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi kết quả từng phần có an toàn và hữu ích trước khi hoàn tất hay không.
+
+=====================================================================================
+CÂU 136 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q136 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-streaming-ux-mode-selection] Streaming Ux Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Ứng dụng phải kiểm tra schema và chữ ký trên toàn response trước khi hiển thị bất kỳ byte nào. Chế độ nào phù hợp trực tiếp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Streaming trực tiếp vì có thể cho người dùng thấy token đầu trước khi kiểm tra toàn bộ
+[B] Hiển thị từng chunk ngay khi đến rồi mới kiểm tra sau khi người dùng đã thấy
+[C] Chọn chế độ theo temperature trước, rồi mới xem yêu cầu kiểm tra schema
+[D] Không streaming hoặc buffer toàn bộ rồi mới hiển thị
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Ràng buộc quyết định là `trước khi hiển thị bất kỳ byte nào`.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Ràng buộc quyết định là `trước khi hiển thị bất kỳ byte nào`.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ràng buộc quyết định là `trước khi hiển thị bất kỳ byte nào`.
+
+=====================================================================================
+CÂU 137 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q137 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-streaming-ux-mode-selection] Streaming Ux Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Một trợ lý sinh hướng dẫn trong 2 phút; thời gian hoàn tất không đổi giữa hai chế độ nhưng streaming cho token đầu sau 0,5 giây. Vì sao vẫn chọn streaming, và điều gì không được khẳng định?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So hai chỉ số: lúc người dùng thấy phần đầu và lúc phản hồi hoàn tất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So hai chỉ số: lúc người dùng thấy phần đầu và lúc phản hồi hoàn tất.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So hai chỉ số: lúc người dùng thấy phần đầu và lúc phản hồi hoàn tất.
+
+=====================================================================================
+CÂU 138 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d01-q138 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-bounded-conversation-history] Bounded Conversation History
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Một trạng thái chat đang rỗng. Sau user `U1`, assistant `A1`, user `U2`, assistant `A2`, thứ tự history đúng là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] assistant:A2
+  - [B] user:U1
+  - [C] assistant:A1
+  - [D] user:U2
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Mỗi câu trả lời của assistant phải đứng sau lượt user mà nó trả lời.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi câu trả lời của assistant phải đứng sau lượt user mà nó trả lời.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi câu trả lời của assistant phải đứng sau lượt user mà nó trả lời.
+
+=====================================================================================
+CÂU 139 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q139 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-bounded-conversation-history] Bounded Conversation History
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Policy giữ tối đa 2 cặp user/assistant hoàn chỉnh gần nhất. History là U1,A1,U2,A2,U3,A3. Request tiếp theo phải gửi history nào trước U4?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đếm theo cặp user+assistant, không theo số message rời.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đếm theo cặp user+assistant, không theo số message rời.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đếm theo cặp user+assistant, không theo số message rời.
+
+=====================================================================================
+CÂU 140 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q140 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-bounded-conversation-history] Bounded Conversation History
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Khi lịch sử hội thoại (history) vượt ngân sách (budget), những policy nào giữ trạng thái (state) có kiểm soát hơn việc `gửi tất cả mãi mãi`?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Truy xuất state/fact liên quan cho lượt hiện tại
+[B] Tóm tắt lượt cũ và giữ các lượt gần đây
+[C] Xáo trộn thứ tự để tiết kiệm
+[D] Giữ N lượt gần nhất
+[E] Xóa ngẫu nhiên các message assistant
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một policy tốt phải có quy tắc có thể kiểm thử và giữ trình tự cùng state cần thiết.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một policy tốt phải có quy tắc có thể kiểm thử và giữ trình tự cùng state cần thiết.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một policy tốt phải có quy tắc có thể kiểm thử và giữ trình tự cùng state cần thiết.
+
+=====================================================================================
+CÂU 141 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q141 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-retry-backoff] Api Retry Backoff
+=====================================================================================
+ĐỀ BÀI:
+Policy retry:
+- Tối đa 4 lần thử.
+- Delay sau mỗi lần thất bại: `1×2^(attempt_index-1)` giây.
+- `attempt_index` bắt đầu từ 1.
+
+Kết quả giả định:
+Ba lần thử đầu thất bại; lần thử 4 thành công.
+
+Câu hỏi:
+Các khoảng chờ thực tế là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Chỉ chờ sau thất bại nếu vẫn còn lần thử tiếp theo.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ chờ sau thất bại nếu vẫn còn lần thử tiếp theo.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ chờ sau thất bại nếu vẫn còn lần thử tiếp theo.
+
+=====================================================================================
+CÂU 142 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q142 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-retry-backoff] Api Retry Backoff
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Hàm được gọi thất bại hai lần rồi thành công ở lần thử 3, policy tối đa 5 lần. Cách xử lý đúng là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Trả result ngay ở lần thử 3 và không chạy các lần thử 4–5
+[B] Gọi thêm một lần để lấy response thứ hai rồi chọn response tốt hơn
+[C] Đặt result thành None rồi tiếp tục chờ đến hết số lần thử tối đa
+[D] Bỏ result thành công và ném lại lỗi của lần thử đầu tiên cho bên gọi
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Số lần thử tối đa là giới hạn trên, không phải quota bắt buộc.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Số lần thử tối đa là giới hạn trên, không phải quota bắt buộc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Số lần thử tối đa là giới hạn trên, không phải quota bắt buộc.
+
+=====================================================================================
+CÂU 143 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q143 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-api-retry-backoff] Api Retry Backoff
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Chính sách retry tối đa 3 lần thử. Cả ba đều thất bại với lỗi tạm thời E3 là lỗi cuối. Sau lần thử 3 phải làm gì và vì sao không chờ thêm?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi khoảng chờ phải chuẩn bị cho một lần thử tiếp theo.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi khoảng chờ phải chuẩn bị cho một lần thử tiếp theo.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi khoảng chờ phải chuẩn bị cho một lần thử tiếp theo.
+
+=====================================================================================
+CÂU 144 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q144 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-api-retry-backoff] Api Retry Backoff
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Theo policy an toàn, lỗi nào thường có thể retry và lỗi nào không nên retry mù quáng? Chọn các trường hợp có thể retry được mô tả rõ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Invalid API key
+[B] Malformed request schema
+[C] Response rate-limit có Retry-After
+[D] Timeout mạng tạm thời
+[E] Lỗi 503 service unavailable tạm thời
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ retry lỗi có khả năng tự thay đổi theo thời gian mà không cần sửa request hoặc credential.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ retry lỗi có khả năng tự thay đổi theo thời gian mà không cần sửa request hoặc credential.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ retry lỗi có khả năng tự thay đổi theo thời gian mà không cần sửa request hoặc credential.
+
+=====================================================================================
+CÂU 145 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q145 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-coding-requirement-specification] Ai Coding Requirement Specification
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Yêu cầu `Viết cho tôi một app upload file tốt` còn thiếu những phần nào để việc lập trình với AI có một bản đặc tả có thể kiểm thử được?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Loại/kích thước file và cách xử lý khi không hợp lệ
+[B] Tiêu chí chấp nhận có thể quan sát và kiểm thử
+[C] Một câu khen mô hình sáng tạo
+[D] Giao diện/API hoặc luồng giao diện
+[E] Ràng buộc bảo mật/lưu trữ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hỏi người kiểm thử cần biết gì để quyết định phần triển khai đạt hay không.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi người kiểm thử cần biết gì để quyết định phần triển khai đạt hay không.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi người kiểm thử cần biết gì để quyết định phần triển khai đạt hay không.
+
+=====================================================================================
+CÂU 146 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q146 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ai-coding-requirement-specification] Ai Coding Requirement Specification
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu ban đầu:
+- Hàm Python nhận đường dẫn CSV.
+- Trả tổng cột `amount`.
+- Bỏ qua dòng trống.
+- Báo lỗi nếu thiếu cột.
+- Không dùng mạng.
+
+Yêu cầu:
+Viết lại thành bản mô tả có giao diện và ít nhất ba tiêu chí chấp nhận.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi tiêu chí chấp nhận nên có đầu vào/điều kiện và kết quả quan sát được mong đợi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi tiêu chí chấp nhận nên có đầu vào/điều kiện và kết quả quan sát được mong đợi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi tiêu chí chấp nhận nên có đầu vào/điều kiện và kết quả quan sát được mong đợi.
+
+=====================================================================================
+CÂU 147 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d01-q147 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-coding-requirement-specification] Ai Coding Requirement Specification
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Với hàm đọc CSV và tính tổng cột `amount` mà không được gọi mạng, tiêu chí chấp nhận nào kiểm thử được nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Mô hình nên ưu tiên giải pháp tối ưu trước khi có bài kiểm thử cụ thể
+[B] Với CSV `amount` gồm 2,3 và một dòng trống, hàm trả 5 và không gọi mạng
+[C] Phần triển khai phải có phong cách mã nguồn đẹp và tạo cảm giác chuyên nghiệp cho người kiểm duyệt
+[D] Ứng dụng nên xử lý dữ liệu tốt trong các tình huống phổ biến
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một bài kiểm thử phải có thể trả kết quả đạt/không đạt từ hành vi cụ thể.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một bài kiểm thử phải có thể trả kết quả đạt/không đạt từ hành vi cụ thể.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một bài kiểm thử phải có thể trả kết quả đạt/không đạt từ hành vi cụ thể.
+
+=====================================================================================
+CÂU 148 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q148 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ai-generated-code-verification] Ai Generated Code Verification
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+`safe_divide(a, b)` phải `raise` `ValueError` khi `b = 0`.
+
+Mã nguồn do AI sinh:
+```python
+def safe_divide(a, b):
+    if b == 0:
+        return 0
+    return a / b
+```
+
+Yêu cầu:
+1. Chỉ ra lỗi.
+2. Viết bài kiểm thử tối thiểu.
+3. Sửa mã nguồn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So hành vi mong đợi khi b=0 với đường đi thực tế của lệnh `return`.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So hành vi mong đợi khi b=0 với đường đi thực tế của lệnh `return`.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So hành vi mong đợi khi b=0 với đường đi thực tế của lệnh `return`.
+
+=====================================================================================
+CÂU 149 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d01-q149 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ai-generated-code-verification] Ai Generated Code Verification
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu:
+Tên file output phải luôn nằm trong `/tmp/reports`.
+
+Dữ kiện:
+- Đầu vào người dùng: `../../secret`.
+- Code do AI sinh: `open('/tmp/reports/' + name, 'w')`.
+
+Yêu cầu:
+1. Nêu rủi ro.
+2. Viết một test.
+3. Đề xuất hướng sửa.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nối chuỗi base không bảo đảm đường dẫn sau khi chuẩn hóa vẫn nằm bên dưới thư mục gốc.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nối chuỗi base không bảo đảm đường dẫn sau khi chuẩn hóa vẫn nằm bên dưới thư mục gốc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nối chuỗi base không bảo đảm đường dẫn sau khi chuẩn hóa vẫn nằm bên dưới thư mục gốc.
+
+=====================================================================================
+CÂU 150 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d01-q150 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-generated-code-verification] Ai Generated Code Verification
+=====================================================================================
+ĐỀ BÀI:
+Câu hỏi:
+Để kiểm chứng code AI sinh theo contract, những hành động nào tạo bằng chứng trực tiếp?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chạy test đường bình thường và test biên/đối nghịch
+[B] Tin vì code trông trôi chảy
+[C] Đọc và lần theo từng tiêu chí chấp nhận tới code/test
+[D] Kiểm tra hậu quả của lỗi và sửa hồi quy
+[E] Hỏi lại model xem nó có chắc không rồi không chạy test
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn hành động tạo bằng chứng quan sát được về hành vi so với contract.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chọn hành động tạo bằng chứng quan sát được về hành vi so với contract.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn hành động tạo bằng chứng quan sát được về hành vi so với contract.

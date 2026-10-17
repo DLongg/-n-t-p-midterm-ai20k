@@ -1,0 +1,258 @@
+[
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Theo dõi tầng giả định đầu tiên bị phản hồi phủ nhận.",
+        "hint_id": "d02-q012-h1"
+      }
+    ],
+    "module_id": "day02-g-discovery",
+    "max_points": 3,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Người dùng không gặp điểm đau (pain) mà nhóm đã giả định"
+        },
+        {
+          "id": "x2",
+          "text": "Điểm đau đúng nhưng họ cần cảnh báo theo nhóm thay vì từng cá nhân"
+        },
+        {
+          "id": "x3",
+          "text": "Luồng ý tưởng đúng nhưng nút xác nhận khiến họ gửi nhầm"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r1",
+          "text": "Xác định lại vấn đề (Define)"
+        },
+        {
+          "id": "r2",
+          "text": "Thiết kế lại cách giải (Ideate)"
+        },
+        {
+          "id": "r3",
+          "text": "Nguyên mẫu/tương tác"
+        }
+      ],
+      "prompt": "Ghép từng phản hồi sau khi kiểm thử với bước sớm nhất cần quay lại.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d02-q012",
+    "primary_kc_id": "kc-hcd-feedback-loop-routing",
+    "grading_method": "objective_key",
+    "question_version": 7,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Chọn cấp thấp nhất vẫn đáp ứng mức biến thiên và mức bảo đảm cần thiết.",
+        "hint_id": "d02-q043-h1"
+      }
+    ],
+    "module_id": "day02-g-ai-system-design",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Tác vụ chạy mỗi đêm:\n- Đọc tệp CSV có cùng cấu trúc.\n- Áp công thức thuế cố định.\n- Xuất báo cáo.\n- Các bước biết trước và không có đầu vào ngôn ngữ.\n\nCấp triển khai phù hợp nhất là gì?",
+      "choices": [
+        {
+          "text": "Quy trình thủ công theo bảng kiểm",
+          "choice_id": "a"
+        },
+        {
+          "text": "Quy trình dùng LLM (LLM workflow)",
+          "choice_id": "c"
+        },
+        {
+          "text": "Tác nhân tự lập kế hoạch (agent)",
+          "choice_id": "d"
+        },
+        {
+          "text": "Luật/kịch bản tự động (rule/script)",
+          "choice_id": "b"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d02-q043",
+    "primary_kc_id": "kc-rule-workflow-agent-selection",
+    "grading_method": "objective_key",
+    "question_version": 7,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Phân biệt hướng ưu tiên với việc bỏ chỉ số còn lại.",
+        "hint_id": "d02-q076-h1"
+      }
+    ],
+    "module_id": "day02-g-evaluation-decision",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Hệ thống cảnh báo sepsis có người phân loại tiếp.\nBỏ sót ca bệnh có thể nguy hiểm hơn cảnh báo giả.\n\nChọn tất cả phát biểu phù hợp.",
+      "choices": [
+        {
+          "text": "Tăng recall lên 100% mà không cân nhắc tải phân loại và precision.",
+          "choice_id": "e"
+        },
+        {
+          "text": "Có thể bỏ qua precision nếu đã có người phân loại.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Ngưỡng cuối phải được kiểm thử trong quy trình phân loại thực tế.",
+          "choice_id": "d"
+        },
+        {
+          "text": "Âm tính giả (false negative) là lỗi cần theo dõi chặt.",
+          "choice_id": "b"
+        },
+        {
+          "text": "Có lý do để ưu tiên recall cao hơn.",
+          "choice_id": "a"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d02-q076",
+    "primary_kc_id": "kc-precision-recall-product-tradeoff",
+    "grading_method": "objective_key",
+    "question_version": 6,
+    "cognitive_operation": "Evaluate",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Phân biệt kế hoạch tạo bằng chứng với bằng chứng vận hành đã có.",
+        "hint_id": "d02-q090-h1"
+      }
+    ],
+    "module_id": "day02-g-delivery",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Trạng thái sau Day 2:\n- Đã có mô tả bài toán (Problem Statement).\n- Đã có mốc nền dự kiến.\n- Quyết định hiện tại là Not Yet vì đang chờ xác minh quyền dùng dữ liệu.\n\nKết luận về vòng đời đúng nhất là gì?",
+      "choices": [
+        {
+          "text": "Coi nhãn Not Yet như một dạng phê duyệt ra mắt",
+          "choice_id": "d"
+        },
+        {
+          "text": "Đang ở giai đoạn lập kế hoạch/kỳ vọng; cần xác minh quyền dùng dữ liệu trước pilot",
+          "choice_id": "b"
+        },
+        {
+          "text": "Có thể sang giai đoạn giám sát/lặp vì thước đo đã được định nghĩa",
+          "choice_id": "c"
+        },
+        {
+          "text": "Có thể chuyển production vì đã có quyết định, mốc nền dự kiến và thước đo ban đầu",
+          "choice_id": "a"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d02-q090",
+    "primary_kc_id": "kc-ai-product-lifecycle-positioning",
+    "grading_method": "objective_key",
+    "question_version": 7,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Hỏi các bước có biết trước hay hệ thống phải tự lập kế hoạch lại.",
+        "hint_id": "d02-q044-h1"
+      }
+    ],
+    "module_id": "day02-g-ai-system-design",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Tác vụ nghiên cứu phải:\n- Tự tìm chủ đề con chưa biết trước.\n- Chọn nguồn.\n- Điều chỉnh kế hoạch theo kết quả.\n- Dừng khi đủ bằng chứng.\n\nKiểm soát:\nMọi trích dẫn cuối đều được người duyệt.\n\nCấp triển khai phù hợp nhất là gì?",
+      "choices": [
+        {
+          "text": "Quy trình cố định, không rẽ nhánh hoặc lập kế hoạch lại",
+          "choice_id": "b"
+        },
+        {
+          "text": "Tác nhân có công cụ giới hạn và người duyệt",
+          "choice_id": "c"
+        },
+        {
+          "text": "Luật đơn với danh sách chủ đề con cố định",
+          "choice_id": "a"
+        },
+        {
+          "text": "Quy trình thủ công để người dùng tự chọn toàn bộ nguồn",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d02-q044",
+    "primary_kc_id": "kc-rule-workflow-agent-selection",
+    "grading_method": "objective_key",
+    "question_version": 7,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  }
+]

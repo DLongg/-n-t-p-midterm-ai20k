@@ -1,0 +1,165 @@
+=== TỔNG HỢP TOÀN BỘ CÂU HỎI QUIZ: 01_Day01 ===
+Tổng số câu: 10 câu
+
+CÂU 01 [MULTI_SELECT] (Độ khó: medium)
+Đề bài:
+Các hệ thống:
+1. Mô hình dự báo khách hàng rời bỏ từ bảng số liệu.
+2. Neural network tạo ảnh từ mô tả.
+3. Mô hình ngôn ngữ dự đoán token tiếp theo.
+
+Câu hỏi:
+Chọn tất cả phát biểu đúng về taxonomy.
+
+Các lựa chọn:
+  A. Chỉ hệ thống (3) mới là AI vì nó là LLM.
+  B. Hệ thống (2) thuộc generative AI và dùng deep learning.
+  C. Cả ba đều nằm trong phạm vi AI.
+  D. LLM là một nhánh tập trung vào ngôn ngữ, không đại diện cho toàn bộ AI.
+  E. Hệ thống (1) bắt buộc là generative AI.
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tách phạm vi lĩnh vực khỏi loại đầu ra của từng hệ thống.
+
+============================================================
+CÂU 02 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Một hệ thống nhận email và trả về một trong hai nhãn `spam`/`không spam`; nó không tạo nội dung và không tự thực hiện hành động tiếp theo. Hành vi chính thuộc loại nào?
+
+Các lựa chọn:
+  A. Discriminative
+  B. Không phải AI vì output chỉ là một nhãn ngắn
+  C. Generative
+  D. Agentic
+
+Gợi ý / Hướng dẫn giải:
+  💡 Quan sát loại đầu ra: chọn nhãn, tạo nội dung mới hay theo đuổi mục tiêu qua nhiều hành động?
+
+============================================================
+CÂU 03 [ORDERING] (Độ khó: medium)
+Đề bài:
+Yêu cầu:
+Sắp xếp một vòng xử lý của agent tra cứu tồn kho. Bắt đầu từ khi đã nhận goal.
+
+Các bước cần sắp xếp thứ tự:
+
+Gợi ý / Hướng dẫn giải:
+  💡 Một tool result phải được quan sát trước khi có thể cập nhật state từ kết quả đó.
+
+============================================================
+CÂU 04 [ORDERING] (Độ khó: easy)
+Đề bài:
+Yêu cầu:
+Model đang sinh tiếp câu `Hôm nay trời`. Sắp xếp các bước của một vòng tự hồi quy.
+
+Các bước cần sắp xếp thứ tự:
+
+Gợi ý / Hướng dẫn giải:
+  💡 Model không thể append token trước khi đã chọn token từ distribution.
+
+============================================================
+CÂU 05 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Ứng dụng cần tạo mã phân loại nội bộ theo đúng format, kết quả phải ổn định giữa các lần chạy. Cấu hình nào phù hợp hơn nếu các yếu tố khác giữ nguyên?
+
+Các lựa chọn:
+  A. Đổi temperature ngẫu nhiên mỗi request
+  B. Temperature rất cao
+  C. Không giới hạn output và tăng temperature
+  D. Temperature thấp
+
+Gợi ý / Hướng dẫn giải:
+  💡 Task ưu tiên repeatability hơn diversity.
+
+============================================================
+CÂU 06 [MULTI_SELECT] (Độ khó: medium)
+Đề bài:
+Xác suất token đã sắp giảm dần:
+- A = 0,42
+- B = 0,28
+- C = 0,18
+- D = 0,12
+
+Câu hỏi:
+Với `top-p = 0,75`, tập nucleus nhỏ nhất gồm token nào?
+
+Các lựa chọn:
+  A. B
+  B. D
+  C. A
+  D. C
+
+Gợi ý / Hướng dẫn giải:
+  💡 Cộng từ token xác suất cao nhất xuống cho đến lần đầu tổng đạt hoặc vượt p.
+
+============================================================
+CÂU 07 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Câu hỏi:
+Prompt 90.000 token vẫn nằm trong context window. Quy tắc bắt buộc nằm giữa hàng chục trang log và model thường bỏ qua nó. Sửa nào nhắm đúng vấn đề nhất?
+
+Các lựa chọn:
+  A. Kết luận prompt đã nằm trong window nên model chắc chắn sử dụng mọi token đồng đều, không cần tổ chức lại
+  B. Truy xuất riêng quy tắc liên quan và đặt nó gần task trong section có nhãn rõ
+  C. Thêm nhiều log không liên quan
+  D. Chỉ tăng output cap
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tách bài toán dung lượng khỏi bài toán model có tìm và dùng được bằng chứng hay không.
+
+============================================================
+CÂU 08 [MATCHING] (Độ khó: medium)
+Đề bài:
+Yêu cầu:
+Trong nghiên cứu mô hình chơi Othello, ghép quan sát với điều nó hỗ trợ trực tiếp nhất.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Model dự đoán nước đi hợp lệ với độ chính xác cao
+    * Linear probe đọc được trạng thái bàn cờ từ activation
+    * Can thiệp activation làm thay đổi nước đi theo trạng thái bàn cờ bị sửa
+  [Cột phải / Ý nghĩa]:
+    -> Behavioral performance
+    -> Information is decodable from representation
+    -> Causal relevance of the represented state
+
+Gợi ý / Hướng dẫn giải:
+  💡 Hỏi mỗi phép đo chỉ quan sát correlation hay chủ động thay đổi representation rồi xem behavior đổi.
+
+============================================================
+CÂU 09 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Câu hỏi:
+Trong pipeline `token IDs → ? → cộng positional information → Transformer blocks`, thành phần `?` làm nhiệm vụ gì?
+
+Các lựa chọn:
+  A. Tự cung cấp toàn bộ thứ tự vị trí dù không có positional signal
+  B. Ánh xạ mỗi token ID sang vector embedding học được
+  C. Chọn token output cuối cùng
+  D. Tính API cost
+
+Gợi ý / Hướng dẫn giải:
+  💡 Thành phần đứng ngay sau token IDs phải tạo representation liên tục cho model.
+
+============================================================
+CÂU 10 [MATCHING] (Độ khó: easy)
+Đề bài:
+Yêu cầu:
+Ghép thành phần attention với vai trò khái niệm.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Query
+    * Key
+    * Value
+  [Cột phải / Ý nghĩa]:
+    -> Biểu diễn dùng để so mức phù hợp với query
+    -> Biểu diễn điều vị trí hiện tại đang tìm
+    -> Nội dung được weighted-sum sau khi có attention weights
+
+Gợi ý / Hướng dẫn giải:
+  💡 Một cặp dùng để quyết định `nhìn đâu`; thành phần còn lại mang `lấy nội dung gì`.
+
+============================================================

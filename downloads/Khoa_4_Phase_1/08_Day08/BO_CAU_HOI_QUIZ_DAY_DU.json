@@ -1,0 +1,537 @@
+[
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Kiểm tra cấu trúc trang, không chỉ kiểm tra văn bản có xuất hiện hay không.",
+        "hint_id": "d08-q001-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Bối cảnh:\nMột PDF hai cột có tiêu đề, nội dung chính, chú thích dưới hình và chú thích cuối trang. Bộ trích xuất native đã xen các dòng của cột trái với cột phải.\n\nCâu hỏi:\nChọn tất cả hành động cần làm để bản trích xuất giữ đúng bố cục.",
+      "choices": [
+        {
+          "text": "Gộp chú thích dưới hình vào đoạn nội dung chính gần nhất để không phải tạo thêm khối riêng.",
+          "choice_id": "e"
+        },
+        {
+          "text": "Khôi phục thứ tự đọc theo từng cột.",
+          "choice_id": "a"
+        },
+        {
+          "text": "Giữ dấu vết nguồn theo trang/vùng và đánh dấu phần chưa chắc chắn.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Gắn chú thích dưới hình với hình và giữ chú thích cuối trang như một khối riêng.",
+          "choice_id": "b"
+        },
+        {
+          "text": "Giữ nguyên thứ tự do bộ trích xuất native trả về, rồi chỉ gắn nhãn trang là hai cột.",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d08-q001",
+    "primary_kc_id": "kc-layout-aware-document-parsing",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Hỏi một giá trị cần những quan hệ nào để không bị hiểu sai.",
+        "hint_id": "d08-q003-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Bối cảnh:\nBảng học phí có tiêu đề cột hai tầng, hai đơn vị VNĐ/USD và ghi chú 'chưa gồm VAT'. OCR đã làm phẳng toàn bộ ô thành một danh sách.\n\nCâu hỏi:\nChọn mọi thành phần phải có trong bản trích xuất trung thực.",
+      "choices": [
+        {
+          "text": "Đơn vị và ghi chú VAT.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Quan hệ giữa hàng và chương trình.",
+          "choice_id": "a"
+        },
+        {
+          "text": "Gắn ô không đọc được với giá trị gần nhất trong cùng cột rồi để cờ kiểm tra sau.",
+          "choice_id": "f"
+        },
+        {
+          "text": "Vị trí nguồn của bảng/ô.",
+          "choice_id": "d"
+        },
+        {
+          "text": "Đường dẫn từ tiêu đề cột nhiều tầng tới VNĐ hoặc USD.",
+          "choice_id": "b"
+        },
+        {
+          "text": "Chỉ một bản tóm tắt bảng thay cho mọi hàng.",
+          "choice_id": "e"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d08-q003",
+    "primary_kc_id": "kc-table-relationship-preserving-extraction",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Idempotency nói về trạng thái cuối, không phải số lần trình xử lý được gọi.",
+        "hint_id": "d08-q005-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nSự kiện cho nguồn S, phiên bản V, mã băm nội dung H bị gửi ba lần vì thử lại. Chỉ mục ban đầu chưa có S/V.\n\nCâu hỏi:\nTrạng thái chỉ mục đúng sau khi xử lý idempotent là gì?",
+      "choices": [
+        {
+          "text": "Một bản ghi của S/V/H; hai lần sau không làm thay đổi trạng thái.",
+          "choice_id": "a"
+        },
+        {
+          "text": "Bỏ cả ba sự kiện vì trình xử lý không thể biết lần gửi đầu đã thành công hay chưa.",
+          "choice_id": "d"
+        },
+        {
+          "text": "Một bản ghi nội dung nhưng tạo ba ID nguồn riêng theo từng lần gửi.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Ba bản ghi cùng S/V/H để mỗi lần thử lại còn một bản kiểm tra trong chỉ mục.",
+          "choice_id": "b"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d08-q005",
+    "primary_kc_id": "kc-idempotent-delta-ingestion",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tách đơn vị dùng để tìm kiếm khỏi đơn vị đưa vào context.",
+        "hint_id": "d08-q007-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nMột mục dài 1.800 token được chia thành sáu child chunk, mỗi chunk dài 300 token. Query khớp với một child chunk, nhưng câu trả lời cần context rộng của toàn bộ mục.\n\nCâu hỏi:\nThiết kế parent–child nào đúng nhất?",
+      "choices": [
+        {
+          "text": "Chỉ lưu ID của child chunk; khi cần context thì chọn parent chunk cùng chủ đề thay vì ánh xạ theo định danh.",
+          "choice_id": "d"
+        },
+        {
+          "text": "Embedding parent chunk nhưng tìm kiếm child chunk bằng so khớp văn bản, rồi trả về toàn bộ tệp.",
+          "choice_id": "b"
+        },
+        {
+          "text": "Tìm kiếm parent chunk rồi đưa vào context một child chunk bất kỳ có điểm cao nhất.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Embedding và tìm kiếm trên child chunk; dùng ánh xạ ổn định để đưa đúng parent chunk vào context.",
+          "choice_id": "a"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d08-q007",
+    "primary_kc_id": "kc-parent-child-retrieval",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Xác định ranh giới giữa luồng offline của nguồn và chỉ mục với luồng online của selection và generation.",
+        "hint_id": "d08-q009-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "ordering",
+      "prompt": "Bối cảnh:\nHãy truy vết một mệnh đề có dẫn chứng từ tài liệu nguồn tới câu trả lời RAG.\n\nCâu hỏi:\nSắp xếp các thành phần theo thứ tự dữ liệu đi qua pipeline.",
+      "options": [
+        {
+          "text": "phiên bản nguồn",
+          "option_id": "o3"
+        },
+        {
+          "text": "bằng chứng đã chọn",
+          "option_id": "o6"
+        },
+        {
+          "text": "Context đã được định dạng thành các khối",
+          "option_id": "o2"
+        },
+        {
+          "text": "Chunk hoặc bản ghi đã được lập chỉ mục",
+          "option_id": "o4"
+        },
+        {
+          "text": "mệnh đề trong câu trả lời + citation",
+          "option_id": "o5"
+        },
+        {
+          "text": "Candidate đã được xếp hạng",
+          "option_id": "o1"
+        }
+      ],
+      "presentation_policy": {
+        "do_not_expose_option_ids": true,
+        "shuffle_initial_order_at_delivery": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d08-q009",
+    "primary_kc_id": "kc-rag-stage-artifact-tracing",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Không dùng một bộ phân tích duy nhất cho mọi vùng.",
+        "hint_id": "d08-q011-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 4,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Đoạn văn số có lớp văn bản tốt"
+        },
+        {
+          "id": "x2",
+          "text": "Đoạn văn nằm trong ảnh scan"
+        },
+        {
+          "id": "x3",
+          "text": "Biểu đồ có legend/màu quyết định ý nghĩa"
+        },
+        {
+          "id": "x4",
+          "text": "Vùng bị che không thể đọc chắc chắn"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r1",
+          "text": "trích xuất native"
+        },
+        {
+          "id": "r4",
+          "text": "Bản ghi đánh dấu không đọc được hoặc chưa chắc chắn"
+        },
+        {
+          "id": "r3",
+          "text": "Vision kết hợp phân tích bố cục"
+        },
+        {
+          "id": "r2",
+          "text": "OCR"
+        }
+      ],
+      "prompt": "Bối cảnh:\nMột trang có bốn vùng nội dung.\n\nCâu hỏi:\nGhép từng vùng với cách xử lý khởi đầu phù hợp nhất.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d08-q011",
+    "primary_kc_id": "kc-multimodal-parser-routing",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Understand",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Sau cập nhật, một query kiểm tra phải thấy biểu diễn nào là hiện hành?",
+        "hint_id": "d08-q013-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nPolicy v2 và v3 cùng còn đủ điều kiện trong chỉ mục; v3 là bản hiện hành. Search đôi khi trả v2.\n\nCâu hỏi:\nCách sửa nào xử lý đúng vòng đời độ mới?",
+      "choices": [
+        {
+          "text": "Để generator chọn phiên bản mới hơn từ nội dung dù chỉ mục không có metadata hiện hành/ngày hiệu lực.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Chỉ đổi prompt để ưu tiên tài liệu mới mà không sửa điều kiện được dùng/vòng đời chỉ mục.",
+          "choice_id": "d"
+        },
+        {
+          "text": "Giữ cả v2/v3 đang hiệu lực và tăng top-k để generator luôn nhìn thấy cả hai bản.",
+          "choice_id": "b"
+        },
+        {
+          "text": "Xuất bản v3 theo định danh nguồn/phiên bản ổn định, ngừng hiệu lực hoặc xóa các chunk v2, rồi dùng query kiểm chứng.",
+          "choice_id": "a"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d08-q013",
+    "primary_kc_id": "kc-index-freshness-lifecycle",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Hai query đòi hỏi hai mức chi tiết khác nhau của bằng chứng.",
+        "hint_id": "d08-q015-h1"
+      }
+    ],
+    "module_id": "day08-g-ingestion",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nBảng có 200 SKU và cần hỗ trợ cả việc tra cứu giá từng SKU lẫn câu hỏi tổng quan về nhóm giá. Quan hệ trong bảng đã được phục hồi.\n\nCâu hỏi:\nCách biểu diễn nào phù hợp nhất?",
+      "choices": [
+        {
+          "text": "Cả bản ghi theo hàng và bản tóm tắt bảng, mỗi loại đều giữ nguồn, tiêu đề cột và đơn vị.",
+          "choice_id": "a"
+        },
+        {
+          "text": "Một đoạn văn nối toàn bộ 200 hàng để mọi query đều dùng chung một bản ghi có thể tìm kiếm.",
+          "choice_id": "b"
+        },
+        {
+          "text": "Chỉ tạo tóm tắt bảng có liên kết về PDF nguồn, rồi để model suy ra từng SKU từ tóm tắt.",
+          "choice_id": "d"
+        },
+        {
+          "text": "Chỉ tóm tắt bảng vì tra cứu chính xác SKU có thể được model suy lại từ nội dung tổng quan.",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d08-q015",
+    "primary_kc_id": "kc-table-retrieval-representation",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Mỗi lần biến đổi phải có điều kiện kích hoạt có thể quan sát và cách xử lý khi lỗi.",
+        "hint_id": "d08-q017-h1"
+      }
+    ],
+    "module_id": "day08-g-query",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Bối cảnh:\nCó ba query: (1) `POL-2026-17`; (2) `hoàn phí trễ thì sao`; (3) `embeding vecter`. Tìm kiếm theo ID chính xác cho query (1) đã đúng.\n\nCâu hỏi:\nChọn tất cả quyết định điều phối hợp lý.",
+      "choices": [
+        {
+          "text": "Dùng rewrite hoặc hỏi làm rõ theo điều kiện kích hoạt cho query (2).",
+          "choice_id": "b"
+        },
+        {
+          "text": "Bỏ qua biến đổi query cho (1).",
+          "choice_id": "a"
+        },
+        {
+          "text": "Biến đổi cả ba để pipeline đồng nhất.",
+          "choice_id": "d"
+        },
+        {
+          "text": "Sửa lỗi chính tả hoặc mở rộng query (3) nhưng phải giữ nguyên ý định.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Ghi log điều kiện kích hoạt, độ trễ và phương án dự phòng khi biến đổi lỗi.",
+          "choice_id": "e"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d08-q017",
+    "primary_kc_id": "kc-query-transformation-gating",
+    "grading_method": "objective_key",
+    "question_version": 3,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Giữ nguyên đối tượng và hành động của query gốc.",
+        "hint_id": "d08-q019-h1"
+      }
+    ],
+    "module_id": "day08-g-query",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Bối cảnh:\nQuery `chính sách hoàn hoc phi` không tìm thấy tài liệu dùng `tuition refund policy`.\n\nCâu hỏi:\nChọn các biến thể mở rộng vẫn giữ đúng ý định.",
+      "choices": [
+        {
+          "text": "quy định trả hàng",
+          "choice_id": "e"
+        },
+        {
+          "text": "tuition refund policy",
+          "choice_id": "b"
+        },
+        {
+          "text": "chính sách hoàn thuế",
+          "choice_id": "d"
+        },
+        {
+          "text": "chính sách hoàn học phí",
+          "choice_id": "a"
+        },
+        {
+          "text": "quy định hoàn phí học tập",
+          "choice_id": "c"
+        },
+        {
+          "text": "refund tuition policy",
+          "choice_id": "f"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d08-q019",
+    "primary_kc_id": "kc-query-expansion-design",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  }
+]

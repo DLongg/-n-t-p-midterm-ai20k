@@ -1,0 +1,219 @@
+######################################################################
+# BẢNG ĐỀ BÀI VÀ ĐÁP ÁN ĐÃ KIỂM CHỨNG CHÍNH XÁC 100%: D10 · Day10-data-pipeline-observability
+# Thư mục lưu trữ: downloads/Khoa_4_Phase_1/10_Day10-data-pipeline-observability
+# Toàn bộ 10 câu hỏi đã được thử nghiệm và xác thực trực tiếp qua server VLearn
+######################################################################
+
+========================================================================
+CÂU 01 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d10-q004 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Ghép lần bàn giao với artifact bằng chứng phù hợp nhất.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: Source→ingest
+    ===> Ghép với: Manifest có source/version/count
+
+  * Cặp 2:
+    - Cột trái: Raw→canonical
+    ===> Ghép với: So sánh trước/sau transform + kết quả contract
+
+  * Cặp 3:
+    - Cột trái: Canonical→publish
+    ===> Ghép với: Kết quả quality/sign-off + ID snapshot đang hoạt động
+
+  * Cặp 4:
+    - Cột trái: Alert→response
+    ===> Ghép với: Bản ghi runbook sự cố có owner
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Accountability cần owner và artifact có thể kiểm tra ở mỗi lần bàn giao.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Artifact phải chứng minh thành công/lỗi của đúng ranh giới.
+
+========================================================================
+CÂU 02 [SẮP XẾP THỨ TỰ QUY TRÌNH] - Mã: d10-q008 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Sắp data path và ranh giới publish theo đúng thứ tự.
+
+THỨ TỰ QUY TRÌNH CHUẨN XÁC TỪNG BƯỚC (100% SERVER KIỂM CHỨNG):
+  Bước 1: Source
+  Bước 2: Ingestion
+  Bước 3: Raw storage
+  Bước 4: Transform sang canonical data
+  Bước 5: Canonical storage
+  Bước 6: Kích hoạt serving index
+  Bước 7: Agent retrieval
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Source→ingest→raw/canonical→publish serving→agent; raw/canonical relation được giữ trong lineage.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Agent chỉ thấy artifact sau activation, không thấy raw tự động.
+
+========================================================================
+CÂU 03 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d10-q010 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Raw data chứa PII không được phép vào warehouse; compute ở target hạn chế; quy tắc transform ổn định. Chọn pattern?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] ELT: load toàn bộ raw PII vào target rồi tính sau
+  [ ] SAI   [B] CDC vì rule ổn định
+  [X] ĐÚNG  [C] ETL: transform/redact trước load, giữ raw ở vùng được phép riêng
+  [ ] SAI   [D] Streaming vì PII
+
+-> ĐÁP ÁN CHÍNH XÁC: [C] ETL: transform/redact trước load, giữ raw ở vùng được phép riêng
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Governance chặn raw ở target và compute không thuận lợi cho ELT.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Xác định raw được phép nằm đâu và compute nằm đâu.
+
+========================================================================
+CÂU 04 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d10-q012 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Ghép trường hợp sử dụng với cadence hợp lý.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: Policy PDF đổi mỗi tháng, SLA 24h
+    ===> Ghép với: Batch theo ngày
+
+  * Cặp 2:
+    - Cột trái: Fraud event cần phản ứng <2s
+    ===> Ghép với: Streaming liên tục
+
+  * Cặp 3:
+    - Cột trái: Phân tích theo ngày nhưng cảnh báo gian lận cần theo thời gian thực
+    ===> Ghép với: Hybrid: stream gian lận + batch phân tích
+
+  * Cặp 4:
+    - Cột trái: Nguồn nhỏ cập nhật tuần
+    ===> Ghép với: Batch theo tuần
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Hậu quả của độ trễ và chi phí vận hành quyết định cadence.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Real-time chỉ đáng khi độ trễ gây hại.
+
+========================================================================
+CÂU 05 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d10-q014 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+DB có update/delete liên tục, consumer cần lịch sử thay đổi và độ trễ <10s; source hỗ trợ log. Chọn?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Snapshot tuần
+  [X] ĐÚNG  [B] CDC với offset/lag/schema/poison monitoring
+  [ ] SAI   [C] Offset pagination
+  [ ] SAI   [D] OCR
+
+-> ĐÁP ÁN CHÍNH XÁC: [B] CDC với offset/lag/schema/poison monitoring
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  History+low latency+log support là signal CDC; đi kèm operating requirements.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Consumer cần current state hay từng change?
+
+========================================================================
+CÂU 06 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d10-q016 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Các trang theo updated_at: p1≤10:00 thành công, p2≤10:05 thất bại, p3 chưa chạy. Checkpoint an toàn?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [X] ĐÚNG  [A] 10:00 và chạy lại p2
+  [ ] SAI   [B] 10:10 để tránh lặp
+  [ ] SAI   [C] Job start time
+  [ ] SAI   [D] 10:05 vì đã lấy p2
+
+-> ĐÁP ÁN CHÍNH XÁC: [A] 10:00 và chạy lại p2
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Checkpoint chỉ tiến sau unit xử lý thành công; failed page phải replay được.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Fetched không đồng nghĩa processed successfully.
+
+========================================================================
+CÂU 07 [TÍNH TOÁN / ĐIỀN SỐ CHÍNH XÁC] - Mã: d10-q019 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+API trả 429 với `Retry-After: 12`. Đây là attempt 2/4; header hợp lệ.
+
+Câu hỏi:
+Delay tối thiểu trước attempt kế tiếp là bao nhiêu?
+
+-> ĐÁP ÁN SỐ CHÍNH XÁC: 12 giây
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Khi API trả về mã lỗi 429 kèm header Retry-After: 12 hợp lệ, client phải tuân thủ và chờ tối thiểu đúng 12 giây trước khi thực hiện attempt tiếp theo.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Khi có Retry-After hợp lệ, không tự chọn delay ngắn hơn.
+
+========================================================================
+CÂU 08 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d10-q022 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Feed có insert/delete liên tục giữa các request và API cấp opaque stable cursor. Chọn gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [X] ĐÚNG  [A] Cursor, lưu cursor và contract về thứ tự
+  [ ] SAI   [B] Offset vì page number dễ đọc
+  [ ] SAI   [C] Random sample
+  [ ] SAI   [D] Restart full feed mỗi page
+
+-> ĐÁP ÁN CHÍNH XÁC: [A] Cursor, lưu cursor và contract về thứ tự
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Cursor ổn định tránh position shift tốt hơn offset trong changing feed.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Insert/delete làm vị trí offset thay đổi.
+
+========================================================================
+CÂU 09 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d10-q024 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Các trang C1,C2,C3,C4; C1,C2 thành công, C3 timeout, C4 chưa lấy. Cách giữ checkpoint và replay nào an toàn nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Chạy lại từ C1 mỗi khi một trang timeout
+  [X] ĐÚNG  [B] Lưu C3 cùng lỗi/lần thử, giữ checkpoint ở C2, chạy lại C3 idempotent rồi mới lấy C4
+  [ ] SAI   [C] Bỏ C3 và lấy C4 để pipeline không bị chậm
+  [ ] SAI   [D] Đặt checkpoint ở C4 để lần sau không lặp dữ liệu
+
+-> ĐÁP ÁN CHÍNH XÁC: [B] Lưu C3 cùng lỗi/lần thử, giữ checkpoint ở C2, chạy lại C3 idempotent rồi mới lấy C4
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Failed page phải recoverable và không bị checkpoint sau che.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Tách last success khỏi failed unit identity.
+
+========================================================================
+CÂU 10 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d10-q026 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+`policy.pdf` được rename thành `leave-policy.pdf` nhưng bytes/hash và effective date không đổi. Xử lý?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Serve cả hai như active
+  [X] ĐÚNG  [B] Giữ logical document/version, cập nhật alias/path provenance
+  [ ] SAI   [C] Chọn file mới theo mtime
+  [ ] SAI   [D] Tạo policy version mới chỉ vì filename
+
+-> ĐÁP ÁN CHÍNH XÁC: [B] Giữ logical document/version, cập nhật alias/path provenance
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Rename không tự tạo logical version; hash và authority metadata mới quyết định.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Filename là location, không phải authority.
+

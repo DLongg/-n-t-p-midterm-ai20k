@@ -1,0 +1,192 @@
+=== TỔNG HỢP TOÀN BỘ CÂU HỎI QUIZ: 14_Day14-ai-evaluation-benchmarking ===
+Tổng số câu: 10 câu
+
+CÂU 01 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Team nói: ‘Agent v2 tốt hơn v1’ sau khi xem năm demo khác nhau.
+
+Câu hỏi:
+Thiết kế nào biến nhận định đó thành giả thuyết có thể bác bỏ?
+
+Các lựa chọn:
+  A. Chọn năm câu v2 trả lời đẹp nhất rồi so với ký ức về v1
+  B. Đổi đồng thời model, prompt và dataset rồi lấy score cao nhất
+  C. Dùng một leaderboard công khai làm kết luận cho mọi user
+  D. Same population/protocol; metric và rule đặt trước
+
+Gợi ý / Hướng dẫn giải:
+  💡 Hỏi điều gì phải được giữ giống nhau để một khác biệt có thể quy cho version.
+
+============================================================
+CÂU 02 [MATCHING] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Bốn rủi ro cần evidence ở thời điểm khác nhau.
+
+Câu hỏi:
+Ghép rủi ro với mode phù hợp nhất.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Regression trước merge
+    * Theo dõi drift trên traffic thật
+    * Chặn PII trước response
+    * Calibrate case judge bất đồng
+  [Cột phải / Ý nghĩa]:
+    -> Human review
+    -> Online sampled eval
+    -> Offline suite
+    -> Inline deterministic check
+
+Gợi ý / Hướng dẫn giải:
+  💡 Mode phải khớp latency quyết định, risk và cost.
+
+============================================================
+CÂU 03 [ORDERING] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Một trace cho thấy agent trả policy cũ sau khi corpus vừa cập nhật.
+
+Câu hỏi:
+Sắp chuỗi thiết kế metric theo evidence.
+
+Các bước cần sắp xếp thứ tự:
+
+Gợi ý / Hướng dẫn giải:
+  💡 Đừng chọn metric trước khi biết failure nào cần phân biệt.
+
+============================================================
+CÂU 04 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Workflow đặt vé có success state là row `reservation=confirmed`. Agent tìm chuyến và thanh toán thử nhưng DB không có row; agent vẫn nhắn ‘đã đặt xong’.
+
+Câu hỏi:
+Cách chấm completion nào đúng?
+
+Các lựa chọn:
+  A. Binary fail; partial chỉ ghi bước đã verify
+  B. Binary pass vì agent đã gửi confirmation text
+  C. Trajectory đẹp nên thay được final-state verifier
+  D. Weighted pass 100% vì thanh toán là bước khó
+
+Gợi ý / Hướng dẫn giải:
+  💡 Phân biệt agent nói đã xong với environment thực sự đạt state nào.
+
+============================================================
+CÂU 05 [MATCHING] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+Bốn answer fail theo bốn cách khác nhau.
+
+Câu hỏi:
+Ghép failure với dimension chính.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Nêu sai ngày hiệu lực
+    * Đúng fact nhưng không trả intent user
+    * Thiếu ngoại lệ quan trọng
+    * Các turn tự mâu thuẫn nhau
+  [Cột phải / Ý nghĩa]:
+    -> Coherence
+    -> Correctness
+    -> Completeness
+    -> Relevance
+
+Gợi ý / Hướng dẫn giải:
+  💡 Một answer có thể fail một dimension nhưng vẫn đạt dimension khác.
+
+============================================================
+CÂU 06 [MATCHING] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Product tối ưu trợ lý hoàn tiền.
+
+Câu hỏi:
+Ghép metric với vai trò quyết định.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Tỷ lệ case giải quyết đúng
+    * PII leak rate
+    * Retrieval empty-result rate
+  [Cột phải / Ý nghĩa]:
+    -> North-star để optimize
+    -> Diagnostic để điều tra
+    -> Guardrail có thể block
+
+Gợi ý / Hướng dẫn giải:
+  💡 Hỏi metric dùng để tối ưu, chặn hay chỉ debug.
+
+============================================================
+CÂU 07 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+Target output là một trong ba label chuẩn `APPROVE`, `REVIEW`, `REJECT`; contract cho phép trim whitespace và uppercase.
+
+Câu hỏi:
+Metric nào hợp lệ nhất?
+
+Các lựa chọn:
+  A. LLM judge không rubric
+  B. BLEU trên phần giải thích tự do
+  C. Exact match sau normalization
+  D. Cosine similarity giữa label
+
+Gợi ý / Hướng dẫn giải:
+  💡 Exact match chỉ phù hợp khi có một representation chuẩn sau normalize.
+
+============================================================
+CÂU 08 [NUMERIC_INPUT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Token hóa theo whitespace. Reference: `mèo ngồi trên thảm`. Candidate: `mèo nằm trên thảm`. Multiset overlap có 3 token; candidate và reference đều có 4 token.
+
+Câu hỏi:
+Tính token F1.
+
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tính precision và recall trước khi lấy harmonic mean.
+
+============================================================
+CÂU 09 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Reference nói ‘Agent không nên hoàn tiền’; candidate bỏ từ ‘không’ nhưng giữ gần toàn bộ n-gram.
+
+Câu hỏi:
+BLEU cao trong case này support kết luận nào?
+
+Các lựa chọn:
+  A. BLEU là phép entailment claim-level
+  B. Brevity penalty sẽ phát hiện mọi phủ định
+  C. Candidate chắc chắn đúng nghĩa
+  D. Chỉ support lexical overlap
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tách điều metric đo trực tiếp khỏi điều ta muốn biết về meaning.
+
+============================================================
+CÂU 10 [MATCHING] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+Cần chọn biến thể ROUGE theo loại overlap.
+
+Câu hỏi:
+Ghép biến thể với evidence nó ưu tiên.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * N-gram overlap
+    * Longest common subsequence theo thứ tự
+  [Cột phải / Ý nghĩa]:
+    -> ROUGE-L
+    -> ROUGE-N
+
+Gợi ý / Hướng dẫn giải:
+  💡 N là n-gram; L là longest common subsequence.
+
+============================================================

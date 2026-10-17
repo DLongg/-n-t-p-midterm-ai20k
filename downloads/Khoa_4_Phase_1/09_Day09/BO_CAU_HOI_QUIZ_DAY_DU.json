@@ -1,0 +1,499 @@
+[
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Nhìn vào thứ bị giới hạn: context, vai trò, concurrency hay khả năng quy lỗi.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-architecture",
+    "max_points": 4,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Prompt phải nhét tài liệu của bốn domain"
+        },
+        {
+          "id": "x2",
+          "text": "Agent vừa tư vấn policy vừa phê duyệt chính policy đó"
+        },
+        {
+          "id": "x3",
+          "text": "Ba tra cứu độc lập vẫn chạy nối tiếp"
+        },
+        {
+          "id": "x4",
+          "text": "Trace cuối không chỉ ra bước nào làm sai"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r2",
+          "text": "Xung đột vai trò"
+        },
+        {
+          "id": "r1",
+          "text": "Context chen chúc"
+        },
+        {
+          "id": "r3",
+          "text": "Nút thắt tuần tự"
+        },
+        {
+          "id": "r4",
+          "text": "Ownership lỗi mơ hồ"
+        }
+      ],
+      "prompt": "Ghép dấu hiệu quan sát được với loại overload gần nhất.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      }
+    },
+    "question_id": "d09-q001",
+    "primary_kc_id": "kc-single-agent-overload-diagnosis",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Multi-agent là một trade-off, không phải default maturity step.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-architecture",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nMột luồng xử lý chỉ có một bước tóm tắt, độ trễ 400 ms, lỗi hiếm và nhóm cần phát hành trong hai ngày.\n\nCâu hỏi:\nQuyết định kiến trúc hợp lý nhất là gì?",
+      "choices": [
+        {
+          "text": "Thêm supervisor và ba worker để tăng specialization",
+          "choice_id": "b"
+        },
+        {
+          "text": "Giữ single agent và đo mốc cơ sở trước khi thêm coordination",
+          "choice_id": "a"
+        },
+        {
+          "text": "Dùng debate vì mọi output đều cần hai agent",
+          "choice_id": "c"
+        },
+        {
+          "text": "Dùng hierarchy để dự phòng khi số task tăng",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d09-q003",
+    "primary_kc_id": "kc-multiagent-adoption-tradeoff",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Evaluate",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Một worker phải có success/failure boundary riêng.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-architecture",
+    "max_points": 4,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Bối cảnh:\nNhiệm vụ gồm tra hợp đồng, lấy trạng thái thanh toán trực tiếp, đối chiếu policy và viết kết luận có citation.\n\nCâu hỏi:\nNhững boundary nào là cách tách trách nhiệm có ý nghĩa?",
+      "choices": [
+        {
+          "text": "Retrieval hợp đồng",
+          "choice_id": "a"
+        },
+        {
+          "text": "Payment state qua tool",
+          "choice_id": "b"
+        },
+        {
+          "text": "Policy decision",
+          "choice_id": "c"
+        },
+        {
+          "text": "Tổng hợp kết luận có liên kết giữa từng mệnh đề và nguồn",
+          "choice_id": "e"
+        },
+        {
+          "text": "Một worker riêng chỉ để đổi tên biến",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d09-q005",
+    "primary_kc_id": "kc-multiagent-responsibility-decomposition",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Phân biệt độc lập về dữ liệu với độc lập về side effect.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-architecture",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nHai worker đọc hai kho policy độc lập. Sau khi hợp nhất evidence, ticket phải ghi trạng thái `approved` trước khi hệ gửi refund; refund không được chạy trước approval.\n\nCâu hỏi:\nSchedule nào an toàn nhất?",
+      "choices": [
+        {
+          "text": "Tuần tự hóa toàn bộ để tránh mọi race condition",
+          "choice_id": "c"
+        },
+        {
+          "text": "Cho mỗi worker đọc tự cập nhật ticket khi hoàn tất",
+          "choice_id": "d"
+        },
+        {
+          "text": "Chạy mọi node song song vì mỗi node có tên khác nhau",
+          "choice_id": "b"
+        },
+        {
+          "text": "Chạy hai thao tác đọc song song; hợp nhất bằng chứng; rồi tuần tự hóa việc cập nhật ticket và hoàn tiền qua cổng kiểm soát",
+          "choice_id": "a"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d09-q007",
+    "primary_kc_id": "kc-parallel-read-serialized-write-design",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Hỏi mỗi worker mới sở hữu capability gì mà hệ hiện tại chưa tách được.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-architecture",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nMột workflow có retrieval và synthesis; cả hai có contract/test riêng. Nhóm đề xuất 12 worker, mỗi worker cho một helper nhỏ.\n\nCâu hỏi:\nQuy mô hợp lý nhất là gì?",
+      "choices": [
+        {
+          "text": "Bắt đầu bằng hai responsibility boundary và chỉ thêm tầng khi span/domain evidence xuất hiện",
+          "choice_id": "a"
+        },
+        {
+          "text": "Một worker duy nhất vì hierarchy luôn xấu",
+          "choice_id": "c"
+        },
+        {
+          "text": "Luôn dùng 12 worker để mỗi function độc lập",
+          "choice_id": "b"
+        },
+        {
+          "text": "Số worker bằng số trang tài liệu",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d09-q010",
+    "primary_kc_id": "kc-multiagent-system-sizing",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Ai quyết định worker cần gọi sau khi đọc request?",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-patterns",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nRequest có thể là tra policy, mở ticket hoặc tổng hợp; loại task chỉ biết lúc runtime và mỗi capability có worker độc lập.\n\nCâu hỏi:\nPattern phù hợp nhất?",
+      "choices": [
+        {
+          "text": "Debate",
+          "choice_id": "c"
+        },
+        {
+          "text": "Hierarchy ba tầng",
+          "choice_id": "d"
+        },
+        {
+          "text": "Supervisor-worker",
+          "choice_id": "a"
+        },
+        {
+          "text": "Fixed pipeline",
+          "choice_id": "b"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d09-q012",
+    "primary_kc_id": "kc-supervisor-worker-pattern-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Bắt đầu từ artifact thô và kết thúc ở store có thể query.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-patterns",
+    "max_points": 5,
+    "interaction": {
+      "type": "ordering",
+      "prompt": "Bối cảnh:\nQuy trình cố định: nhập tài liệu, trích xuất văn bản, chia đoạn, embed, lập chỉ mục.\n\nCâu hỏi:\nSắp thứ tự dependency đúng.",
+      "options": [
+        {
+          "text": "Extract text",
+          "option_id": "o2"
+        },
+        {
+          "text": "Embed chunks",
+          "option_id": "o1"
+        },
+        {
+          "text": "Index vectors",
+          "option_id": "o3"
+        },
+        {
+          "text": "Ingest source",
+          "option_id": "o4"
+        },
+        {
+          "text": "Chunk normalized text",
+          "option_id": "o5"
+        }
+      ],
+      "presentation_policy": {
+        "do_not_expose_option_ids": true,
+        "shuffle_initial_order_at_delivery": true
+      }
+    },
+    "question_id": "d09-q014",
+    "primary_kc_id": "kc-pipeline-pattern-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Hai agent khác nhau ở dữ liệu hay ở góc nhìn?",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-patterns",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nHai chuyên gia đọc cùng bộ evidence, một người tìm rủi ro pháp lý, một người phản biện tính khả thi; judge phải quyết theo source authority.\n\nCâu hỏi:\nPattern nào phù hợp nhất?",
+      "choices": [
+        {
+          "text": "Supervisor-worker chỉ để chia tải",
+          "choice_id": "d"
+        },
+        {
+          "text": "Pipeline vì có hai bước",
+          "choice_id": "b"
+        },
+        {
+          "text": "Debate có judge rule",
+          "choice_id": "a"
+        },
+        {
+          "text": "Cooperative search vì input khác nhau",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d09-q016",
+    "primary_kc_id": "kc-debate-pattern-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tầng mới cần đóng gói một team coherent, không chỉ chia danh sách đều nhau.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-patterns",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nRoot đang route 18 workers thuộc ba domain có owner/policy riêng; prompt route quá dài và lỗi chủ yếu là nhầm domain.\n\nCâu hỏi:\nThay đổi phù hợp nhất?",
+      "choices": [
+        {
+          "text": "Thêm một pipeline chung cho 18 workers",
+          "choice_id": "b"
+        },
+        {
+          "text": "Giữ flat và tăng temperature",
+          "choice_id": "d"
+        },
+        {
+          "text": "Tạo ba nhóm con theo domain với boundary rõ; root chỉ định tuyến ở cấp domain",
+          "choice_id": "a"
+        },
+        {
+          "text": "Cho mọi worker gọi lẫn nhau",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      }
+    },
+    "question_id": "d09-q019",
+    "primary_kc_id": "kc-hierarchical-pattern-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Đừng đồng nhất dynamic với parallel.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day09-g-patterns",
+    "max_points": 4,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Luôn parse → validate → publish"
+        },
+        {
+          "id": "x2",
+          "text": "Request runtime quyết định gọi HR, IT hay Finance"
+        },
+        {
+          "id": "x3",
+          "text": "Ba retrieval cố định chạy song song rồi merge"
+        },
+        {
+          "id": "x4",
+          "text": "Tool mới được discover và route theo schema lúc chạy"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r4",
+          "text": "Dynamic capability selection"
+        },
+        {
+          "id": "r2",
+          "text": "Dynamic routing"
+        },
+        {
+          "id": "r1",
+          "text": "Chuỗi tĩnh"
+        },
+        {
+          "id": "r3",
+          "text": "Đồ thị tĩnh có nhánh chạy song song"
+        }
+      ],
+      "prompt": "Ghép workflow với orchestration mode gần nhất.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      }
+    },
+    "question_id": "d09-q021",
+    "primary_kc_id": "kc-static-dynamic-orchestration-selection",
+    "grading_method": "deterministic_key",
+    "question_version": 1,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  }
+]

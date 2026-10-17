@@ -1,0 +1,152 @@
+=== TỔNG HỢP TOÀN BỘ CÂU HỎI QUIZ: 10_Day10-data-pipeline-observability ===
+Tổng số câu: 10 câu
+
+CÂU 01 [MATCHING] (Độ khó: medium)
+Đề bài:
+Ghép lần bàn giao với artifact bằng chứng phù hợp nhất.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Source→ingest
+    * Raw→canonical
+    * Canonical→publish
+    * Alert→response
+  [Cột phải / Ý nghĩa]:
+    -> Manifest có source/version/count
+    -> Kết quả quality/sign-off + ID snapshot đang hoạt động
+    -> Bản ghi runbook sự cố có owner
+    -> So sánh trước/sau transform + kết quả contract
+
+Gợi ý / Hướng dẫn giải:
+  💡 Artifact phải chứng minh thành công/lỗi của đúng ranh giới.
+
+============================================================
+CÂU 02 [ORDERING] (Độ khó: medium)
+Đề bài:
+Sắp data path và ranh giới publish theo đúng thứ tự.
+
+Các bước cần sắp xếp thứ tự:
+
+Gợi ý / Hướng dẫn giải:
+  💡 Agent chỉ thấy artifact sau activation, không thấy raw tự động.
+
+============================================================
+CÂU 03 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+Raw data chứa PII không được phép vào warehouse; compute ở target hạn chế; quy tắc transform ổn định. Chọn pattern?
+
+Các lựa chọn:
+  A. ELT: load toàn bộ raw PII vào target rồi tính sau
+  B. CDC vì rule ổn định
+  C. ETL: transform/redact trước load, giữ raw ở vùng được phép riêng
+  D. Streaming vì PII
+
+Gợi ý / Hướng dẫn giải:
+  💡 Xác định raw được phép nằm đâu và compute nằm đâu.
+
+============================================================
+CÂU 04 [MATCHING] (Độ khó: easy)
+Đề bài:
+Ghép trường hợp sử dụng với cadence hợp lý.
+
+Ghép cặp:
+  [Cột trái / Câu hỏi]:
+    * Policy PDF đổi mỗi tháng, SLA 24h
+    * Fraud event cần phản ứng <2s
+    * Phân tích theo ngày nhưng cảnh báo gian lận cần theo thời gian thực
+    * Nguồn nhỏ cập nhật tuần
+  [Cột phải / Ý nghĩa]:
+    -> Streaming liên tục
+    -> Hybrid: stream gian lận + batch phân tích
+    -> Batch theo tuần
+    -> Batch theo ngày
+
+Gợi ý / Hướng dẫn giải:
+  💡 Real-time chỉ đáng khi độ trễ gây hại.
+
+============================================================
+CÂU 05 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+DB có update/delete liên tục, consumer cần lịch sử thay đổi và độ trễ <10s; source hỗ trợ log. Chọn?
+
+Các lựa chọn:
+  A. Snapshot tuần
+  B. CDC với offset/lag/schema/poison monitoring
+  C. Offset pagination
+  D. OCR
+
+Gợi ý / Hướng dẫn giải:
+  💡 Consumer cần current state hay từng change?
+
+============================================================
+CÂU 06 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Các trang theo updated_at: p1≤10:00 thành công, p2≤10:05 thất bại, p3 chưa chạy. Checkpoint an toàn?
+
+Các lựa chọn:
+  A. 10:00 và chạy lại p2
+  B. 10:10 để tránh lặp
+  C. Job start time
+  D. 10:05 vì đã lấy p2
+
+Gợi ý / Hướng dẫn giải:
+  💡 Fetched không đồng nghĩa processed successfully.
+
+============================================================
+CÂU 07 [NUMERIC_INPUT] (Độ khó: easy)
+Đề bài:
+Bối cảnh:
+API trả 429 với `Retry-After: 12`. Đây là attempt 2/4; header hợp lệ.
+
+Câu hỏi:
+Delay tối thiểu trước attempt kế tiếp là bao nhiêu?
+
+
+Gợi ý / Hướng dẫn giải:
+  💡 Khi có Retry-After hợp lệ, không tự chọn delay ngắn hơn.
+
+============================================================
+CÂU 08 [SINGLE_SELECT] (Độ khó: easy)
+Đề bài:
+Feed có insert/delete liên tục giữa các request và API cấp opaque stable cursor. Chọn gì?
+
+Các lựa chọn:
+  A. Cursor, lưu cursor và contract về thứ tự
+  B. Offset vì page number dễ đọc
+  C. Random sample
+  D. Restart full feed mỗi page
+
+Gợi ý / Hướng dẫn giải:
+  💡 Insert/delete làm vị trí offset thay đổi.
+
+============================================================
+CÂU 09 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+Bối cảnh:
+Các trang C1,C2,C3,C4; C1,C2 thành công, C3 timeout, C4 chưa lấy. Cách giữ checkpoint và replay nào an toàn nhất?
+
+Các lựa chọn:
+  A. Chạy lại từ C1 mỗi khi một trang timeout
+  B. Lưu C3 cùng lỗi/lần thử, giữ checkpoint ở C2, chạy lại C3 idempotent rồi mới lấy C4
+  C. Bỏ C3 và lấy C4 để pipeline không bị chậm
+  D. Đặt checkpoint ở C4 để lần sau không lặp dữ liệu
+
+Gợi ý / Hướng dẫn giải:
+  💡 Tách last success khỏi failed unit identity.
+
+============================================================
+CÂU 10 [SINGLE_SELECT] (Độ khó: medium)
+Đề bài:
+`policy.pdf` được rename thành `leave-policy.pdf` nhưng bytes/hash và effective date không đổi. Xử lý?
+
+Các lựa chọn:
+  A. Serve cả hai như active
+  B. Giữ logical document/version, cập nhật alias/path provenance
+  C. Chọn file mới theo mtime
+  D. Tạo policy version mới chỉ vì filename
+
+Gợi ý / Hướng dẫn giải:
+  💡 Filename là location, không phải authority.
+
+============================================================

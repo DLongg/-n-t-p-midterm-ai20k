@@ -1,0 +1,2320 @@
+{
+  "d01-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Hệ thống chọn giữa các nhãn có sẵn nên hành vi là discriminative.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d01-q012": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o3",
+        "o4",
+        "o1",
+        "o2",
+        "o5"
+      ]
+    },
+    "explanation": "Reasoning chọn tool, tool tạo observation, observation cập nhật state rồi agent kiểm tra dừng hoặc lặp.",
+    "response": {
+      "option_ids": [
+        "o3",
+        "o4",
+        "o1",
+        "o2",
+        "o5"
+      ]
+    }
+  },
+  "d01-q015": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o2",
+        "o4",
+        "o1",
+        "o3"
+      ]
+    },
+    "explanation": "Mỗi vòng dùng context hiện tại để dự đoán distribution, chọn token, append token và tiếp tục cho đến điều kiện dừng.",
+    "response": {
+      "option_ids": [
+        "o2",
+        "o4",
+        "o1",
+        "o3"
+      ]
+    }
+  },
+  "d01-q022": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Temperature thấp làm distribution sắc hơn và thường phù hợp output cần ổn định; không phải bảo đảm tuyệt đối.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d01-q047": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Token embedding biến ID rời rạc thành vector biểu diễn; positional information được thêm riêng trong pipeline đã cho.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d02-q012": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    },
+    "explanation": "Không cần quay lại vấn đề vì nhu cầu chưa bị bác bỏ; khi nhu cầu đúng nhưng cách giải sai thì quay về thiết kế ý tưởng; khi ma sát nằm ở thao tác thì quay về nguyên mẫu/tương tác.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    }
+  },
+  "d02-q043": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Logic cố định và cấu trúc dữ liệu ổn định nên luật/kịch bản tự động là cấp đơn giản nhất nhưng đã đủ dùng.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d02-q076": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "d"
+      ]
+    },
+    "explanation": "Chi phí FN cao ủng hộ recall, nhưng vẫn phải đo precision và tải phân loại; không có cấu hình đúng tuyệt đối.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "d"
+      ]
+    }
+  },
+  "d02-q090": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Các hiện vật hiện có thuộc giai đoạn lập kế hoạch; Not Yet không phải phê duyệt ra mắt.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d02-q044": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Chủ đề con và kế hoạch thay đổi theo quan sát nên tác nhân phù hợp, nhưng phải giới hạn công cụ và giữ bước người duyệt.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d03-q014": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Trường phân biệt giúp hệ thống không nhầm kết quả rỗng với lỗi, hoặc nhầm hết thời gian chờ với đầu vào không hợp lệ.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d03-q017": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "explanation": "Ba phép kiểm thử đầu gọi trực tiếp hàm hoặc lớp chuyển đổi để kiểm tra trường hợp thành công, đầu vào không hợp lệ và nhà cung cấp hết thời gian chờ. Hai lựa chọn còn lại có thêm model hoặc cả quy trình agent nên không cô lập được lỗi của tool.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  },
+  "d03-q019": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "d"
+    },
+    "explanation": "Tên tool không có trong danh sách cho phép phải bị từ chối trước khi có bất kỳ thao tác thực thi nào.",
+    "response": {
+      "choice_id": "d"
+    }
+  },
+  "d03-q021": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Hệ thống kiểm tra tên tool trước; chỉ payload hợp lệ của một tool được phép mới đi tới bước thực thi.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d03-q023": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o2",
+        "o3",
+        "o1",
+        "o4",
+        "o5"
+      ]
+    },
+    "explanation": "Quyết định tạo ra Action; ứng dụng thực thi Action để tạo Observation; trạng thái phải được cập nhật trước quyết định hoặc câu trả lời cuối tiếp theo.",
+    "response": {
+      "option_ids": [
+        "o2",
+        "o3",
+        "o1",
+        "o4",
+        "o5"
+      ]
+    }
+  },
+  "d03-q025": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o2",
+        "o4",
+        "o3",
+        "o1",
+        "o5"
+      ]
+    },
+    "explanation": "Lệnh gọi tool của model phải được lưu, tool được thực thi, kết quả mang đúng mã lệnh gọi được lưu lại, rồi model mới nhận Observation ở lượt tiếp theo.",
+    "response": {
+      "option_ids": [
+        "o2",
+        "o4",
+        "o3",
+        "o1",
+        "o5"
+      ]
+    }
+  },
+  "d03-q027": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "c"
+      ]
+    },
+    "explanation": "Observation xác nhận giá là 120.000 VND và cho biết chưa xác định được thời gian giao vì hết thời gian chờ. Không có bằng chứng về thời gian giao cụ thể hoặc tồn kho, nên câu trả lời cuối phải nêu rõ giới hạn này.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "c"
+      ]
+    }
+  },
+  "d03-q029": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o2",
+        "o3",
+        "o1"
+      ]
+    },
+    "explanation": "Có thể lấy thời tiết song song với địa chỉ; tìm nhà hàng phải chờ địa chỉ; kiểm tra bàn phải chờ danh sách mã nhà hàng.",
+    "response": {
+      "option_ids": [
+        "o2",
+        "o3",
+        "o1"
+      ]
+    }
+  },
+  "d03-q031": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Cơ chế rẽ nhánh phải tách rõ lệnh gọi tool, câu trả lời cuối, trạng thái dừng và bước chuyển tiếp sau Observation.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d03-q035": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a"
+      ]
+    },
+    "explanation": "Theo đặc tả nghiêm ngặt, chỉ đầu ra thứ nhất đáp ứng đầy đủ định dạng yêu cầu và chứa JSON hợp lệ.",
+    "response": {
+      "choice_ids": [
+        "a"
+      ]
+    }
+  },
+  "d03-q037": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Lớp chuyển đổi trước hết phải đọc `type` và các trường bắt buộc. Văn bản hợp lệ có thể chuyển tới bước xử lý câu trả lời cuối; lệnh gọi tool chỉ được chuyển sang kiểm tra danh sách cho phép và schema khi có `name` cùng `arguments` đúng cấu trúc.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d03-q039": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "ReAct là mẫu điều khiển lặp giữa quyết định, Action và Observation; nó không bắt buộc Action phải được mã hóa bằng văn bản. Giữ vòng lặp và trace nhưng dùng lệnh gọi có cấu trúc do nền tảng hỗ trợ sẽ giảm lỗi phân tích cú pháp mà không làm mất khả năng kiểm toán.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d03-q048": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Bước 1 tạo ra Observation mới dù kết quả rỗng. Ở bước 2, cùng tool, cùng tham số và cùng Observation lặp lại nên lần đầu có thể xác định trạng thái không tiến triển; bước 3 đổi truy vấn và thu được kết quả nên đã tạo tiến triển.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d04-q007": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "e"
+      ]
+    },
+    "explanation": "Hai JSON object hợp lệ có đủ trường và đúng kiểu; ba đầu ra còn lại lần lượt sai cú pháp, thiếu trường và sai kiểu.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "e"
+      ]
+    }
+  },
+  "d04-q009": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Ladder chỉ tăng độ phức tạp khi có lỗi đã quan sát và dừng khi fixed eval không còn cải thiện.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d04-q011": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "c",
+        "d"
+      ]
+    },
+    "explanation": "Ba ví dụ đúng phủ ba pattern khác nhau: thiếu dữ kiện, đủ dữ kiện và cần dữ liệu thời gian thực. Phương án B bỏ sót số người bắt buộc, E bịa giá vé, F phá hợp đồng đầu ra.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "c",
+        "d"
+      ]
+    }
+  },
+  "d04-q013": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Scaffold tăng theo nhu cầu phân rã, so sánh phương án và bằng chứng; không theo mong muốn thấy reasoning dài.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d04-q015": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "File là dữ liệu, nằm ngoài chuỗi quyền ra lệnh và không thể cấp quyền thực hiện hành động bên ngoài.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d04-q017": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    "explanation": "Gói ngữ cảnh giữ chỉ dẫn, yêu cầu/trạng thái, phần còn thiếu và contract về khả năng; bỏ phần trò chuyện lan man và dữ liệu đã cũ không đủ cho quyết định.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    }
+  },
+  "d04-q019": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Mục đích/sở thích thuộc người dùng; thông tin động/chính sách thuộc nguồn; chi tiết tùy chọn có thể dùng giả định công khai.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d04-q021": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Chỉ bản ghi đầu có provenance, còn hiệu lực, đúng đối tượng/ngày và độ tin cậy đủ; các bản ghi khác đều thiếu ít nhất một điều kiện độc lập.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d04-q025": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "d",
+        "f",
+        "g"
+      ]
+    },
+    "explanation": "Phần tóm tắt giữ mục tiêu, thông tin đính chính, bằng chứng mới, mục chưa rõ và ranh giới quyết định; bỏ thông tin cũ trùng lặp và câu chào hỏi.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "d",
+        "f",
+        "g"
+      ]
+    }
+  },
+  "d04-q027": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Đọc thông tin là tra cứu; biến đổi dữ liệu có sẵn là xử lý cục bộ; thay đổi hoặc gửi ra ngoài là hành động. Hợp đồng lẫn lộn thì phải làm rõ.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d04-q031": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "c",
+        "e"
+      ]
+    },
+    "explanation": "Ranh giới của agent có quyền đọc/cập nhật; riêng lượt hiện tại chỉ cần `calculator`, không cần tìm kiếm hoặc ghi dữ liệu.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "c",
+        "e"
+      ]
+    }
+  },
+  "d04-q035": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    "explanation": "Hai giá trị giống nhau vẫn cần nguồn, thời điểm, phạm vi và ranh giới tin cậy để biết dùng ở đâu và khi nào.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    }
+  },
+  "d04-q037": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "explanation": "Giữ các trường phục vụ quyết định và thông tin về nguồn gốc; loại bí mật, dữ liệu cá nhân, dữ liệu nhiễu và ghi chú giống chỉ dẫn vì chúng không cần cho quyết định.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  },
+  "d04-q041": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Rủi ro không chỉ dựa vào đọc/ghi: đọc riêng tư có thể nhạy cảm, bản nháp có thể đảo ngược, còn thanh toán có hậu quả cao.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d05-q001": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Mỗi sự cố được phân loại theo nơi phát sinh bất định; tình huống cuối đồng thời có bất định ở đầu vào và quy trình.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d05-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Phiên bản model và prompt không đổi nên hai khả năng đó yếu hơn; chỉ mục có nhiều tài liệu hết hạn trực tiếp cho thấy ngữ cảnh/dữ liệu đã trôi lệch.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d05-q005": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "e"
+      ]
+    },
+    "explanation": "Lỗi này cần cơ chế chặn ở đầu vào, đường khôi phục cho người dùng và tình huống hồi quy; slogan hay temperature không xử lý nguyên nhân.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "e"
+      ]
+    }
+  },
+  "d05-q007": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Giá trị và khả năng chi trả là giả định quan trọng nhưng có bằng chứng yếu nhất; giả định kỹ thuật và UX đã có bằng chứng ban đầu.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d05-q011": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Kiểm chứng tính khả thi kiểm một phần kỹ thuật; bản mẫu tương tác kiểm cách dùng; sản phẩm tối thiểu khả dụng là lát cắt nhỏ nhưng chạy từ đầu đến cuối; thử nghiệm phạm vi hẹp thử giải pháp gần thực tế trong một nhóm nhỏ.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d05-q013": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Phương án đúng phục vụ một người dùng và tác vụ hẹp, có đầu ra cùng đường khôi phục; các phương án khác là các lớp rời, phạm vi quá rộng hoặc chỉ là PoC.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d05-q017": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Mỗi phương pháp tạo một loại bằng chứng khác: mức độ hiểu, sự quan tâm, nhu cầu dùng dịch vụ hoặc thay đổi hành vi.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d05-q023": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Lớp lỗi được xác định theo chỗ cam kết, hiểu ý định, dữ liệu/công cụ hoặc khả năng khôi phục bị đứt.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d05-q025": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Phương án đúng nêu điều kiện kích hoạt, lỗi quan sát được, hậu quả, lớp lỗi, thay đổi cần làm và cách kiểm chứng.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d05-q029": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "b",
+        "d"
+      ]
+    },
+    "explanation": "Hai lát cắt đúng đều có người dùng, tác vụ, đầu ra, cách xử lý lỗi và bằng chứng; các phương án khác quá rộng hoặc thiếu bằng chứng.",
+    "response": {
+      "choice_ids": [
+        "b",
+        "d"
+      ]
+    }
+  },
+  "d06-q001": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Người thực hiện là người trực tiếp làm công việc; người chi trả và người gây ảnh hưởng có thể là người khác.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d06-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Phương án đúng nêu hành động–đối tượng–bối cảnh, không khóa vào giải pháp hoặc chỉ kể khó khăn/điều kiện xảy ra.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d06-q006": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o2",
+        "o4",
+        "o6",
+        "o1",
+        "o5",
+        "o7",
+        "o3"
+      ]
+    },
+    "explanation": "Trình tự là Tìm kiếm → Chuẩn bị → Xác nhận → Thực hiện → Theo dõi → Điều chỉnh → Kết thúc.",
+    "response": {
+      "option_ids": [
+        "o2",
+        "o4",
+        "o6",
+        "o1",
+        "o5",
+        "o7",
+        "o3"
+      ]
+    }
+  },
+  "d06-q009": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    },
+    "explanation": "Sổ tay mã hóa đi từ mẫu đã quan sát tới quy tắc có thể áp dụng lại; bắt đầu từ tính năng hoặc đếm trước sẽ làm méo bằng chứng.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    }
+  },
+  "d06-q014": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Giá trị 0 lặp lại mâu thuẫn với bằng chứng thô là dấu hiệu trường dữ liệu/quy trình dữ liệu có lỗi, không phải độ trễ thực.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d06-q017": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "c",
+        "d"
+      ]
+    },
+    "explanation": "Liên kết hợp lệ chỉ ra vị trí và hành vi có thể quan sát; khẩu hiệu hoặc tên nguyên tắc không đủ.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "c",
+        "d"
+      ]
+    }
+  },
+  "d06-q019": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Bốn sự cố lần lượt gặp vấn đề ở căn cứ, đầu vào, thẩm quyền và hậu quả học sai.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d06-q022": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Chỉ mức tự động hóa thay đổi, còn người dùng, công việc và luồng chính được giữ ổn định.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d06-q024": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    },
+    "explanation": "Yêu cầu nằm ở quyết định AI trung tâm và luồng có thể kiểm tra; phần trau chuốt giao diện hay hạ tầng vận hành thật không phải điều kiện.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    }
+  },
+  "d06-q028": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Tiêu chí đúng nêu bằng chứng quan sát được mà người chấm ngoài nhóm có thể áp dụng, không đòi câu chữ cố định.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d06-q031": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o5",
+        "o2",
+        "o1",
+        "o3",
+        "o4"
+      ]
+    },
+    "explanation": "Phải chọn mẫu → chấm độc lập → xem chênh lệch → sửa tiêu chí → chấm lại.",
+    "response": {
+      "option_ids": [
+        "o5",
+        "o2",
+        "o1",
+        "o3",
+        "o4"
+      ]
+    }
+  },
+  "d06-q034": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ]
+    },
+    "explanation": "Cơ cấu là mức bao phủ tối thiểu; phải giữ cả tình huống khó/không đạt, không chỉ chọn tình huống đạt.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ]
+    }
+  },
+  "d06-q036": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Ngưỡng đã được chốt; kết quả dưới ngưỡng vẫn là bằng chứng hợp lệ nếu báo cáo trung thực.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d06-q046": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    },
+    "explanation": "Mỗi tuyên bố được ghép với đúng loại tài liệu chứng minh, thay vì một tuyên bố chung chung.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    }
+  },
+  "d06-q049": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Cặp đúng gồm một thành công đại diện và một điều kiện không đạt thuộc rủi ro nguồn sự thật, với cách khắc phục nhìn thấy được.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d07-q001": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    },
+    "explanation": "Cách cung cấp dữ liệu phụ thuộc ý nghĩa và độ mới; fine-tuning không phải kho thông tin cập nhật.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    }
+  },
+  "d07-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    },
+    "explanation": "Chính sách là tri thức tham chiếu; phiếu yêu cầu là trạng thái vận hành; lựa chọn ngôn ngữ là ngữ cảnh của phiên chat.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    }
+  },
+  "d07-q005": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    },
+    "explanation": "Mỗi nguồn cần một quyết định có căn cứ riêng; đọc được nội dung không tự tạo quyền sử dụng.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    }
+  },
+  "d07-q006": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Chọn phép biến đổi theo ích lợi cần giữ: loại bỏ, nối ẩn danh, giá trị khái quát hoặc vai trò ngữ nghĩa.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d07-q008": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    },
+    "explanation": "Công khai không đồng nghĩa được sử dụng vô điều kiện: từng tệp cần truy ngược được về URL, phiên bản và căn cứ quyền sử dụng.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    }
+  },
+  "d07-q009": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    },
+    "explanation": "Dạng nội dung thực tế quyết định bộ trích xuất; trường hợp không khớp hoặc không hỗ trợ phải truy vết được.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    }
+  },
+  "d07-q011": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Chỉ sửa phần có bằng chứng từ nguồn; thông tin không đọc được phải tiếp tục được đánh dấu bất định.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d07-q012": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Dạng biểu diễn cần giữ đúng cấu trúc cần thiết với chi phí hợp lý.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d07-q014": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c2"
+    },
+    "explanation": "Ngoại lệ phải gắn đúng thành phần mà nó bổ nghĩa; làm phẳng sai vị trí có thể biến ngoại lệ cục bộ thành quy định chung.",
+    "response": {
+      "choice_id": "c2"
+    }
+  },
+  "d07-q019": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Bộ chia theo câu phải bảo toàn nội dung từng câu và thứ tự, giới hạn nhóm, đồng thời xử lý dữ liệu đầu vào rỗng.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d08-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    "explanation": "Bản trích xuất phải giữ hàng, tiêu đề nhiều tầng, đơn vị, ghi chú và vị trí nguồn. Tóm tắt/lập chỉ mục là bước sau; ô mờ không được đoán.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    }
+  },
+  "d08-q005": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Định danh ổn định và mã băm nội dung khiến nhiều lần xử lý cùng một nội dung không đổi hội tụ về một bản ghi duy nhất.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d08-q007": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Child chunk là đơn vị tìm kiếm chi tiết; parent chunk cung cấp context rộng hơn. Ánh xạ ổn định giữ đúng quan hệ giữa hai đơn vị.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d08-q009": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o3",
+        "o4",
+        "o1",
+        "o6",
+        "o2",
+        "o5"
+      ]
+    },
+    "explanation": "Chuỗi truy vết đúng là phiên bản nguồn → bản ghi đã lập chỉ mục → candidate đã xếp hạng → bằng chứng đã chọn → context đã định dạng → mệnh đề trong câu trả lời/trích dẫn.",
+    "response": {
+      "option_ids": [
+        "o3",
+        "o4",
+        "o1",
+        "o6",
+        "o2",
+        "o5"
+      ]
+    }
+  },
+  "d08-q011": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Chọn cách xử lý theo ý nghĩa cần phục hồi: native cho văn bản có sẵn, OCR cho chữ trong ảnh, vision cho quan hệ hình ảnh và đánh dấu phần không thể xác minh.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d08-q013": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Độ mới thuộc vòng đời bản ghi và điều kiện được dùng, không phải cách vá bằng ranking/prompt.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d08-q015": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Bản ghi theo hàng hỗ trợ tra cứu cấp dữ kiện; bản tóm tắt hỗ trợ câu hỏi cấp bảng. Hai loại giữ định danh riêng.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d08-q017": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    },
+    "explanation": "Chỉ biến đổi khi sự mơ hồ hoặc lệch từ vựng tạo ra nhu cầu retrieval. Query chính xác đã tốt thì nên đi thẳng; mọi lần biến đổi cần có log và phương án dự phòng rõ ràng.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    }
+  },
+  "d08-q019": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "f"
+      ]
+    },
+    "explanation": "Các biến thể sửa lỗi chính tả hoặc nối từ vựng nhưng vẫn giữ đối tượng là học phí; hoàn thuế/trả hàng làm lệch ý định.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "f"
+      ]
+    }
+  },
+  "d09-q001": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Bốn symptom có nguyên nhân khác nhau; chỉ kéo dài prompt không sửa role conflict, serial execution hoặc error ownership.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d09-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Không có bằng chứng về context, specialization, công việc song song hay isolation đủ bù chi phí coordination.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d09-q005": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    },
+    "explanation": "Boundary theo capability, owner, input/output và failure; helper cơ học không thành agent chỉ vì tách function.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c",
+        "e"
+      ]
+    }
+  },
+  "d09-q007": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Independent reads có thể parallel; writes có consequence/shared target cần ordering và gate rõ.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d09-q010": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Count theo responsibility/failure/test boundary và smallest useful split, không theo helper hay quota.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d09-q012": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Dynamic routing giữa heterogeneous workers là signal của supervisor-worker.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d09-q014": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o4",
+        "o2",
+        "o5",
+        "o1",
+        "o3"
+      ]
+    },
+    "explanation": "Pipeline dùng stage cố định; output stage trước là input stage sau.",
+    "response": {
+      "option_ids": [
+        "o4",
+        "o2",
+        "o5",
+        "o1",
+        "o3"
+      ]
+    }
+  },
+  "d09-q016": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Same input, different perspective và explicit judge là debate; mục tiêu là giảm blind spot, không chia workload.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d09-q019": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Hierarchy hợp khi flat span/domain boundary tạo coordination pressure quan sát được.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d09-q021": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Static/dynamic nói về control decision có biết trước hay phụ thuộc runtime, không đồng nghĩa serial/parallel.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d10-q004": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Accountability cần owner và artifact có thể kiểm tra ở mỗi lần bàn giao.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d10-q008": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o4",
+        "o5",
+        "o3",
+        "o6",
+        "o1",
+        "o7",
+        "o2"
+      ]
+    },
+    "explanation": "Source→ingest→raw/canonical→publish serving→agent; raw/canonical relation được giữ trong lineage.",
+    "response": {
+      "option_ids": [
+        "o4",
+        "o5",
+        "o3",
+        "o6",
+        "o1",
+        "o7",
+        "o2"
+      ]
+    }
+  },
+  "d10-q010": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Governance chặn raw ở target và compute không thuận lợi cho ELT.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d10-q012": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Hậu quả của độ trễ và chi phí vận hành quyết định cadence.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d10-q014": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "History+low latency+log support là signal CDC; đi kèm operating requirements.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d10-q016": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Checkpoint chỉ tiến sau unit xử lý thành công; failed page phải replay được.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d10-q022": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Cursor ổn định tránh position shift tốt hơn offset trong changing feed.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d10-q024": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Failed page phải recoverable và không bị checkpoint sau che.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d10-q026": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Rename không tự tạo logical version; hash và authority metadata mới quyết định.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d11-q004": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Proxy số ticket đóng không đại diện outcome giải quyết, nên agent tối ưu sai mục tiêu dù metric tăng.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d11-q006": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Chuỗi phân tích phải nối công việc → chỉ số → hành động và dùng tình huống đối chứng để thấy chỉ số có thể tăng khi kết quả thực tế xấu.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d11-q008": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Đối sánh có kiểm soát là bằng chứng đáng chú ý, nhưng sáu lần thử vẫn ít và chưa loại được các cách giải thích cạnh tranh.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d11-q010": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Biện pháp kiểm soát phải tác động đúng đường gây hại: giới hạn, chuyển cấp hoặc dừng.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d11-q012": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "d"
+    },
+    "explanation": "Nhiều người duyệt không thay thế một vai trò chịu trách nhiệm cho quyết định phát hành và việc lưu bằng chứng.",
+    "response": {
+      "choice_id": "d"
+    }
+  },
+  "d11-q014": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Tên framework không tự chứng minh kết luận; người duyệt cần biết phiên bản, phạm vi và bằng chứng.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d11-q016": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Khi chưa rõ lớp nào gây lỗi, thăm dò có kiểm soát giúp chọn can thiệp thay vì áp biện pháp không liên quan.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d11-q020": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Nguồn là nội dung bên ngoài; lỗi xảy ra khi model coi dữ liệu không đáng tin là chỉ dẫn có thẩm quyền.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d12-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Bản ghép tách Compute, Storage, Networking và IAM thay vì gộp mọi trách nhiệm vào một hộp cloud.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d12-q005": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "explanation": "Managed runtime chuyển phần vận hành nền cho provider; team vẫn chịu trách nhiệm về code, config, identity, policy dữ liệu và bằng chứng về kết quả.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  },
+  "d12-q007": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Phải promote cùng một digest immutable đã được kiểm thử. Khác biệt an toàn chỉ nằm ở config, data và capacity theo environment, không nằm ở artifact.",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d12-q009": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Service phải bind `0.0.0.0:$PORT`, lấy secret từ biến môi trường bắt buộc và fail fast khi thiếu; image không được hardcode cổng hay API key.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d12-q011": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "d"
+    },
+    "explanation": "Phải đánh giá R trên bộ kiểm thử cố định, xin đủ capacity, chuyển canary theo giai đoạn, theo dõi kết quả và giữ rollback/failure policy trước hạn sunset.",
+    "response": {
+      "choice_id": "d"
+    }
+  },
+  "d12-q013": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Dockerfile là công thức tạo image; digest định danh artifact; container là instance đang chạy; volume giữ state bên ngoài image.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d12-q016": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Cần pin digest/version của base image, khóa exact dependency resolution và kiểm tra tương thích architecture; cache hay timestamp không làm build tái lập.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d12-q018": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o1",
+        "o2",
+        "o3",
+        "o4"
+      ]
+    },
+    "explanation": "Lockfile/manifest ổn định phải đến trước bước cài dependency; mã nguồn hay đổi được chép sau để không phá dependency layer.",
+    "response": {
+      "option_ids": [
+        "o1",
+        "o2",
+        "o3",
+        "o4"
+      ]
+    }
+  },
+  "d12-q020": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Build trong builder rồi chỉ chép artifact cần cho runtime sang một runtime stage tối giản và tương thích; không thể biến một stage thành tối giản chỉ bằng xóa file rời rạc.",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d13-q001": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Đáp án đúng phân biệt được target boundary: Dùng telemetry hiện có để điều tra exploratory question và xác định signal còn thiếu",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d13-q004": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "d"
+    },
+    "explanation": "Đáp án đúng phân biệt được target boundary: Service health không chứng minh cost, tool reliability hay output quality; cần signal riêng cho cả ba",
+    "response": {
+      "choice_id": "d"
+    }
+  },
+  "d13-q006": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "c"
+    },
+    "explanation": "Đáp án đúng phân biệt được target boundary: MTTD 8 phút; MTTR 30 phút",
+    "response": {
+      "choice_id": "c"
+    }
+  },
+  "d13-q008": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Đáp án đúng phân biệt được target boundary: Trace để định vị span, log theo correlation ID để xem event/payload đã sanitize",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d13-q010": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Đáp án đúng phân biệt được target boundary: Sampled online evaluation về groundedness/policy correctness",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d13-q013": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "TTFT đo performance; tool failure đo reliability; spend đo cost; groundedness đo quality.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d13-q015": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    },
+    "explanation": "RED mô tả request impact; USE mô tả resource utilization/saturation/error để điều tra cause candidate.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4",
+        "x5": "r5"
+      }
+    }
+  },
+  "d13-q017": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "b"
+    },
+    "explanation": "Đáp án đúng phân biệt được target boundary: 95% request hoàn tất không chậm hơn khoảng 4,8s; token đầu phần lớn sớm hơn completion",
+    "response": {
+      "choice_id": "b"
+    }
+  },
+  "d13-q020": {
+    "correct": true,
+    "correct_response": {
+      "value": 9.56,
+      "tolerance": 0.02,
+      "unit": "%"
+    },
+    "explanation": "P=1−(1−0,01)^10=1−0,99^10≈9,56%.",
+    "response": {
+      "unit": "%",
+      "value": 9.56
+    }
+  },
+  "d13-q023": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o1",
+        "o2",
+        "o3",
+        "o4"
+      ]
+    },
+    "explanation": "Heuristic phản ứng nhanh; judge thêm semantic coverage; user signal có bias; outcome mạnh hơn nhưng thường lag/confounded.",
+    "response": {
+      "option_ids": [
+        "o1",
+        "o2",
+        "o3",
+        "o4"
+      ]
+    }
+  },
+  "d14-q003": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Offline phục vụ release gate; online theo production; inline chặn rủi ro tức thời; human review calibrate phần automation không chắc.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d14-q005": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o1",
+        "o2",
+        "o3",
+        "o4"
+      ]
+    },
+    "explanation": "Metric đi từ failure → question → measure → blind spot, không bắt đầu từ metric phổ biến.",
+    "response": {
+      "option_ids": [
+        "o1",
+        "o2",
+        "o3",
+        "o4"
+      ]
+    }
+  },
+  "d14-q007": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Task completion dựa state đích; partial/weighted chỉ có nghĩa khi contract step và critical weight được định trước.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d14-q009": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Sai fact, lệch intent, thiếu ý bắt buộc và mâu thuẫn xuyên session là bốn evidence khác nhau.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d14-q010": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    },
+    "explanation": "Task success đại diện core value; PII leak là guardrail; empty retrieval giúp định vị cause.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3"
+      }
+    }
+  },
+  "d14-q012": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Canonical label có normalization rõ nên exact match deterministic là đủ.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d14-q014": {
+    "correct": true,
+    "correct_response": {
+      "value": 0.75,
+      "tolerance": 0.001,
+      "unit": ""
+    },
+    "explanation": "Precision=Recall=3/4 nên F1=2PR/(P+R)=0,75.",
+    "response": {
+      "unit": "",
+      "value": 0.75
+    }
+  },
+  "d14-q016": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "BLEU đo modified n-gram precision và brevity; overlap cao có thể đi cùng contradiction.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d14-q018": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2"
+      }
+    },
+    "explanation": "ROUGE-N đếm n-gram; ROUGE-L dựa LCS và cả hai vẫn không tự kiểm correctness.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2"
+      }
+    }
+  },
+  "d15-q001": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Artifact phải trực tiếp nối claim với thay đổi và outcome; locator nhóm chưa tự chứng minh attribution cá nhân.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d15-q004": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Note tốt có sự kiện, ví dụ và hành động giữ/tránh; không biến một trải nghiệm thành quy luật phổ quát.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d15-q008": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Phân loại là hypothesis dựa evidence; vẫn cần test trước khi kết luận nhân quả.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d15-q010": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Follow-up phải tạo evidence phân biệt nguyên nhân thay vì nhảy thẳng tới solution.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d15-q014": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Ledger giữ source/stakeholder/impact và không biến preference hay missing information thành hard fact.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d15-q016": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "explanation": "Hard constraint, preference và unknown có hậu quả quyết định khác nhau.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  },
+  "d15-q023": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Hybrid chỉ được chọn vì placement cụ thể đáp ứng residency và capacity; không phải default preference.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d15-q025": {
+    "correct": true,
+    "correct_response": {
+      "correct_order": [
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5"
+      ]
+    },
+    "explanation": "Flow phải đặt transformation trước boundary, review trước write và giữ audit linkage.",
+    "response": {
+      "option_ids": [
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5"
+      ]
+    }
+  },
+  "d15-q027": {
+    "correct": true,
+    "correct_response": {
+      "value": 400,
+      "tolerance": 0,
+      "unit": "USD/tháng"
+    },
+    "explanation": "Hosted TCO=4.000+500+1.200=5.700; self-hosted=3.000+600+2.000+500=6.100; chênh lệch=400 USD/tháng.",
+    "response": {
+      "unit": "USD/tháng",
+      "value": 400
+    }
+  },
+  "d15-q032": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Production cost vượt invoice model; retry, review và observability cần được inventory riêng.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d15-q034": {
+    "correct": true,
+    "correct_response": {
+      "correct_pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    },
+    "explanation": "Driver map cho biết intervention nào có thể tác động cost thay vì tối ưu nhầm component.",
+    "response": {
+      "pairs": {
+        "x1": "r1",
+        "x2": "r2",
+        "x3": "r3",
+        "x4": "r4"
+      }
+    }
+  },
+  "d15-q036": {
+    "correct": true,
+    "correct_response": {
+      "value": 6000,
+      "tolerance": 0.01,
+      "unit": "USD/tháng"
+    },
+    "explanation": "Per request=$0,002+$0,002=$0,004; 1,5 triệu request/tháng ⇒ $6.000.",
+    "response": {
+      "unit": "USD/tháng",
+      "value": 6000
+    }
+  },
+  "d15-q040": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_id": "a"
+    },
+    "explanation": "Dominant addressable driver là output token; thử một thay đổi có baseline và quality guardrail.",
+    "response": {
+      "choice_id": "a"
+    }
+  },
+  "d15-q042": {
+    "correct": true,
+    "correct_response": {
+      "correct_choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "explanation": "Saving phải được kiểm cùng quality, latency, slice và rollback; một percentage mẫu không phải bảo đảm.",
+    "response": {
+      "choice_ids": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  }
+}

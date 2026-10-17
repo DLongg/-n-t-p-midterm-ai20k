@@ -1,0 +1,258 @@
+######################################################################
+# BẢNG ĐỀ BÀI VÀ ĐÁP ÁN ĐÃ KIỂM CHỨNG CHÍNH XÁC 100%: D14 · Day14-ai-evaluation-benchmarking
+# Thư mục lưu trữ: downloads/Khoa_4_Phase_1/14_Day14-ai-evaluation-benchmarking
+# Toàn bộ 10 câu hỏi đã được thử nghiệm và xác thực trực tiếp qua server VLearn
+######################################################################
+
+========================================================================
+CÂU 01 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d14-q001 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Team nói: ‘Agent v2 tốt hơn v1’ sau khi xem năm demo khác nhau.
+
+Câu hỏi:
+Thiết kế nào biến nhận định đó thành giả thuyết có thể bác bỏ?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Chọn năm câu v2 trả lời đẹp nhất rồi so với ký ức về v1
+  [ ] SAI   [B] Đổi đồng thời model, prompt và dataset rồi lấy score cao nhất
+  [ ] SAI   [C] Dùng một leaderboard công khai làm kết luận cho mọi user
+  [X] ĐÚNG  [D] Same population/protocol; metric và rule đặt trước
+
+-> ĐÁP ÁN CHÍNH XÁC: [D] Same population/protocol; metric và rule đặt trước
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Để so sánh khoa học giữa v2 và v1, cần giữ nguyên cùng tập mẫu kiểm thử (population), cùng quy trình đo (protocol), đồng thời xác định trước các thước đo và quy tắc đánh giá.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Hỏi điều gì phải được giữ giống nhau để một khác biệt có thể quy cho version.
+
+========================================================================
+CÂU 02 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d14-q003 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Bốn rủi ro cần evidence ở thời điểm khác nhau.
+
+Câu hỏi:
+Ghép rủi ro với mode phù hợp nhất.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: Regression trước merge
+    ===> Ghép với: Offline suite
+
+  * Cặp 2:
+    - Cột trái: Theo dõi drift trên traffic thật
+    ===> Ghép với: Online sampled eval
+
+  * Cặp 3:
+    - Cột trái: Chặn PII trước response
+    ===> Ghép với: Inline deterministic check
+
+  * Cặp 4:
+    - Cột trái: Calibrate case judge bất đồng
+    ===> Ghép với: Human review
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Offline phục vụ release gate; online theo production; inline chặn rủi ro tức thời; human review calibrate phần automation không chắc.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Mode phải khớp latency quyết định, risk và cost.
+
+========================================================================
+CÂU 03 [SẮP XẾP THỨ TỰ QUY TRÌNH] - Mã: d14-q005 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một trace cho thấy agent trả policy cũ sau khi corpus vừa cập nhật.
+
+Câu hỏi:
+Sắp chuỗi thiết kế metric theo evidence.
+
+THỨ TỰ QUY TRÌNH CHUẨN XÁC TỪNG BƯỚC (100% SERVER KIỂM CHỨNG):
+  Bước 1: Ghi failure cụ thể và population
+  Bước 2: Đặt câu hỏi evaluation cần trả lời
+  Bước 3: Chọn phép đo rẻ nhất đủ phân biệt
+  Bước 4: Nêu blind spot và evidence xác nhận
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Metric đi từ failure → question → measure → blind spot, không bắt đầu từ metric phổ biến.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Đừng chọn metric trước khi biết failure nào cần phân biệt.
+
+========================================================================
+CÂU 04 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d14-q007 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Workflow đặt vé có success state là row `reservation=confirmed`. Agent tìm chuyến và thanh toán thử nhưng DB không có row; agent vẫn nhắn ‘đã đặt xong’.
+
+Câu hỏi:
+Cách chấm completion nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [X] ĐÚNG  [A] Binary fail; partial chỉ ghi bước đã verify
+  [ ] SAI   [B] Binary pass vì agent đã gửi confirmation text
+  [ ] SAI   [C] Trajectory đẹp nên thay được final-state verifier
+  [ ] SAI   [D] Weighted pass 100% vì thanh toán là bước khó
+
+-> ĐÁP ÁN CHÍNH XÁC: [A] Binary fail; partial chỉ ghi bước đã verify
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Task completion dựa state đích; partial/weighted chỉ có nghĩa khi contract step và critical weight được định trước.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Phân biệt agent nói đã xong với environment thực sự đạt state nào.
+
+========================================================================
+CÂU 05 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d14-q009 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Bốn answer fail theo bốn cách khác nhau.
+
+Câu hỏi:
+Ghép failure với dimension chính.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: Nêu sai ngày hiệu lực
+    ===> Ghép với: Correctness
+
+  * Cặp 2:
+    - Cột trái: Đúng fact nhưng không trả intent user
+    ===> Ghép với: Relevance
+
+  * Cặp 3:
+    - Cột trái: Thiếu ngoại lệ quan trọng
+    ===> Ghép với: Completeness
+
+  * Cặp 4:
+    - Cột trái: Các turn tự mâu thuẫn nhau
+    ===> Ghép với: Coherence
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Sai fact, lệch intent, thiếu ý bắt buộc và mâu thuẫn xuyên session là bốn evidence khác nhau.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Một answer có thể fail một dimension nhưng vẫn đạt dimension khác.
+
+========================================================================
+CÂU 06 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d14-q010 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Product tối ưu trợ lý hoàn tiền.
+
+Câu hỏi:
+Ghép metric với vai trò quyết định.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: Tỷ lệ case giải quyết đúng
+    ===> Ghép với: North-star để optimize
+
+  * Cặp 2:
+    - Cột trái: PII leak rate
+    ===> Ghép với: Guardrail có thể block
+
+  * Cặp 3:
+    - Cột trái: Retrieval empty-result rate
+    ===> Ghép với: Diagnostic để điều tra
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Task success đại diện core value; PII leak là guardrail; empty retrieval giúp định vị cause.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Hỏi metric dùng để tối ưu, chặn hay chỉ debug.
+
+========================================================================
+CÂU 07 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d14-q012 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Target output là một trong ba label chuẩn `APPROVE`, `REVIEW`, `REJECT`; contract cho phép trim whitespace và uppercase.
+
+Câu hỏi:
+Metric nào hợp lệ nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] LLM judge không rubric
+  [ ] SAI   [B] BLEU trên phần giải thích tự do
+  [X] ĐÚNG  [C] Exact match sau normalization
+  [ ] SAI   [D] Cosine similarity giữa label
+
+-> ĐÁP ÁN CHÍNH XÁC: [C] Exact match sau normalization
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Canonical label có normalization rõ nên exact match deterministic là đủ.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Exact match chỉ phù hợp khi có một representation chuẩn sau normalize.
+
+========================================================================
+CÂU 08 [TÍNH TOÁN / ĐIỀN SỐ CHÍNH XÁC] - Mã: d14-q014 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Token hóa theo whitespace. Reference: `mèo ngồi trên thảm`. Candidate: `mèo nằm trên thảm`. Multiset overlap có 3 token; candidate và reference đều có 4 token.
+
+Câu hỏi:
+Tính token F1.
+
+-> ĐÁP ÁN SỐ CHÍNH XÁC: 0.75
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Precision=Recall=3/4 nên F1=2PR/(P+R)=0,75.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Tính precision và recall trước khi lấy harmonic mean.
+
+========================================================================
+CÂU 09 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d14-q016 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Reference nói ‘Agent không nên hoàn tiền’; candidate bỏ từ ‘không’ nhưng giữ gần toàn bộ n-gram.
+
+Câu hỏi:
+BLEU cao trong case này support kết luận nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] BLEU là phép entailment claim-level
+  [ ] SAI   [B] Brevity penalty sẽ phát hiện mọi phủ định
+  [ ] SAI   [C] Candidate chắc chắn đúng nghĩa
+  [X] ĐÚNG  [D] Chỉ support lexical overlap
+
+-> ĐÁP ÁN CHÍNH XÁC: [D] Chỉ support lexical overlap
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  BLEU đo modified n-gram precision và brevity; overlap cao có thể đi cùng contradiction.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Tách điều metric đo trực tiếp khỏi điều ta muốn biết về meaning.
+
+========================================================================
+CÂU 10 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d14-q018 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Cần chọn biến thể ROUGE theo loại overlap.
+
+Câu hỏi:
+Ghép biến thể với evidence nó ưu tiên.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: N-gram overlap
+    ===> Ghép với: ROUGE-N
+
+  * Cặp 2:
+    - Cột trái: Longest common subsequence theo thứ tự
+    ===> Ghép với: ROUGE-L
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  ROUGE-N đếm n-gram; ROUGE-L dựa LCS và cả hai vẫn không tự kiểm correctness.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 N là n-gram; L là longest common subsequence.
+

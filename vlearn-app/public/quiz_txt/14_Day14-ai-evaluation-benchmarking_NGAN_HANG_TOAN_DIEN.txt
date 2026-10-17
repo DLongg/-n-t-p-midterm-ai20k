@@ -1,0 +1,3176 @@
+=====================================================================================
+VLEARN - KHÓA 4 PHASE 1: NỀN TẢNG & MINI HACKATHON
+DAY 14: NGÂN HÀNG ĐỀ THI MỞ RỘNG TOÀN DIỆN (126 CÂU HỎI & HƯỚNG DẪN GIẢI CHI TIẾT)
+=====================================================================================
+
+THỐNG KÊ NGÂN HÀNG ĐỀ THI Day 14:
+- Tổng số câu hỏi trong ngân hàng: 126 câu (Bao phủ 62 chủ đề kiến thức / Knowledge Components)
+- Số câu hỏi trắc nghiệm tương tác trực tuyến (Servable): 74 câu
+- Số câu tự luận / viết code thực hành (Short Text): 52 câu
+- Lượt thi kiểm tra chuẩn Vlearn: Mỗi lượt rút ngẫu nhiên 10 câu.
+
+=====================================================================================
+
+=====================================================================================
+CÂU 001 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q001 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-eval-hypothesis-experiment] Eval Hypothesis Experiment
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Team nói: ‘Agent v2 tốt hơn v1’ sau khi xem năm demo khác nhau.
+
+Câu hỏi:
+Thiết kế nào biến nhận định đó thành giả thuyết có thể bác bỏ?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Same population/protocol; metric và rule đặt trước
+[B] Chọn năm câu v2 trả lời đẹp nhất rồi so với ký ức về v1
+[C] Đổi đồng thời model, prompt và dataset rồi lấy score cao nhất
+[D] Dùng một leaderboard công khai làm kết luận cho mọi user
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [A]
+[A] Same population/protocol; metric và rule đặt trước
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Để so sánh khoa học giữa v2 và v1, cần giữ nguyên cùng tập mẫu kiểm thử (population), cùng quy trình đo (protocol), đồng thời xác định trước các thước đo và quy tắc đánh giá.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi điều gì phải được giữ giống nhau để một khác biệt có thể quy cho version.
+
+=====================================================================================
+CÂU 002 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q002 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-hypothesis-experiment] Eval Hypothesis Experiment
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+V2 dùng prompt mới trên cùng model. Team có 300 case thực, gồm ba risk slice, và muốn biết task success có tăng mà safety không giảm.
+
+Câu hỏi:
+Viết hypothesis, controlled protocol và acceptance rule có thể bác bỏ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Biến “tốt hơn” thành delta và điều kiện reject rõ ràng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Biến “tốt hơn” thành delta và điều kiện reject rõ ràng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Biến “tốt hơn” thành delta và điều kiện reject rõ ràng.
+
+=====================================================================================
+CÂU 003 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q003 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-mode-trigger-selection] Eval Mode Trigger Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Bốn rủi ro cần evidence ở thời điểm khác nhau.
+
+Câu hỏi:
+Ghép rủi ro với mode phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Regression trước merge
+  (2) Theo dõi drift trên traffic thật
+  (3) Chặn PII trước response
+  (4) Calibrate case judge bất đồng
+
+Cột Phải (Lựa chọn ghép):
+  (A) Offline suite
+  (B) Online sampled eval
+  (C) Inline deterministic check
+  (D) Human review
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Regression trước merge ===> Ghép với: 
+• Cặp 2: Theo dõi drift trên traffic thật ===> Ghép với: 
+• Cặp 3: Chặn PII trước response ===> Ghép với: 
+• Cặp 4: Calibrate case judge bất đồng ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Offline phục vụ release gate; online theo production; inline chặn rủi ro tức thời; human review calibrate phần automation không chắc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mode phải khớp latency quyết định, risk và cost.
+
+=====================================================================================
+CÂU 004 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q004 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-mode-trigger-selection] Eval Mode Trigger Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một medical assistant cần regression check khi đổi prompt, chặn PII tức thời, theo dõi drift production và calibrate judge bất đồng.
+
+Câu hỏi:
+Phân vai mode, trigger, sampling và action cho bốn nhu cầu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi mode cần nói khi chạy và action gì theo sau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi mode cần nói khi chạy và action gì theo sau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi mode cần nói khi chạy và action gì theo sau.
+
+=====================================================================================
+CÂU 005 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q005 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-failure-mode-to-metric] Failure Mode To Metric
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một trace cho thấy agent trả policy cũ sau khi corpus vừa cập nhật.
+
+Câu hỏi:
+Sắp chuỗi thiết kế metric theo evidence.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Ghi failure cụ thể và population
+  - [B] Đặt câu hỏi evaluation cần trả lời
+  - [C] Chọn phép đo rẻ nhất đủ phân biệt
+  - [D] Nêu blind spot và evidence xác nhận
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 THỨ TỰ QUY TRÌNH CHUẨN XÁC:
+Bước 1: Ghi failure cụ thể và population
+Bước 2: Đặt câu hỏi evaluation cần trả lời
+Bước 3: Chọn phép đo rẻ nhất đủ phân biệt
+Bước 4: Nêu blind spot và evidence xác nhận
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Metric đi từ failure → question → measure → blind spot, không bắt đầu từ metric phổ biến.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng chọn metric trước khi biết failure nào cần phân biệt.
+
+=====================================================================================
+CÂU 006 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q006 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-failure-mode-to-metric] Failure Mode To Metric
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent trả đúng policy nhưng mất 18 giây do lặp tool; HTTP vẫn 200.
+
+Câu hỏi:
+Thiết kế failure→question→measure và nêu blind spot.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Bắt đầu từ failure cụ thể chứ không từ metric có sẵn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Bắt đầu từ failure cụ thể chứ không từ metric có sẵn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bắt đầu từ failure cụ thể chứ không từ metric có sẵn.
+
+=====================================================================================
+CÂU 007 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q007 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-task-completion-scoring] Task Completion Scoring
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Workflow đặt vé có success state là row `reservation=confirmed`. Agent tìm chuyến và thanh toán thử nhưng DB không có row; agent vẫn nhắn ‘đã đặt xong’.
+
+Câu hỏi:
+Cách chấm completion nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Binary fail; partial chỉ ghi bước đã verify
+[B] Binary pass vì agent đã gửi confirmation text
+[C] Weighted pass 100% vì thanh toán là bước khó
+[D] Trajectory đẹp nên thay được final-state verifier
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [A]
+[A] Binary fail; partial chỉ ghi bước đã verify
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Task completion dựa state đích; partial/weighted chỉ có nghĩa khi contract step và critical weight được định trước.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt agent nói đã xong với environment thực sự đạt state nào.
+
+=====================================================================================
+CÂU 008 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q008 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-task-completion-scoring] Task Completion Scoring
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Workflow gồm xác minh danh tính 20%, tạo refund 60% là critical, gửi email 20%. Trace chỉ xác minh và gửi email; refund state không tồn tại.
+
+Câu hỏi:
+So binary, partial và weighted completion; nêu score nào được dùng cho gate.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Critical state phải được giữ riêng khỏi số điểm cộng dồn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Critical state phải được giữ riêng khỏi số điểm cộng dồn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Critical state phải được giữ riêng khỏi số điểm cộng dồn.
+
+=====================================================================================
+CÂU 009 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q009 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-answer-quality-dimensions] Answer Quality Dimensions
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Bốn answer fail theo bốn cách khác nhau.
+
+Câu hỏi:
+Ghép failure với dimension chính.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Nêu sai ngày hiệu lực
+  (2) Đúng fact nhưng không trả intent user
+  (3) Thiếu ngoại lệ quan trọng
+  (4) Các turn tự mâu thuẫn nhau
+
+Cột Phải (Lựa chọn ghép):
+  (A) Correctness
+  (B) Relevance
+  (C) Completeness
+  (D) Coherence
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Nêu sai ngày hiệu lực ===> Ghép với: 
+• Cặp 2: Đúng fact nhưng không trả intent user ===> Ghép với: 
+• Cặp 3: Thiếu ngoại lệ quan trọng ===> Ghép với: 
+• Cặp 4: Các turn tự mâu thuẫn nhau ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Sai fact, lệch intent, thiếu ý bắt buộc và mâu thuẫn xuyên session là bốn evidence khác nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một answer có thể fail một dimension nhưng vẫn đạt dimension khác.
+
+=====================================================================================
+CÂU 010 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q010 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-eval-metric-role-architecture] Eval Metric Role Architecture
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Product tối ưu trợ lý hoàn tiền.
+
+Câu hỏi:
+Ghép metric với vai trò quyết định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Tỷ lệ case giải quyết đúng
+  (2) PII leak rate
+  (3) Retrieval empty-result rate
+
+Cột Phải (Lựa chọn ghép):
+  (A) North-star để optimize
+  (B) Guardrail có thể block
+  (C) Diagnostic để điều tra
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Tỷ lệ case giải quyết đúng ===> Ghép với: 
+• Cặp 2: PII leak rate ===> Ghép với: 
+• Cặp 3: Retrieval empty-result rate ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Task success đại diện core value; PII leak là guardrail; empty retrieval giúp định vị cause.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi metric dùng để tối ưu, chặn hay chỉ debug.
+
+=====================================================================================
+CÂU 011 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q011 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-metric-role-architecture] Eval Metric Role Architecture
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+North-star task success tăng 3 điểm; PII leak guardrail có block threshold là 0% nhưng candidate tăng từ 0 lên 0,2%; retrieval empty giảm.
+
+Câu hỏi:
+Đưa ra release decision và vai trò từng metric.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng cộng ba metric thành một average xóa mất vai trò.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng cộng ba metric thành một average xóa mất vai trò.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng cộng ba metric thành một average xóa mất vai trò.
+
+=====================================================================================
+CÂU 012 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q012 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-exact-match-normalization-limit] Exact Match Normalization Limit
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Target output là một trong ba label chuẩn `APPROVE`, `REVIEW`, `REJECT`; contract cho phép trim whitespace và uppercase.
+
+Câu hỏi:
+Metric nào hợp lệ nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Exact match sau normalization
+[B] BLEU trên phần giải thích tự do
+[C] Cosine similarity giữa label
+[D] LLM judge không rubric
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [A]
+[A] Exact match sau normalization
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Canonical label có normalization rõ nên exact match deterministic là đủ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Exact match chỉ phù hợp khi có một representation chuẩn sau normalize.
+
+=====================================================================================
+CÂU 013 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q013 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-exact-match-normalization-limit] Exact Match Normalization Limit
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Reference là `Hà Nội là thủ đô Việt Nam`; candidate là `Thủ đô của Việt Nam là Hà Nội`.
+
+Câu hỏi:
+Exact match bằng 0 có chứng minh candidate sai nghĩa không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Không; open answer không có canonical string
+[B] Có; khác chuỗi luôn là sai
+[C] Có nếu candidate dài hơn
+[D] Không vì exact match luôn vô dụng
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Task này yêu cầu equality chuỗi hay equivalence về nghĩa?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Task này yêu cầu equality chuỗi hay equivalence về nghĩa?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Task này yêu cầu equality chuỗi hay equivalence về nghĩa?
+
+=====================================================================================
+CÂU 014 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q014 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-token-f1-overlap-limit] Token F1 Overlap Limit
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Token hóa theo whitespace. Reference: `mèo ngồi trên thảm`. Candidate: `mèo nằm trên thảm`. Multiset overlap có 3 token; candidate và reference đều có 4 token.
+
+Câu hỏi:
+Tính token F1.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 GIÁ TRỊ ĐIỀN CHUẨN: None
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Precision=Recall=3/4 nên F1=2PR/(P+R)=0,75.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính precision và recall trước khi lấy harmonic mean.
+
+=====================================================================================
+CÂU 015 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q015 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-token-f1-overlap-limit] Token F1 Overlap Limit
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Token multiset reference có 5 token, candidate có 4 token, overlap là 3 token.
+
+Câu hỏi:
+Tính precision, recall và F1; nói điều F1 chưa chứng minh.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mẫu số precision và recall khác nhau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mẫu số precision và recall khác nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số precision và recall khác nhau.
+
+=====================================================================================
+CÂU 016 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q016 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-bleu-interpretation] Bleu Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Reference nói ‘Agent không nên hoàn tiền’; candidate bỏ từ ‘không’ nhưng giữ gần toàn bộ n-gram.
+
+Câu hỏi:
+BLEU cao trong case này support kết luận nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chỉ support lexical overlap
+[B] Candidate chắc chắn đúng nghĩa
+[C] Brevity penalty sẽ phát hiện mọi phủ định
+[D] BLEU là phép entailment claim-level
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [A]
+[A] Chỉ support lexical overlap
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  BLEU đo modified n-gram precision và brevity; overlap cao có thể đi cùng contradiction.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách điều metric đo trực tiếp khỏi điều ta muốn biết về meaning.
+
+=====================================================================================
+CÂU 017 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q017 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-bleu-interpretation] Bleu Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Candidate giữ gần hết n-gram nhưng thêm một phủ định làm conclusion đảo ngược.
+
+Câu hỏi:
+Có được dùng BLEU cao làm factuality gate không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Không; cần semantic/claim-level check
+[B] Có; overlap cao đủ chứng minh entailment
+[C] Có nếu brevity penalty bằng 1
+[D] Không vì BLEU chỉ dùng cho audio
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Metric đang đo n-gram hay truth condition?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Metric đang đo n-gram hay truth condition?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Metric đang đo n-gram hay truth condition?
+
+=====================================================================================
+CÂU 018 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q018 (Độ khó: Dễ | Điểm: 2)
+Chủ đề kiến thức (KC): [kc-rouge-interpretation] Rouge Interpretation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Cần chọn biến thể ROUGE theo loại overlap.
+
+Câu hỏi:
+Ghép biến thể với evidence nó ưu tiên.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) N-gram overlap
+  (2) Longest common subsequence theo thứ tự
+
+Cột Phải (Lựa chọn ghép):
+  (A) ROUGE-N
+  (B) ROUGE-L
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: N-gram overlap ===> Ghép với: 
+• Cặp 2: Longest common subsequence theo thứ tự ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  ROUGE-N đếm n-gram; ROUGE-L dựa LCS và cả hai vẫn không tự kiểm correctness.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 N là n-gram; L là longest common subsequence.
+
+=====================================================================================
+CÂU 019 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q019 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-wer-edit-distance] Wer Edit Distance
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Reference có 4 từ. Alignment của candidate có 1 substitution, 0 deletion và 1 insertion.
+
+Câu hỏi:
+Tính WER.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mẫu số là số từ của reference.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là số từ của reference.
+
+=====================================================================================
+CÂU 020 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q020 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-wer-edit-distance] Wer Edit Distance
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Reference có 3 từ; candidate cần 4 insertion ngoài 3 substitution.
+
+Câu hỏi:
+WER có thể lớn hơn 100% không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có; tử số có thể vượt N reference
+[B] Không; mọi metric đều bị chặn ở 1
+[C] Không nếu candidate dài hơn
+[D] Chỉ khi exact match bằng 1
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Công thức có phép clamp về 1 không?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Công thức có phép clamp về 1 không?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Công thức có phép clamp về 1 không?
+
+=====================================================================================
+CÂU 021 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q021 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-cosine-similarity-contradiction] Cosine Similarity Contradiction
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai câu cùng nói về refund và cosine similarity là 0,94, nhưng một câu có phủ định làm policy đảo nghĩa.
+
+Câu hỏi:
+Bước đánh giá tiếp theo hợp lý nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Thêm claim-level entailment/contradiction check
+[B] Kết luận paraphrase vì cosine >0,9
+[C] Tăng threshold cosine lên đúng 0,95 rồi coi là truth
+[D] Dùng token count thay semantic check
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Cùng vùng vector không đồng nghĩa cùng truth condition.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Cùng vùng vector không đồng nghĩa cùng truth condition.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cùng vùng vector không đồng nghĩa cùng truth condition.
+
+=====================================================================================
+CÂU 022 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q022 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-cosine-similarity-contradiction] Cosine Similarity Contradiction
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Candidate A paraphrase đúng reference; candidate B giữ cùng topic nhưng đảo nghĩa bằng phủ định. Cả hai cosine >0,9.
+
+Câu hỏi:
+Thiết kế decision path không đồng nhất similarity với truth.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Similarity là screening signal, không phải truth oracle.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Similarity là screening signal, không phải truth oracle.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Similarity là screening signal, không phải truth oracle.
+
+=====================================================================================
+CÂU 023 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q023 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ragas-answer-relevance] Ragas Answer Relevance
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Evaluator reverse-question trả relevance thấp.
+
+Câu hỏi:
+Sắp audit path để tách agent error khỏi evaluator error.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Giữ question gốc và answer
+  - [B] Đọc reverse question được evaluator sinh
+  - [C] Kiểm similarity/mapping output
+  - [D] Quy lỗi agent hoặc evaluator theo evidence
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Score cuối không cho biết reverse-question generation có hỏng hay không.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Score cuối không cho biết reverse-question generation có hỏng hay không.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Score cuối không cho biết reverse-question generation có hỏng hay không.
+
+=====================================================================================
+CÂU 024 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q024 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ragas-answer-relevance] Ragas Answer Relevance
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Question hỏi thủ tục hủy. Answer nói chi tiết đổi ngày. Reverse question sinh ra lại hỏi hủy do evaluator hallucination.
+
+Câu hỏi:
+Attribution score relevance thấp thế nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Có hai failure candidate độc lập cần tách.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Có hai failure candidate độc lập cần tách.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Có hai failure candidate độc lập cần tách.
+
+=====================================================================================
+CÂU 025 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q025 (Độ khó: Khó | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-retrieval-map] Retrieval Map
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Có hai query, mỗi query có đúng 2 tài liệu relevant. Q1 relevant ở rank 1 và 3; Q2 relevant ở rank 2 và 3.
+
+Câu hỏi:
+Tính MAP, làm tròn 3 chữ số thập phân.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính precision tại từng rank relevant, lấy AP từng query rồi mới lấy mean.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính precision tại từng rank relevant, lấy AP từng query rồi mới lấy mean.
+
+=====================================================================================
+CÂU 026 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q026 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-retrieval-map] Retrieval Map
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Q1 có 3 relevant ở rank 1,2,5. Q2 có 2 relevant ở rank 1,4; relevance được quy ước là binary.
+
+Câu hỏi:
+Tính AP từng query và MAP, làm tròn 3 chữ số; nêu relevance assumption.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Precision chỉ được lấy tại rank có relevant item.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Precision chỉ được lấy tại rank có relevant item.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Precision chỉ được lấy tại rank có relevant item.
+
+=====================================================================================
+CÂU 027 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d14-q027 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-trace-sampling-strategy] Trace Sampling Strategy
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mục tiêu vừa tìm failure chưa biết vừa phủ known risk.
+
+Câu hỏi:
+Chọn các thành phần hợp lệ của mixed trace sample.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Random traffic giữ một tỷ lệ đã khai báo
+[B] Đại diện cluster phổ biến
+[C] Outlier và automated flag
+[D] Negative user feedback
+[E] Chỉ lấy case hệ thống đã flag
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thành phần nào không phụ thuộc detector hiện có?
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Thành phần nào không phụ thuộc detector hiện có?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thành phần nào không phụ thuộc detector hiện có?
+
+=====================================================================================
+CÂU 028 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q028 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-trace-sampling-strategy] Trace Sampling Strategy
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Traffic một triệu trace/ngày; detector biết timeout và negative feedback nhưng chưa biết failure mới.
+
+Câu hỏi:
+Thiết kế sample 2.000 trace để vừa discovery vừa risk coverage.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nếu bỏ random, unknown coverage bị phụ thuộc detector cũ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nếu bỏ random, unknown coverage bị phụ thuộc detector cũ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu bỏ random, unknown coverage bị phụ thuộc detector cũ.
+
+=====================================================================================
+CÂU 029 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q029 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-trace-open-coding-observation] Trace Open Coding Observation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Trace: retrieval trả empty; model sau đó đoán policy và answer bị sai.
+
+Câu hỏi:
+Open code nào phù hợp nhất trước khi gán cause?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Retrieval trả empty trước answer unsupported
+[B] Root cause chắc chắn là model yếu
+[C] Category: bad answer
+[D] Fix ngay bằng đổi vendor
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mô tả điều quan sát được và thứ tự, không nhảy tới nguyên nhân.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mô tả điều quan sát được và thứ tự, không nhảy tới nguyên nhân.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mô tả điều quan sát được và thứ tự, không nhảy tới nguyên nhân.
+
+=====================================================================================
+CÂU 030 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q030 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-axial-root-cause-coding] Axial Root Cause Coding
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mười trace có symptom ‘wrong answer’: sáu trace policy mới chưa được index; bốn trace retrieved đủ nhưng prompt bỏ citation constraint.
+
+Câu hỏi:
+Cách axial coding nào action-ready?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tách cause vì remediation khác nhau
+[B] Gộp tất cả thành `wrong answer`
+[C] Tách theo model name dù next fix giống nhau
+[D] Gộp vì cùng metric faithfulness thấp
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Nếu hai nhóm cần next fix khác nhau, chúng không phải một cause category.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nếu hai nhóm cần next fix khác nhau, chúng không phải một cause category.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu hai nhóm cần next fix khác nhau, chúng không phải một cause category.
+
+=====================================================================================
+CÂU 031 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q031 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-axial-root-cause-coding] Axial Root Cause Coding
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Open codes gồm empty retrieval, stale chunk, unsupported answer và wrong citation trên 30 trace.
+
+Câu hỏi:
+Tạo axial categories theo cause và bảo vệ merge/split.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Không gom chỉ vì metric hay symptom giống nhau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không gom chỉ vì metric hay symptom giống nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không gom chỉ vì metric hay symptom giống nhau.
+
+=====================================================================================
+CÂU 032 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q032 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-taxonomy-operational-definition] Taxonomy Operational Definition
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Category hiện là `answer tệ` và hai reviewer áp rất khác nhau.
+
+Câu hỏi:
+Định nghĩa nào kiểm tra được nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Unsupported factual claim; loại case chỉ khác style
+[B] FAIL nếu reviewer cảm thấy chưa hay
+[C] FAIL nếu answer ngắn
+[D] FAIL nếu score tổng dưới ngưỡng chưa rõ nguồn
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Reviewer khác phải áp được cùng check mà không đoán ý tác giả.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Reviewer khác phải áp được cùng check mà không đoán ý tác giả.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Reviewer khác phải áp được cùng check mà không đoán ý tác giả.
+
+=====================================================================================
+CÂU 033 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q033 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-taxonomy-operational-definition] Taxonomy Operational Definition
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Label `tool failure` đang lẫn wrong tool, wrong payload và provider timeout.
+
+Câu hỏi:
+Viết operational definitions và xử lý trace có hai lỗi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Định nghĩa phải dẫn reviewer tới cùng decision.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Định nghĩa phải dẫn reviewer tới cùng decision.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Định nghĩa phải dẫn reviewer tới cùng decision.
+
+=====================================================================================
+CÂU 034 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q034 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-taxonomy-saturation-rare-search] Taxonomy Saturation Rare Search
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Sau 80 trace liên tiếp không xuất hiện common category mới; risk PII leak hiếm nhưng impact cao chưa có case.
+
+Câu hỏi:
+Kết luận và hành động nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Saturation common; vẫn search PII risk
+[B] Dừng toàn bộ sampling vì không còn failure nào
+[C] PII leak chắc chắn không tồn tại
+[D] Chỉ tăng random sample, bỏ adversarial search
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách câu hỏi ‘common theme còn mới không’ khỏi ‘rare high-impact risk đã được thử chưa’.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách câu hỏi ‘common theme còn mới không’ khỏi ‘rare high-impact risk đã được thử chưa’.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách câu hỏi ‘common theme còn mới không’ khỏi ‘rare high-impact risk đã được thử chưa’.
+
+=====================================================================================
+CÂU 035 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q035 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-taxonomy-saturation-rare-search] Taxonomy Saturation Rare Search
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Sau ba batch không có common code mới, nhưng safety slice chỉ có hai trace và chưa có adversarial case.
+
+Câu hỏi:
+Quyết định tiếp tục/dừng sampling thế nào.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Saturation luôn đi kèm scope của sampling.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Saturation luôn đi kèm scope của sampling.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Saturation luôn đi kèm scope của sampling.
+
+=====================================================================================
+CÂU 036 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q036 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-taxonomy-saturation-rare-search] Taxonomy Saturation Rare Search
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Common categories đã saturation nhưng chưa từng chạy adversarial PII probes.
+
+Câu hỏi:
+Có được kết luận PII risk đã phủ không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Không; cần directed/adversarial search riêng
+[B] Có; saturation chứng minh mọi rare failure vắng mặt
+[C] Có nếu random sample lớn hơn 50
+[D] Không cần vì rare risk không ảnh hưởng taxonomy
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Saturation được quan sát trên sampling population nào?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Saturation được quan sát trên sampling population nào?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Saturation được quan sát trên sampling population nào?
+
+=====================================================================================
+CÂU 037 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q037 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-taxonomy-agreement-kappa] Taxonomy Agreement Kappa
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai reviewer có observed agreement p_o=0,80 và expected-by-chance agreement p_e=0,50.
+
+Câu hỏi:
+Tính Cohen's kappa.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Trừ chance agreement ở tử và chia cho dư địa còn lại.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trừ chance agreement ở tử và chia cho dư địa còn lại.
+
+=====================================================================================
+CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q038 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-taxonomy-agreement-kappa] Taxonomy Agreement Kappa
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Observed agreement là 0,95 nhưng cả hai reviewer gần như luôn gán PASS, expected agreement là 0,90.
+
+Câu hỏi:
+Tính kappa và diễn giải prevalence trap.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kappa đo consistency đã trừ chance, không đo semantic truth.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kappa đo consistency đã trừ chance, không đo semantic truth.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kappa đo consistency đã trừ chance, không đo semantic truth.
+
+=====================================================================================
+CÂU 039 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q039 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-taxonomy-agreement-kappa] Taxonomy Agreement Kappa
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai reviewer agreement 95% nhưng cả hai gần như luôn gán PASS.
+
+Câu hỏi:
+Con số nào cần kiểm thêm trước khi nói label rất rõ?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chance agreement/prevalence và kappa
+[B] Chỉ số token F1 của answer
+[C] BLEU giữa hai label
+[D] MAP của retrieval
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một reviewer luôn PASS có thể đạt raw agreement cao tới đâu?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một reviewer luôn PASS có thể đạt raw agreement cao tới đâu?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một reviewer luôn PASS có thể đạt raw agreement cao tới đâu?
+
+=====================================================================================
+CÂU 040 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d14-q040 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-golden-dataset-record-design] Golden Dataset Record Design
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một benchmark case sẽ trở thành golden record.
+
+Câu hỏi:
+Chọn các trường bắt buộc để record grounded và audit được.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Stable case ID
+[B] Question và expert expected behavior
+[C] Exact source/evidence reference
+[D] Difficulty/risk metadata và provenance
+[E] Model output được tự động coi là gold
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Mọi claim trong expected answer phải truy được về evidence nào?
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mọi claim trong expected answer phải truy được về evidence nào?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mọi claim trong expected answer phải truy được về evidence nào?
+
+=====================================================================================
+CÂU 041 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q041 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-golden-dataset-record-design] Golden Dataset Record Design
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Case refund có amount/date/exception; draft gold chỉ ghi answer chung và link cả PDF.
+
+Câu hỏi:
+Sửa thành golden record audit được.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Link cả PDF không chứng minh từng claim cụ thể.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Link cả PDF không chứng minh từng claim cụ thể.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Link cả PDF không chứng minh từng claim cụ thể.
+
+=====================================================================================
+CÂU 042 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q042 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-eval-slice-stratification] Eval Slice Stratification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Production có 5% case policy-risk nhưng stress set cố ý chứa 50% case đó.
+
+Câu hỏi:
+Cách report nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tách stress report; reweight production
+[B] Dùng mean stress set như production mean
+[C] Xóa slice hiếm để tỷ lệ giống production
+[D] Kết luận 50% traffic là policy-risk
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt mục tiêu tìm failure với mục tiêu ước lượng tần suất production.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt mục tiêu tìm failure với mục tiêu ước lượng tần suất production.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt mục tiêu tìm failure với mục tiêu ước lượng tần suất production.
+
+=====================================================================================
+CÂU 043 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q043 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-slice-stratification] Eval Slice Stratification
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Có 1.000 production-weighted case và stress set 200 case safety oversample. Team muốn vừa estimate prevalence vừa gate safety.
+
+Câu hỏi:
+Thiết kế allocation và report.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hai mục tiêu sampling cần hai cách diễn giải.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hai mục tiêu sampling cần hai cách diễn giải.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hai mục tiêu sampling cần hai cách diễn giải.
+
+=====================================================================================
+CÂU 044 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q044 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-counterfactual-fairness-slice-evaluation] Counterfactual Fairness Slice Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai case giống toàn bộ task, lịch sử và eligibility; chỉ tên gợi giới tính khác nhau. Outcome approval lệch.
+
+Câu hỏi:
+Kết luận nào được evidence support?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Gap cần điều tra, chưa chứng minh causality
+[B] Tên đã chứng minh model phân biệt đối xử
+[C] Gap không đáng xem vì chỉ có một attribute đổi
+[D] Phải đổi cả task và income để probe mạnh hơn
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giữ các fact liên quan cố định và chỉ đổi attribute đang probe.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ các fact liên quan cố định và chỉ đổi attribute đang probe.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ các fact liên quan cố định và chỉ đổi attribute đang probe.
+
+=====================================================================================
+CÂU 045 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q045 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-counterfactual-fairness-slice-evaluation] Counterfactual Fairness Slice Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Tạo cặp loan-assistant case chỉ đổi postcode, nhưng postcode đồng thời thay eligibility rule thật.
+
+Câu hỏi:
+Đánh giá probe và thiết kế lại.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Counterfactual phải kiểm soát các fact quyết định đúng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Counterfactual phải kiểm soát các fact quyết định đúng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Counterfactual phải kiểm soát các fact quyết định đúng.
+
+=====================================================================================
+CÂU 046 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d14-q046 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-benchmark-version-contamination] Benchmark Version Contamination
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Public benchmark đã được dùng nhiều vòng tuning; team vẫn cần regression evidence đáng tin.
+
+Câu hỏi:
+Chọn các control phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giữ stable case ID và change history
+[B] Tách public/dev với private held-out
+[C] Ghi access/provenance và bump version
+[D] Thêm confirmed failure vào living set qua review
+[E] Âm thầm sửa expected answer cũ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Evidence nào cho biết model đã nhìn thấy case và case đã đổi ra sao?
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Evidence nào cho biết model đã nhìn thấy case và case đã đổi ra sao?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Evidence nào cho biết model đã nhìn thấy case và case đã đổi ra sao?
+
+=====================================================================================
+CÂU 047 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q047 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-benchmark-version-contamination] Benchmark Version Contamination
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một confirmed production failure sẽ được thêm vào living benchmark đang có public/dev và private held-out split.
+
+Câu hỏi:
+Thiết kế change record không làm hỏng historical comparability.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Contamination control cần cả exposure và change history.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Contamination control cần cả exposure và change history.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Contamination control cần cả exposure và change history.
+
+=====================================================================================
+CÂU 048 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q048 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-synthetic-eval-case-generation] Synthetic Eval Case Generation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Taxonomy có cell `refund × Vietnamese × ambiguous date` chưa có case.
+
+Câu hỏi:
+Sắp generation path đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Xác nhận coverage gap trong taxonomy
+  - [B] Lấy concept/fact từ source chunk
+  - [C] Sinh hoặc mutate question nhắm đúng cell
+  - [D] Tạo expected answer kèm source provenance
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Đừng sinh câu trước khi biết cell nào thiếu và expected answer dựa vào đâu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng sinh câu trước khi biết cell nào thiếu và expected answer dựa vào đâu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng sinh câu trước khi biết cell nào thiếu và expected answer dựa vào đâu.
+
+=====================================================================================
+CÂU 049 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d14-q049 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-synthetic-eval-case-filtering] Synthetic Eval Case Filtering
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một batch synthetic candidate vừa được sinh.
+
+Câu hỏi:
+Những lý do nào đủ để reject candidate?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Expected answer không được source support
+[B] Question thiếu dữ kiện để có một đáp án
+[C] Trùng semantic với case đã có
+[D] Chỉ đổi tên riêng nhưng không đổi target work
+[E] Case khó hơn average
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Filter đánh chất lượng/evidence của candidate, không chỉ acceptance rate.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Filter đánh chất lượng/evidence của candidate, không chỉ acceptance rate.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Filter đánh chất lượng/evidence của candidate, không chỉ acceptance rate.
+
+=====================================================================================
+CÂU 050 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q050 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-synthetic-eval-case-filtering] Synthetic Eval Case Filtering
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Batch 100 candidate: 15 unsupported, 10 duplicate, 5 unanswerable. Có đúng 4 case nằm đồng thời trong unsupported và duplicate; không có giao nào khác giữa ba nhóm.
+
+Câu hỏi:
+Tính số unique reject, số case giữ lại và nêu bước adjudication trước khi report coverage.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Cần identity-level dedupe trước khi report acceptance.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Cần identity-level dedupe trước khi report acceptance.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cần identity-level dedupe trước khi report acceptance.
+
+=====================================================================================
+CÂU 051 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q051 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-outcome-trajectory-eval-boundary] Outcome Trajectory Eval Boundary
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent đặt vé bằng một path khác reference nhưng DB cuối cùng đúng.
+
+Câu hỏi:
+Ghép evidence với oracle tương ứng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Row reservation đúng state
+  (2) Tool bị cấm đã được gọi
+  (3) Có hai retry không cần thiết
+
+Cột Phải (Lựa chọn ghép):
+  (A) Outcome oracle
+  (B) Mandatory trajectory constraint
+  (C) Trajectory efficiency diagnostic
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Một path khác reference chỉ fail nếu vi phạm constraint đã công bố.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một path khác reference chỉ fail nếu vi phạm constraint đã công bố.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một path khác reference chỉ fail nếu vi phạm constraint đã công bố.
+
+=====================================================================================
+CÂU 052 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q052 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-outcome-trajectory-eval-boundary] Outcome Trajectory Eval Boundary
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent đạt đúng final state qua path khác reference; path dùng một tool bị policy cấm nhưng ít bước hơn.
+
+Câu hỏi:
+Viết outcome và trajectory oracle rồi kết luận.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Các evidence phải được chấm riêng trước khi quyết định tích hợp.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Các evidence phải được chấm riêng trước khi quyết định tích hợp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Các evidence phải được chấm riêng trước khi quyết định tích hợp.
+
+=====================================================================================
+CÂU 053 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q053 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-final-state-verifier] Agent Final State Verifier
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent nhắn ‘đã hoàn tiền’, nhưng task success được định nghĩa là transaction `refund_status=completed` đúng order_id.
+
+Câu hỏi:
+Verifier nào đáng tin nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Query DB state theo order_id
+[B] Exact-match confirmation text
+[C] Đếm số tool call
+[D] Judge độ tự tin của câu trả lời
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Success state nằm trong database hay trong câu agent nói?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Success state nằm trong database hay trong câu agent nói?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Success state nằm trong database hay trong câu agent nói?
+
+=====================================================================================
+CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q054 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-agent-final-state-verifier] Agent Final State Verifier
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Task tạo file CSV đúng schema và 100 rows; agent nhắn xong nhưng file có 99 rows và thiếu cột id.
+
+Câu hỏi:
+Viết verifier deterministic và verdict.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi success condition phải thành predicate chạy được.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi success condition phải thành predicate chạy được.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi success condition phải thành predicate chạy được.
+
+=====================================================================================
+CÂU 055 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q055 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-step-efficiency] Agent Step Efficiency
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Minimum valid path cần 4 action. Trace dùng 6 action; hai action thêm là retry sau timeout theo policy và cuối cùng success.
+
+Câu hỏi:
+Đánh giá nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Kiểm retry necessity trước khi gán waste
+[B] Efficiency luôn là 4/6 và hai retry đều sai
+[C] Path 4 bước luôn tốt hơn dù bỏ safety check
+[D] Chỉ outcome pass nên trajectory không cần xem
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Action dài hơn có tạo evidence/state mới theo retry policy không?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Action dài hơn có tạo evidence/state mới theo retry policy không?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Action dài hơn có tạo evidence/state mới theo retry policy không?
+
+=====================================================================================
+CÂU 056 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q056 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-agent-step-efficiency] Agent Step Efficiency
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Minimum safe path có 5 action. Trace A dùng 7 do hai lookup trùng; trace B dùng 6 vì một retry sau timeout theo policy.
+
+Câu hỏi:
+Chấm efficiency mà không thưởng unsafe shortcut.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Observed step count cần được phân loại theo necessity.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Observed step count cần được phân loại theo necessity.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Observed step count cần được phân loại theo necessity.
+
+=====================================================================================
+CÂU 057 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q057 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-redundant-tool-calls] Agent Redundant Tool Calls
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Trace có 8 tool calls. Hai call lặp cùng action+payload, state không đổi, không có evidence mới và không thuộc retry policy; sáu call còn lại hợp lệ.
+
+Câu hỏi:
+Tính redundancy rate theo tổng tool calls.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ đếm call thỏa đủ điều kiện redundant đã nêu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ đếm call thỏa đủ điều kiện redundant đã nêu.
+
+=====================================================================================
+CÂU 058 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q058 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-redundant-tool-calls] Agent Redundant Tool Calls
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Tool call thứ hai lặp payload nhưng call đầu timeout trước khi tạo state; policy cho phép đúng một retry.
+
+Câu hỏi:
+Call thứ hai có tự động là redundant không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Không; đây có thể là legitimate retry
+[B] Có; tool name lặp là đủ
+[C] Có nếu duration dài
+[D] Không vì không tool call nào redundant
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Call đầu đã tạo state hay policy có cho retry không?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Call đầu đã tạo state hay policy có cho retry không?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Call đầu đã tạo state hay policy có cho retry không?
+
+=====================================================================================
+CÂU 059 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q059 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-agent-loop-deadlock-control] Agent Loop Deadlock Control
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent lặp cùng state và cùng failed action nhiều lần.
+
+Câu hỏi:
+Sắp control path hợp lý.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Fingerprint state-action cycle
+  - [B] Phát hiện không có progress
+  - [C] Enforce step/cost stopping rule
+  - [D] Clarify, abstain hoặc bounded recovery
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Phân biệt một retry có state mới với chu kỳ không đổi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt một retry có state mới với chu kỳ không đổi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt một retry có state mới với chu kỳ không đổi.
+
+=====================================================================================
+CÂU 060 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q060 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-agent-loop-deadlock-control] Agent Loop Deadlock Control
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Trace lặp search→same empty result→rewrite identical query bốn vòng và chưa đạt state mới.
+
+Câu hỏi:
+Thiết kế detector, budget và recovery oracle.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Không gán retry có backoff/new state là deadlock.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không gán retry có backoff/new state là deadlock.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không gán retry có backoff/new state là deadlock.
+
+=====================================================================================
+CÂU 061 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q061 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-tool-selection-evaluation] Tool Selection Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Required tools là `{search, calculator}`. Agent gọi `{search, email, calculator}`; bỏ qua thứ tự và payload.
+
+Câu hỏi:
+Tool-selection precision và recall là bao nhiêu?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Precision 2/3; recall 1
+[B] Precision 1; recall 2/3
+[C] Precision 1/3; recall 1/2
+[D] Cả hai bằng 1 vì task hoàn tất
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Selection false positive là call nào không nằm trong required set?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Selection false positive là call nào không nằm trong required set?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Selection false positive là call nào không nằm trong required set?
+
+=====================================================================================
+CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q062 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-tool-selection-evaluation] Tool Selection Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Contract tính tool-selection trên unique tool names. Required là `{search, calculator}`; agent gọi search hai lần, calculator không gọi, email một lần.
+
+Câu hỏi:
+Tính selection precision/recall và tách duplicate-call evidence.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Selection và redundancy dùng hai unit khác nhau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Selection và redundancy dùng hai unit khác nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Selection và redundancy dùng hai unit khác nhau.
+
+=====================================================================================
+CÂU 063 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d14-q063 (Độ khó: Khó | Điểm: 2)
+Chủ đề kiến thức (KC): [kc-tool-payload-evaluation] Tool Payload Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Schema `transfer(amount:number, currency:enum, account_id:string)`; user chỉ cho amount=100 và account_id=A7. Agent gọi amount=`100` dạng string, currency=`USD`, account_id=A7.
+
+Câu hỏi:
+Chọn tất cả lỗi payload có thể kết luận.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] amount sai type
+[B] currency không được user/state support
+[C] account_id có evidence
+[D] Tool selection chắc chắn sai
+[E] Syntax hợp lệ nên semantic đúng
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách schema conformance, value grounding và tool choice.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách schema conformance, value grounding và tool choice.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách schema conformance, value grounding và tool choice.
+
+=====================================================================================
+CÂU 064 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q064 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-tool-payload-evaluation] Tool Payload Evaluation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent chọn đúng `book_flight`; schema hợp lệ nhưng tự điền passport number không có trong user/state, còn date sai type.
+
+Câu hỏi:
+Gán lỗi và remediation evaluator.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một payload có thể đồng thời fail structure và grounding.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một payload có thể đồng thời fail structure và grounding.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một payload có thể đồng thời fail structure và grounding.
+
+=====================================================================================
+CÂU 065 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q065 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-missing-information-clarification-eval] Missing Information Clarification Eval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+User yêu cầu chuyển tiền nhưng không nêu tài khoản nhận; đây là action có quyền ghi.
+
+Câu hỏi:
+Behavior nào nên được oracle chấp nhận?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Clarify account nhận hoặc abstain
+[B] Đoán account thường dùng rồi gọi tool
+[C] Điền chuỗi bất kỳ miễn pass schema
+[D] Gọi tool trước rồi xin xác nhận sau
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Schema có thể hợp lệ nhưng value có được user cung cấp không?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Schema có thể hợp lệ nhưng value có được user cung cấp không?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Schema có thể hợp lệ nhưng value có được user cung cấp không?
+
+=====================================================================================
+CÂU 066 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q066 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-missing-information-clarification-eval] Missing Information Clarification Eval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Benchmark cần ba case: missing account, hai account mơ hồ và account có format invalid.
+
+Câu hỏi:
+Viết oracle quan sát được cho từng case.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ba failure mode input cần behavior oracle riêng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Ba failure mode input cần behavior oracle riêng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ba failure mode input cần behavior oracle riêng.
+
+=====================================================================================
+CÂU 067 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q067 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-stochastic-agent-reliability] Stochastic Agent Reliability
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mỗi run success độc lập với xác suất p=0,8. Product yêu cầu cả 3 run liên tiếp đều success.
+
+Câu hỏi:
+Tính pass^3 theo phần trăm.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: ‘Tất cả k lần’ dùng p^k, không phải pass@k.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 ‘Tất cả k lần’ dùng p^k, không phải pass@k.
+
+=====================================================================================
+CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q068 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-stochastic-agent-reliability] Stochastic Agent Reliability
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent success mỗi run với p=0,7 và các run được giả định độc lập. Product cho phép tối đa 3 lần chạy tổng cộng và chỉ cần ít nhất một success.
+
+Câu hỏi:
+Tính pass@3 và nêu giới hạn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Phân biệt retry success với reliability mọi lần.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phân biệt retry success với reliability mọi lần.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt retry success với reliability mọi lần.
+
+=====================================================================================
+CÂU 069 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q069 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-stochastic-agent-reliability] Stochastic Agent Reliability
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mỗi run success độc lập với p=0,8; được thử tối đa 3 lần và chỉ cần ít nhất một success.
+
+Câu hỏi:
+Tính pass@3 theo phần trăm.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Dùng complement của việc cả ba lần đều fail.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dùng complement của việc cả ba lần đều fail.
+
+=====================================================================================
+CÂU 070 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q070 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-multiturn-constraint-decay-eval] Multiturn Constraint Decay Eval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Turn 1: user nói không gửi dữ liệu ra ngoài. Turn 2–3 agent giữ constraint. Turn 4 agent gọi external API với payload user; turn 5 mới xin lỗi.
+
+Câu hỏi:
+Turn đầu tiên session vi phạm constraint là turn nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Turn 4
+[B] Turn 1
+[C] Turn 3
+[D] Turn 5
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Theo dõi constraint qua cả text và tool action.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo dõi constraint qua cả text và tool action.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi constraint qua cả text và tool action.
+
+=====================================================================================
+CÂU 071 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q071 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-multiturn-constraint-decay-eval] Multiturn Constraint Decay Eval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Constraint `không mua nếu giá >2 triệu` xuất hiện turn 1; turn 6 tool payload mua 2,4 triệu sau nhiều topic trung gian.
+
+Câu hỏi:
+Thiết kế session eval để phát hiện decay.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Session-level constraint phải sống qua context trung gian.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Session-level constraint phải sống qua context trung gian.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Session-level constraint phải sống qua context trung gian.
+
+=====================================================================================
+CÂU 072 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q072 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-dialog-state-tracking-evaluator] Dialog State Tracking Evaluator
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Target state sau hội thoại đặt lịch: goal=book, date=12/9, city=Hà Nội, status=awaiting_confirmation.
+
+Câu hỏi:
+Ghép thành phần với loại state.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) book
+  (2) 12/9
+  (3) Hà Nội
+  (4) awaiting_confirmation
+
+Cột Phải (Lựa chọn ghép):
+  (A) Goal
+  (B) Slot: date
+  (C) Slot: city
+  (D) Status
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Đừng thay state comparison bằng average quality của từng turn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng thay state comparison bằng average quality của từng turn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng thay state comparison bằng average quality của từng turn.
+
+=====================================================================================
+CÂU 073 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q073 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-session-resolution-abandonment-eval] Session Resolution Abandonment Eval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Phân loại bốn terminal evidence.
+
+Câu hỏi:
+Ghép session với outcome phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Target state đạt, không handoff
+  (2) Chuyển human theo policy
+  (3) User rời khi task chưa xong
+  (4) Session còn mở, chưa đạt target
+
+Cột Phải (Lựa chọn ghép):
+  (A) Resolved
+  (B) Handed-off
+  (C) Abandoned
+  (D) Unresolved-active
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Tách state task khỏi việc session đã kết thúc như thế nào.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách state task khỏi việc session đã kết thúc như thế nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách state task khỏi việc session đã kết thúc như thế nào.
+
+=====================================================================================
+CÂU 074 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q074 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-session-resolution-abandonment-eval] Session Resolution Abandonment Eval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+User đóng chat sau khi agent đưa đúng kết quả và target state đã đạt; session khác user rời khi tool đang pending.
+
+Câu hỏi:
+Phân loại outcome và giới hạn inference.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: User exit và task resolution là hai biến riêng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: User exit và task resolution là hai biến riêng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 User exit và task resolution là hai biến riêng.
+
+=====================================================================================
+CÂU 075 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q075 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-prompt-contract] Judge Prompt Contract
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Cần judge một criterion `faithfulness` và output parse được. Contract yêu cầu khóa criterion trước khi mở input, áp evidence policy lên input đã phân ranh và chỉ xuất verdict sau finding.
+
+Câu hỏi:
+Sắp các phần contract theo dependency đã nêu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Role và criterion duy nhất
+  - [B] Delimited question/context/answer
+  - [C] Evidence visibility và abstention rule
+  - [D] Output schema với finding rồi verdict
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Necessary input phải nằm trước output contract; verdict không thay criterion.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Necessary input phải nằm trước output contract; verdict không thay criterion.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Necessary input phải nằm trước output contract; verdict không thay criterion.
+
+=====================================================================================
+CÂU 076 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q076 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-prompt-contract] Judge Prompt Contract
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Cần judge faithfulness dựa context nhưng hiện prompt trộn relevance, style và helpfulness, output là prose tự do.
+
+Câu hỏi:
+Viết lại contract một criterion và parse được.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Không để criterion khác bù hoặc làm mờ faithfulness.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không để criterion khác bù hoặc làm mờ faithfulness.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không để criterion khác bù hoặc làm mờ faithfulness.
+
+=====================================================================================
+CÂU 077 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q077 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-verdict-scale-selection] Judge Verdict Scale Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Release gate chỉ có hai action `block` hoặc `allow`; criterion là ‘có PII leak hay không’.
+
+Câu hỏi:
+Verdict scale nào hợp lý?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Binary PASS/FAIL với PII leak là critical cap
+[B] Thang 1–10 không anchor
+[C] Năm level nhưng mọi level cùng action
+[D] Average nhiều criterion để leak bị bù bởi style
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mỗi level thêm vào phải làm downstream action khác đi.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi level thêm vào phải làm downstream action khác đi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi level thêm vào phải làm downstream action khác đi.
+
+=====================================================================================
+CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q078 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-verdict-scale-selection] Judge Verdict Scale Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Criterion completeness có ba downstream action: accept, request minor revision, block vì thiếu critical condition. Release score còn có một criterion style riêng.
+
+Câu hỏi:
+Chọn scale/anchor cho completeness; nêu cách aggregate với style và đặt cap.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Số level được biện minh bằng action khác nhau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Số level được biện minh bằng action khác nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Số level được biện minh bằng action khác nhau.
+
+=====================================================================================
+CÂU 079 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q079 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-judge-reference-mode-selection] Judge Reference Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Chọn judge configuration theo evidence và claim.
+
+Câu hỏi:
+Ghép use case với mode phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Chấm factual answer có trusted gold
+  (2) Chấm style theo rubric không có gold
+  (3) So A/B để chọn preference
+
+Cột Phải (Lựa chọn ghép):
+  (A) Reference-based pointwise
+  (B) Reference-free pointwise
+  (C) Pairwise comparison
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Có trusted answer không, và decision cần label tuyệt đối hay so cặp?
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Có trusted answer không, và decision cần label tuyệt đối hay so cặp?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Có trusted answer không, và decision cần label tuyệt đối hay so cặp?
+
+=====================================================================================
+CÂU 080 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q080 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-reference-mode-selection] Judge Reference Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Có trusted contract text; cần absolute compliance gate và thêm A/B preference cho style sau đó.
+
+Câu hỏi:
+Chọn reference visibility và hai judging mode, không đánh tráo claim.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một item có thể cần hai decision khác nhau nhưng không copy score.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một item có thể cần hai decision khác nhau nhưng không copy score.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một item có thể cần hai decision khác nhau nhưng không copy score.
+
+=====================================================================================
+CÂU 081 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q081 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-reference-mode-selection] Judge Reference Mode Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Pairwise judge chọn A hơn B về style nhưng không có trusted reference.
+
+Câu hỏi:
+Verdict này chứng minh A factual đúng không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Không; preference không phải correctness
+[B] Có; pairwise winner luôn đúng
+[C] Có nếu A dài hơn
+[D] Không vì pairwise không dùng được cho style
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Judge được hỏi so cặp hay đối chiếu một gold fact?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Judge được hỏi so cặp hay đối chiếu một gold fact?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Judge được hỏi so cặp hay đối chiếu một gold fact?
+
+=====================================================================================
+CÂU 082 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q082 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-pairwise-ranking-aggregation] Pairwise Ranking Aggregation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Dùng Elo: R_A=R_B=1200, K=32. Expected score của A là 0,5 và A thắng (observed=1). Công thức R'_A=R_A+K(observed−expected).
+
+Câu hỏi:
+Tính rating mới của A.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: Elo
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính update từ chênh lệch observed và expected.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính update từ chênh lệch observed và expected.
+
+=====================================================================================
+CÂU 083 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q083 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-pairwise-ranking-aggregation] Pairwise Ranking Aggregation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Comparison graph có A thắng B, B thắng C nhưng chưa có A–C; match A/B bị position bias 25%.
+
+Câu hỏi:
+Đánh giá ranking và bước tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Aggregation không sửa được input comparison bị bias.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Aggregation không sửa được input comparison bị bias.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Aggregation không sửa được input comparison bị bias.
+
+=====================================================================================
+CÂU 084 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q084 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-verdict-order] Judge Verdict Order
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Judge output cần tránh score-first anchoring nhưng không yêu cầu private chain-of-thought.
+
+Câu hỏi:
+Sắp output schema.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Evidence finding ngắn có source IDs
+  - [B] Criterion-specific justification
+  - [C] Terminal verdict parse được
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Verdict là trường kết thúc, không phải điểm xuất phát cho lời biện minh.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Verdict là trường kết thúc, không phải điểm xuất phát cho lời biện minh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Verdict là trường kết thúc, không phải điểm xuất phát cho lời biện minh.
+
+=====================================================================================
+CÂU 085 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q085 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-position-swap] Judge Position Swap
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Chạy 20 cặp answer ở cả hai order A/B và B/A. Có 6 cặp đổi winner chỉ vì swap vị trí.
+
+Câu hỏi:
+Tính flip rate.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mẫu số là số cặp đã chạy đủ hai order.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là số cặp đã chạy đủ hai order.
+
+=====================================================================================
+CÂU 086 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q086 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-position-swap] Judge Position Swap
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+100 pair chạy hai order: 70 consistent winner, 20 consistent tie, 10 flip winner.
+
+Câu hỏi:
+Định nghĩa verdict handling và bias report.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Swap test cần policy cho từng outcome, không chỉ một tỷ lệ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Swap test cần policy cho từng outcome, không chỉ một tỷ lệ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Swap test cần policy cho từng outcome, không chỉ một tỷ lệ.
+
+=====================================================================================
+CÂU 087 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q087 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-verbosity-format-bias] Judge Verbosity Format Bias
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Hai answer giữ nguyên facts và conclusion; bản B chỉ thêm heading, bullet và dài gấp đôi. Judge đổi từ FAIL sang PASS.
+
+Câu hỏi:
+Probe này cho evidence gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có verbosity/format bias
+[B] B chắc chắn factual hơn
+[C] Position bias đã được chứng minh
+[D] Self-preference giữa model family
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Attribute nào được thay đổi có kiểm soát?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Attribute nào được thay đổi có kiểm soát?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Attribute nào được thay đổi có kiểm soát?
+
+=====================================================================================
+CÂU 088 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q088 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-verbosity-format-bias] Judge Verbosity Format Bias
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Judge ưu tiên answer dài. Team tạo matched-content pairs chỉ khác bullet/prose và độ dài.
+
+Câu hỏi:
+Thiết kế probe và mitigation.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Probe chỉ có giá trị khi content target được kiểm soát.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Probe chỉ có giá trị khi content target được kiểm soát.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Probe chỉ có giá trị khi content target được kiểm soát.
+
+=====================================================================================
+CÂU 089 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q089 (Độ khó: Khó | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-self-preference-bias] Judge Self Preference Bias
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Judge J thuộc family X. Answer X và Y được human held-out chấm ngang nhau, nhưng J ưu tiên X ổn định.
+
+Câu hỏi:
+Thiết kế xác nhận phù hợp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Controlled cross-family test với human labels
+[B] Chỉ swap vị trí hai answer một lần
+[C] Cho answer X dài hơn để dễ phân biệt
+[D] Kết luận X tốt hơn vì judge cùng family hiểu nhau
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giữ quality target cố định và thay family/style relation với judge.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ quality target cố định và thay family/style relation với judge.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ quality target cố định và thay family/style relation với judge.
+
+=====================================================================================
+CÂU 090 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q090 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-self-preference-bias] Judge Self Preference Bias
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Ba author model family tạo answer trên cùng prompts; human gold chấm blind, hai judge family khác nhau chấm lại.
+
+Câu hỏi:
+Thiết kế estimate affinity và escalation.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Không quy mọi chênh lệch family thành quality.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không quy mọi chênh lệch family thành quality.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không quy mọi chênh lệch family thành quality.
+
+=====================================================================================
+CÂU 091 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q091 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-human-calibration] Judge Human Calibration
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Human gold có 40 case FAIL. Judge bắt đúng 30 FAIL và bỏ sót 10 FAIL.
+
+Câu hỏi:
+Tính TPR trên class FAIL.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mẫu số gồm toàn bộ case FAIL theo human gold.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số gồm toàn bộ case FAIL theo human gold.
+
+=====================================================================================
+CÂU 092 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q092 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-human-calibration] Judge Human Calibration
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Human gold: 80 PASS, 20 FAIL. Judge: PASS đúng 72, FAIL đúng 12; còn lại là lỗi.
+
+Câu hỏi:
+Coi FAIL là positive: lập confusion matrix, tính TPR/TNR và đề xuất escalation.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đặt từng ô theo human gold trước khi tính rate.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đặt từng ô theo human gold trước khi tính rate.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đặt từng ô theo human gold trước khi tính rate.
+
+=====================================================================================
+CÂU 093 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q093 (Độ khó: Khó | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-relative-delta-validity] Judge Relative Delta Validity
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Judge có TPR=0,8 và TNR=0,9 nên Youden J=0,7. Judge, prompt, test set và format distribution được giữ bất biến. Observed fail-rate delta giữa hai version là +7 điểm phần trăm. Dùng observed delta≈J×true delta.
+
+Câu hỏi:
+Ước lượng true delta.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: điểm phần trăm
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính J rồi chia observed delta cho J.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính J rồi chia observed delta cho J.
+
+=====================================================================================
+CÂU 094 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q094 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-relative-delta-validity] Judge Relative Delta Validity
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Observed fail rate v1=12%, v2=16%; judge J=0,5 nhưng prompt judge cũng đổi ở v2.
+
+Câu hỏi:
+Có được hiệu chỉnh delta thành 8 điểm phần trăm không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Công thức không cứu được comparison confounded.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Công thức không cứu được comparison confounded.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Công thức không cứu được comparison confounded.
+
+=====================================================================================
+CÂU 095 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q095 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-panel-correlation] Judge Panel Correlation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Ba judge dùng cùng model family, cùng prompt và cùng retrieved context; majority vote đồng thuận 3/3.
+
+Câu hỏi:
+Kết luận nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có thể là correlated bias; cần calibration
+[B] Ba phiếu luôn tương đương ba nguồn độc lập
+[C] Majority vote tự sửa sampling kém
+[D] Không cần tie/escalation vì số judge lẻ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đếm judge không bằng đếm nguồn sai số độc lập.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đếm judge không bằng đếm nguồn sai số độc lập.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đếm judge không bằng đếm nguồn sai số độc lập.
+
+=====================================================================================
+CÂU 096 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q096 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-judge-panel-correlation] Judge Panel Correlation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Panel có hai judge độc lập tương đối và một judge gần như copy lỗi của judge 1; high-risk tie phải có human review.
+
+Câu hỏi:
+Thiết kế aggregation và escalation.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Majority count cần được đọc cùng error dependence.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Majority count cần được đọc cùng error dependence.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Majority count cần được đọc cùng error dependence.
+
+=====================================================================================
+CÂU 097 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q097 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-judge-panel-correlation] Judge Panel Correlation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Năm judge đều dùng cùng base model và prompt; cả năm cùng sai một safety case.
+
+Câu hỏi:
+Thêm hai judge cùng cấu hình có giải quyết correlated bias không?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Không; cần diversity/calibration hoặc escalation
+[B] Có; số phiếu tăng luôn giảm bias
+[C] Có nếu majority là 7/7
+[D] Không cần human vì panel đủ lớn
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Các phiếu có thật sự độc lập về training/prompt/reference không?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Các phiếu có thật sự độc lập về training/prompt/reference không?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Các phiếu có thật sự độc lập về training/prompt/reference không?
+
+=====================================================================================
+CÂU 098 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q098 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-eval-confidence-interval] Eval Confidence Interval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Pass rate 72% trên n=25 case; report chỉ ghi `72%` mà không nói slice hay repeated-run policy.
+
+Câu hỏi:
+Sửa report nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Thêm CI, n, slice và run assumptions
+[B] Ghi 72,00% để tăng precision
+[C] Kết luận population pass rate đúng 72%
+[D] Bỏ n để người đọc tập trung score
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một tỷ lệ từ sample không phải point truth của population.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một tỷ lệ từ sample không phải point truth của population.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một tỷ lệ từ sample không phải point truth của population.
+
+=====================================================================================
+CÂU 099 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q099 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-confidence-interval] Eval Confidence Interval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Version A pass 78% [70,84], B 82% [74,88] trên paired suite nhỏ; team muốn claim B tốt hơn.
+
+Câu hỏi:
+Diễn giải evidence và đề xuất next step.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: CI phải được diễn giải trong design đã chạy.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: CI phải được diễn giải trong design đã chạy.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 CI phải được diễn giải trong design đã chạy.
+
+=====================================================================================
+CÂU 100 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q100 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-eval-confidence-interval] Eval Confidence Interval
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Version A 80% và B 82% nhưng interval của delta là [−4,+8] điểm phần trăm.
+
+Câu hỏi:
+Có thể claim B tốt hơn chưa?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chưa; CI delta còn gồm zero
+[B] Có; point estimate B cao hơn
+[C] Có nếu làm tròn A xuống
+[D] Chưa vì CI không bao giờ dùng cho eval
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Khoảng uncertainty có loại trừ zero không?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Khoảng uncertainty có loại trừ zero không?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Khoảng uncertainty có loại trừ zero không?
+
+=====================================================================================
+CÂU 101 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q101 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-eval-sample-size-power] Eval Sample Size Power
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Suite có 2.000 case tổng nhưng critical Vietnamese slice chỉ có 18 case; target là phát hiện regression 4 điểm phần trăm trong slice.
+
+Câu hỏi:
+Kết luận nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Phải size theo effect và critical slice
+[B] 2.000 luôn đủ cho mọi slice
+[C] Chỉ cần tăng số seed, không cần thêm case slice
+[D] Dùng một magic number 100 cho mọi baseline
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mỗi slice là một study nhỏ với sample size riêng.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi slice là một study nhỏ với sample size riêng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi slice là một study nhỏ với sample size riêng.
+
+=====================================================================================
+CÂU 102 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q102 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-sample-size-power] Eval Sample Size Power
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Critical slice baseline 70%; team muốn phát hiện minimum effect 5 điểm với power 80%, nhưng hiện chỉ có 25 case.
+
+Câu hỏi:
+Nêu inputs cần cho sizing và action.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Không có một case count phổ quát.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không có một case count phổ quát.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không có một case count phổ quát.
+
+=====================================================================================
+CÂU 103 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q103 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-paired-eval-comparison-design] Paired Eval Comparison Design
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+So v1 và v2 trên hệ nondeterministic.
+
+Câu hỏi:
+Ghép design với đánh giá.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Cùng case cho cả hai version
+  (2) Mỗi version dùng tập case khác
+  (3) Mỗi case chạy nhiều seed theo policy
+
+Cột Phải (Lựa chọn ghép):
+  (A) Paired comparison hợp lệ
+  (B) Confounded bởi case difficulty
+  (C) Đo run variability
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Version difference và case difference phải được tách ra.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Version difference và case difference phải được tách ra.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Version difference và case difference phải được tách ra.
+
+=====================================================================================
+CÂU 104 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q104 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-paired-eval-comparison-design] Paired Eval Comparison Design
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+V1 và v2 chạy trên cùng 100 case, nhưng v1 một run còn v2 chọn best-of-3.
+
+Câu hỏi:
+Sửa protocol để comparison hợp lệ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nondeterminism control phải đối xứng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nondeterminism control phải đối xứng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nondeterminism control phải đối xứng.
+
+=====================================================================================
+CÂU 105 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q105 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-mcnemar-discordant-pair-test] Mcnemar Discordant Pair Test
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Paired table có old-pass/new-fail b=10 và old-fail/new-pass c=22. Hai ô concordant tổng 168.
+
+Câu hỏi:
+Có bao nhiêu discordant pair đi vào McNemar/exact-binomial test?
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: pair
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ cộng hai ô hai version cho kết quả khác nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ cộng hai ô hai version cho kết quả khác nhau.
+
+=====================================================================================
+CÂU 106 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q106 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-mcnemar-discordant-pair-test] Mcnemar Discordant Pair Test
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Trong 78 discordant case, old-pass/new-fail=34 và old-fail/new-pass=44; exact binomial two-sided p=0,31 được cung cấp.
+
+Câu hỏi:
+Diễn giải kết quả và giới hạn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc hướng và uncertainty tách biệt.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đọc hướng và uncertainty tách biệt.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đọc hướng và uncertainty tách biệt.
+
+=====================================================================================
+CÂU 107 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q107 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-mcnemar-discordant-pair-test] Mcnemar Discordant Pair Test
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Chỉ có 5 discordant pair và cả 5 đều nghiêng về new; exact two-sided p_min≈0,063.
+
+Câu hỏi:
+Kết luận ở alpha=0,05?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chưa; discordant sample quá nhỏ
+[B] New chắc chắn tốt hơn vì thắng 5/5
+[C] Dùng concordant pairs để hạ p-value
+[D] Bỏ pairing và dùng mean
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Test có bao nhiêu sample thực sự mang hướng thay đổi?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Test có bao nhiêu sample thực sự mang hướng thay đổi?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Test có bao nhiêu sample thực sự mang hướng thay đổi?
+
+=====================================================================================
+CÂU 108 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q108 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-statistical-practical-release-decision] Statistical Practical Release Decision
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Candidate có p<0,01 và aggregate pass rate +0,3 điểm phần trăm, nhưng critical safety slice giảm 5 điểm và cost tăng 50%.
+
+Câu hỏi:
+Release recommendation nào hợp lý?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Không release vì safety regression
+[B] Release vì p-value nhỏ
+[C] Release vì aggregate delta dương
+[D] Bỏ safety slice vì sample nhỏ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'P-value trả lời câu hỏi khác effect size, cost và safety.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: P-value trả lời câu hỏi khác effect size, cost và safety.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 P-value trả lời câu hỏi khác effect size, cost và safety.
+
+=====================================================================================
+CÂU 109 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q109 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-statistical-practical-release-decision] Statistical Practical Release Decision
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Candidate +4 điểm pass rate, CI delta [−1,+9], cost giảm 20%, critical slice không regress trong sample nhỏ.
+
+Câu hỏi:
+Đưa release recommendation có điều kiện.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Recommendation phải phản ánh cả value và uncertainty.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Recommendation phải phản ánh cả value và uncertainty.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Recommendation phải phản ánh cả value và uncertainty.
+
+=====================================================================================
+CÂU 110 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d14-q110 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-eval-framework-selection] Eval Framework Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Ba workflow cần công cụ khác nhau.
+
+Câu hỏi:
+Ghép workflow với framework fit chính.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) RAG metric suite trên dataset
+  (2) Eval assertions trong CI kiểu pytest
+  (3) Online trace + feedback exploration
+
+Cột Phải (Lựa chọn ghép):
+  (A) RAG evaluation library
+  (B) LLM test framework
+  (C) Trace-feedback platform
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Question là cần dataset metric, CI assertion hay production trace workflow.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Question là cần dataset metric, CI assertion hay production trace workflow.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Question là cần dataset metric, CI assertion hay production trace workflow.
+
+=====================================================================================
+CÂU 111 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q111 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-framework-selection] Eval Framework Selection
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Team cần offline RAG metrics, CI assertions và production trace feedback nhưng không muốn lock-in.
+
+Câu hỏi:
+Lập primary/fallback architecture.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tool selection phải có exit path và evidence cùng benchmark.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tool selection phải có exit path và evidence cùng benchmark.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tool selection phải có exit path và evidence cùng benchmark.
+
+=====================================================================================
+CÂU 112 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q112 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-production-quality-latency-cost] Production Quality Latency Cost
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+A: quality 0,91, P95 latency 8s, cost $0,12. B: quality 0,89, P95 2s, cost $0,03. Service constraint là P95≤3s và cost≤$0,05; quality floor=0,88.
+
+Câu hỏi:
+Operating point nào feasible?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] B, vì đạt cả ba constraint đã công bố
+[B] A, vì quality cao nhất bất kể latency/cost
+[C] Lấy average ba số chưa normalize
+[D] Không thể quyết định dù constraint đã đủ
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đầu tiên loại architecture vi phạm constraint bắt buộc.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đầu tiên loại architecture vi phạm constraint bắt buộc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đầu tiên loại architecture vi phạm constraint bắt buộc.
+
+=====================================================================================
+CÂU 113 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q113 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-production-quality-latency-cost] Production Quality Latency Cost
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Ba architecture nằm trên Pareto frontier; không cái nào tốt nhất cả quality, P95 latency và cost. Chưa có constraint riêng cho premium và free tier.
+
+Câu hỏi:
+Nêu quy trình và dữ kiện cần có để chọn operating point cho từng tier.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Decision đa mục tiêu cần constraint theo service context.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Decision đa mục tiêu cần constraint theo service context.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Decision đa mục tiêu cần constraint theo service context.
+
+=====================================================================================
+CÂU 114 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q114 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-production-ttft-tps] Production Ttft Tps
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Streaming response có TTFT=3,2s nhưng sau đó TPS=20; user phàn nàn chờ lâu trước khi thấy chữ đầu.
+
+Câu hỏi:
+Metric/stage nào cần ưu tiên điều tra?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Ưu tiên TTFT và pre-token stages
+[B] TPS vì 20 token/s quá thấp theo dữ kiện
+[C] Chỉ total token count
+[D] Task completion vì TPS tự đo success
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'User chờ ở trước hay sau khi stream bắt đầu?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: User chờ ở trước hay sau khi stream bắt đầu?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 User chờ ở trước hay sau khi stream bắt đầu?
+
+=====================================================================================
+CÂU 115 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q115 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-production-ttft-tps] Production Ttft Tps
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Response có TTFT=0,8s, sinh thêm 180 token trong 12s sau first token và total task latency=15s.
+
+Câu hỏi:
+Tính TPS và diễn giải ba metric.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ đúng denominator stage của từng metric.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ đúng denominator stage của từng metric.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ đúng denominator stage của từng metric.
+
+=====================================================================================
+CÂU 116 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q116 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-production-ttft-tps] Production Ttft Tps
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+TTFT=0,6s, TPS=2 và user thấy AI viết từng chữ rất chậm sau khi stream bắt đầu.
+
+Câu hỏi:
+Metric nào khớp complaint?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] TPS thấp
+[B] TTFT cao
+[C] Chỉ total request count
+[D] MAP retrieval
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Complaint xuất hiện trước hay sau khi chữ đầu tiên đã hiện?', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Complaint xuất hiện trước hay sau khi chữ đầu tiên đã hiện?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Complaint xuất hiện trước hay sau khi chữ đầu tiên đã hiện?
+
+=====================================================================================
+CÂU 117 [🟡 Tính toán điền số (Numeric)] - Mã: d14-q117 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-eval-cost-allocation] Eval Cost Allocation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một run có 500 deterministic checks giá $0; 200 judge calls giá $0,02/call; 20 human reviews giá $2/review. Bỏ qua chi phí khác.
+
+Câu hỏi:
+Tính tổng direct evaluation cost.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính từng cost component trước khi cộng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính từng cost component trước khi cộng.
+
+=====================================================================================
+CÂU 118 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q118 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-cost-allocation] Eval Cost Allocation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+10.000 case: deterministic check toàn bộ; 20% cần judge $0,01; 2% cần human $1,50. Judge uncertain 5% được human escalate và nằm ngoài 2% base.
+
+Câu hỏi:
+Tính direct cost và đề xuất tiết kiệm không mất declared coverage.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng double-count hoặc âm thầm bỏ escalation.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng double-count hoặc âm thầm bỏ escalation.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng double-count hoặc âm thầm bỏ escalation.
+
+=====================================================================================
+CÂU 119 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d14-q119 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-regression-release-gate] Regression Release Gate
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Candidate được so với baseline trên suite đã pin.
+
+Câu hỏi:
+Chọn các điều kiện cần có trong release gate tái lập.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Baseline và suite version
+[B] Same-case metric delta
+[C] Critical-slice/guardrail threshold
+[D] Uncertainty handling và deterministic action
+[E] Chỉ aggregate score mới nhất
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một aggregate win có thể che regression nào?
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một aggregate win có thể che regression nào?
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một aggregate win có thể che regression nào?
+
+=====================================================================================
+CÂU 120 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q120 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-regression-release-gate] Regression Release Gate
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Aggregate north-star +2 điểm; safety slice −3 điểm vượt block threshold −1; CI của aggregate còn rộng; cost đạt budget.
+
+Câu hỏi:
+Áp gate và ghi deterministic action.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Gate là decision contract, không phải score summary.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Gate là decision contract, không phải score summary.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Gate là decision contract, không phải score summary.
+
+=====================================================================================
+CÂU 121 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q121 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-shadow-semantic-diff-validation] Shadow Semantic Diff Validation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Candidate agent cần validation trước khi phục vụ toàn traffic.
+
+Câu hỏi:
+Sắp rollout evidence path.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Mirror paired shadow traffic, không trả candidate output
+  - [B] Triage semantic diff như review signal
+  - [C] Canary theo stage có attribution và guardrail
+  - [D] Rollback khi trigger đã định bị breach
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Semantic difference chưa tự là regression.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Semantic difference chưa tự là regression.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Semantic difference chưa tự là regression.
+
+=====================================================================================
+CÂU 122 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q122 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-shadow-semantic-diff-validation] Shadow Semantic Diff Validation
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Shadow candidate khác baseline 18% output, nhưng judge rubric cũng được nâng version cùng lúc; chưa có user exposure.
+
+Câu hỏi:
+Thiết kế attribution và staged rollout tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Không đổi agent và evaluator mà thiếu version attribution.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không đổi agent và evaluator mà thiếu version attribution.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không đổi agent và evaluator mà thiếu version attribution.
+
+=====================================================================================
+CÂU 123 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q123 (Độ khó: Khó | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-eval-failure-five-whys] Eval Failure Five Whys
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Agent trả refund policy cũ; trace cho thấy retrieved chunk cũng cũ.
+
+Câu hỏi:
+Sắp evidence chain để tìm stage sửa được.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Xác nhận symptom và expected evidence
+  - [B] Đọc retrieved chunk/tool trace
+  - [C] Kiểm index/corpus/config upstream
+  - [D] Test alternative cause và chọn fix
+  - [E] Đặt verification metric sau fix
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Tên component không phải root cause nếu chưa có evidence chain.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tên component không phải root cause nếu chưa có evidence chain.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tên component không phải root cause nếu chưa có evidence chain.
+
+=====================================================================================
+CÂU 124 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q124 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-eval-failure-five-whys] Eval Failure Five Whys
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mười failure `wrong answer`; 7 case retrieved stale policy, 3 case retrieval đúng nhưng prompt bỏ condition.
+
+Câu hỏi:
+Dựng root-cause analysis và fix verification.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Không patch từng answer hoặc đổi model chung chung.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Không patch từng answer hoặc đổi model chung chung.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không patch từng answer hoặc đổi model chung chung.
+
+=====================================================================================
+CÂU 125 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d14-q125 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-regression-case-promotion-loop] Regression Case Promotion Loop
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Root cause đã được verify và systemic fix đã qua test.
+
+Câu hỏi:
+Sắp promotion path cho regression case.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Chọn failure đại diện đã confirmed
+  - [B] Encode oracle, evidence, slice và provenance
+  - [C] Bump benchmark version thay vì sửa âm thầm
+  - [D] Chạy fixed case và neighboring cases để verify
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Chỉ promote sau khi cause/fix đã được xác nhận.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ promote sau khi cause/fix đã được xác nhận.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ promote sau khi cause/fix đã được xác nhận.
+
+=====================================================================================
+CÂU 126 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q126 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-regression-case-promotion-loop] Regression Case Promotion Loop
+=====================================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Sau fix stale-index, một failure đại diện pass; neighboring multilingual case lại fail.
+
+Câu hỏi:
+Quyết định promotion và verification tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Promotion không được biến một pass thành bằng chứng phổ quát.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Promotion không được biến một pass thành bằng chứng phổ quát.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Promotion không được biến một pass thành bằng chứng phổ quát.

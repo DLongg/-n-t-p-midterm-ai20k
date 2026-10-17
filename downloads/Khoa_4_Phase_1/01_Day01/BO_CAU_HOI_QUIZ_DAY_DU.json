@@ -1,0 +1,514 @@
+[
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tách phạm vi lĩnh vực khỏi loại đầu ra của từng hệ thống.",
+        "hint_id": "d01-q001-h1"
+      }
+    ],
+    "module_id": "day01-g-ai-landscape",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Các hệ thống:\n1. Mô hình dự báo khách hàng rời bỏ từ bảng số liệu.\n2. Neural network tạo ảnh từ mô tả.\n3. Mô hình ngôn ngữ dự đoán token tiếp theo.\n\nCâu hỏi:\nChọn tất cả phát biểu đúng về taxonomy.",
+      "choices": [
+        {
+          "text": "Chỉ hệ thống (3) mới là AI vì nó là LLM.",
+          "choice_id": "b"
+        },
+        {
+          "text": "Hệ thống (2) thuộc generative AI và dùng deep learning.",
+          "choice_id": "c"
+        },
+        {
+          "text": "Cả ba đều nằm trong phạm vi AI.",
+          "choice_id": "a"
+        },
+        {
+          "text": "LLM là một nhánh tập trung vào ngôn ngữ, không đại diện cho toàn bộ AI.",
+          "choice_id": "e"
+        },
+        {
+          "text": "Hệ thống (1) bắt buộc là generative AI.",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d01-q001",
+    "primary_kc_id": "kc-ai-taxonomy-relations",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Understand",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Quan sát loại đầu ra: chọn nhãn, tạo nội dung mới hay theo đuổi mục tiêu qua nhiều hành động?",
+        "hint_id": "d01-q003-h1"
+      }
+    ],
+    "module_id": "day01-g-ai-landscape",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Câu hỏi:\nMột hệ thống nhận email và trả về một trong hai nhãn `spam`/`không spam`; nó không tạo nội dung và không tự thực hiện hành động tiếp theo. Hành vi chính thuộc loại nào?",
+      "choices": [
+        {
+          "text": "Discriminative",
+          "choice_id": "a"
+        },
+        {
+          "text": "Không phải AI vì output chỉ là một nhãn ngắn",
+          "choice_id": "d"
+        },
+        {
+          "text": "Generative",
+          "choice_id": "b"
+        },
+        {
+          "text": "Agentic",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q003",
+    "primary_kc_id": "kc-ai-system-behavior-classification",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Understand",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Một tool result phải được quan sát trước khi có thể cập nhật state từ kết quả đó.",
+        "hint_id": "d01-q012-h1"
+      }
+    ],
+    "module_id": "day01-g-ai-landscape",
+    "max_points": 1,
+    "interaction": {
+      "type": "ordering",
+      "prompt": "Yêu cầu:\nSắp xếp một vòng xử lý của agent tra cứu tồn kho. Bắt đầu từ khi đã nhận goal.",
+      "options": [
+        {
+          "text": "Quan sát kết quả tool: kho A còn 0, kho B còn 4",
+          "option_id": "o1"
+        },
+        {
+          "text": "Đánh giá điều kiện dừng hoặc lập bước tiếp",
+          "option_id": "o5"
+        },
+        {
+          "text": "Cập nhật state/memory với số lượng vừa quan sát",
+          "option_id": "o2"
+        },
+        {
+          "text": "Gọi tool inventory.check",
+          "option_id": "o4"
+        },
+        {
+          "text": "Reasoning: cần gọi tool kiểm tra tồn kho",
+          "option_id": "o3"
+        }
+      ],
+      "presentation_policy": {
+        "do_not_expose_option_ids": true,
+        "shuffle_initial_order_at_delivery": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q012",
+    "primary_kc_id": "kc-agent-loop-relationship-tracing",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Model không thể append token trước khi đã chọn token từ distribution.",
+        "hint_id": "d01-q015-h1"
+      }
+    ],
+    "module_id": "day01-g-generation-context",
+    "max_points": 1,
+    "interaction": {
+      "type": "ordering",
+      "prompt": "Yêu cầu:\nModel đang sinh tiếp câu `Hôm nay trời`. Sắp xếp các bước của một vòng tự hồi quy.",
+      "options": [
+        {
+          "text": "Nối token được chọn vào context",
+          "option_id": "o1"
+        },
+        {
+          "text": "Tạo phân phối xác suất token tiếp theo từ context hiện tại",
+          "option_id": "o2"
+        },
+        {
+          "text": "Chọn một token theo decoding rule",
+          "option_id": "o4"
+        },
+        {
+          "text": "Kiểm tra điều kiện dừng; nếu chưa dừng thì lặp",
+          "option_id": "o3"
+        }
+      ],
+      "presentation_policy": {
+        "do_not_expose_option_ids": true,
+        "shuffle_initial_order_at_delivery": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q015",
+    "primary_kc_id": "kc-next-token-generation-loop",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Task ưu tiên repeatability hơn diversity.",
+        "hint_id": "d01-q022-h1"
+      }
+    ],
+    "module_id": "day01-g-generation-context",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Câu hỏi:\nỨng dụng cần tạo mã phân loại nội bộ theo đúng format, kết quả phải ổn định giữa các lần chạy. Cấu hình nào phù hợp hơn nếu các yếu tố khác giữ nguyên?",
+      "choices": [
+        {
+          "text": "Đổi temperature ngẫu nhiên mỗi request",
+          "choice_id": "d"
+        },
+        {
+          "text": "Temperature rất cao",
+          "choice_id": "b"
+        },
+        {
+          "text": "Không giới hạn output và tăng temperature",
+          "choice_id": "c"
+        },
+        {
+          "text": "Temperature thấp",
+          "choice_id": "a"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q022",
+    "primary_kc_id": "kc-temperature-distribution-control",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Cộng từ token xác suất cao nhất xuống cho đến lần đầu tổng đạt hoặc vượt p.",
+        "hint_id": "d01-q025-h1"
+      }
+    ],
+    "module_id": "day01-g-generation-context",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Xác suất token đã sắp giảm dần:\n- A = 0,42\n- B = 0,28\n- C = 0,18\n- D = 0,12\n\nCâu hỏi:\nVới `top-p = 0,75`, tập nucleus nhỏ nhất gồm token nào?",
+      "choices": [
+        {
+          "text": "B",
+          "choice_id": "b"
+        },
+        {
+          "text": "D",
+          "choice_id": "d"
+        },
+        {
+          "text": "A",
+          "choice_id": "a"
+        },
+        {
+          "text": "C",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d01-q025",
+    "primary_kc_id": "kc-top-p-candidate-filtering",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tách bài toán dung lượng khỏi bài toán model có tìm và dùng được bằng chứng hay không.",
+        "hint_id": "d01-q035-h1"
+      }
+    ],
+    "module_id": "day01-g-generation-context",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Câu hỏi:\nPrompt 90.000 token vẫn nằm trong context window. Quy tắc bắt buộc nằm giữa hàng chục trang log và model thường bỏ qua nó. Sửa nào nhắm đúng vấn đề nhất?",
+      "choices": [
+        {
+          "text": "Kết luận prompt đã nằm trong window nên model chắc chắn sử dụng mọi token đồng đều, không cần tổ chức lại",
+          "choice_id": "d"
+        },
+        {
+          "text": "Truy xuất riêng quy tắc liên quan và đặt nó gần task trong section có nhãn rõ",
+          "choice_id": "a"
+        },
+        {
+          "text": "Thêm nhiều log không liên quan",
+          "choice_id": "b"
+        },
+        {
+          "text": "Chỉ tăng output cap",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q035",
+    "primary_kc_id": "kc-long-context-information-placement",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Hỏi mỗi phép đo chỉ quan sát correlation hay chủ động thay đổi representation rồi xem behavior đổi.",
+        "hint_id": "d01-q044-h1"
+      }
+    ],
+    "module_id": "day01-g-generation-context",
+    "max_points": 3,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Model dự đoán nước đi hợp lệ với độ chính xác cao"
+        },
+        {
+          "id": "x2",
+          "text": "Linear probe đọc được trạng thái bàn cờ từ activation"
+        },
+        {
+          "id": "x3",
+          "text": "Can thiệp activation làm thay đổi nước đi theo trạng thái bàn cờ bị sửa"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r1",
+          "text": "Behavioral performance"
+        },
+        {
+          "id": "r2",
+          "text": "Information is decodable from representation"
+        },
+        {
+          "id": "r3",
+          "text": "Causal relevance of the represented state"
+        }
+      ],
+      "prompt": "Yêu cầu:\nTrong nghiên cứu mô hình chơi Othello, ghép quan sát với điều nó hỗ trợ trực tiếp nhất.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q044",
+    "primary_kc_id": "kc-emergent-world-representation-evidence",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Thành phần đứng ngay sau token IDs phải tạo representation liên tục cho model.",
+        "hint_id": "d01-q047-h1"
+      }
+    ],
+    "module_id": "day01-g-transformer-mechanics",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Câu hỏi:\nTrong pipeline `token IDs → ? → cộng positional information → Transformer blocks`, thành phần `?` làm nhiệm vụ gì?",
+      "choices": [
+        {
+          "text": "Tự cung cấp toàn bộ thứ tự vị trí dù không có positional signal",
+          "choice_id": "b"
+        },
+        {
+          "text": "Ánh xạ mỗi token ID sang vector embedding học được",
+          "choice_id": "a"
+        },
+        {
+          "text": "Chọn token output cuối cùng",
+          "choice_id": "c"
+        },
+        {
+          "text": "Tính API cost",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q047",
+    "primary_kc_id": "kc-token-embedding-role",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Understand",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Một cặp dùng để quyết định `nhìn đâu`; thành phần còn lại mang `lấy nội dung gì`.",
+        "hint_id": "d01-q051-h1"
+      }
+    ],
+    "module_id": "day01-g-transformer-mechanics",
+    "max_points": 3,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Query"
+        },
+        {
+          "id": "x2",
+          "text": "Key"
+        },
+        {
+          "id": "x3",
+          "text": "Value"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r2",
+          "text": "Biểu diễn dùng để so mức phù hợp với query"
+        },
+        {
+          "id": "r1",
+          "text": "Biểu diễn điều vị trí hiện tại đang tìm"
+        },
+        {
+          "id": "r3",
+          "text": "Nội dung được weighted-sum sau khi có attention weights"
+        }
+      ],
+      "prompt": "Yêu cầu:\nGhép thành phần attention với vai trò khái niệm.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d01-q051",
+    "primary_kc_id": "kc-attention-qkv-role",
+    "grading_method": "objective_key",
+    "question_version": 2,
+    "cognitive_operation": "Understand",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  }
+]

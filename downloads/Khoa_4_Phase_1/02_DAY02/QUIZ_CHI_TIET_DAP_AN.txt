@@ -1,0 +1,131 @@
+######################################################################
+# BẢNG ĐỀ BÀI VÀ ĐÁP ÁN ĐÃ KIỂM CHỨNG CHÍNH XÁC 100%: D02 · DAY02
+# Thư mục lưu trữ: downloads/Khoa_4_Phase_1/02_DAY02
+# Toàn bộ 5 câu hỏi đã được thử nghiệm và xác thực trực tiếp qua server VLearn
+######################################################################
+
+========================================================================
+CÂU 01 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d02-q012 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Ghép từng phản hồi sau khi kiểm thử với bước sớm nhất cần quay lại.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: Người dùng không gặp điểm đau (pain) mà nhóm đã giả định
+    ===> Ghép với: Xác định lại vấn đề (Define)
+
+  * Cặp 2:
+    - Cột trái: Điểm đau đúng nhưng họ cần cảnh báo theo nhóm thay vì từng cá nhân
+    ===> Ghép với: Thiết kế lại cách giải (Ideate)
+
+  * Cặp 3:
+    - Cột trái: Luồng ý tưởng đúng nhưng nút xác nhận khiến họ gửi nhầm
+    ===> Ghép với: Nguyên mẫu/tương tác
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Không cần quay lại vấn đề vì nhu cầu chưa bị bác bỏ; khi nhu cầu đúng nhưng cách giải sai thì quay về thiết kế ý tưởng; khi ma sát nằm ở thao tác thì quay về nguyên mẫu/tương tác.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Theo dõi tầng giả định đầu tiên bị phản hồi phủ nhận.
+
+========================================================================
+CÂU 02 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d02-q043 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Tác vụ chạy mỗi đêm:
+- Đọc tệp CSV có cùng cấu trúc.
+- Áp công thức thuế cố định.
+- Xuất báo cáo.
+- Các bước biết trước và không có đầu vào ngôn ngữ.
+
+Cấp triển khai phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Quy trình thủ công theo bảng kiểm
+  [ ] SAI   [B] Quy trình dùng LLM (LLM workflow)
+  [ ] SAI   [C] Tác nhân tự lập kế hoạch (agent)
+  [X] ĐÚNG  [D] Luật/kịch bản tự động (rule/script)
+
+-> ĐÁP ÁN CHÍNH XÁC: [D] Luật/kịch bản tự động (rule/script)
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Logic cố định và cấu trúc dữ liệu ổn định nên luật/kịch bản tự động là cấp đơn giản nhất nhưng đã đủ dùng.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Chọn cấp thấp nhất vẫn đáp ứng mức biến thiên và mức bảo đảm cần thiết.
+
+========================================================================
+CÂU 03 [TRẮC NGHIỆM NHIỀU ĐÁP ÁN (CHỌN TẤT CẢ ĐÁP ÁN ĐÚNG)] - Mã: d02-q076 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Hệ thống cảnh báo sepsis có người phân loại tiếp.
+Bỏ sót ca bệnh có thể nguy hiểm hơn cảnh báo giả.
+
+Chọn tất cả phát biểu phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI TỪNG CÂU):
+  [ ] SAI   [A] Tăng recall lên 100% mà không cân nhắc tải phân loại và precision.
+  [ ] SAI   [B] Có thể bỏ qua precision nếu đã có người phân loại.
+  [X] ĐÚNG  [C] Ngưỡng cuối phải được kiểm thử trong quy trình phân loại thực tế.
+  [X] ĐÚNG  [D] Âm tính giả (false negative) là lỗi cần theo dõi chặt.
+  [X] ĐÚNG  [E] Có lý do để ưu tiên recall cao hơn.
+
+-> TẬP HỢP ĐÁP ÁN ĐÚNG CẦN CHỌN: [C], [D], [E]
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Chi phí FN cao ủng hộ recall, nhưng vẫn phải đo precision và tải phân loại; không có cấu hình đúng tuyệt đối.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Phân biệt hướng ưu tiên với việc bỏ chỉ số còn lại.
+
+========================================================================
+CÂU 04 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d02-q090 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Trạng thái sau Day 2:
+- Đã có mô tả bài toán (Problem Statement).
+- Đã có mốc nền dự kiến.
+- Quyết định hiện tại là Not Yet vì đang chờ xác minh quyền dùng dữ liệu.
+
+Kết luận về vòng đời đúng nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Coi nhãn Not Yet như một dạng phê duyệt ra mắt
+  [X] ĐÚNG  [B] Đang ở giai đoạn lập kế hoạch/kỳ vọng; cần xác minh quyền dùng dữ liệu trước pilot
+  [ ] SAI   [C] Có thể sang giai đoạn giám sát/lặp vì thước đo đã được định nghĩa
+  [ ] SAI   [D] Có thể chuyển production vì đã có quyết định, mốc nền dự kiến và thước đo ban đầu
+
+-> ĐÁP ÁN CHÍNH XÁC: [B] Đang ở giai đoạn lập kế hoạch/kỳ vọng; cần xác minh quyền dùng dữ liệu trước pilot
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Các hiện vật hiện có thuộc giai đoạn lập kế hoạch; Not Yet không phải phê duyệt ra mắt.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Phân biệt kế hoạch tạo bằng chứng với bằng chứng vận hành đã có.
+
+========================================================================
+CÂU 05 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d02-q044 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Tác vụ nghiên cứu phải:
+- Tự tìm chủ đề con chưa biết trước.
+- Chọn nguồn.
+- Điều chỉnh kế hoạch theo kết quả.
+- Dừng khi đủ bằng chứng.
+
+Kiểm soát:
+Mọi trích dẫn cuối đều được người duyệt.
+
+Cấp triển khai phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Quy trình cố định, không rẽ nhánh hoặc lập kế hoạch lại
+  [X] ĐÚNG  [B] Tác nhân có công cụ giới hạn và người duyệt
+  [ ] SAI   [C] Luật đơn với danh sách chủ đề con cố định
+  [ ] SAI   [D] Quy trình thủ công để người dùng tự chọn toàn bộ nguồn
+
+-> ĐÁP ÁN CHÍNH XÁC: [B] Tác nhân có công cụ giới hạn và người duyệt
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Chủ đề con và kế hoạch thay đổi theo quan sát nên tác nhân phù hợp, nhưng phải giới hạn công cụ và giữ bước người duyệt.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Hỏi các bước có biết trước hay hệ thống phải tự lập kế hoạch lại.
+

@@ -1,0 +1,535 @@
+[
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Đối chiếu giả định local với ranh giới và hậu quả cần kiểm tra trước khi chọn.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-foundations",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nAgent chạy tốt trên laptop cho một người dùng; production có 200 người dùng đồng thời, thường xuyên restart, HTTPS công khai và chi phí tính theo token.\n\nCâu hỏi:\nKế hoạch nào xử lý đúng khoảng cách khi đưa lên production?",
+      "choices": [
+        {
+          "text": "Chạy nguyên laptop trên VM rồi mở thêm HTTPS công khai",
+          "choice_id": "d"
+        },
+        {
+          "text": "Nâng cấp model trước rồi giữ nguyên vòng đời local nếu throughput tăng",
+          "choice_id": "c"
+        },
+        {
+          "text": "Viết yêu cầu production kèm bài kiểm tra từng ranh giới",
+          "choice_id": "a"
+        },
+        {
+          "text": "Đóng gói container nhưng vẫn giữ state/config trên máy local và thêm script restart",
+          "choice_id": "b"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q001",
+    "primary_kc_id": "kc-agent-production-gap",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Xác định lớp tài nguyên mà thành phần trực tiếp sử dụng.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-foundations",
+    "max_points": 4,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "API/worker"
+        },
+        {
+          "id": "x2",
+          "text": "Tài liệu vector"
+        },
+        {
+          "id": "x3",
+          "text": "Ingress/egress dùng TLS"
+        },
+        {
+          "id": "x4",
+          "text": "Thông tin xác thực của workload"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r3",
+          "text": "Networking"
+        },
+        {
+          "id": "r4",
+          "text": "IAM"
+        },
+        {
+          "id": "r2",
+          "text": "Storage"
+        },
+        {
+          "id": "r1",
+          "text": "Compute"
+        }
+      ],
+      "prompt": "Bối cảnh:\nMột agent service có API/worker, vector store, cổng vào công khai và thông tin xác thực để truy cập model.\n\nCâu hỏi:\nGhép từng thành phần với lớp tài nguyên chính.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q003",
+    "primary_kc_id": "kc-cloud-resource-layer-mapping",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Understand",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tách phần vận hành đã giao cho provider khỏi ranh giới ứng dụng và trách nhiệm giải trình vẫn giữ lại.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-foundations",
+    "max_points": 1,
+    "interaction": {
+      "type": "multi_select",
+      "prompt": "Bối cảnh:\nTeam hai người chọn PaaS/managed compute cho workload stateless; provider vận hành hạ tầng và runtime nền.\n\nCâu hỏi:\nNhững trách nhiệm nào vẫn thuộc team? Chọn tất cả phương án đúng.",
+      "choices": [
+        {
+          "text": "Mã ứng dụng và config lúc chạy",
+          "choice_id": "a"
+        },
+        {
+          "text": "Provider nhận cả trách nhiệm giải trình về ứng dụng, dữ liệu và policy",
+          "choice_id": "e"
+        },
+        {
+          "text": "Máy chủ vật lý và việc patch nền do team tự làm",
+          "choice_id": "d"
+        },
+        {
+          "text": "IAM, quyền truy cập dữ liệu và bằng chứng audit",
+          "choice_id": "b"
+        },
+        {
+          "text": "Policy nghiệp vụ và đánh giá chất lượng",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      },
+      "selection_instruction": "Chọn tất cả phương án đúng."
+    },
+    "question_id": "d12-q005",
+    "primary_kc_id": "kc-cloud-service-responsibility-model",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Kiểm tra artifact có giữ nguyên qua các environment hay không; chỉ config và data mới được tách.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-foundations",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nDev, staging và prod đều build image từ ba branch; một bug chỉ xuất hiện trong image prod.\n\nCâu hỏi:\nNguyên tắc promotion nào phải áp dụng để tránh drift này?",
+      "choices": [
+        {
+          "text": "Dùng chung credential production",
+          "choice_id": "c"
+        },
+        {
+          "text": "Build lại image riêng cho mỗi environment",
+          "choice_id": "a"
+        },
+        {
+          "text": "Promote một digest immutable đã được kiểm thử",
+          "choice_id": "b"
+        },
+        {
+          "text": "Dùng dữ liệu production để giữ parity",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q007",
+    "primary_kc_id": "kc-environment-promotion-parity",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tìm giá trị platform cấp lúc chạy và tách nó khỏi secret nằm trong source.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-foundations",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nImage hardcode cổng 8000 và API key trong source; platform cấp PORT=4317.\n\nCâu hỏi:\nSửa nào đúng?",
+      "choices": [
+        {
+          "text": "Đọc config lúc chạy và bind vào cổng platform cấp",
+          "choice_id": "c"
+        },
+        {
+          "text": "Giữ cổng 8000 làm cổng chính và bỏ qua PORT=4317 khi chạy",
+          "choice_id": "b"
+        },
+        {
+          "text": "Đưa PORT và endpoint vào secret store cùng với API key",
+          "choice_id": "d"
+        },
+        {
+          "text": "Đọc `.env` lúc build image và dùng chung giá trị cho các environment",
+          "choice_id": "a"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q009",
+    "primary_kc_id": "kc-twelve-factor-config-port-parity",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Đối chiếu thời hạn sunset với việc kiểm thử, capacity, chuyển traffic và rollback.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-foundations",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nProvider báo model M sẽ sunset sau 30 ngày; replacement R có quota thấp hơn và hành vi output khác.\n\nCâu hỏi:\nKế hoạch phát hành nào đầy đủ?",
+      "choices": [
+        {
+          "text": "Giữ model cũ vì dependency đã được pin",
+          "choice_id": "a"
+        },
+        {
+          "text": "Đánh giá – kiểm tra capacity – canary – rollback",
+          "choice_id": "d"
+        },
+        {
+          "text": "Đổi tên model đúng ngày sunset",
+          "choice_id": "b"
+        },
+        {
+          "text": "Dùng autoscaling local để thay quota của provider",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q011",
+    "primary_kc_id": "kc-model-dependency-release-planning",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tách công thức build, artifact, instance và state.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-container",
+    "max_points": 4,
+    "interaction": {
+      "left": [
+        {
+          "id": "x1",
+          "text": "Dockerfile"
+        },
+        {
+          "id": "x2",
+          "text": "Image digest"
+        },
+        {
+          "id": "x3",
+          "text": "Container đang chạy"
+        },
+        {
+          "id": "x4",
+          "text": "Volume được mount"
+        }
+      ],
+      "type": "matching",
+      "right": [
+        {
+          "id": "r4",
+          "text": "State lúc chạy nằm ngoài image"
+        },
+        {
+          "id": "r2",
+          "text": "Định danh artifact bất biến"
+        },
+        {
+          "id": "r3",
+          "text": "Instance của process lúc chạy"
+        },
+        {
+          "id": "r1",
+          "text": "Công thức build"
+        }
+      ],
+      "prompt": "Bối cảnh:\nCần phân biệt artifact với instance lúc chạy.\n\nCâu hỏi:\nGhép từng thành phần với đúng vai trò.",
+      "presentation_policy": {
+        "do_not_align_pairs_by_row": true,
+        "shuffle_right_at_delivery": true,
+        "do_not_expose_internal_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q013",
+    "primary_kc_id": "kc-container-artifact-runtime-boundary",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Understand",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Xác định ba thứ phải ổn định: base image, dependency resolution và architecture đích.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-container",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nDockerfile dùng `python:latest` và `pip install -r requirements.txt` với dải phiên bản; build arm64 hôm nay có thể khác amd64 tuần sau.\n\nCâu hỏi:\nĐiều gì cần pin trước để build tái lập?",
+      "choices": [
+        {
+          "text": "Ưu tiên image nhỏ nhất với package mới nhất",
+          "choice_id": "b"
+        },
+        {
+          "text": "Pin số layer và thứ tự metadata của label",
+          "choice_id": "d"
+        },
+        {
+          "text": "Cache cũ và timestamp của lần build",
+          "choice_id": "a"
+        },
+        {
+          "text": "Pin base image, khóa dependency và architecture đích",
+          "choice_id": "c"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q016",
+    "primary_kc_id": "kc-reproducible-container-dependencies",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Đưa input ổn định trước input hay thay đổi.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-container",
+    "max_points": 1,
+    "interaction": {
+      "type": "ordering",
+      "prompt": "Bối cảnh:\nMã nguồn thay đổi thường xuyên, lockfile ít đổi.\n\nCâu hỏi:\nSắp xếp các bước Dockerfile để tái dùng dependency cache mà vẫn build tái lập.",
+      "options": [
+        {
+          "text": "Cài dependency bằng chế độ khóa (`--locked`)",
+          "option_id": "o2"
+        },
+        {
+          "text": "Chép lockfile/manifest",
+          "option_id": "o1"
+        },
+        {
+          "text": "Chép mã nguồn ứng dụng",
+          "option_id": "o3"
+        },
+        {
+          "text": "Build ứng dụng",
+          "option_id": "o4"
+        }
+      ],
+      "presentation_policy": {
+        "do_not_expose_option_ids": true,
+        "shuffle_initial_order_at_delivery": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q018",
+    "primary_kc_id": "kc-docker-layer-cache-ordering",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Apply",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "easy"
+  },
+  {
+    "role": "initial_check",
+    "hints": [
+      {
+        "text": "Tách những thứ chỉ cần lúc build khỏi filesystem thật sự cần khi chạy.",
+        "hint_id": "h1",
+        "after_attempt": 1
+      }
+    ],
+    "module_id": "day12-g-container",
+    "max_points": 1,
+    "interaction": {
+      "type": "single_select",
+      "prompt": "Bối cảnh:\nImage một stage giữ compiler, bộ dữ liệu test và cache của package manager dù runtime chỉ cần binary cùng dependency của ứng dụng.\n\nCâu hỏi:\nThiết kế nào đúng?",
+      "choices": [
+        {
+          "text": "Tối ưu cache của một stage thay cho việc tách builder và runtime",
+          "choice_id": "b"
+        },
+        {
+          "text": "Tách builder khỏi artifact runtime",
+          "choice_id": "c"
+        },
+        {
+          "text": "Giảm kích thước bằng cách xóa thủ công vài file trong stage hiện tại",
+          "choice_id": "a"
+        },
+        {
+          "text": "Dùng kích thước image như một tín hiệu đánh giá security",
+          "choice_id": "d"
+        }
+      ],
+      "presentation_policy": {
+        "shuffle_at_delivery": true,
+        "do_not_expose_choice_ids": true
+      },
+      "prompt_presentation": {
+        "format": "sectioned_plain_text",
+        "preserve_line_breaks": true
+      }
+    },
+    "question_id": "d12-q020",
+    "primary_kc_id": "kc-multistage-runtime-minimization",
+    "grading_method": "deterministic",
+    "question_version": 2,
+    "cognitive_operation": "Analyze",
+    "contributing_kc_ids": [],
+    "estimated_difficulty": "medium"
+  }
+]

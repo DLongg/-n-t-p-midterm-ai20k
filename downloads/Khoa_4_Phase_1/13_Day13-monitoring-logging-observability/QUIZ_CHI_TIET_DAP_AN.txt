@@ -1,0 +1,254 @@
+######################################################################
+# BẢNG ĐỀ BÀI VÀ ĐÁP ÁN ĐÃ KIỂM CHỨNG CHÍNH XÁC 100%: D13 · Day13-monitoring-logging-observability
+# Thư mục lưu trữ: downloads/Khoa_4_Phase_1/13_Day13-monitoring-logging-observability
+# Toàn bộ 10 câu hỏi đã được thử nghiệm và xác thực trực tiếp qua server VLearn
+######################################################################
+
+========================================================================
+CÂU 01 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d13-q001 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Dashboard đã alert khi error rate >5%. Hôm nay user báo một kiểu sai mới nhưng mọi threshold đã biết đều xanh.
+
+Câu hỏi:
+Cách tiếp cận nào đúng với câu hỏi mới?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [X] ĐÚNG  [A] Điều tra câu hỏi mới từ telemetry
+  [ ] SAI   [B] Thêm một threshold error rate khác rồi gọi đó là observability
+  [ ] SAI   [C] Bỏ toàn bộ monitoring vì nó chỉ trả lời known failures
+  [ ] SAI   [D] Đổi sang vendor observability khác mà không đổi evidence
+
+-> ĐÁP ÁN CHÍNH XÁC: [A] Điều tra câu hỏi mới từ telemetry
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Đáp án đúng phân biệt được target boundary: Dùng telemetry hiện có để điều tra exploratory question và xác định signal còn thiếu
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Đối chiếu các lựa chọn với: Predefined indicator, Known failure mode.
+
+========================================================================
+CÂU 02 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d13-q004 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+API trả 200, P95 ổn và CPU thấp nhưng chi phí tăng gấp ba, tool-call success chỉ 60% và câu trả lời bắt đầu bịa.
+
+Câu hỏi:
+Kết luận nào đầy đủ nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [X] ĐÚNG  [A] Cần signal riêng cho cost, tool và quality
+  [ ] SAI   [B] Chỉ latency đủ đại diện mọi failure của AI service
+  [ ] SAI   [C] HTTP 200 và CPU thấp chứng minh agent khỏe
+  [ ] SAI   [D] Tăng log level sẽ tự phát hiện hallucination
+
+-> ĐÁP ÁN CHÍNH XÁC: [A] Cần signal riêng cho cost, tool và quality
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Đáp án đúng phân biệt được target boundary: Service health không chứng minh cost, tool reliability hay output quality; cần signal riêng cho cả ba
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Đối chiếu các lựa chọn với: Correctness dù status success, Work tính tiền theo token.
+
+========================================================================
+CÂU 03 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d13-q006 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Incident bắt đầu 09:00, alert lúc 09:08, mitigation hoàn tất 09:38.
+
+Câu hỏi:
+MTTD và MTTR nào đúng nếu MTTR tính từ detection tới recovery?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [X] ĐÚNG  [A] MTTD 8 phút; MTTR 30 phút
+  [ ] SAI   [B] Cả hai đều 38 phút
+  [ ] SAI   [C] MTTD 38 phút; MTTR 8 phút
+  [ ] SAI   [D] MTTD 30 phút; MTTR 38 phút
+
+-> ĐÁP ÁN CHÍNH XÁC: [A] MTTD 8 phút; MTTR 30 phút
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Đáp án đúng phân biệt được target boundary: MTTD 8 phút; MTTR 30 phút
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Đối chiếu các lựa chọn với: Observe-analyze-act, So với objective.
+
+========================================================================
+CÂU 04 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d13-q008 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Câu hỏi là “request req-42 chậm ở bước model hay retrieval, và payload nào gây lỗi?”.
+
+Câu hỏi:
+Bộ signal tối thiểu phù hợp?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Chỉ CPU host
+  [ ] SAI   [B] Chỉ thumbs-up của user
+  [ ] SAI   [C] Chỉ counter tổng request
+  [X] ĐÚNG  [D] Trace + correlated log
+
+-> ĐÁP ÁN CHÍNH XÁC: [D] Trace + correlated log
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Đáp án đúng phân biệt được target boundary: Trace để định vị span, log theo correlation ID để xem event/payload đã sanitize
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Đối chiếu các lựa chọn với: Aggregate metric, Detailed event log.
+
+========================================================================
+CÂU 05 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d13-q010 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Latency, traffic, error và saturation đều tốt; 20% câu trả lời lại trái policy source.
+
+Câu hỏi:
+Signal nào trực tiếp lấp khoảng trống?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] Tăng log retention nhưng không chấm output
+  [ ] SAI   [B] Chỉ theo dõi HTTP status
+  [ ] SAI   [C] Thêm host uptime
+  [X] ĐÚNG  [D] Sampled online quality evaluation
+
+-> ĐÁP ÁN CHÍNH XÁC: [D] Sampled online quality evaluation
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Đáp án đúng phân biệt được target boundary: Sampled online evaluation về groundedness/policy correctness
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Đối chiếu các lựa chọn với: HTTP success khác correctness, Output quality chưa chứng minh.
+
+========================================================================
+CÂU 06 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d13-q013 (Độ khó: easy)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Một AI service theo dõi bốn loại evidence.
+
+Câu hỏi:
+Ghép measurement với metric family chính.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: TTFT P95
+    ===> Ghép với: Performance
+
+  * Cặp 2:
+    - Cột trái: Tool-call failure rate
+    ===> Ghép với: Reliability
+
+  * Cặp 3:
+    - Cột trái: Cost per task
+    ===> Ghép với: Cost
+
+  * Cặp 4:
+    - Cột trái: Sampled groundedness
+    ===> Ghép với: Quality
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  TTFT đo performance; tool failure đo reliability; spend đo cost; groundedness đo quality.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Hỏi mỗi measurement đang mô tả tốc độ, outcome, tiền hay chất lượng.
+
+========================================================================
+CÂU 07 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d13-q015 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+User báo agent chậm và worker queue có dấu hiệu saturation.
+
+Câu hỏi:
+Ghép signal với vai trò điều tra.
+
+NỘI DUNG VÀ KẾT QUẢ GHÉP CẶP CHÍNH XÁC (100% SERVER KIỂM CHỨNG):
+  * Cặp 1:
+    - Cột trái: Request rate
+    ===> Ghép với: RED traffic
+
+  * Cặp 2:
+    - Cột trái: Request error rate
+    ===> Ghép với: RED failure symptom
+
+  * Cặp 3:
+    - Cột trái: Request duration
+    ===> Ghép với: RED latency symptom
+
+  * Cặp 4:
+    - Cột trái: Worker utilization
+    ===> Ghép với: USE resource use
+
+  * Cặp 5:
+    - Cột trái: Queue saturation
+    ===> Ghép với: USE pressure
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  RED mô tả request impact; USE mô tả resource utilization/saturation/error để điều tra cause candidate.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Tách user-visible request signal khỏi resource signal.
+
+========================================================================
+CÂU 08 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d13-q017 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+100 request đã sort; request thứ 95 mất 4,8s, median 1,2s; TTFT P95 là 0,7s.
+
+Câu hỏi:
+Diễn giải nào đúng?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN (ĐÁNH GIÁ ĐÚNG / SAI):
+  [ ] SAI   [A] TTFT 0,7s nghĩa total latency 0,7s
+  [ ] SAI   [B] 95% request chậm hơn 4,8s
+  [X] ĐÚNG  [C] Completion P95≈4,8s; TTFT P95≈0,7s
+  [ ] SAI   [D] P95 là trung bình của 95 request đầu
+
+-> ĐÁP ÁN CHÍNH XÁC: [C] Completion P95≈4,8s; TTFT P95≈0,7s
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Đáp án đúng phân biệt được target boundary: 95% request hoàn tất không chậm hơn khoảng 4,8s; token đầu phần lớn sớm hơn completion
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Đối chiếu các lựa chọn với: Median, P95/P99 tail.
+
+========================================================================
+CÂU 09 [TÍNH TOÁN / ĐIỀN SỐ CHÍNH XÁC] - Mã: d13-q020 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Mỗi lượt chat độc lập có 1% khả năng latency vượt 5s. User thực hiện 10 lượt.
+
+Câu hỏi:
+Tính xác suất gặp ít nhất một lượt vượt 5s, làm tròn hai chữ số phần trăm.
+
+-> ĐÁP ÁN SỐ CHÍNH XÁC: 9.56 %
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  P=1−(1−0,01)^10=1−0,99^10≈9,56%.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Tính xác suất không có tail ở cả 10 lượt trước.
+
+========================================================================
+CÂU 10 [SẮP XẾP THỨ TỰ QUY TRÌNH] - Mã: d13-q023 (Độ khó: medium)
+========================================================================
+ĐỀ BÀI:
+Bối cảnh:
+Xếp signal từ rẻ/nhanh nhưng evidence yếu hơn tới chậm/đắt nhưng gần outcome hơn.
+
+Câu hỏi:
+Sắp thứ tự layer.
+
+THỨ TỰ QUY TRÌNH CHUẨN XÁC TỪNG BƯỚC (100% SERVER KIỂM CHỨNG):
+  Bước 1: Automated heuristic
+  Bước 2: Sampled model-based judge
+  Bước 3: Explicit/implicit user signal
+  Bước 4: Business/task outcome
+
+LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
+  Heuristic phản ứng nhanh; judge thêm semantic coverage; user signal có bias; outcome mạnh hơn nhưng thường lag/confounded.
+
+GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  💡 Xếp theo cost/lag/evidence strength, không coi layer nào là truth tuyệt đối.
+

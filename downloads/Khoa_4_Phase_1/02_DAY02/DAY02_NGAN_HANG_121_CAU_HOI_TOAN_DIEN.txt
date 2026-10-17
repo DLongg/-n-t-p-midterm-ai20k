@@ -1,0 +1,3340 @@
+=====================================================================================
+VLEARN - KHÓA 4 PHASE 1: NỀN TẢNG & MINI HACKATHON
+DAY 02: NGÂN HÀNG ĐỀ THI MỞ RỘNG TOÀN DIỆN (121 CÂU HỎI & HƯỚNG DẪN GIẢI CHI TIẾT)
+=====================================================================================
+
+THỐNG KÊ NGÂN HÀNG ĐỀ THI Day 02:
+- Tổng số câu hỏi trong ngân hàng: 121 câu (Bao phủ 46 chủ đề kiến thức / Knowledge Components)
+- Số câu hỏi trắc nghiệm tương tác trực tuyến (Servable): 35 câu
+- Số câu tự luận / viết code thực hành (Short Text): 86 câu
+- Lượt thi kiểm tra chuẩn Vlearn: Mỗi lượt rút ngẫu nhiên 10 câu.
+
+=====================================================================================
+
+=====================================================================================
+CÂU 001 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q001 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-problem-first-reframing] Problem First Reframing
+=====================================================================================
+ĐỀ BÀI:
+Bên liên quan (stakeholder) nói: “Hãy làm chatbot AI cho phòng nhân sự.”
+
+Cách viết lại nào là điểm bắt đầu cho việc khám phá vấn đề (discovery) tốt nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Nhân viên nào đang vướng ở bước tìm chính sách (policy), họ kẹt ở đâu, hậu quả là gì và kết quả cần cải thiện là gì?
+[B] Nên chọn mô hình ngôn ngữ lớn (model) trước rồi mới tìm việc phù hợp cho chatbot.
+[C] Nên nạp các tài liệu HR hiện có vào RAG và cơ sở dữ liệu vector trước khi hỏi người dùng cần gì.
+[D] Nên triển khai chatbot FAQ cho các câu hỏi HR hiện có rồi đo hiệu quả sau.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Bỏ cụm 'chatbot AI' rồi hỏi ai đang gặp vấn đề, họ mắc ở bước nào và hậu quả là gì.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Bỏ cụm 'chatbot AI' rồi hỏi ai đang gặp vấn đề, họ mắc ở bước nào và hậu quả là gì.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bỏ cụm 'chatbot AI' rồi hỏi ai đang gặp vấn đề, họ mắc ở bước nào và hậu quả là gì.
+
+=====================================================================================
+CÂU 002 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q002 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-problem-first-reframing] Problem First Reframing
+=====================================================================================
+ĐỀ BÀI:
+Đề bài ban đầu:
+“Xây tác nhân AI tự đặt lịch họp cho toàn công ty.”
+
+- Viết lại thành một câu hỏi khám phá vấn đề có người thực hiện, quy trình, điểm đau và kết quả mong muốn.
+- Nêu hai giả định phải kiểm chứng trước khi chọn AI.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết câu hỏi về người, bước và kết quả trước; chỉ sau đó mới liệt kê điều chưa biết.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết câu hỏi về người, bước và kết quả trước; chỉ sau đó mới liệt kê điều chưa biết.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết câu hỏi về người, bước và kết quả trước; chỉ sau đó mới liệt kê điều chưa biết.
+
+=====================================================================================
+CÂU 003 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q003 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-user-workflow-pain-observation] User Workflow Pain Observation
+=====================================================================================
+ĐỀ BÀI:
+Dữ liệu từ log quầy tiếp nhận:
+- 37/50 hồ sơ chiều thứ Hai phải nhập lại địa chỉ.
+- Mỗi lần nhập lại mất trung vị 4 phút.
+
+Ý kiến của nhân viên A:
+“Chắc khách hàng ghét biểu mẫu.”
+
+Chọn tất cả kết luận được log hỗ trợ trực tiếp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Điểm đau (pain) nằm ở việc phải nhập lại địa chỉ trong quy trình tiếp nhận.
+[B] Có 37 hồ sơ bị nhập lại trong mẫu đã quan sát.
+[C] Biểu mẫu có thể là nguyên nhân chính khiến hồ sơ phải nhập lại.
+[D] Việc nhập lại làm tăng thời gian xử lý của nhân viên.
+[E] Có thể thử tự động hóa bước này bằng AI sau khi xác minh thêm nguyên nhân.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách phát biểu có số liệu hoặc nhật ký (log) khỏi phát biểu suy đoán nguyên nhân hay giải pháp.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách phát biểu có số liệu hoặc nhật ký (log) khỏi phát biểu suy đoán nguyên nhân hay giải pháp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách phát biểu có số liệu hoặc nhật ký (log) khỏi phát biểu suy đoán nguyên nhân hay giải pháp.
+
+=====================================================================================
+CÂU 004 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q004 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-user-workflow-pain-observation] User Workflow Pain Observation
+=====================================================================================
+ĐỀ BÀI:
+Quy trình quan sát được:
+1. Kế toán nhận PDF qua thư điện tử.
+2. Kế toán sao chép số tiền vào bảng tính.
+3. Quản lý kiểm tra.
+
+Dữ liệu:
+- 6/20 hóa đơn bị trả lại vì sai số tiền.
+- Mỗi lượt sửa mất 12 phút.
+
+Chỉ ra điểm đau, người thực hiện, bước trong quy trình, bằng chứng và một điều vẫn chỉ là giả định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đánh dấu từng chi tiết là quan sát được hay chỉ là suy luận.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đánh dấu từng chi tiết là quan sát được hay chỉ là suy luận.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu từng chi tiết là quan sát được hay chỉ là suy luận.
+
+=====================================================================================
+CÂU 005 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q005 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-stakeholder-discovery-interview] Stakeholder Discovery Interview
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu ban đầu của bên liên quan (stakeholder):
+“Hãy dùng AI để dự đoán máy nào sắp hỏng.”
+
+Viết bốn câu hỏi khám phá vấn đề (discovery) ngắn để lần lượt lấy:
+1. Một sự cố gần đây.
+2. Quy trình (workflow) và điểm bàn giao (handoff) khi xử lý.
+3. Tần suất, tác động (impact) và rủi ro (risk).
+4. Người chịu trách nhiệm/quyền quyết định (owner) cùng bằng chứng thành công (success evidence).
+
+Ràng buộc:
+Không giới thiệu hoặc chốt giải pháp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Bắt đầu bằng một sự cố cụ thể rồi đi dần tới tác động và quyết định.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Bắt đầu bằng một sự cố cụ thể rồi đi dần tới tác động và quyết định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bắt đầu bằng một sự cố cụ thể rồi đi dần tới tác động và quyết định.
+
+=====================================================================================
+CÂU 006 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q006 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-stakeholder-discovery-interview] Stakeholder Discovery Interview
+=====================================================================================
+ĐỀ BÀI:
+Bản ghi quan sát quy trình đọc hợp đồng:
+- 4/10 hợp đồng phải hỏi lại điều khoản thanh toán.
+- Nhân viên pháp chế mất trung vị 25 phút để tra cứu.
+- Chưa biết lỗi chủ yếu nằm ở khâu tìm điều khoản hay khâu phê duyệt.
+
+Bên liên quan đề xuất: “Dùng AI đọc hợp đồng.”
+
+Hãy:
+- Tách ba dữ kiện đã có khỏi hai giả định còn thiếu bằng chứng.
+- Đặt ba câu hỏi tiếp theo để phân biệt nút thắt, hậu quả và người có quyền quyết định.
+- Nêu một ngưỡng bằng chứng cần đạt trước khi đánh giá bất kỳ giải pháp nào.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng biến đề xuất AI thành kết luận; hãy truy ngược từ số liệu đến khâu gây ra và người chịu trách nhiệm.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng biến đề xuất AI thành kết luận; hãy truy ngược từ số liệu đến khâu gây ra và người chịu trách nhiệm.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng biến đề xuất AI thành kết luận; hãy truy ngược từ số liệu đến khâu gây ra và người chịu trách nhiệm.
+
+=====================================================================================
+CÂU 007 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d02-q007 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-problem-diverge-converge] Problem Diverge Converge
+=====================================================================================
+ĐỀ BÀI:
+Ghép từng hành động khám phá vấn đề với pha phù hợp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Phỏng vấn thêm ba nhóm người thực hiện
+  (2) Gom các điểm đau trùng thành cụm
+  (3) Liệt kê năm cách diễn giải nguyên nhân
+  (4) Chọn danh sách ngắn bằng tiêu chí bằng chứng và tác động
+
+Cột Phải (Lựa chọn ghép):
+  (A) Phân kỳ (mở rộng khả năng)
+  (B) Hội tụ (thu hẹp theo tiêu chí)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi hành động đang mở rộng khả năng hay thu hẹp bằng tiêu chí.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi hành động đang mở rộng khả năng hay thu hẹp bằng tiêu chí.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi hành động đang mở rộng khả năng hay thu hẹp bằng tiêu chí.
+
+=====================================================================================
+CÂU 008 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q008 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-problem-diverge-converge] Problem Diverge Converge
+=====================================================================================
+ĐỀ BÀI:
+Tình huống:
+- Nhóm nghe một người dùng nói rằng họ thích chatbot.
+- Nhóm lập tức chốt làm chatbot.
+- Nhật ký khám phá (discovery log) chưa có quy trình (workflow), tần suất hoặc tác động (impact).
+
+Bước tiếp theo phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Phỏng vấn thêm tác nhân (actor) về quy trình (workflow), tần suất và tác động (impact) trước khi quyết định làm gì.
+[B] Bắt đầu làm nguyên mẫu (prototype) chatbot ngay, rồi dùng phản hồi về giao diện để suy ra điểm đau.
+[C] Vote ngay vì đã có một người dùng ủng hộ.
+[D] Chọn mô hình (model) và ước tính chi phí token trước, vì đây là bước quyết định tính khả thi.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm tra xem bằng chứng hiện tại đã đủ để áp tiêu chí hội tụ chưa.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra xem bằng chứng hiện tại đã đủ để áp tiêu chí hội tụ chưa.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra xem bằng chứng hiện tại đã đủ để áp tiêu chí hội tụ chưa.
+
+=====================================================================================
+CÂU 009 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q009 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-first-principles-problem-decomposition] First Principles Problem Decomposition
+=====================================================================================
+ĐỀ BÀI:
+Giả định hiện tại:
+Đội cho rằng dịch vụ hỗ trợ phải có tổng đài viên trực 24/7 vì đối thủ cũng làm vậy.
+
+Bối cảnh mới:
+- Câu hỏi phổ biến đã có tài liệu chuẩn.
+- Khiếu nại tài chính phải do người có thẩm quyền xử lý.
+
+Phân rã bài toán theo nguyên tắc nền tảng (first principles) và đề xuất một cách tiếp cận khác.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách 'cách đang làm' khỏi 'điều không được vi phạm'.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách 'cách đang làm' khỏi 'điều không được vi phạm'.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách 'cách đang làm' khỏi 'điều không được vi phạm'.
+
+=====================================================================================
+CÂU 010 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q010 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-first-principles-problem-decomposition] First Principles Problem Decomposition
+=====================================================================================
+ĐỀ BÀI:
+Quy trình cũ:
+Mọi báo cáo tuần phải là PDF 20 trang.
+
+Mục tiêu và ràng buộc thật:
+- Lãnh đạo cần phát hiện lệch KPI trước thứ Hai.
+- Dữ liệu nguồn đã có cấu trúc.
+- Các quyết định rủi ro cao phải truy vết được.
+
+Chỉ ra giả định ẩn, các ràng buộc (constraints) và một phương án dựng lại quy trình (workflow).
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xác định kết quả cần đạt (outcome) trước khi giữ lại bất kỳ định dạng nào.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định kết quả cần đạt (outcome) trước khi giữ lại bất kỳ định dạng nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định kết quả cần đạt (outcome) trước khi giữ lại bất kỳ định dạng nào.
+
+=====================================================================================
+CÂU 011 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q011 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-hcd-feedback-loop-routing] Hcd Feedback Loop Routing
+=====================================================================================
+ĐỀ BÀI:
+Kết quả nguyên mẫu (prototype):
+- Tính năng nhắc lịch chạy đúng kỹ thuật.
+- 8/10 người dùng nói họ không hề quên lịch.
+- Điểm đau (pain) thật là không biết cuộc họp nào cần ưu tiên.
+
+Nên quay lại bước nào sớm nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Xác định lại điểm đau (pain) và kết quả cần đạt (outcome).
+[B] Chỉnh màu nút trong nguyên mẫu (prototype) trước khi xác minh lại điểm đau.
+[C] Tăng số lần gửi nhắc.
+[D] Mở rộng dùng thử sau khi có thêm bằng chứng về nhu cầu ưu tiên cuộc họp.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xác định giả định nào bị bác bỏ: nhu cầu hay cách thực thi.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định giả định nào bị bác bỏ: nhu cầu hay cách thực thi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định giả định nào bị bác bỏ: nhu cầu hay cách thực thi.
+
+=====================================================================================
+CÂU 012 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d02-q012 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-hcd-feedback-loop-routing] Hcd Feedback Loop Routing
+=====================================================================================
+ĐỀ BÀI:
+Ghép từng phản hồi sau khi kiểm thử với bước sớm nhất cần quay lại.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Người dùng không gặp điểm đau (pain) mà nhóm đã giả định
+  (2) Điểm đau đúng nhưng họ cần cảnh báo theo nhóm thay vì từng cá nhân
+  (3) Luồng ý tưởng đúng nhưng nút xác nhận khiến họ gửi nhầm
+
+Cột Phải (Lựa chọn ghép):
+  (A) Xác định lại vấn đề (Define)
+  (B) Thiết kế lại cách giải (Ideate)
+  (C) Nguyên mẫu/tương tác
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 KẾT QUẢ GHÉP CẶP CHUẨN XÁC 100%:
+• Cặp 1: Người dùng không gặp điểm đau (pain) mà nhóm đã giả định ===> Ghép với: 
+• Cặp 2: Điểm đau đúng nhưng họ cần cảnh báo theo nhóm thay vì từng cá nhân ===> Ghép với: 
+• Cặp 3: Luồng ý tưởng đúng nhưng nút xác nhận khiến họ gửi nhầm ===> Ghép với: 
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Không cần quay lại vấn đề vì nhu cầu chưa bị bác bỏ; khi nhu cầu đúng nhưng cách giải sai thì quay về thiết kế ý tưởng; khi ma sát nằm ở thao tác thì quay về nguyên mẫu/tương tác.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi tầng giả định đầu tiên bị phản hồi phủ nhận.
+
+=====================================================================================
+CÂU 013 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q013 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-impact-effort-prioritization] Impact Effort Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Dữ liệu ước lượng (thang 1–5):
+- Cơ hội A: tác động (impact) 5; nỗ lực (effort) 5.
+- Cơ hội B: tác động (impact) 4; nỗ lực (effort) 2.
+- Cơ hội C: tác động (impact) 2; nỗ lực (effort) 1.
+
+Mục tiêu:
+Chọn một kết quả nhanh (quick win): tác động đáng kể với nỗ lực tương đối thấp.
+
+Nên ưu tiên cơ hội nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Cơ hội A
+[B] Cơ hội B
+[C] Cơ hội C
+[D] Chọn A vì tác động 5 quan trọng hơn nỗ lực 5
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Quick win phải đồng thời có tác động đáng kể và nỗ lực tương đối thấp.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Quick win phải đồng thời có tác động đáng kể và nỗ lực tương đối thấp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Quick win phải đồng thời có tác động đáng kể và nỗ lực tương đối thấp.
+
+=====================================================================================
+CÂU 014 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q014 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-impact-effort-prioritization] Impact Effort Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Các cơ hội:
+- X: tác động (impact) 5, nỗ lực (effort) 2; ước lượng dựa trên phỏng đoán.
+- Y: tác động (impact) 4, nỗ lực (effort) 3; ước lượng dựa trên nhật ký (log) ba tháng.
+
+Quyết định hiện tại:
+Nhóm chọn X.
+
+Giải thích quyết định tạm thời và nêu phép kiểm chứng tối thiểu có thể làm đổi thứ hạng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm ô nào có bằng chứng yếu nhất và hỏi phép đo nào sẽ thay đổi vị trí của nó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm ô nào có bằng chứng yếu nhất và hỏi phép đo nào sẽ thay đổi vị trí của nó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm ô nào có bằng chứng yếu nhất và hỏi phép đo nào sẽ thay đổi vị trí của nó.
+
+=====================================================================================
+CÂU 015 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q015 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-candidate-problem-prioritization] Candidate Problem Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Ba bài toán ứng viên:
+- A: 28 phiếu hỗ trợ có cùng điểm đau; người thực hiện và quy trình rõ; chưa đo hậu quả tài chính.
+- B: bên liên quan ước lượng tiết kiệm 500 giờ; chưa có nhật ký hoặc người thực hiện cụ thể.
+- C: 9 trường hợp có quy trình rõ; hậu quả tuân thủ cao; còn tranh luận về người phụ trách.
+
+Tạo danh sách ngắn tạm thời; ghi bằng chứng, điều chưa chắc chắn, điểm bất đồng và lý do loại hoặc chưa chọn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So chất lượng nguồn của từng nhận định trước khi so độ lớn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So chất lượng nguồn của từng nhận định trước khi so độ lớn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So chất lượng nguồn của từng nhận định trước khi so độ lớn.
+
+=====================================================================================
+CÂU 016 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q016 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-candidate-problem-prioritization] Candidate Problem Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Hai thẻ bài toán ứng viên:
+- Thẻ A: tác nhân (actor) rõ, có 12 phiếu hỗ trợ minh chứng, nhưng tác động (impact) chưa định lượng.
+- Thẻ B: ước lượng tiết kiệm 200 giờ, nhưng chưa xác định tác nhân hoặc quy trình (workflow).
+
+Chọn một bài toán ứng viên tạm thời; nêu lý do, điều chưa chắc chắn (uncertainty) và lý do chưa chọn thẻ còn lại.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So từng thẻ trên cùng các trường, không so điểm mạnh của thẻ này với điểm yếu khác loại của thẻ kia.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So từng thẻ trên cùng các trường, không so điểm mạnh của thẻ này với điểm yếu khác loại của thẻ kia.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng thẻ trên cùng các trường, không so điểm mạnh của thẻ này với điểm yếu khác loại của thẻ kia.
+
+=====================================================================================
+CÂU 017 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q017 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-rapid-problem-validation] Rapid Problem Validation
+=====================================================================================
+ĐỀ BÀI:
+Nhận định cần kiểm chứng:
+“Nhân viên kho mất nhiều thời gian tìm vị trí hàng trong ca đêm.”
+
+Phép kiểm chứng nhanh nào trực tiếp nhất?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Quan sát ca đêm và đo thời gian tìm hàng.
+[B] Khảo sát nhân viên kho xem họ có muốn dùng chatbot tra cứu vị trí hàng không.
+[C] Đọc báo cáo ngành về thời gian tìm hàng trong một kho khác.
+[D] So sánh thời gian tìm hàng với một kho khác mà không quan sát ca đêm.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phương pháp phải thu được dữ liệu về chính tác nhân, bước và thời gian trong nhận định.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Phương pháp phải thu được dữ liệu về chính tác nhân, bước và thời gian trong nhận định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phương pháp phải thu được dữ liệu về chính tác nhân, bước và thời gian trong nhận định.
+
+=====================================================================================
+CÂU 018 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q018 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-rapid-problem-validation] Rapid Problem Validation
+=====================================================================================
+ĐỀ BÀI:
+Kết quả phỏng vấn về quy trình duyệt nghỉ phép:
+- 5 người được phỏng vấn.
+- 3 người mất trên 20 phút.
+- 2 người hoàn thành dưới 3 phút vì dùng mẫu có sẵn.
+
+Viết kết luận kiểm chứng (validation) cân bằng và sửa bài toán ứng viên (candidate problem).
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi điều gì phân biệt hai nhóm và dữ liệu nào kiểm tra được điều đó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi điều gì phân biệt hai nhóm và dữ liệu nào kiểm tra được điều đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi điều gì phân biệt hai nhóm và dữ liệu nào kiểm tra được điều đó.
+
+=====================================================================================
+CÂU 019 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q019 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-existing-solution-gap-research] Existing Solution Gap Research
+=====================================================================================
+ĐỀ BÀI:
+Tài liệu có nguồn của một sản phẩm cho biết:
+- Nhận thư điện tử và trích mã đơn hàng.
+- Tra trạng thái giao hàng từ API.
+- Tạo nháp trả lời.
+
+Tài liệu không đề cập:
+- Xử lý khi API lỗi.
+- Đổi địa chỉ giao hàng.
+- Phê duyệt trước khi gửi.
+
+Viết ghi chú nghiên cứu gồm phạm vi quy trình đã được chứng minh, khoảng trống/rủi ro và bài học có thể tái sử dụng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Vẽ các bước được tài liệu nói tới rồi đánh dấu chỗ trống.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Vẽ các bước được tài liệu nói tới rồi đánh dấu chỗ trống.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Vẽ các bước được tài liệu nói tới rồi đánh dấu chỗ trống.
+
+=====================================================================================
+CÂU 020 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q020 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-existing-solution-gap-research] Existing Solution Gap Research
+=====================================================================================
+ĐỀ BÀI:
+Nhận định của nhà cung cấp:
+“Tự động hóa toàn bộ hỗ trợ khách hàng.”
+
+Bằng chứng có nguồn chỉ cho thấy:
+- Hệ thống phân loại phiếu hỗ trợ.
+- Hệ thống đề xuất bản nháp.
+- Không có dữ liệu về hành động, chuyển cấp hoặc lỗi.
+
+Viết ghi chú nghiên cứu gồm phạm vi đã được chứng minh, khoảng trống, rủi ro và bài học có thể dùng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết bốn dòng: bước có bằng chứng, bước thiếu, hậu quả và bài học.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết bốn dòng: bước có bằng chứng, bước thiếu, hậu quả và bài học.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết bốn dòng: bước có bằng chứng, bước thiếu, hậu quả và bài học.
+
+=====================================================================================
+CÂU 021 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q021 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-current-workflow-mapping] Current Workflow Mapping
+=====================================================================================
+ĐỀ BÀI:
+Dữ kiện quan sát:
+1. Bộ phận kinh doanh nhận biểu mẫu của khách hàng.
+2. Bộ phận kinh doanh nhập yêu cầu vào bảng tính.
+3. Kỹ sư giải pháp đọc bảng tính và kiểm tra tồn kho trong hệ thống ERP.
+4. Nếu thiếu hàng, kỹ sư gửi thư điện tử lại cho bộ phận kinh doanh.
+5. Bộ phận kinh doanh sửa biểu mẫu rồi gửi lại.
+
+Dữ liệu bổ sung:
+- 11/30 yêu cầu phải quay lại bước 4.
+- Chưa đo thời gian từng bước.
+
+Lập sơ đồ gồm người thực hiện, đầu vào/đầu ra, công cụ và điểm bàn giao; chỉ ra điểm ma sát có bằng chứng, nói rõ đã đủ dữ liệu để gọi là nút thắt hay chưa, và nêu điều chưa biết.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết mỗi bước theo mẫu người thực hiện → đầu vào → công cụ/hành động → đầu ra.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết mỗi bước theo mẫu người thực hiện → đầu vào → công cụ/hành động → đầu ra.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết mỗi bước theo mẫu người thực hiện → đầu vào → công cụ/hành động → đầu ra.
+
+=====================================================================================
+CÂU 022 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q022 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-current-workflow-mapping] Current Workflow Mapping
+=====================================================================================
+ĐỀ BÀI:
+Quy trình ghi nhận trong nhật ký:
+1. Khách gửi yêu cầu qua thư điện tử.
+2. Bộ phận chăm sóc khách hàng (CS) chép nội dung vào CRM.
+3. Chuyên viên tra chính sách trong wiki.
+4. CS soạn câu trả lời.
+5. Trưởng nhóm duyệt hồ sơ trên 10 triệu đồng.
+
+- Viết quy trình hiện trạng gồm người thực hiện, đầu vào/đầu ra và điểm bàn giao.
+- Chỉ ra điểm nào đáng đo thêm, có đủ dữ liệu để định lượng nút thắt hay chưa, và điều gì còn thiếu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết mỗi bước dưới dạng người thực hiện: đầu vào → hành động → đầu ra.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết mỗi bước dưới dạng người thực hiện: đầu vào → hành động → đầu ra.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết mỗi bước dưới dạng người thực hiện: đầu vào → hành động → đầu ra.
+
+=====================================================================================
+CÂU 023 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q023 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-future-workflow-redesign] Future Workflow Redesign
+=====================================================================================
+ĐỀ BÀI:
+Quy trình hiện tại:
+- CS chép yêu cầu vào CRM, tra ba wiki rồi soạn bản nháp.
+- Trưởng nhóm duyệt mọi yêu cầu.
+
+Dữ kiện:
+- Tra wiki chiếm 18/25 phút.
+- Yêu cầu rủi ro cao chiếm 8%.
+
+Thiết kế quy trình tương lai, nêu rõ ranh giới giữa AI, luật tự động và con người; đường lui khi lỗi; cùng hai chỉ số trước/sau.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ nguyên mục tiêu, cải thiện đúng bước 18 phút và đặt điểm kiểm soát ở hồ sơ có hậu quả cao.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ nguyên mục tiêu, cải thiện đúng bước 18 phút và đặt điểm kiểm soát ở hồ sơ có hậu quả cao.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ nguyên mục tiêu, cải thiện đúng bước 18 phút và đặt điểm kiểm soát ở hồ sơ có hậu quả cao.
+
+=====================================================================================
+CÂU 024 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q024 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-future-workflow-redesign] Future Workflow Redesign
+=====================================================================================
+ĐỀ BÀI:
+Một đề xuất sàng lọc tuyển dụng:
+1. Mô hình chấm điểm CV rồi tự loại mọi hồ sơ dưới 0,6.
+2. Hệ thống không lưu lý do cho điểm.
+3. Khi dịch vụ lỗi, hồ sơ bị bỏ khỏi hàng đợi.
+4. Nhân viên chỉ xem các hồ sơ nằm sát ngưỡng.
+
+Ràng buộc:
+- Quyết định loại ứng viên phải giải thích được.
+- Hệ thống vẫn phải tiếp nhận hồ sơ khi mô hình lỗi.
+
+Hãy chỉ ra ba điểm không an toàn trong đề xuất, vẽ lại ranh giới người–máy, nêu đường lui và chọn hai chỉ số để theo dõi rủi ro.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm nơi hệ thống tự quyết, nơi làm mất hồ sơ và nơi không để lại lý do; đó là ba ranh giới cần sửa trước.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm nơi hệ thống tự quyết, nơi làm mất hồ sơ và nơi không để lại lý do; đó là ba ranh giới cần sửa trước.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm nơi hệ thống tự quyết, nơi làm mất hồ sơ và nơi không để lại lý do; đó là ba ranh giới cần sửa trước.
+
+=====================================================================================
+CÂU 025 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q025 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-baseline-bottleneck-quantification] Baseline Bottleneck Quantification
+=====================================================================================
+ĐỀ BÀI:
+Thời gian trung bình theo bước:
+- Nhận hồ sơ: 2 phút.
+- Kiểm tra thủ công: 17 phút.
+- Phê duyệt: 4 phút.
+
+Nút thắt theo thời gian xử lý hiện có là bước nào?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Nhận hồ sơ
+[B] Kiểm tra thủ công
+[C] Phê duyệt
+[D] Không bước nào vì chưa có target
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So cùng một chỉ số và cùng đơn vị ở từng bước.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So cùng một chỉ số và cùng đơn vị ở từng bước.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So cùng một chỉ số và cùng đơn vị ở từng bước.
+
+=====================================================================================
+CÂU 026 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q026 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-baseline-bottleneck-quantification] Baseline Bottleneck Quantification
+=====================================================================================
+ĐỀ BÀI:
+Thông tin hiện có:
+- Mục tiêu là giảm “thời gian xử lý yêu cầu”.
+- Khối lượng là 2.000 yêu cầu/tháng.
+- Chưa đo thời gian xử lý hay lỗi.
+
+Viết kế hoạch đường cơ sở–mục tiêu–đo lường trung thực và nói rõ vì sao chưa thể kết luận nút thắt.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nêu chỉ số, đơn vị, điểm đo và khoảng thu thập trước khi viết mục tiêu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nêu chỉ số, đơn vị, điểm đo và khoảng thu thập trước khi viết mục tiêu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nêu chỉ số, đơn vị, điểm đo và khoảng thu thập trước khi viết mục tiêu.
+
+=====================================================================================
+CÂU 027 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q027 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-output-input-metrics] Output Input Metrics
+=====================================================================================
+ĐỀ BÀI:
+Kết quả sản phẩm cần cải thiện:
+Tăng tỷ lệ hồ sơ được duyệt đúng ngay lần đầu.
+
+- Nêu hai chỉ số đầu vào (input metric) mà đội có thể tác động.
+- Viết giả thuyết nối chỉ số đầu vào với chỉ số kết quả.
+- Nêu phép kiểm tra để tránh đồng nhất độ chính xác của mô hình với kết quả sản phẩm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi đội có thể can thiệp trực tiếp vào chỉ số nào trước khi nhìn vào kết quả cuối.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi đội có thể can thiệp trực tiếp vào chỉ số nào trước khi nhìn vào kết quả cuối.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi đội có thể can thiệp trực tiếp vào chỉ số nào trước khi nhìn vào kết quả cuối.
+
+=====================================================================================
+CÂU 028 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q028 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-output-input-metrics] Output Input Metrics
+=====================================================================================
+ĐỀ BÀI:
+Chỉ số kết quả (output metric):
+Giảm tỷ lệ yêu cầu phải mở lại.
+
+- Chọn hai chỉ số đầu vào hợp lý.
+- Viết một giả thuyết có thể kiểm chứng.
+- Không khẳng định quan hệ nhân quả đã được chứng minh.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết “nếu chỉ số đầu vào thay đổi thì kết quả dự kiến…” rồi nêu phép quan sát hoặc thử nghiệm.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết “nếu chỉ số đầu vào thay đổi thì kết quả dự kiến…” rồi nêu phép quan sát hoặc thử nghiệm.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết “nếu chỉ số đầu vào thay đổi thì kết quả dự kiến…” rồi nêu phép quan sát hoặc thử nghiệm.
+
+=====================================================================================
+CÂU 029 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q029 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-task-suitability] Ai Task Suitability
+=====================================================================================
+ĐỀ BÀI:
+Chọn tất cả tác vụ có lý do thuyết phục để cân nhắc AI thay vì chỉ dùng luật cố định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Phân loại thư điện tử viết tự do thành nhiều ý định biến thiên.
+[B] Cộng VAT theo một công thức đã chốt.
+[C] Gợi ý sản phẩm cá nhân hóa từ nhiều tín hiệu hành vi thay đổi, khi chưa có luật cố định đủ bao phủ.
+[D] Kiểm tra mã đơn có đúng 10 chữ số.
+[E] Tóm tắt hàng nghìn phản hồi ngôn ngữ tự nhiên.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách tác vụ ngôn ngữ biến thiên khỏi phép kiểm đã có luật hoàn chỉnh.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách tác vụ ngôn ngữ biến thiên khỏi phép kiểm đã có luật hoàn chỉnh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách tác vụ ngôn ngữ biến thiên khỏi phép kiểm đã có luật hoàn chỉnh.
+
+=====================================================================================
+CÂU 030 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q030 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-task-suitability] Ai Task Suitability
+=====================================================================================
+ĐỀ BÀI:
+Bước kiểm tra yêu cầu hoàn tiền gồm:
+1. Đọc lý do viết tự do.
+2. Đối chiếu số ngày với chính sách.
+3. Quyết định trả tiền.
+
+Phân phần nên dùng AI, luật và con người; nêu một ràng buộc có thể khiến không dùng AI.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xem phần nào có biến thiên ngôn ngữ và phần nào có điều kiện bất biến.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xem phần nào có biến thiên ngôn ngữ và phần nào có điều kiện bất biến.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xem phần nào có biến thiên ngôn ngữ và phần nào có điều kiện bất biến.
+
+=====================================================================================
+CÂU 031 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d02-q031 (Độ khó: Vừa | Điểm: 5)
+Chủ đề kiến thức (KC): [kc-llm-boundary-support-selection] Llm Boundary Support Selection
+=====================================================================================
+ĐỀ BÀI:
+Ghép từng yêu cầu với cơ chế chịu trách nhiệm trực tiếp nhất.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Diễn giải thư điện tử tự do
+  (2) Tính thuế theo công thức cố định
+  (3) Lấy chính sách nội bộ mới nhất
+  (4) Tìm tuyến giao hàng tối ưu
+  (5) Gửi lệnh đặt lịch
+
+Cột Phải (Lựa chọn ghép):
+  (A) Mô hình ngôn ngữ lớn (LLM)
+  (B) Hàm xác định (deterministic function)
+  (C) Truy hồi (retrieval)
+  (D) Bộ tối ưu/lý thuyết đồ thị (optimizer/graph)
+  (E) Công cụ hoặc hành động bên ngoài
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi mỗi yêu cầu cần loại dữ liệu hoặc sự bảo đảm nào.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi mỗi yêu cầu cần loại dữ liệu hoặc sự bảo đảm nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi mỗi yêu cầu cần loại dữ liệu hoặc sự bảo đảm nào.
+
+=====================================================================================
+CÂU 032 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q032 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-llm-boundary-support-selection] Llm Boundary Support Selection
+=====================================================================================
+ĐỀ BÀI:
+Trợ lý du lịch phải:
+- Hiểu yêu cầu của người dùng.
+- Tra giá hiện tại.
+- Tối ưu lịch theo giờ mở cửa.
+- Chỉ đặt vé sau khi người dùng xác nhận.
+
+Nêu trách nhiệm của mô hình ngôn ngữ lớn (LLM) và ba cơ chế hỗ trợ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đánh dấu phần cần dữ liệu mới, phép bảo đảm và hành động ngoài hệ thống.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đánh dấu phần cần dữ liệu mới, phép bảo đảm và hành động ngoài hệ thống.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu phần cần dữ liệu mới, phép bảo đảm và hành động ngoài hệ thống.
+
+=====================================================================================
+CÂU 033 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q033 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-readiness-evidence] Ai Readiness Evidence
+=====================================================================================
+ĐỀ BÀI:
+Hồ sơ thử nghiệm (pilot) hiện có:
+- Có quy trình và người chịu trách nhiệm.
+- Chưa có bộ kiểm thử.
+- Chưa thống nhất mức lỗi chấp nhận được.
+- Dữ liệu đầu vào mới có 20 mẫu.
+
+Chọn tất cả kết luận đúng về mức sẵn sàng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Quy trình và người chịu trách nhiệm đã được ghi nhận.
+[B] Bằng chứng đánh giá còn thiếu.
+[C] Mức lỗi chấp nhận được còn thiếu.
+[D] 20 mẫu đã đủ để kết luận dữ liệu đại diện cho toàn bộ đầu vào.
+[E] Đã có quy trình và người chịu trách nhiệm nên có thể triển khai ngay.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đánh dấu riêng từng bằng chứng: đã có hay còn thiếu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đánh dấu riêng từng bằng chứng: đã có hay còn thiếu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu riêng từng bằng chứng: đã có hay còn thiếu.
+
+=====================================================================================
+CÂU 034 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q034 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-readiness-evidence] Ai Readiness Evidence
+=====================================================================================
+ĐỀ BÀI:
+Thông tin về ứng viên:
+- Có 500 nhật ký nhưng không rõ sự đồng ý sử dụng dữ liệu.
+- Có đường cơ sở từ quy trình thủ công.
+- Bộ kiểm thử chỉ có ca thuận lợi.
+- Chưa có người chịu trách nhiệm khi hệ thống lỗi.
+
+Rà từng khoảng trống và gán bước kiểm chứng tiếp theo cùng người chịu trách nhiệm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi khoảng trống cần một bằng chứng cần tạo hoặc một người chịu trách nhiệm tiếp theo.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi khoảng trống cần một bằng chứng cần tạo hoặc một người chịu trách nhiệm tiếp theo.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi khoảng trống cần một bằng chứng cần tạo hoặc một người chịu trách nhiệm tiếp theo.
+
+=====================================================================================
+CÂU 035 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q035 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-build-buy-decision] Ai Build Buy Decision
+=====================================================================================
+ĐỀ BÀI:
+- Tóm tắt biên bản họp không phải khác biệt cốt lõi.
+- Dữ liệu được phép gửi cho nhà cung cấp đã qua rà soát bảo mật.
+- Đội chỉ có hai kỹ sư và cần thử nghiệm (pilot) trong 3 tuần.
+- Nhà cung cấp chưa chứng minh hỗ trợ tiếng Việt chuyên ngành.
+
+Chọn phương án tự xây (build), điều chỉnh trên nền có sẵn (boost) hoặc mua dịch vụ (buy) ở thời điểm hiện tại; nêu đánh đổi và bằng chứng có thể làm đảo quyết định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So thứ gì cần tự kiểm soát với thứ gì có thể mua như một năng lực phổ biến.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So thứ gì cần tự kiểm soát với thứ gì có thể mua như một năng lực phổ biến.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So thứ gì cần tự kiểm soát với thứ gì có thể mua như một năng lực phổ biến.
+
+=====================================================================================
+CÂU 036 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q036 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-build-buy-decision] Ai Build Buy Decision
+=====================================================================================
+ĐỀ BÀI:
+- Chẩn đoán lỗi thiết bị là khác biệt cốt lõi của sản phẩm.
+- Dữ liệu không được rời mạng riêng (private network).
+- Đội có năng lực học máy (ML) mạnh.
+- Thời hạn bản trình diễn là 6 tuần.
+
+Chọn phương án tự xây (build), điều chỉnh nền có sẵn (boost) hoặc mua dịch vụ (buy) ở thời điểm hiện tại và nêu bằng chứng có thể đổi quyết định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nêu phương án cho thời hạn trước mắt và phương án dài hạn nếu hai phương án khác nhau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nêu phương án cho thời hạn trước mắt và phương án dài hạn nếu hai phương án khác nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nêu phương án cho thời hạn trước mắt và phương án dài hạn nếu hai phương án khác nhau.
+
+=====================================================================================
+CÂU 037 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q037 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-rag-finetuning-selection] Rag Finetuning Selection
+=====================================================================================
+ĐỀ BÀI:
+Trạng thái hệ thống:
+- Câu trả lời thường dùng chính sách cũ sau mỗi lần tài liệu cập nhật.
+- Khi được cung cấp đúng chính sách, mô hình làm đúng định dạng và giọng điệu.
+- Không có bộ dữ liệu đầu vào–đầu ra đã rà soát để huấn luyện.
+
+Chọn truy hồi/công cụ (retrieval/tool) hay tinh chỉnh mô hình (fine-tuning); nêu cách kiểm chứng và đánh đổi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi lỗi nằm ở kiến thức thay đổi hay ở cách mô hình hành xử.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi lỗi nằm ở kiến thức thay đổi hay ở cách mô hình hành xử.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi lỗi nằm ở kiến thức thay đổi hay ở cách mô hình hành xử.
+
+=====================================================================================
+CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q038 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-rag-finetuning-selection] Rag Finetuning Selection
+=====================================================================================
+ĐỀ BÀI:
+Trạng thái hiện tại:
+- Mô hình truy hồi đúng tài liệu pháp lý.
+- Mô hình thường viết sai định dạng báo cáo chuyên ngành.
+- Đội có 8.000 cặp đầu vào–đầu ra đã rà soát.
+
+Đề xuất bước thích nghi và nêu cách kiểm chứng/đánh đổi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách “biết gì” khỏi “trả lời theo cách nào”.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách “biết gì” khỏi “trả lời theo cách nào”.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách “biết gì” khỏi “trả lời theo cách nào”.
+
+=====================================================================================
+CÂU 039 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q039 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-system-component-decomposition] Ai System Component Decomposition
+=====================================================================================
+ĐỀ BÀI:
+Trạng thái hiện tại:
+Một “trợ lý bảo trì” chỉ có LLM và lịch sử trò chuyện.
+
+Quy trình phải:
+1. Tra sổ tay đúng phiên bản thiết bị.
+2. Lập kế hoạch kiểm tra.
+3. Đọc số đo cảm biến hiện tại.
+4. Tạo lệnh công việc sau khi kỹ thuật viên duyệt.
+
+Phân rã mô hình, ngữ cảnh, bước lập kế hoạch và công cụ; chỉ ra ranh giới hoặc phần phụ thuộc còn thiếu.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Gán mỗi yêu cầu cho thành phần có thể bảo đảm trực tiếp yêu cầu đó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Gán mỗi yêu cầu cho thành phần có thể bảo đảm trực tiếp yêu cầu đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Gán mỗi yêu cầu cho thành phần có thể bảo đảm trực tiếp yêu cầu đó.
+
+=====================================================================================
+CÂU 040 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q040 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-system-component-decomposition] Ai System Component Decomposition
+=====================================================================================
+ĐỀ BÀI:
+Trạng thái hiện tại:
+Sản phẩm “trợ lý mua hàng” chỉ có LLM và lời nhắc.
+
+Quy trình phải:
+1. Nhớ ngân sách.
+2. So tồn kho.
+3. Xin duyệt.
+4. Đặt đơn.
+
+Phân rã bốn thành phần và chỉ ra ranh giới thiếu khiến quy trình chưa đáng tin.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo luồng từ ý định đến hành động gây tác động bên ngoài và hỏi dữ liệu/quyền nằm ở đâu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo luồng từ ý định đến hành động gây tác động bên ngoài và hỏi dữ liệu/quyền nằm ở đâu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo luồng từ ý định đến hành động gây tác động bên ngoài và hỏi dữ liệu/quyền nằm ở đâu.
+
+=====================================================================================
+CÂU 041 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d02-q041 (Độ khó: Dễ | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-deterministic-probabilistic-task-allocation] Deterministic Probabilistic Task Allocation
+=====================================================================================
+ĐỀ BÀI:
+Ghép từng bước với cơ chế nên chịu trách nhiệm chính.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Tóm tắt lý do khiếu nại
+  (2) Kiểm tra khoản hoàn tiền không vượt số tiền đã trả
+  (3) Phát hiện mã đơn có trong cơ sở dữ liệu
+  (4) Soạn lời giải thích thân thiện
+
+Cột Phải (Lựa chọn ghép):
+  (A) Mô hình xử lý xác suất
+  (B) Kiểm tra theo luật cố định
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Nếu sai một lần cũng vi phạm luật cứng, ưu tiên cơ chế xác định.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nếu sai một lần cũng vi phạm luật cứng, ưu tiên cơ chế xác định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu sai một lần cũng vi phạm luật cứng, ưu tiên cơ chế xác định.
+
+=====================================================================================
+CÂU 042 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q042 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-deterministic-probabilistic-task-allocation] Deterministic Probabilistic Task Allocation
+=====================================================================================
+ĐỀ BÀI:
+Quy trình duyệt chi phí dùng LLM để đọc mô tả.
+
+Các điều kiện bất biến:
+- Tổng phải bằng các dòng chi tiết.
+- Người duyệt không được là người nộp.
+- Khoản trên 50 triệu cần giám đốc tài chính (CFO).
+
+Thiết kế cách phân việc và các điểm kiểm soát.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đặt từng câu “phải luôn đúng” thành một phép kiểm tra trước khi ghi nhận quyết định.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đặt từng câu “phải luôn đúng” thành một phép kiểm tra trước khi ghi nhận quyết định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đặt từng câu “phải luôn đúng” thành một phép kiểm tra trước khi ghi nhận quyết định.
+
+=====================================================================================
+CÂU 043 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q043 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-rule-workflow-agent-selection] Rule Workflow Agent Selection
+=====================================================================================
+ĐỀ BÀI:
+Tác vụ chạy mỗi đêm:
+- Đọc tệp CSV có cùng cấu trúc.
+- Áp công thức thuế cố định.
+- Xuất báo cáo.
+- Các bước biết trước và không có đầu vào ngôn ngữ.
+
+Cấp triển khai phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Quy trình thủ công theo bảng kiểm
+[B] Luật/kịch bản tự động (rule/script)
+[C] Quy trình dùng LLM (LLM workflow)
+[D] Tác nhân tự lập kế hoạch (agent)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [B]
+[B] Luật/kịch bản tự động (rule/script)
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Logic cố định và cấu trúc dữ liệu ổn định nên luật/kịch bản tự động là cấp đơn giản nhất nhưng đã đủ dùng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn cấp thấp nhất vẫn đáp ứng mức biến thiên và mức bảo đảm cần thiết.
+
+=====================================================================================
+CÂU 044 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q044 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-rule-workflow-agent-selection] Rule Workflow Agent Selection
+=====================================================================================
+ĐỀ BÀI:
+Tác vụ nghiên cứu phải:
+- Tự tìm chủ đề con chưa biết trước.
+- Chọn nguồn.
+- Điều chỉnh kế hoạch theo kết quả.
+- Dừng khi đủ bằng chứng.
+
+Kiểm soát:
+Mọi trích dẫn cuối đều được người duyệt.
+
+Cấp triển khai phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Luật đơn với danh sách chủ đề con cố định
+[B] Quy trình cố định, không rẽ nhánh hoặc lập kế hoạch lại
+[C] Tác nhân có công cụ giới hạn và người duyệt
+[D] Quy trình thủ công để người dùng tự chọn toàn bộ nguồn
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [C]
+[C] Tác nhân có công cụ giới hạn và người duyệt
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Chủ đề con và kế hoạch thay đổi theo quan sát nên tác nhân phù hợp, nhưng phải giới hạn công cụ và giữ bước người duyệt.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi các bước có biết trước hay hệ thống phải tự lập kế hoạch lại.
+
+=====================================================================================
+CÂU 045 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q045 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-prompt-chaining-design] Prompt Chaining Design
+=====================================================================================
+ĐỀ BÀI:
+Cần thiết kế chuỗi xử lý:
+Phân loại hợp đồng → trích điều khoản → kiểm đủ trường bắt buộc → tạo bản tóm tắt rủi ro.
+
+Hãy:
+- Nêu đầu vào và đầu ra của từng lượt gọi mô hình.
+- Đặt điểm kiểm soát để từ chối hoặc thử lại khi đầu ra không đạt.
+- Nêu sự phụ thuộc giữa các bước và đánh đổi giữa độ trễ với khả năng kiểm soát.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết hợp đồng đầu vào/đầu ra của từng bước, rồi đặt điểm kiểm soát trước khi truyền kết quả sang bước sau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết hợp đồng đầu vào/đầu ra của từng bước, rồi đặt điểm kiểm soát trước khi truyền kết quả sang bước sau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết hợp đồng đầu vào/đầu ra của từng bước, rồi đặt điểm kiểm soát trước khi truyền kết quả sang bước sau.
+
+=====================================================================================
+CÂU 046 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q046 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-prompt-chaining-design] Prompt Chaining Design
+=====================================================================================
+ĐỀ BÀI:
+Một nhóm đề xuất một lượt gọi duy nhất:
+“Đọc hồ sơ → quyết định đạt/không đạt → viết giải thích.”
+
+Vấn đề quan sát được:
+- Hồ sơ đôi khi thiếu trường bắt buộc.
+- Không biết quyết định dựa trên phần dữ liệu nào.
+- Khi lượt gọi lỗi, toàn bộ hồ sơ bị trả về trạng thái không rõ.
+
+Hãy phản biện thiết kế này và chuyển nó thành tối đa ba bước có hợp đồng đầu vào/đầu ra, điểm kiểm soát và đường lui; nêu đánh đổi về độ trễ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hãy giữ lại trạng thái hồ sơ và trường đầu vào; đừng để lỗi một lượt biến thành quyết định không rõ nguồn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hãy giữ lại trạng thái hồ sơ và trường đầu vào; đừng để lỗi một lượt biến thành quyết định không rõ nguồn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy giữ lại trạng thái hồ sơ và trường đầu vào; đừng để lỗi một lượt biến thành quyết định không rõ nguồn.
+
+=====================================================================================
+CÂU 047 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q047 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-routing-pattern-design] Routing Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Ba lớp yêu cầu:
+- Tra trạng thái đơn hàng.
+- Thay đổi địa chỉ trước khi giao.
+- Báo mất thẻ thanh toán.
+
+Tín hiệu của bộ định tuyến (router):
+- Độ tin cậy của ý định.
+- Trạng thái đơn hàng.
+- Cờ rủi ro.
+
+Hãy thiết kế các nhánh xử lý, ngưỡng và phương án dự phòng; nêu hậu quả khi chuyển nhầm nhánh.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ưu tiên hành động và rủi ro trước, rồi mới tối ưu chi phí.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Ưu tiên hành động và rủi ro trước, rồi mới tối ưu chi phí.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ưu tiên hành động và rủi ro trước, rồi mới tối ưu chi phí.
+
+=====================================================================================
+CÂU 048 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q048 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-routing-pattern-design] Routing Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Ba lớp yêu cầu:
+- Câu hỏi thường gặp (FAQ).
+- Đặt lại mật khẩu.
+- Khiếu nại tài chính.
+
+Điều kiện:
+Bộ định tuyến (router) có thể trả về độ tin cậy thấp.
+
+Hãy thiết kế các nhánh xử lý, nêu rủi ro chuyển nhầm và phương án dự phòng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Thêm một lớp ‘không chắc chắn’ trước khi tối ưu các nhánh xử lý.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Thêm một lớp ‘không chắc chắn’ trước khi tối ưu các nhánh xử lý.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thêm một lớp ‘không chắc chắn’ trước khi tối ưu các nhánh xử lý.
+
+=====================================================================================
+CÂU 049 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q049 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-parallelization-pattern-design] Parallelization Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Bài toán:
+Một báo cáo cần phân tích độc lập ba nguồn:
+- Tài chính.
+- Pháp lý.
+- Phản hồi khách hàng.
+
+Điều kiện:
+Ba kết quả phân tích chỉ được tổng hợp sau khi các nhánh hoàn tất.
+
+Hãy chọn tất cả thiết kế đúng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Chạy ba phân tích song song nếu cùng nhận đầu vào đã chuẩn hóa.
+[B] Định nghĩa schema đầu ra chung cho bộ tổng hợp (aggregator).
+[C] Cho nhánh pháp lý dùng kết quả tài chính chưa hoàn thành nhưng vẫn gọi là chạy song song.
+[D] Quy định xử lý khi một nhánh hết thời gian.
+[E] Fan-out có thể giảm tổng số token vì các nhánh chạy song song.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Kiểm tra dependency và cách merge trước khi chạy song song.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra dependency và cách merge trước khi chạy song song.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra dependency và cách merge trước khi chạy song song.
+
+=====================================================================================
+CÂU 050 [🟡 Tính toán điền số (Numeric)] - Mã: d02-q050 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-parallelization-pattern-design] Parallelization Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Dữ liệu:
+- Số báo cáo: 40.
+- Mỗi báo cáo fan-out thành 3 nhánh.
+- Mỗi nhánh dùng 2.000 token.
+- Bỏ qua token của bộ tổng hợp (aggregator).
+
+Tính tổng số token của các nhánh.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: token
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nhân số báo cáo, số nhánh và token của mỗi nhánh.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhân số báo cáo, số nhánh và token của mỗi nhánh.
+
+=====================================================================================
+CÂU 051 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q051 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-orchestrator-workers-pattern-design] Orchestrator Workers Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Thiết kế mô hình orchestrator–workers để lập hồ sơ cạnh tranh cho một thị trường mới, nơi chưa biết trước số đối thủ và nguồn thông tin.
+
+Bài làm cần nêu:
+- Cách sinh và giới hạn nhiệm vụ con.
+- Hợp đồng đầu vào/đầu ra của worker.
+- Cách loại trùng và tổng hợp kết quả.
+- Ngân sách, điều kiện dừng và cách xử lý lỗi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Định nghĩa hợp đồng đầu vào/đầu ra và điều kiện dừng trước khi tăng số worker.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Định nghĩa hợp đồng đầu vào/đầu ra và điều kiện dừng trước khi tăng số worker.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Định nghĩa hợp đồng đầu vào/đầu ra và điều kiện dừng trước khi tăng số worker.
+
+=====================================================================================
+CÂU 052 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q052 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-orchestrator-workers-pattern-design] Orchestrator Workers Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Một thiết kế orchestrator–workers đang được đề xuất:
+- Orchestrator tạo ngay 50 worker cho mọi chủ đề có thể nghĩ ra.
+- Mỗi worker tự tìm nguồn, không có định dạng đầu ra chung.
+- Bộ tổng hợp chỉ nối các đoạn văn, không loại trùng hoặc giữ mâu thuẫn.
+- Không có ngân sách và không có điều kiện dừng.
+
+Hãy chỉ ra bốn rủi ro của thiết kế này và đề xuất các rào chắn về số nhánh, hợp đồng đầu ra, tổng hợp bằng chứng và điều kiện dừng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm cả lỗi bùng nổ chi phí lẫn lỗi mất nguồn/mâu thuẫn; một câu trả lời chỉ nói 'giới hạn số worker' là chưa đủ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm cả lỗi bùng nổ chi phí lẫn lỗi mất nguồn/mâu thuẫn; một câu trả lời chỉ nói 'giới hạn số worker' là chưa đủ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm cả lỗi bùng nổ chi phí lẫn lỗi mất nguồn/mâu thuẫn; một câu trả lời chỉ nói 'giới hạn số worker' là chưa đủ.
+
+=====================================================================================
+CÂU 053 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d02-q053 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-evaluator-optimizer-pattern-design] Evaluator Optimizer Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Điều kiện:
+- Bản nháp chưa đạt yêu cầu.
+- Vẫn còn ngân sách cho các vòng lặp.
+
+Hãy sắp xếp đúng một vòng evaluator–optimizer.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Bộ sinh (Generator) sửa đầu ra theo phản hồi
+  - [B] Bộ đánh giá (Evaluator) chấm theo tiêu chí
+  - [C] Bộ sinh (Generator) tạo bản nháp
+  - [D] Bộ đánh giá (Evaluator) trả phản hồi cụ thể cho các tiêu chí chưa đạt
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Theo luồng đầu ra → tiêu chí → phản hồi → sửa lại.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo luồng đầu ra → tiêu chí → phản hồi → sửa lại.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo luồng đầu ra → tiêu chí → phản hồi → sửa lại.
+
+=====================================================================================
+CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q054 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-evaluator-optimizer-pattern-design] Evaluator Optimizer Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu chất lượng cho thư điện tử pháp lý:
+- Có trích dẫn hợp lệ.
+- Không hứa vượt chính sách.
+- Ngôn ngữ rõ ràng.
+
+Hãy thiết kế evaluator–optimizer gồm tiêu chí, phản hồi và điều kiện dừng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết tiêu chí đạt/không đạt có thể quan sát được và hành động sau khi không đạt.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết tiêu chí đạt/không đạt có thể quan sát được và hành động sau khi không đạt.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết tiêu chí đạt/không đạt có thể quan sát được và hành động sau khi không đạt.
+
+=====================================================================================
+CÂU 055 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q055 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-automation-augmentation-role-selection] Automation Augmentation Role Selection
+=====================================================================================
+ĐỀ BÀI:
+Quy trình xử lý khiếu nại y tế:
+1. Trích mã hồ sơ.
+2. Gom tài liệu liên quan.
+3. Đề xuất mức độ ưu tiên.
+4. Gửi quyết định cuối cho bệnh nhân.
+
+Hãy chọn tự động hóa (automate) hoặc hỗ trợ con người (augment) cho từng bước; nêu trách nhiệm và chỉ số đo riêng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi bước nào có thể đảo ngược và bước nào tạo ra phán đoán hoặc tác động bên ngoài.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi bước nào có thể đảo ngược và bước nào tạo ra phán đoán hoặc tác động bên ngoài.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi bước nào có thể đảo ngược và bước nào tạo ra phán đoán hoặc tác động bên ngoài.
+
+=====================================================================================
+CÂU 056 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q056 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-automation-augmentation-role-selection] Automation Augmentation Role Selection
+=====================================================================================
+ĐỀ BÀI:
+Một đề xuất tự động hóa tín dụng:
+- Mô hình đọc toàn bộ hồ sơ và tự phê duyệt khoản dưới 100 triệu.
+- Hồ sơ thiếu giấy tờ bị từ chối ngay.
+- Nhân viên chỉ xem khi khách hàng khiếu nại.
+
+Hãy phản biện đề xuất này theo bốn bước: trích dữ liệu, phát hiện thiếu, đề xuất hạn mức và quyết định giải ngân. Viết lại đường phân công tự động/hỗ trợ/con người, nêu điểm chặn bắt buộc và ba chỉ số phải theo dõi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng dùng ngưỡng tiền để thay cho kiểm soát; hãy hỏi bước nào có thể sửa lại và bước nào gây hậu quả không đảo ngược.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng dùng ngưỡng tiền để thay cho kiểm soát; hãy hỏi bước nào có thể sửa lại và bước nào gây hậu quả không đảo ngược.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng dùng ngưỡng tiền để thay cho kiểm soát; hãy hỏi bước nào có thể sửa lại và bước nào gây hậu quả không đảo ngược.
+
+=====================================================================================
+CÂU 057 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d02-q057 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-phased-autonomy-escalation] Phased Autonomy Escalation
+=====================================================================================
+ĐỀ BÀI:
+Sắp xếp lộ trình tăng mức tự chủ (autonomy) an toàn từ thấp đến cao.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Tự động hóa có giám sát và can thiệp
+  - [B] Gợi ý cho người dùng tự thực hiện
+  - [C] Tạo nháp bắt buộc người duyệt
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Xếp theo việc ai thực hiện tác động bên ngoài và bằng chứng cần có.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xếp theo việc ai thực hiện tác động bên ngoài và bằng chứng cần có.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xếp theo việc ai thực hiện tác động bên ngoài và bằng chứng cần có.
+
+=====================================================================================
+CÂU 058 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q058 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-phased-autonomy-escalation] Phased Autonomy Escalation
+=====================================================================================
+ĐỀ BÀI:
+Phạm vi đã kiểm chứng:
+- Hệ thống soạn thư điện tử nội bộ, rủi ro thấp.
+- Đã xem xét 2.000 trường hợp đại diện.
+- Không có lỗi nghiêm trọng trong kiểm thử.
+
+Điều kiện vận hành:
+- Chính sách đổi hàng tuần.
+- Có nút can thiệp.
+
+Bước tiếp theo hợp lý nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Mở tự động gửi ngoài phạm vi đã kiểm chứng và bỏ bước xem xét vì mẫu thử không có lỗi nghiêm trọng
+[B] Tự động hóa có giám sát trong phạm vi giới hạn, vẫn giữ kiểm tra chính sách và nút dừng khẩn cấp
+[C] Giữ toàn bộ quy trình thủ công dù thư điện tử nội bộ rủi ro thấp và dữ liệu kiểm thử đang tốt
+[D] Tắt ghi log và kiểm tra chính sách để giảm chi phí vận hành, dù chính sách thay đổi hàng tuần
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Chỉ tăng một pha, không xóa các kiểm soát đã tạo ra bằng chứng.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ tăng một pha, không xóa các kiểm soát đã tạo ra bằng chứng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ tăng một pha, không xóa các kiểm soát đã tạo ra bằng chứng.
+
+=====================================================================================
+CÂU 059 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q059 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-clarification-control-placement] Clarification Control Placement
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu của người dùng:
+“Đặt giúp tôi vé chiều mai.”
+
+Thông tin hệ thống đã biết:
+- Thành phố đi.
+- Thành phố đến.
+- Ngân sách tối đa 2 triệu.
+
+Nhánh cần chọn:
+- Khởi hành 13–16h.
+- Khởi hành 16–19h.
+
+Hãy viết một câu hỏi làm rõ ngắn nhất để chọn nhánh tìm vé.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Chỉ hỏi trường còn trống trong dữ liệu định tuyến.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chỉ hỏi trường còn trống trong dữ liệu định tuyến.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ hỏi trường còn trống trong dữ liệu định tuyến.
+
+=====================================================================================
+CÂU 060 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q060 (Độ khó: Dễ | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-clarification-control-placement] Clarification Control Placement
+=====================================================================================
+ĐỀ BÀI:
+Yêu cầu của người dùng:
+“Gửi báo cáo cho nhóm.”
+
+Thông tin hệ thống đã biết:
+- Tệp cần gửi.
+
+Thông tin còn thiếu:
+- Nhóm nhận.
+- Gửi bản nháp hay bản chính thức.
+
+Hãy viết câu hỏi làm rõ và điều kiện để tiếp tục.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm trường nào còn trống trong dữ liệu gửi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm trường nào còn trống trong dữ liệu gửi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm trường nào còn trống trong dữ liệu gửi.
+
+=====================================================================================
+CÂU 061 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q061 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-evidence-transparency-control] Evidence Transparency Control
+=====================================================================================
+ĐỀ BÀI:
+Một trợ lý đang trả lời câu hỏi về chính sách.
+
+Chọn tất cả thành phần cần thiết để bảo đảm tính minh bạch (transparency).
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Liên kết hoặc tên tài liệu và đoạn liên quan.
+[B] Ngày hiệu lực hoặc thời điểm truy xuất.
+[C] Cảnh báo khi hai nguồn mâu thuẫn.
+[D] Bỏ qua cảnh báo mâu thuẫn khi đã có một trích dẫn.
+[E] Hiển thị kết luận nhưng ẩn nguồn để giao diện gọn.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hiển thị thứ người dùng cần để truy lại nguồn và biết giới hạn của kết luận.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hiển thị thứ người dùng cần để truy lại nguồn và biết giới hạn của kết luận.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hiển thị thứ người dùng cần để truy lại nguồn và biết giới hạn của kết luận.
+
+=====================================================================================
+CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q062 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-evidence-transparency-control] Evidence Transparency Control
+=====================================================================================
+ĐỀ BÀI:
+Đầu ra hiện tại:
+“Nhà cung cấp A rẻ nhất.”
+
+Giới hạn của dữ liệu:
+- Bảng giá được thu thập 8 tháng trước.
+- Thiếu phí hỗ trợ của nhà cung cấp B.
+
+Hãy viết lại đầu ra với mức minh bạch phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách điều bảng giá chứng minh được khỏi điều còn thiếu.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách điều bảng giá chứng minh được khỏi điều còn thiếu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách điều bảng giá chứng minh được khỏi điều còn thiếu.
+
+=====================================================================================
+CÂU 063 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d02-q063 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-manual-approval-control] Manual Approval Control
+=====================================================================================
+ĐỀ BÀI:
+Sắp xếp đúng luồng gửi thư điện tử hoàn tiền có phê duyệt.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Các bước cần sắp xếp:
+  - [A] Thực thi gửi thư điện tử và hoàn tiền
+  - [B] Hiển thị người nhận, số tiền, lý do và bản nháp
+  - [C] Tạo bản nháp từ dữ liệu đã kiểm tra
+  - [D] Người xem xét sửa/chấp thuận/từ chối
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Điểm phê duyệt phải đứng ngay trước hành động khó đảo ngược.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Điểm phê duyệt phải đứng ngay trước hành động khó đảo ngược.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Điểm phê duyệt phải đứng ngay trước hành động khó đảo ngược.
+
+=====================================================================================
+CÂU 064 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q064 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-manual-approval-control] Manual Approval Control
+=====================================================================================
+ĐỀ BÀI:
+Agent chuẩn bị xóa 1.200 tài khoản không hoạt động.
+
+Hãy thiết kế màn hình phê duyệt và hành vi khi chấp thuận, từ chối hoặc chỉnh sửa.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Người xem xét cần thấy chính xác điều gì sẽ thay đổi trước khi thực hiện.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Người xem xét cần thấy chính xác điều gì sẽ thay đổi trước khi thực hiện.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người xem xét cần thấy chính xác điều gì sẽ thay đổi trước khi thực hiện.
+
+=====================================================================================
+CÂU 065 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q065 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-autonomy-scope-boundary-control] Autonomy Scope Boundary Control
+=====================================================================================
+ĐỀ BÀI:
+Quyền hiện tại của agent:
+- Được tự đặt văn phòng phẩm dưới 2 triệu.
+- Chỉ được mua từ danh mục đã duyệt.
+
+Hãy viết quy tắc cho phép (allow), từ chối (deny) và chuyển cấp (escalate).
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết ba nhánh theo điều kiện và người nhận việc chuyển cấp.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết ba nhánh theo điều kiện và người nhận việc chuyển cấp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết ba nhánh theo điều kiện và người nhận việc chuyển cấp.
+
+=====================================================================================
+CÂU 066 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q066 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-autonomy-scope-boundary-control] Autonomy Scope Boundary Control
+=====================================================================================
+ĐỀ BÀI:
+Quyền của coding agent:
+- Được sửa mã nguồn và kiểm thử trong một kho mã.
+- Không được merge.
+- Không được đọc secret.
+- Không được deploy.
+
+Hãy viết ranh giới quyền và cách xử lý yêu cầu vượt phạm vi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách thao tác trên mã/tệp khỏi tác động bên ngoài và secret.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách thao tác trên mã/tệp khỏi tác động bên ngoài và secret.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách thao tác trên mã/tệp khỏi tác động bên ngoài và secret.
+
+=====================================================================================
+CÂU 067 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q067 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-graceful-failure-user-recovery] Graceful Failure User Recovery
+=====================================================================================
+ĐỀ BÀI:
+Việc truy hồi (retrieval) bị lỗi.
+- Dữ liệu trong biểu mẫu người dùng đã nhập vẫn còn.
+
+Chọn tất cả phản hồi phù hợp khi hệ thống gặp lỗi nhưng vẫn cho người dùng tiếp tục an toàn.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Giữ biểu mẫu và nói rõ chưa lấy được nguồn.
+[B] Cho thử lại việc truy hồi hoặc lưu bản nháp.
+[C] Dùng câu trả lời cache cũ nhưng gọi là dữ liệu mới.
+[D] Xóa toàn bộ biểu mẫu để bắt đầu lại.
+[E] Cho chuyển sang người xem xét nếu quyết định gấp.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thông báo phần nào hỏng, phần nào còn nguyên và người dùng có thể làm gì tiếp.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Thông báo phần nào hỏng, phần nào còn nguyên và người dùng có thể làm gì tiếp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thông báo phần nào hỏng, phần nào còn nguyên và người dùng có thể làm gì tiếp.
+
+=====================================================================================
+CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q068 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-graceful-failure-user-recovery] Graceful Failure User Recovery
+=====================================================================================
+ĐỀ BÀI:
+Nhà cung cấp thanh toán hết thời gian chờ sau khi người dùng bấm trả tiền.
+- Chưa biết giao dịch đã thành công hay chưa.
+
+Hãy viết thông báo, trạng thái cô lập và phương án phục hồi không tạo khoản trừ tiền hai lần.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng biến việc hết thời gian chờ thành kết luận; bảo vệ khỏi hành động lặp.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng biến việc hết thời gian chờ thành kết luận; bảo vệ khỏi hành động lặp.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng biến việc hết thời gian chờ thành kết luận; bảo vệ khỏi hành động lặp.
+
+=====================================================================================
+CÂU 069 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q069 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-operational-design-domain] Operational Design Domain
+=====================================================================================
+ĐỀ BÀI:
+Phạm vi kiểm thử của hệ thống nhận diện hư hỏng:
+- Ảnh đủ sáng.
+- Góc chụp từ 0–30 độ.
+- Ba loại thiết bị.
+
+Hãy viết ODD, bộ phát hiện ngoài phạm vi và hành vi suy giảm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết ba phần: điều kiện hợp lệ, cách nhận biết không hợp lệ và hành vi khi đó.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết ba phần: điều kiện hợp lệ, cách nhận biết không hợp lệ và hành vi khi đó.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết ba phần: điều kiện hợp lệ, cách nhận biết không hợp lệ và hành vi khi đó.
+
+=====================================================================================
+CÂU 070 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q070 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-operational-design-domain] Operational Design Domain
+=====================================================================================
+ĐỀ BÀI:
+Điều kiện kiểm thử hợp lệ:
+- Camera chỉ được kiểm thử vào ban ngày.
+- Ban đêm, cảm biến báo lux dưới ngưỡng.
+
+Hành động phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tiếp tục tự động và bỏ cảnh báo vì vẫn dùng cùng camera
+[B] Ngoài ODD: giảm chức năng hoặc bàn giao theo chính sách
+[C] Tăng temperature để mô hình linh hoạt hơn
+[D] Coi ban đêm là trường hợp biên đã đạt vì dùng cùng camera
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So điều kiện đang chạy với các điều kiện đã kiểm thử.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So điều kiện đang chạy với các điều kiện đã kiểm thử.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So điều kiện đang chạy với các điều kiện đã kiểm thử.
+
+=====================================================================================
+CÂU 071 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q071 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-sensitive-data-processing-boundary] Sensitive Data Processing Boundary
+=====================================================================================
+ĐỀ BÀI:
+Tình huống sử dụng:
+Trợ lý tuyển dụng cần đọc CV có số điện thoại, địa chỉ và lịch sử việc làm.
+
+Ràng buộc:
+- Nhân viên tuyển dụng chỉ cần bản tóm tắt kỹ năng và mã ứng viên.
+- CV gốc chỉ giữ 14 ngày trong kho lưu trữ riêng.
+- Cấm gửi thông tin nhận dạng cá nhân (PII) sang hệ thống phân tích hoặc mô hình công khai.
+
+Thiết kế luồng dữ liệu gốc/dẫn xuất, quyền truy cập, khử thông tin nhận dạng, thời hạn lưu giữ và luồng bị cấm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi dữ liệu gốc và dữ liệu dẫn xuất qua từng nơi lưu trữ/đọc.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Theo dõi dữ liệu gốc và dữ liệu dẫn xuất qua từng nơi lưu trữ/đọc.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi dữ liệu gốc và dữ liệu dẫn xuất qua từng nơi lưu trữ/đọc.
+
+=====================================================================================
+CÂU 072 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q072 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-sensitive-data-processing-boundary] Sensitive Data Processing Boundary
+=====================================================================================
+ĐỀ BÀI:
+Luồng dữ liệu đang được đề xuất cho chatbot ngân hàng:
+Dữ liệu giao dịch gốc → nhật ký dùng chung → mô hình công khai → bảng điều khiển cho kỹ sư.
+
+Ràng buộc bắt buộc:
+- Kỹ sư không được xem dữ liệu giao dịch gốc.
+- Nhật ký chỉ giữ 30 ngày.
+- Mô hình công khai không được nhận dữ liệu gốc.
+
+Hãy chỉ ra bốn vi phạm trong luồng trên, rồi viết lại đường đi của dữ liệu, phần người được xem và bước xóa/kiểm toán.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đánh dấu dữ liệu gốc ở đâu, ai được xem bản dẫn xuất nào và đường nào phải bị chặn tuyệt đối.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đánh dấu dữ liệu gốc ở đâu, ai được xem bản dẫn xuất nào và đường nào phải bị chặn tuyệt đối.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu dữ liệu gốc ở đâu, ai được xem bản dẫn xuất nào và đường nào phải bị chặn tuyệt đối.
+
+=====================================================================================
+CÂU 073 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q073 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-reward-success-criteria] Ai Reward Success Criteria
+=====================================================================================
+ĐỀ BÀI:
+Phát biểu chưa đủ:
+“AI trả lời tốt hơn.”
+
+Hãy viết lại thành tiêu chí thành công cho trợ lý hỗ trợ, gồm:
+- Chỉ số đo.
+- Ngưỡng.
+- Cửa sổ đo.
+- Hành động.
+- Lỗi có hại.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết đủ năm phần: ai hưởng lợi, chỉ số, ngưỡng, thời gian và hành động.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết đủ năm phần: ai hưởng lợi, chỉ số, ngưỡng, thời gian và hành động.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết đủ năm phần: ai hưởng lợi, chỉ số, ngưỡng, thời gian và hành động.
+
+=====================================================================================
+CÂU 074 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q074 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-ai-reward-success-criteria] Ai Reward Success Criteria
+=====================================================================================
+ĐỀ BÀI:
+Hệ thống gợi ý tài liệu học.
+
+Hãy:
+- Viết một tiêu chí đo giá trị cho học viên.
+- Viết một guardrail chống gợi ý sai.
+- Nêu hành động khi guardrail không đạt.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một chỉ số trả lời “tốt cho ai”, chỉ số kia trả lời “lỗi nào không thể chấp nhận”.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Một chỉ số trả lời “tốt cho ai”, chỉ số kia trả lời “lỗi nào không thể chấp nhận”.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một chỉ số trả lời “tốt cho ai”, chỉ số kia trả lời “lỗi nào không thể chấp nhận”.
+
+=====================================================================================
+CÂU 075 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q075 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-precision-recall-product-tradeoff] Precision Recall Product Tradeoff
+=====================================================================================
+ĐỀ BÀI:
+Các số liệu trong ma trận nhầm lẫn:
+- TP = 72.
+- FP = 8.
+- FN = 18.
+
+Hậu quả vận hành:
+- FP gửi lời khuyên sai nghiêm trọng.
+- FN chỉ làm trì hoãn hỗ trợ.
+
+Hãy tính precision và recall, sau đó đề xuất hướng vận hành.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính hai mẫu số khác nhau rồi so hậu quả của FP và FN.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính hai mẫu số khác nhau rồi so hậu quả của FP và FN.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính hai mẫu số khác nhau rồi so hậu quả của FP và FN.
+
+=====================================================================================
+CÂU 076 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q076 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-precision-recall-product-tradeoff] Precision Recall Product Tradeoff
+=====================================================================================
+ĐỀ BÀI:
+Hệ thống cảnh báo sepsis có người phân loại tiếp.
+Bỏ sót ca bệnh có thể nguy hiểm hơn cảnh báo giả.
+
+Chọn tất cả phát biểu phù hợp.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có lý do để ưu tiên recall cao hơn.
+[B] Âm tính giả (false negative) là lỗi cần theo dõi chặt.
+[C] Có thể bỏ qua precision nếu đã có người phân loại.
+[D] Ngưỡng cuối phải được kiểm thử trong quy trình phân loại thực tế.
+[E] Tăng recall lên 100% mà không cân nhắc tải phân loại và precision.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 CHỌN CẢ 3 ĐÁP ÁN ĐÚNG: A, B, D
+[A] Có lý do để ưu tiên recall cao hơn.
+[B] Âm tính giả (false negative) là lỗi cần theo dõi chặt.
+[D] Ngưỡng cuối phải được kiểm thử trong quy trình phân loại thực tế.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Chi phí FN cao ủng hộ recall, nhưng vẫn phải đo precision và tải phân loại; không có cấu hình đúng tuyệt đối.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt hướng ưu tiên với việc bỏ chỉ số còn lại.
+
+=====================================================================================
+CÂU 077 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q077 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-risk-probability-severity-prioritization] Risk Probability Severity Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Hai rủi ro:
+- Rủi ro A: xảy ra hàng tuần nhưng chỉ làm chậm 1 phút.
+- Rủi ro B: chưa xuất hiện trong 100 lần kiểm thử nhưng có thể xóa dữ liệu khách hàng nếu xảy ra.
+
+Cách xử lý phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Ưu tiên xử lý A trước vì xảy ra thường xuyên hơn
+[B] Khoanh vùng/chuyển cấp B; xử lý A theo tác động
+[C] Tạm bỏ qua B vì chưa thấy trong 100 lần kiểm thử
+[D] Cộng xác suất và mức độ nghiêm trọng thành một điểm mà không quy đổi đơn vị
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xem xác suất và mức độ nghiêm trọng như hai trục, không loại rủi ro ở phần đuôi.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xem xác suất và mức độ nghiêm trọng như hai trục, không loại rủi ro ở phần đuôi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xem xác suất và mức độ nghiêm trọng như hai trục, không loại rủi ro ở phần đuôi.
+
+=====================================================================================
+CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q078 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-risk-probability-severity-prioritization] Risk Probability Severity Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Ba rủi ro cần đánh giá:
+- R1: chuyển nhầm tuyến 5%; mức độ nghiêm trọng thấp.
+- R2: lộ dữ liệu 0,1% (ước tính); mức độ nghiêm trọng cực cao.
+- R3: hết thời gian chờ 2%; mức độ nghiêm trọng vừa; ước tính chỉ từ 10 trường hợp.
+
+Hãy xếp cách xử lý và nêu người phụ trách/cách kiểm chứng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ưu tiên rủi ro thảm họa, rồi đánh dấu ước tính yếu cần kiểm chứng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Ưu tiên rủi ro thảm họa, rồi đánh dấu ước tính yếu cần kiểm chứng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ưu tiên rủi ro thảm họa, rồi đánh dấu ước tính yếu cần kiểm chứng.
+
+=====================================================================================
+CÂU 079 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d02-q079 (Độ khó: Vừa | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-problem-to-eval-plan] Problem To Eval Plan
+=====================================================================================
+ĐỀ BÀI:
+Ghép từng trường trong Problem Statement (mô tả bài toán) với thành phần trực tiếp nhất của Eval Plan (kế hoạch đánh giá).
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Cột Trái:
+  (1) Người thực hiện và quy trình
+  (2) Nút thắt mất 20 phút
+  (3) Rủi ro gửi sai tài khoản
+  (4) Ranh giới phê duyệt của con người
+
+Cột Phải (Lựa chọn ghép):
+  (A) Các trường hợp sử dụng đại diện
+  (B) Mốc nền/mục tiêu về thời gian xử lý
+  (C) Các trường hợp lỗi/đối kháng
+  (D) Kiểm tra việc chặn tác động bên ngoài trước khi phê duyệt
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn ghép cặp: Đối chiếu các khái niệm ở cột trái với ý nghĩa ở cột phải theo gợi ý: Hỏi mỗi trường sẽ được bác bỏ bằng phép kiểm nào.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi mỗi trường sẽ được bác bỏ bằng phép kiểm nào.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi mỗi trường sẽ được bác bỏ bằng phép kiểm nào.
+
+=====================================================================================
+CÂU 080 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q080 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-problem-to-eval-plan] Problem To Eval Plan
+=====================================================================================
+ĐỀ BÀI:
+Mô tả bài toán (Problem Statement):
+- Nhân viên hỗ trợ mất trung vị 14 phút để tra chính sách.
+
+Ranh giới:
+- AI chỉ được tạo bản nháp có trích dẫn.
+- Trường hợp tài chính phải có người phê duyệt.
+
+Hãy lập kế hoạch đánh giá (Eval Plan) tối thiểu gồm các trường hợp đại diện/biên, chỉ số/ngưỡng và phép kiểm soát.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi mệnh đề trong mô tả phải xuất hiện thành trường hợp, chỉ số hoặc phép kiểm soát.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Mỗi mệnh đề trong mô tả phải xuất hiện thành trường hợp, chỉ số hoặc phép kiểm soát.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi mệnh đề trong mô tả phải xuất hiện thành trường hợp, chỉ số hoặc phép kiểm soát.
+
+=====================================================================================
+CÂU 081 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q081 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ab-test-single-variable-design] Ab Test Single Variable Design
+=====================================================================================
+ĐỀ BÀI:
+Thiết kế thử nghiệm:
+- Nhóm đối chứng dùng tìm kiếm cũ.
+- Nhóm thử nghiệm dùng tìm kiếm mới và đồng thời đổi quy trình bắt đầu sử dụng.
+
+Kết quả:
+Tỷ lệ giữ chân tăng.
+
+Kết luận chính xác nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tìm kiếm mới có thể là nguyên nhân chính vì đó là tính năng được quan tâm
+[B] Không tách được tác động vì đã thay đổi hai biến
+[C] Quy trình bắt đầu sử dụng có thể là nguyên nhân chính
+[D] Lưu lượng lớn có thể làm yếu ảnh hưởng của yếu tố gây nhiễu
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đếm số điểm khác nhau giữa nhóm đối chứng và nhóm thử nghiệm.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đếm số điểm khác nhau giữa nhóm đối chứng và nhóm thử nghiệm.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đếm số điểm khác nhau giữa nhóm đối chứng và nhóm thử nghiệm.
+
+=====================================================================================
+CÂU 082 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q082 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ab-test-single-variable-design] Ab Test Single Variable Design
+=====================================================================================
+ĐỀ BÀI:
+Giả thuyết:
+Lời nhắc cá nhân hóa làm tăng tỷ lệ hoàn thành bài thực hành.
+
+Hãy thiết kế A/B test và nêu rõ nhóm đối chứng, nhóm thử nghiệm, cách phân nhóm, một biến thay đổi, kết quả đo và yếu tố gây nhiễu cần tránh.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ mọi thứ ngoài lời nhắc cá nhân hóa giống nhau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Giữ mọi thứ ngoài lời nhắc cá nhân hóa giống nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ mọi thứ ngoài lời nhắc cá nhân hóa giống nhau.
+
+=====================================================================================
+CÂU 083 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q083 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-failure-scenario-test-design] Failure Scenario Test Design
+=====================================================================================
+ĐỀ BÀI:
+Các thành phần của hệ thống:
+- Dịch vụ truy hồi (retrieval).
+- Mô hình.
+- Công cụ gửi thư điện tử.
+
+Chọn tất cả kịch bản lỗi hợp lý ngoài luồng thành công.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Dịch vụ truy hồi hết thời gian chờ riêng lẻ.
+[B] Dịch vụ truy hồi trả nguồn cũ nhưng mô hình vẫn tạo mệnh đề.
+[C] Đầu ra mô hình chứa prompt injection yêu cầu công cụ thư điện tử gửi dữ liệu.
+[D] Cả dịch vụ truy hồi và nhà cung cấp thư điện tử cùng lỗi.
+[E] Kiểm thử một câu hỏi dễ trả lời là đủ.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tạo trường hợp kiểm thử tại từng ranh giới và giữa nhiều thành phần.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tạo trường hợp kiểm thử tại từng ranh giới và giữa nhiều thành phần.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tạo trường hợp kiểm thử tại từng ranh giới và giữa nhiều thành phần.
+
+=====================================================================================
+CÂU 084 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q084 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-failure-scenario-test-design] Failure Scenario Test Design
+=====================================================================================
+ĐỀ BÀI:
+Sơ đồ thành phần:
+OCR → bộ kiểm tra → API thanh toán.
+
+Hãy lập năm phép kiểm gồm lỗi đơn, lỗi kết hợp, lỗi tuần tự/đối kháng và lỗi từ hệ thống bên ngoài.
+Nêu điều kiện đạt có thể quan sát cho việc khoanh vùng và phục hồi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Với mỗi lỗi, viết điều cần bị chặn và đường phục hồi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Với mỗi lỗi, viết điều cần bị chặn và đường phục hồi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Với mỗi lỗi, viết điều cần bị chặn và đường phục hồi.
+
+=====================================================================================
+CÂU 085 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q085 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-go-notyet-nogo] Ai Go Notyet Nogo
+=====================================================================================
+ĐỀ BÀI:
+Trạng thái bài toán:
+- Vấn đề rõ.
+- AI có lợi thế.
+- Có mốc nền.
+- Chưa có dữ liệu được phép sử dụng.
+- Chưa kiểm thử lỗi.
+
+Quyết định phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có thể Go production vì vấn đề, mốc nền và lợi thế AI đã rõ
+[B] Not Yet: xác minh quyền dùng dữ liệu và kiểm thử lỗi
+[C] No-Go lâu dài vì còn hai khoảng trống bằng chứng
+[D] Go pilot giới hạn trước khi xin quyền dùng dữ liệu
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hỏi khoảng trống là ràng buộc nền tảng hay có bước xác minh tiếp theo cụ thể.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi khoảng trống là ràng buộc nền tảng hay có bước xác minh tiếp theo cụ thể.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi khoảng trống là ràng buộc nền tảng hay có bước xác minh tiếp theo cụ thể.
+
+=====================================================================================
+CÂU 086 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q086 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-go-notyet-nogo] Ai Go Notyet Nogo
+=====================================================================================
+ĐỀ BÀI:
+Bài toán:
+AI tạo lời khuyên pháp lý trực tiếp cho người dân.
+
+Ràng buộc:
+- Lỗi có thể gây hậu quả nghiêm trọng.
+- Không có người xem xét đủ chuyên môn.
+- Quy định cấm tư vấn tự động.
+
+Hãy chọn quyết định và nêu bước tiếp theo hoặc phương án không dùng AI.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách 'chưa có bằng chứng' khỏi 'mâu thuẫn với ràng buộc nền tảng'.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách 'chưa có bằng chứng' khỏi 'mâu thuẫn với ràng buộc nền tảng'.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách 'chưa có bằng chứng' khỏi 'mâu thuẫn với ràng buộc nền tảng'.
+
+=====================================================================================
+CÂU 087 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q087 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-operating-cost-envelope] Operating Cost Envelope
+=====================================================================================
+ĐỀ BÀI:
+Kịch bản cơ sở:
+- 30.000 yêu cầu/tháng.
+- Chi phí mô hình: 0,02 USD/yêu cầu.
+- Gọi công cụ: 0,01 USD cho 40% số yêu cầu.
+- Theo dõi cố định: 250 USD/tháng.
+- Người xem xét: 0,50 USD cho 8% số yêu cầu.
+
+Kịch bản cao điểm:
+- Lưu lượng gấp 3 lần cơ sở.
+
+Hãy tính biên chi phí ở cơ sở/cao điểm; chỉ ra yếu tố chi phối và giả định nhạy cảm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính từng dòng ở cơ sở, rồi chỉ nhân ba các phần biến đổi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính từng dòng ở cơ sở, rồi chỉ nhân ba các phần biến đổi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính từng dòng ở cơ sở, rồi chỉ nhân ba các phần biến đổi.
+
+=====================================================================================
+CÂU 088 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q088 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-operating-cost-envelope] Operating Cost Envelope
+=====================================================================================
+ĐỀ BÀI:
+Kịch bản cơ sở:
+- 20.000 yêu cầu/tháng.
+- Chi phí mô hình: 0,03 USD/yêu cầu.
+- Lưu trữ cố định: 300 USD/tháng.
+- 5% yêu cầu cần người xem xét, giá 0,40 USD/lần.
+- 10% yêu cầu gọi kiểm tra bên ngoài, giá 0,02 USD/lần.
+
+Kịch bản cao điểm:
+- Lưu lượng gấp 4 lần.
+- Tỷ lệ cần người xem xét tăng lên 8%; tỷ lệ gọi kiểm tra bên ngoài giữ nguyên.
+
+Tính chi phí hai kịch bản, giải thích yếu tố làm chi phí tăng mạnh nhất và nêu một phép kiểm tra sức chịu đựng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách từng thành phần chi phí, rồi kiểm tra điều gì thay đổi giữa cơ sở và cao điểm.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách từng thành phần chi phí, rồi kiểm tra điều gì thay đổi giữa cơ sở và cao điểm.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách từng thành phần chi phí, rồi kiểm tra điều gì thay đổi giữa cơ sở và cao điểm.
+
+=====================================================================================
+CÂU 089 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q089 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-product-lifecycle-positioning] Ai Product Lifecycle Positioning
+=====================================================================================
+ĐỀ BÀI:
+Tình trạng hiện có:
+- Nguyên mẫu (prototype) chạy trên 200 trường hợp đại diện.
+- Có kết quả so với mốc nền (baseline).
+- Chưa có khả năng rollback, người phụ trách trực vận hành hoặc bảng theo dõi.
+
+Xác định giai đoạn vòng đời hiện tại và bằng chứng/hiện vật cần có trước giai đoạn tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi hiện vật hiện tại chứng minh hành vi mô hình hay mức sẵn sàng vận hành.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi hiện vật hiện tại chứng minh hành vi mô hình hay mức sẵn sàng vận hành.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi hiện vật hiện tại chứng minh hành vi mô hình hay mức sẵn sàng vận hành.
+
+=====================================================================================
+CÂU 090 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q090 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-ai-product-lifecycle-positioning] Ai Product Lifecycle Positioning
+=====================================================================================
+ĐỀ BÀI:
+Trạng thái sau Day 2:
+- Đã có mô tả bài toán (Problem Statement).
+- Đã có mốc nền dự kiến.
+- Quyết định hiện tại là Not Yet vì đang chờ xác minh quyền dùng dữ liệu.
+
+Kết luận về vòng đời đúng nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Có thể chuyển production vì đã có quyết định, mốc nền dự kiến và thước đo ban đầu
+[B] Đang ở giai đoạn lập kế hoạch/kỳ vọng; cần xác minh quyền dùng dữ liệu trước pilot
+[C] Có thể sang giai đoạn giám sát/lặp vì thước đo đã được định nghĩa
+[D] Coi nhãn Not Yet như một dạng phê duyệt ra mắt
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 ĐÁP ÁN DUY NHẤT: [B]
+[B] Đang ở giai đoạn lập kế hoạch/kỳ vọng; cần xác minh quyền dùng dữ liệu trước pilot
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Các hiện vật hiện có thuộc giai đoạn lập kế hoạch; Not Yet không phải phê duyệt ra mắt.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt kế hoạch tạo bằng chứng với bằng chứng vận hành đã có.
+
+=====================================================================================
+CÂU 091 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d02-q091 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-demo-production-gap-analysis] Demo Production Gap Analysis
+=====================================================================================
+ĐỀ BÀI:
+Kết quả hiện có:
+Nguyên mẫu trả lời đúng 9/10 câu demo.
+
+Chọn tất cả bằng chứng vẫn cần trước production.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] So sánh với mốc nền/quy trình hiện tại.
+[B] Bộ kiểm thử đại diện và các trường hợp biên.
+[C] Ghi log, phương án dự phòng (fallback) và rollback.
+[D] Người phụ trách giám sát/cập nhật.
+[E] Xem độ đúng 90% là đủ bằng chứng để phát hành ngay.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Kiểm tra theo bốn cột từ demo đến production.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra theo bốn cột từ demo đến production.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra theo bốn cột từ demo đến production.
+
+=====================================================================================
+CÂU 092 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q092 (Độ khó: Khó | Điểm: 4)
+Chủ đề kiến thức (KC): [kc-demo-production-gap-analysis] Demo Production Gap Analysis
+=====================================================================================
+ĐỀ BÀI:
+Kết quả nguyên mẫu:
+- Xử lý hóa đơn đúng trên 30 trường hợp thuận lợi.
+
+Các khoảng trống hiện có:
+- Chưa có mốc nền thủ công.
+- Chưa có trường hợp biên.
+- Chưa có phương án dự phòng hoặc rollback.
+- Chưa có cảnh báo hoặc người phụ trách.
+
+Không được phát hành ngay. Hãy xếp ba việc cần đóng trước theo thứ tự ưu tiên, gán hiện vật/người phụ trách cho từng việc và đặt một điều kiện dừng nếu phát hiện lỗi nghiêm trọng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng chỉ lặp lại bốn thiếu sót; hãy quyết định việc nào phải đóng trước để tránh phát hành khi chưa biết trạng thái lỗi.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng chỉ lặp lại bốn thiếu sót; hãy quyết định việc nào phải đóng trước để tránh phát hành khi chưa biết trạng thái lỗi.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng chỉ lặp lại bốn thiếu sót; hãy quyết định việc nào phải đóng trước để tránh phát hành khi chưa biết trạng thái lỗi.
+
+=====================================================================================
+CÂU 093 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q093 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-problem-first-reframing] Problem First Reframing
+=====================================================================================
+ĐỀ BÀI:
+Đề bài ban đầu:
+“Gắn camera AI để giảm hàng chờ ở căng-tin.”
+
+- Viết lại thành một câu hỏi khám phá vấn đề có người thực hiện, bước trong quy trình, điểm đau và kết quả mong muốn.
+- Nêu hai giả định cần kiểm chứng trước khi chọn camera hoặc AI.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Bỏ tên công nghệ rồi hỏi ai mắc ở bước nào và hậu quả gì.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Bỏ tên công nghệ rồi hỏi ai mắc ở bước nào và hậu quả gì.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bỏ tên công nghệ rồi hỏi ai mắc ở bước nào và hậu quả gì.
+
+=====================================================================================
+CÂU 094 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q094 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-user-workflow-pain-observation] User Workflow Pain Observation
+=====================================================================================
+ĐỀ BÀI:
+Quan sát tại bộ phận hỗ trợ:
+- Trong 60 phiếu hỗ trợ được xem, 18 phiếu bị chuyển sai hàng đợi ở lần đầu.
+- Mỗi phiếu chuyển lại mất trung vị 7 phút.
+- Một quản lý nói: “Nhân viên mới chắc không chịu đọc hướng dẫn.”
+
+Chỉ ra người thực hiện, bước trong quy trình, điểm đau, bằng chứng và một điều vẫn là giả định.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách số liệu quan sát khỏi lời giải thích của quản lý.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách số liệu quan sát khỏi lời giải thích của quản lý.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách số liệu quan sát khỏi lời giải thích của quản lý.
+
+=====================================================================================
+CÂU 095 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q095 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-problem-diverge-converge] Problem Diverge Converge
+=====================================================================================
+ĐỀ BÀI:
+Tình huống:
+- Nhóm có hai cuộc phỏng vấn từ cùng một vai trò.
+- Nhóm đã liệt kê ba cách diễn giải điểm đau (pain).
+- Chưa có dữ liệu về tác nhân (actor) khác, tần suất hoặc tác động (impact).
+- Nhóm muốn bỏ phiếu (vote) ngay một phát biểu vấn đề (problem statement) để xây nguyên mẫu (prototype).
+
+Chẩn đoán pha hiện tại, nêu hành động tiếp theo và điều kiện đủ để bắt đầu hội tụ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi xem nhóm đang thiếu góc nhìn hay chỉ thiếu một quyết định.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi xem nhóm đang thiếu góc nhìn hay chỉ thiếu một quyết định.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi xem nhóm đang thiếu góc nhìn hay chỉ thiếu một quyết định.
+
+=====================================================================================
+CÂU 096 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q096 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-hcd-feedback-loop-routing] Hcd Feedback Loop Routing
+=====================================================================================
+ĐỀ BÀI:
+Kết quả kiểm thử:
+- Người dùng xác nhận điểm đau “khó biết đơn nào cần xử lý trước” là có thật.
+- Họ hiểu đúng màn hình nguyên mẫu (prototype).
+- Nhưng cách xếp hạng theo giá trị đơn khiến các đơn quá hạn nhỏ bị bỏ quên.
+
+Xác định giả định bị bác bỏ, bước trong thiết kế lấy con người làm trung tâm (HCD) sớm nhất cần quay lại và hành động tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xác định lớp giả định nào thất bại: điểm đau, ý tưởng hay cách thao tác.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định lớp giả định nào thất bại: điểm đau, ý tưởng hay cách thao tác.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định lớp giả định nào thất bại: điểm đau, ý tưởng hay cách thao tác.
+
+=====================================================================================
+CÂU 097 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q097 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-impact-effort-prioritization] Impact Effort Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Ba cơ hội (thang 1–5):
+- A: tác động (impact) 5, nỗ lực (effort) 2; tác động dựa trên một cuộc phỏng vấn.
+- B: tác động 4, nỗ lực 2; có nhật ký (log) sáu tháng.
+- C: tác động 3, nỗ lực 1; có nhật ký sáu tháng.
+
+Chính sách quyết định thận trọng:
+- Trong bài này, tác động từ 4 trở lên được xem là đáng kể.
+- Khi tác động và nỗ lực gần nhau, ưu tiên cơ hội có bằng chứng đáng tin cậy hơn.
+- Nếu bằng chứng ngang nhau, ưu tiên tác động cao hơn khi nỗ lực chênh không quá 1 điểm.
+
+Chọn ưu tiên tạm thời cho một kết quả nhanh (quick win), giải thích hai trục và nêu phép kiểm chứng có thể đổi thứ hạng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So A và B trước, rồi hỏi con số nào có ít bằng chứng hơn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So A và B trước, rồi hỏi con số nào có ít bằng chứng hơn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So A và B trước, rồi hỏi con số nào có ít bằng chứng hơn.
+
+=====================================================================================
+CÂU 098 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q098 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-rapid-problem-validation] Rapid Problem Validation
+=====================================================================================
+ĐỀ BÀI:
+Nhận định:
+“Điều dưỡng mất nhiều thời gian tìm lịch sử thuốc trước khi bàn giao ca.”
+
+Kết quả quan sát theo ca (shadowing) của 8 ca:
+- 5 ca mất trên 6 phút vì dữ liệu nằm ở hai hệ thống.
+- 2 ca mất dưới 1 phút nhờ danh sách đã chuẩn bị.
+- 1 ca không cần tra cứu.
+
+Kết luận kiểm chứng (validation) cân bằng, sửa bài toán ứng viên (candidate problem) và nêu phép kiểm tra tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm điểm khác nhau giữa năm ca chậm và ba ca còn lại.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm điểm khác nhau giữa năm ca chậm và ba ca còn lại.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm điểm khác nhau giữa năm ca chậm và ba ca còn lại.
+
+=====================================================================================
+CÂU 099 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q099 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-baseline-bottleneck-quantification] Baseline Bottleneck Quantification
+=====================================================================================
+ĐỀ BÀI:
+Quy trình xử lý yêu cầu:
+- Tiếp nhận hồ sơ: chưa đo.
+- Kiểm tra chính sách: trung vị 9 phút trên 40 hồ sơ.
+- Chờ phê duyệt: chưa đo.
+- Sửa lỗi: 7/40 hồ sơ, chưa đo thời gian.
+
+Viết đường cơ sở–mục tiêu–đơn vị–cách thu thập và giải thích vì sao chưa thể kết luận nút thắt của toàn quy trình.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Liệt kê bước nào đã có số đo và bước nào vẫn chưa có số.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Liệt kê bước nào đã có số đo và bước nào vẫn chưa có số.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Liệt kê bước nào đã có số đo và bước nào vẫn chưa có số.
+
+=====================================================================================
+CÂU 100 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q100 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-task-suitability] Ai Task Suitability
+=====================================================================================
+ĐỀ BÀI:
+Quy trình kiểm tra yêu cầu bảo hành:
+1. Đọc mô tả lỗi tự do và ảnh.
+2. Kiểm tra ngày mua có trong 12 tháng.
+3. Kiểm tra số sê-ri có hợp lệ.
+4. Quyết định đổi máy; lỗi quyết định có chi phí cao.
+
+Phân bổ AI, luật và con người; nêu ràng buộc về độ trễ/chi phí/lỗi có thể làm đổi thiết kế.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách đầu vào tự do khỏi điều kiện bất biến và hành động gây tác động bên ngoài.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách đầu vào tự do khỏi điều kiện bất biến và hành động gây tác động bên ngoài.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách đầu vào tự do khỏi điều kiện bất biến và hành động gây tác động bên ngoài.
+
+=====================================================================================
+CÂU 101 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q101 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-llm-boundary-support-selection] Llm Boundary Support Selection
+=====================================================================================
+ĐỀ BÀI:
+Trợ lý mua sắm phải:
+- Hiểu yêu cầu mô tả tự do.
+- Tra giá và tồn kho hiện tại.
+- Tối ưu giỏ hàng dưới ngân sách 5 triệu.
+- Chỉ đặt đơn sau khi người dùng xác nhận.
+
+Phân trách nhiệm cho LLM, truy hồi/công cụ, bộ tối ưu và bước phê duyệt; nêu lỗi có thể xảy ra nếu đặt sai ranh giới.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi thành phần nào có thể bảo đảm dữ liệu mới, ràng buộc và hành động bên ngoài.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Hỏi thành phần nào có thể bảo đảm dữ liệu mới, ràng buộc và hành động bên ngoài.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi thành phần nào có thể bảo đảm dữ liệu mới, ràng buộc và hành động bên ngoài.
+
+=====================================================================================
+CÂU 102 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q102 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-readiness-evidence] Ai Readiness Evidence
+=====================================================================================
+ĐỀ BÀI:
+Bằng chứng hiện có:
+- Quy trình và người phụ trách đã xác nhận.
+- 1.200 nhật ký có sự đồng ý rõ ràng.
+- Đường cơ sở thủ công chỉ đo ca thuận lợi.
+- Bộ đánh giá chưa có lỗi hiếm.
+- Có đường lui nhưng chưa ai phụ trách cảnh báo.
+
+Đánh dấu đã có/còn thiếu/mâu thuẫn và gán bước kiểm chứng tiếp theo hoặc người phụ trách cho từng khoảng trống.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách quyền dữ liệu, độ bao phủ đánh giá và người chịu trách nhiệm vận hành.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách quyền dữ liệu, độ bao phủ đánh giá và người chịu trách nhiệm vận hành.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách quyền dữ liệu, độ bao phủ đánh giá và người chịu trách nhiệm vận hành.
+
+=====================================================================================
+CÂU 103 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q103 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-deterministic-probabilistic-task-allocation] Deterministic Probabilistic Task Allocation
+=====================================================================================
+ĐỀ BÀI:
+Quy trình tuyển dụng:
+- LLM đọc mô tả kinh nghiệm tự do.
+- Ứng viên bắt buộc đủ 18 tuổi.
+- Không được loại theo giới tính.
+- Nếu thiếu giấy phép bắt buộc thì chuyển người duyệt.
+
+Phân bổ phần xác suất và phần xác định; thiết kế bước kiểm tra và điểm kiểm soát.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đánh dấu yêu cầu nào cho phép bất định và yêu cầu nào tuyệt đối không được sai.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đánh dấu yêu cầu nào cho phép bất định và yêu cầu nào tuyệt đối không được sai.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu yêu cầu nào cho phép bất định và yêu cầu nào tuyệt đối không được sai.
+
+=====================================================================================
+CÂU 104 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q104 (Độ khó: Dễ | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-rule-workflow-agent-selection] Rule Workflow Agent Selection
+=====================================================================================
+ĐỀ BÀI:
+Tác vụ:
+- Nhận JSON cùng cấu trúc mỗi giờ.
+- Kiểm ngưỡng tồn kho cố định.
+- Nếu dưới ngưỡng, tạo một bản ghi cảnh báo.
+- Không có ngôn ngữ tự do hoặc kế hoạch thay đổi.
+
+Cấp triển khai tối thiểu phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Luật/kịch bản xác định (deterministic rule/script)
+[B] Quy trình dùng nhiều lượt gọi LLM
+[C] Tác nhân tự lập kế hoạch (agent)
+[D] Mô hình đã tinh chỉnh (fine-tuned model)
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Chọn cấp đơn giản nhất nhưng vẫn đáp ứng toàn bộ yêu cầu.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Chọn cấp đơn giản nhất nhưng vẫn đáp ứng toàn bộ yêu cầu.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn cấp đơn giản nhất nhưng vẫn đáp ứng toàn bộ yêu cầu.
+
+=====================================================================================
+CÂU 105 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q105 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-rule-workflow-agent-selection] Rule Workflow Agent Selection
+=====================================================================================
+ĐỀ BÀI:
+Tác vụ:
+- Điều tra nguyên nhân một sự cố chưa biết trước.
+- Tự chọn nhật ký/nguồn tiếp theo theo bằng chứng mới.
+- Có thể tạo nhiệm vụ con bổ sung.
+- Dừng khi giả thuyết đã đủ bằng chứng.
+
+Kiểm soát:
+Kỹ sư duyệt mọi lệnh khắc phục.
+
+Cấp triển khai phù hợp nhất là gì?
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+[A] Tác nhân có phạm vi giới hạn và người phê duyệt
+[B] Một nhóm luật cố định cho các nguyên nhân phổ biến
+[C] Một prompt một lượt với hướng dẫn cố định
+[D] Bảng tính để kỹ sư ghi nhận sự cố, không tự chọn nguồn hay lập kế hoạch lại
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm xem các nhiệm vụ con có biết trước hay phải được tạo/điều chỉnh động theo điều tra.', chọn phương án phù hợp nhất.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tìm xem các nhiệm vụ con có biết trước hay phải được tạo/điều chỉnh động theo điều tra.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm xem các nhiệm vụ con có biết trước hay phải được tạo/điều chỉnh động theo điều tra.
+
+=====================================================================================
+CÂU 106 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q106 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-parallelization-pattern-design] Parallelization Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Bài toán rà soát bản phát hành gồm:
+- Rà soát bảo mật trên ảnh chụp mã nguồn.
+- Rà soát pháp lý trên bảng kê giấy phép.
+- Kiểm thử hiệu năng trên sản phẩm build.
+- Ghi chú phát hành cuối cùng cần cả ba kết quả.
+
+Điều kiện:
+Sản phẩm build chỉ có sau khi ảnh chụp mã nguồn được đóng băng.
+
+Hãy vẽ quan hệ phụ thuộc/fan-out, điểm đồng bộ, cách tổng hợp và cách xử lý lỗi từng phần.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đánh dấu đầu vào nào phải tồn tại trước khi từng nhánh được chạy.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đánh dấu đầu vào nào phải tồn tại trước khi từng nhánh được chạy.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu đầu vào nào phải tồn tại trước khi từng nhánh được chạy.
+
+=====================================================================================
+CÂU 107 [🟡 Tính toán điền số (Numeric)] - Mã: d02-q107 (Độ khó: Vừa | Điểm: 1)
+Chủ đề kiến thức (KC): [kc-parallelization-pattern-design] Parallelization Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Dữ liệu:
+- Có 75 hồ sơ.
+- Mỗi hồ sơ fan-out thành 4 nhánh.
+- 5% số nhánh hết thời gian chờ và được thử lại đúng một lần.
+- Bộ tổng hợp không thử lại.
+
+Tính tổng số lượt chạy nhánh, gồm cả lượt thử lại.
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: lượt chạy nhánh
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tính phần fan-out và phần bộ tổng hợp riêng rồi cộng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính phần fan-out và phần bộ tổng hợp riêng rồi cộng.
+
+=====================================================================================
+CÂU 108 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q108 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-evaluator-optimizer-pattern-design] Evaluator Optimizer Pattern Design
+=====================================================================================
+ĐỀ BÀI:
+Đầu ra cần tối ưu:
+Bản tóm tắt y khoa phải có trích dẫn (citation), không thêm chẩn đoán và dài tối đa 120 từ.
+
+Giới hạn:
+- Tối đa 3 vòng.
+- Trích dẫn lỗi phải chuyển người xử lý, không tự sửa nguồn.
+
+Hãy thiết kế vòng lặp generator–evaluator gồm tiêu chí, phản hồi, điều kiện chấp nhận, dừng và chuyển người.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách lỗi có thể viết lại khỏi lỗi cần người xác minh nguồn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách lỗi có thể viết lại khỏi lỗi cần người xác minh nguồn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách lỗi có thể viết lại khỏi lỗi cần người xác minh nguồn.
+
+=====================================================================================
+CÂU 109 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q109 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-phased-autonomy-escalation] Phased Autonomy Escalation
+=====================================================================================
+ĐỀ BÀI:
+Hệ thống xử lý yêu cầu đổi lịch giao hàng:
+- Giai đoạn hiện tại chỉ đưa gợi ý; người vận hành chấp nhận 82% đề xuất.
+- 600 trường hợp đại diện chưa có lỗi nghiêm trọng.
+- Chính sách ngoại lệ mới chỉ có 12 trường hợp.
+- Có log kiểm toán và nút dừng.
+
+Hãy chọn bước tăng mức tự chủ tiếp theo, phạm vi, điều kiện quay lui và bằng chứng cần bổ sung.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách trường hợp thông thường khỏi ngoại lệ trước khi chọn mức tự chủ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách trường hợp thông thường khỏi ngoại lệ trước khi chọn mức tự chủ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách trường hợp thông thường khỏi ngoại lệ trước khi chọn mức tự chủ.
+
+=====================================================================================
+CÂU 110 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q110 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-evidence-transparency-control] Evidence Transparency Control
+=====================================================================================
+ĐỀ BÀI:
+Đầu ra hiện tại:
+“Chính sách cho phép hoàn tiền trong 60 ngày.”
+
+Bằng chứng:
+- Nguồn A cập nhật 10 ngày trước nói 30 ngày.
+- Nguồn B không có ngày cập nhật nói 60 ngày.
+- Chưa biết nguồn nào áp dụng cho khu vực của người dùng.
+
+Hãy viết lại đầu ra với nguồn, độ mới, xung đột, độ không chắc chắn và giới hạn hành động.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nêu từng nguồn, ngày và phần còn thiếu trước khi kết luận.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nêu từng nguồn, ngày và phần còn thiếu trước khi kết luận.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nêu từng nguồn, ngày và phần còn thiếu trước khi kết luận.
+
+=====================================================================================
+CÂU 111 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q111 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-manual-approval-control] Manual Approval Control
+=====================================================================================
+ĐỀ BÀI:
+Agent chuẩn bị hoàn 85 triệu đồng cho khách hàng.
+
+Dữ kiện:
+- Chính sách cho phép tối đa 50 triệu nếu không có cấp quản lý.
+- Agent có trích dẫn cho hóa đơn nhưng độ tin cậy về gian lận chỉ 0,58.
+
+Hãy thiết kế dữ liệu phê duyệt và hành vi chấp thuận, chỉnh sửa, từ chối; đặt điểm phê duyệt trước hành động có hậu quả.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Liệt kê điều người duyệt cần biết để chịu trách nhiệm cho hành động có hậu quả.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Liệt kê điều người duyệt cần biết để chịu trách nhiệm cho hành động có hậu quả.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Liệt kê điều người duyệt cần biết để chịu trách nhiệm cho hành động có hậu quả.
+
+=====================================================================================
+CÂU 112 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q112 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-graceful-failure-user-recovery] Graceful Failure User Recovery
+=====================================================================================
+ĐỀ BÀI:
+Hệ thống đã tạo xong bản nháp báo cáo từ dữ liệu người dùng.
+- Dịch vụ kiểm tra trích dẫn hết thời gian chờ nên chưa kiểm tra được nguồn.
+- Người dùng cần rời phiên làm việc.
+
+Hãy viết trạng thái hiển thị, phần dữ liệu được giữ và các phương án phục hồi; không giả báo cáo đã được xác minh.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nói rõ phần nào thành công, phần nào chưa và hành động nào bị khóa.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nói rõ phần nào thành công, phần nào chưa và hành động nào bị khóa.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nói rõ phần nào thành công, phần nào chưa và hành động nào bị khóa.
+
+=====================================================================================
+CÂU 113 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q113 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-operational-design-domain] Operational Design Domain
+=====================================================================================
+ĐỀ BÀI:
+Phạm vi kiểm thử của OCR hóa đơn:
+- Tiếng Việt và tiếng Anh.
+- Ảnh/PDF rõ, tối đa 5 trang.
+- Ba mẫu nhà cung cấp đã biết.
+
+Đầu vào mới:
+- Hóa đơn tiếng Nhật, 12 trang, ảnh bị nghiêng.
+
+Hãy viết mệnh đề ODD, bộ phát hiện và hành vi suy giảm cho đầu vào mới.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So từng thuộc tính của đầu vào mới với phạm vi đã kiểm thử.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: So từng thuộc tính của đầu vào mới với phạm vi đã kiểm thử.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng thuộc tính của đầu vào mới với phạm vi đã kiểm thử.
+
+=====================================================================================
+CÂU 114 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q114 (Độ khó: Vừa | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-precision-recall-product-tradeoff] Precision Recall Product Tradeoff
+=====================================================================================
+ĐỀ BÀI:
+Số liệu ma trận nhầm lẫn:
+- TP = 54.
+- FP = 6.
+- FN = 36.
+
+Hậu quả vận hành:
+- FP khóa nhầm giao dịch hợp lệ và cần xem xét khẩn.
+- FN chỉ đưa giao dịch sang kiểm tra chậm hơn.
+
+Tính precision và recall; đề xuất hướng vận hành có điều kiện.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Viết hai mẫu số riêng rồi hỏi loại lỗi nào gây hậu quả nặng hơn.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Viết hai mẫu số riêng rồi hỏi loại lỗi nào gây hậu quả nặng hơn.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết hai mẫu số riêng rồi hỏi loại lỗi nào gây hậu quả nặng hơn.
+
+=====================================================================================
+CÂU 115 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q115 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-precision-recall-product-tradeoff] Precision Recall Product Tradeoff
+=====================================================================================
+ĐỀ BÀI:
+Hệ thống lọc nội dung học tập có người xem xét.
+
+Hậu quả:
+- False positive chặn nhầm tài liệu hợp lệ và làm gián đoạn lớp học.
+- False negative để một tài liệu không phù hợp đi vào hàng đợi xem xét sau, chưa tự xuất bản.
+
+Đề xuất hướng precision/recall, chính sách phân luồng và các chỉ số cần theo dõi.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xác định lỗi nào tạo tác động ngay và lỗi nào còn qua bước xem xét.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định lỗi nào tạo tác động ngay và lỗi nào còn qua bước xem xét.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định lỗi nào tạo tác động ngay và lỗi nào còn qua bước xem xét.
+
+=====================================================================================
+CÂU 116 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q116 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-risk-probability-severity-prioritization] Risk Probability Severity Prioritization
+=====================================================================================
+ĐỀ BÀI:
+Sổ đăng ký rủi ro:
+- R1: thư điện tử gửi chậm, xác suất 20%, mức độ nghiêm trọng thấp; có log 3 tháng.
+- R2: gửi nhầm dữ liệu cá nhân, xác suất ước lượng 0,2%, mức độ nghiêm trọng cực cao; chưa kiểm tra sức chịu đựng.
+- R3: công cụ hết thời gian chờ, xác suất 4%, mức độ nghiêm trọng vừa; chỉ có 15 trường hợp.
+
+Hãy ưu tiên biện pháp xử lý, ghi rõ độ không chắc chắn, người phụ trách và bước xác minh tiếp theo.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng để xác suất nhỏ che một hậu quả thảm họa chưa được kiểm thử.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đừng để xác suất nhỏ che một hậu quả thảm họa chưa được kiểm thử.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng để xác suất nhỏ che một hậu quả thảm họa chưa được kiểm thử.
+
+=====================================================================================
+CÂU 117 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q117 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-problem-to-eval-plan] Problem To Eval Plan
+=====================================================================================
+ĐỀ BÀI:
+Mô tả bài toán:
+- Kế toán mất trung vị 11 phút để đối chiếu mỗi hóa đơn.
+- Sai số tiền cần được phát hiện trước khi ghi sổ.
+
+Ranh giới:
+- AI chỉ tạo đề xuất trường dữ liệu có trích dẫn.
+- Khoản trên 100 triệu phải được người phê duyệt.
+
+Có năm thẻ kiểm thử:
+A. Hóa đơn chuẩn, dưới 100 triệu.
+B. Hóa đơn thiếu mã số thuế và ảnh bị mờ.
+C. Hóa đơn trên 100 triệu nhưng trường dữ liệu đều đủ.
+D. Trích dẫn chỉ ra sai dòng nguồn.
+E. Dịch vụ kiểm tra hết thời gian chờ.
+
+Hãy xếp thứ tự ưu tiên kiểm thử, giải thích ba thẻ phải chặn trước pilot, nêu điều kiện đạt cho từng thẻ đó và chọn một chỉ số so với mốc nền 11 phút.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đưa các lỗi có hậu quả không đảo ngược và lỗi làm mất trạng thái lên trước; tốc độ chỉ là chỉ số phụ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Đưa các lỗi có hậu quả không đảo ngược và lỗi làm mất trạng thái lên trước; tốc độ chỉ là chỉ số phụ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đưa các lỗi có hậu quả không đảo ngược và lỗi làm mất trạng thái lên trước; tốc độ chỉ là chỉ số phụ.
+
+=====================================================================================
+CÂU 118 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q118 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ab-test-single-variable-design] Ab Test Single Variable Design
+=====================================================================================
+ĐỀ BÀI:
+Giả thuyết:
+Gợi ý bước tiếp theo theo ngữ cảnh làm tăng tỷ lệ hoàn thành quy trình bắt đầu sử dụng.
+
+Ràng buộc:
+- Không được đồng thời đổi thư nhắc hoặc nội dung khóa học.
+- Người dùng trong cùng công ty có thể ảnh hưởng lẫn nhau.
+
+Hãy thiết kế nhóm đối chứng, nhóm thử nghiệm, cách phân nhóm, kết quả đo và cách xử lý yếu tố gây nhiễu/lây nhiễm giữa nhóm.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xác định thứ duy nhất nhóm thử nghiệm được phép thay đổi và ai có thể ảnh hưởng lẫn nhau.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Xác định thứ duy nhất nhóm thử nghiệm được phép thay đổi và ai có thể ảnh hưởng lẫn nhau.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định thứ duy nhất nhóm thử nghiệm được phép thay đổi và ai có thể ảnh hưởng lẫn nhau.
+
+=====================================================================================
+CÂU 119 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q119 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-failure-scenario-test-design] Failure Scenario Test Design
+=====================================================================================
+ĐỀ BÀI:
+Sơ đồ thành phần:
+Tải tài liệu lên → bộ quét mã độc → bộ phân tích → chỉ mục truy hồi → mô hình trả lời.
+
+Có năm thẻ kiểm thử:
+A. Bộ quét hết thời gian chờ.
+B. Bộ quét trả đạt nhưng bộ phân tích trả thiếu trường.
+C. Tài liệu chứa chỉ dẫn độc hại yêu cầu mô hình gọi công cụ.
+D. Dịch vụ chỉ mục truy hồi không truy cập được.
+E. Tài liệu bị thay đổi sau khi quét nhưng trước khi lập chỉ mục.
+
+Phân loại từng thẻ theo lỗi đơn, kết hợp, tuần tự, đối kháng hoặc phụ thuộc bên ngoài; nêu một tín hiệu đạt quan sát được cho từng thẻ.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nhìn vào thứ tự xảy ra và nguồn gây lỗi; đừng chỉ đếm xem có bao nhiêu thành phần trong sơ đồ.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Nhìn vào thứ tự xảy ra và nguồn gây lỗi; đừng chỉ đếm xem có bao nhiêu thành phần trong sơ đồ.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhìn vào thứ tự xảy ra và nguồn gây lỗi; đừng chỉ đếm xem có bao nhiêu thành phần trong sơ đồ.
+
+=====================================================================================
+CÂU 120 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q120 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-ai-go-notyet-nogo] Ai Go Notyet Nogo
+=====================================================================================
+ĐỀ BÀI:
+Bài toán:
+AI gợi ý nhãn ưu tiên cho phiếu hỗ trợ; con người vẫn quyết định.
+
+Bằng chứng:
+- Vấn đề và mốc nền rõ.
+- Phép kiểm đại diện tốt hơn mốc nền.
+- Có quyền dùng dữ liệu và khả năng rollback.
+- Chưa kiểm tra ngôn ngữ hiếm chiếm 3% lưu lượng.
+
+Phạm vi quyết định:
+- Pilot có thể loại 3% ngôn ngữ hiếm khỏi phạm vi và chuyển các trường hợp đó cho người xử lý.
+
+Hãy chọn Go/Not Yet/No-Go cho pilot này; nêu phạm vi, khoảng trống phải đóng và điều kiện dừng.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách phần đã có bằng chứng khỏi 3% chưa được kiểm chứng.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Tách phần đã có bằng chứng khỏi 3% chưa được kiểm chứng.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách phần đã có bằng chứng khỏi 3% chưa được kiểm chứng.
+
+=====================================================================================
+CÂU 121 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q121 (Độ khó: Khó | Điểm: 3)
+Chủ đề kiến thức (KC): [kc-demo-production-gap-analysis] Demo Production Gap Analysis
+=====================================================================================
+ĐỀ BÀI:
+Kết quả demo:
+- Trợ lý trả lời đúng 18/20 câu được chọn trước.
+
+Tình trạng bằng chứng cho production:
+- Chưa so với hệ thống tìm kiếm hiện tại.
+- Chưa có lưu lượng đại diện hoặc trường hợp đối kháng.
+- Tác động qua công cụ chưa có phê duyệt/rollback.
+- Chưa có cảnh báo, nhịp cập nhật hoặc người phụ trách vận hành.
+
+Hãy lập sổ khoảng trống gồm bằng chứng cần tạo, người phụ trách và quyết định phát hành.
+
+CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
+Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp nhận (Rubric).
+
+ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kiểm tra theo đối chứng, đánh giá, kiểm soát và vận hành.
+
+PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
+  Phân tích theo nguyên lý thiết kế: Kiểm tra theo đối chứng, đánh giá, kiểm soát và vận hành.
+
+GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra theo đối chứng, đánh giá, kiểm soát và vận hành.
