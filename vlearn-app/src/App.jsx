@@ -39,7 +39,9 @@ import {
   PlayCircle,
   FileDown,
   Search,
-  CheckCheck
+  CheckCheck,
+  Menu,
+  MoreVertical
 } from 'lucide-react';
 
 export default function App() {
@@ -62,6 +64,15 @@ export default function App() {
 
   // Modal Hướng dẫn cấu trúc đề thi
   const [showGuideModal, setShowGuideModal] = useState(false);
+
+  // Modal/Sheet Lưới câu hỏi trên Mobile
+  const [showGridModal, setShowGridModal] = useState(false);
+
+  // Sheet Thao tác khác & Tài liệu tải về trên Mobile
+  const [showMoreActions, setShowMoreActions] = useState(false);
+
+  // Trạng thái mở/đóng Sidebar Drawer trên Mobile
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Trạng thái câu trả lời người dùng (Tự động nạp từ LocalStorage)
   const [userAnswers, setUserAnswers] = useState(() => {
@@ -612,11 +623,31 @@ export default function App() {
       {/* Top Header */}
       <header className="app-header">
         <div className="brand-section">
+          {/* Mobile Hamburger Button */}
+          <button 
+            className="mobile-header-toggle" 
+            onClick={() => setIsSidebarOpen(true)}
+            aria-label="Mở danh sách buổi học"
+            title="Danh sách buổi học"
+          >
+            <Menu size={22} />
+          </button>
+
           <div className="brand-badge">
             V<span>Learn</span>
           </div>
 
-          {/* Phase Switcher Tabs */}
+          {/* Quick Day Indicator for Tablet/Mobile */}
+          <button 
+            className="mobile-day-indicator"
+            onClick={() => setIsSidebarOpen(true)}
+            title="Bấm để đổi buổi học"
+          >
+            <span>{currentDay.day_label}</span>
+            <span style={{ fontSize: '10px', opacity: 0.7 }}>▾</span>
+          </button>
+
+          {/* Phase Switcher Tabs (Desktop) */}
           <div className="phase-switcher-container">
             <button
               className={`phase-btn ${activePhaseId === 'phase1' ? 'active' : ''}`}
@@ -633,6 +664,7 @@ export default function App() {
           </div>
         </div>
 
+        {/* Desktop Header Nav */}
         <div className="header-nav">
           <button 
             className={`nav-tab-btn ${activeTab === 'quiz' ? 'active' : ''}`}
@@ -684,18 +716,96 @@ export default function App() {
             Bộ Quiz.com / Quizizz (.zip)
           </a>
         </div>
+
+        {/* Mobile More Actions Button */}
+        <button 
+          className="mobile-more-btn"
+          onClick={() => setShowMoreActions(true)}
+          title="Tài liệu & Tiện ích khác"
+        >
+          <MoreVertical size={20} />
+        </button>
       </header>
+
+      {/* Mobile View Switcher Tabs (Segmented Control below header) */}
+      <div className="mobile-view-tabs">
+        <button
+          className={`mobile-view-tab-btn ${activeTab === 'quiz' ? 'active' : ''}`}
+          onClick={() => setActiveTab('quiz')}
+        >
+          <HelpCircle size={15} />
+          <span>Luyện Quiz ({allQuestions.length})</span>
+        </button>
+        <button
+          className={`mobile-view-tab-btn ${activeTab === 'slide' ? 'active' : ''}`}
+          onClick={() => setActiveTab('slide')}
+        >
+          <BookOpen size={15} />
+          <span>Slide Bài giảng ({slides.length})</span>
+        </button>
+      </div>
 
       {/* Main Container */}
       <div className="app-container">
-        {/* Left Sidebar */}
-        <aside className="sidebar">
+        {/* Mobile Backdrop Overlay for Sidebar */}
+        <div 
+          className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`}
+          onClick={() => setIsSidebarOpen(false)}
+        />
+
+        {/* Left Sidebar (Desktop column & Mobile Drawer) */}
+        <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
-            <div>
-              <span className="sidebar-title">{currentPhase.name.split(':')[0]}</span>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span className="sidebar-title">{currentPhase.name.split(':')[0]}</span>
+                <button 
+                  className="sidebar-close-btn"
+                  onClick={() => setIsSidebarOpen(false)}
+                  title="Đóng danh sách"
+                >
+                  <X size={20} />
+                </button>
+              </div>
               <p style={{ fontSize: '11px', color: '#64748b', marginTop: '2px' }}>
                 {currentPhase.course_id.toUpperCase()} · {currentPhase.days.length} Buổi học
               </p>
+
+              {/* Phase Switcher inside drawer for Mobile */}
+              <div style={{ display: 'flex', gap: '4px', background: '#f1f5f9', padding: '3px', borderRadius: '8px', marginTop: '8px' }}>
+                <button
+                  style={{
+                    flex: 1,
+                    padding: '5px 8px',
+                    borderRadius: '6px',
+                    border: 'none',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    background: activePhaseId === 'phase1' ? '#0284c7' : 'transparent',
+                    color: activePhaseId === 'phase1' ? '#ffffff' : '#64748b'
+                  }}
+                  onClick={() => handleSwitchPhase('phase1')}
+                >
+                  Phase 1 (Day 1-16)
+                </button>
+                <button
+                  style={{
+                    flex: 1,
+                    padding: '5px 8px',
+                    borderRadius: '6px',
+                    border: 'none',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    background: activePhaseId === 'phase2' ? '#0284c7' : 'transparent',
+                    color: activePhaseId === 'phase2' ? '#ffffff' : '#64748b'
+                  }}
+                  onClick={() => handleSwitchPhase('phase2')}
+                >
+                  Phase 2 (Track 3)
+                </button>
+              </div>
             </div>
           </div>
 
@@ -715,6 +825,7 @@ export default function App() {
                     setActiveSlideIndex(0);
                     setQuizBankMode('standard');
                     setFilterType('all');
+                    setIsSidebarOpen(false); // Tự động đóng mobile drawer khi chọn Day
                   }}
                 >
                   <div className="day-title-row">
@@ -838,159 +949,100 @@ export default function App() {
                 <>
                   {/* Quiz Header Card */}
                   <div className="quiz-header-card">
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
-                      <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                          <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a' }}>
-                            Quiz cuối Day: {currentDay.day_label} - {currentDay.title}
-                          </h2>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px' }}>
+                      <div style={{ flex: 1, minWidth: '260px' }}>
+                        <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+                          Quiz cuối Day: {currentDay.day_label} - {currentDay.title}
+                        </h2>
 
-                          {/* BỘ NÚT CHUYỂN ĐỔI: ĐỀ CHUẨN / KHO MỞ RỘNG / CÂU HAY SAI DAY NÀY */}
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#f1f5f9', padding: '3px', borderRadius: '10px', border: '1px solid #cbd5e1', flexWrap: 'wrap' }}>
+                        {/* BỘ NÚT CHUYỂN ĐỔI: ĐỀ CHUẨN / KHO MỞ RỘNG / CÂU HAY SAI DAY NÀY (Cuộn ngang) */}
+                        <div className="bank-switcher-pills">
+                          <button
+                            id="btn-bank-standard"
+                            className={`bank-pill-btn ${quizBankMode === 'standard' ? 'active-standard' : ''}`}
+                            onClick={() => { setQuizBankMode('standard'); setCurrentQIndex(0); setFilterType('all'); }}
+                          >
+                            🎯 Đề chuẩn ({currentDay.questions?.length || 0} câu)
+                          </button>
+
+                          {currentDay.expanded_questions && (
                             <button
-                              id="btn-bank-standard"
-                              style={{
-                                padding: '5px 12px',
-                                borderRadius: '7px',
-                                border: 'none',
-                                fontSize: '12px',
-                                fontWeight: 700,
-                                cursor: 'pointer',
-                                background: quizBankMode === 'standard' ? '#0284c7' : 'transparent',
-                                color: quizBankMode === 'standard' ? '#ffffff' : '#475569',
-                                transition: 'all 0.15s'
-                              }}
-                              onClick={() => { setQuizBankMode('standard'); setCurrentQIndex(0); setFilterType('all'); }}
+                              id="btn-bank-expanded"
+                              className={`bank-pill-btn ${quizBankMode === 'expanded' ? 'active-expanded' : ''}`}
+                              onClick={() => { setQuizBankMode('expanded'); setCurrentQIndex(0); setFilterType('all'); }}
+                              title={`Mở khóa toàn bộ ${currentDay.expanded_questions.length} câu hỏi trắc nghiệm của ${currentDay.day_label}`}
                             >
-                              🎯 Đề chuẩn ({currentDay.questions?.length || 0} câu)
+                              📚 Toàn bộ kho ({currentDay.expanded_questions.length} câu)
                             </button>
+                          )}
 
-                            {currentDay.expanded_questions && (
-                              <button
-                                id="btn-bank-expanded"
-                                style={{
-                                  padding: '5px 12px',
-                                  borderRadius: '7px',
-                                  border: 'none',
-                                  fontSize: '12px',
-                                  fontWeight: 700,
-                                  cursor: 'pointer',
-                                  background: quizBankMode === 'expanded' ? '#7c3aed' : 'transparent',
-                                  color: quizBankMode === 'expanded' ? '#ffffff' : '#475569',
-                                  transition: 'all 0.15s'
-                                }}
-                                onClick={() => { setQuizBankMode('expanded'); setCurrentQIndex(0); setFilterType('all'); }}
-                                title={`Mở khóa toàn bộ ${currentDay.expanded_questions.length} câu hỏi trắc nghiệm của ${currentDay.day_label}`}
-                              >
-                                📚 Toàn bộ kho ({currentDay.expanded_questions.length} câu)
-                              </button>
-                            )}
-
-                            
-                            {/* NÚT THẺ TỰ LUẬN & PHÂN TÍCH TÌNH HUỐNG */}
-                            {currentDay.essay_questions && currentDay.essay_questions.length > 0 && (
-                              <button
-                                id="btn-bank-essay"
-                                style={{
-                                  padding: '5px 12px',
-                                  borderRadius: '7px',
-                                  border: 'none',
-                                  fontSize: '12px',
-                                  fontWeight: 700,
-                                  cursor: 'pointer',
-                                  background: quizBankMode === 'essay' ? '#0d9488' : 'transparent',
-                                  color: quizBankMode === 'essay' ? '#ffffff' : '#475569',
-                                  transition: 'all 0.15s',
-                                  display: 'inline-flex',
-                                  alignItems: 'center',
-                                  gap: '5px'
-                                }}
-                                onClick={() => { setQuizBankMode('essay'); setCurrentQIndex(0); setFilterType('all'); }}
-                                title={`Mở khóa ${currentDay.essay_questions.length} câu hỏi tự luận, phân tích tình huống và viết code của ${currentDay.day_label}`}
-                              >
-                                ✍️ Thẻ tự luận (${currentDay.essay_questions.length} câu)
-                              </button>
-                            )}
-
-                            {/* NÚT CÂU HAY SAI CỦA DAY NÀY */}
+                          {currentDay.essay_questions && currentDay.essay_questions.length > 0 && (
                             <button
-                              id="btn-day-wrong-questions"
-                              style={{
-                                padding: '5px 12px',
-                                borderRadius: '7px',
-                                border: quizBankMode === 'wrong' ? 'none' : (dayWrongQuestions.length > 0 ? '1px solid #fecaca' : 'none'),
-                                fontSize: '12px',
-                                fontWeight: 700,
-                                cursor: 'pointer',
-                                background: quizBankMode === 'wrong' ? '#dc2626' : (dayWrongQuestions.length > 0 ? '#fff1f2' : 'transparent'),
-                                color: quizBankMode === 'wrong' ? '#ffffff' : (dayWrongQuestions.length > 0 ? '#b91c1c' : '#64748b'),
-                                transition: 'all 0.15s',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '5px',
-                                boxShadow: quizBankMode === 'wrong' ? '0 2px 4px rgba(220, 38, 38, 0.25)' : 'none'
-                              }}
-                              onClick={() => { setQuizBankMode('wrong'); setCurrentQIndex(0); setFilterType('all'); }}
-                              title={`Luyện tập riêng các câu làm sai / chưa ổn của ${currentDay.day_label}`}
+                              id="btn-bank-essay"
+                              className={`bank-pill-btn ${quizBankMode === 'essay' ? 'active-essay' : ''}`}
+                              onClick={() => { setQuizBankMode('essay'); setCurrentQIndex(0); setFilterType('all'); }}
+                              title={`Mở khóa ${currentDay.essay_questions.length} câu hỏi tự luận, phân tích tình huống của ${currentDay.day_label}`}
                             >
-                              <Flame size={14} color={quizBankMode === 'wrong' ? '#ffffff' : '#ef4444'} />
-                              🔥 Câu hay sai ({dayWrongQuestions.length})
+                              ✍️ Thẻ tự luận ({currentDay.essay_questions.length} câu)
                             </button>
+                          )}
 
-                            {totalWrongQuestions.length > 0 && (
-                              <button
-                                id="btn-all-wrong-questions"
-                                style={{
-                                  padding: '5px 10px',
-                                  borderRadius: '7px',
-                                  border: 'none',
-                                  fontSize: '12px',
-                                  fontWeight: 600,
-                                  cursor: 'pointer',
-                                  background: quizBankMode === 'all_wrong' ? '#b45309' : 'transparent',
-                                  color: quizBankMode === 'all_wrong' ? '#ffffff' : '#78350f',
-                                  transition: 'all 0.15s',
-                                  display: 'inline-flex',
-                                  alignItems: 'center',
-                                  gap: '4px'
-                                }}
-                                onClick={() => { setQuizBankMode('all_wrong'); setCurrentQIndex(0); setFilterType('all'); }}
-                                title="Luyện tập gom tất cả câu hay sai từ toàn bộ các Day"
-                              >
-                                <AlertTriangle size={13} />
-                                Tổng câu sai các Day ({totalWrongQuestions.length})
-                              </button>
-                            )}
-                          </div>
+                          <button
+                            id="btn-day-wrong-questions"
+                            className={`bank-pill-btn ${quizBankMode === 'wrong' ? 'active-wrong' : ''}`}
+                            style={{
+                              background: quizBankMode === 'wrong' ? '#dc2626' : (dayWrongQuestions.length > 0 ? '#fff1f2' : undefined),
+                              color: quizBankMode === 'wrong' ? '#ffffff' : (dayWrongQuestions.length > 0 ? '#b91c1c' : undefined),
+                              borderColor: quizBankMode === 'wrong' ? '#dc2626' : (dayWrongQuestions.length > 0 ? '#fecaca' : undefined)
+                            }}
+                            onClick={() => { setQuizBankMode('wrong'); setCurrentQIndex(0); setFilterType('all'); }}
+                            title={`Luyện tập riêng các câu làm sai / chưa ổn của ${currentDay.day_label}`}
+                          >
+                            <Flame size={14} color={quizBankMode === 'wrong' ? '#ffffff' : '#ef4444'} />
+                            🔥 Câu hay sai ({dayWrongQuestions.length})
+                          </button>
+
+                          {totalWrongQuestions.length > 0 && (
+                            <button
+                              id="btn-all-wrong-questions"
+                              className={`bank-pill-btn ${quizBankMode === 'all_wrong' ? 'active-all-wrong' : ''}`}
+                              onClick={() => { setQuizBankMode('all_wrong'); setCurrentQIndex(0); setFilterType('all'); }}
+                              title="Luyện tập gom tất cả câu hay sai từ toàn bộ các Day"
+                            >
+                              <AlertTriangle size={13} />
+                              Tổng câu sai các Day ({totalWrongQuestions.length})
+                            </button>
+                          )}
                         </div>
 
-                        <p style={{ fontSize: '13px', color: '#64748b', marginTop: '6px' }}>
+                        <p style={{ fontSize: '12px', color: '#64748b', marginTop: '6px' }}>
                           {quizBankMode === 'wrong'
-                            ? `🔥 Đang luyện tập các câu hay sai của ${currentDay.day_label} (${allQuestions.length} câu). Khi đã hiểu rõ câu nào, bấm nút "Đã ổn · Bỏ khỏi câu hay sai" để loại khỏi danh sách.`
+                            ? `🔥 Luyện tập các câu hay sai của ${currentDay.day_label}. Khi đã nắm vững câu nào, bấm "Đã ổn · Bỏ khỏi câu hay sai" để loại khỏi danh sách.`
                             : quizBankMode === 'all_wrong'
-                            ? `⚡ Đang luyện tập gom tất cả các câu làm sai từ toàn bộ các Day (${allQuestions.length} câu).`
+                            ? `⚡ Luyện tập gom tất cả các câu làm sai từ toàn bộ các Day (${allQuestions.length} câu).`
                             : quizBankMode === 'expanded'
-                            ? `📚 Đang xem toàn bộ ngân hàng đề thi mở rộng (${allQuestions.length} câu trắc nghiệm bao phủ toàn bộ kiến thức của ${currentDay.day_label}).`
-                            : `🎯 Đề thi chuẩn chính thức từ máy chủ VLearn (${allQuestions.length} câu). Làm sai câu nào sẽ tự động gom vào nút "Câu hay sai".`}
+                            ? `📚 Ngân hàng đề thi mở rộng (${allQuestions.length} câu trắc nghiệm bao phủ toàn bộ kiến thức của ${currentDay.day_label}).`
+                            : `🎯 Đề thi chuẩn chính thức từ máy chủ VLearn (${allQuestions.length} câu).`}
                         </p>
                       </div>
 
-                      {/* Header Quick Controls */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                      {/* Header Quick Controls & Action Button */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                         {/* Toggle Study Mode */}
                         <label 
                           style={{ 
                             display: 'flex', 
                             alignItems: 'center', 
-                            gap: '8px', 
+                            gap: '7px', 
                             padding: '6px 12px', 
                             borderRadius: '8px', 
                             background: studyMode ? '#f0fdf4' : '#f8fafc', 
-                            border: studyMode ? '1px solid #86efac' : '1px solid #e2e8f0', 
+                            border: studyMode ? '1px solid #86efac' : '1px solid #cbd5e1', 
                             cursor: 'pointer',
-                            fontSize: '13px',
-                            fontWeight: 600,
-                            color: studyMode ? '#15803d' : '#475569'
+                            fontSize: '12px',
+                            fontWeight: 700,
+                            color: studyMode ? '#15803d' : '#475569',
+                            whiteSpace: 'nowrap'
                           }}
                         >
                           <input 
@@ -999,105 +1051,41 @@ export default function App() {
                             onChange={(e) => setStudyMode(e.target.checked)}
                             style={{ accentColor: '#10b981', cursor: 'pointer' }}
                           />
-                          <BookMarked size={16} color={studyMode ? '#10b981' : '#64748b'} />
-                          Chế độ Ôn thi (Hiện sẵn đáp án)
+                          <BookMarked size={15} color={studyMode ? '#10b981' : '#64748b'} />
+                          Chế độ Ôn thi
                         </label>
 
-                        {/* Nút tải Ngân hàng câu hỏi toàn diện của Day */}
-                        {currentDay.expanded_txt_url && (
-                          <a 
-                            href={currentDay.expanded_txt_url} 
-                            download={currentDay.expanded_txt_name || `${currentDay.folder}_NGAN_HANG_TOAN_DIEN.txt`}
-                            className="nav-tab-btn"
-                            style={{ padding: '6px 12px', fontSize: '12px', background: '#f5f3ff', color: '#6d28d9', border: '1px solid #ddd6fe' }}
-                            title={`Tải toàn bộ ngân hàng ${currentDay.total_bank_count} câu hỏi mở rộng của ${currentDay.day_label} (kèm lời giải chi tiết)`}
-                          >
-                            <Database size={14} />
-                            Tải kho {currentDay.total_bank_count} câu (.txt)
-                          </a>
-                        )}
-
-                        {/* Nút tải Excel Quizizz cho Day */}
-                        <a 
-                          href={`/quiz_excel/Day_${String(currentDay.day_num).padStart(2, '0')}_FULL_TOAN_BO_${currentDay.expanded_questions?.length || currentDay.questions?.length}_CAU.xlsx`}
-                          download
+                        {/* Nút Thao tác & Tài liệu mở rộng */}
+                        <button
                           className="nav-tab-btn"
-                          style={{ padding: '6px 12px', fontSize: '12px', background: '#faf5ff', color: '#7c3aed', border: '1px solid #d8b4fe' }}
-                          title={`Tải file Excel chuẩn Quiz.com / Quizizz (${currentDay.expanded_questions?.length || currentDay.questions?.length} câu) của ${currentDay.day_label}`}
-                        >
-                          <FileSpreadsheet size={14} />
-                          Excel Quizizz ({currentDay.expanded_questions?.length || currentDay.questions?.length} câu)
-                        </a>
-
-                        {/* Nút tải file Text bài giải */}
-                        <a 
-                          href={txtFileUrl} 
-                          download={txtFileName}
-                          className="nav-tab-btn"
-                          style={{ padding: '6px 12px', fontSize: '12px' }}
-                          title="Tải file text bài giải chi tiết từng câu"
+                          style={{ 
+                            padding: '6px 12px', 
+                            fontSize: '12px', 
+                            background: '#f1f5f9', 
+                            border: '1px solid #cbd5e1', 
+                            color: '#0f172a',
+                            fontWeight: 700,
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                          onClick={() => setShowMoreActions(true)}
+                          title="Tải Excel, file txt bài giải, hiện hết đáp án, làm lại"
                         >
                           <Download size={14} />
-                          Tải bài giải (.txt)
-                        </a>
-
-                        {/* Nút Xem tất cả đáp án */}
-                        {!studyMode && (
-                          <button
-                            onClick={handleRevealAllInDay}
-                            style={{
-                              background: '#eff6ff',
-                              border: '1px solid #bfdbfe',
-                              borderRadius: '8px',
-                              padding: '6px 12px',
-                              fontSize: '12px',
-                              fontWeight: 600,
-                              cursor: 'pointer',
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: '6px',
-                              color: '#1d4ed8'
-                            }}
-                            title="Hiện đáp án tất cả các câu trong danh sách này"
-                          >
-                            <Eye size={14} /> Hiện hết đáp án
-                          </button>
-                        )}
-
-                        {/* Nút Làm lại */}
-                        {dayCheckedCount > 0 && !studyMode && (
-                          <button
-                            onClick={handleResetDayQuiz}
-                            style={{
-                              background: '#f1f5f9',
-                              border: '1px solid #cbd5e1',
-                              borderRadius: '8px',
-                              padding: '6px 10px',
-                              fontSize: '12px',
-                              cursor: 'pointer',
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: '4px',
-                              color: '#475569'
-                            }}
-                            title="Làm lại danh sách câu hỏi này từ đầu"
-                          >
-                            <RotateCcw size={14} /> Làm lại
-                          </button>
-                        )}
+                          <span>Tài liệu & Tiện ích ▾</span>
+                        </button>
                       </div>
                     </div>
 
                     {/* Progress Bar & Filter Row */}
-                    <div style={{ marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', borderTop: '1px solid #f1f5f9', paddingTop: '12px' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px' }}>
-                        <span style={{ fontWeight: 600, color: '#0369a1' }}>
-                          Tiến độ: {studyMode ? `${allQuestions.length}/${allQuestions.length} (Đang mở toàn bộ)` : `${dayCorrectCount}/${dayCheckedCount} đúng (${dayCheckedCount}/${allQuestions.length} đã làm)`}
-                        </span>
+                    <div style={{ marginTop: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', borderTop: '1px solid #f1f5f9', paddingTop: '10px' }}>
+                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#0369a1' }}>
+                        Tiến độ: {studyMode ? `${allQuestions.length}/${allQuestions.length} (Đang mở toàn bộ)` : `${dayCorrectCount}/${dayCheckedCount} đúng (${dayCheckedCount}/${allQuestions.length} đã làm)`}
                       </div>
 
                       {/* Filter Buttons */}
-                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                      <div className="filter-chips-row">
                         {[
                           { id: 'all', label: `Tất cả (${allQuestions.length})` },
                           { id: 'correct', label: `Đúng (${dayCorrectCount})` },
@@ -1112,17 +1100,8 @@ export default function App() {
                         ].map(f => (
                           <button
                             key={f.id}
+                            className={`filter-chip-btn ${filterType === f.id ? 'active' : ''}`}
                             onClick={() => setFilterType(f.id)}
-                            style={{
-                              padding: '4px 8px',
-                              borderRadius: '6px',
-                              fontSize: '11px',
-                              fontWeight: 600,
-                              cursor: 'pointer',
-                              border: filterType === f.id ? '1px solid #0284c7' : '1px solid #e2e8f0',
-                              background: filterType === f.id ? '#e0f2fe' : '#ffffff',
-                              color: filterType === f.id ? '#0369a1' : '#64748b'
-                            }}
                           >
                             {f.label}
                           </button>
@@ -1130,8 +1109,40 @@ export default function App() {
                       </div>
                     </div>
 
-                    {/* Question Navigation Grid */}
-                    <div className="question-nav-grid" style={{ marginTop: '12px', maxHeight: '180px', overflowY: 'auto', padding: '4px' }}>
+                    {/* Mobile Compact Question Navigation Row */}
+                    <div className="mobile-nav-summary-row">
+                      <button
+                        className="nav-step-btn"
+                        disabled={currentQIndex === 0}
+                        onClick={() => setCurrentQIndex(currentQIndex - 1)}
+                      >
+                        <ChevronLeft size={16} /> Trước
+                      </button>
+
+                      <button
+                        className="nav-open-grid-btn"
+                        onClick={() => setShowGridModal(true)}
+                        title="Bấm để mở danh sách câu hỏi"
+                      >
+                        <span className="nav-grid-main">
+                          Câu {currentQIndex + 1} / {allQuestions.length}
+                        </span>
+                        <span className="nav-grid-sub">
+                          <Hash size={11} style={{ display: 'inline', verticalAlign: 'middle' }} /> Xem bảng {allQuestions.length} câu ▾
+                        </span>
+                      </button>
+
+                      <button
+                        className="nav-step-btn"
+                        disabled={currentQIndex === allQuestions.length - 1}
+                        onClick={() => setCurrentQIndex(currentQIndex + 1)}
+                      >
+                        Sau <ChevronRight size={16} />
+                      </button>
+                    </div>
+
+                    {/* Desktop Question Navigation Grid */}
+                    <div className="question-nav-grid desktop-question-nav-grid" style={{ marginTop: '12px', maxHeight: '180px', overflowY: 'auto', padding: '4px' }}>
                       {allQuestions.map((q, idx) => {
                         const qId = q.question_id || `${selectedDayId}_q${idx}`;
                         const isAct = idx === currentQIndex;
@@ -1796,8 +1807,8 @@ export default function App() {
                         </div>
                       )}
 
-                      {/* Actions Bottom Bar */}
-                      <div className="quiz-action-bar">
+                      {/* Actions Bottom Bar (Desktop view) */}
+                      <div className="quiz-action-bar desktop-quiz-action-bar">
                         <button
                           className="nav-tab-btn"
                           disabled={currentQIndex === 0}
@@ -1894,6 +1905,310 @@ export default function App() {
           )}
         </main>
       </div>
+
+      {/* MOBILE STICKY BOTTOM ACTION BAR (Cố định ở đáy màn hình điện thoại) */}
+      {activeTab === 'quiz' && currentQ && (
+        <div className="mobile-bottom-action-bar">
+          <button
+            className="mobile-btn-nav"
+            disabled={currentQIndex === 0}
+            onClick={() => setCurrentQIndex(currentQIndex - 1)}
+            aria-label="Câu trước"
+          >
+            <ChevronLeft size={18} />
+            <span>Trước</span>
+          </button>
+
+          <div className="mobile-bottom-center-cta">
+            {currentQ.interaction?.type === 'essay_short_text' ? (
+              <button
+                className="mobile-btn-cta mobile-btn-essay"
+                onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !prev[currentQId] }))}
+              >
+                <Eye size={17} />
+                <span>{showEssaySolution[currentQId] ? 'Đóng lời giải' : 'Xem lời giải & Rubric'}</span>
+              </button>
+            ) : !isChecked && !studyMode ? (
+              <div className="mobile-cta-dual">
+                <button
+                  className="mobile-btn-reveal"
+                  onClick={handleRevealAnswer}
+                  title="Xem đáp án câu này"
+                >
+                  <Eye size={16} />
+                  <span>Đáp án</span>
+                </button>
+                <button
+                  className="mobile-btn-cta mobile-btn-check"
+                  onClick={() => handleCheckAnswer()}
+                >
+                  <Check size={18} />
+                  <span>Kiểm tra đáp án</span>
+                </button>
+              </div>
+            ) : (
+              <button
+                className="mobile-btn-cta mobile-btn-next"
+                onClick={() => {
+                  if (currentQIndex < allQuestions.length - 1) {
+                    setCurrentQIndex(currentQIndex + 1);
+                  }
+                }}
+              >
+                <span>Câu tiếp theo</span>
+                <ChevronRight size={18} />
+              </button>
+            )}
+          </div>
+
+          <button
+            className="mobile-btn-nav"
+            disabled={currentQIndex === allQuestions.length - 1}
+            onClick={() => setCurrentQIndex(currentQIndex + 1)}
+            aria-label="Câu tiếp theo"
+          >
+            <ChevronRight size={18} />
+            <span>Tiếp</span>
+          </button>
+        </div>
+      )}
+
+      {/* MODAL / BOTTOM SHEET LƯỚI SỐ CÂU HỎI TRÊN MOBILE */}
+      {showGridModal && (
+        <div className="bottom-sheet-overlay" onClick={() => setShowGridModal(false)}>
+          <div className="bottom-sheet-content" onClick={e => e.stopPropagation()}>
+            <div className="bottom-sheet-header">
+              <div>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+                  Danh sách câu hỏi ({allQuestions.length} câu)
+                </h3>
+                <p style={{ fontSize: '12px', color: '#64748b', marginTop: '2px' }}>
+                  {currentDay.day_label} · Chạm vào số câu để chuyển nhanh
+                </p>
+              </div>
+              <button 
+                className="btn-close-sheet" 
+                onClick={() => setShowGridModal(false)}
+                aria-label="Đóng bảng câu hỏi"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Filter Chips inside sheet */}
+            <div className="sheet-filter-chips">
+              {[
+                { id: 'all', label: `Tất cả (${allQuestions.length})` },
+                { id: 'correct', label: `Đúng (${dayCorrectCount})` },
+                { id: 'wrong', label: `Sai (${dayCheckedCount - dayCorrectCount})` },
+                { id: 'need_review', label: `Cần ôn` },
+                { id: 'unanswered', label: `Chưa làm (${allQuestions.length - dayCheckedCount})` }
+              ].map(f => (
+                <button
+                  key={f.id}
+                  className={`sheet-filter-pill ${filterType === f.id ? 'active' : ''}`}
+                  onClick={() => setFilterType(f.id)}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Question Pills Grid */}
+            <div className="sheet-grid-container">
+              {allQuestions.map((q, idx) => {
+                const qId = q.question_id || `${selectedDayId}_q${idx}`;
+                const isAct = idx === currentQIndex;
+                const status = checkedState[qId];
+                let pillClass = '';
+                if (studyMode) pillClass = 'correct';
+                else if (status?.isChecked) pillClass = status.isCorrect ? 'correct' : 'wrong';
+
+                const isDimmed = !filteredQuestionIndices.includes(idx);
+
+                return (
+                  <button
+                    key={idx}
+                    className={`q-nav-pill ${isAct ? 'active' : ''} ${pillClass}`}
+                    style={{ opacity: isDimmed ? 0.35 : 1 }}
+                    onClick={() => {
+                      setCurrentQIndex(idx);
+                      setShowGridModal(false);
+                    }}
+                    title={`Câu ${idx + 1}: ${q.question_id}`}
+                  >
+                    {idx + 1}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL / BOTTOM SHEET THAO TÁC KHÁC & TÀI LIỆU TẢI VỀ */}
+      {showMoreActions && (
+        <div className="bottom-sheet-overlay" onClick={() => setShowMoreActions(false)}>
+          <div className="bottom-sheet-content more-actions-sheet" onClick={e => e.stopPropagation()}>
+            <div className="bottom-sheet-header">
+              <div>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+                  Tài Liệu & Tiện Ích Mở Rộng
+                </h3>
+                <p style={{ fontSize: '12px', color: '#64748b', marginTop: '2px' }}>
+                  {currentDay.day_label}: {currentDay.title}
+                </p>
+              </div>
+              <button 
+                className="btn-close-sheet" 
+                onClick={() => setShowMoreActions(false)}
+                aria-label="Đóng tiện ích"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="more-actions-list">
+              {/* Guide modal button */}
+              <button
+                className="more-action-item"
+                onClick={() => {
+                  setShowMoreActions(false);
+                  setShowGuideModal(true);
+                }}
+              >
+                <div className="action-icon-wrap" style={{ background: '#e0f2fe', color: '#0369a1' }}>
+                  <Info size={18} />
+                </div>
+                <div className="action-item-info">
+                  <span className="action-item-title">Cấu trúc đề & Phân bổ (165 câu)</span>
+                  <span className="action-item-desc">Xem giải thích 5 dạng câu hỏi khảo thí năng lực AI</span>
+                </div>
+              </button>
+
+              {/* Master Excel */}
+              <a
+                href="/VLEARN_K4P1_TOAN_BO_QUIZ_VA_SLIDES.xlsx"
+                download
+                className="more-action-item"
+                onClick={() => setShowMoreActions(false)}
+              >
+                <div className="action-icon-wrap" style={{ background: '#dcfce7', color: '#15803d' }}>
+                  <FileSpreadsheet size={18} />
+                </div>
+                <div className="action-item-info">
+                  <span className="action-item-title">Tải Bảng Excel Master (.xlsx)</span>
+                  <span className="action-item-desc">Tổng hợp toàn bộ 165 câu chuẩn + 150 câu Day 1</span>
+                </div>
+              </a>
+
+              {/* Quizizz Zip */}
+              <a
+                href="/TONG_HOP_QUIZ_15_NGAY_EXCEL.zip"
+                download="TONG_HOP_QUIZ_15_NGAY_EXCEL.zip"
+                className="more-action-item"
+                onClick={() => setShowMoreActions(false)}
+              >
+                <div className="action-icon-wrap" style={{ background: '#f3e8ff', color: '#7c3aed' }}>
+                  <FileSpreadsheet size={18} />
+                </div>
+                <div className="action-item-info">
+                  <span className="action-item-title">Bộ Quiz.com / Quizizz 45 file (.zip)</span>
+                  <span className="action-item-desc">Chia nhỏ ~20 câu/file chuẩn import Quizizz/Quiz.com</span>
+                </div>
+              </a>
+
+              {/* Day Txt Solution */}
+              <a
+                href={txtFileUrl}
+                download={txtFileName}
+                className="more-action-item"
+                onClick={() => setShowMoreActions(false)}
+              >
+                <div className="action-icon-wrap" style={{ background: '#f1f5f9', color: '#334155' }}>
+                  <Download size={18} />
+                </div>
+                <div className="action-item-info">
+                  <span className="action-item-title">Tải bài giải chi tiết {currentDay.day_label} (.txt)</span>
+                  <span className="action-item-desc">File text phân tích lời giải chi tiết từng câu</span>
+                </div>
+              </a>
+
+              {/* Day Expanded Txt */}
+              {currentDay.expanded_txt_url && (
+                <a
+                  href={currentDay.expanded_txt_url}
+                  download={currentDay.expanded_txt_name || `${currentDay.folder}_NGAN_HANG_TOAN_DIEN.txt`}
+                  className="more-action-item"
+                  onClick={() => setShowMoreActions(false)}
+                >
+                  <div className="action-icon-wrap" style={{ background: '#f5f3ff', color: '#6d28d9' }}>
+                    <Database size={18} />
+                  </div>
+                  <div className="action-item-info">
+                    <span className="action-item-title">Tải kho mở rộng ({currentDay.total_bank_count} câu .txt)</span>
+                    <span className="action-item-desc">Toàn bộ ngân hàng đề thi mở rộng kèm lời giải</span>
+                  </div>
+                </a>
+              )}
+
+              {/* Day Quizizz Excel */}
+              <a
+                href={`/quiz_excel/Day_${String(currentDay.day_num).padStart(2, '0')}_FULL_TOAN_BO_${currentDay.expanded_questions?.length || currentDay.questions?.length}_CAU.xlsx`}
+                download
+                className="more-action-item"
+                onClick={() => setShowMoreActions(false)}
+              >
+                <div className="action-icon-wrap" style={{ background: '#faf5ff', color: '#7c3aed' }}>
+                  <FileSpreadsheet size={18} />
+                </div>
+                <div className="action-item-info">
+                  <span className="action-item-title">Excel Quizizz Day này ({currentDay.expanded_questions?.length || currentDay.questions?.length} câu)</span>
+                  <span className="action-item-desc">File Excel trắc nghiệm chuẩn mẫu nhập Quizizz</span>
+                </div>
+              </a>
+
+              {/* Reveal all */}
+              {!studyMode && (
+                <button
+                  className="more-action-item"
+                  onClick={() => {
+                    handleRevealAllInDay();
+                    setShowMoreActions(false);
+                  }}
+                >
+                  <div className="action-icon-wrap" style={{ background: '#eff6ff', color: '#1d4ed8' }}>
+                    <Eye size={18} />
+                  </div>
+                  <div className="action-item-info">
+                    <span className="action-item-title">Hiện tất cả đáp án của Day này</span>
+                    <span className="action-item-desc">Mở toàn bộ lời giải và đáp án các câu trong danh sách</span>
+                  </div>
+                </button>
+              )}
+
+              {/* Reset */}
+              {dayCheckedCount > 0 && !studyMode && (
+                <button
+                  className="more-action-item"
+                  onClick={() => {
+                    handleResetDayQuiz();
+                    setShowMoreActions(false);
+                  }}
+                >
+                  <div className="action-icon-wrap" style={{ background: '#fef2f2', color: '#dc2626' }}>
+                    <RotateCcw size={18} />
+                  </div>
+                  <div className="action-item-info">
+                    <span className="action-item-title" style={{ color: '#dc2626' }}>Làm lại bài thi từ đầu</span>
+                    <span className="action-item-desc">Xóa toàn bộ các câu trả lời đã làm trong Day này</span>
+                  </div>
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* MODAL HƯỚNG DẪN CẤU TRÚC ĐỀ THI VLEARN */}
       {showGuideModal && (
