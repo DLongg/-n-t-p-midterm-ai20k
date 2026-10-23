@@ -578,11 +578,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Phân biệt phần có thể chạy song song với kết luận phụ thuộc chúng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt phần có thể chạy song song với kết luận phụ thuộc chúng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt phần có thể chạy song song với kết luận phụ thuộc chúng.
-
-=====================================================================================
+      Khi phân rã và kết hợp lại câu hỏi so sánh hai phiên bản chính sách ở hai nguồn riêng: (a) Tạo sub-query lấy điều kiện và hạn chót năm 2026; (b) Tạo sub-query lấy hạn chót năm 2025; (c) Giữ dấu vết nguồn riêng cho từng phiên bản tài liệu; (d) Chỉ đưa ra kết luận so sánh sau khi đã thu thập đủ hạn chót của cả hai năm. Tuyệt đối không dùng trí nhớ của mô hình để suy diễn khi thiếu dữ liệu.
 CÂU 022 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q022 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-query-decomposition-recomposition] Query Decomposition Recomposition
 =====================================================================================
@@ -994,11 +990,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Phân biệt bước xây dựng index offline với bước tìm kiếm khi nhận query.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt bước xây dựng index offline với bước tìm kiếm khi nhận query.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt bước xây dựng index offline với bước tìm kiếm khi nhận query.
-
-=====================================================================================
+      Quy trình triển khai tìm kiếm từ khóa (lexical search BM25) đúng trình tự nhân quả: 1. Xây dựng chỉ mục BM25 từ các token trong kho tài liệu ở pha offline (o3) -> 2. Khi nhận truy vấn, tokenize query theo cùng quy ước chuẩn hóa (o2) -> 3. Chấm điểm truy vấn trên chỉ mục BM25 (o4) -> 4. Sắp xếp điểm giảm dần và giới hạn ở top-k kết quả (o5) -> 5. Trả top-k bản ghi kèm mã định danh và metadata (o1).
 CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q038 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-bm25-lexical-search-implementation] Bm25 Lexical Search Implementation
 =====================================================================================
@@ -1046,11 +1038,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Bước hợp các candidate chưa phải là fusion và không được làm mất tín hiệu của từng đường xử lý.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bước hợp các candidate chưa phải là fusion và không được làm mất tín hiệu của từng đường xử lý.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bước hợp các candidate chưa phải là fusion và không được làm mất tín hiệu của từng đường xử lý.
-
-=====================================================================================
+      Khi hợp nhất các ứng viên từ hai đường xử lý dense và sparse trước bước reranking, danh sách ứng viên phải giữ đầy đủ: (a) ID ổn định của bản ghi để tránh trùng lặp; (b) Thứ hạng và điểm dense; (c) Thứ hạng và điểm sparse; (d) Dấu vết nguồn (lineage) của từng đường xử lý. Không được giữ hai bản ghi trùng ID hay chỉ giữ điểm số lớn hơn.
 CÂU 040 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q040 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-hybrid-parallel-retrieval] Hybrid Parallel Retrieval
 =====================================================================================
@@ -1197,11 +1185,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Áp dụng công thức có trọng số và chú ý hệ số `(1 - alpha)` của sparse.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Áp dụng công thức có trọng số và chú ý hệ số `(1 - alpha)` của sparse.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Áp dụng công thức có trọng số và chú ý hệ số `(1 - alpha)` của sparse.
-
-=====================================================================================
+      Điểm kết hợp: `alpha × dense + (1 - alpha) × sparse` với alpha = 0,6. Với A (dense=0,9, sparse=0,2): điểm = 0,6×0,9 + 0,4×0,2 = 0,54 + 0,08 = 0,62 (mệnh đề a đúng). Với B (dense=0,5, sparse=0,8): điểm = 0,6×0,5 + 0,4×0,8 = 0,30 + 0,32 = 0,62 (mệnh đề b đúng). Hai kết quả có điểm bằng nhau nên hòa và cần dùng quy tắc phá hòa đã khai báo (mệnh đề d đúng). Alpha = 0,6 biểu thị dense đóng góp 60% và sparse đóng góp 40% (mệnh đề e đúng). Mệnh đề c sai vì hai ứng viên có cùng điểm tổng.
 CÂU 046 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d08-q046 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-alpha-weighted-hybrid-scoring] Alpha Weighted Hybrid Scoring
 =====================================================================================
@@ -1223,11 +1207,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Kiểm tra lần lượt Weighted formula và Một-trừ-alpha.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm tra lần lượt Weighted formula và Một-trừ-alpha.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra lần lượt Weighted formula và Một-trừ-alpha.
-
-=====================================================================================
+      Với công thức `alpha × dense + (1 - alpha) × sparse` trên candidate có dense=0,2 và sparse=0,9: (a) Khi alpha = 0, điểm = 0 + 1×0,9 = 0,9 và chỉ có tín hiệu sparse được dùng; (b) Khi alpha = 1, điểm = 1×0,2 + 0 = 0,2 và chỉ có tín hiệu dense được dùng; (d) Việc kiểm tra hai điểm biên giá trị (boundary testing) là bước xác minh tính đúng đắn kỹ thuật, tách biệt với việc điều chỉnh tham số alpha tối ưu trên benchmark thực nghiệm.
 CÂU 047 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d08-q047 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-pageindex-structural-retrieval] Pageindex Structural Retrieval
 =====================================================================================
@@ -1300,11 +1280,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Fallback phải có điều kiện vào và điều kiện dừng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Fallback phải có điều kiện vào và điều kiện dừng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Fallback phải có điều kiện vào và điều kiện dừng.
-
-=====================================================================================
+      Trình tự luồng xử lý dự phòng (fallback workflow) có điều kiện vào và điểm dừng rõ ràng: 1. Chạy đường xử lý chính (dense retrieval) (o2) -> 2. Kiểm tra điều kiện kích hoạt có thể quan sát (ví dụ điểm số dưới ngưỡng chất lượng) (o4) -> 3. Chạy đường xử lý dự phòng (BM25) (o5) -> 4. Ghi nhận và giữ nguyên dấu vết nguồn của đường xử lý/kết quả (o3) -> 5. Kết thúc bằng thông báo không có bằng chứng nếu đường dự phòng cũng thất bại (o1).
 CÂU 050 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q050 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-retrieval-fallback-routing] Retrieval Fallback Routing
 =====================================================================================
@@ -1609,11 +1585,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một khối tốt phải ánh xạ ngược được tới bản ghi gốc và không làm thay đổi thứ bậc chỉ dẫn.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một khối tốt phải ánh xạ ngược được tới bản ghi gốc và không làm thay đổi thứ bậc chỉ dẫn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một khối tốt phải ánh xạ ngược được tới bản ghi gốc và không làm thay đổi thứ bậc chỉ dẫn.
-
-=====================================================================================
+      Để định dạng ngữ cảnh (context) có cấu trúc chặt chẽ bảo vệ mô hình khỏi prompt injection và trích dẫn chuẩn: (a) Tách bạch rõ ràng giữa quy tắc hệ thống, câu hỏi của người dùng và dữ liệu đã truy xuất; (b) Sử dụng delimiter phân cách riêng biệt cho từng bản ghi tài liệu; (c) Giữ nguyên đầy đủ doc_id, nguồn, vị trí trang, phiên bản và nội dung văn bản; (d) Giữ thứ tự tài liệu xác định và có thể tái lập.
 CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q062 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-structured-rag-context-packaging] Structured Rag Context Packaging
 =====================================================================================
@@ -1761,11 +1733,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Kiểm từng vế câu hỏi đã có nguồn riêng hay chưa.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm từng vế câu hỏi đã có nguồn riêng hay chưa.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm từng vế câu hỏi đã có nguồn riêng hay chưa.
-
-=====================================================================================
+      Gói bằng chứng đầy đủ (evidence bundle) cho câu hỏi đa thuộc tính cần chứng minh: (a) Ánh xạ điều kiện tới tài liệu A; (b) Ánh xạ hạn chót tới tài liệu B; (c) Ánh xạ người phê duyệt tới tài liệu C; (d) Lưu giữ nguồn và vị trí chính xác cho từng dữ kiện độc lập. Không được gộp chung hay chỉ trích dẫn tài liệu đầu tiên.
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q068 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-rag-multisource-evidence-synthesis] Rag Multisource Evidence Synthesis
 =====================================================================================
@@ -1963,11 +1931,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Khả năng phân giải ID và mức độ hỗ trợ của bằng chứng là hai phép kiểm khác nhau.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Khả năng phân giải ID và mức độ hỗ trợ của bằng chứng là hai phép kiểm khác nhau.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Khả năng phân giải ID và mức độ hỗ trợ của bằng chứng là hai phép kiểm khác nhau.
-
-=====================================================================================
+      Quy tắc gắn nhãn trích dẫn (citation) chính xác ở cấp độ mệnh đề nguyên tử: (a) Gắn [D1] ngay sau mệnh đề về hạn chót; (b) Gắn [D2] ngay sau mệnh đề về người phê duyệt; (c) Xác minh rằng D1 và D2 thực sự tồn tại trong context gửi cho model; (d) Kiểm tra từng khối bằng chứng có thực sự hỗ trợ ngữ nghĩa cho mệnh đề tương ứng hay không. Không đặt một citation chung ở cuối đoạn.
 CÂU 076 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q076 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-claim-level-citation-generation] Claim Level Citation Generation
 =====================================================================================
@@ -2114,11 +2078,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Không thể sửa để bám bằng chứng nếu chưa xác định mệnh đề nào thiếu hỗ trợ.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không thể sửa để bám bằng chứng nếu chưa xác định mệnh đề nào thiếu hỗ trợ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không thể sửa để bám bằng chứng nếu chưa xác định mệnh đề nào thiếu hỗ trợ.
-
-=====================================================================================
+      Quy trình tự sửa chữa bản nháp (self-correction workflow) bám sát bằng chứng: 1. Tách bản nháp thành các mệnh đề nguyên tử độc lập (o2) -> 2. So sánh từng mệnh đề với context và gắn nhãn được hỗ trợ/mâu thuẫn/chưa có bằng chứng (o4) -> 3. Áp dụng thao tác bỏ, sửa hoặc thử lại có giới hạn đối với mệnh đề chưa đạt (o3) -> 4. Xuất câu trả lời cuối cùng hoặc thông báo từ chối trả lời (abstain) (o1).
 CÂU 082 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q082 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-grounded-answer-self-correction] Grounded Answer Self Correction
 =====================================================================================
@@ -2517,11 +2477,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một trường hợp không gắn với bằng chứng sẽ không giúp xác định lỗi hồi quy nằm ở retrieval hay generation.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một trường hợp không gắn với bằng chứng sẽ không giúp xác định lỗi hồi quy nằm ở retrieval hay generation.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một trường hợp không gắn với bằng chứng sẽ không giúp xác định lỗi hồi quy nằm ở retrieval hay generation.
-
-=====================================================================================
+      Để xây dựng một trường hợp kiểm thử hồi quy RAG (regression test fixture) có thể tái lập từ log sự cố, bản ghi kiểm thử bắt buộc phải có: (a) Câu hỏi đầu vào; (b) Đáp án chuẩn hoặc phạm vi đáp án cho phép; (c) Nguồn tài liệu hoặc chunk evidence kỳ vọng; (d) Khả năng trả lời (answerability label); (e) Độ khó và phân loại lỗi; (f) Định danh người đánh giá và phiên bản kiểm thử.
 CÂU 098 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d08-q098 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-rag-regression-testset-design] Rag Regression Testset Design
 =====================================================================================
@@ -2855,11 +2811,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tồn tại và hỗ trợ là hai điều kiện độc lập.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tồn tại và hỗ trợ là hai điều kiện độc lập.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tồn tại và hỗ trợ là hai điều kiện độc lập.
-
-=====================================================================================
+      Khi mệnh đề trích dẫn [D3] nhưng đoạn trích D3 không nêu con số mà mệnh đề khẳng định, trong khi D4 lại chứa con số đó: (a) Loại bỏ D3 vì không hỗ trợ dữ kiện con số; (b) Dùng D4 nếu D4 thực sự hỗ trợ đầy đủ mệnh đề; (c) Đặt citation gắn liền ngay mệnh đề nguyên tử chứa con số; (e) Nếu không có tài liệu nào hỗ trợ thì phải sửa, bỏ hoặc từ chối trả lời (abstain) ở mệnh đề đó. Tuyệt đối không giữ D3 chỉ vì ID có tồn tại.
 CÂU 111 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d08-q111 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-rag-insufficient-evidence-abstention] Rag Insufficient Evidence Abstention
 =====================================================================================

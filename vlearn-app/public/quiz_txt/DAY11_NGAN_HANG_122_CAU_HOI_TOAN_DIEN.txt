@@ -80,11 +80,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đếm công cụ không cho biết chúng chạm vào dữ liệu hay thực hiện hành động nào.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đếm công cụ không cho biết chúng chạm vào dữ liệu hay thực hiện hành động nào.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đếm công cụ không cho biết chúng chạm vào dữ liệu hay thực hiện hành động nào.
-
-=====================================================================================
+      Đếm số lượng công cụ không phản ánh đúng mức độ rủi ro; phải phân tích chi tiết dữ liệu truy cập, quyền hạn, quyền tự chủ, tính khả nghịch và hậu quả của từng công cụ.
 CÂU 004 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d11-q004 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-alignment-objective-mismatch-diagnosis] Alignment Objective Mismatch Diagnosis
 =====================================================================================
@@ -579,11 +575,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách hình thức của prompt khỏi mục tiêu cuối theo policy.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách hình thức của prompt khỏi mục tiêu cuối theo policy.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách hình thức của prompt khỏi mục tiêu cuối theo policy.
-
-=====================================================================================
+      Bản chất của kỹ thuật jailbreak là cố tình vượt qua các chính sách và bộ lọc an toàn của hệ thống để đạt được mục tiêu bị cấm, không phụ thuộc vào việc có dùng nhập vai hay không.
 CÂU 023 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q023 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-jailbreak-policy-bypass-diagnosis] Jailbreak Policy Bypass Diagnosis
 =====================================================================================
@@ -626,11 +618,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm mục tiêu cuối mà người dùng muốn đạt.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tìm mục tiêu cuối mà người dùng muốn đạt.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm mục tiêu cuối mà người dùng muốn đạt.
-
-=====================================================================================
+      Một prompt sử dụng kỹ thuật nhập vai nhưng chỉ phân tích nhân vật hư cấu và không yêu cầu nội dung vi phạm chính sách thì không phải là jailbreak; cần đánh giá theo mục tiêu cuối cùng.
 CÂU 025 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d11-q025 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-multiturn-attack-escalation-detection] Multiturn Attack Escalation Detection
 =====================================================================================
@@ -651,11 +639,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đọc lịch sử như một chuỗi mục tiêu, không đặt lại ở mỗi lượt.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đọc lịch sử như một chuỗi mục tiêu, không đặt lại ở mỗi lượt.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đọc lịch sử như một chuỗi mục tiêu, không đặt lại ở mỗi lượt.
-
-=====================================================================================
+      Khi kẻ tấn công thăm dò từng bước nhỏ (multi-turn reconnaissance), hệ thống cần phát hiện ý định tích lũy qua toàn bộ lịch sử hội thoại và chặn tại lượt 4 khi yêu cầu xâu chuỗi dữ liệu nhạy cảm xuất hiện.
 CÂU 026 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q026 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-multiturn-attack-escalation-detection] Multiturn Attack Escalation Detection
 =====================================================================================
@@ -749,11 +733,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Xác định lần đầu bí mật đi khỏi ranh giới được bảo vệ.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định lần đầu bí mật đi khỏi ranh giới được bảo vệ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định lần đầu bí mật đi khỏi ranh giới được bảo vệ.
-
-=====================================================================================
+      Chuỗi rò rỉ bí mật đi từ nguồn dữ liệu lưu trữ được bảo vệ trong database (o2) → được công cụ truy xuất đưa vào context (o3) → mô hình tạo output chứa bí mật đó (o4) → gửi ra bên ngoài qua kênh HTTP sink (o1).
 CÂU 030 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q030 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-sensitive-data-source-sink-tracing] Sensitive Data Source Sink Tracing
 =====================================================================================
@@ -799,11 +779,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đếm tập thông tin đã phát hành, không chỉ phản hồi hiện tại.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đếm tập thông tin đã phát hành, không chỉ phản hồi hiện tại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đếm tập thông tin đã phát hành, không chỉ phản hồi hiện tại.
-
-=====================================================================================
+      Chính sách giới hạn thông tin nhạy cảm áp dụng trên toàn bộ phiên làm việc (session scope); lượt 1 và 2 đã trả 2 thuộc tính, do đó yêu cầu thuộc tính thứ 3 ở lượt 3 phải bị chặn hoặc giữ lại để không vượt quá ngưỡng tích lũy.
 CÂU 032 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q032 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-cumulative-sensitive-disclosure-accounting] Cumulative Sensitive Disclosure Accounting
 =====================================================================================
@@ -849,11 +825,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Khoanh vùng phiên bản, artifact và nơi chúng đã được dùng.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Khoanh vùng phiên bản, artifact và nơi chúng đã được dùng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Khoanh vùng phiên bản, artifact và nơi chúng đã được dùng.
-
-=====================================================================================
+      Khi phát hiện dependency độc hại chèn lệnh lạ ở môi trường staging, biện pháp cô lập chuẩn là phong tỏa artifact tại staging, đóng băng hoặc rollback dependency và chặn tuyệt đối đường deploy lên production.
 CÂU 034 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q034 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-supply-chain-compromise-containment] Ai Supply Chain Compromise Containment
 =====================================================================================
@@ -899,11 +871,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm representation trước nội dung.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm representation trước nội dung.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm representation trước nội dung.
-
-=====================================================================================
+      Quy tắc kiểm tra ranh giới: Lỗi encoding (byte không thể giải mã) và định dạng dữ liệu phải bị từ chối ngay tại tầng kiểm tra dữ liệu đầu vào (input validation) trước khi gửi tới mô hình.
 CÂU 036 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q036 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-input-shape-and-encoding-validation] Input Shape And Encoding Validation
 =====================================================================================
@@ -949,11 +917,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So quyết định trước/sau khi chuẩn hóa trên cặp biểu diễn tương đương.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So quyết định trước/sau khi chuẩn hóa trên cặp biểu diễn tương đương.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So quyết định trước/sau khi chuẩn hóa trên cặp biểu diễn tương đương.
-
-=====================================================================================
+      Nguyên lý bất biến an toàn (safety invariance): Sau khi chuẩn hóa an toàn (loại bỏ ký tự zero-width, homoglyphs), các biểu diễn có cùng ý định ngữ nghĩa phải nhận cùng một quyết định xử lý theo chính sách.
 CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q038 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-security-unicode-canonicalization] Security Unicode Canonicalization
 =====================================================================================
@@ -999,11 +963,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Rule phải nêu nó match cái gì, sau transform nào.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Rule phải nêu nó match cái gì, sau transform nào.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Rule phải nêu nó match cái gì, sau transform nào.
-
-=====================================================================================
+      Khi phát hiện đầu vào khớp với chữ ký tấn công đã biết từ red-team, detector phải ghi nhận rõ quy tắc đã khớp, lý do kỹ thuật và áp dụng hành động tương ứng theo chính sách bảo mật.
 CÂU 040 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q040 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-prompt-injection-pattern-detector] Prompt Injection Pattern Detector
 =====================================================================================
@@ -1049,11 +1009,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một layer cho qua không đồng nghĩa toàn bộ input an toàn.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một layer cho qua không đồng nghĩa toàn bộ input an toàn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một layer cho qua không đồng nghĩa toàn bộ input an toàn.
-
-=====================================================================================
+      Khi regex cho qua nhưng detector học máy (learned detector) cảnh báo tấn công với xác suất 0,91 vượt ngưỡng 0,85, hệ thống phải chặn hoặc chuyển duyệt theo kết quả learned detector, đồng thời lưu vết cả hai để kiểm toán.
 CÂU 042 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q042 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-injection-detector-layering-and-fallback] Injection Detector Layering And Fallback
 =====================================================================================
@@ -1096,11 +1052,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Không có verdict khác với verdict benign.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không có verdict khác với verdict benign.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không có verdict khác với verdict benign.
-
-=====================================================================================
+      Kết luận 'An toàn vì ít nhất một detector đã cho qua' là sai lầm nguy hiểm; trong mô hình phòng thủ nhiều lớp, khi learned detector bị timeout thì hệ thống rơi vào trạng thái không xác định và phải xử lý fail-closed hoặc chuyển duyệt tùy mức rủi ro.
 CÂU 044 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d11-q044 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-domain-topic-scope-filtering] Domain Topic Scope Filtering
 =====================================================================================
@@ -1121,11 +1073,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Ngoài phạm vi không đồng nghĩa tấn công.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Ngoài phạm vi không đồng nghĩa tấn công.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ngoài phạm vi không đồng nghĩa tấn công.
-
-=====================================================================================
+      Người dùng hỏi 'quy trình nghỉ phép' nằm đúng trong phạm vi phúc lợi nhân viên; hệ thống phải đánh giá dựa trên ý định ngữ nghĩa (semantic intent) chứ không được chặn máy móc vì thiếu từ khóa 'phúc lợi'.
 CÂU 045 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q045 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-domain-topic-scope-filtering] Domain Topic Scope Filtering
 =====================================================================================
@@ -1165,11 +1113,7 @@ Bao nhiêu giây tối thiểu nữa request mới đủ điều kiện nếu bo
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: giây
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Evict timestamp cũ nhất khi nó ra khỏi 60 giây.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Evict timestamp cũ nhất khi nó ra khỏi 60 giây.
-
-=====================================================================================
+      Cửa sổ trượt 60s cho tối đa 3 requests. Các mốc hiện tại: t=0, 20, 40s. Sự kiện tại t=0 chỉ bị loại khi t_event <= now - 60 => now >= 60s. Tại thời điểm hiện tại now=50s, cần thêm tối thiểu 60 - 50 = 10 giây để request cũ nhất được evict khỏi cửa sổ trượt.
 CÂU 047 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q047 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-per-user-sliding-window-rate-limit] Per User Sliding Window Rate Limit
 =====================================================================================
@@ -1212,11 +1156,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Bước cuối chỉ xuất hiện trên pass path.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bước cuối chỉ xuất hiện trên pass path.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bước cuối chỉ xuất hiện trên pass path.
-
-=====================================================================================
+      Nhánh xử lý khi bị chặn: Parse/trích xuất text đầu vào của người dùng (o2) → chạy chuỗi guardrails kiểm tra theo thứ tự (o3) → trả phản hồi bị chặn và ghi log lý do kiểm toán (o1).
 CÂU 049 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q049 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-pre-model-guardrail-interception] Pre Model Guardrail Interception
 =====================================================================================
@@ -1262,11 +1202,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Ai tạo dấu phân cách, và model hoặc hệ khi vận hành có thực thi vai trò đó không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Ai tạo dấu phân cách, và model hoặc hệ khi vận hành có thực thi vai trò đó không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ai tạo dấu phân cách, và model hoặc hệ khi vận hành có thực thi vai trò đó không?
-
-=====================================================================================
+      Để ngăn chặn tấn công giả mạo dấu phân cách (delimiter injection), giải pháp bền vững là sử dụng cấu trúc dữ liệu có kiểu rõ ràng (typed structured channels) kèm escaping phù hợp, coi toàn bộ tài liệu là dữ liệu thuần túy.
 CÂU 051 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q051 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-spotlighting-untrusted-data-marking] Spotlighting Untrusted Data Marking
 =====================================================================================
@@ -1312,11 +1248,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt finding với hành động xử lý finding.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt finding với hành động xử lý finding.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt finding với hành động xử lý finding.
-
-=====================================================================================
+      Bộ phát hiện rò rỉ dữ liệu phải nhận diện và gắn thẻ cụ thể theo từng loại và vị trí dữ liệu nhạy cảm (email, API key bí mật, mã đơn công khai) để hệ thống phía sau quyết định hành động tương ứng.
 CÂU 053 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q053 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-output-pii-secret-detection] Output Pii Secret Detection
 =====================================================================================
@@ -1362,11 +1294,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Policy quyết định che hay chặn dựa trên loại phát hiện và khả năng giữ phần nội dung còn hữu ích.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Policy quyết định che hay chặn dựa trên loại phát hiện và khả năng giữ phần nội dung còn hữu ích.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Policy quyết định che hay chặn dựa trên loại phát hiện và khả năng giữ phần nội dung còn hữu ích.
-
-=====================================================================================
+      Khi chính sách cho phép che dữ liệu (redaction), quy trình đúng là che thông tin nhạy cảm, quét lại một lần nữa để xác nhận an toàn, rồi mới phát hành nội dung hữu ích còn lại.
 CÂU 055 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q055 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-output-redact-block-policy] Output Redact Block Policy
 =====================================================================================
@@ -1412,11 +1340,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đừng dùng kết quả đạt của một cổng chất lượng để thay cho kết luận an toàn ở cổng khác.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đừng dùng kết quả đạt của một cổng chất lượng để thay cho kết luận an toàn ở cổng khác.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng dùng kết quả đạt của một cổng chất lượng để thay cho kết luận an toàn ở cổng khác.
-
-=====================================================================================
+      Chính sách an toàn nội dung hoạt động độc lập với tính đầy đủ hay định dạng; ngay cả khi đầu ra có trích dẫn đúng và chuẩn schema, nếu chứa hướng dẫn thuộc nhóm bị cấm thì vẫn bắt buộc phải bị chặn.
 CÂU 057 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q057 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-harmful-output-moderation-decision] Harmful Output Moderation Decision
 =====================================================================================
@@ -1462,11 +1386,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Judge phải biết đánh giá theo rule nào và phải trả theo contract nào.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Judge phải biết đánh giá theo rule nào và phải trả theo contract nào.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Judge phải biết đánh giá theo rule nào và phải trả theo contract nào.
-
-=====================================================================================
+      Lỗ hổng thiết kế của LLM judge trong tình huống này là rubric thiếu schema định nghĩa phân loại/kết luận rõ ràng, đồng thời cấp thừa ngữ cảnh (lộ cả system prompt bí mật) cho bộ đánh giá.
 CÂU 059 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q059 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-llm-safety-judge-contract] Llm Safety Judge Contract
 =====================================================================================
@@ -1512,11 +1432,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách collection của findings khỏi final action.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách collection của findings khỏi final action.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách collection của findings khỏi final action.
-
-=====================================================================================
+      Khi có xung đột giữa các chính sách (PII yêu cầu che nhưng moderation yêu cầu chặn), hành động chặn an toàn có độ ưu tiên cao nhất, đồng thời phải lưu giữ đầy đủ các phát hiện phục vụ kiểm toán.
 CÂU 061 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q061 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-output-guardrail-decision-composition] Output Guardrail Decision Composition
 =====================================================================================
@@ -1559,11 +1475,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Artifact được đánh giá trước và sau transform có cùng content hash không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Artifact được đánh giá trước và sau transform có cùng content hash không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Artifact được đánh giá trước và sau transform có cùng content hash không?
-
-=====================================================================================
+      Văn bản sau khi che PII đã trở thành một artifact mới; các cổng kiểm tra an toàn và hợp đồng dữ liệu liên quan phải được chạy lại trên văn bản mới trước khi phát hành ra ngoài.
 CÂU 063 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d11-q063 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-exact-https-egress-allowlist] Exact Https Egress Allowlist
 =====================================================================================
@@ -1634,11 +1546,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một nơi hợp lệ không làm mọi dữ liệu gửi tới đó hợp lệ.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một nơi hợp lệ không làm mọi dữ liệu gửi tới đó hợp lệ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một nơi hợp lệ không làm mọi dữ liệu gửi tới đó hợp lệ.
-
-=====================================================================================
+      Quy tắc kiểm soát luồng dữ liệu ra ngoài (egress control): Đích đến nằm trong allowlist không đồng nghĩa được gửi mọi thứ; nếu nội dung chứa access token không cần thiết thì phải chặn không gửi.
 CÂU 066 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q066 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-egress-payload-protection-gate] Egress Payload Protection Gate
 =====================================================================================
@@ -1684,11 +1592,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Lời đồng ý mơ hồ không đủ liên kết với action cụ thể.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Lời đồng ý mơ hồ không đủ liên kết với action cụ thể.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Lời đồng ý mơ hồ không đủ liên kết với action cụ thể.
-
-=====================================================================================
+      Thao tác tài chính giá trị lớn (80 triệu) có rủi ro rất cao; khi không có mã định danh người duyệt hay chữ ký số hợp lệ trong nhật ký, hệ thống bắt buộc phải dừng thực thi (fail closed).
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q068 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-high-risk-action-recorded-authorization] High Risk Action Recorded Authorization
 =====================================================================================
@@ -1735,11 +1639,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đừng chỉ đếm thành phần; kiểm tra xem chúng có nằm trên cùng một đường dẫn không.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đừng chỉ đếm thành phần; kiểm tra xem chúng có nằm trên cùng một đường dẫn không.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng chỉ đếm thành phần; kiểm tra xem chúng có nằm trên cùng một đường dẫn không.
-
-=====================================================================================
+      Mô hình 'Lethal Trifecta' trong bảo mật agentic LLM (Simon Willison) bao gồm đúng ba thành phần trên cùng một luồng dữ liệu: (a) Tiếp nhận nội dung không đáng tin cậy từ bên ngoài (email); (b) Truy cập dữ liệu nhạy cảm nội bộ (CRM); (c) Có công cụ giao tiếp/hành động ra bên ngoài (POST ra Internet).
 CÂU 070 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q070 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-lethal-trifecta-risk-analysis] Lethal Trifecta Risk Analysis
 =====================================================================================
@@ -1785,11 +1685,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So quyền thực tế của reader và executor, không chỉ so tên gọi.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So quyền thực tế của reader và executor, không chỉ so tên gọi.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So quyền thực tế của reader và executor, không chỉ so tên gọi.
-
-=====================================================================================
+      Reader không phải là môi trường cách ly (quarantine) thực sự nếu nó vẫn giữ quyền truy cập CRM và gọi công cụ gửi email; dữ liệu lạ vẫn có thể bị lợi dụng để tấn công vào hệ thống nội bộ.
 CÂU 072 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q072 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-privileged-quarantined-model-separation] Privileged Quarantined Model Separation
 =====================================================================================
@@ -1835,11 +1731,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kết quả tool có quyền chọn action mới không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kết quả tool có quyền chọn action mới không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kết quả tool có quyền chọn action mới không?
-
-=====================================================================================
+      Selector đã chọn cố định hành động `lookup_order`; kết quả trả về từ công cụ chỉ được xem là dữ liệu và tuyệt đối không được phép tự ý thay đổi hoặc bổ sung hành động mới (`refund_all`).
 CÂU 074 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q074 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-action-selector-fixed-capability-pattern] Action Selector Fixed Capability Pattern
 =====================================================================================
@@ -1931,11 +1823,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Ordering dependency có thể là một safety invariant.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Ordering dependency có thể là một safety invariant.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ordering dependency có thể là một safety invariant.
-
-=====================================================================================
+      Thứ tự thực thi các bước (ordering dependency) thường là một bất biến an toàn; việc đổi thứ tự cấu thành thay đổi plan và bắt buộc phải qua quy trình phê duyệt lại.
 CÂU 078 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d11-q078 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-isolated-document-map-reduce] Isolated Document Map Reduce
 =====================================================================================
@@ -1956,11 +1844,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mỗi mapper được thấy bao nhiêu tài liệu?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi mapper được thấy bao nhiêu tài liệu?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi mapper được thấy bao nhiêu tài liệu?
-
-=====================================================================================
+      Để ngăn chặn cross-document prompt injection giữa các tài liệu cạnh tranh, kiến trúc chuẩn là cô lập từng tài liệu trong một mapper riêng biệt, sau đó dùng reducer phi-LLM (deterministic) để tổng hợp kết quả có cấu trúc.
 CÂU 079 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q079 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-isolated-document-map-reduce] Isolated Document Map Reduce
 =====================================================================================
@@ -2006,11 +1890,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dữ liệu có được phép thay đổi luồng điều khiển hoặc quyền không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dữ liệu có được phép thay đổi luồng điều khiển hoặc quyền không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dữ liệu có được phép thay đổi luồng điều khiển hoặc quyền không?
-
-=====================================================================================
+      Khi xử lý tệp CSV từ bên ngoài, giải pháp an toàn là cố định logic mã nguồn từ schema đáng tin cậy và xử lý dữ liệu CSV trong môi trường sandbox được cô lập, không cho phép mô hình sinh mã động dựa trên nội dung tệp.
 CÂU 081 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q081 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-code-then-execute-data-separation] Code Then Execute Data Separation
 =====================================================================================
@@ -2056,11 +1936,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Executor thật sự cần field nào để chạy bước đã được chốt?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Executor thật sự cần field nào để chạy bước đã được chốt?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Executor thật sự cần field nào để chạy bước đã được chốt?
-
-=====================================================================================
+      Nguyên tắc đặc quyền tối thiểu (Least Privilege Context): Executor chỉ cần nhận `order_id`, action đã được chốt và các trường dữ liệu cần thiết để thực thi, không được chuyển toàn bộ lịch sử chat chứa mật khẩu và nội dung web không an toàn.
 CÂU 083 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q083 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-post-plan-context-minimization] Post Plan Context Minimization
 =====================================================================================
@@ -2256,11 +2132,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Bằng chứng nào độc lập với lời agent tự khai?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bằng chứng nào độc lập với lời agent tự khai?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bằng chứng nào độc lập với lời agent tự khai?
-
-=====================================================================================
+      Lời tự khai của agent không thể coi là bằng chứng xác thực an toàn; oracle kiểm thử bắt buộc phải quan sát các sink thực tế (canary tokens, lệnh gọi công cụ, lưu lượng mạng và thay đổi trạng thái bên ngoài).
 CÂU 091 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q091 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-security-test-observable-oracle] Security Test Observable Oracle
 =====================================================================================
@@ -2304,11 +2176,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Nếu nhiều thứ cùng đổi, chênh lệch không còn gắn được cho một thay đổi cụ thể.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nếu nhiều thứ cùng đổi, chênh lệch không còn gắn được cho một thay đổi cụ thể.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu nhiều thứ cùng đổi, chênh lệch không còn gắn được cho một thay đổi cụ thể.
-
-=====================================================================================
+      Để so sánh trước/sau có căn cứ khoa học (controlled comparison), phải giữ cố định các biến ngoại lai: (a) tập test case đối kháng và đối chứng lành tính, (b) quyền model/công cụ nếu chỉ đo guardrail, (c) canary và oracle chấm điểm, (e) ngưỡng điểm quyết định. Không được thay đổi ngẫu nhiên bộ prompt (d).
 CÂU 093 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q093 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-controlled-safety-before-after-comparison] Controlled Safety Before After Comparison
 =====================================================================================
@@ -2354,11 +2222,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dùng bằng chứng từ luồng điều khiển và đích nhận để quyết định.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dùng bằng chứng từ luồng điều khiển và đích nhận để quyết định.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dùng bằng chứng từ luồng điều khiển và đích nhận để quyết định.
-
-=====================================================================================
+      Khi guardrail chặn yêu cầu ngay trước khi gọi mô hình, không có công cụ nào được gọi và canary không xuất hiện ở bất kỳ đích nào, kết quả kiểm thử được phân loại chính xác là 'Bị chặn' (Blocked).
 CÂU 095 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q095 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-safety-test-outcome-classification] Safety Test Outcome Classification
 =====================================================================================
@@ -2401,11 +2265,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Oracle đã quan sát gì tại sink trước exception?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Oracle đã quan sát gì tại sink trước exception?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Oracle đã quan sát gì tại sink trước exception?
-
-=====================================================================================
+      Nếu canary token đã bị rò rỉ ra sink bên ngoài trước khi tiến trình gặp exception, kết quả an toàn chính vẫn là 'Bị lộ' (Leaked); exception chỉ là sự cố thực thi phát sinh sau đó.
 CÂU 097 [🟡 Tính toán điền số (Numeric)] - Mã: d11-q097 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-safety-test-metric-computation] Safety Test Metric Computation
 =====================================================================================
@@ -2420,11 +2280,7 @@ Tỷ lệ rò rỉ trên toàn bộ tình huống đối kháng là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dùng đúng mẫu số 50 tình huống được nêu trong câu.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dùng đúng mẫu số 50 tình huống được nêu trong câu.
-
-=====================================================================================
+      Tỷ lệ rò rỉ (leakage rate) trên toàn bộ 50 tình huống đối kháng = (8 bị lộ / 50 tình huống) * 100% = 16%.
 CÂU 098 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q098 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-safety-test-metric-computation] Safety Test Metric Computation
 =====================================================================================
@@ -2464,11 +2320,7 @@ Tỷ lệ chặn nhầm trên tình huống lành tính là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mẫu số là toàn bộ 80 tình huống lành tính.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là toàn bộ 80 tình huống lành tính.
-
-=====================================================================================
+      Tỷ lệ chặn nhầm (False Positive Rate) trên toàn bộ 80 tình huống lành tính = (12 bị chặn nhầm / 80 tình huống) * 100% = 15%.
 CÂU 100 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d11-q100 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-safety-regression-release-gate] Safety Regression Release Gate
 =====================================================================================
@@ -2489,11 +2341,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Thành phần nào, ngoài trọng số model, còn quyết định hành vi của hệ?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Thành phần nào, ngoài trọng số model, còn quyết định hành vi của hệ?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thành phần nào, ngoài trọng số model, còn quyết định hành vi của hệ?
-
-=====================================================================================
+      Mọi thay đổi cấu hình, bao gồm cả sửa biểu thức chính quy (regex) của guardrail, đều có thể làm thay đổi ranh giới an toàn; release gate bắt buộc phải chạy lại toàn bộ bộ kiểm thử hồi quy trước khi phát hành.
 CÂU 101 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q101 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-safety-regression-release-gate] Safety Regression Release Gate
 =====================================================================================
@@ -2537,11 +2385,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Phải lưu bằng chứng trước khi sửa; chỉ thông báo sau khi kết quả đã được kiểm chứng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phải lưu bằng chứng trước khi sửa; chỉ thông báo sau khi kết quả đã được kiểm chứng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phải lưu bằng chứng trước khi sửa; chỉ thông báo sau khi kết quả đã được kiểm chứng.
-
-=====================================================================================
+      Vòng đời xử lý phát hiện an toàn: Phát hiện và lưu bằng chứng đầy đủ (o2) → triển khai bản sửa lỗi trong đúng phạm vi (o3) → chạy lại test case gốc và bộ kiểm thử hồi quy regression (o1) → thông báo kết quả và rủi ro còn lại cho các bên liên quan (o4).
 CÂU 103 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q103 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-safety-finding-remediation-retest] Safety Finding Remediation Retest
 =====================================================================================
@@ -2587,11 +2431,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Người duyệt phải lần từ kết luận về bằng chứng cụ thể nào?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người duyệt phải lần từ kết luận về bằng chứng cụ thể nào?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người duyệt phải lần từ kết luận về bằng chứng cụ thể nào?
-
-=====================================================================================
+      Báo cáo an toàn có thể kiểm toán phải cung cấp chuỗi bằng chứng hoàn chỉnh: truy vết từ ca kiểm thử/nguồn đầu vào → các lớp kiểm soát tương ứng → đích gửi/verifier độc lập, kèm tỷ lệ chặn nhầm và rủi ro còn lại.
 CÂU 105 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q105 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-safety-source-to-sink-report] Safety Source To Sink Report
 =====================================================================================
@@ -2637,11 +2477,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Nếu sai thì hệ quả là gì và có hoàn tác được không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nếu sai thì hệ quả là gì và có hoàn tác được không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu sai thì hệ quả là gì và có hoàn tác được không?
-
-=====================================================================================
+      Tác vụ gợi ý sắp xếp ghi chú cá nhân có hệ quả thấp và người dùng có thể hoàn tác ngay lập tức, do đó mô hình HITL phù hợp là lấy mẫu kiểm tra định kỳ và thu thập phản hồi người dùng, không cần phê duyệt bắt buộc trước.
 CÂU 107 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q107 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-hitl-model-risk-fit-selection] Hitl Model Risk Fit Selection
 =====================================================================================
@@ -2687,11 +2523,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Confidence nói model chắc đến đâu; nó không quyết định hệ quả của hành động có được chấp nhận hay không.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Confidence nói model chắc đến đâu; nó không quyết định hệ quả của hành động có được chấp nhận hay không.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Confidence nói model chắc đến đâu; nó không quyết định hệ quả của hành động có được chấp nhận hay không.
-
-=====================================================================================
+      Độ tự tin (confidence) của mô hình chỉ phản ánh sự chắc chắn về mặt toán học, không làm giảm mức độ nghiêm trọng của hậu quả; các hành động rủi ro cao bắt buộc phải có sự phê duyệt của con người theo quy định.
 CÂU 109 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q109 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-risk-confidence-human-routing] Risk Confidence Human Routing
 =====================================================================================
@@ -2737,11 +2569,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Yếu tố nào đo mức chắc chắn, còn yếu tố nào quyết định quyền thực thi hành động hệ quả cao?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Yếu tố nào đo mức chắc chắn, còn yếu tố nào quyết định quyền thực thi hành động hệ quả cao?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Yếu tố nào đo mức chắc chắn, còn yếu tố nào quyết định quyền thực thi hành động hệ quả cao?
-
-=====================================================================================
+      Kể cả khi mô hình đạt confidence 99,9% và đã vượt qua bộ lọc nội dung, quyền thực thi đối với các hành động rủi ro cao vẫn không được phép tự động hóa mà bắt buộc phải có sự phê duyệt của con người.
 CÂU 111 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d11-q111 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-human-review-context-package] Human Review Context Package
 =====================================================================================
@@ -2762,11 +2590,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Người duyệt cần biết chính xác hành động nào sẽ được thực hiện, trên đối tượng nào và với hệ quả gì.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người duyệt cần biết chính xác hành động nào sẽ được thực hiện, trên đối tượng nào và với hệ quả gì.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người duyệt cần biết chính xác hành động nào sẽ được thực hiện, trên đối tượng nào và với hệ quả gì.
-
-=====================================================================================
+      Giao diện phê duyệt không cung cấp đối tượng, đích đến hay nội dung thay đổi sẽ dẫn đến tình trạng duyệt mù; người duyệt bắt buộc phải được cung cấp đầy đủ gói ngữ cảnh để đưa ra quyết định có căn cứ.
 CÂU 112 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q112 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-human-review-context-package] Human Review Context Package
 =====================================================================================
@@ -2810,11 +2634,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Trạng thái chờ duyệt không phải đã được duyệt.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Trạng thái chờ duyệt không phải đã được duyệt.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trạng thái chờ duyệt không phải đã được duyệt.
-
-=====================================================================================
+      Vòng đời Human-In-The-Loop (HITL) cho hành động rủi ro cao: Tạo yêu cầu chờ duyệt có thời hạn cụ thể (o2) → người duyệt xem xét để phê duyệt/từ chối hoặc yêu cầu tự hết hạn (o3) → nếu được duyệt thì thực thi đúng hành động, nếu từ chối thì hủy (o1) → ghi nhận kết quả cuối cùng vào audit log (o4).
 CÂU 114 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q114 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-hitl-approval-reject-timeout-lifecycle] Hitl Approval Reject Timeout Lifecycle
 =====================================================================================
@@ -2860,11 +2680,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Người điều tra sự cố ghép các bản ghi bằng khóa nào?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người điều tra sự cố ghép các bản ghi bằng khóa nào?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người điều tra sự cố ghép các bản ghi bằng khóa nào?
-
-=====================================================================================
+      Việc thiếu các mã định danh tương quan chung (`request_id` / `decision_id`) khiến nhật ký kiểm toán không thể liên kết chuỗi sự kiện từ đầu vào → guardrails → phê duyệt → hành động, làm mất khả năng điều tra sự cố.
 CÂU 116 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q116 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-safety-audit-correlation-trail] Safety Audit Correlation Trail
 =====================================================================================
@@ -2910,11 +2726,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So count trên cùng lưu lượng trước khi diễn giải.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So count trên cùng lưu lượng trước khi diễn giải.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So count trên cùng lưu lượng trước khi diễn giải.
-
-=====================================================================================
+      Số lần chặn tăng gấp 2 lần nhưng lưu lượng request tăng gấp 4 lần có nghĩa là tỷ lệ chặn (block rate) thực tế đã giảm một nửa; cần đánh giá theo tỷ lệ trên mẫu số lưu lượng chứ không chỉ nhìn số đếm tuyệt đối.
 CÂU 118 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d11-q118 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-safety-monitor-threshold-alerting] Safety Monitor Threshold Alerting
 =====================================================================================

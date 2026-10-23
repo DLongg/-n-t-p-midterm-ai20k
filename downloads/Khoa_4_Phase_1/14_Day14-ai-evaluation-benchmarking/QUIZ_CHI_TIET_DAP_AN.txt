@@ -203,12 +203,7 @@ Tính token F1.
 -> ĐÁP ÁN SỐ CHÍNH XÁC: 0.75
 
 LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
-  Precision=Recall=3/4 nên F1=2PR/(P+R)=0,75.
-
-GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  💡 Tính precision và recall trước khi lấy harmonic mean.
-
-========================================================================
+      Token F1: Multiset overlap = 3 tokens; candidate = 4 tokens, reference = 4 tokens. Precision = 3/4, Recall = 3/4 => F1 = 2 * (3/4 * 3/4) / (3/4 + 3/4) = 0,75.
 CÂU 09 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d14-q016 (Độ khó: medium)
 ========================================================================
 ĐỀ BÀI:

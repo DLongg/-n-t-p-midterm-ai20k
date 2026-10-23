@@ -28,3 +28,15 @@ scratch/
 *.njsproj
 *.sln
 *.sw?
+
+# Local Backup & Multi-Agent Workspaces
+.agents/
+.audit_work/
+.backup/
+backup_original_files/
+ORIGINAL_REQUEST.md
+PROJECT.md
+TEST_INFRA.md
+all_numeric_questions.json
+__pycache__/
+.pytest_cache/

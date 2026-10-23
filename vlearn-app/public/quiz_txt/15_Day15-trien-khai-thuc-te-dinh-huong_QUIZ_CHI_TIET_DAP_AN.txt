@@ -222,12 +222,7 @@ Tính chênh lệch TCO self-hosted trừ hosted.
 -> ĐÁP ÁN SỐ CHÍNH XÁC: 400 USD/tháng
 
 LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
-  Hosted TCO=4.000+500+1.200=5.700; self-hosted=3.000+600+2.000+500=6.100; chênh lệch=400 USD/tháng.
-
-GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  💡 Cộng cùng category và cùng kỳ trước khi so.
-
-========================================================================
+      Hosted TCO: $4.000 + $500 + $1.200 = $5.700. Self-hosted TCO: $3.000 + $600 + $2.000 + $500 = $6.100. Chênh lệch TCO self-hosted trừ hosted: $6.100 - $5.700 = 400 USD/tháng.
 CÂU 10 [TÍNH TOÁN / ĐIỀN SỐ CHÍNH XÁC] - Mã: d15-q030 (Độ khó: hard)
 ========================================================================
 ĐỀ BÀI:
@@ -240,12 +235,7 @@ Tính break-even request/tháng.
 -> ĐÁP ÁN SỐ CHÍNH XÁC: 111111 request/tháng
 
 LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
-  Điểm hòa vốn TCO: 500 + 0.04*N = 4500 + 0.004*N => 0.036*N = 4000 => N = 4000 / 0.036 ≈ 111,111 request/tháng.
-
-GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  💡 Đặt hai TCO cùng kỳ bằng nhau; đây là threshold theo assumption đã cho.
-
-========================================================================
+      Break-even volume: 500 + 0,04*N = 4500 + 0,004*N => 0,036*N = 4000 => N = 4000 / 0,036 ≈ 111.111 requests/tháng.
 CÂU 11 [GHÉP CẶP TƯƠNG ỨNG] - Mã: d15-q032 (Độ khó: easy)
 ========================================================================
 ĐỀ BÀI:
@@ -324,12 +314,7 @@ Tính monthly API subtotal.
 -> ĐÁP ÁN SỐ CHÍNH XÁC: 6000 USD/tháng
 
 LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
-  Per request=$0,002+$0,002=$0,004; 1,5 triệu request/tháng ⇒ $6.000.
-
-GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  💡 Đổi giá per-million về per-token rồi nhân volume.
-
-========================================================================
+      Mỗi request: 1.000 input tokens * $2/M + 200 output tokens * $10/M = $0,002 + $0,002 = $0,004/request. Hàng tháng có 50.000 * 30 = 1.500.000 requests => Tổng chi phí: 1.500.000 * $0,004 = 6.000 USD/tháng.
 CÂU 14 [TRẮC NGHIỆM ĐƠN (CHỌN 1 ĐÁP ÁN)] - Mã: d15-q040 (Độ khó: medium)
 ========================================================================
 ĐỀ BÀI:

@@ -489,11 +489,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Sau bốn chunk đầy đủ vẫn còn 50 ký tự cần được phủ.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Sau bốn chunk đầy đủ vẫn còn 50 ký tự cần được phủ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Sau bốn chunk đầy đủ vẫn còn 50 ký tự cần được phủ.
-
-=====================================================================================
+      Với văn bản dài 1050 ký tự, chunk_size=250 và overlap=0 (step = 250): các chunk bắt đầu tại 0, 250, 500, 750 (4 chunk đầy đủ 250 ký tự = 1000 ký tự) và chunk thứ 5 bắt đầu tại vị trí 1000 chứa 50 ký tự còn lại. Do đó tạo ra 5 chunk, chunk cuối cùng có 50 ký tự.
 CÂU 018 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q018 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-fixed-window-chunk-arithmetic] Fixed Window Chunk Arithmetic
 =====================================================================================
@@ -671,11 +667,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mục tiêu là trả truy vấn đúng, không tối thiểu hóa số lượng chunk.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mục tiêu là trả truy vấn đúng, không tối thiểu hóa số lượng chunk.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mục tiêu là trả truy vấn đúng, không tối thiểu hóa số lượng chunk.
-
-=====================================================================================
+      Số lượng chunk ít không đồng nghĩa với chất lượng truy xuất cao. Nếu một chiến lược chia chunk bỏ sót toàn bộ các truy vấn về ngoại lệ, cần thay đổi hoặc kết hợp chiến lược chia chunk (ví dụ phân cấp hoặc theo ranh giới cấu trúc) để đảm bảo độ bao phủ bằng chứng.
 CÂU 025 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q025 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-chunk-overlap-policy] Chunk Overlap Policy
 =====================================================================================
@@ -819,11 +811,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Pooling chỉ xảy ra sau khi đã có token representations.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Pooling chỉ xảy ra sau khi đã có token representations.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Pooling chỉ xảy ra sau khi đã có token representations.
-
-=====================================================================================
+      Quy trình kỹ thuật chuẩn để tạo vector embedding từ một đoạn văn bản: 1. Tokenize văn bản đầu vào (o2) -> 2. Encoder tạo biểu diễn ngữ cảnh cho các token (o4) -> 3. Áp dụng pooling (mean/CLS) để tổng hợp các token representations thành một vector (o1) -> 4. Xuất ra và chuẩn hóa vector cuối cùng (o3).
 CÂU 031 [🟡 Tính toán điền số (Numeric)] - Mã: d07-q031 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-cosine-similarity-computation] Cosine Similarity Computation
 =====================================================================================
@@ -834,11 +822,7 @@ Với `a=[1,2]`, `b=[2,0]`, nhập cosine similarity làm tròn ba chữ số.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mẫu số là tích hai độ lớn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là tích hai độ lớn.
-
-=====================================================================================
+      Độ tương đồng cosine: cos(θ) = (a · b) / (||a|| × ||b||). Với a = [1, 2] và b = [2, 0]: a · b = 1×2 + 2×0 = 2; ||a|| = √(1² + 2²) = √5 ≈ 2,23607; ||b|| = √(2² + 0²) = 2. Do đó cos(θ) = 2 / (√5 × 2) = 1 / √5 ≈ 0,4472136. Làm tròn ba chữ số thập phân là 0,447.
 CÂU 032 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q032 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-cosine-similarity-computation] Cosine Similarity Computation
 =====================================================================================
@@ -924,11 +908,7 @@ Với `a=[1,2,3]`, `b=[4,2,-1]`, tự tính rồi nhập Euclidean distance.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bình phương từng chênh lệch trước khi cộng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bình phương từng chênh lệch trước khi cộng.
-
-=====================================================================================
+      Khoảng cách Euclidean giữa a = [1, 2, 3] và b = [4, 2, -1]: d(a, b) = √((4 - 1)² + (2 - 2)² + (-1 - 3)²) = √(3² + 0² + (-4)²) = √(9 + 0 + 16) = √25 = 5.
 CÂU 036 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q036 (Độ khó: Dễ | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-vector-metric-selection] Vector Metric Selection
 =====================================================================================
@@ -972,11 +952,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Cùng số chiều chưa chắc cùng không gian đã học.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Cùng số chiều chưa chắc cùng không gian đã học.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cùng số chiều chưa chắc cùng không gian đã học.
-
-=====================================================================================
+      Khi chuyển đổi hoặc thay đổi mô hình embeddings hay metric truy vấn, hai mô hình khác nhau có không gian vector hoàn toàn khác nhau (ngay cả khi cùng số chiều). Do đó, bắt buộc phải xác nhận metric, phương pháp chuẩn hóa và mô hình trên cả kho tài liệu lẫn truy vấn; nếu đổi mô hình phải re-embed toàn bộ kho và lập lại chỉ mục.
 CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q038 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-embedding-model-evidence-selection] Embedding Model Evidence Selection
 =====================================================================================
@@ -1019,11 +995,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Vector giống chiều không có nghĩa cùng hệ tọa độ.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Vector giống chiều không có nghĩa cùng hệ tọa độ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Vector giống chiều không có nghĩa cùng hệ tọa độ.
-
-=====================================================================================
+      Khi thay đổi mô hình embeddings cho một kho tài liệu đã chỉ mục, không thể tìm kiếm truy vấn của mô hình mới trên vector cũ vì khác không gian biểu diễn. Bắt buộc phải re-embed toàn bộ kho tài liệu và xây dựng chỉ mục tương thích trước khi chuyển đổi phục vụ.
 CÂU 040 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q040 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-vector-store-record-contract] Vector Store Record Contract
 =====================================================================================
@@ -1220,11 +1192,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Match ở tài liệu danh tính, không ở chunk ID duy nhất.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Match ở tài liệu danh tính, không ở chunk ID duy nhất.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Match ở tài liệu danh tính, không ở chunk ID duy nhất.
-
-=====================================================================================
+      Trong thiết kế API quản lý vòng đời tài liệu, `delete_document(doc_id)` xóa toàn bộ các chunk thuộc về `doc_id` đó. Với `doc_id='A'`, lần gọi đầu tiên xóa toàn bộ 3 chunk A::0, A::1, A::2 và giữ lại B::0 (trả về 3); lần gọi thứ hai tài liệu A đã không còn nên trả về 0 mà không làm thay đổi kho hay báo lỗi bắt buộc.
 CÂU 048 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q048 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-retrieval-control-tuning] Retrieval Control Tuning
 =====================================================================================
@@ -1270,11 +1238,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giữ một biến thay đổi và xác định rõ hành vi khi không có kết quả.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Giữ một biến thay đổi và xác định rõ hành vi khi không có kết quả.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ một biến thay đổi và xác định rõ hành vi khi không có kết quả.
-
-=====================================================================================
+      Khi cân chỉnh ngưỡng tương đồng (threshold), tăng ngưỡng làm tăng tỷ lệ rỗng (no-result) trong khi giảm ngưỡng làm tăng nhiễu. Quyết định đúng là đánh giá sự đánh đổi giữa recall và hậu quả của việc không có kết quả, từ đó chọn ngưỡng cân bằng kèm cơ chế fallback minh bạch.
 CÂU 050 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q050 (Độ khó: Dễ | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-vector-store-deployment-selection] Vector Store Deployment Selection
 =====================================================================================
@@ -1499,11 +1463,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Citation không thể thay một thông tin thực không có trong ngữ cảnh.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Citation không thể thay một thông tin thực không có trong ngữ cảnh.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Citation không thể thay một thông tin thực không có trong ngữ cảnh.
-
-=====================================================================================
+      Khi ngữ cảnh được truy xuất (retrieved context) không chứa thông tin trả lời cho câu hỏi của người dùng, hành vi tuân thủ nguyên tắc có căn cứ (groundedness) là tuyên bố rõ ràng không đủ thông tin hoặc yêu cầu người dùng làm rõ; không được bịa citation hay dùng kiến thức ngoài lề rồi gán nhãn trích dẫn giả mạo.
 CÂU 059 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q059 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-retrieval-benchmark-query-gold-design] Retrieval Benchmark Query Gold Design
 =====================================================================================
@@ -1653,11 +1613,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một filter chỉ hữu ích nếu field phân biệt ứng viên phù hợp.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một filter chỉ hữu ích nếu field phân biệt ứng viên phù hợp.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một filter chỉ hữu ích nếu field phân biệt ứng viên phù hợp.
-
-=====================================================================================
+      Nếu bộ lọc (filter) theo thuộc tính `department` không làm thay đổi kết quả nào trên 20 truy vấn kiểm thử do toàn bộ các bản ghi trong kho đều có cùng giá trị department, trường này không mang lại giá trị phân loại (discriminatory utility) trong tập dữ liệu; nhóm cần xem xét loại bỏ hoặc thiết kế lại cấu trúc metadata.
 CÂU 065 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q065 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-retrieval-failure-layer-diagnosis] Retrieval Failure Layer Diagnosis
 =====================================================================================
@@ -1728,11 +1684,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Muốn locate cause phải giữ các layer khác cố định.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Muốn locate cause phải giữ các layer khác cố định.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Muốn locate cause phải giữ các layer khác cố định.
-
-=====================================================================================
+      Khi nhóm thay đổi đồng thời nhiều thành phần (corpus, chunk size, embedding model, top-k, prompt) và điểm số tăng, nhóm không thể xác định thành phần nào là nguyên nhân chính gây ra cải thiện do hiện tượng đa biến (confounding variables). Bắt buộc phải thực hiện thử nghiệm cô lập từng biến trên tập benchmark đã đóng băng.
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q068 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-controlled-retrieval-strategy-experiment] Controlled Retrieval Strategy Experiment
 =====================================================================================
@@ -2027,11 +1979,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dấu của chênh lệch mất đi sau bước bình phương.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dấu của chênh lệch mất đi sau bước bình phương.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dấu của chênh lệch mất đi sau bước bình phương.
-
-=====================================================================================
+      Khoảng cách Euclidean giữa u = [-1, 2, 4] và v = [2, -2, 4]: d(u, v) = √((2 - (-1))² + (-2 - 2)² + (4 - 4)²) = √(3² + (-4)² + 0²) = √(9 + 16 + 0) = √25 = 5.
 CÂU 080 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d07-q080 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-vector-store-record-contract] Vector Store Record Contract
 =====================================================================================
@@ -2269,11 +2217,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xét xem email và số điện thoại còn xuất hiện trước khi embeddings được tạo.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xét xem email và số điện thoại còn xuất hiện trước khi embeddings được tạo.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xét xem email và số điện thoại còn xuất hiện trước khi embeddings được tạo.
-
-=====================================================================================
+      Vector embeddings không có tính chất tự động ẩn danh hóa dữ liệu cá nhân (PII như email, số điện thoại) vì kẻ tấn công có thể thực hiện tấn công nghịch đảo embedding (inversion attacks) để tái dựng văn bản gốc. Bắt buộc phải thực hiện khử định danh (redaction/masking) trước khi tạo embeddings.
 CÂU 090 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q090 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-retrieval-document-metadata-contract] Retrieval Document Metadata Contract
 =====================================================================================
@@ -2290,11 +2234,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm riêng `doc_id`, URL nguồn và tập giá trị được phép của `department`.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm riêng `doc_id`, URL nguồn và tập giá trị được phép của `department`.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm riêng `doc_id`, URL nguồn và tập giá trị được phép của `department`.
-
-=====================================================================================
+      Bản ghi metadata chuẩn hóa và tin cậy cho RAG phải chứa đầy đủ: `doc_id` duy nhất, URL gốc nguồn sự thật, thời điểm thu thập (timestamp), phiên bản tài liệu, thẩm quyền ban hành, và các thuộc tính nghiệp vụ (như `department`) tuân thủ tập giá trị cho phép (controlled vocabulary).
 CÂU 091 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q091 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-sentence-boundary-chunker-implementation] Sentence Boundary Chunker Implementation
 =====================================================================================
@@ -2412,11 +2352,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Mô hình, cách chuẩn hóa và thước đo phải khớp ở cả tài liệu lẫn truy vấn.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mô hình, cách chuẩn hóa và thước đo phải khớp ở cả tài liệu lẫn truy vấn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mô hình, cách chuẩn hóa và thước đo phải khớp ở cả tài liệu lẫn truy vấn.
-
-=====================================================================================
+      Lựa chọn ít rủi ro nhất khi quản trị kho vector: giữ mô hình, phương pháp chuẩn hóa L2 và thước đo cosine tương thích trên cả kho tài liệu lẫn truy vấn; khi chuyển đổi sang mô hình mới bắt buộc phải re-embed và re-index toàn bộ dữ liệu. Không được trộn thô vector khác mô hình.
 CÂU 096 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q096 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-embedding-model-evidence-selection] Embedding Model Evidence Selection
 =====================================================================================
@@ -2509,11 +2445,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đặt câu hỏi: hai nội dung khác nhau có được phép dùng cùng một danh tính ổn định hay không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đặt câu hỏi: hai nội dung khác nhau có được phép dùng cùng một danh tính ổn định hay không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đặt câu hỏi: hai nội dung khác nhau có được phép dùng cùng một danh tính ổn định hay không?
-
-=====================================================================================
+      Khi kho tài liệu đã có bản ghi `A::0` và bản ghi mới cùng `record_id=A::0` nhưng nội dung khác nhau, đồng thời quy ước hệ thống cấm ghi đè ngầm (silent overwrite): hệ thống phải từ chối hoặc báo lỗi xung đột định danh trước khi ghi vào kho, và chỉ cho phép cập nhật qua quy trình quản lý phiên bản rõ ràng.
 CÂU 100 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q100 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-vector-semantic-search-implementation] Vector Semantic Search Implementation
 =====================================================================================
@@ -2530,11 +2462,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Muốn kiểm quy tắc đồng điểm, dữ liệu kiểm thử phải có đúng các điểm bằng nhau.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Muốn kiểm quy tắc đồng điểm, dữ liệu kiểm thử phải có đúng các điểm bằng nhau.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Muốn kiểm quy tắc đồng điểm, dữ liệu kiểm thử phải có đúng các điểm bằng nhau.
-
-=====================================================================================
+      Để kiểm tra tính xác định của quy tắc phá hòa (tie-breaking) khi các bản ghi có điểm bằng nhau (ví dụ cùng 0,9), bộ dữ liệu kiểm thử phải tạo hai bản ghi có điểm bằng nhau nhưng đảo thứ tự ID, sau đó xác minh rằng hệ thống luôn xếp hạng theo thứ tự `record_id` tăng dần như quy ước.
 CÂU 101 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d07-q101 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-vector-search-metadata-prefilter] Vector Search Metadata Prefilter
 =====================================================================================
@@ -2551,11 +2479,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Lọc nhiều điều kiện dùng đồng thời tất cả điều kiện bắt buộc.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Lọc nhiều điều kiện dùng đồng thời tất cả điều kiện bắt buộc.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Lọc nhiều điều kiện dùng đồng thời tất cả điều kiện bắt buộc.
-
-=====================================================================================
+      Lọc kết hợp hai điều kiện `department=engineering AND semester=2026`: một bản ghi chỉ khớp khi thỏa mãn đồng thời cả hai điều kiện. Bản ghi R thiếu trường `semester` nên không thỏa; chỉ có bản ghi S có đầy đủ cả hai giá trị hợp lệ mới khớp.
 CÂU 102 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q102 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-vector-store-document-deletion] Vector Store Document Deletion
 =====================================================================================
@@ -2598,11 +2522,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Dựa vào bằng chứng của từng bước, không đổi nhiều biến kiểm soát cùng lúc.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dựa vào bằng chứng của từng bước, không đổi nhiều biến kiểm soát cùng lúc.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dựa vào bằng chứng của từng bước, không đổi nhiều biến kiểm soát cùng lúc.
-
-=====================================================================================
+      Khi tối ưu tham số k trong RAG: k=2 thiếu bằng chứng còn k=8 quá nhiều nhiễu. Khi giữ cố định ngưỡng và bộ lọc, bước tiếp theo đúng phương pháp khoa học là so sánh các giá trị k trung gian (k=2, 3, 4) trên cùng một bộ truy vấn đóng băng và đo lường độ bao phủ cùng tỷ lệ trùng lặp.
 CÂU 104 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q104 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-ingestion-chunk-metadata-propagation] Ingestion Chunk Metadata Propagation
 =====================================================================================
@@ -2695,11 +2615,7 @@ mức liên quan top-3 là `[2,0,1]`; top-3 lý tưởng là `[2,1,0]`. Dùng `D
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính DCG của xếp hạng thực tế và IDCG của xếp hạng lý tưởng trước khi chia.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính DCG của xếp hạng thực tế và IDCG của xếp hạng lý tưởng trước khi chia.
-
-=====================================================================================
+      Tính DCG@3 thực tế cho mức liên quan [2, 0, 1]: rank 1 = (2² - 1)/log₂(1+1) = 3/1 = 3; rank 2 = (2⁰ - 1)/log₂(2+1) = 0; rank 3 = (2¹ - 1)/log₂(3+1) = 1/2 = 0,5 => DCG@3 = 3 + 0 + 0,5 = 3,5. Xếp hạng lý tưởng [2, 1, 0]: rank 1 = 3; rank 2 = (2¹ - 1)/log₂(3) = 1/log₂(3) ≈ 0,6309298; rank 3 = 0 => IDCG@3 = 3 + 0,6309298 ≈ 3,6309298. NDCG@3 = DCG / IDCG = 3,5 / 3,6309298 ≈ 0,96394... Làm tròn ba chữ số thập phân là 0,964.
 CÂU 108 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d07-q108 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-retrieved-chunk-coherence-evaluation] Retrieved Chunk Coherence Evaluation
 =====================================================================================

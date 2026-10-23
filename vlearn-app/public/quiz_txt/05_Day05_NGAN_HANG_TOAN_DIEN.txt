@@ -415,11 +415,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thử nghiệm phải tạo bằng chứng trước khi đầu tư tự động hóa.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Thử nghiệm phải tạo bằng chứng trước khi đầu tư tự động hóa.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thử nghiệm phải tạo bằng chứng trước khi đầu tư tự động hóa.
-
-=====================================================================================
+      Các thành phần bắt buộc của thử nghiệm Wizard-of-Oz: Người sáng lập tạo biên bản thủ công phía sau giao diện (a), Ghi rõ quy trình thủ công và giới hạn của bằng chứng (b), Đo lường mức độ người dùng sử dụng/sẵn sàng trả tiền và chất lượng biên bản (c), và Đặt trước tiêu chí tiếp tục hoặc dừng thử nghiệm (e).
 CÂU 016 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q016 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-wizard-of-oz-experiment] Wizard Of Oz Experiment
 =====================================================================================
@@ -521,11 +517,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Khía cạnh cần kiểm phải nối trực tiếp với lý do người dùng chưa đạt kết quả mong muốn.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Khía cạnh cần kiểm phải nối trực tiếp với lý do người dùng chưa đạt kết quả mong muốn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Khía cạnh cần kiểm phải nối trực tiếp với lý do người dùng chưa đạt kết quả mong muốn.
-
-=====================================================================================
+      Khi HR không hiểu vì sao ứng viên bị xếp thấp và không dám dùng kết quả, khía cạnh cần kiểm tra và cải thiện trước tiên là Mức độ tin cậy/khả năng giải thích (explainability) và Khả năng sử dụng (usability) của quyết định xếp hạng.
 CÂU 020 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q020 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-mvp-quality-dimension-coverage] Mvp Quality Dimension Coverage
 =====================================================================================
@@ -569,11 +561,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Giữ quan sát có thể truy lại; loại ý kiến và suy đoán.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Giữ quan sát có thể truy lại; loại ý kiến và suy đoán.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ quan sát có thể truy lại; loại ý kiến và suy đoán.
-
-=====================================================================================
+      Bằng chứng cụ thể có thể kiểm chứng được: Câu truy vấn 'đặt vé tàu' -> bot báo lỗi kèm ảnh chụp có timestamp (b), Luồng bình thường mã VN123 trả thông tin hành lý có nguồn (c), và Không thấy luồng sửa trong UI nên ghi rõ 'không quan sát được' (d). Nhận xét 'Bot khá ngu' (a) là cảm tính chủ quan.
 CÂU 022 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q022 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-product-four-path-teardown] Ai Product Four Path Teardown
 =====================================================================================
@@ -726,11 +714,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Cơ hội phải truy được về mẫu khó khăn của người dùng, không chỉ là tên lĩnh vực.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Cơ hội phải truy được về mẫu khó khăn của người dùng, không chỉ là tên lĩnh vực.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cơ hội phải truy được về mẫu khó khăn của người dùng, không chỉ là tên lĩnh vực.
-
-=====================================================================================
+      Khó khăn của người dùng là không biết chọn chuyên khoa nào khi đăng ký khám; cơ hội phù hợp là hỗ trợ quyết định bằng cách để AI hỏi một vài câu sàng lọc và gợi ý 2 chuyên khoa phù hợp, kèm cảnh báo và chuyển nhân viên y tế nếu có dấu hiệu nguy hiểm.
 CÂU 028 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q028 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-evidence-insight-opportunity-synthesis] Evidence Insight Opportunity Synthesis
 =====================================================================================
@@ -871,11 +855,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Một luồng từ đầu đến cuối phải nêu cả đường đi khi đủ và thiếu ngữ cảnh.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một luồng từ đầu đến cuối phải nêu cả đường đi khi đủ và thiếu ngữ cảnh.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một luồng từ đầu đến cuối phải nêu cả đường đi khi đủ và thiếu ngữ cảnh.
-
-=====================================================================================
+      Luồng từ đầu đến cuối đầy đủ và an toàn nhất cho tính năng tóm tắt họp: Người dùng chọn Tạo -> Lấy bản chép lời được phép (nếu thiếu thì báo/cho tải lên; nếu đủ thì tạo tóm tắt) -> Người dùng xem lại/chỉnh sửa -> Xác nhận xuất và lưu diff chỉnh sửa.
 CÂU 034 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q036 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-feature-user-flow-contract] Ai Feature User Flow Contract
 =====================================================================================
@@ -919,11 +899,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm quy ước trả lời dữ liệu nào được và không được đọc.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tìm quy ước trả lời dữ liệu nào được và không được đọc.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm quy ước trả lời dữ liệu nào được và không được đọc.
-
-=====================================================================================
+      Quy ước truy cập dữ liệu an toàn cho tính năng tóm tắt phiếu hỗ trợ: Kích hoạt khi nhân viên bấm; đầu vào là phiếu hỗ trợ; danh sách dữ liệu được phép gồm phiếu hỗ trợ và ba chính sách đã công bố; loại trừ hoàn toàn ghi chú riêng tư.
 CÂU 036 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q038 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-input-context-boundary-contract] Ai Input Context Boundary Contract
 =====================================================================================
@@ -968,11 +944,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Người kiểm tra phải có thể quyết định đạt/không đạt từ đầu ra và nguồn dữ liệu.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người kiểm tra phải có thể quyết định đạt/không đạt từ đầu ra và nguồn dữ liệu.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người kiểm tra phải có thể quyết định đạt/không đạt từ đầu ra và nguồn dữ liệu.
-
-=====================================================================================
+      Các tiêu chí chấp nhận quan sát và kiểm thử được khách quan: Có tối đa 5 gạch đầu dòng (a), Mọi quyết định/hành động phải truy vết được tới bản chép lời (b), Không bịa người phụ trách/hạn chót (d), và Nếu không đạt tiêu chí quan trọng thì chuyển cho người kiểm tra (f). Tiêu chí 'AI thông minh' hay 'văn phong hoàn hảo' là mơ hồ, không kiểm thử được.
 CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q040 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-output-acceptance-contract] Ai Output Acceptance Contract
 =====================================================================================
@@ -1018,11 +990,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Mỗi tình huống phải kích hoạt một hành vi kỳ vọng khác.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi tình huống phải kích hoạt một hành vi kỳ vọng khác.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi tình huống phải kích hoạt một hành vi kỳ vọng khác.
-
-=====================================================================================
+      Bộ tình huống bổ sung cho nhau đo lường các ranh giới khác nhau: Happy path hỏi hạn nộp bài A (a), Thiếu tên bài -> hỏi lại (c), Hỏi ngoài phạm vi môn học -> báo giới hạn/chuyển người (d), và Tài liệu chứa câu lệnh ghi đè -> xử lý như nội dung dữ liệu, không tuân theo (e).
 CÂU 040 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q042 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-behavior-case-inventory] Ai Behavior Case Inventory
 =====================================================================================
@@ -1253,11 +1221,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Người dùng cần biết làm gì khác ở mỗi trạng thái.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người dùng cần biết làm gì khác ở mỗi trạng thái.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người dùng cần biết làm gì khác ở mỗi trạng thái.
-
-=====================================================================================
+      Hành vi phù hợp theo ba mức độ tin cậy đã hiệu chỉnh: Độ tin cậy cao: hiện kết quả và nguồn, người dùng có thể chấp nhận (a); Độ tin cậy trung bình: nói rõ chưa chắc chắn, hiện lựa chọn khác và yêu cầu người dùng kiểm tra (b); Độ tin cậy thấp: không tự thực hiện hành động, chuyển sang phương án dự phòng hoặc người xử lý (d).
 CÂU 049 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q052 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-confidence-aware-result-presentation] Confidence Aware Result Presentation
 =====================================================================================
@@ -1389,11 +1353,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Người kiểm tra phải tái tạo được AI đã sai gì và dữ liệu chỉnh sửa được dùng ở đâu.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người kiểm tra phải tái tạo được AI đã sai gì và dữ liệu chỉnh sửa được dùng ở đâu.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người kiểm tra phải tái tạo được AI đã sai gì và dữ liệu chỉnh sửa được dùng ở đâu.
-
-=====================================================================================
+      Bản ghi tín hiệu chỉnh sửa đầy đủ cần: Mã giao dịch và đặc trưng đầu vào (a), Nhãn AI trước khi sửa (b), Nhãn người dùng chọn sau khi sửa (c), Mã sự kiện chỉnh sửa liên kết các bản ghi (d), và Nơi sử dụng dữ liệu để đánh giá/cải thiện (f).
 CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q058 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-correction-signal-capture] Correction Signal Capture
 =====================================================================================
@@ -1440,11 +1400,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Ba lỗi có thể quan trọng hơn mười lỗi nếu hậu quả khác nhau.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Ba lỗi có thể quan trọng hơn mười lỗi nếu hậu quả khác nhau.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ba lỗi có thể quan trọng hơn mười lỗi nếu hậu quả khác nhau.
-
-=====================================================================================
+      Trong 13 lỗi của bộ phân loại email, 3 email VIP bị phân loại nhầm vào Spam gây mất thương vụ có hậu quả nghiêm trọng hơn nhiều so với 10 email FYI vào Updates. Ưu tiên can thiệp đúng là nhóm VIP→Spam dựa trên mức độ nghiêm trọng của hậu quả.
 CÂU 056 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q060 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-qualitative-error-pattern-diagnosis] Qualitative Error Pattern Diagnosis
 =====================================================================================
@@ -1543,11 +1499,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Không phát hành thay đổi trước khi qua bước đánh giá.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không phát hành thay đổi trước khi qua bước đánh giá.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không phát hành thay đổi trước khi qua bước đánh giá.
-
-=====================================================================================
+      Vòng phản hồi cải thiện hệ thống: Thu thập chỉnh sửa có dấu vết (o2) -> Phân tích mẫu lỗi (o4) -> Thay đổi prompt/dữ liệu/UX (o5) -> Đánh giá thay đổi trên bộ kiểm thử cố định (o1) -> Quan sát hành vi mới sau khi triển khai (o3).
 CÂU 060 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q064 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-feedback-improvement-loop] Ai Feedback Improvement Loop
 =====================================================================================
@@ -1593,11 +1545,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Theo dõi dữ liệu từ sự kiện tới một thay đổi đã được kiểm chứng.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Theo dõi dữ liệu từ sự kiện tới một thay đổi đã được kiểm chứng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi dữ liệu từ sự kiện tới một thay đổi đã được kiểm chứng.
-
-=====================================================================================
+      Ứng dụng có 1 triệu lượt dùng và ghi log mọi prompt nhưng không dùng được để cải thiện sản phẩm vì vòng phản hồi bị gãy ở khâu: Thiếu tín hiệu chẩn đoán liên quan (labeled feedback/error signal) và thiếu đường ống đưa dữ liệu vào quy trình cải thiện.
 CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q066 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-flywheel-break-diagnosis] Data Flywheel Break Diagnosis
 =====================================================================================
@@ -1646,11 +1594,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Dữ liệu phải trả lời được lỗi nào, thuộc phạm vi pháp lý/thời điểm nào và ai xác nhận.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dữ liệu phải trả lời được lỗi nào, thuộc phạm vi pháp lý/thời điểm nào và ai xác nhận.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dữ liệu phải trả lời được lỗi nào, thuộc phạm vi pháp lý/thời điểm nào và ai xác nhận.
-
-=====================================================================================
+      Dữ liệu chất lượng cao để đánh giá và cải thiện trợ lý pháp lý Việt Nam: Văn bản pháp luật hiện hành có thời điểm ban hành và nguồn gốc rõ ràng (a), Các tình huống thực tế được luật sư gắn nhãn chuẩn (b), và Dữ liệu chỉnh sửa trước/sau từ chuyên gia kiểm tra (d).
 CÂU 064 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q068 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-high-value-ai-data-selection] High Value Ai Data Selection
 =====================================================================================
@@ -1749,11 +1693,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Chi phí kiểm tra của con người là chi phí kỳ vọng: xác suất × chi phí khi xảy ra.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chi phí kiểm tra của con người là chi phí kỳ vọng: xác suất × chi phí khi xảy ra.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chi phí kiểm tra của con người là chi phí kỳ vọng: xác suất × chi phí khi xảy ra.
-
-=====================================================================================
+      Chi phí biến đổi kỳ vọng cho mỗi kết quả = (3 lần gọi model × 0,02 USD) + (1 lần gọi tool × 0,01 USD) + (10% xác suất kiểm tra của con người × 0,50 USD) = 0,06 + 0,01 + 0,05 = 0,12 USD.
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d05-q072 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-per-use-economics] Ai Per Use Economics
 =====================================================================================
@@ -1911,11 +1851,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đánh dấu ba lớp can thiệp đã có: phát hiện, khôi phục, kiểm chứng. Tìm lớp còn trống.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đánh dấu ba lớp can thiệp đã có: phát hiện, khôi phục, kiểm chứng. Tìm lớp còn trống.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu ba lớp can thiệp đã có: phát hiện, khôi phục, kiểm chứng. Tìm lớp còn trống.
-
-=====================================================================================
+      Hệ thống phát hiện lỗi schema và chặn cứng nhưng HR không thể tiếp tục công việc, cho thấy hệ thống thiếu lớp can thiệp khôi phục (recovery intervention): Cần thêm cách khôi phục cho HR bằng cách cho phép nhập/sửa trường hoặc từ chối xử lý, đồng thời lưu dấu vết chỉnh sửa.
 CÂU 074 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d05-q078 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-wizard-of-oz-experiment] Wizard Of Oz Experiment
 =====================================================================================
@@ -1937,11 +1873,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách điều được mô phỏng và quan sát khỏi hệ thống tự động ở phía sau chưa tồn tại.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách điều được mô phỏng và quan sát khỏi hệ thống tự động ở phía sau chưa tồn tại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách điều được mô phỏng và quan sát khỏi hệ thống tự động ở phía sau chưa tồn tại.
-
-=====================================================================================
+      Trong thử nghiệm Wizard-of-Oz, người vận hành thủ công tạo biên bản họp đạt 30/40; kết luận được hỗ trợ trực tiếp là quy trình làm việc và chất lượng đầu ra cho thấy giá trị với người dùng, nhưng chưa chứng minh mô hình tự động phía sau sẽ đạt chất lượng tương đương.
 CÂU 075 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d05-q079 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-ai-product-four-path-teardown] Ai Product Four Path Teardown
 =====================================================================================
@@ -1962,11 +1894,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Bảng có thể chưa đủ luồng, nhưng mỗi trạng thái phải trung thực về điều đã quan sát.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bảng có thể chưa đủ luồng, nhưng mỗi trạng thái phải trung thực về điều đã quan sát.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bảng có thể chưa đủ luồng, nhưng mỗi trạng thái phải trung thực về điều đã quan sát.
-
-=====================================================================================
+      Bản phân tích sản phẩm trung thực phải ghi nhận rõ ràng: Ghi 2 luồng đã trực tiếp quan sát kèm tài liệu đầu ra; đánh dấu luồng độ tin cậy thấp và việc chỉnh sửa là chưa quan sát được, đồng thời nêu rõ đầu vào/bằng chứng cần thử nghiệm thêm.
 CÂU 076 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d05-q080 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-ai-feature-user-flow-contract] Ai Feature User Flow Contract
 =====================================================================================
@@ -1988,11 +1916,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Theo luồng từ đầu vào thiếu đến hành động không thể đảo ngược; mỗi chỗ người dùng cần quyền quyết định phải có trạng thái rõ.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Theo luồng từ đầu vào thiếu đến hành động không thể đảo ngược; mỗi chỗ người dùng cần quyền quyết định phải có trạng thái rõ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo luồng từ đầu vào thiếu đến hành động không thể đảo ngược; mỗi chỗ người dùng cần quyền quyết định phải có trạng thái rõ.
-
-=====================================================================================
+      Để luồng gửi thư an toàn và đáp ứng quy ước: Thêm trạng thái hỏi hạn chót trước khi tạo bản nháp nếu thiếu dữ kiện (a), Thêm trạng thái cho phép người dùng xem lại, chỉnh sửa hoặc hủy bản nháp (b), và Thêm trạng thái bắt buộc xác nhận người nhận và nội dung trước khi thực thi gửi (c).
 CÂU 077 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d05-q081 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-four-path-behavior-contract] Ai Four Path Behavior Contract
 =====================================================================================
@@ -2042,6 +1966,4 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Viết riêng tổng lợi ích theo số kết quả được chấp nhận và tổng chi phí theo số yêu cầu.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Viết riêng tổng lợi ích theo số kết quả được chấp nhận và tổng chi phí theo số yêu cầu.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Viết riêng tổng lợi ích theo số kết quả được chấp nhận và tổng chi phí theo số yêu cầu.
+      Lợi ích ròng = Tổng lợi ích của các kết quả được chấp nhận − Tổng chi phí phát sinh trên toàn bộ yêu cầu: 1.000 × 0,40 × 3 − 1.000 × 0,50 = 1.200 − 500 = 700 USD.

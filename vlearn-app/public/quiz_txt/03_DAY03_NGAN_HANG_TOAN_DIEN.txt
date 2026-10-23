@@ -211,11 +211,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Chọn mô tả trả lời được cả “tool làm gì” và “khi nào không nên dùng”.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chọn mô tả trả lời được cả “tool làm gì” và “khi nào không nên dùng”.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn mô tả trả lời được cả “tool làm gì” và “khi nào không nên dùng”.
-
-=====================================================================================
+      Mô tả công cụ tốt phải nêu rõ công cụ làm gì và khi nào không nên dùng: 'Tra trạng thái đơn theo order_id; không dùng để đọc hồ sơ khách hàng' giúp mô hình phân biệt ranh giới chính xác nhất với customer_lookup.
 CÂU 010 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q010 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-tool-name-purpose-description] Tool Name Purpose Description
 =====================================================================================
@@ -534,11 +530,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Không chỉ kiểm kiểu mảng; còn phải kiểm schema của từng phần tử.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không chỉ kiểm kiểu mảng; còn phải kiểm schema của từng phần tử.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không chỉ kiểm kiểu mảng; còn phải kiểm schema của từng phần tử.
-
-=====================================================================================
+      Trước khi thực thi lệnh gọi `book_room`, runtime cần: Kiểm tra tên tool có trong allowlist (a), Từ chối payload vì phần tử không đúng định dạng email (b), và Thêm Observation về lỗi kiểm tra chỉ rõ vị trí trường lỗi `attendees[0]` (c).
 CÂU 023 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d03-q023 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-react-cycle-semantics] React Cycle Semantics
 =====================================================================================
@@ -746,11 +738,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ suy ra cạnh phụ thuộc từ các đầu vào đã được khai báo.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ suy ra cạnh phụ thuộc từ các đầu vào đã được khai báo.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ suy ra cạnh phụ thuộc từ các đầu vào đã được khai báo.
-
-=====================================================================================
+      Phân tích đồ thị phụ thuộc (DAG): A (`get_user`), B (`get_weather`) và D (`log_request`) không phụ thuộc lẫn nhau nên có thể chạy song song (a); C (`recommend`) nhận đầu vào từ A và B nên bắt buộc phải chờ A và B hoàn tất (b); Chạy C quá sớm sẽ thiếu đầu vào (e).
 CÂU 031 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d03-q031 (Độ khó: Dễ | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-loop-output-branching] Agent Loop Output Branching
 =====================================================================================
@@ -801,11 +789,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Theo dõi luồng điều khiển khi cả hai điều kiện cùng đúng.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Theo dõi luồng điều khiển khi cả hai điều kiện cùng đúng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi luồng điều khiển khi cả hai điều kiện cùng đúng.
-
-=====================================================================================
+      Lỗi luồng điều khiển là mã kiểm tra `if tool_call: execute(); append();` rồi rơi ngay xuống `if text: return text`, khiến phản hồi tạm 'Calling tool...' bị trả về như câu trả lời cuối cùng cho người dùng trước khi lượt gọi model kế tiếp có cơ hội đọc Observation.
 CÂU 033 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d03-q033 (Độ khó: Dễ | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-tool-failure-observation-encoding] Tool Failure Observation Encoding
 =====================================================================================
@@ -1236,11 +1220,7 @@ Tổng số lần gọi model tối đa là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: lần gọi model
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Giới hạn vòng lặp đếm số lượt bắt đầu bằng lần gọi model, không cộng riêng văn bản trả lời cuối.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giới hạn vòng lặp đếm số lượt bắt đầu bằng lần gọi model, không cộng riêng văn bản trả lời cuối.
-
-=====================================================================================
+      Vòng lặp cấu hình `max_iterations=4` và mỗi vòng bắt đầu bằng đúng 1 lần gọi model. Sau lần gọi model thứ 4, ngân sách vòng lặp chạm ngưỡng tối đa và không kích hoạt vòng lặp thứ 5, nên tổng số lần gọi model tối đa là 4.
 CÂU 051 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q051 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-agent-loop-budget-termination] Agent Loop Budget Termination
 =====================================================================================
@@ -1276,11 +1256,7 @@ Tổng số lần thử là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: lần thử
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt số lần thử lại với tổng số lần thử.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt số lần thử lại với tổng số lần thử.
-
-=====================================================================================
+      Chính sách cho phép 1 lần gọi ban đầu và tối đa 1 lần thử lại khi gặp timeout. Tool bị timeout ở cả lần đầu và lần thử lại, nên tổng số lần thử (total attempts) là 1 + 1 = 2 lần.
 CÂU 053 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q053 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-agent-bounded-retry-policy] Agent Bounded Retry Policy
 =====================================================================================
@@ -1322,11 +1298,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm tra nguồn thay thế có đáp ứng điều kiện nhiệm vụ hay không trước khi dùng.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm tra nguồn thay thế có đáp ứng điều kiện nhiệm vụ hay không trước khi dùng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra nguồn thay thế có đáp ứng điều kiện nhiệm vụ hay không trước khi dùng.
-
-=====================================================================================
+      Khi tool chính đã hết số lần thử lại và tác vụ chỉ cần ước lượng với dữ liệu trễ chấp nhận tối đa 15 phút, giải pháp fallback phù hợp nhất là dùng bản sao chỉ đọc (10 phút), ghi rõ độ trễ và thông báo đây là nguồn dự phòng.
 CÂU 055 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q055 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-agent-fallback-safe-stop] Agent Fallback Safe Stop
 =====================================================================================
@@ -1369,11 +1341,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ giữ thông tin mà quyết định kế tiếp cần đọc.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ giữ thông tin mà quyết định kế tiếp cần đọc.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ giữ thông tin mà quyết định kế tiếp cần đọc.
-
-=====================================================================================
+      Thông tin trạng thái cần giữ qua các vòng lặp để hoàn thành tác vụ đặt phòng: Mục tiêu đặt phòng và mã định danh người tham gia (a), Khung giờ 14 giờ và múi giờ (b), Kết quả kiểm tra lịch mới nhất và trạng thái chờ xác nhận (c).
 CÂU 057 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q057 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-agent-short-term-task-state] Agent Short Term Task State
 =====================================================================================
@@ -1610,11 +1578,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Ghi các sự kiện ở runtime có thể kiểm chứng; không yêu cầu nội dung suy luận ẩn.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Ghi các sự kiện ở runtime có thể kiểm chứng; không yêu cầu nội dung suy luận ẩn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Ghi các sự kiện ở runtime có thể kiểm chứng; không yêu cầu nội dung suy luận ẩn.
-
-=====================================================================================
+      Bản ghi kiểm toán tối thiểu cho một bước tool call gồm: `step_index` và timestamp (a), Tên tool, tham số đã che dữ liệu nhạy cảm và `call_id` (b), Trạng thái Observation cùng kết quả/lỗi (c), và Kết quả kết thúc cùng lý do dừng nếu bước này kết thúc lượt chạy (e).
 CÂU 067 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q067 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-trace-capture] Agent Trace Capture
 =====================================================================================
@@ -1809,11 +1773,7 @@ Nếu tổng độ trễ được định nghĩa là tổng độ trễ của c�
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: ms
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Giữ nguyên đơn vị trước khi cộng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ nguyên đơn vị trước khi cộng.
-
-=====================================================================================
+      Tổng độ trễ của lượt chạy = Tổng độ trễ 4 bước: 120 + 380 + 250 + 150 = 900 ms.
 CÂU 076 [🟡 Tính toán điền số (Numeric)] - Mã: d03-q076 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-agent-trace-resource-scaling] Agent Trace Resource Scaling
 =====================================================================================
@@ -1826,11 +1786,7 @@ Chi phí cho mỗi truy vấn là bao nhiêu USD/query?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD/query
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Cộng chi phí của mọi bước lặp lại trong trace.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cộng chi phí của mọi bước lặp lại trong trace.
-
-=====================================================================================
+      Chi phí cho mỗi truy vấn = (3 lần gọi model × 0,004 USD) + (2 lần gọi tool × 0,001 USD) = 0,012 + 0,002 = 0,014 USD/query.
 CÂU 077 [🟡 Tính toán điền số (Numeric)] - Mã: d03-q077 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-agent-trace-resource-scaling] Agent Trace Resource Scaling
 =====================================================================================
@@ -1843,11 +1799,7 @@ Chi phí tăng thêm mỗi ngày của agent so với baseline là bao nhiêu US
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD/day
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính chênh lệch chi phí cho mỗi truy vấn trước, rồi nhân với lưu lượng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính chênh lệch chi phí cho mỗi truy vấn trước, rồi nhân với lưu lượng.
-
-=====================================================================================
+      Chi phí agent cho mỗi truy vấn = 0,015 (model) + 0,003 (tool) = 0,018 USD. Chênh lệch chi phí so với baseline (0,006 USD) là 0,018 − 0,006 = 0,012 USD/truy vấn. Với 20.000 truy vấn mỗi ngày, chi phí tăng thêm mỗi ngày là 20.000 × 0,012 = 240 USD/day.
 CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q078 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-agent-comparison-flowchart-traceability] Agent Comparison Flowchart Traceability
 =====================================================================================
@@ -1913,11 +1865,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thẩm quyền đến từ kênh và chính sách, không đến từ nhãn tự xưng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Thẩm quyền đến từ kênh và chính sách, không đến từ nhãn tự xưng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thẩm quyền đến từ kênh và chính sách, không đến từ nhãn tự xưng.
-
-=====================================================================================
+      Phân tích tấn công Prompt Injection gián tiếp (Indirect Prompt Injection): Tiêu đề và giá vẫn là dữ liệu hợp lệ cần tóm tắt sau kiểm duyệt (a); Câu tự xưng `SYSTEM:` nằm trong dữ liệu web không có quyền chỉ dẫn hệ thống (b); Yêu cầu gửi API key ra ngoài là vi phạm chính sách và quyền hạn (c).
 CÂU 081 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d03-q081 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-indirect-prompt-injection-authority] Indirect Prompt Injection Authority
 =====================================================================================

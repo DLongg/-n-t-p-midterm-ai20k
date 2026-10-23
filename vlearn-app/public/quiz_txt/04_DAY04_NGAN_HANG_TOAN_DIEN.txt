@@ -178,11 +178,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xét hành động mà thành phần phía sau phải thực hiện với đầu ra.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xét hành động mà thành phần phía sau phải thực hiện với đầu ra.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xét hành động mà thành phần phía sau phải thực hiện với đầu ra.
-
-=====================================================================================
+      Khi một dịch vụ downstream cần đọc 3 trường để quyết định nhánh xử lý, định dạng đầu ra phù hợp nhất là một JSON object có ba trường ổn định kèm schema và kiểu dữ liệu rõ ràng.
 CÂU 007 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d04-q007 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-structured-output-runtime-validation] Structured Output Runtime Validation
 =====================================================================================
@@ -290,11 +286,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So mức thay đổi kết quả của từng nấc, không nhìn tên kỹ thuật.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So mức thay đổi kết quả của từng nấc, không nhìn tên kỹ thuật.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So mức thay đổi kết quả của từng nấc, không nhìn tên kỹ thuật.
-
-=====================================================================================
+      Baseline zero-shot đạt 18/20; thêm 1-shot nâng lên 19/20; thêm 2-shot vẫn 19/20 nhưng tăng 22% token. Quyết định tối ưu là giữ 1-shot và điều tra nguyên nhân lỗi cụ thể của ca còn lại, không thêm ví dụ thứ hai gây lãng phí chi phí.
 CÂU 011 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d04-q011 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-few-shot-example-coverage] Few Shot Example Coverage
 =====================================================================================
@@ -458,11 +450,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Nguồn dữ liệu không được chen vào chuỗi quyền chỉ vì chứa câu mệnh lệnh.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nguồn dữ liệu không được chen vào chuỗi quyền chỉ vì chứa câu mệnh lệnh.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nguồn dữ liệu không được chen vào chuỗi quyền chỉ vì chứa câu mệnh lệnh.
-
-=====================================================================================
+      Hệ phân cấp thẩm quyền chỉ dẫn từ cao xuống thấp: Quy tắc hệ thống (System rules) (o4) -> Chính sách developer (o3) -> Người dùng (User instructions) (o2) -> Trang web/dữ liệu không tin cậy được truy xuất (o1).
 CÂU 017 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d04-q017 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-context-packet-construction] Context Packet Construction
 =====================================================================================
@@ -580,11 +568,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt content default với permission tạo side effect.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt content default với permission tạo side effect.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt content default với permission tạo side effect.
-
-=====================================================================================
+      Người dùng yêu cầu viết email lịch sự nhưng chưa nêu câu chào. Vì câu chào không tạo tác động phụ nguy hiểm và email chưa gửi thật, hành vi đúng là soạn bản nháp với lựa chọn mặc định lịch sự được nêu rõ, chưa gửi.
 CÂU 021 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d04-q021 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-dynamic-context-freshness] Dynamic Context Freshness
 =====================================================================================
@@ -676,11 +660,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Với mỗi item, hỏi nếu xóa nó thì verdict hoặc boundary có thể đổi không.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Với mỗi item, hỏi nếu xóa nó thì verdict hoặc boundary có thể đổi không.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Với mỗi item, hỏi nếu xóa nó thì verdict hoặc boundary có thể đổi không.
-
-=====================================================================================
+      Thông tin cần giữ trong packet quyết định hoàn tiền booking B17: Chính sách hủy 48h đúng phiên bản (a), Thời gian check-in còn 36h (b), và Điều khoản non-refundable riêng của booking B17 nếu có (e). Sở thích phòng (c) và lịch sử chuyến đi cũ (d) không ảnh hưởng đến điều kiện hoàn tiền.
 CÂU 024 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q024 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-context-relevance-selection] Context Relevance Selection
 =====================================================================================
@@ -830,11 +810,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hãy xét tác động mạnh nhất có thể xảy ra khi gọi tool hợp lệ.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy xét tác động mạnh nhất có thể xảy ra khi gọi tool hợp lệ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy xét tác động mạnh nhất có thể xảy ra khi gọi tool hợp lệ.
-
-=====================================================================================
+      Tool `get_or_create_profile(email)` có nhánh tạo mới làm thay đổi trạng thái trong cơ sở dữ liệu nếu hồ sơ chưa tồn tại, do đó phải được phân loại vào nhóm hành động/ghi dữ liệu (write action).
 CÂU 029 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d04-q029 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-tool-inventory-boundary] Tool Inventory Boundary
 =====================================================================================
@@ -995,11 +971,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách thông tin định danh do người dùng cung cấp khỏi bằng chứng thay đổi theo thời gian cần truy xuất.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách thông tin định danh do người dùng cung cấp khỏi bằng chứng thay đổi theo thời gian cần truy xuất.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách thông tin định danh do người dùng cung cấp khỏi bằng chứng thay đổi theo thời gian cần truy xuất.
-
-=====================================================================================
+      Người dùng đã cung cấp đủ mã chuyến bay và ngày bay, và câu trả lời bắt buộc phải dựa trên dữ liệu mới nhất từ công cụ; chính sách tool-choice đúng là bắt buộc dùng `flight_status` (forced tool-choice).
 CÂU 035 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d04-q035 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-tool-result-provenance-labeling] Tool Result Provenance Labeling
 =====================================================================================
@@ -1134,11 +1106,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đừng dựa vào động từ HTTP hay tên hàm; hãy đọc tác động được mô tả.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đừng dựa vào động từ HTTP hay tên hàm; hãy đọc tác động được mô tả.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng dựa vào động từ HTTP hay tên hàm; hãy đọc tác động được mô tả.
-
-=====================================================================================
+      Các lời gọi làm thay đổi trạng thái bên ngoài (state-modifying): `GET /report?mark_seen=true` thay đổi trạng thái đã xem trên server (a), `send_email` gửi email thật ra ngoài (d), và `reserve_room(hold=true)` tạo bản ghi giữ phòng tạm (e). `search_docs` và `preview_email` là thao tác chỉ đọc/cục bộ.
 CÂU 040 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d04-q040 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-read-write-effect-classification] Read Write Effect Classification
 =====================================================================================
@@ -1159,11 +1127,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hãy xét cả các đối số mặc định trước khi phân loại.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy xét cả các đối số mặc định trước khi phân loại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy xét cả các đối số mặc định trước khi phân loại.
-
-=====================================================================================
+      Hàm `check_coupon(code, apply=True)` có đối số mặc định `apply=True` làm thay đổi giỏ hàng phía máy chủ, nên lời gọi này là một hành động ghi dữ liệu (write action).
 CÂU 041 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d04-q041 (Độ khó: Dễ | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-action-risk-tiering] Action Risk Tiering
 =====================================================================================
@@ -1244,11 +1208,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt không nhận được phản hồi với việc không có tác động nào xảy ra.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt không nhận được phản hồi với việc không có tác động nào xảy ra.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt không nhận được phản hồi với việc không có tác động nào xảy ra.
-
-=====================================================================================
+      Khi `charge_card` bị timeout, cổng thanh toán có thể đã trừ tiền. Nếu client tạo request ID mới để thử lại thì có nguy cơ trừ tiền hai lần; cách sửa đúng là đối soát giao dịch và dùng lại đúng idempotency key ban đầu.
 CÂU 044 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q044 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-write-replay-safeguards] Write Replay Safeguards
 =====================================================================================
@@ -1379,11 +1339,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hãy kiểm tra state nào cần còn lại sau phần cập nhật của node.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy kiểm tra state nào cần còn lại sau phần cập nhật của node.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy kiểm tra state nào cần còn lại sau phần cập nhật của node.
-
-=====================================================================================
+      Trong LangGraph, để các `ToolMessage` được thêm nối tiếp vào danh sách lịch sử thay vì ghi đè toàn bộ danh sách, khai báo đúng trong TypedDict là `messages: Annotated[list, add_messages]`.
 CÂU 049 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d04-q049 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-langgraph-node-contract] Langgraph Node Contract
 =====================================================================================
@@ -1405,11 +1361,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Các key trả về phải là key của State, còn value phải đúng ngữ nghĩa cập nhật.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Các key trả về phải là key của State, còn value phải đúng ngữ nghĩa cập nhật.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Các key trả về phải là key của State, còn value phải đúng ngữ nghĩa cập nhật.
-
-=====================================================================================
+      Node trong LangGraph trả về dictionary chứa các key cập nhật state: `return {'messages':[response], 'attempts': state['attempts']+1}` cập nhật cả messages thông qua reducer và tăng số lần thử attempts.
 CÂU 050 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q050 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-langgraph-node-contract] Langgraph Node Contract
 =====================================================================================
@@ -1458,11 +1410,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách nơi quyết định hành động khỏi nơi tạo quan sát bên ngoài.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách nơi quyết định hành động khỏi nơi tạo quan sát bên ngoài.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách nơi quyết định hành động khỏi nơi tạo quan sát bên ngoài.
-
-=====================================================================================
+      Trong thiết kế đồ thị chuẩn của LangGraph, node `agent` chỉ đưa ra quyết định gọi tool, còn việc thực thi tool phải được tách riêng thành node `tools` riêng biệt để quan sát và quản lý trạng thái độc lập.
 CÂU 052 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q052 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-langgraph-agent-tool-node-separation] Langgraph Agent Tool Node Separation
 =====================================================================================
@@ -1509,11 +1457,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Áp đúng điều kiện đã cho lên message cuối.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Áp đúng điều kiện đã cho lên message cuối.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Áp đúng điều kiện đã cho lên message cuối.
-
-=====================================================================================
+      Router kiểm tra `if last.tool_calls: return 'tools' else: return 'END'`. Với AIMessage có `tool_calls` không rỗng, đích đến bắt buộc là node `tools` bất kể text có rỗng hay không.
 CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q054 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-langgraph-edge-router-design] Langgraph Edge Router Design
 =====================================================================================
@@ -1560,11 +1504,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Mọi đích của edge phải tồn tại trước bước kiểm tra/compile.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mọi đích của edge phải tồn tại trước bước kiểm tra/compile.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mọi đích của edge phải tồn tại trước bước kiểm tra/compile.
-
-=====================================================================================
+      Quy trình lắp ghép đồ thị LangGraph: Khởi tạo `StateGraph(State)` (o2) -> Đăng ký các node `agent` và `tools` (o3) -> Thêm edge START→agent (o4) -> Thêm conditional edge agent→tools/END và normal edge tools→agent (o1) -> Compile builder (o5).
 CÂU 056 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d04-q056 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-langgraph-graph-assembly] Langgraph Graph Assembly
 =====================================================================================
@@ -1586,11 +1526,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Lần theo tình huống có tool call, từng edge một.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Lần theo tình huống có tool call, từng edge một.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Lần theo tình huống có tool call, từng edge một.
-
-=====================================================================================
+      Nếu graph có edge conditional agent→tools nhưng thiếu edge đi ra khỏi node `tools`, khi nhánh tool thực thi xong thì đồ thị sẽ dừng lại mà không quay trở về `agent` để sinh kết quả cuối cùng.
 CÂU 057 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d04-q057 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-langgraph-compile-validation] Langgraph Compile Validation
 =====================================================================================
@@ -1613,11 +1549,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So danh sách tên node đã đăng ký với mọi đích đến.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So danh sách tên node đã đăng ký với mọi đích đến.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So danh sách tên node đã đăng ký với mọi đích đến.
-
-=====================================================================================
+      Router ánh xạ tới `tool_node` nhưng node được đăng ký là `tools`, khiến compiler báo lỗi node đích không tồn tại. Cách sửa nhỏ nhất là đổi tên ánh xạ đích trong router thành node đã đăng ký là `tools`.
 CÂU 058 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q058 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-langgraph-compile-validation] Langgraph Compile Validation
 =====================================================================================
@@ -1666,11 +1598,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Dùng nơi tạo ra từng message để dựng đường đi.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dùng nơi tạo ra từng message để dựng đường đi.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dùng nơi tạo ra từng message để dựng đường đi.
-
-=====================================================================================
+      Đường đi logic qua đồ thị: agent yêu cầu tool (o3) -> tools thực thi tạo Observation (o2) -> agent nhận Observation tạo final answer (o1) -> kết thúc END (o4).
 CÂU 060 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q060 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-langgraph-runtime-event-inspection] Langgraph Runtime Event Inspection
 =====================================================================================
@@ -1718,11 +1646,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hãy nghĩ xem một operator khác cần gì để dựng đúng cấu hình đã được eval.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy nghĩ xem một operator khác cần gì để dựng đúng cấu hình đã được eval.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy nghĩ xem một operator khác cần gì để dựng đúng cấu hình đã được eval.
-
-=====================================================================================
+      Bản ghi vận hành để tái hiện một phiên bản prompt cần: Owner (a), Phiên bản/hash prompt (b), Biến/đầu vào (c), Contract hành vi (d), Khai báo tool + phiên bản case eval (e), và Mục tiêu rollback (f). Màu giao diện (g) là chi tiết hiển thị không liên quan.
 CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q062 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-prompt-artifact-record] Prompt Artifact Record
 =====================================================================================
@@ -1768,11 +1692,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Giả thuyết phải có thể bị bộ eval cố định chứng minh là sai.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Giả thuyết phải có thể bị bộ eval cố định chứng minh là sai.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giả thuyết phải có thể bị bộ eval cố định chứng minh là sai.
-
-=====================================================================================
+      Để sửa lỗi agent tìm kiếm khi thiếu ngày đi mà không làm hỏng các ca đã đúng, giả thuyết kiểm chứng tốt nhất là: Thêm điều khoản yêu cầu ngày chính xác; các ca thiếu ngày (E3/E7) phải hỏi lại, trong khi các ca đủ ngày (E1/E2) vẫn giữ nguyên kết quả.
 CÂU 064 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q064 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-version-change-hypothesis] Version Change Hypothesis
 =====================================================================================
@@ -1817,11 +1737,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Mỗi case được giữ lại phải đo một contract hành vi khác.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi case được giữ lại phải đo một contract hành vi khác.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi case được giữ lại phải đo một contract hành vi khác.
-
-=====================================================================================
+      Bộ case tối thiểu đo các ranh giới hành vi khác nhau: Đủ thông tin -> draft plan (a), Thiếu ngày -> ask followup (c), Hỏi thời tiết -> gọi tool thời tiết (d), Trang web yêu cầu gửi tiền -> coi là dữ liệu, không ghi dữ liệu (e). Đổi tên người (b) không tăng phạm vi kiểm tra.
 CÂU 066 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q066 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-fixed-prompt-eval-suite] Fixed Prompt Eval Suite
 =====================================================================================
@@ -1894,11 +1810,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xác định bằng chứng nào nhìn thấy được lời gọi tool và hành động thực thi, không chỉ đầu ra cuối.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định bằng chứng nào nhìn thấy được lời gọi tool và hành động thực thi, không chỉ đầu ra cuối.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định bằng chứng nào nhìn thấy được lời gọi tool và hành động thực thi, không chỉ đầu ra cuối.
-
-=====================================================================================
+      Để kiểm chứng tiêu chí agent không được gọi `send_refund` trước khi có bản ghi xác nhận hợp lệ, bài đánh giá phải là Agent eval kiểm tra tool-call trace, trạng thái xác nhận và các hành động thực thi, chứ không chỉ chấm text đầu ra cuối.
 CÂU 069 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d04-q069 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-failure-layer-localization] Failure Layer Localization
 =====================================================================================
@@ -1978,11 +1890,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách chỉ số mục tiêu khỏi ranh giới không được phép hồi quy.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách chỉ số mục tiêu khỏi ranh giới không được phép hồi quy.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách chỉ số mục tiêu khỏi ranh giới không được phép hồi quy.
-
-=====================================================================================
+      Phiên bản v2 tuy tăng điểm tổng từ 80 lên 86 nhưng điểm an toàn bị hồi quy từ 20/20 xuống 15/20. Tiêu chí an toàn là ranh giới cứng không được phép hồi quy, nên quyết định đúng là không đưa lên production, rollback về v1 và điều tra nguyên nhân hồi quy an toàn.
 CÂU 072 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q072 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-version-decision-rollback] Version Decision Rollback
 =====================================================================================
@@ -2028,11 +1936,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đi từ điểm số ngược về nội dung chính xác/cấu hình/sự kiện khi chạy.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đi từ điểm số ngược về nội dung chính xác/cấu hình/sự kiện khi chạy.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đi từ điểm số ngược về nội dung chính xác/cấu hình/sự kiện khi chạy.
-
-=====================================================================================
+      Bản ghi điểm hỗ trợ kiểm tra và rollback phải liên kết đầy đủ: Hash prompt (a), Hash khai báo tool (b), Hash bộ case eval (c), Cấu hình provider/model (d), và Đầu ra thô kèm trace tool/hội thoại (e).
 CÂU 074 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q074 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-eval-run-artifact-traceability] Eval Run Artifact Traceability
 =====================================================================================
@@ -2078,11 +1982,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hãy hỏi model/harness đã thực sự có cơ hội thực hiện tác vụ chưa.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy hỏi model/harness đã thực sự có cơ hội thực hiện tác vụ chưa.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy hỏi model/harness đã thực sự có cơ hội thực hiện tác vụ chưa.
-
-=====================================================================================
+      Các lần chạy là lỗi hạ tầng chứ không phải lỗi mô hình/prompt: API key không hợp lệ 401 (a), Bị rate-limit 429 không có completion (b), Lỗi DNS endpoint (d), và Bị từ chối quyền truy cập model (f). Chọn sai tool (c) hay vi phạm format (e) là lỗi của mô hình/prompt.
 CÂU 076 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q076 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-provider-preflight-separation] Provider Preflight Separation
 =====================================================================================
@@ -2130,11 +2030,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách thành phần hệ thống được kiểm trong mock khỏi thành phần chưa chạy.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách thành phần hệ thống được kiểm trong mock khỏi thành phần chưa chạy.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách thành phần hệ thống được kiểm trong mock khỏi thành phần chưa chạy.
-
-=====================================================================================
+      Mock test 100/100 pass chỉ chứng minh các đường đi logic và harness của mã nguồn hoạt động đúng; nó chưa chứng minh mô hình thật sẽ sinh đúng và ổn định trên dữ liệu thực tế.
 CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d04-q078 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-mock-real-evidence-boundary] Mock Real Evidence Boundary
 =====================================================================================
@@ -2273,11 +2169,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Liệt kê điều kiện làm thay đổi quyết định có/không của chính hành động giữ phòng.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Liệt kê điều kiện làm thay đổi quyết định có/không của chính hành động giữ phòng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Liệt kê điều kiện làm thay đổi quyết định có/không của chính hành động giữ phòng.
-
-=====================================================================================
+      Gói thông tin vừa tối thiểu vừa đủ để thực hiện hành động giữ phòng Hotel A: Hotel A, ngày ở, tình trạng phòng/giá còn hiệu lực, ngân sách, sự cho phép giữ phòng của người dùng, cùng nguồn và thời điểm thu thập.
 CÂU 083 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d04-q083 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-history-compaction-retention] History Compaction Retention
 =====================================================================================
@@ -2331,11 +2223,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đánh giá tác động, dữ liệu, khả năng đảo ngược và hậu quả; bỏ qua đặc điểm trình bày.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đánh giá tác động, dữ liệu, khả năng đảo ngược và hậu quả; bỏ qua đặc điểm trình bày.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh giá tác động, dữ liệu, khả năng đảo ngược và hậu quả; bỏ qua đặc điểm trình bày.
-
-=====================================================================================
+      Các thuộc tính làm rủi ro tăng mạnh và cần kiểm soát nghiêm ngặt: Có thay đổi dữ liệu/gửi ra ngoài (a), Dữ liệu nhạy cảm sức khỏe (b), Khó thu hồi sau khi gửi (c), và Có hậu quả trực tiếp tới người nhận thật (e). Độ dài tên hàm (d) hay số câu (f) không ảnh hưởng rủi ro.
 CÂU 085 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d04-q085 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-write-replay-safeguards] Write Replay Safeguards
 =====================================================================================
@@ -2385,11 +2273,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm ranh giới chưa được đo, không đếm số câu hoặc tên thực thể.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tìm ranh giới chưa được đo, không đếm số câu hoặc tên thực thể.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm ranh giới chưa được đo, không đếm số câu hoặc tên thực thể.
-
-=====================================================================================
+      Để tăng độ bao phủ kiểm tra khi bộ test chưa đo phản hồi không dùng tool và chưa đo ranh giới ghi dữ liệu của enroll_course, sửa đổi tối thiểu là thay case trùng H2 bằng case không dùng tool, và thay H4 bằng ca đăng ký chưa xác nhận (kỳ vọng không ghi dữ liệu).
 CÂU 087 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d04-q087 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-failure-layer-localization] Failure Layer Localization
 =====================================================================================
@@ -2413,11 +2297,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ giữ một biến thay đổi ở mỗi lần so sánh.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ giữ một biến thay đổi ở mỗi lần so sánh.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ giữ một biến thay đổi ở mỗi lần so sánh.
-
-=====================================================================================
+      Để cô lập nguyên nhân khi cả prompt và schema tool cùng đổi, các bước kiểm tra có kiểm soát gồm: Ghi lại artifact chính xác và trace (a), Test riêng implementation tool với đối số hợp lệ (b), Chạy prompt mới với schema cũ đã biết tốt (c), và Chạy prompt cũ với schema mới (e).
 CÂU 088 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d04-q088 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-harness-responsibility-boundary] Harness Responsibility Boundary
 =====================================================================================
@@ -2439,6 +2319,4 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hãy hỏi: kiểm soát có còn đúng nếu model bỏ qua chỉ dẫn không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy hỏi: kiểm soát có còn đúng nếu model bỏ qua chỉ dẫn không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy hỏi: kiểm soát có còn đúng nếu model bỏ qua chỉ dẫn không?
+      Khi mô hình tự ý tạo tool call `refund` và tự bịa text `user confirmed`, lớp chịu trách nhiệm chặn thực thi bắt buộc phải là Harness/Execution Guardrail bằng cách kiểm tra trạng thái xác nhận thực tế trên server trước khi dispatch lệnh gọi.

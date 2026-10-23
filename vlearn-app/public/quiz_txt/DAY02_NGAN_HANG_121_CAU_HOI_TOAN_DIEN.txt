@@ -84,11 +84,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách phát biểu có số liệu hoặc nhật ký (log) khỏi phát biểu suy đoán nguyên nhân hay giải pháp.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách phát biểu có số liệu hoặc nhật ký (log) khỏi phát biểu suy đoán nguyên nhân hay giải pháp.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách phát biểu có số liệu hoặc nhật ký (log) khỏi phát biểu suy đoán nguyên nhân hay giải pháp.
-
-=====================================================================================
+      Dữ liệu log 37/50 hồ sơ phải nhập lại địa chỉ với trung vị 4 phút trực tiếp hỗ trợ: Điểm đau nằm ở việc nhập lại địa chỉ (a), Có 37 hồ sơ bị nhập lại trong mẫu (b), và Việc nhập lại làm tăng thời gian xử lý của nhân viên (d). Ý kiến về biểu mẫu (c) là suy đoán chủ quan.
 CÂU 004 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q004 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-user-workflow-pain-observation] User Workflow Pain Observation
 =====================================================================================
@@ -369,11 +365,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Quick win phải đồng thời có tác động đáng kể và nỗ lực tương đối thấp.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Quick win phải đồng thời có tác động đáng kể và nỗ lực tương đối thấp.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Quick win phải đồng thời có tác động đáng kể và nỗ lực tương đối thấp.
-
-=====================================================================================
+      Quick win được định nghĩa là cơ hội có tác động đáng kể với nỗ lực tương đối thấp. Cơ hội B có tác động 4 (cao) và nỗ lực 2 (thấp), là quick win rõ ràng hơn Cơ hội A (tác động 5 nhưng nỗ lực 5) và C (tác động chỉ 2).
 CÂU 014 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q014 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-impact-effort-prioritization] Impact Effort Prioritization
 =====================================================================================
@@ -705,11 +697,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So cùng một chỉ số và cùng đơn vị ở từng bước.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So cùng một chỉ số và cùng đơn vị ở từng bước.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So cùng một chỉ số và cùng đơn vị ở từng bước.
-
-=====================================================================================
+      So sánh thời gian xử lý các bước: Nhận hồ sơ: 2 phút; Kiểm tra thủ công: 17 phút; Phê duyệt: 4 phút. Bước 'Kiểm tra thủ công' chiếm 17 phút là nút thắt (bottleneck) lớn nhất.
 CÂU 026 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q026 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-baseline-bottleneck-quantification] Baseline Bottleneck Quantification
 =====================================================================================
@@ -805,11 +793,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách tác vụ ngôn ngữ biến thiên khỏi phép kiểm đã có luật hoàn chỉnh.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách tác vụ ngôn ngữ biến thiên khỏi phép kiểm đã có luật hoàn chỉnh.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách tác vụ ngôn ngữ biến thiên khỏi phép kiểm đã có luật hoàn chỉnh.
-
-=====================================================================================
+      Tác vụ phù hợp để cân nhắc AI là các tác vụ ngôn ngữ tự nhiên hoặc mẫu phức tạp: Phân loại email tự do nhiều ý định (a), Gợi ý sản phẩm cá nhân hóa từ nhiều tín hiệu hành vi (c), và Tóm tắt phản hồi ngôn ngữ tự nhiên (e). Tính VAT (b) và kiểm tra định dạng 10 chữ số (d) là logic xác định cần dùng code thuần.
 CÂU 030 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q030 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-ai-task-suitability] Ai Task Suitability
 =====================================================================================
@@ -916,11 +900,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Đánh dấu riêng từng bằng chứng: đã có hay còn thiếu.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đánh dấu riêng từng bằng chứng: đã có hay còn thiếu.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đánh dấu riêng từng bằng chứng: đã có hay còn thiếu.
-
-=====================================================================================
+      Đánh giá mức độ sẵn sàng: Quy trình và người chịu trách nhiệm đã được ghi nhận (a), nhưng Bằng chứng đánh giá còn thiếu (b), và Mức lỗi chấp nhận được còn thiếu (c). 20 mẫu là quá ít để đại diện (d) và chưa thể triển khai ngay (e).
 CÂU 034 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q034 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-ai-readiness-evidence] Ai Readiness Evidence
 =====================================================================================
@@ -1367,11 +1347,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Kiểm tra dependency và cách merge trước khi chạy song song.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm tra dependency và cách merge trước khi chạy song song.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra dependency và cách merge trước khi chạy song song.
-
-=====================================================================================
+      Thiết kế fan-out/fan-in song song đúng: Chạy ba phân tích song song nếu cùng nhận đầu vào chuẩn hóa (a), Định nghĩa schema đầu ra chung cho bộ tổng hợp (b), và Quy định xử lý khi một nhánh hết thời gian chờ (d).
 CÂU 050 [🟡 Tính toán điền số (Numeric)] - Mã: d02-q050 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-parallelization-pattern-design] Parallelization Pattern Design
 =====================================================================================
@@ -1388,11 +1364,7 @@ Tính tổng số token của các nhánh.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: token
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nhân số báo cáo, số nhánh và token của mỗi nhánh.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhân số báo cáo, số nhánh và token của mỗi nhánh.
-
-=====================================================================================
+      Tổng số nhánh = 40 báo cáo × 3 nhánh/báo cáo = 120 nhánh. Với mỗi nhánh dùng 2.000 token, tổng số token là 120 × 2.000 = 240.000 token.
 CÂU 051 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q051 (Độ khó: Khó | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-orchestrator-workers-pattern-design] Orchestrator Workers Pattern Design
 =====================================================================================
@@ -1468,11 +1440,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Theo luồng đầu ra → tiêu chí → phản hồi → sửa lại.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Theo luồng đầu ra → tiêu chí → phản hồi → sửa lại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo luồng đầu ra → tiêu chí → phản hồi → sửa lại.
-
-=====================================================================================
+      Vòng lặp Evaluator–Optimizer: Bộ sinh (Generator) tạo bản nháp (o3) -> Bộ đánh giá (Evaluator) chấm theo tiêu chí (o2) -> Bộ đánh giá trả phản hồi cụ thể cho các tiêu chí chưa đạt (o4) -> Bộ sinh sửa đầu ra theo phản hồi (o1).
 CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q054 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-evaluator-optimizer-pattern-design] Evaluator Optimizer Pattern Design
 =====================================================================================
@@ -1568,11 +1536,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Xếp theo việc ai thực hiện tác động bên ngoài và bằng chứng cần có.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xếp theo việc ai thực hiện tác động bên ngoài và bằng chứng cần có.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xếp theo việc ai thực hiện tác động bên ngoài và bằng chứng cần có.
-
-=====================================================================================
+      Lộ trình tăng mức tự chủ an toàn từ thấp đến cao: Gợi ý cho người dùng tự thực hiện (o2) -> Tạo nháp bắt buộc người duyệt (Human-in-the-loop) (o3) -> Tự động hóa có giám sát và can thiệp (o1).
 CÂU 058 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d02-q058 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-phased-autonomy-escalation] Phased Autonomy Escalation
 =====================================================================================
@@ -1598,11 +1562,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Chỉ tăng một pha, không xóa các kiểm soát đã tạo ra bằng chứng.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ tăng một pha, không xóa các kiểm soát đã tạo ra bằng chứng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ tăng một pha, không xóa các kiểm soát đã tạo ra bằng chứng.
-
-=====================================================================================
+      Hệ thống soạn email nội bộ rủi ro thấp đã qua 2.000 test case tốt. Bước tiếp theo hợp lý là chuyển sang tự động hóa có giám sát trong phạm vi giới hạn, vẫn giữ kiểm tra chính sách và nút dừng khẩn cấp.
 CÂU 059 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q059 (Độ khó: Dễ | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-clarification-control-placement] Clarification Control Placement
 =====================================================================================
@@ -1686,11 +1646,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hiển thị thứ người dùng cần để truy lại nguồn và biết giới hạn của kết luận.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hiển thị thứ người dùng cần để truy lại nguồn và biết giới hạn của kết luận.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hiển thị thứ người dùng cần để truy lại nguồn và biết giới hạn của kết luận.
-
-=====================================================================================
+      Để bảo đảm tính minh bạch khi trả lời chính sách, hệ thống cần: Liên kết/tên tài liệu và đoạn liên quan (a), Ngày hiệu lực hoặc thời điểm truy xuất (b), và Cảnh báo rõ khi hai nguồn có nội dung mâu thuẫn (c).
 CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q062 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-evidence-transparency-control] Evidence Transparency Control
 =====================================================================================
@@ -1736,11 +1692,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Điểm phê duyệt phải đứng ngay trước hành động khó đảo ngược.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Điểm phê duyệt phải đứng ngay trước hành động khó đảo ngược.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Điểm phê duyệt phải đứng ngay trước hành động khó đảo ngược.
-
-=====================================================================================
+      Luồng hoàn tiền an toàn: Tạo bản nháp từ dữ liệu đã kiểm tra (o3) -> Hiển thị người nhận, số tiền, lý do và bản nháp (o2) -> Người xem xét sửa/chấp thuận/từ chối (o4) -> Thực thi gửi email và hoàn tiền (o1).
 CÂU 064 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q064 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-manual-approval-control] Manual Approval Control
 =====================================================================================
@@ -1836,11 +1788,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thông báo phần nào hỏng, phần nào còn nguyên và người dùng có thể làm gì tiếp.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Thông báo phần nào hỏng, phần nào còn nguyên và người dùng có thể làm gì tiếp.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thông báo phần nào hỏng, phần nào còn nguyên và người dùng có thể làm gì tiếp.
-
-=====================================================================================
+      Khi retrieval lỗi nhưng dữ liệu form người dùng đã nhập còn nguyên, phản hồi an toàn: Giữ nguyên biểu mẫu và nêu rõ chưa lấy được nguồn (a), Cho phép thử lại hoặc lưu bản nháp (b), và Cho phép chuyển cho nhân viên xử lý nếu gấp (e).
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q068 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-graceful-failure-user-recovery] Graceful Failure User Recovery
 =====================================================================================
@@ -1911,11 +1859,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'So điều kiện đang chạy với các điều kiện đã kiểm thử.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So điều kiện đang chạy với các điều kiện đã kiểm thử.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So điều kiện đang chạy với các điều kiện đã kiểm thử.
-
-=====================================================================================
+      Camera chỉ được kiểm thử vào ban ngày; khi chạy ban đêm có cảm biến báo lux dưới ngưỡng nghĩa là hệ thống đang hoạt động ngoài phạm vi thiết kế vận hành (ODD). Hành động đúng là giảm chức năng hoặc bàn giao theo chính sách an toàn.
 CÂU 071 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q071 (Độ khó: Khó | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-sensitive-data-processing-boundary] Sensitive Data Processing Boundary
 =====================================================================================
@@ -2107,11 +2051,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xem xác suất và mức độ nghiêm trọng như hai trục, không loại rủi ro ở phần đuôi.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xem xác suất và mức độ nghiêm trọng như hai trục, không loại rủi ro ở phần đuôi.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xem xác suất và mức độ nghiêm trọng như hai trục, không loại rủi ro ở phần đuôi.
-
-=====================================================================================
+      Rủi ro B tuy xác suất thấp (chưa xuất hiện trong 100 lần) nhưng mức độ nghiêm trọng cực cao (xóa dữ liệu khách hàng); Rủi ro A xảy ra thường xuyên nhưng tác động chỉ làm chậm 1 phút. Cách xử lý chuẩn là khoanh vùng/chuyển cấp xử lý ngay rủi ro B, đồng thời xử lý A theo tác động.
 CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q078 (Độ khó: Khó | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-risk-probability-severity-prioritization] Risk Probability Severity Prioritization
 =====================================================================================
@@ -2217,11 +2157,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đếm số điểm khác nhau giữa nhóm đối chứng và nhóm thử nghiệm.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đếm số điểm khác nhau giữa nhóm đối chứng và nhóm thử nghiệm.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đếm số điểm khác nhau giữa nhóm đối chứng và nhóm thử nghiệm.
-
-=====================================================================================
+      Khi nhóm thử nghiệm đồng thời thay đổi cả tìm kiếm mới lẫn quy trình bắt đầu sử dụng (onboarding), hai biến bị thay đổi cùng lúc nên không thể cô lập và xác định được yếu tố nào là nguyên nhân chính làm tăng tỷ lệ giữ chân.
 CÂU 082 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q082 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-ab-test-single-variable-design] Ab Test Single Variable Design
 =====================================================================================
@@ -2268,11 +2204,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tạo trường hợp kiểm thử tại từng ranh giới và giữa nhiều thành phần.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tạo trường hợp kiểm thử tại từng ranh giới và giữa nhiều thành phần.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tạo trường hợp kiểm thử tại từng ranh giới và giữa nhiều thành phần.
-
-=====================================================================================
+      Các kịch bản lỗi hệ thống thực tế cần kiểm thử gồm: Dịch vụ truy hồi hết thời gian chờ riêng lẻ (a), Dịch vụ truy hồi trả nguồn cũ (b), Đầu ra chứa prompt injection yêu cầu tool email gửi dữ liệu (c), và Cả retrieval lẫn email provider cùng lỗi (d).
 CÂU 084 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q084 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-failure-scenario-test-design] Failure Scenario Test Design
 =====================================================================================
@@ -2321,11 +2253,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hỏi khoảng trống là ràng buộc nền tảng hay có bước xác minh tiếp theo cụ thể.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hỏi khoảng trống là ràng buộc nền tảng hay có bước xác minh tiếp theo cụ thể.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi khoảng trống là ràng buộc nền tảng hay có bước xác minh tiếp theo cụ thể.
-
-=====================================================================================
+      Khi bài toán chưa có dữ liệu được phép sử dụng và chưa kiểm thử lỗi, quyết định đúng là 'Not Yet': cần xác minh quyền sử dụng dữ liệu và hoàn thành kiểm thử lỗi trước khi triển khai.
 CÂU 086 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q086 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-ai-go-notyet-nogo] Ai Go Notyet Nogo
 =====================================================================================
@@ -2491,11 +2419,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Kiểm tra theo bốn cột từ demo đến production.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm tra theo bốn cột từ demo đến production.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra theo bốn cột từ demo đến production.
-
-=====================================================================================
+      Trước khi đưa nguyên mẫu ra production, bốn cột bằng chứng bắt buộc gồm: So sánh với baseline/quy trình hiện tại (a), Bộ kiểm thử đại diện và các trường hợp biên (b), Cơ chế ghi log, fallback và rollback (c), và Người phụ trách giám sát/vận hành (d).
 CÂU 092 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q092 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-demo-production-gap-analysis] Demo Production Gap Analysis
 =====================================================================================
@@ -2929,11 +2853,7 @@ Tính tổng số lượt chạy nhánh, gồm cả lượt thử lại.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: lượt chạy nhánh
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính phần fan-out và phần bộ tổng hợp riêng rồi cộng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính phần fan-out và phần bộ tổng hợp riêng rồi cộng.
-
-=====================================================================================
+      Số lượt chạy nhánh ban đầu = 75 hồ sơ × 4 nhánh = 300 lượt. Số nhánh bị hết thời gian chờ và được thử lại đúng một lần là 5% của 300 = 15 lượt. Tổng số lượt chạy nhánh gồm cả lượt thử lại là 300 + 15 = 315 lượt.
 CÂU 108 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d02-q108 (Độ khó: Khó | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-evaluator-optimizer-pattern-design] Evaluator Optimizer Pattern Design
 =====================================================================================

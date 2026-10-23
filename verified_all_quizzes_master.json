@@ -1936,11 +1936,9 @@
   "d13-q020": {
     "correct": true,
     "correct_response": {
-      "value": 9.56,
-      "tolerance": 0.02,
-      "unit": "%"
+      "value": 9.56
     },
-    "explanation": "P=1−(1−0,01)^10=1−0,99^10≈9,56%.",
+    "explanation": "Xác suất gặp ít nhất một lượt latency > 5s trong 10 lượt chat độc lập: P = 1 - (1 - 0,01)^10 = 1 - 0,99^10 ≈ 0,0956178... = 9,56%.",
     "response": {
       "unit": "%",
       "value": 9.56
@@ -2067,11 +2065,9 @@
   "d14-q014": {
     "correct": true,
     "correct_response": {
-      "value": 0.75,
-      "tolerance": 0.001,
-      "unit": ""
+      "value": 0.75
     },
-    "explanation": "Precision=Recall=3/4 nên F1=2PR/(P+R)=0,75.",
+    "explanation": "Token F1: Multiset overlap = 3 tokens; candidate = 4 tokens, reference = 4 tokens. Precision = 3/4, Recall = 3/4 => F1 = 2 * (3/4 * 3/4) / (3/4 + 3/4) = 0,75.",
     "response": {
       "unit": "",
       "value": 0.75
@@ -2226,11 +2222,9 @@
   "d15-q027": {
     "correct": true,
     "correct_response": {
-      "value": 400,
-      "tolerance": 0,
-      "unit": "USD/tháng"
+      "value": 400
     },
-    "explanation": "Hosted TCO=4.000+500+1.200=5.700; self-hosted=3.000+600+2.000+500=6.100; chênh lệch=400 USD/tháng.",
+    "explanation": "Hosted TCO: $4.000 + $500 + $1.200 = $5.700. Self-hosted TCO: $3.000 + $600 + $2.000 + $500 = $6.100. Chênh lệch TCO self-hosted trừ hosted: $6.100 - $5.700 = 400 USD/tháng.",
     "response": {
       "unit": "USD/tháng",
       "value": 400
@@ -2279,11 +2273,9 @@
   "d15-q036": {
     "correct": true,
     "correct_response": {
-      "value": 6000,
-      "tolerance": 0.01,
-      "unit": "USD/tháng"
+      "value": 6000
     },
-    "explanation": "Per request=$0,002+$0,002=$0,004; 1,5 triệu request/tháng ⇒ $6.000.",
+    "explanation": "Mỗi request: 1.000 input tokens * $2/M + 200 output tokens * $10/M = $0,002 + $0,002 = $0,004/request. Hàng tháng có 50.000 * 30 = 1.500.000 requests => Tổng chi phí: 1.500.000 * $0,004 = 6.000 USD/tháng.",
     "response": {
       "unit": "USD/tháng",
       "value": 6000
@@ -2471,8 +2463,7 @@
   "d10-q019": {
     "correct": true,
     "correct_response": {
-      "value": 12,
-      "unit": "giây"
+      "value": 12
     },
     "explanation": "Khi API trả về mã lỗi 429 kèm header Retry-After: 12 hợp lệ, client phải tuân thủ và chờ tối thiểu đúng 12 giây trước khi thực hiện attempt tiếp theo."
   },
@@ -2512,9 +2503,8 @@
   "d15-q030": {
     "correct": true,
     "correct_response": {
-      "value": 111111,
-      "unit": "request/tháng"
+      "value": 111111
     },
-    "explanation": "Điểm hòa vốn TCO: 500 + 0.04*N = 4500 + 0.004*N => 0.036*N = 4000 => N = 4000 / 0.036 ≈ 111,111 request/tháng."
+    "explanation": "Break-even volume: 500 + 0,04*N = 4500 + 0,004*N => 0,036*N = 4000 => N = 4000 / 0,036 ≈ 111.111 requests/tháng."
   }
 }

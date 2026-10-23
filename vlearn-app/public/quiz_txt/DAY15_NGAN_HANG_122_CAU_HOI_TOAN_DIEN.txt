@@ -713,11 +713,7 @@ Tính chênh lệch TCO self-hosted trừ hosted.
 👉 GIÁ TRỊ ĐIỀN CHUẨN: None USD/tháng
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Hosted TCO=4.000+500+1.200=5.700; self-hosted=3.000+600+2.000+500=6.100; chênh lệch=400 USD/tháng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cộng cùng category và cùng kỳ trước khi so.
-
-=====================================================================================
+      Hosted TCO: $4.000 + $500 + $1.200 = $5.700. Self-hosted TCO: $3.000 + $600 + $2.000 + $500 = $6.100. Chênh lệch TCO self-hosted trừ hosted: $6.100 - $5.700 = 400 USD/tháng.
 CÂU 028 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d15-q028 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-hosted-selfhosted-full-tco] Hosted Selfhosted Full Tco
 =====================================================================================
@@ -782,11 +778,7 @@ Tính break-even request/tháng.
 👉 GIÁ TRỊ ĐIỀN CHUẨN: None request/tháng
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Điểm hòa vốn TCO: 500 + 0.04*N = 4500 + 0.004*N => 0.036*N = 4000 => N = 4000 / 0.036 ≈ 111,111 request/tháng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đặt hai TCO cùng kỳ bằng nhau; đây là threshold theo assumption đã cho.
-
-=====================================================================================
+      Break-even volume: 500 + 0,04*N = 4500 + 0,004*N => 0,036*N = 4000 => N = 4000 / 0,036 ≈ 111.111 requests/tháng.
 CÂU 031 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q031 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-hosted-selfhosted-sensitivity-trigger] Hosted Selfhosted Sensitivity Trigger
 =====================================================================================
@@ -801,11 +793,7 @@ Self-hosted rẻ hơn hosted bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD/tháng
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính từng option ở cùng volume trước khi trừ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính từng option ở cùng volume trước khi trừ.
-
-=====================================================================================
+      Tại V = 200.000 requests/tháng: Hosted cost = $500 + $0,04 * 200.000 = $500 + $8.000 = $8.500. Self-hosted cost = $4.500 + $0,004 * 200.000 = $4.500 + $800 = $5.300. Self-hosted rẻ hơn hosted: $8.500 - $5.300 = 3.200 USD/tháng.
 CÂU 032 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d15-q032 (Độ khó: Dễ | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-production-ai-cost-inventory] Production Ai Cost Inventory
 =====================================================================================
@@ -942,11 +930,7 @@ Tính monthly API subtotal.
 👉 GIÁ TRỊ ĐIỀN CHUẨN: None USD/tháng
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Per request=$0,002+$0,002=$0,004; 1,5 triệu request/tháng ⇒ $6.000.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đổi giá per-million về per-token rồi nhân volume.
-
-=====================================================================================
+      Mỗi request: 1.000 input tokens * $2/M + 200 output tokens * $10/M = $0,002 + $0,002 = $0,004/request. Hàng tháng có 50.000 * 30 = 1.500.000 requests => Tổng chi phí: 1.500.000 * $0,004 = 6.000 USD/tháng.
 CÂU 037 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q037 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-production-unit-cost-calculation] Production Unit Cost Calculation
 =====================================================================================
@@ -961,11 +945,7 @@ Tính API subtotal trong tháng.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD/tháng
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính input và output subtotal riêng trước khi cộng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính input và output subtotal riêng trước khi cộng.
-
-=====================================================================================
+      Tổng API subtotal: (496 triệu input tokens * $1,5 / triệu) + (186 triệu output tokens * $6 / triệu) = 496 * 1,5 + 186 * 6 = $744 + $1.116 = 1.860 USD/tháng.
 CÂU 038 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d15-q038 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-production-unit-cost-calculation] Production Unit Cost Calculation
 =====================================================================================
@@ -1474,11 +1454,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một posting gần tên chưa chắc cùng population tuyển dụng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một posting gần tên chưa chắc cùng population tuyển dụng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một posting gần tên chưa chắc cùng population tuyển dụng.
-
-=====================================================================================
+      Để so sánh yêu cầu tuyển dụng Data Engineer cấp độ Junior tại Việt Nam trong quý hiện tại, chỉ lấy các bài đăng đúng nhóm đối tượng: (a) Junior Data Engineer tại TP.HCM đăng 2 tuần trước, (b) Junior Data Engineer tại Hà Nội đăng 1 tháng trước, (e) Junior Data Engineer làm remote tại Việt Nam đăng 3 tuần trước.
 CÂU 058 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d15-q058 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-career-jd-sampling] Career Jd Sampling
 =====================================================================================
@@ -1862,11 +1838,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ dùng invariant input, chưa dùng search/route feasibility.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ dùng invariant input, chưa dùng search/route feasibility.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ dùng invariant input, chưa dùng search/route feasibility.
-
-=====================================================================================
+      Dữ liệu đầu vào vi phạm tính toàn vẹn phải bị loại ngay trước khi chạy thuật toán routing: (a) Thông số vận tốc dùng chung bị xung đột giữa các dòng (0,8 vs 1,0), (b) trùng lặp order_id trong cùng một instance, (c) giá trị nhu cầu không phải là số hợp lệ ('abc').
 CÂU 073 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d15-q073 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-routing-instance-invariants] Routing Instance Invariants
 =====================================================================================
@@ -1906,11 +1878,7 @@ Tính travel time từ depot tới order.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính distance trước rồi chia đúng unit km/phút.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính distance trước rồi chia đúng unit km/phút.
-
-=====================================================================================
+      Khoảng cách Euclidean từ depot (0,0) tới order (3,4): sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km. Thời gian di chuyển với vận tốc 0,5 km/phút: 5 km / 0,5 km/phút = 10 phút.
 CÂU 075 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d15-q075 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-routing-wait-service-propagation] Routing Wait Service Propagation
 =====================================================================================
@@ -1975,11 +1943,7 @@ Arrival tại B là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Departure A không bằng arrival A khi có wait/service.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Departure A không bằng arrival A khi có wait/service.
-
-=====================================================================================
+      Arrival tại A = 4; Ready time A = 10; Service time = 3; Leg A->B = 2. Do xe đến trước ready time nên phải chờ đến t=10 mới bắt đầu service. Service hoàn tất lúc 10 + 3 = 13. Thời điểm arrival tại B = 13 + 2 = 15.
 CÂU 078 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q078 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-lateness-at-arrival] Routing Lateness At Arrival
 =====================================================================================
@@ -1994,11 +1958,7 @@ Tính total lateness.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Áp max(0, arrival−due) cho từng order rồi cộng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Áp max(0, arrival−due) cho từng order rồi cộng.
-
-=====================================================================================
+      Lateness từng order: Order A = max(0, 12 - 10) = 2; Order B = max(0, 8 - 9) = 0; Order C = max(0, 20 - 14) = 6. Tổng lateness = 2 + 0 + 6 = 8 phút.
 CÂU 079 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q079 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-lateness-at-arrival] Routing Lateness At Arrival
 =====================================================================================
@@ -2013,11 +1973,7 @@ Tính maximum lateness.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính max(0,arrival−due) từng order rồi lấy max.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính max(0,arrival−due) từng order rồi lấy max.
-
-=====================================================================================
+      Lateness của 4 orders: Order 1: max(0, 9-10)=0; Order 2: max(0, 15-11)=4; Order 3: max(0, 22-18)=4; Order 4: max(0, 30-31)=0. Maximum lateness = max(0, 4, 4, 0) = 4 phút.
 CÂU 080 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q080 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-return-overtime] Routing Return Overtime
 =====================================================================================
@@ -2032,11 +1988,7 @@ Tính overtime của route.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Overtime chỉ biết sau khi cộng return leg.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Overtime chỉ biết sau khi cộng return leg.
-
-=====================================================================================
+      Hoàn tất service đơn cuối tại t=52; quay về depot mất 11 phút => Xe về tới depot lúc 52 + 11 = 63. Shift end = 60 => Overtime = max(0, 63 - 60) = 3 phút.
 CÂU 081 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q081 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-return-overtime] Routing Return Overtime
 =====================================================================================
@@ -2051,11 +2003,7 @@ Tính overtime route.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đừng bắt đầu return leg từ arrival trước service.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng bắt đầu return leg từ arrival trước service.
-
-=====================================================================================
+      Đơn cuối arrival lúc t=40, service 8 phút => Hoàn tất lúc 40 + 8 = 48. Chặng về depot mất 7 phút => Về depot lúc 48 + 7 = 55. Shift end = 52 => Overtime = max(0, 55 - 52) = 3 phút.
 CÂU 082 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d15-q082 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-route-list-semantics] Routing Route List Semantics
 =====================================================================================
@@ -2145,11 +2093,7 @@ Có bao nhiêu xe được dùng?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: xe
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Placeholder rỗng không tính xe.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Placeholder rỗng không tính xe.
-
-=====================================================================================
+      Dung lượng fleet num_vehicles=2. Solution có cấu trúc `[[], [1,2], [], [3]]`. Các mảng rỗng `[]` là placeholder; chỉ có hai route không rỗng là `[1,2]` và `[3]` đại diện cho 2 xe thực sự được sử dụng.
 CÂU 086 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d15-q086 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-nonempty-fleet-limit] Routing Nonempty Fleet Limit
 =====================================================================================
@@ -2303,11 +2247,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: So từng dimension trước, chỉ kết luận overall nếu objective được khai báo.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So từng dimension trước, chỉ kết luận overall nếu objective được khai báo.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng dimension trước, chỉ kết luận overall nếu objective được khai báo.
-
-=====================================================================================
+      So sánh hai lời giải đa mục tiêu khi chưa biết trọng số: (a) B có tổng quãng đường tốt hơn (90 < 100), (b) A dùng ít xe hơn (2 < 3) và trễ giờ ít hơn (5 < 12), (c) không thể kết luận giải pháp nào tối ưu tổng thể nếu chưa có trọng số chính thức, (e) hai lời giải ngang nhau về làm thêm giờ (0) và đơn hàng chưa phục vụ (0).
 CÂU 092 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d15-q092 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-routing-five-cost-dimensions] Routing Five Cost Dimensions
 =====================================================================================
@@ -2422,11 +2362,7 @@ Tính instance score sau cap.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: điểm
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính ratio trước rồi áp cap; invalid/missing mới nhận zero.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính ratio trước rồi áp cap; invalid/missing mới nhận zero.
-
-=====================================================================================
+      Raw score = 100 * (reference cost / team cost) = 100 * (120 / 60) = 200. Áp dụng trần cap=150: min(150, 200) = 150 điểm.
 CÂU 097 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q097 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-instance-score] Routing Instance Score
 =====================================================================================
@@ -2441,11 +2377,7 @@ Tính instance score.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: điểm
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Cap chỉ tác động khi raw ratio vượt 150.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cap chỉ tác động khi raw ratio vượt 150.
-
-=====================================================================================
+      Raw score = 100 * (reference cost / team cost) = 100 * (80 / 100) = 80. Áp dụng cap=150: min(150, 80) = 80 điểm.
 CÂU 098 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q098 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-instance-score] Routing Instance Score
 =====================================================================================
@@ -2460,11 +2392,7 @@ Score là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: điểm
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Score 100 nghĩa bằng reference cost.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Score 100 nghĩa bằng reference cost.
-
-=====================================================================================
+      Score = min(150, 100 * reference / team) = min(150, 100 * (100 / 200)) = min(150, 50) = 50 điểm.
 CÂU 099 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q099 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-private-score-average] Routing Private Score Average
 =====================================================================================
@@ -2479,11 +2407,7 @@ Tính final score dùng cho ranking.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: điểm
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ lấy private instance theo contract.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ lấy private instance theo contract.
-
-=====================================================================================
+      Điểm chính thức xếp hạng chỉ tính trên các private instance theo quy định: (120 + 90 + 150) / 3 = 360 / 3 = 120 điểm.
 CÂU 100 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q100 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-private-score-average] Routing Private Score Average
 =====================================================================================
@@ -2498,11 +2422,7 @@ Tính final private mean.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: điểm
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mẫu số gồm toàn bộ private instance bắt buộc.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số gồm toàn bộ private instance bắt buộc.
-
-=====================================================================================
+      Điểm trung bình private của cả 4 instances bắt buộc (kể cả instance thiếu bị 0 điểm): (150 + 110 + 0 + 90) / 4 = 350 / 4 = 87,5 điểm.
 CÂU 101 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d15-q101 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-feasible-baseline] Routing Feasible Baseline
 =====================================================================================
@@ -2569,11 +2489,7 @@ Delta nhỏ nhất của cheapest feasible insertion là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: cost unit
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không dùng distance-only delta nếu working cost còn term downstream.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không dùng distance-only delta nếu working cost còn term downstream.
-
-=====================================================================================
+      Các vị trí chèn khả thi có working-cost delta lần lượt là 12, 7, 9. Delta nhỏ nhất của cheapest feasible insertion là min(12, 7, 9) = 7.
 CÂU 104 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d15-q104 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-cheapest-insertion] Routing Cheapest Insertion
 =====================================================================================
@@ -2638,11 +2554,7 @@ Regret lớn nhất là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: cost unit
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính chênh second-best trừ best cho từng order.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính chênh second-best trừ best cho từng order.
-
-=====================================================================================
+      Regret = second-best insertion cost - best insertion cost. Order A: 9 - 4 = 5; Order B: 20 - 6 = 14; Order C: 11 - 5 = 6. Regret lớn nhất = max(5, 14, 6) = 14.
 CÂU 107 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d15-q107 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-serve-unserved-delta] Routing Serve Unserved Delta
 =====================================================================================
@@ -2741,11 +2653,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tính load mỗi route sau swap, không chỉ tổng toàn fleet.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính load mỗi route sau swap, không chỉ tổng toàn fleet.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính load mỗi route sau swap, không chỉ tổng toàn fleet.
-
-=====================================================================================
+      Đánh giá bước hoán đổi (swap): (a) Tải trọng mới của R1 là 10 - 8 + 2 = 4, của R2 là 6 - 2 + 8 = 12; (b) Lời giải bị vi phạm ràng buộc cứng (hard-invalid) vì R2 bị quá tải 2 đơn vị (12 > capacity 10); (c) Mức giảm quãng đường không thể bù đắp vi phạm ràng buộc tải trọng cứng.
 CÂU 111 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d15-q111 (Độ khó: Dễ | Điểm: 2)
 Chủ đề kiến thức (KC): [kc-routing-twoopt-oropt] Routing Twoopt Oropt
 =====================================================================================
@@ -2815,11 +2723,7 @@ Tính xác suất nhận, làm tròn 3 chữ số.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Move tốt hơn nhận trực tiếp; move xấu dùng exponent âm.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Move tốt hơn nhận trực tiếp; move xấu dùng exponent âm.
-
-=====================================================================================
+      Xác suất chấp nhận move xấu trong Simulated Annealing: P = exp(-Δ / T) = exp(-5 / 10) = exp(-0,5) ≈ 0,60653..., làm tròn 3 chữ số là 0,607.
 CÂU 114 [🟠 Sắp xếp thứ tự quy trình (Ordering)] - Mã: d15-q114 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-instance-deadline] Routing Instance Deadline
 =====================================================================================
@@ -2860,11 +2764,7 @@ Cap search trung bình mỗi instance là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút/instance
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Trừ end-to-end reserve trước khi chia cho instance.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trừ end-to-end reserve trước khi chia cho instance.
-
-=====================================================================================
+      Tổng thời gian 30 phút, trừ thời gian dự phòng cố định (reserve) 6 phút, còn lại 30 - 6 = 24 phút. Chia đều cho 8 instances: 24 / 8 = 3 phút/instance.
 CÂU 116 [🟡 Tính toán điền số (Numeric)] - Mã: d15-q116 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-batch-budget] Routing Batch Budget
 =====================================================================================
@@ -2879,11 +2779,7 @@ Cap search mỗi instance trong bốn instance đầu là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút/instance
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Trừ mọi reserve end-to-end trước khi chia.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trừ mọi reserve end-to-end trước khi chia.
-
-=====================================================================================
+      Tổng thời gian 42 phút. Tổng reserve: 7 phút cố định + 5 phút riêng cho instance cuối = 12 phút. Thời gian còn lại cho 4 instances đầu: 42 - 12 = 30 phút. Chia đều cho 4 instances: 30 / 4 = 7,5 phút/instance.
 CÂU 117 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d15-q117 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-routing-best-feasible-retention] Routing Best Feasible Retention
 =====================================================================================

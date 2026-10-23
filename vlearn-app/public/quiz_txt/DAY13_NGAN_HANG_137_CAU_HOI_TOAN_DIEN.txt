@@ -532,11 +532,7 @@ Tính xác suất gặp ít nhất một lượt vượt 5s, làm tròn hai ch�
 👉 GIÁ TRỊ ĐIỀN CHUẨN: None %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  P=1−(1−0,01)^10=1−0,99^10≈9,56%.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính xác suất không có tail ở cả 10 lượt trước.
-
-=====================================================================================
+      Xác suất gặp ít nhất một lượt latency > 5s trong 10 lượt chat độc lập: P = 1 - (1 - 0,01)^10 = 1 - 0,99^10 ≈ 0,0956178... = 9,56%.
 CÂU 021 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q021 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-tail-latency-compounding] Tail Latency Compounding
 =====================================================================================
@@ -663,11 +659,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn signal thực sự so output với evidence hoặc authority.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chọn signal thực sự so output với evidence hoặc authority.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn signal thực sự so output với evidence hoặc authority.
-
-=====================================================================================
+      Đánh giá rủi ro hallucination khi dữ liệu lớn đòi hỏi phối hợp đa tầng: (a) Kiểm tra đối chiếu tự động giữa thực thể/claim với nguồn truy xuất (groundedness check), (b) lấy mẫu định kỳ chấm bằng LLM judge có version cố định, (c) chuyển chuyên gia con người hoặc hệ thống hồ sơ gốc (system-of-record) rà soát các trường hợp bất đồng có rủi ro cao.
 CÂU 026 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q026 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-hallucination-multisignal-detection] Hallucination Multisignal Detection
 =====================================================================================
@@ -713,11 +705,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Tool success rate, Timeout rate.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Tool success rate, Timeout rate.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Tool success rate, Timeout rate.
-
-=====================================================================================
+      Báo cáo số liệu công cụ chính xác: Tỷ lệ thành công là 80/100 = 80%; các tỷ lệ lỗi (timeout, invalid schema, provider failure) và tỷ lệ lặp lại (loop rate) phải được tính toán dựa trên đúng mẫu số tương ứng.
 CÂU 028 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q028 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-tool-call-metric-contract] Tool Call Metric Contract
 =====================================================================================
@@ -1032,11 +1020,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Correlation, Provider/model/version.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Correlation, Provider/model/version.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Correlation, Provider/model/version.
-
-=====================================================================================
+      Tập trường tối thiểu cần thiết để debug độ trễ và chi phí theo model/prompt mà không làm rò rỉ PII: Mã định danh tương quan, phiên bản prompt/model, số lượng token, thời gian xử lý và kết quả thực thi.
 CÂU 040 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q040 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-llm-call-event-fields] Llm Call Event Fields
 =====================================================================================
@@ -1139,11 +1123,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Pre-render redaction, Regex và entity recognition.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Pre-render redaction, Regex và entity recognition.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Pre-render redaction, Regex và entity recognition.
-
-=====================================================================================
+      Nguyên tắc che dữ liệu nhạy cảm (PII redaction): Việc làm sạch dữ liệu phải được thực hiện tại ranh giới ứng dụng trước khi phát đi (redact-before-emission), ngăn chặn PII lọt vào bất kỳ bộ đệm trace hay log nào.
 CÂU 044 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q044 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-pii-redaction-before-emission] Pii Redaction Before Emission
 =====================================================================================
@@ -1348,11 +1328,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Execution context, Context binding.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Execution context, Context binding.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Execution context, Context binding.
-
-=====================================================================================
+      Trong các ứng dụng bất đồng bộ chạy nhiều coroutines, dữ liệu ngữ cảnh của người dùng phải được cô lập độc lập theo từng task (sử dụng `contextvars.ContextVar`) để tránh tình trạng race-condition gây lẫn lộn thông tin tenant.
 CÂU 052 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q052 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-async-log-context-isolation] Async Log Context Isolation
 =====================================================================================
@@ -1392,11 +1368,7 @@ Tính tổng số event được giữ lại.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: event
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách error khỏi normal trước khi áp sampling rate.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách error khỏi normal trước khi áp sampling rate.
-
-=====================================================================================
+      Tổng số event giữ lại: Error events (100% của 1% * 1.000.000 = 10.000) + Normal events (9% của 99% * 1.000.000 = 0,09 * 990.000 = 89.100). Tổng cộng: 10.000 + 89.100 = 99.100 event.
 CÂU 054 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q054 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-outcome-aware-telemetry-sampling] Outcome Aware Telemetry Sampling
 =====================================================================================
@@ -1499,11 +1471,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Trace identity, Root/child span.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Trace identity, Root/child span.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Trace identity, Root/child span.
-
-=====================================================================================
+      Trong kiến trúc microservices và hàng đợi async, trace context bắt buộc phải được truyền (propagate) và liên kết xuyên suốt qua các message queue để bảo đảm quan hệ nhân quả (causality) giữa các span.
 CÂU 058 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q058 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-trace-span-context-model] Trace Span Context Model
 =====================================================================================
@@ -1549,11 +1517,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Root invocation, Model generation span.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Root invocation, Model generation span.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Root invocation, Model generation span.
-
-=====================================================================================
+      Thiết kế span hữu ích cho agent loop: Nên phân tách span theo từng tác vụ thao tác cụ thể (plan, retrieve, model call, tool execution, retry) thay vì gom toàn bộ vào một span duy nhất hoặc chia vụn theo từng token.
 CÂU 060 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q060 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-span-boundary-design] Agent Span Boundary Design
 =====================================================================================
@@ -1702,11 +1666,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn các rule dùng outcome nhưng không mở rộng data risk.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chọn các rule dùng outcome nhưng không mở rộng data risk.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn các rule dùng outcome nhưng không mở rộng data risk.
-
-=====================================================================================
+      Chính sách tail-sampling hiệu quả khi lưu lượng lớn và buffer hữu hạn: (a) Giữ lại 100% các vết có lỗi, độ trễ cao hoặc chi phí bất thường, (b) lấy mẫu lưu lượng bình thường theo ngân sách cố định, (c) đặt giới hạn buffer để chống tràn bộ nhớ và ghi nhận rõ tỷ lệ lấy mẫu.
 CÂU 066 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q066 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-trace-sampling-outcome-policy] Trace Sampling Outcome Policy
 =====================================================================================
@@ -1752,11 +1712,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Sequential dependency, External waiting.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Sequential dependency, External waiting.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Sequential dependency, External waiting.
-
-=====================================================================================
+      Biểu đồ waterfall cho thấy tool A và tool B chạy tuần tự mất 2s + 2s dù hoàn toàn độc lập; mẫu hình tắc nghẽn là thực thi nối tiếp (serial execution) và giải pháp tối ưu là chạy song song hai công cụ.
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q068 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-trace-bottleneck-pattern-diagnosis] Trace Bottleneck Pattern Diagnosis
 =====================================================================================
@@ -1802,11 +1758,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Prompt name/label/version, Resolved source.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Prompt name/label/version, Resolved source.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Prompt name/label/version, Resolved source.
-
-=====================================================================================
+      Nhãn 'production' là tham chiếu động; để bảo đảm khả năng kiểm toán và phục hồi chính xác, hệ thống telemetry bắt buộc phải ghi lại mã băm (hash) hoặc số phiên bản cụ thể của prompt đã được phân giải.
 CÂU 070 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q070 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-prompt-version-traceability] Prompt Version Traceability
 =====================================================================================
@@ -1902,11 +1854,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Collector, Metric route.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Collector, Metric route.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Collector, Metric route.
-
-=====================================================================================
+      Để loại bỏ tình trạng duplicate dữ liệu trace khi gửi trực tiếp và qua collector, kiến trúc chuẩn là định tuyến toàn bộ telemetry qua một OpenTelemetry Collector duy nhất và cấu hình fan-out rõ ràng tại đó.
 CÂU 074 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q074 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-collector-signal-fanout] Collector Signal Fanout
 =====================================================================================
@@ -2007,11 +1955,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Request counter, Latency observation.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Request counter, Latency observation.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Request counter, Latency observation.
-
-=====================================================================================
+      Ghi nhận chỉ số đo lường chính xác: Tăng bộ đếm request ngay khi tiếp nhận (ingress), đo thời gian xử lý trong khối `finally`, và chỉ gắn nhãn thành công/thất bại tại sự kiện kết thúc cuối cùng.
 CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q078 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-metric-instrumentation] Agent Metric Instrumentation
 =====================================================================================
@@ -2051,11 +1995,7 @@ Upper bound có bao nhiêu time series?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: series
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nhân số giá trị độc lập của từng label.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nhân số giá trị độc lập của từng label.
-
-=====================================================================================
+      Upper bound số time series: Tích số các giá trị cardinality của từng metric label = 1.000.000 (user_id) * 10.000.000 (request_id) * 5 (model) = 5 * 10^13 = 50.000.000.000.000 series.
 CÂU 080 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q080 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-metric-label-cardinality-control] Metric Label Cardinality Control
 =====================================================================================
@@ -2126,11 +2066,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Overview, Engineering detail.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Overview, Engineering detail.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Overview, Engineering detail.
-
-=====================================================================================
+      Thiết kế bảng điều khiển trực quan hiệu quả theo nguyên lý phân cấp nhận thức: Bắt đầu từ màn hình tổng quan mức cao (Overview) → xem chi tiết kỹ thuật (Detail) → cho phép đi sâu vào từng vết sự cố (Drill-down).
 CÂU 083 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q083 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-layered-dashboard-audience-design] Layered Dashboard Audience Design
 =====================================================================================
@@ -2176,11 +2112,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Named panel profile, Traffic.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Named panel profile, Traffic.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Named panel profile, Traffic.
-
-=====================================================================================
+      Bảng điều khiển hiện tại vi phạm nghiêm trọng yêu cầu đặc tả vì thiếu cả bốn liên kết chỉ số trọng yếu: TTFT P95, chi phí tác vụ P95, tỷ lệ lỗi công cụ và độ tin cậy nội dung (groundedness).
 CÂU 085 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q085 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-service-panel-coverage] Ai Service Panel Coverage
 =====================================================================================
@@ -2333,11 +2265,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Versioned definition, Code review.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Versioned definition, Code review.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Versioned definition, Code review.
-
-=====================================================================================
+      Để bảo đảm tính nhất quán và khả năng tái lập giữa các môi trường, toàn bộ cấu hình bảng điều khiển phải được quản lý dưới dạng mã nguồn (Dashboard-as-Code), có quy trình kiểm thử và review trước khi triển khai.
 CÂU 091 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q091 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-dashboard-as-code-reproducibility] Dashboard As Code Reproducibility
 =====================================================================================
@@ -2383,11 +2311,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: User-visible symptom, Cause candidate.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: User-visible symptom, Cause candidate.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: User-visible symptom, Cause candidate.
-
-=====================================================================================
+      Nguyên tắc phát cảnh báo SRE: Chỉ phát cảnh báo khẩn cấp (page on-call) khi có triệu chứng ảnh hưởng trực tiếp đến người dùng (breach SLO/latency); các chỉ số tài nguyên như GPU 95% chỉ dùng để chẩn đoán nguyên nhân.
 CÂU 093 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q093 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-symptom-cause-alert-separation] Symptom Cause Alert Separation
 =====================================================================================
@@ -2433,11 +2357,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Condition/duration, Severity.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Condition/duration, Severity.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Condition/duration, Severity.
-
-=====================================================================================
+      Cảnh báo có thể hành động được (actionable alert) bắt buộc phải cung cấp đầy đủ: Điều kiện kích hoạt, thời gian duy trì, mức độ ảnh hưởng, liên kết bằng chứng và quy trình/người chịu trách nhiệm xử lý.
 CÂU 095 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q095 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-actionable-alert-contract] Actionable Alert Contract
 =====================================================================================
@@ -2607,11 +2527,7 @@ Downtime allowance là bao nhiêu phút?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đổi 0,1% thành tỷ lệ rồi nhân tổng phút trong window.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đổi 0,1% thành tỷ lệ rồi nhân tổng phút trong window.
-
-=====================================================================================
+      Tổng số phút trong cửa sổ 30 ngày: 30 ngày * 24 giờ/ngày * 60 phút/giờ = 43.200 phút. Thời gian downtime cho phép với SLO 99,9%: 43.200 * (100% - 99,9%) = 43.200 * 0,001 = 43,2 phút.
 CÂU 102 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q102 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-error-budget-calculation] Error Budget Calculation
 =====================================================================================
@@ -2682,11 +2598,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Burn-rate denominator, Short window.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Burn-rate denominator, Short window.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Burn-rate denominator, Short window.
-
-=====================================================================================
+      Quy tắc cảnh báo đa cửa sổ (multi-window multi-burn-rate) yêu cầu cả cửa sổ ngắn (5m) và cửa sổ dài (1h) đều phải vượt ngưỡng; hiện tại cửa sổ dài mới đạt 8x (< 14,4x) nên không được phát trang khẩn cấp để tránh báo động giả.
 CÂU 105 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q105 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-multiwindow-burn-rate-alert] Multiwindow Burn Rate Alert
 =====================================================================================
@@ -2801,11 +2713,7 @@ Task cost sau dedupe là bao nhiêu?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Loại record duplicate trước khi sum.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Loại record duplicate trước khi sum.
-
-=====================================================================================
+      Sau khi deduplicate record trùng call_id với call 0,003 USD, chi phí task chỉ tính các unique calls: 0,002 + 0,005 + 0,003 = 0,01 USD.
 CÂU 110 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q110 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-task-cost-rollup] Agent Task Cost Rollup
 =====================================================================================
@@ -2876,11 +2784,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: User, Feature.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: User, Feature.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: User, Feature.
-
-=====================================================================================
+      Để phân bổ chi phí và trả lời câu hỏi của CFO về mức tiêu hao ngân sách theo từng khách hàng, bản ghi telemetry bắt buộc phải gắn thẻ định danh khách hàng (`tenant_id`).
 CÂU 113 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q113 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ai-cost-attribution-dimensions] Ai Cost Attribution Dimensions
 =====================================================================================
@@ -2928,11 +2832,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách population cố định trước release khỏi traffic thật sau release.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách population cố định trước release khỏi traffic thật sau release.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách population cố định trước release khỏi traffic thật sau release.
-
-=====================================================================================
+      Phân biệt rạch ròi giữa offline eval và online eval: (a) Fixed benchmark trước release -> offline eval; (b) Sample traffic thật sau release -> online eval; (c) CI regression gate -> offline eval; (d) Production drift/cohort monitoring -> online eval.
 CÂU 115 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q115 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-online-offline-eval-separation] Online Offline Eval Separation
 =====================================================================================
@@ -3047,11 +2947,7 @@ Tính chi phí eval mỗi ngày.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính sample volume trước rồi nhân unit cost.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính sample volume trước rồi nhân unit cost.
-
-=====================================================================================
+      Chi phí eval hàng ngày: 1.000.000 requests * 1% sample rate * 0,002 USD/sampled request = 10.000 requests * 0,002 USD = 20 USD/ngày.
 CÂU 120 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q120 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-sampled-eval-as-metric] Sampled Eval As Metric
 =====================================================================================
@@ -3097,11 +2993,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Quality failure candidate, Feedback hoặc judge evidence.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Quality failure candidate, Feedback hoặc judge evidence.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Quality failure candidate, Feedback hoặc judge evidence.
-
-=====================================================================================
+      Khi một trường hợp lỗi ở production có chứa dữ liệu nhạy cảm PII, quy trình đưa vào tập kiểm thử offline bắt buộc là phải làm sạch (sanitize/redact) dữ liệu PII và được chuyên gia thẩm định trước khi lưu trữ.
 CÂU 122 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q122 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-production-failure-regression-promotion] Production Failure Regression Promotion
 =====================================================================================
@@ -3147,11 +3039,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Judge identity/version, Score distribution.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Judge identity/version, Score distribution.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Judge identity/version, Score distribution.
-
-=====================================================================================
+      Khi điểm số của LLM judge sụt giảm sau khi nâng cấp phiên bản nhưng độ đồng thuận của judge với nhãn chuyên gia cũng giảm, bước đầu tiên là phải kiểm tra sự lệch lạc của chính bộ đánh giá (evaluator drift).
 CÂU 124 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q124 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-evaluator-drift-monitoring] Evaluator Drift Monitoring
 =====================================================================================
@@ -3272,11 +3160,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Personal-data flow, Processor/vendor.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Personal-data flow, Processor/vendor.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Personal-data flow, Processor/vendor.
-
-=====================================================================================
+      Khi dữ liệu cá nhân của người dùng Việt Nam được chuyển ra máy chủ nước ngoài mà chưa rõ điều khoản xử lý dữ liệu và căn cứ pháp lý, hành động đúng là gắn cờ cảnh báo để đội ngũ pháp lý rà soát tuân thủ.
 CÂU 129 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q129 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-telemetry-transfer-compliance-assessment] Telemetry Transfer Compliance Assessment
 =====================================================================================
@@ -3399,11 +3283,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu các lựa chọn với: Span anomaly, Baseline comparison.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu các lựa chọn với: Span anomaly, Baseline comparison.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu các lựa chọn với: Span anomaly, Baseline comparison.
-
-=====================================================================================
+      Dữ liệu trace cho thấy bước retrieval chậm nhưng chưa có thông tin về triển khai thay đổi hay kiểm chứng khắc phục; quan sát này mới chỉ cấu thành một giả thuyết nguyên nhân (cause candidate) chứ chưa phải kết luận gốc rễ.
 CÂU 134 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d13-q134 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-converging-root-cause-evidence] Converging Root Cause Evidence
 =====================================================================================

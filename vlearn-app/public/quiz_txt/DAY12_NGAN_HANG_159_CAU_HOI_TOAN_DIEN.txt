@@ -594,11 +594,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xác định path cần ghi và user sở hữu nó trước khi chuyển sang `USER`.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định path cần ghi và user sở hữu nó trước khi chuyển sang `USER`.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định path cần ghi và user sở hữu nó trước khi chuyển sang `USER`.
-
-=====================================================================================
+      Để tiến trình chạy dưới user non-root (`USER 10001`) có thể ghi vào thư mục `/app/tmp`, Dockerfile cần gán quyền sở hữu hoặc quyền ghi tối thiểu cho thư mục đó trước khi chuyển sang lệnh `USER`.
 CÂU 023 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q023 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-container-nonroot-runtime] Container Nonroot Runtime
 =====================================================================================
@@ -644,11 +640,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt file bị Git bỏ qua với file Docker vẫn gửi trong build context.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt file bị Git bỏ qua với file Docker vẫn gửi trong build context.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt file bị Git bỏ qua với file Docker vẫn gửi trong build context.
-
-=====================================================================================
+      Docker build context gửi tất cả các tệp trong thư mục trừ khi được chỉ định rõ trong `.dockerignore`; tệp `.gitignore` không có tác dụng với Docker daemon khi build image.
 CÂU 025 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q025 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-docker-build-context-exclusion] Docker Build Context Exclusion
 =====================================================================================
@@ -695,11 +687,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Xác định finding nằm trong final image nào, package còn reachable lúc chạy không và bằng chứng còn hiệu lực đến khi nào.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định finding nằm trong final image nào, package còn reachable lúc chạy không và bằng chứng còn hiệu lực đến khi nào.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định finding nằm trong final image nào, package còn reachable lúc chạy không và bằng chứng còn hiệu lực đến khi nào.
-
-=====================================================================================
+      Để quyết định phát hành D1 khi builder stage có CVE: Cần (a) image digest bất biến D1 đã qua quét, (b) SBOM của final image để chứng minh package lỗi không tồn tại hoặc không reachable ở runtime, (c) đánh giá mức độ, bản vá và exception owner có thời hạn.
 CÂU 027 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q027 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-image-vulnerability-provenance-release] Image Vulnerability Provenance Release
 =====================================================================================
@@ -745,11 +733,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Trong Compose hãy gọi tên service; readiness là khả năng phục vụ, không chỉ process đã start.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Trong Compose hãy gọi tên service; readiness là khả năng phục vụ, không chỉ process đã start.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trong Compose hãy gọi tên service; readiness là khả năng phục vụ, không chỉ process đã start.
-
-=====================================================================================
+      Trong Docker Compose, các service độc lập giao tiếp qua mạng nội bộ bằng tên service DNS và cần khai báo điều kiện phụ thuộc trạng thái sẵn sàng (healthcheck/readiness), không gọi `localhost`.
 CÂU 029 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q029 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-compose-service-network-and-health] Compose Service Network And Health
 =====================================================================================
@@ -795,11 +779,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu thời lượng tác vụ với timeout, rồi kiểm tra cách lấy kết quả sau khi submit.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu thời lượng tác vụ với timeout, rồi kiểm tra cách lấy kết quả sau khi submit.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu thời lượng tác vụ với timeout, rồi kiểm tra cách lấy kết quả sau khi submit.
-
-=====================================================================================
+      Khi tác vụ xử lý kéo dài 90s vượt quá thời gian timeout 30s của HTTP gateway, giải pháp kiến trúc chuẩn là chuyển sang mô hình Async Job (HTTP 202 Accepted) kèm `job_id` và endpoint tra cứu trạng thái/kết quả.
 CÂU 031 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q031 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-response-lifecycle-selection] Agent Response Lifecycle Selection
 =====================================================================================
@@ -896,11 +876,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt first-byte latency với tổng compute.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt first-byte latency với tổng compute.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt first-byte latency với tổng compute.
-
-=====================================================================================
+      Server-Sent Events (SSE) streaming giúp giảm độ trễ của token đầu tiên (Time-to-First-Token - TTFT) để cải thiện trải nghiệm người dùng, nhưng không làm giảm tổng khối lượng tính toán của mô hình.
 CÂU 035 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d12-q035 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-sse-proxy-reconnect-contract] Sse Proxy Reconnect Contract
 =====================================================================================
@@ -921,11 +897,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tìm ranh giới intermediary: byte có được đẩy ra sớm, connection có được giữ sống và event có thể resume không.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tìm ranh giới intermediary: byte có được đẩy ra sớm, connection có được giữ sống và event có thể resume không.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tìm ranh giới intermediary: byte có được đẩy ra sớm, connection có được giữ sống và event có thể resume không.
-
-=====================================================================================
+      Khi streaming SSE bị proxy gom buffer, giải pháp vận hành là tắt cơ chế buffering trên reverse proxy (`proxy_buffering off`), ép flush sớm và bổ sung heartbeat/event ID để duy trì kết nối.
 CÂU 036 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q036 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-sse-proxy-reconnect-contract] Sse Proxy Reconnect Contract
 =====================================================================================
@@ -1073,11 +1045,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đặt tenant/user vào key trước khi xét TTL hay cách lưu message.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đặt tenant/user vào key trước khi xét TTL hay cách lưu message.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đặt tenant/user vào key trước khi xét TTL hay cách lưu message.
-
-=====================================================================================
+      Trong hệ thống multi-tenant, khóa lưu trữ trạng thái phiên bắt buộc phải được đặt phạm vi (namespaced/scoped) theo `tenant_id` (ví dụ `tenant:{id}:conversation:{id}`) để ngăn chặn rò rỉ dữ liệu chéo giữa các tổ chức.
 CÂU 042 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q042 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-conversation-state-retention-isolation] Conversation State Retention Isolation
 =====================================================================================
@@ -1123,11 +1091,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách thời gian chờ I/O khỏi event loop và giới hạn số call đang in-flight.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách thời gian chờ I/O khỏi event loop và giới hạn số call đang in-flight.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách thời gian chờ I/O khỏi event loop và giới hạn số call đang in-flight.
-
-=====================================================================================
+      Việc gọi thư viện blocking kéo dài 8 giây trực tiếp trong async handler sẽ làm nghẽn toàn bộ event loop của tiến trình; giải pháp là offload cuộc gọi đó sang thread/process pool riêng và giới hạn admission.
 CÂU 044 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q044 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-io-concurrency-control] Agent Io Concurrency Control
 =====================================================================================
@@ -1173,11 +1137,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt liveness với readiness: process có thể sống nhưng chưa sẵn sàng nhận traffic.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt liveness với readiness: process có thể sống nhưng chưa sẵn sàng nhận traffic.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt liveness với readiness: process có thể sống nhưng chưa sẵn sàng nhận traffic.
-
-=====================================================================================
+      Cần phân biệt rõ giữa liveness và readiness: Trong 18 giây khởi tạo mô hình và chỉ mục, tiến trình vẫn còn sống nhưng chưa thể nhận traffic, do đó readiness probe chỉ được phép trả về thành công sau khi init xong hoàn toàn.
 CÂU 046 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q046 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-cold-start-warm-capacity] Agent Cold Start Warm Capacity
 =====================================================================================
@@ -1223,11 +1183,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách dữ liệu nào phải ở thiết bị, dữ liệu nào được gửi sau consent và hành vi khi offline.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách dữ liệu nào phải ở thiết bị, dữ liệu nào được gửi sau consent và hành vi khi offline.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách dữ liệu nào phải ở thiết bị, dữ liệu nào được gửi sau consent và hành vi khi offline.
-
-=====================================================================================
+      Kiến trúc hybrid phù hợp với dữ liệu y tế nhạy cảm: Xử lý cục bộ tại máy người dùng để bảo đảm quyền riêng tư, chỉ gửi các tính toán nặng lên cloud model khi có sự đồng ý rõ ràng (explicit consent) của người dùng.
 CÂU 048 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q048 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-agent-execution-placement] Agent Execution Placement
 =====================================================================================
@@ -1273,11 +1229,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hỏi ai có thể đọc bundle; nếu browser đọc được thì đó không còn là secret boundary.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hỏi ai có thể đọc bundle; nếu browser đọc được thì đó không còn là secret boundary.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi ai có thể đọc bundle; nếu browser đọc được thì đó không còn là secret boundary.
-
-=====================================================================================
+      Mọi chuỗi mã khóa nhúng trong frontend JavaScript bundle gửi tới trình duyệt đều có thể bị dịch ngược và trích xuất; giải pháp bảo mật bắt buộc là sử dụng kiến trúc Backend-for-Frontend (BFF) để giữ secret phía server.
 CÂU 050 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q050 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-browser-bff-secret-boundary] Browser Bff Secret Boundary
 =====================================================================================
@@ -1323,11 +1275,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Nếu bundle đã gửi tới browser, key trong đó còn là secret không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nếu bundle đã gửi tới browser, key trong đó còn là secret không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu bundle đã gửi tới browser, key trong đó còn là secret không?
-
-=====================================================================================
+      Trình duyệt gọi trực tiếp API provider sẽ vi phạm CORS và làm lộ secret; mô hình đúng là đưa toàn bộ lời gọi qua BFF, nơi lưu trữ API key an toàn, trong khi trình duyệt xác thực với BFF bằng phiên người dùng.
 CÂU 052 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d12-q052 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-hybrid-device-cloud-routing] Hybrid Device Cloud Routing
 =====================================================================================
@@ -1348,11 +1296,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân loại từng task theo độ nhạy, consent, capability và connectivity trước khi route.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân loại từng task theo độ nhạy, consent, capability và connectivity trước khi route.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân loại từng task theo độ nhạy, consent, capability và connectivity trước khi route.
-
-=====================================================================================
+      Bảng định tuyến tác vụ dựa trên chính sách bảo mật: Tác vụ OCR nhạy cảm chạy hoàn toàn local; tác vụ marketing không nhạy cảm gửi lên cloud khi có consent; tác vụ chứa dữ liệu sinh trắc học bị cấm chuyển giao phải chạy local-only hoặc từ chối.
 CÂU 053 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q053 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-hybrid-device-cloud-routing] Hybrid Device Cloud Routing
 =====================================================================================
@@ -1398,11 +1342,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đối chiếu thời lượng SSE, memory, GPU và egress với giới hạn thật của runtime.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối chiếu thời lượng SSE, memory, GPU và egress với giới hạn thật của runtime.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối chiếu thời lượng SSE, memory, GPU và egress với giới hạn thật của runtime.
-
-=====================================================================================
+      Khi ứng dụng yêu cầu duy trì kết nối SSE 15 phút, bộ nhớ 4GB và GPU chuyên dụng, môi trường serverless thông thường (giới hạn 60s) không tương thích; hệ thống bắt buộc phải chọn container runtime hỗ trợ đầy đủ các tài nguyên trên.
 CÂU 055 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q055 (Độ khó: Khó | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-cloud-runtime-tier-fit] Cloud Runtime Tier Fit
 =====================================================================================
@@ -1448,11 +1388,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách phần provider vận hành khỏi accountability về data, policy, evaluation và khả năng rời platform.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách phần provider vận hành khỏi accountability về data, policy, evaluation và khả năng rời platform.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách phần provider vận hành khỏi accountability về data, policy, evaluation và khả năng rời platform.
-
-=====================================================================================
+      Với đội ngũ nhỏ cần triển khai nhanh và không có nhân sự platform chuyên trách, việc sử dụng managed runtime (PaaS) là tối ưu, trong khi nhóm vẫn phải duy trì trách nhiệm giải trình về mã nguồn, dữ liệu và chính sách an toàn.
 CÂU 057 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q057 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-managed-agent-runtime-tradeoff] Managed Agent Runtime Tradeoff
 =====================================================================================
@@ -1498,11 +1434,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Kiểm tra bind address và `PORT` ở runtime trước khi đổ lỗi cho CORS hay build.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm tra bind address và `PORT` ở runtime trước khi đổ lỗi cho CORS hay build.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm tra bind address và `PORT` ở runtime trước khi đổ lỗi cho CORS hay build.
-
-=====================================================================================
+      Lỗi dịch vụ không nhận được lưu lượng công khai do ứng dụng bind nhầm vào `127.0.0.1:8000` thay vì biến môi trường `PORT=9000` được cấp; giải pháp là bind `0.0.0.0:$PORT` và kiểm tra lại probe ở runtime.
 CÂU 059 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q059 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-cloud-service-binding-verification] Cloud Service Binding Verification
 =====================================================================================
@@ -1548,11 +1480,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Bằng chứng này được tạo trước hay sau deployment boundary?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bằng chứng này được tạo trước hay sau deployment boundary?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bằng chứng này được tạo trước hay sau deployment boundary?
-
-=====================================================================================
+      Việc image build thành công không chứng minh được quyền truy cập; quyền truy cập tài nguyên (IAM/Workload Identity) chỉ có thể được kiểm chứng thông qua các bài probe thực tế tại môi trường runtime.
 CÂU 061 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d12-q061 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-remote-mcp-hosting-boundary] Remote Mcp Hosting Boundary
 =====================================================================================
@@ -1573,11 +1501,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xác định MCP server sống cùng process local hay qua remote endpoint trước khi chọn mô hình auth.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định MCP server sống cùng process local hay qua remote endpoint trước khi chọn mô hình auth.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định MCP server sống cùng process local hay qua remote endpoint trước khi chọn mô hình auth.
-
-=====================================================================================
+      Giao thức Model Context Protocol (MCP) chạy qua stdio giữa các tiến trình cục bộ dựa trên ranh giới tin cậy (trust boundary) của tiến trình cha; tiến trình con thừa hưởng quyền và tin cậy trực tiếp từ tiến trình gọi.
 CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q062 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-remote-mcp-hosting-boundary] Remote Mcp Hosting Boundary
 =====================================================================================
@@ -1676,11 +1600,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xác định có user delegation hay không, rồi đối chiếu identity, phạm vi quyền và rotation.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định có user delegation hay không, rồi đối chiếu identity, phạm vi quyền và rotation.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định có user delegation hay không, rồi đối chiếu identity, phạm vi quyền và rotation.
-
-=====================================================================================
+      Đối với dịch vụ nội bộ chạy tự động giữa các máy, mô hình xác thực tối ưu là sử dụng workload credential (như mTLS hoặc short-lived token) có phạm vi quyền hạn tối thiểu và cơ chế tự động xoay vòng định kỳ.
 CÂU 066 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q066 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-auth-pattern-caller-fit] Auth Pattern Caller Fit
 =====================================================================================
@@ -1726,11 +1646,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hỏi điều gì xảy ra với cả header thiếu lẫn header sai trước khi handler được gọi.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hỏi điều gì xảy ra với cả header thiếu lẫn header sai trước khi handler được gọi.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi điều gì xảy ra với cả header thiếu lẫn header sai trước khi handler được gọi.
-
-=====================================================================================
+      Cơ chế xác thực API key an toàn trong FastAPI dependency: Từ chối ngay lập tức khi thiếu hoặc sai header, sử dụng thuật toán so sánh chuỗi thời gian không đổi (`secrets.compare_digest`) để chống timing attack, và truyền identity hợp lệ xuống handler.
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q068 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-api-key-verification-boundary] Api Key Verification Boundary
 =====================================================================================
@@ -1776,11 +1692,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Identity hợp lệ có mặc nhiên được phép mọi thao tác không?', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Identity hợp lệ có mặc nhiên được phép mọi thao tác không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Identity hợp lệ có mặc nhiên được phép mọi thao tác không?
-
-=====================================================================================
+      Xác thực (Authentication) chỉ chứng minh danh tính của bên gọi; hệ thống bắt buộc phải có bước phân quyền (Authorization) để bảo đảm bên gọi có quyền thao tác trên tài nguyên của tenant tương ứng.
 CÂU 070 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d12-q070 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-rate-limit-policy-selection] Rate Limit Policy Selection
 =====================================================================================
@@ -1802,11 +1714,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn các trường trả lời: ai bị giới hạn, thuật toán có tham số gì và retry lúc nào.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chọn các trường trả lời: ai bị giới hạn, thuật toán có tham số gì và retry lúc nào.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn các trường trả lời: ai bị giới hạn, thuật toán có tham số gì và retry lúc nào.
-
-=====================================================================================
+      Chính sách rate limiting đúng chuẩn multi-tenant bao gồm: (b) khóa đếm phân cấp theo tenant+tier+route để chống noisy-neighbor, (c) cấu hình dung lượng burst và tốc độ nạp (token bucket), (e) phản hồi chuẩn HTTP 429 kèm header Retry-After.
 CÂU 071 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q071 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-rate-limit-policy-selection] Rate Limit Policy Selection
 =====================================================================================
@@ -1852,11 +1760,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Áp đúng điều kiện xóa timestamp rồi đếm số mốc còn lại trước khi thêm mốc mới.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Áp đúng điều kiện xóa timestamp rồi đếm số mốc còn lại trước khi thêm mốc mới.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Áp đúng điều kiện xóa timestamp rồi đếm số mốc còn lại trước khi thêm mốc mới.
-
-=====================================================================================
+      Thuật toán sliding window 60s: Tại thời điểm t=60, mốc t=0 thỏa mãn điều kiện t_event <= now - 60 (0 <= 0) nên bị loại khỏi cửa sổ trượt, số mốc còn lại là 2 (t=20, 40) < giới hạn 3; do đó request tại t=60 được cho phép.
 CÂU 073 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q073 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-sliding-window-rate-limiter] Sliding Window Rate Limiter
 =====================================================================================
@@ -1896,11 +1800,7 @@ Tính chi phí ước tính trước khi gọi model.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính token đầu vào và đầu ra riêng theo đơn vị 1M rồi cộng hai phần.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính token đầu vào và đầu ra riêng theo đơn vị 1M rồi cộng hai phần.
-
-=====================================================================================
+      Chi phí ước tính: (1.000 input tokens * $2 / 1.000.000) + (500 output tokens * $8 / 1.000.000) = $0,002 + $0,004 = 0,006 USD.
 CÂU 075 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q075 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-precall-cost-estimation] Precall Cost Estimation
 =====================================================================================
@@ -1946,11 +1846,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Cộng phần đã dùng với chi phí ước tính cho từng tenant, không gộp hai sổ.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Cộng phần đã dùng với chi phí ước tính cho từng tenant, không gộp hai sổ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cộng phần đã dùng với chi phí ước tính cho từng tenant, không gộp hai sổ.
-
-=====================================================================================
+      Quản lý ngân sách multi-tenant: Tenant A đã dùng $9/$10, request mới ước tính $2 sẽ làm vượt trần ngân sách ($11 > $10) nên phải bị từ chối; trong khi sổ chi tiêu của tenant B hoàn toàn độc lập và không bị ảnh hưởng.
 CÂU 077 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q077 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-tenant-budget-accounting] Tenant Budget Accounting
 =====================================================================================
@@ -1996,11 +1892,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hỏi credential đã lộ còn được production chấp nhận hay phải vô hiệu ngay.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hỏi credential đã lộ còn được production chấp nhận hay phải vô hiệu ngay.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi credential đã lộ còn được production chấp nhận hay phải vô hiệu ngay.
-
-=====================================================================================
+      Khi secret bị commit nhầm lên git, dù đã xóa ở commit tiếp theo thì khóa cũ vẫn tồn tại trong lịch sử và có nguy cơ bị lộ; hành động đầu tiên bắt buộc phải là thu hồi và xoay vòng credential đó ngay lập tức.
 CÂU 079 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q079 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-deployment-secret-lifecycle] Deployment Secret Lifecycle
 =====================================================================================
@@ -2103,11 +1995,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Xác định bottleneck nằm ở CPU, khả năng song song, trạng thái hay quota của dependency.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định bottleneck nằm ở CPU, khả năng song song, trạng thái hay quota của dependency.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định bottleneck nằm ở CPU, khả năng song song, trạng thái hay quota của dependency.
-
-=====================================================================================
+      Khi tiến trình xử lý stateless bị nghẽn CPU ở mức 95% trong khi ứng dụng có thể chạy song song và yêu cầu độ sẵn sàng cao, giải pháp kiến trúc tối ưu là mở rộng theo chiều ngang (horizontal scaling) kèm kiểm tra quota downstream.
 CÂU 083 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q083 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-vertical-horizontal-scaling-decision] Vertical Horizontal Scaling Decision
 =====================================================================================
@@ -2153,11 +2041,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Đếm kết nối đang mở thay vì chỉ đếm số yêu cầu đã nhận, rồi loại replica không còn healthy.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đếm kết nối đang mở thay vì chỉ đếm số yêu cầu đã nhận, rồi loại replica không còn healthy.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đếm kết nối đang mở thay vì chỉ đếm số yêu cầu đã nhận, rồi loại replica không còn healthy.
-
-=====================================================================================
+      Đối với các kết nối có thời lượng dài và không đồng đều như SSE streaming, thuật toán cân bằng tải phù hợp nhất là Least-Connections (kết hợp lọc sức khỏe replica) thay vì Round-Robin máy móc.
 CÂU 085 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q085 (Độ khó: Khó | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-load-balancing-policy-selection] Load Balancing Policy Selection
 =====================================================================================
@@ -2204,11 +2088,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Phân biệt khả năng của replica local với khả năng của provider bên ngoài.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt khả năng của replica local với khả năng của provider bên ngoài.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt khả năng của replica local với khả năng của provider bên ngoài.
-
-=====================================================================================
+      Với agent I/O-bound nghẽn concurrency và queue: (b) Tín hiệu autoscaling chính là concurrency kéo dài và độ sâu/tuổi của queue, (c) cơ chế cooldown/min/max kèm shedding khi chạm trần, (e) tôn trọng quota downstream của provider và áp dụng concurrency limit toàn cục.
 CÂU 087 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q087 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-concurrency-queue-autoscaling] Concurrency Queue Autoscaling
 =====================================================================================
@@ -2254,11 +2134,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Tách khả năng xử lý do mình scale khỏi khả năng do dependency giới hạn.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách khả năng xử lý do mình scale khỏi khả năng do dependency giới hạn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách khả năng xử lý do mình scale khỏi khả năng do dependency giới hạn.
-
-=====================================================================================
+      Mở rộng 20 replica với 20 cuộc gọi đồng thời mỗi replica có thể tạo ra 400 in-flight requests, vượt xa quota 100 concurrent calls của provider, dẫn đến tình trạng hàng loạt request bị lỗi 429 Rate Limit.
 CÂU 089 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d12-q089 (Độ khó: Dễ | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-liveness-readiness-startup] Liveness Readiness Startup
 =====================================================================================
@@ -2637,11 +2513,7 @@ Error budget đã bị vượt bao nhiêu request?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: request
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính số request lỗi cho phép và thực tế trên cùng mẫu số.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính số request lỗi cho phép và thực tế trên cùng mẫu số.
-
-=====================================================================================
+      Tổng số 10.000 requests với SLO 99,7% cho phép tối đa: 10.000 * (100% - 99,7%) = 10.000 * 0,003 = 30 request lỗi. Số request lỗi thực tế: 10.000 - 9.950 = 50 request. Số request vượt quá error budget = 50 - 30 = 20 request.
 CÂU 104 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q104 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-sli-slo-sla-error-budget] Sli Slo Sla Error Budget
 =====================================================================================
@@ -2713,11 +2585,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Cần biết inject gì, ở đâu, mong đợi gì và lúc nào dừng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Cần biết inject gì, ở đâu, mong đợi gì và lúc nào dừng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cần biết inject gì, ở đâu, mong đợi gì và lúc nào dừng.
-
-=====================================================================================
+      Thí nghiệm Chaos Engineering có kiểm soát đòi hỏi: (a) Giới hạn phạm vi tiêm lỗi (blast radius) tại staging/canary, (b) xác định rõ hành vi kỳ vọng và ngưỡng SLI, (c) thiết lập telemetry đo lường, điều kiện tự động dừng (abort conditions) và kiểm chứng khả năng tự hồi phục.
 CÂU 107 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q107 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-controlled-chaos-experiment] Controlled Chaos Experiment
 =====================================================================================
@@ -2764,11 +2632,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn field phục vụ query/trace nhưng không trở thành data exposure.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chọn field phục vụ query/trace nhưng không trở thành data exposure.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn field phục vụ query/trace nhưng không trở thành data exposure.
-
-=====================================================================================
+      Logging có cấu trúc an toàn trong hệ thống phân tán: (a) Ghi timestamp, event_name, request/trace ID, (b) ghi latency từng chặng, status, số token/cost và error code an toàn, (c) định dạng JSON một dòng và che giấu/bảo vệ dữ liệu định danh người dùng.
 CÂU 109 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q109 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-structured-request-observability] Structured Request Observability
 =====================================================================================
@@ -3015,11 +2879,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Lọc ứng viên không hợp policy trước, rồi mới xét health hoặc chi phí.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Lọc ứng viên không hợp policy trước, rồi mới xét health hoặc chi phí.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Lọc ứng viên không hợp policy trước, rồi mới xét health hoặc chi phí.
-
-=====================================================================================
+      Quy tắc định tuyến dự phòng (failover routing): (a) Lọc ứng viên theo năng lực kỹ thuật, quy định vùng dữ liệu (data residency), phân quyền và ngân sách trước, (b) chỉ route tới model tương thích hợp đồng API và đang sẵn sàng, (c) trả lỗi có kiểm soát hoặc degraded outcome khi không còn ứng viên hợp lệ.
 CÂU 119 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d12-q119 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-llm-gateway-failover-routing] Llm Gateway Failover Routing
 =====================================================================================

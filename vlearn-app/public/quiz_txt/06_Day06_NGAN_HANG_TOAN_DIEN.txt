@@ -214,11 +214,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt chưa quan sát được với chắc chắn không tồn tại.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt chưa quan sát được với chắc chắn không tồn tại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt chưa quan sát được với chắc chắn không tồn tại.
-
-=====================================================================================
+      Trong quy trình nghiên cứu Jobs-to-be-Done (JTBD), nếu chưa có bằng chứng quan sát được người dùng thực hiện một bước (như bước Điều chỉnh), nhóm phải đánh dấu bước đó là chưa áp dụng hoặc chưa có bằng chứng và tiếp tục khảo sát; tuyệt đối không tự tiện giữ bước đó như một sự thật chỉ vì biểu mẫu chuẩn có 7 bước.
 CÂU 009 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d06-q009 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-qualitative-pattern-codebook-formation] Qualitative Pattern Codebook Formation
 =====================================================================================
@@ -422,11 +418,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách giá trị 0 đã được định nghĩa khỏi trường hợp không có quan sát.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách giá trị 0 đã được định nghĩa khỏi trường hợp không có quan sát.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách giá trị 0 đã được định nghĩa khỏi trường hợp không có quan sát.
-
-=====================================================================================
+      Đối với dữ liệu có giá trị thiếu (missing values) và số 0 được từ điển dữ liệu định nghĩa rõ là 'không hữu ích': (a) Giá trị 0 là một điểm số hợp lệ, không được quy đổi thành missing; (b) Cần phân tích xem dữ liệu thiếu có xuất hiện phi ngẫu nhiên (MNAR/MAR) theo nhóm hay thời điểm; (d) Khi báo cáo kết quả bắt buộc phải công bố mẫu số thực tế và phương pháp xử lý missing data. Không được tự ý gán 38% missing thành 0 hoặc giả định phần không thiếu đại diện cho toàn bộ mẫu.
 CÂU 017 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d06-q017 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-human-ai-guideline-interface-trace] Human Ai Guideline Interface Trace
 =====================================================================================
@@ -704,11 +696,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Bắt đầu từ hành vi không chấp nhận được đã quan sát.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bắt đầu từ hành vi không chấp nhận được đã quan sát.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bắt đầu từ hành vi không chấp nhận được đã quan sát.
-
-=====================================================================================
+      Để định nghĩa tiêu chí chất lượng cho một tính năng AI mới, phương pháp khởi đầu phù hợp nhất là chạy thử nghiệm trên các câu trả lời thực tế của mô hình, gom nhóm các lỗi quan sát được lặp lại, và xác lập các khía cạnh đo lường dựa trên mức độ hệ quả của lỗi đối với trải nghiệm sản phẩm.
 CÂU 028 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d06-q028 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-evaluation-criterion-operationalization] Evaluation Criterion Operationalization
 =====================================================================================
@@ -856,11 +844,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Hiệu chỉnh cần quan sát chênh lệch trước khi thảo luận.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hiệu chỉnh cần quan sát chênh lệch trước khi thảo luận.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hiệu chỉnh cần quan sát chênh lệch trước khi thảo luận.
-
-=====================================================================================
+      Việc hai người chấm thảo luận trước rồi cùng cho 5/5 câu trả lời đạt chỉ thể hiện sự đồng thuận sau khi đã phối hợp; điều này chưa chứng minh được độ rõ ràng của tiêu chí hay tính đại diện của tập mẫu. Để đánh giá độ tin cậy giữa những người chấm (inter-rater reliability), hai người bắt buộc phải chấm độc lập trước khi đối chiếu và hiệu chuẩn.
 CÂU 034 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d06-q034 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-ai-golden-set-construction] Ai Golden Set Construction
 =====================================================================================
@@ -985,11 +969,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn những yếu tố giúp kiểm tra mục tiêu trước và sau lần chạy.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chọn những yếu tố giúp kiểm tra mục tiêu trước và sau lần chạy.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn những yếu tố giúp kiểm tra mục tiêu trước và sau lần chạy.
-
-=====================================================================================
+      Một ngưỡng chất lượng cam kết trước (pre-committed quality gate) hợp lệ bắt buộc phải có: (a) Ngưỡng định lượng bằng số; (b) Điều kiện bắt buộc (hard constraints/fatal gates) đối với rủi ro nghiêm trọng; (c) Mốc thời gian và phiên bản đóng băng trước khi chạy đánh giá đầy đủ; (e) Mục tiêu so sánh chuẩn (baseline benchmark) được cố định trước. Không được phép hạ ngưỡng sau khi thấy kết quả (harking/p-hacking) hay tuyên bố giả tạo.
 CÂU 039 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d06-q039 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-complete-eval-run-record] Complete Eval Run Record
 =====================================================================================
@@ -1032,11 +1012,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Người chấm phải có thể tính lại được kết quả.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người chấm phải có thể tính lại được kết quả.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người chấm phải có thể tính lại được kết quả.
-
-=====================================================================================
+      Hồ sơ ghi lại một lần chạy đánh giá (evaluation run profile) hoàn chỉnh và có thể tái lập (reproducible) phải lưu trữ đầy đủ: toàn bộ dữ liệu vào và kết quả của từng tình huống kiểm thử, điểm đánh giá chi tiết theo từng khía cạnh, các số liệu tổng hợp, mốc phiên bản/ngưỡng chất lượng đã cam kết, và danh sách toàn bộ các tình huống thất bại.
 CÂU 041 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d06-q041 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-complete-eval-run-record] Complete Eval Run Record
 =====================================================================================
@@ -1247,11 +1223,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Con số chỉ có nghĩa khi đặt cạnh ngưỡng đã cam kết trước.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Con số chỉ có nghĩa khi đặt cạnh ngưỡng đã cam kết trước.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Con số chỉ có nghĩa khi đặt cạnh ngưỡng đã cam kết trước.
-
-=====================================================================================
+      Khi kết quả thực tế chỉ đạt 76% so với ngưỡng cam kết trước 85%, cách sửa đổi trung thực và đúng chuẩn khoa học là công bố rõ ràng kết quả 76% chưa đạt ngưỡng cam kết 85%, đồng thời phân tích cụ thể các nhóm lỗi chính và đề xuất thử nghiệm cải tiến tiếp theo; không được ngụy tạo hay dịch chuyển cột mốc chất lượng.
 CÂU 049 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d06-q049 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-live-demo-standard-hard-case] Live Demo Standard Hard Case
 =====================================================================================
@@ -1318,11 +1290,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Giữ dấu vết và minh bạch về phần chạy trực tiếp/bản dự phòng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Giữ dấu vết và minh bạch về phần chạy trực tiếp/bản dự phòng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ dấu vết và minh bạch về phần chạy trực tiếp/bản dự phòng.
-
-=====================================================================================
+      Khi giám khảo hoặc người dùng đưa dữ liệu đầu vào lạ tại chỗ trong buổi demo trực tiếp: (a) Chạy dữ liệu qua bản mẫu hiện có; (b) Giữ đúng cam kết về hành vi và xử lý lỗi đã công bố; (c) Nếu phải chuyển sang dùng bản dự phòng thì phải thông báo minh bạch; (e) Nếu hệ thống không đạt, thẳng thắn chỉ ra hành vi quan sát được thay vì che giấu. Tuyệt đối không âm thầm sửa prompt tại chỗ.
 CÂU 052 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d06-q052 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-demo-rehearsal-backup-and-qna] Demo Rehearsal Backup And Qna
 =====================================================================================
@@ -1368,6 +1336,4 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Dựa trên gợi ý 'Phân biệt tài liệu dự phòng với trạng thái lần chạy hiện tại.', chọn phương án phù hợp nhất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Phân biệt tài liệu dự phòng với trạng thái lần chạy hiện tại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Phân biệt tài liệu dự phòng với trạng thái lần chạy hiện tại.
+      Khi buổi demo trực tiếp gặp sự cố hết thời gian chờ (timeout) và phải chuyển sang sử dụng video ghi sẵn (fallback video), nhóm trình bày có thể dùng bản ghi dự phòng nhưng bắt buộc phải nêu rõ lần chạy trực tiếp không đạt và đây là video dự phòng; việc tuyên bố hệ thống vừa chạy thành công trực tiếp là vi phạm tính trung thực khoa học.

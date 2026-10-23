@@ -608,11 +608,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Assume lần đầu có thể đã ghi một phần, nên replay phải không nhân bản.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Assume lần đầu có thể đã ghi một phần, nên replay phải không nhân bản.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Assume lần đầu có thể đã ghi một phần, nên replay phải không nhân bản.
-
-=====================================================================================
+      Khi trang P7 bị timeout sau khi server có thể đã xử lý nhưng client chưa nhận được phản hồi xác nhận: (a) Lưu lại định danh/cursor của P7 kèm số lần thử và thông tin lỗi; (b) Giữ nguyên checkpoint tại trang thành công trước đó (P6); (c) Khi thực hiện replay trang P7 phải sử dụng mã định danh ổn định của từng bản ghi để đảm bảo tính idempotent (không nhân bản dữ liệu nếu server đã ghi một phần). Không được nhảy cóc sang P8.
 CÂU 026 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d10-q026 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-document-logical-version-authority] Document Logical Version Authority
 =====================================================================================
@@ -677,11 +673,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: OCR quality không chỉ là một scalar confidence.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: OCR quality không chỉ là một scalar confidence.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 OCR quality không chỉ là một scalar confidence.
-
-=====================================================================================
+      Các dấu hiệu cảnh báo chất lượng OCR kém cần cách ly (quarantine) để người xem xét trước khi đưa vào embedding: (a) Điểm độ tin cậy thấp (0,42) và xuất hiện nhiều ký tự thay thế lỗi; (b) Ngôn ngữ văn bản bị thay đổi bất thường (từ tiếng Việt sang tiếng Nga); (c) Chiều dài văn bản giảm đột ngột 95% so với các trang tương tự; (e) Bảng dữ liệu bị mất các cột dù số lượng từ ngữ vẫn đủ.
 CÂU 029 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q029 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-ocr-confidence-publish-review] Ocr Confidence Publish Review
 =====================================================================================
@@ -717,11 +709,7 @@ Producer=120 event/s, consumer=90 event/s, không scale trong 60s. Queue depth t
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: event
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính chênh rate rồi nhân thời gian.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính chênh rate rồi nhân thời gian.
-
-=====================================================================================
+      Tốc độ chênh lệch giữa producer và consumer là: 120 event/s - 90 event/s = 30 event/s. Trong khoảng thời gian 60 giây không co giãn (no scaling), độ sâu hàng đợi (queue depth) tăng thêm là: 30 event/s × 60 s = 1800 event.
 CÂU 031 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q031 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-queue-producer-consumer-decoupling] Queue Producer Consumer Decoupling
 =====================================================================================
@@ -811,11 +799,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Không replay trước khi biết nguyên nhân vẫn tồn tại.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không replay trước khi biết nguyên nhân vẫn tồn tại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không replay trước khi biết nguyên nhân vẫn tồn tại.
-
-=====================================================================================
+      Trình tự xử lý thông điệp độc hại (poison message workflow) với Dead-Letter Queue (DLQ): 1. Consumer tiếp nhận và xử lý message (o2) -> 2. Thử lại có giới hạn (bounded retries) theo điều kiện eligibility (o3) -> 3. Đưa failed event kèm lý do vi phạm và run ID vào DLQ để không chặn nghẽn hàng đợi (o4) -> 4. Kỹ sư kiểm tra, tạo ticket và khắc phục nguyên nhân gốc (o5) -> 5. Replay có chủ đích các message trong DLQ sau khi đã sửa lỗi (o1).
 CÂU 035 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d10-q035 (Độ khó: Vừa | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-poison-message-dlq-recovery] Poison Message Dlq Recovery
 =====================================================================================
@@ -900,11 +884,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một người khác phải rerun mà không hỏi người sửa.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một người khác phải rerun mà không hỏi người sửa.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một người khác phải rerun mà không hỏi người sửa.
-
-=====================================================================================
+      Một quy trình làm sạch dữ liệu được chứng minh là có thể tái lập (replayable) khi thỏa mãn: (a) Dữ liệu thô ban đầu và phiên bản của nó được lưu trữ bất biến; (b) Toàn bộ các quy tắc làm sạch nằm trong mã nguồn và hợp đồng dữ liệu có quản lý phiên bản; (c) Cùng một dữ liệu đầu vào và bộ quy tắc luôn tạo ra cùng một kết quả xác định; (d) Có dấu vết lineage ghi nhận đầy đủ trạng thái trước và sau khi xử lý của từng lần chạy.
 CÂU 039 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d10-q039 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-required-field-missingness-policy] Required Field Missingness Policy
 =====================================================================================
@@ -1219,11 +1199,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Reviewer phải biết record nào, từ đâu, vì sao và làm tiếp gì.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Reviewer phải biết record nào, từ đâu, vì sao và làm tiếp gì.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Reviewer phải biết record nào, từ đâu, vì sao và làm tiếp gì.
-
-=====================================================================================
+      Một bản ghi trong vùng cách ly (quarantine entry) cần lưu giữ đầy đủ để có thể khắc phục hoặc phục vụ kiểm toán: (a) Dòng dữ liệu gốc hoặc tham chiếu bất biến tới dữ liệu gốc; (b) Quy tắc/lý do vi phạm và bằng chứng lỗi cụ thể; (c) Định danh nguồn và mã định danh lần chạy (Run ID); (d) Người chịu trách nhiệm xem xét, trạng thái xử lý và quyết định replay.
 CÂU 052 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q052 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-quarantine-audit-trail] Quarantine Audit Trail
 =====================================================================================
@@ -1284,11 +1260,7 @@ Có 240 phân vùng dự kiến, 228 phân vùng xuất hiện. Độ bao phủ 
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dùng số phân vùng dự kiến làm mẫu số.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dùng số phân vùng dự kiến làm mẫu số.
-
-=====================================================================================
+      Độ bao phủ phân vùng (partition coverage) được tính bằng tỷ lệ phần trăm giữa số phân vùng thực tế xuất hiện trên tổng số phân vùng dự kiến: 228 / 240 = 19 / 20 = 0,95 = 95%.
 CÂU 055 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d10-q055 (Độ khó: Dễ | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-data-validity-check] Data Validity Check
 =====================================================================================
@@ -1305,11 +1277,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ chấm rule được cung cấp.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ chấm rule được cung cấp.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ chấm rule được cung cấp.
-
-=====================================================================================
+      Đối chiếu bản ghi `{age: 150, email: 'a@b', status: 'active'}` với schema đã cho: (a) Trường age=150 nằm ngoài khoảng cho phép 0..120 nên không hợp lệ; (b) Trường email='a@b' có chứa ký tự '@' nên hợp lệ theo đúng quy tắc kiểm tra đã nêu; (c) Trường status='active' thuộc tập hợp giá trị hợp lệ {active, inactive} nên hợp lệ.
 CÂU 056 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q056 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-validity-check] Data Validity Check
 =====================================================================================
@@ -1423,11 +1391,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Consistency hỏi các phần liên quan có đồng ý theo invariant không.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Consistency hỏi các phần liên quan có đồng ý theo invariant không.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Consistency hỏi các phần liên quan có đồng ý theo invariant không.
-
-=====================================================================================
+      Các phép kiểm tra tính nhất quán (consistency checks) trong bộ dữ liệu orders gồm: (a) Tính nhất quán trong bản ghi: `order.total = sum(line.amount)` cùng đơn vị tiền tệ; (b) Tính nhất quán tham chiếu: mọi `customer_id` đều tham chiếu tới một khách hàng tồn tại trong bảng customers; (c) Tính nhất quán giữa các biểu diễn: cùng một order_id phải có cùng trạng thái trên các view tại cùng một thời điểm. Kiểm tra email chứa @ và order.total nằm trong dải là các kiểm tra hợp lệ định dạng/miền giá trị (validity), không phải consistency.
 CÂU 061 [🟡 Tính toán điền số (Numeric)] - Mã: d10-q061 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-data-timeliness-check] Data Timeliness Check
 =====================================================================================
@@ -1438,11 +1402,7 @@ Source event 09:00, record được publish cho consumer 09:18. SLA tối đa 15
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Clock dừng ở publish boundary, không ở job start.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Clock dừng ở publish boundary, không ở job start.
-
-=====================================================================================
+      Độ trễ dữ liệu (freshness lag) được tính từ thời điểm phát sinh sự kiện nguồn (09:00) đến ranh giới xuất bản phục vụ người dùng (09:18): 09:18 - 09:00 = 18 phút. Độ trễ 18 phút đã vượt quá mức SLA tối đa 15 phút là 3 phút.
 CÂU 062 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q062 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-timeliness-check] Data Timeliness Check
 =====================================================================================
@@ -1556,11 +1516,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một operator phải biết check gì và làm gì khi fail.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một operator phải biết check gì và làm gì khi fail.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một operator phải biết check gì và làm gì khi fail.
-
-=====================================================================================
+      Một hợp đồng dữ liệu (data contract) có tính thực thi cao cho validator và operator cần: (a) Định nghĩa schema chuẩn hóa, các trường bắt buộc, miền giá trị và khóa định danh; (b) Xác định rõ người sở hữu (owner) và nguồn sự thật có thẩm quyền; (c) Quy định mức độ nghiêm trọng và hậu quả xử lý cho từng loại vi phạm; (d) Khi độ mới dữ liệu chưa rõ, chỉ định rõ người ra quyết định thay vì tự ý điền giá trị ngầm định.
 CÂU 067 [🟣 Ghép cặp tương ứng (Matching)] - Mã: d10-q067 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-schema-evolution-compatibility-plan] Schema Evolution Compatibility Plan
 =====================================================================================
@@ -1656,11 +1612,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Người review cần tái tạo được lý do pass/fail và biết bản ghi nào cần xử lý.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người review cần tái tạo được lý do pass/fail và biết bản ghi nào cần xử lý.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người review cần tái tạo được lý do pass/fail và biết bản ghi nào cần xử lý.
-
-=====================================================================================
+      Kết quả kiểm tra kỳ vọng dữ liệu (data expectation result) cần lưu trữ đầy đủ để phục vụ kiểm toán và xử lý lỗi: (a) Tên điều khoản/chiều chất lượng và phạm vi kiểm tra của lần chạy; (b) Giá trị quan sát được kèm mẫu số tính toán; (c) Ngưỡng chấp nhận và mức độ nghiêm trọng của lỗi; (d) Bằng chứng cụ thể về các dòng dữ liệu bị lỗi hoặc lát cắt dữ liệu vi phạm. Chỉ trả về giá trị boolean false là không đủ thông tin chẩn đoán.
 CÂU 071 [🔵 Trắc nghiệm NHIỀU đáp án (Chọn TẤT CẢ ý đúng)] - Mã: d10-q071 (Độ khó: Vừa | Điểm: 3)
 Chủ đề kiến thức (KC): [kc-quality-suite-coverage-limit] Quality Suite Coverage Limit
 =====================================================================================
@@ -1678,11 +1630,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Liệt kê cả điều suite không quan sát.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Liệt kê cả điều suite không quan sát.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Liệt kê cả điều suite không quan sát.
-
-=====================================================================================
+      Khi bộ kiểm tra đạt các tiêu chí not-null, type và range trên phân vùng của ngày hôm nay, các kết luận hợp lý là: (a) Toàn bộ các quy tắc đã triển khai đều đạt yêu cầu trên phạm vi phân vùng hôm nay; (c) Các phân vùng của những ngày khác vẫn chưa được kiểm tra; (d) Các quy tắc nghiệp vụ sâu hơn hoặc tính thẩm quyền của nguồn có thể chưa được kiểm tra trong bộ test này. Không thể suy diễn dữ liệu tương lai chắc chắn đúng hay độ chính xác bên ngoài đã được chứng minh.
 CÂU 072 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q072 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-quality-suite-coverage-limit] Quality Suite Coverage Limit
 =====================================================================================
@@ -1718,11 +1666,7 @@ Rule chặn 40 bản ghi; review xác nhận 30 bản ghi thực sự lỗi theo
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mẫu số là toàn bộ bản ghi mà rule đã chặn.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là toàn bộ bản ghi mà rule đã chặn.
-
-=====================================================================================
+      Độ chính xác (Precision) của quy tắc chặn lỗi: Tỷ lệ giữa số bản ghi thực sự bị lỗi (True Positives = 30) trên tổng số bản ghi mà quy tắc đã chặn (Total Predicted Positives = 40): Precision = 30 / 40 = 0,75 = 75%.
 CÂU 074 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q074 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-rule-signal-precision] Data Rule Signal Precision
 =====================================================================================
@@ -1804,11 +1748,7 @@ Watermark là 14:40, active publish là 14:45, hiện tại 15:10. Data age mà 
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: phút
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Age bắt đầu ở source/effective time.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Age bắt đầu ở source/effective time.
-
-=====================================================================================
+      Độ tuổi của dữ liệu (data age) mà consumer quan sát được theo watermark: Tính từ mốc thời gian watermark an toàn (14:40) đến thời điểm hiện tại của hệ thống (15:10): 15:10 - 14:40 = 30 phút.
 CÂU 078 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q078 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-volume-observability] Data Volume Observability
 =====================================================================================
@@ -1872,11 +1812,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chọn signal có thể phản ánh parser làm rỗng/cắt/đổi language.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chọn signal có thể phản ánh parser làm rỗng/cắt/đổi language.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chọn signal có thể phản ánh parser làm rỗng/cắt/đổi language.
-
-=====================================================================================
+      Khi số lượng dòng vẫn ổn định nhưng chất lượng câu trả lời bị suy giảm sau khi cập nhật bộ phân tích cú pháp (parser), các tín hiệu hữu ích để phát hiện sự cố dữ liệu gồm: (a) Tỷ lệ giá trị null theo từng trường dữ liệu; (b) Phân phối độ dài văn bản (text-length distribution) phát hiện hiện tượng bị cắt cụt; (c) Tỷ lệ phối hợp ngôn ngữ (language mix) phát hiện lỗi dịch/nhầm locale; (d) Số lượng giá trị phân biệt và độ hỗn loạn thông tin (cardinality/entropy) phát hiện lỗi trùng lặp/giảm đa dạng.
 CÂU 081 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q081 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-distribution-observability] Data Distribution Observability
 =====================================================================================
@@ -1966,11 +1902,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Bắt đầu ở thứ agent nhìn thấy rồi lần producer của từng artifact.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bắt đầu ở thứ agent nhìn thấy rồi lần producer của từng artifact.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bắt đầu ở thứ agent nhìn thấy rồi lần producer của từng artifact.
-
-=====================================================================================
+      Trình tự truy vết nguồn gốc dữ liệu ngược dòng (backwards data lineage) từ kết quả phục vụ agent về nguồn dữ liệu gốc: 1. Retrieved chunk mà agent trực tiếp quan sát thấy trong context (o5) -> 2. Active index snapshot đang phục vụ truy vấn tại thời điểm đó (o2) -> 3. Bản ghi chuẩn hóa (canonical record) trong kho lưu trữ (o4) -> 4. Tác vụ và artifact chuyển đổi (transform run/artifact) tạo ra bản ghi đó (o1) -> 5. Định danh và phiên bản dữ liệu nguồn ban đầu (source identity/version) (o3).
 CÂU 085 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q085 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-lineage-observability] Data Lineage Observability
 =====================================================================================
@@ -2038,11 +1970,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hỏi khi breach thì ai biết, ai làm gì và learner thấy gì.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hỏi khi breach thì ai biết, ai làm gì và learner thấy gì.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi khi breach thì ai biết, ai làm gì và learner thấy gì.
-
-=====================================================================================
+      Một thỏa thuận mức dịch vụ về độ tươi mới dữ liệu (freshness SLA) có tính hành động cao bắt buộc phải có: (a) Thời điểm phát sinh sự kiện kinh doanh tại nguồn để bắt đầu tính thời gian; (b) Ranh giới xuất bản dữ liệu phục vụ agent để kết thúc tính thời gian; (c) Ngưỡng thời gian và quy trình cảnh báo/leo thang khi vi phạm; (d) Người chịu trách nhiệm cụ thể và quy định hành vi xử lý khi dữ liệu bị cũ/quá hạn (stale-data policy).
 CÂU 088 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d10-q088 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-distribution-drift-contextual-interpretation] Distribution Drift Contextual Interpretation
 =====================================================================================
@@ -2251,11 +2179,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Xét lúc source trễ, task giữa DAG fail và cần chạy lại một date range.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xét lúc source trễ, task giữa DAG fail và cần chạy lại một date range.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xét lúc source trễ, task giữa DAG fail và cần chạy lại một date range.
-
-=====================================================================================
+      Để vận hành một pipeline dữ liệu tin cậy trong môi trường sản xuất, ngoài lịch chạy cron cần bổ sung các yêu cầu bắt buộc: (a) Đồ thị phụ thuộc dữ liệu và điều kiện sẵn sàng của dữ liệu nguồn (dependency graph / data sensors); (b) Chính sách thử lại riêng cho từng tác vụ kèm giới hạn tối đa; (c) Cơ chế cảnh báo vi phạm SLA, người sở hữu phụ trách và khả năng hiển thị trạng thái thực thi; (d) Các tham số chạy bù dữ liệu có chặn giới hạn (bounded backfill) và quản lý dấu vết dữ liệu (lineage).
 CÂU 097 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d10-q097 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-data-pipeline-retry-scope] Data Pipeline Retry Scope
 =====================================================================================
@@ -2320,11 +2244,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Không write trực tiếp vào alias đang serve.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không write trực tiếp vào alias đang serve.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không write trực tiếp vào alias đang serve.
-
-=====================================================================================
+      Quy trình phát hành chỉ mục vector nguyên tử (atomic vector index publish) bảo đảm tính sẵn sàng: 1. Xây dựng bộ sưu tập staging độc lập (build staging collection) (o2) -> 2. Xác minh số lượng bản ghi, schema, mẫu dữ liệu và manifest trên staging (o1) -> 3. Chuyển đổi alias phục vụ sang bộ sưu tập staging một cách nguyên tử (switch serving alias atomically) (o3) -> 4. Duy trì snapshot phiên bản phục vụ trước đó trong khoảng thời gian an toàn (o4) -> 5. Rollback alias về snapshot cũ nếu các phép kiểm sau phát hành thất bại (o5).
 CÂU 100 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q100 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-atomic-vector-index-publish] Atomic Vector Index Publish
 =====================================================================================
@@ -2435,11 +2355,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Xác định incident trước, rồi dùng signal rộng/rẻ trước targeted lineage.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định incident trước, rồi dùng signal rộng/rẻ trước targeted lineage.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định incident trước, rồi dùng signal rộng/rẻ trước targeted lineage.
-
-=====================================================================================
+      Trình tự phân loại và xử lý sự cố dữ liệu (data incident triage) tối ưu chi phí và thời gian: 1. Ghi nhận triệu chứng sự cố, vi phạm SLA, phạm vi ảnh hưởng và giả thuyết ban đầu (o5) -> 2. Kiểm tra độ tươi mới và mốc chạy thành công gần nhất (freshness/last success) (o2) -> 3. Kiểm tra khối lượng dữ liệu và tỷ lệ lỗi theo từng giai đoạn đường ống (volume/stage errors) (o4) -> 4. Kiểm tra các thay đổi về cấu trúc schema hoặc hợp đồng dữ liệu gần đây (o1) -> 5. Truy vết ngược dòng lineage chi tiết về tận nguồn dữ liệu và người sở hữu phụ trách (o3).
 CÂU 105 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q105 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-timeboxed-data-incident-triage] Timeboxed Data Incident Triage
 =====================================================================================
@@ -2507,11 +2423,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Verify từ source tới bề mặt agent.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Verify từ source tới bề mặt agent.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Verify từ source tới bề mặt agent.
-
-=====================================================================================
+      Bằng chứng kỹ thuật đầy đủ và thuyết phục để chính thức đóng một sự cố dữ liệu (data incident) bao gồm: (a) Bản ghi nguồn và bản ghi chuẩn hóa đã được xác minh đúng kèm đầy đủ lineage; (b) Các tín hiệu kiểm tra chất lượng dữ liệu liên quan đã vượt qua thành công; (c) Snapshot đang hoạt động ở tầng phục vụ mang đúng ID phiên bản đã khắc phục; (d) Truy vấn thực tế của người dùng ban đầu được chạy lại và trả về câu trả lời cùng trích dẫn nguồn hoàn toàn chính xác.
 CÂU 108 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d10-q108 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-data-incident-prevention-loop] Data Incident Prevention Loop
 =====================================================================================

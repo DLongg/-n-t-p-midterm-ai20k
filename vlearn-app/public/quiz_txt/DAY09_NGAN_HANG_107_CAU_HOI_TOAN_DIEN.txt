@@ -607,11 +607,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hành động đòi hỏi kiến thức nghiệp vụ thuộc về worker chuyên trách.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hành động đòi hỏi kiến thức nghiệp vụ thuộc về worker chuyên trách.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hành động đòi hỏi kiến thức nghiệp vụ thuộc về worker chuyên trách.
-
-=====================================================================================
+      Trách nhiệm chuẩn của một supervisor mỏng (thin supervisor) trong kiến trúc multi-agent: (a) Phân loại yêu cầu đầu vào; (b) Lựa chọn worker chuyên trách phù hợp; (d) Theo dõi tiến độ thực thi và xử lý leo thang (escalation); (e) Tổng hợp kết quả cuối cùng có đầy đủ dấu vết truy vết. Supervisor mỏng tuyệt đối không tự ý áp đặt chính sách chuyên ngành thay cho worker.
 CÂU 024 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q024 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-supervisor-routing-boundary] Supervisor Routing Boundary
 =====================================================================================
@@ -704,11 +700,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Bên gọi và worker phải kiểm thử được mà không cần đọc prompt nội bộ.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bên gọi và worker phải kiểm thử được mà không cần đọc prompt nội bộ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bên gọi và worker phải kiểm thử được mà không cần đọc prompt nội bộ.
-
-=====================================================================================
+      Hợp đồng giao việc (task contract) cho RetrievalWorker cần bao gồm: (a) Nhiệm vụ cụ thể và ngữ cảnh được giới hạn chặt chẽ; (b) Các ràng buộc về phiên bản tài liệu, đối tượng áp dụng; (c) Schema đầu ra có cấu trúc rõ ràng; (d) Ngữ nghĩa và quy ước xử lý khi gặp lỗi hoặc không tìm thấy kết quả. Không được chuyển toàn bộ lịch sử và bí mật người dùng.
 CÂU 028 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q028 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-worker-contract-design] Worker Contract Design
 =====================================================================================
@@ -820,11 +812,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Mỗi field phải có kiểu dữ liệu và ý nghĩa trong vòng đời xử lý.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi field phải có kiểu dữ liệu và ý nghĩa trong vòng đời xử lý.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi field phải có kiểu dữ liệu và ý nghĩa trong vòng đời xử lý.
-
-=====================================================================================
+      Các trường dữ liệu hợp lệ cho state điều phối có kiểu dữ liệu (strongly typed orchestration state): (a) `task: str`; (b) `retrieved_chunks: list[Chunk]`; (c) `policy_result: PolicyResult | None`; (d) `status: enum`; (e) `final_answer: str | None`. Tuyệt đối không đưa vào trường chứa dump toàn bộ prompt thô không kiểm soát.
 CÂU 033 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q033 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-shared-state-schema] Shared State Schema
 =====================================================================================
@@ -993,11 +981,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Prompt phải nói cả được làm gì và không được làm gì.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Prompt phải nói cả được làm gì và không được làm gì.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Prompt phải nói cả được làm gì và không được làm gì.
-
-=====================================================================================
+      Một prompt ra quyết định tối thiểu cho supervisor cần: (a) Danh sách các worker kèm bản tóm tắt năng lực cốt lõi; (b) Cấu trúc schema đầu ra được phép trả về; (c) Ranh giới phủ định (negative boundaries: không tự tiện suy đoán trả lời); (d) Hướng dẫn cách xử lý khi đầu vào bị thiếu hoặc mơ hồ. Không đưa toàn bộ chi tiết chính sách nghiệp vụ vào supervisor.
 CÂU 040 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q040 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-supervisor-decision-prompt-contract] Supervisor Decision Prompt Contract
 =====================================================================================
@@ -1093,11 +1077,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hãy hỏi: sai ở bước này có hậu quả gì, và máy có đủ thẩm quyền/bằng chứng không?
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy hỏi: sai ở bước này có hậu quả gì, và máy có đủ thẩm quyền/bằng chứng không?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy hỏi: sai ở bước này có hậu quả gì, và máy có đủ thẩm quyền/bằng chứng không?
-
-=====================================================================================
+      Các tình huống bắt buộc phải có bước con người kiểm tra/phê duyệt (Human-in-the-Loop): (a) Thao tác hoàn tiền (refund) vượt ngưỡng giá trị quy định; (b) Khi hai nguồn sự thật có thẩm quyền mâu thuẫn trực tiếp và không thể tự phân giải; (c) Yêu cầu cấp quyền có hậu quả lớn nhưng độ tin cậy của mô hình thấp. Các tác vụ đọc thông thường hay tính toán xác định không cần chặn người duyệt.
 CÂU 044 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q044 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-human-review-boundary] Human Review Boundary
 =====================================================================================
@@ -1263,11 +1243,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Không thể kiểm tra lời gọi trước khi biết schema được công bố.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Không thể kiểm tra lời gọi trước khi biết schema được công bố.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Không thể kiểm tra lời gọi trước khi biết schema được công bố.
-
-=====================================================================================
+      Trình tự khám phá và gọi công cụ trong giao thức Model Context Protocol (MCP): 1. Client thiết lập kết nối và khởi tạo bắt tay (initialize) với MCP server (o2) -> 2. Client gửi yêu cầu liệt kê danh sách capabilities/tools (tools/list) (o4) -> 3. Đọc name, description, schema và chọn công cụ phù hợp (o5) -> 4. Kiểm tra tính hợp lệ của arguments theo inputSchema đã công bố (o1) -> 5. Thực hiện lời gọi capability/tool (tools/call) (o3).
 CÂU 051 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q051 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-mcp-runtime-discovery] Mcp Runtime Discovery
 =====================================================================================
@@ -1388,11 +1364,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Kiểm cả đường khám phá và đường gọi.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm cả đường khám phá và đường gọi.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm cả đường khám phá và đường gọi.
-
-=====================================================================================
+      Bề mặt một công cụ MCP hoàn chỉnh cần bao gồm: (a) Tên và mô tả công cụ ổn định, rõ ràng; (b) Schema dữ liệu đầu vào và đầu ra có định kiểu nghiêm ngặt (JSON Schema); (c) Khả năng đăng ký và điều phối (registry & dispatch); (d) Cơ chế xác thực dữ liệu và trả về lỗi có cấu trúc khi thất bại. Không được phụ thuộc vào chi tiết triển khai nội bộ viết cứng.
 CÂU 056 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q056 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-mcp-tool-interface-implementation] Mcp Tool Interface Implementation
 =====================================================================================
@@ -1435,11 +1407,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Hỏi lớp nào vẫn chặn được khi prompt injection khiến model làm theo.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hỏi lớp nào vẫn chặn được khi prompt injection khiến model làm theo.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi lớp nào vẫn chặn được khi prompt injection khiến model làm theo.
-
-=====================================================================================
+      Cơ chế bảo mật nhiều lớp (defense-in-depth) cho agent thao tác dữ liệu: (a) Token truy cập cấp quyền tối thiểu (chỉ đọc read-ticket); (b) Các hành động thay đổi dữ liệu có hậu quả (hoàn tiền) phải có phê duyệt và kiểm tra phân quyền độc lập tại máy chủ; (c) MCP server chạy trong môi trường sandbox cô lập an toàn; (e) Kiểm toán và ghi nhật ký toàn bộ tham số tool/hành động. Không bao giờ dựa vào prompt như lớp bảo vệ cuối cùng.
 CÂU 058 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q058 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-mcp-least-privilege-enforcement] Mcp Least Privilege Enforcement
 =====================================================================================
@@ -1482,11 +1450,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Tách tính hợp lệ của transport/schema khỏi độ tin cậy về ngữ nghĩa.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách tính hợp lệ của transport/schema khỏi độ tin cậy về ngữ nghĩa.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách tính hợp lệ của transport/schema khỏi độ tin cậy về ngữ nghĩa.
-
-=====================================================================================
+      Trước khi sử dụng kết quả từ MCP tool cho một quyết định cấp quyền có hậu quả, client bắt buộc phải xác minh: (a) Tính xác thực nguồn gốc và thẩm quyền của server (provenance/authority); (b) Phạm vi dữ liệu trả về có đúng người dùng và nhiệm vụ được ủy quyền; (c) Độ tươi mới và phiên bản của dữ liệu (freshness/version); (d) Đánh giá hậu quả và tính tuân thủ chính sách của hành động. Kiểm tra schema transport đơn thuần là chưa đủ.
 CÂU 060 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q060 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-mcp-untrusted-output-validation] Mcp Untrusted Output Validation
 =====================================================================================
@@ -1703,11 +1667,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thiết kế cả đường không nhận việc và không hoàn tất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Thiết kế cả đường không nhận việc và không hoàn tất.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thiết kế cả đường không nhận việc và không hoàn tất.
-
-=====================================================================================
+      Yêu cầu ủy thác công việc giữa các agent thuộc các bên sở hữu khác nhau (Agent-to-Agent delegation) cần: (a) Định nghĩa nhiệm vụ và ngữ cảnh được giới hạn chặt chẽ; (b) Các ràng buộc và định dạng artifact đầu ra mong đợi; (c) Thời hạn hoàn thành (deadline), trạng thái hoặc cơ chế callback; (d) Ngữ nghĩa rõ ràng cho các trạng thái: nhận việc, từ chối, timeout, và hoàn thành một phần. Tuyệt đối không chia sẻ toàn bộ state nội bộ và bí mật.
 CÂU 069 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q069 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-a2a-delegation-contract] A2A Delegation Contract
 =====================================================================================
@@ -1878,11 +1838,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Bản sửa phải quay lại verifier; không thử lại trước khi có feedback có thể hành động.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Bản sửa phải quay lại verifier; không thử lại trước khi có feedback có thể hành động.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Bản sửa phải quay lại verifier; không thử lại trước khi có feedback có thể hành động.
-
-=====================================================================================
+      Trình tự vòng lặp phản biện và tự sửa chữa Writer–Verifier an toàn: 1. Writer tạo bản nháp ban đầu (draft) (o2) -> 2. Verifier đối chiếu bản nháp với các tiêu chí/hợp đồng và trả về các vi phạm cụ thể (o4) -> 3. Ghi nhận số lần thử (attempt) và phản hồi vào nhật ký trace (o5) -> 4. Nếu chưa đạt và còn ngân sách thử lại, writer sửa theo feedback có tính hành động rồi gửi lại verifier (o1) -> 5. Nếu đạt thì xuất bản, nếu hết ngân sách thì dừng lại và leo thang từ chối (o3).
 CÂU 076 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q076 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-bounded-agent-self-correction] Bounded Agent Self Correction
 =====================================================================================
@@ -1996,11 +1952,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thiết kế như khi gọi một danh tính ngoài tổ chức.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Thiết kế như khi gọi một danh tính ngoài tổ chức.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thiết kế như khi gọi một danh tính ngoài tổ chức.
-
-=====================================================================================
+      Khi tích hợp và gọi một agent đối tác nằm ngoài miền tin cậy (external trust boundary), bên gọi bắt buộc phải: (a) Xác thực danh tính agent/endpoint; (b) Phân quyền chặt chẽ các năng lực và dữ liệu được gửi đi; (c) Thu gọn ngữ cảnh tối thiểu (context minimization / least privilege); (d) Kiểm tra tính toàn vẹn và nguồn gốc của các artifact nhận về. Không được tin tưởng mù quáng chỉ vì agent có tên trong danh mục.
 CÂU 081 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q081 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-cross-agent-trust-boundary] Cross Agent Trust Boundary
 =====================================================================================
@@ -2064,11 +2016,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Mỗi kết quả theo contract phải có kiểm tra riêng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi kết quả theo contract phải có kiểm tra riêng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi kết quả theo contract phải có kiểm tra riêng.
-
-=====================================================================================
+      Bộ kiểm thử hợp đồng độc lập (contract test suite) cho RetrievalWorker bắt buộc phải bao quát: (a) Truy vấn hợp lệ trả về kết quả đúng schema; (b) Khi không có kết quả phù hợp phải trả về tập rỗng mà không được bịa đặt; (c) Đầu vào không hợp lệ (sai schema) phải bị từ chối rõ ràng; (d) Khi các dịch vụ phụ thuộc (vector DB, embedder) gặp sự cố phải chuyển hóa thành mã lỗi có cấu trúc theo contract. Không thể chỉ chạy một test end-to-end đơn lẻ.
 CÂU 084 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q084 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-worker-contract-test-harness] Worker Contract Test Harness
 =====================================================================================
@@ -2112,11 +2060,7 @@ Các bước cần sắp xếp:
 👉 Hướng dẫn thứ tự: Sắp xếp theo đúng trình tự nhân quả / vòng lặp xử lý: Định danh phải tồn tại trước snapshot và được dùng lại khi tiếp tục.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Định danh phải tồn tại trước snapshot và được dùng lại khi tiếp tục.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Định danh phải tồn tại trước snapshot và được dùng lại khi tiếp tục.
-
-=====================================================================================
+      Quy trình tạm dừng, kiểm tra và tiếp tục (pause, inspect, resume) an toàn trong đồ thị tác nhân: 1. Khởi tạo bộ lưu trữ trạng thái (checkpointer) (o2) -> 2. Thực thi đồ thị với thread ID duy nhất và ổn định (o3) -> 3. Đồ thị dừng lại tại cổng kiểm tra (review gate / interrupt) và lưu snapshot trạng thái (o4) -> 4. Tiếp tục thực thi với cùng thread/run ID từ checkpoint đã duyệt (o1) -> 5. Thực hiện tác vụ có hậu quả ra bên ngoài với chốt chặn idempotent (o5).
 CÂU 086 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q086 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-orchestration-persistence-resume] Orchestration Persistence Resume
 =====================================================================================
@@ -2207,11 +2151,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Người kiểm tra phải biết ai làm gì, trên đầu vào nào, kết quả/trạng thái/bao lâu.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Người kiểm tra phải biết ai làm gì, trên đầu vào nào, kết quả/trạng thái/bao lâu.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Người kiểm tra phải biết ai làm gì, trên đầu vào nào, kết quả/trạng thái/bao lâu.
-
-=====================================================================================
+      Một bản ghi dấu vết (trace record / span) hoàn chỉnh để tái dựng trạng thái và hành động của agent/node cần: (a) Trace/Run ID; (b) Dấu thời gian (timestamp); (c) Định danh duy nhất của agent/node thực hiện; (d) Tên hành động hoặc tool được gọi; (e) Tóm tắt dữ liệu vào/ra trong phạm vi được phép; (f) Trạng thái thực thi và độ trễ (latency). Tuyệt đối không lưu trữ các bí mật bảo mật hoặc prompt thô chứa dữ liệu nhạy cảm.
 CÂU 090 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q090 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-multiagent-trace-schema] Multiagent Trace Schema
 =====================================================================================
@@ -2376,11 +2316,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một lỗi không được biến thành việc hoàn tất âm thầm.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một lỗi không được biến thành việc hoàn tất âm thầm.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một lỗi không được biến thành việc hoàn tất âm thầm.
-
-=====================================================================================
+      Chính sách cô lập lỗi có kiểm soát cho worker gọi dịch vụ từ xa bao gồm: (a) Cấu hình timeout rõ ràng; (b) Thử lại có giới hạn (exponential backoff) chỉ áp dụng cho lỗi tạm thời; (c) Có phương án dự phòng bảo toàn nguồn gốc dữ liệu; (d) Cho phép trả lời một phần kèm công bố minh bạch phần dữ liệu còn thiếu. Không được thử lại vô hạn hay nuốt lỗi.
 CÂU 097 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q097 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-multiagent-failure-containment] Multiagent Failure Containment
 =====================================================================================
@@ -2423,11 +2359,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Nếu đầu vào/tiêu chí đổi thì không thể quy khác biệt cho kiến trúc.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nếu đầu vào/tiêu chí đổi thì không thể quy khác biệt cho kiến trúc.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu đầu vào/tiêu chí đổi thì không thể quy khác biệt cho kiến trúc.
-
-=====================================================================================
+      Một nghiên cứu đối chiếu hợp lệ giữa kiến trúc Single-Agent và Multi-Agent bắt buộc phải: (a) Dùng chung một bộ câu hỏi kiểm thử và tiêu chí chấm điểm đóng băng; (b) Đánh giá đa chiều trên các khía cạnh: chất lượng, độ trễ, chi phí token, và tỷ lệ từ chối/không trả lời; (c) Cung cấp khả năng chẩn đoán dấu vết chi tiết cho từng ca kiểm thử; (d) Kiểm tra kỹ lưỡng các ca hồi quy (regressions) ở cấp từng trường hợp cụ thể.
 CÂU 099 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q099 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-single-vs-multiagent-evaluation] Single Vs Multiagent Evaluation
 =====================================================================================
@@ -2594,11 +2526,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Chỉ chọn thứ code có thể quyết từ dữ kiện/contract đầy đủ.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ chọn thứ code có thể quyết từ dữ kiện/contract đầy đủ.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ chọn thứ code có thể quyết từ dữ kiện/contract đầy đủ.
-
-=====================================================================================
+      Các thành phần của artifact cuối cùng có thể kiểm tra tự động bằng quy tắc xác định (deterministic rules) trước khi công bố: (a) Tính hợp lệ của cấu trúc JSON schema và các trường bắt buộc; (b) Sự tồn tại của các mã định danh tham chiếu trong cơ sở dữ liệu; (c) Tổng tỷ lệ phân bổ phần trăm đạt chính xác 100%; (d) Giá trị trạng thái thuộc danh mục enum cho phép. Diễn giải pháp lý là yếu tố chủ quan, không thể kiểm tra bằng luật xác định.
 CÂU 106 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d09-q106 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-multiagent-output-verification-gate] Multiagent Output Verification Gate
 =====================================================================================

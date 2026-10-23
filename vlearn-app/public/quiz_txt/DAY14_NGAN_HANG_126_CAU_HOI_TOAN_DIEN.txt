@@ -389,11 +389,7 @@ Tính token F1.
 👉 GIÁ TRỊ ĐIỀN CHUẨN: None
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Precision=Recall=3/4 nên F1=2PR/(P+R)=0,75.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính precision và recall trước khi lấy harmonic mean.
-
-=====================================================================================
+      Token F1: Multiset overlap = 3 tokens; candidate = 4 tokens, reference = 4 tokens. Precision = 3/4, Recall = 3/4 => F1 = 2 * (3/4 * 3/4) / (3/4 + 3/4) = 0,75.
 CÂU 015 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q015 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-token-f1-overlap-limit] Token F1 Overlap Limit
 =====================================================================================
@@ -514,11 +510,7 @@ Tính WER.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mẫu số là số từ của reference.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là số từ của reference.
-
-=====================================================================================
+      Word Error Rate (WER) = (S + D + I) / N_ref = (1 + 0 + 1) / 4 = 2 / 4 = 0,5.
 CÂU 020 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q020 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-wer-edit-distance] Wer Edit Distance
 =====================================================================================
@@ -659,11 +651,7 @@ Tính MAP, làm tròn 3 chữ số thập phân.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính precision tại từng rank relevant, lấy AP từng query rồi mới lấy mean.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính precision tại từng rank relevant, lấy AP từng query rồi mới lấy mean.
-
-=====================================================================================
+      Mean Average Precision (MAP): Query 1 relevant tại rank 1 và 3 => AP1 = (1/1 + 2/3) / 2 = (5/3) / 2 = 5/6 ≈ 0,8333. Query 2 relevant tại rank 2 và 3 => AP2 = (1/2 + 2/3) / 2 = (7/6) / 2 = 7/12 ≈ 0,5833. MAP = (5/6 + 7/12) / 2 = 17 / 24 ≈ 0,7083, làm tròn 3 chữ số là 0,708.
 CÂU 026 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q026 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-retrieval-map] Retrieval Map
 =====================================================================================
@@ -710,11 +698,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Thành phần nào không phụ thuộc detector hiện có?
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Thành phần nào không phụ thuộc detector hiện có?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Thành phần nào không phụ thuộc detector hiện có?
-
-=====================================================================================
+      Mẫu lấy vết (mixed trace sample) để vừa tìm lỗi chưa biết vừa phủ rủi ro đã biết gồm: (a) Lưu lượng ngẫu nhiên theo tỷ lệ cố định (để phát hiện lỗi chưa biết), (b) đại diện các nhóm truy vấn phổ biến, (c) các trường hợp bất thường và cờ cảnh báo tự động, (d) phản hồi tiêu cực từ người dùng.
 CÂU 028 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q028 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-trace-sampling-strategy] Trace Sampling Strategy
 =====================================================================================
@@ -954,11 +938,7 @@ Tính Cohen's kappa.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: 
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Trừ chance agreement ở tử và chia cho dư địa còn lại.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trừ chance agreement ở tử và chia cho dư địa còn lại.
-
-=====================================================================================
+      Cohen's Kappa: κ = (p_o - p_e) / (1 - p_e) = (0,80 - 0,50) / (1 - 0,50) = 0,30 / 0,50 = 0,6.
 CÂU 038 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q038 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-taxonomy-agreement-kappa] Taxonomy Agreement Kappa
 =====================================================================================
@@ -1030,11 +1010,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Mọi claim trong expected answer phải truy được về evidence nào?
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mọi claim trong expected answer phải truy được về evidence nào?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mọi claim trong expected answer phải truy được về evidence nào?
-
-=====================================================================================
+      Các trường bắt buộc để một ca kiểm thử trở thành golden record có thể kiểm toán: (a) Stable case ID bất biến, (b) câu hỏi và hành vi kỳ vọng được chuyên gia phê duyệt, (c) trích dẫn nguồn bằng chứng chính xác (provenance), (d) siêu dữ liệu về độ khó, mức độ rủi ro.
 CÂU 041 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q041 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-golden-dataset-record-design] Golden Dataset Record Design
 =====================================================================================
@@ -1181,11 +1157,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Evidence nào cho biết model đã nhìn thấy case và case đã đổi ra sao?
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Evidence nào cho biết model đã nhìn thấy case và case đã đổi ra sao?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Evidence nào cho biết model đã nhìn thấy case và case đã đổi ra sao?
-
-=====================================================================================
+      Các biện pháp kiểm soát benchmark đáng tin cậy: (a) Duy trì ID ổn định và lịch sử thay đổi, (b) tách biệt tập public/dev với tập private held-out (để chống overfitting), (c) ghi nhận truy cập và tăng version khi cập nhật, (d) đưa các lỗi production đã xác nhận vào tập living test qua quy trình phê duyệt.
 CÂU 047 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q047 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-benchmark-version-contamination] Benchmark Version Contamination
 =====================================================================================
@@ -1258,11 +1230,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Filter đánh chất lượng/evidence của candidate, không chỉ acceptance rate.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Filter đánh chất lượng/evidence của candidate, không chỉ acceptance rate.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Filter đánh chất lượng/evidence của candidate, không chỉ acceptance rate.
-
-=====================================================================================
+      Lý do hợp lệ để loại bỏ một câu hỏi sinh tự động (synthetic candidate): (a) Đáp án kỳ vọng không có căn cứ từ nguồn tài liệu, (b) câu hỏi thiếu dữ kiện để có đáp án duy nhất, (c) trùng lặp ngữ nghĩa với ca kiểm thử đã có, (d) chỉ đổi tên riêng mà không thay đổi bản chất tác vụ.
 CÂU 050 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q050 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-synthetic-eval-case-filtering] Synthetic Eval Case Filtering
 =====================================================================================
@@ -1457,11 +1425,7 @@ Tính redundancy rate theo tổng tool calls.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ đếm call thỏa đủ điều kiện redundant đã nêu.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ đếm call thỏa đủ điều kiện redundant đã nêu.
-
-=====================================================================================
+      Tỷ lệ redundant tool calls = (2 redundant calls / 8 total tool calls) * 100% = 25%.
 CÂU 058 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q058 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-agent-redundant-tool-calls] Agent Redundant Tool Calls
 =====================================================================================
@@ -1703,11 +1667,7 @@ Tính pass^3 theo phần trăm.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: ‘Tất cả k lần’ dùng p^k, không phải pass@k.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 ‘Tất cả k lần’ dùng p^k, không phải pass@k.
-
-=====================================================================================
+      Xác suất pass^3 cho cả 3 run liên tiếp độc lập thành công với p=0,8: pass^3 = p^3 = 0,8^3 = 0,512 = 51,2%.
 CÂU 068 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q068 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-stochastic-agent-reliability] Stochastic Agent Reliability
 =====================================================================================
@@ -1747,11 +1707,7 @@ Tính pass@3 theo phần trăm.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Dùng complement của việc cả ba lần đều fail.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Dùng complement của việc cả ba lần đều fail.
-
-=====================================================================================
+      Xác suất pass@3 (ít nhất một lần thành công trong 3 lần thử độc lập): pass@3 = 1 - (1 - p)^3 = 1 - (1 - 0,8)^3 = 1 - 0,2^3 = 1 - 0,008 = 0,992 = 99,2%.
 CÂU 070 [🟢 Trắc nghiệm 1 đáp án (Chỉ chọn 1)] - Mã: d14-q070 (Độ khó: Dễ | Điểm: 1)
 Chủ đề kiến thức (KC): [kc-multiturn-constraint-decay-eval] Multiturn Constraint Decay Eval
 =====================================================================================
@@ -2086,11 +2042,7 @@ Tính rating mới của A.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: Elo
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính update từ chênh lệch observed và expected.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính update từ chênh lệch observed và expected.
-
-=====================================================================================
+      Công thức Elo: R'_A = R_A + K * (observed - expected) = 1200 + 32 * (1 - 0,5) = 1200 + 16 = 1216.
 CÂU 083 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q083 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-pairwise-ranking-aggregation] Pairwise Ranking Aggregation
 =====================================================================================
@@ -2155,11 +2107,7 @@ Tính flip rate.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mẫu số là số cặp đã chạy đủ hai order.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số là số cặp đã chạy đủ hai order.
-
-=====================================================================================
+      Flip rate khi swap vị trí cặp câu trả lời A/B và B/A: (6 cặp đổi winner / 20 cặp đã thử) * 100% = 30%.
 CÂU 086 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q086 (Độ khó: Vừa | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-judge-position-swap] Judge Position Swap
 =====================================================================================
@@ -2299,11 +2247,7 @@ Tính TPR trên class FAIL.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: %
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mẫu số gồm toàn bộ case FAIL theo human gold.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mẫu số gồm toàn bộ case FAIL theo human gold.
-
-=====================================================================================
+      True Positive Rate (TPR / Sensitivity / Recall) trên class FAIL: TP / (TP + FN) = 30 / (30 + 10) = 30 / 40 = 0,75 = 75%.
 CÂU 092 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q092 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-judge-human-calibration] Judge Human Calibration
 =====================================================================================
@@ -2343,11 +2287,7 @@ Câu hỏi:
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: điểm phần trăm
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính J rồi chia observed delta cho J.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính J rồi chia observed delta cho J.
-
-=====================================================================================
+      Youden's J = TPR + TNR - 1 = 0,8 + 0,9 - 1 = 0,7. Công thức quan hệ observed delta ≈ J * true delta => true delta ≈ observed delta / J = 7 / 0,7 = 10 điểm phần trăm.
 CÂU 094 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q094 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-judge-relative-delta-validity] Judge Relative Delta Validity
 =====================================================================================
@@ -2642,11 +2582,7 @@ Có bao nhiêu discordant pair đi vào McNemar/exact-binomial test?
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: pair
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Chỉ cộng hai ô hai version cho kết quả khác nhau.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Chỉ cộng hai ô hai version cho kết quả khác nhau.
-
-=====================================================================================
+      Trong bảng 2x2 cho McNemar / exact-binomial test, số discordant pairs (cặp bất đồng) là tổng của hai ô chéo ngoài: b + c = 10 + 22 = 32.
 CÂU 106 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q106 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-mcnemar-discordant-pair-test] Mcnemar Discordant Pair Test
 =====================================================================================
@@ -2941,11 +2877,7 @@ Tính tổng direct evaluation cost.
 👉 Hướng dẫn tính toán: Thực hiện phép tính theo công thức với đơn vị yêu cầu: USD
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tính từng cost component trước khi cộng.
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tính từng cost component trước khi cộng.
-
-=====================================================================================
+      Tổng direct evaluation cost: (500 checks * $0) + (200 judge calls * $0,02) + (20 human reviews * $2) = $0 + $4 + $40 = 44 USD.
 CÂU 118 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q118 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-eval-cost-allocation] Eval Cost Allocation
 =====================================================================================
@@ -2992,11 +2924,7 @@ CÁC PHƯƠNG ÁN LỰA CHỌN / CẶP GHÉP / BƯỚC SẮP XẾP:
 👉 Hướng dẫn đáp án: Chọn tất cả các mệnh đề phù hợp theo nguyên lý: Một aggregate win có thể che regression nào?
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một aggregate win có thể che regression nào?
-
-GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một aggregate win có thể che regression nào?
-
-=====================================================================================
+      Điều kiện cần thiết của một release gate có thể tái lập: (a) Khóa phiên bản baseline và bộ test suite, (b) so sánh chênh lệch metric trên cùng tập ca kiểm thử (paired delta), (c) đặt ngưỡng bắt buộc cho các phân khúc trọng yếu (critical slice) và an toàn, (d) có quy tắc rõ ràng xử lý độ không chắc chắn.
 CÂU 120 [✍️ Tự luận ngắn & Viết code (Short Text / Coding Rubric)] - Mã: d14-q120 (Độ khó: Khó | Điểm: 4)
 Chủ đề kiến thức (KC): [kc-regression-release-gate] Regression Release Gate
 =====================================================================================

@@ -225,12 +225,7 @@ Tính xác suất gặp ít nhất một lượt vượt 5s, làm tròn hai ch�
 -> ĐÁP ÁN SỐ CHÍNH XÁC: 9.56 %
 
 LỜI GIẢI THÍCH CHI TIẾT TỪ VLEARN:
-  P=1−(1−0,01)^10=1−0,99^10≈9,56%.
-
-GỢI Ý / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  💡 Tính xác suất không có tail ở cả 10 lượt trước.
-
-========================================================================
+      Xác suất gặp ít nhất một lượt latency > 5s trong 10 lượt chat độc lập: P = 1 - (1 - 0,01)^10 = 1 - 0,99^10 ≈ 0,0956178... = 9,56%.
 CÂU 10 [SẮP XẾP THỨ TỰ QUY TRÌNH] - Mã: d13-q023 (Độ khó: medium)
 ========================================================================
 ĐỀ BÀI:
