@@ -1,0 +1,866 @@
+Total questions for Day 10: 48
+
+================================================================================
+Question 1/48 | ID: d10-q001 | Points: 4
+KC: [kc-data-cascade-root-cause-localization] Data Cascade Root Cause Localization
+PROMPT:
+Bối cảnh:
+Bản ghi nguồn đúng `policy_version=2026`; manifest ingestion ghi 2026; dòng canonical sau cleaning bị đổi thành 2025; index và retrieved chunk đều chứa 2025; agent trả lời theo chunk.
+
+Câu hỏi:
+Xác định lần chuyển dữ liệu sai đầu tiên có bằng chứng và một bước kiểm tra tiếp theo để xác nhận.
+HINTS: ['💡 Giá trị lần đầu đổi khỏi nguồn đúng nằm ở artifact nào?']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giá trị lần đầu đổi khỏi nguồn đúng nằm ở artifact nào?
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Giá trị lần đầu đổi khỏi nguồn đúng nằm ở artifact nào?
+
+================================================================================
+Question 2/48 | ID: d10-q005 | Points: 4
+KC: [kc-data-pipeline-owner-artifact-assignment] Data Pipeline Owner Artifact Assignment
+PROMPT:
+Bối cảnh:
+Canonical artifact đã qua kiểm tra quality nhưng serving alias vẫn trỏ snapshot cũ; không ai biết vai trò nào được quyền đổi alias.
+
+Câu hỏi:
+Gán một vai trò chịu trách nhiệm, artifact bằng chứng và điều kiện chấp nhận bàn giao cho incident này. Một người có thể kiêm nhiều vai trò.
+HINTS: ['💡 Ai kiểm soát commit boundary và tài liệu nào chứng minh nó đã đổi?']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ai kiểm soát commit boundary và tài liệu nào chứng minh nó đã đổi?
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Ai kiểm soát commit boundary và tài liệu nào chứng minh nó đã đổi?
+
+================================================================================
+Question 3/48 | ID: d10-q006 | Points: 4
+KC: [kc-source-failure-monitor-owner-map] Source Failure Monitor Owner Map
+PROMPT:
+Bối cảnh:
+Ba source: DB snapshot hằng đêm; API phân trang có 429; thư mục PDF có OCR.
+
+Câu hỏi:
+Lập bản đồ method→failure→monitor→owner cho từng source; monitor phải phân biệt đúng failure.
+HINTS: ['💡 Mỗi dòng phải trả lời signal nào sẽ đổi khi failure đó xảy ra.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi dòng phải trả lời signal nào sẽ đổi khi failure đó xảy ra.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Mỗi dòng phải trả lời signal nào sẽ đổi khi failure đó xảy ra.
+
+================================================================================
+Question 4/48 | ID: d10-q007 | Points: 4
+KC: [kc-source-failure-monitor-owner-map] Source Failure Monitor Owner Map
+PROMPT:
+Bối cảnh:
+Source map nháp ghi: (1) Event stream có consumer lag, nhưng chỉ theo dõi CPU của worker; (2) object storage nhận file trùng tên, nhưng chỉ theo dõi tên file; (3) SaaS export thỉnh thoảng thiếu partition, nhưng alert không có owner.
+
+Câu hỏi:
+Chỉ ra lỗi trong từng dòng và sửa bằng một monitor hoặc owner phù hợp.
+HINTS: ['💡 Với từng dòng, hỏi signal nào thật sự thay đổi khi failure đã mô tả xảy ra.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Với từng dòng, hỏi signal nào thật sự thay đổi khi failure đã mô tả xảy ra.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Với từng dòng, hỏi signal nào thật sự thay đổi khi failure đã mô tả xảy ra.
+
+================================================================================
+Question 5/48 | ID: d10-q011 | Points: 4
+KC: [kc-etl-elt-tradeoff-selection] Etl Elt Tradeoff Selection
+PROMPT:
+Bối cảnh:
+Target lakehouse có compute mạnh và vùng raw được kiểm soát truy cập; quy tắc đổi hàng tuần; audit cần replay từ input gốc. Raw zone không được serving trực tiếp cho agent.
+
+Câu hỏi:
+Chọn ETL/ELT, đặt raw data và transformation logic, nêu guardrail.
+HINTS: ['💡 Rule đổi nhanh và replay cần input gốc, nhưng raw vẫn phải có boundary.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Rule đổi nhanh và replay cần input gốc, nhưng raw vẫn phải có boundary.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Rule đổi nhanh và replay cần input gốc, nhưng raw vẫn phải có boundary.
+
+================================================================================
+Question 6/48 | ID: d10-q013 | Points: 4
+KC: [kc-batch-streaming-ingestion-selection] Batch Streaming Ingestion Selection
+PROMPT:
+Bối cảnh:
+Orders đến liên tục. Luồng chặn gian lận phải phản ứng trong 3 giây; dashboard chấp nhận dữ liệu trễ 30 phút. Nhóm nhỏ cần có thể chạy lại cả hai luồng từ cùng một durable log.
+
+Câu hỏi:
+Thiết kế batch/stream/hybrid: nêu luồng nào phục vụ chặn gian lận, luồng nào phục vụ dashboard, và checkpoint/replay tối thiểu cần giữ.
+HINTS: ['💡 Một product có thể có hai consumer SLA khác nhau.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một product có thể có hai consumer SLA khác nhau.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Một product có thể có hai consumer SLA khác nhau.
+
+================================================================================
+Question 7/48 | ID: d10-q017 | Points: 4
+KC: [kc-incremental-watermark-checkpoint] Incremental Watermark Checkpoint
+PROMPT:
+Bối cảnh:
+Run 08:00 xử lý IDs 101–200; 151–175 fail validation nhưng code lưu `last_synced_id=200`. Run sau bắt đầu 201.
+
+Câu hỏi:
+Chẩn đoán data loss và thiết kế checkpoint/replay/stall signal.
+HINTS: ['💡 Tìm record đã seen nhưng chưa hoàn tất contract.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm record đã seen nhưng chưa hoàn tất contract.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tìm record đã seen nhưng chưa hoàn tất contract.
+
+================================================================================
+Question 8/48 | ID: d10-q020 | Points: 4
+KC: [kc-api-rate-limit-backoff-jitter] Api Rate Limit Backoff Jitter
+PROMPT:
+Bối cảnh:
+Không có Retry-After. Sau attempt 3, backoff calculator trả base delay 8s và jitter sample +1.5s cho request kế tiếp. Attempt hiện tại 3/3 vừa nhận 429.
+
+Câu hỏi:
+Tính candidate delay và quyết định thực tế theo attempt limit.
+HINTS: ['💡 Tính được delay chưa có nghĩa còn quyền retry.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính được delay chưa có nghĩa còn quyền retry.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tính được delay chưa có nghĩa còn quyền retry.
+
+================================================================================
+Question 9/48 | ID: d10-q023 | Points: 4
+KC: [kc-api-cursor-offset-pagination-selection] Api Cursor Offset Pagination Selection
+PROMPT:
+Bối cảnh:
+Offset pages size=100. Sau page 1, một row mới chèn ở đầu; page 2 dùng offset 100.
+
+Câu hỏi:
+Giải thích duplicate/skip risk và thiết kế resume.
+HINTS: ['💡 So danh sách trước và sau insert ở mốc 100.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So danh sách trước và sau insert ở mốc 100.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: So danh sách trước và sau insert ở mốc 100.
+
+================================================================================
+Question 10/48 | ID: d10-q027 | Points: 4
+KC: [kc-document-logical-version-authority] Document Logical Version Authority
+PROMPT:
+Bối cảnh:
+Hai file cùng tên `policy.pdf`: HR portal effective 2026 hash H2; email attachment effective 2024 hash H1.
+
+Câu hỏi:
+Thiết kế metadata và active/superseded decision.
+HINTS: ['💡 Cùng tên không đồng nghĩa cùng version; khác hash không tự xác định authority.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Cùng tên không đồng nghĩa cùng version; khác hash không tự xác định authority.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Cùng tên không đồng nghĩa cùng version; khác hash không tự xác định authority.
+
+================================================================================
+Question 11/48 | ID: d10-q029 | Points: 4
+KC: [kc-ocr-confidence-publish-review] Ocr Confidence Publish Review
+PROMPT:
+Bối cảnh:
+OCR page có confidence .91, text length bình thường nhưng bảng giá bị mất cột “đơn vị”; original visual còn đủ.
+
+Câu hỏi:
+Chọn disposition, evidence giữ lại và exit criterion trước embed.
+HINTS: ['💡 Dữ kiện quyết định nằm ở cấu trúc bị mất, không ở tổng số từ.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Dữ kiện quyết định nằm ở cấu trúc bị mất, không ở tổng số từ.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Dữ kiện quyết định nằm ở cấu trúc bị mất, không ở tổng số từ.
+
+================================================================================
+Question 12/48 | ID: d10-q031 | Points: 4
+KC: [kc-queue-producer-consumer-decoupling] Queue Producer Consumer Decoupling
+PROMPT:
+Bối cảnh:
+Webhook cần trả 202 trong 200ms; transform mất 2s/event và có thể fail.
+
+Câu hỏi:
+Đặt queue/ack boundary và nêu monitor cùng failure policy.
+HINTS: ['💡 Ack nào chỉ xác nhận accepted, ack nào xác nhận processed?']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ack nào chỉ xác nhận accepted, ack nào xác nhận processed?
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Ack nào chỉ xác nhận accepted, ack nào xác nhận processed?
+
+================================================================================
+Question 13/48 | ID: d10-q033 | Points: 4
+KC: [kc-ingestion-backpressure-control] Ingestion Backpressure Control
+PROMPT:
+Bối cảnh:
+Depth 1k→4k→9k trong 3 phút; threshold=5k, producer 200/s, consumer 120/s.
+
+Câu hỏi:
+Thiết kế control và user-visible consequence.
+HINTS: ['💡 Tín hiệu cần quay ngược về producer, không chỉ dashboard.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tín hiệu cần quay ngược về producer, không chỉ dashboard.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tín hiệu cần quay ngược về producer, không chỉ dashboard.
+
+================================================================================
+Question 14/48 | ID: d10-q037 | Points: 4
+KC: [kc-deterministic-replayable-cleaning] Deterministic Replayable Cleaning
+PROMPT:
+Bối cảnh:
+Raw row R1 được giữ. Run A trim whitespace và normalize date bằng code v3; operator sau đó sửa canonical CSV bằng tay. Run B từ raw/code v3 làm mất sửa tay.
+
+Câu hỏi:
+Chẩn đoán và thiết kế replay/audit đúng.
+HINTS: ['💡 Một thay đổi không được mã hóa sẽ biến mất ở lần chạy sau.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một thay đổi không được mã hóa sẽ biến mất ở lần chạy sau.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Một thay đổi không được mã hóa sẽ biến mất ở lần chạy sau.
+
+================================================================================
+Question 15/48 | ID: d10-q040 | Points: 4
+KC: [kc-required-field-missingness-policy] Required Field Missingness Policy
+PROMPT:
+Bối cảnh:
+Contract: `ticket_id` required; `closed_at` optional khi status=open; `created_at` có thể derive từ signed event timestamp. Row status=open thiếu cả ba field.
+
+Câu hỏi:
+Chọn disposition riêng cho từng field và nêu lineage cần giữ.
+HINTS: ['💡 Chấm từng field theo contract trước khi chấm cả row.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Chấm từng field theo contract trước khi chấm cả row.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Chấm từng field theo contract trước khi chấm cả row.
+
+================================================================================
+Question 16/48 | ID: d10-q041 | Points: 4
+KC: [kc-date-format-canonicalization] Date Format Canonicalization
+PROMPT:
+Bối cảnh:
+Contract nhận ISO `YYYY-MM-DD`; với ngày dạng slash thì locale phải lấy từ source metadata và emit ISO. Inputs: `2026-04-05`; `05/04/2026` có locale vi; `04/05/2026` thiếu locale provenance.
+
+Câu hỏi:
+Canonicalize những gì được support và xử lý row cuối.
+HINTS: ['💡 Tách format parsing khỏi việc chứng minh locale của row.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách format parsing khỏi việc chứng minh locale của row.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách format parsing khỏi việc chứng minh locale của row.
+
+================================================================================
+Question 17/48 | ID: d10-q044 | Points: 4
+KC: [kc-unicode-encoding-normalization] Unicode Encoding Normalization
+PROMPT:
+Bối cảnh:
+Tên `Nguyễn` ở raw bytes decode đúng; một pipeline trung gian thành `Nguyá»…n`; visual source còn nguyên.
+
+Câu hỏi:
+Thiết kế recovery và lineage.
+HINTS: ['💡 Đừng sửa từ chuỗi hỏng nếu raw/visual còn là authority.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng sửa từ chuỗi hỏng nếu raw/visual còn là authority.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đừng sửa từ chuỗi hỏng nếu raw/visual còn là authority.
+
+================================================================================
+Question 18/48 | ID: d10-q045 | Points: 4
+KC: [kc-business-key-duplicate-resolution] Business Key Duplicate Resolution
+PROMPT:
+Bối cảnh:
+Các dòng: A `(order=7,version=1,status=pending)`, B `(7,2,paid)`, C `(8,1,paid)`, D `(7,2,paid)` từ cùng source/hash.
+
+Câu hỏi:
+Định nghĩa key, phân biệt version với duplicate, chọn survivor và audit.
+HINTS: ['💡 Cùng order chưa chắc là cùng event/version.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Cùng order chưa chắc là cùng event/version.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Cùng order chưa chắc là cùng event/version.
+
+================================================================================
+Question 19/48 | ID: d10-q047 | Points: 4
+KC: [kc-canonical-schema-validation] Canonical Schema Validation
+PROMPT:
+Bối cảnh:
+Canonical schema: `id:str required`, `priority∈{P1,P2,P3}`, `created_at:ISO date`. Parsed row `{ticket_id:42, urgency:"high", date:"05/04/2026"}`; mapping contract `ticket_id→id(str)`, `high→P1`, locale vi.
+
+Câu hỏi:
+Map, validate và báo kết quả.
+HINTS: ['💡 Mỗi native field cần một declared mapping, không phải đoán tên.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi native field cần một declared mapping, không phải đoán tên.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Mỗi native field cần một declared mapping, không phải đoán tên.
+
+================================================================================
+Question 20/48 | ID: d10-q050 | Points: 4
+KC: [kc-record-disposition-policy] Record Disposition Policy
+PROMPT:
+Bối cảnh:
+Một batch có: A chỉ thừa whitespace; B mất required account_id không nguồn khôi phục; C OCR amount mờ nhưng visual còn; D optional comment dài hơn soft limit.
+
+Câu hỏi:
+Chọn disposition cho A–D và nêu hệ quả ở tầng sau.
+HINTS: ['💡 Tách “sửa chắc chắn được”, “không recover”, “cần người xem” và “soft issue”.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách “sửa chắc chắn được”, “không recover”, “cần người xem” và “soft issue”.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách “sửa chắc chắn được”, “không recover”, “cần người xem” và “soft issue”.
+
+================================================================================
+Question 21/48 | ID: d10-q052 | Points: 4
+KC: [kc-quarantine-audit-trail] Quarantine Audit Trail
+PROMPT:
+Bối cảnh:
+Một CSV `dropped_rows.csv` chỉ chứa canonical rows, không raw/source/run/reason.
+
+Câu hỏi:
+Thiết kế schema quarantine và replay guard.
+HINTS: ['💡 Replay cần chứng minh điều gì đã thay đổi kể từ lúc fail?']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Replay cần chứng minh điều gì đã thay đổi kể từ lúc fail?
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Replay cần chứng minh điều gì đã thay đổi kể từ lúc fail?
+
+================================================================================
+Question 22/48 | ID: d10-q053 | Points: 4
+KC: [kc-data-completeness-check] Data Completeness Check
+PROMPT:
+Bối cảnh:
+Contract kỳ vọng 100 bản ghi, mỗi bản ghi cần `id,email`. Lần chạy có 90 bản ghi; 81 bản ghi có cả hai trường, 9 bản ghi thiếu email.
+
+Câu hỏi:
+Tính độ bao phủ bản ghi và độ đầy đủ trường email trên các bản ghi đã nhận; nêu điều chưa được chứng minh.
+HINTS: ['💡 Tính hai tỷ lệ với hai mẫu số khác nhau.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính hai tỷ lệ với hai mẫu số khác nhau.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tính hai tỷ lệ với hai mẫu số khác nhau.
+
+================================================================================
+Question 23/48 | ID: d10-q056 | Points: 4
+KC: [kc-data-validity-check] Data Validity Check
+PROMPT:
+Bối cảnh:
+Giá trị `2026-02-30` đúng regex `YYYY-MM-DD` nhưng không phải ngày lịch hợp lệ.
+
+Câu hỏi:
+Thiết kế expectation và báo cáo vi phạm.
+HINTS: ['💡 Chuỗi có hình dạng ngày chưa chắc biểu diễn một ngày tồn tại.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Chuỗi có hình dạng ngày chưa chắc biểu diễn một ngày tồn tại.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Chuỗi có hình dạng ngày chưa chắc biểu diễn một ngày tồn tại.
+
+================================================================================
+Question 24/48 | ID: d10-q057 | Points: 4
+KC: [kc-data-uniqueness-check] Data Uniqueness Check
+PROMPT:
+Bối cảnh:
+Các dòng `(order_id,line_id)`: (1,A),(1,B),(1,A),(2,A). Contract: mỗi dòng hàng là duy nhất trong một đơn hàng.
+
+Câu hỏi:
+Chọn khóa, tính số nhóm trùng và số dòng dư.
+HINTS: ['💡 Một đơn hàng có thể có nhiều dòng hàng hợp lệ.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một đơn hàng có thể có nhiều dòng hàng hợp lệ.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Một đơn hàng có thể có nhiều dòng hàng hợp lệ.
+
+================================================================================
+Question 25/48 | ID: d10-q059 | Points: 4
+KC: [kc-data-consistency-check] Data Consistency Check
+PROMPT:
+Bối cảnh:
+Order.total=120; tổng các dòng là 50+60; đơn vị tiền đều là VND. Trạng thái CRM là paid, trạng thái sổ cái là pending; sổ cái là nguồn có thẩm quyền cho thanh toán.
+
+Câu hỏi:
+Nêu các điểm không nhất quán và nguồn dùng để giải quyết.
+HINTS: ['💡 Có hai invariant độc lập trong scenario.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Có hai invariant độc lập trong scenario.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Có hai invariant độc lập trong scenario.
+
+================================================================================
+Question 26/48 | ID: d10-q062 | Points: 4
+KC: [kc-data-timeliness-check] Data Timeliness Check
+PROMPT:
+Bối cảnh:
+Nguồn có hiệu lực lúc 10:00, job bắt đầu 10:01, làm sạch xong 10:04, xuất bản 10:22; SLA là 10 phút. Dashboard chỉ báo thời gian chạy job là 3 phút.
+
+Câu hỏi:
+Tính đúng thời gian trễ và phân loại kết quả.
+HINTS: ['💡 Người dùng dữ liệu chưa nhìn thấy bản ghi tại thời điểm làm sạch xong.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Người dùng dữ liệu chưa nhìn thấy bản ghi tại thời điểm làm sạch xong.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Người dùng dữ liệu chưa nhìn thấy bản ghi tại thời điểm làm sạch xong.
+
+================================================================================
+Question 27/48 | ID: d10-q064 | Points: 4
+KC: [kc-data-accuracy-source-of-truth] Data Accuracy Source Of Truth
+PROMPT:
+Bối cảnh:
+Trang policy có thẩm quyền ghi hạn mức 5 triệu có hiệu lực từ 1/6; PDF lưu đệm ghi hạn mức 3 triệu có hiệu lực trước đó. Trường hợp ngày 15/6 có giá trị 3 triệu.
+
+Câu hỏi:
+Phân loại chính xác, không chính xác hoặc chưa thể kết luận; đồng thời giữ lại xung đột.
+HINTS: ['💡 Đừng so hai value mà bỏ ngày chúng có hiệu lực.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đừng so hai value mà bỏ ngày chúng có hiệu lực.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đừng so hai value mà bỏ ngày chúng có hiệu lực.
+
+================================================================================
+Question 28/48 | ID: d10-q065 | Points: 4
+KC: [kc-actionable-data-contract-authoring] Actionable Data Contract Authoring
+PROMPT:
+Bối cảnh:
+Dataset `tickets` phục vụ trợ lý SLA. Bộ phận nghiệp vụ chưa xác nhận ngưỡng freshness.
+
+Câu hỏi:
+Viết contract có thể vận hành được nhưng không tự đặt ngưỡng.
+HINTS: ['💡 Điều chưa được business xác nhận phải trở thành một field quyết định, không thành con số giả.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Điều chưa được business xác nhận phải trở thành một field quyết định, không thành con số giả.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Điều chưa được business xác nhận phải trở thành một field quyết định, không thành con số giả.
+
+================================================================================
+Question 29/48 | ID: d10-q068 | Points: 4
+KC: [kc-schema-evolution-compatibility-plan] Schema Evolution Compatibility Plan
+PROMPT:
+Bối cảnh:
+Cần rename `dept`→`department`; ba consumers deploy khác lịch, 2 năm history cần backfill.
+
+Câu hỏi:
+Viết kế hoạch version, migration, monitoring và rollback.
+HINTS: ['💡 Thiết kế giai đoạn mà old/new consumer cùng chạy.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Thiết kế giai đoạn mà old/new consumer cùng chạy.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Thiết kế giai đoạn mà old/new consumer cùng chạy.
+
+================================================================================
+Question 30/48 | ID: d10-q069 | Points: 4
+KC: [kc-executable-data-expectation] Executable Data Expectation
+PROMPT:
+Bối cảnh:
+Clause: ≥99% dòng phải có `source_id`; scope run R7 có 1.000 dòng, 25 dòng thiếu; severity hard gate.
+
+Câu hỏi:
+Xuất evidence và kết quả expectation.
+HINTS: ['💡 Tính numerator trước rồi gắn consequence từ severity.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính numerator trước rồi gắn consequence từ severity.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tính numerator trước rồi gắn consequence từ severity.
+
+================================================================================
+Question 31/48 | ID: d10-q072 | Points: 4
+KC: [kc-quality-suite-coverage-limit] Quality Suite Coverage Limit
+PROMPT:
+Bối cảnh:
+Suite đạt uniqueness, type và null checks trên 10 nghìn dòng. Chưa có đối chiếu source of truth hay freshness clock.
+
+Câu hỏi:
+Viết kết luận hợp lệ và hai evidence bổ sung để giảm khoảng trống.
+HINTS: ['💡 Mỗi claim thiếu cần một phép đo khác loại, không thêm nhiều null checks.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi claim thiếu cần một phép đo khác loại, không thêm nhiều null checks.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Mỗi claim thiếu cần một phép đo khác loại, không thêm nhiều null checks.
+
+================================================================================
+Question 32/48 | ID: d10-q074 | Points: 4
+KC: [kc-data-rule-signal-precision] Data Rule Signal Precision
+PROMPT:
+Bối cảnh:
+Rule `age<18 → block` chặn 100 dòng; 60 là tài khoản người phụ thuộc hợp lệ theo contract, 40 dòng thực sự lỗi.
+
+Câu hỏi:
+Tính precision, chỉnh rule và chọn hệ quả.
+HINTS: ['💡 False positives có chung field nào?']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: False positives có chung field nào?
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: False positives có chung field nào?
+
+================================================================================
+Question 33/48 | ID: d10-q076 | Points: 4
+KC: [kc-data-freshness-observability] Data Freshness Observability
+PROMPT:
+Bối cảnh:
+Bản ghi mới nhất ở source là 10:00; lần chạy thành công gần nhất là 10:05; watermark vẫn là 09:00; publish lúc 10:06; hiện tại là 10:30; chu kỳ chạy 5 phút.
+
+Câu hỏi:
+Tính, diễn giải các signal và nêu điều chưa xác định.
+HINTS: ['💡 Dùng watermark/effective time mà consumer thực sự thấy.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Dùng watermark/effective time mà consumer thực sự thấy.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Dùng watermark/effective time mà consumer thực sự thấy.
+
+================================================================================
+Question 34/48 | ID: d10-q078 | Points: 4
+KC: [kc-data-volume-observability] Data Volume Observability
+PROMPT:
+Bối cảnh:
+Baseline của source khoảng 10.000. Lần chạy: source 10.200; ingest 10.180; clean 8.100; quarantine 50; publish 8.050.
+
+Câu hỏi:
+Xác định chỗ giảm số lượng, định lượng và nêu evidence cần xem tiếp.
+HINTS: ['💡 Tính delta giữa từng cặp stage, không chỉ source và publish.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính delta giữa từng cặp stage, không chỉ source và publish.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tính delta giữa từng cặp stage, không chỉ source và publish.
+
+================================================================================
+Question 35/48 | ID: d10-q081 | Points: 4
+KC: [kc-data-distribution-observability] Data Distribution Observability
+PROMPT:
+Bối cảnh:
+Mốc tham chiếu: độ dài văn bản trung vị 800, null 1%, tiếng Việt 95%. Hiện tại: trung vị 70, null 2%, tiếng Việt 40%, không rõ ngôn ngữ 55%; số dòng bằng nhau.
+
+Câu hỏi:
+Diễn giải và chọn hành động mà không kết luận quá mức.
+HINTS: ['💡 Mô tả cái đã đổi trước khi đoán tại sao.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mô tả cái đã đổi trước khi đoán tại sao.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Mô tả cái đã đổi trước khi đoán tại sao.
+
+================================================================================
+Question 36/48 | ID: d10-q082 | Points: 4
+KC: [kc-data-schema-observability] Data Schema Observability
+PROMPT:
+Bối cảnh:
+Schema v1 `customer_id:str, amount:int`; v2 `customer_id:str, amount:string, currency?:str`. Consumer cộng amount như số.
+
+Câu hỏi:
+Phân loại các thay đổi, consumer bị ảnh hưởng và hành động cần làm.
+HINTS: ['💡 Đánh giá từng field đối với consumer cụ thể.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đánh giá từng field đối với consumer cụ thể.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đánh giá từng field đối với consumer cụ thể.
+
+================================================================================
+Question 37/48 | ID: d10-q085 | Points: 4
+KC: [kc-data-lineage-observability] Data Lineage Observability
+PROMPT:
+Bối cảnh:
+Chunk C7 thuộc index I3; manifest của I3 trỏ canonical K9; K9 thiếu run_id; source S2 có hai phiên bản.
+
+Câu hỏi:
+Dựng lại phần đã biết, chỉ điểm đứt đầu tiên và tác động.
+HINTS: ['💡 Dừng đúng chỗ identity chain bị đứt.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Dừng đúng chỗ identity chain bị đứt.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Dừng đúng chỗ identity chain bị đứt.
+
+================================================================================
+Question 38/48 | ID: d10-q086 | Points: 4
+KC: [kc-business-freshness-sla-design] Business Freshness Sla Design
+PROMPT:
+Bối cảnh:
+Trạng thái ticket trực tiếp được hứa hiển thị trong 2 phút; policy PDF đổi theo tháng và được hứa cập nhật trong 24 giờ.
+
+Câu hỏi:
+Thiết kế hai freshness clock, owner nhận alert và hành vi khi dữ liệu stale.
+HINTS: ['💡 Mỗi clock bắt đầu ở business event và dừng nơi agent nhìn thấy.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi clock bắt đầu ở business event và dừng nơi agent nhìn thấy.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Mỗi clock bắt đầu ở business event và dừng nơi agent nhìn thấy.
+
+================================================================================
+Question 39/48 | ID: d10-q089 | Points: 4
+KC: [kc-distribution-drift-contextual-interpretation] Distribution Drift Contextual Interpretation
+PROMPT:
+Bối cảnh:
+Mốc tham chiếu là 30 ngày trước; dữ liệu hiện tại là 1 ngày; KL divergence cao ở language, đồng thời OCR không rõ ngôn ngữ tăng và grounding rate giảm.
+
+Câu hỏi:
+Diễn giải phương pháp, cửa sổ dữ liệu, signal và chọn hành động.
+HINTS: ['💡 Kiểm window trước, rồi tìm signal độc lập cùng đổi.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kiểm window trước, rồi tìm signal độc lập cùng đổi.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Kiểm window trước, rồi tìm signal độc lập cùng đổi.
+
+================================================================================
+Question 40/48 | ID: d10-q091 | Points: 4
+KC: [kc-data-to-agent-sli-linkage] Data To Agent Sli Linkage
+PROMPT:
+Bối cảnh:
+Sau khi phát hành parser, null-text tăng 20%; trên cùng 100 queries, hit@5 giảm .82→.60 và grounded-answer rate giảm .78→.55.
+
+Câu hỏi:
+Nối evidence và phát biểu kết luận đúng mức.
+HINTS: ['💡 Giữ evaluation set cố định và tách impact khỏi root cause.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ evaluation set cố định và tách impact khỏi root cause.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Giữ evaluation set cố định và tách impact khỏi root cause.
+
+================================================================================
+Question 41/48 | ID: d10-q092 | Points: 4
+KC: [kc-data-quality-gate-placement] Data Quality Gate Placement
+PROMPT:
+Bối cảnh:
+DAG: parse→clean→embed→publish. Required-ID check cần các canonical fields; optional-note warning không ảnh hưởng retrieval.
+
+Câu hỏi:
+Đặt gate và xác định các nhánh khi fail.
+HINTS: ['💡 Đặt ở điểm sớm nhất check có đủ fields để quyết.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đặt ở điểm sớm nhất check có đủ fields để quyết.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đặt ở điểm sớm nhất check có đủ fields để quyết.
+
+================================================================================
+Question 42/48 | ID: d10-q095 | Points: 4
+KC: [kc-data-orchestrator-requirements] Data Orchestrator Requirements
+PROMPT:
+Bối cảnh:
+Pipeline hằng ngày cần đợi file và DB snapshot, transform, quality, publish; retry lỗi transient 2 lần; SLA 07:00; backfill theo date range.
+
+Câu hỏi:
+Viết bảng requirement và chỉ ra config chỉ có cron không biểu diễn được gì.
+HINTS: ['💡 Liệt kê hành vi khi source chưa sẵn sàng và task giữa DAG fail.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Liệt kê hành vi khi source chưa sẵn sàng và task giữa DAG fail.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Liệt kê hành vi khi source chưa sẵn sàng và task giữa DAG fail.
+
+================================================================================
+Question 43/48 | ID: d10-q098 | Points: 4
+KC: [kc-data-pipeline-retry-scope] Data Pipeline Retry Scope
+PROMPT:
+Bối cảnh:
+C fail vì schema invalid có tính xác định; A/B thành công nhưng output của B không thỏa contract của C.
+
+Câu hỏi:
+Chọn điểm chạy lại, số lần thử và cách xử lý khi lỗi kết thúc.
+HINTS: ['💡 Một transient timeout khác một deterministic schema failure.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một transient timeout khác một deterministic schema failure.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Một transient timeout khác một deterministic schema failure.
+
+================================================================================
+Question 44/48 | ID: d10-q100 | Points: 4
+KC: [kc-atomic-vector-index-publish] Atomic Vector Index Publish
+PROMPT:
+Bối cảnh:
+Đang rebuild 1M vectors; job đã nạp 600k vào live collection thì agent bắt đầu trả thiếu dữ liệu.
+
+Câu hỏi:
+Thiết kế lại ranh giới publish và rollback.
+HINTS: ['💡 Tách write completion khỏi serving activation.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách write completion khỏi serving activation.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách write completion khỏi serving activation.
+
+================================================================================
+Question 45/48 | ID: d10-q101 | Points: 4
+KC: [kc-safe-data-backfill] Safe Data Backfill
+PROMPT:
+Bối cảnh:
+Thiếu các phân vùng 2026-04-01..03; pipeline trực tiếp vẫn chạy.
+
+Câu hỏi:
+Thiết kế bounded backfill không phá production.
+HINTS: ['💡 Xác định range, identity và điểm result trở thành production.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xác định range, identity và điểm result trở thành production.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Xác định range, identity và điểm result trở thành production.
+
+================================================================================
+Question 46/48 | ID: d10-q105 | Points: 4
+KC: [kc-timeboxed-data-incident-triage] Timeboxed Data Incident Triage
+PROMPT:
+Bối cảnh:
+Có 20 phút, dashboard freshness chưa có. Agent trả policy cũ. Logs có last_success, counts và schema hash; lineage query tốn 10 phút.
+
+Câu hỏi:
+Lập timebox có stop rule và bàn giao mitigation.
+HINTS: ['💡 Một check chỉ được giữ nếu kết quả có thể đổi hypothesis/decision.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Một check chỉ được giữ nếu kết quả có thể đổi hypothesis/decision.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Một check chỉ được giữ nếu kết quả có thể đổi hypothesis/decision.
+
+================================================================================
+Question 47/48 | ID: d10-q106 | Points: 4
+KC: [kc-data-incident-mitigation-and-verification] Data Incident Mitigation And Verification
+PROMPT:
+Bối cảnh:
+Active index v3 chứa policy sai; v2 đã biết là tốt nhưng cũ 1 ngày. Root cause chưa khép.
+
+Câu hỏi:
+Chọn mitigation có thể đảo ngược, cách công bố và tiêu chí kết thúc.
+HINTS: ['💡 Chọn hành động có thể đảo ngược trong khi root cause chưa chắc.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Chọn hành động có thể đảo ngược trong khi root cause chưa chắc.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Chọn hành động có thể đảo ngược trong khi root cause chưa chắc.
+
+================================================================================
+Question 48/48 | ID: d10-q108 | Points: 4
+KC: [kc-data-incident-prevention-loop] Data Incident Prevention Loop
+PROMPT:
+Bối cảnh:
+Incident do parser bỏ im lặng một cột sau schema rename; team sửa tay các dòng bị ảnh hưởng.
+
+Câu hỏi:
+Viết causal record và prevention control có thể test.
+HINTS: ['💡 Control mới phải fail trên chính corruption case này.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Control mới phải fail trên chính corruption case này.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Control mới phải fail trên chính corruption case này.
+

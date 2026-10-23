@@ -37,6 +37,7 @@ backup_original_files/
 ORIGINAL_REQUEST.md
 PROJECT.md
 TEST_INFRA.md
+TEST_READY.md
 all_numeric_questions.json
 __pycache__/
 .pytest_cache/

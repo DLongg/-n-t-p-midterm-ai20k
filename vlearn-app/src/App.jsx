@@ -594,6 +594,7 @@ export default function App() {
   const isChecked = studyMode || !!currentCheckStatus?.isChecked;
   const isCorrect = studyMode ? true : !!currentCheckStatus?.isCorrect;
   const userAns = studyMode ? currentQ?.correct_answer : userAnswers[currentQId];
+  const isEssayRevealed = Boolean(showEssaySolution[currentQId] || studyMode);
 
   // Thống kê số câu đúng/sai trong Day hiện tại
   const dayCheckedCount = allQuestions.filter(q => checkedState[q.question_id]?.isChecked).length;
@@ -1369,14 +1370,14 @@ export default function App() {
                         <div style={{ marginTop: '20px' }}>
                           <button
                             id="btn-toggle-essay-solution"
-                            onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !prev[currentQId] }))}
+                            onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !isEssayRevealed }))}
                             style={{
                               width: '100%',
-                              padding: '12px 18px',
+                              padding: '13px 20px',
                               borderRadius: '10px',
-                              background: showEssaySolution[currentQId] ? '#f0fdf4' : '#f8fafc',
-                              border: showEssaySolution[currentQId] ? '2px solid #10b981' : '2px dashed #94a3b8',
-                              color: showEssaySolution[currentQId] ? '#15803d' : '#334155',
+                              background: isEssayRevealed ? '#f0fdf4' : '#f8fafc',
+                              border: isEssayRevealed ? '2px solid #10b981' : '2px dashed #94a3b8',
+                              color: isEssayRevealed ? '#15803d' : '#334155',
                               fontWeight: 700,
                               fontSize: '14px',
                               cursor: 'pointer',
@@ -1385,49 +1386,87 @@ export default function App() {
                               justifyContent: 'center',
                               gap: '8px',
                               transition: 'all 0.2s',
-                              boxShadow: showEssaySolution[currentQId] ? '0 2px 4px rgba(16, 185, 129, 0.1)' : 'none'
+                              boxShadow: isEssayRevealed ? '0 2px 6px rgba(16, 185, 129, 0.15)' : 'none'
                             }}
                           >
-                            <Eye size={18} color={showEssaySolution[currentQId] ? '#10b981' : '#64748b'} />
-                            {showEssaySolution[currentQId]
-                              ? 'Thu gọn Lời giải & Phân tích đáp án'
-                              : '💡 Bấm để lật thẻ: Xem Phân tích Lời giải, Tiêu chí chấm (Rubric) & Gợi ý từ VLearn'}
+                            <Eye size={18} color={isEssayRevealed ? '#10b981' : '#64748b'} />
+                            {isEssayRevealed
+                              ? (studyMode ? '📖 Đang mở ở Chế độ học tập (Bấm để thu gọn)' : 'Thu gọn Lời giải, Rubric & Tham khảo')
+                              : '💡 Bấm để lật thẻ: Xem Câu trả lời mẫu, Rubric chấm điểm & Nguồn tham khảo'}
                           </button>
 
-                          {showEssaySolution[currentQId] && (
-                            <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                              {/* Rubric */}
-                              {currentQ.rubric && (
-                                <div style={{ padding: '14px 18px', borderRadius: '10px', background: '#ecfdf5', border: '1px solid #86efac', color: '#065f46' }}>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '14px', marginBottom: '8px' }}>
-                                    <CheckCircle size={18} color="#16a34a" />
-                                    <span>TIÊU CHÍ CHẤM ĐIỂM & ĐÁP ÁN ĐÚNG (RUBRIC):</span>
+                          {isEssayRevealed && (
+                            <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                              
+                              {/* 1. CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER) */}
+                              {(currentQ.sample_answer || currentQ.explanation) && (
+                                <div style={{
+                                  padding: '16px 20px',
+                                  borderRadius: '10px',
+                                  background: '#f0fdf4',
+                                  border: '1.5px solid #86efac',
+                                  boxShadow: '0 1px 3px rgba(16, 185, 129, 0.08)'
+                                }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '14px', color: '#166534' }}>
+                                      <Sparkles size={18} color="#16a34a" />
+                                      <span>CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):</span>
+                                    </div>
+                                    <span style={{ fontSize: '12px', background: '#dcfce7', color: '#15803d', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
+                                      Thang điểm: {currentQ.points || 1} điểm
+                                    </span>
                                   </div>
-                                  <div style={{ whiteSpace: 'pre-line', fontSize: '14px', lineHeight: 1.6 }}>
+                                  <div style={{ whiteSpace: 'pre-line', fontSize: '14px', lineHeight: 1.65, color: '#14532d' }}>
+                                    {currentQ.sample_answer || currentQ.explanation}
+                                  </div>
+                                </div>
+                              )}
+
+                              {/* 2. TIÊU CHÍ CHẤM ĐIỂM (SPECIFIC GRADING RUBRIC) */}
+                              {currentQ.rubric && (
+                                <div style={{
+                                  padding: '16px 20px',
+                                  borderRadius: '10px',
+                                  background: '#eff6ff',
+                                  border: '1.5px solid #bfdbfe',
+                                  boxShadow: '0 1px 3px rgba(59, 130, 246, 0.08)'
+                                }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '14px', marginBottom: '10px', color: '#1e40af' }}>
+                                    <CheckSquare size={18} color="#2563eb" />
+                                    <span>TIÊU CHÍ CHẤM ĐIỂM CHI TIẾT (GRADING RUBRIC):</span>
+                                  </div>
+                                  <div style={{ whiteSpace: 'pre-line', fontSize: '14px', lineHeight: 1.65, color: '#1e3a8a' }}>
                                     {currentQ.rubric}
                                   </div>
                                 </div>
                               )}
 
-                              {/* Explanation / Analysis */}
-                              {currentQ.explanation && currentQ.explanation !== currentQ.rubric && (
-                                <div style={{ padding: '14px 18px', borderRadius: '10px', background: '#f0f9ff', border: '1px solid #bae6fd', color: '#0369a1' }}>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '14px', marginBottom: '8px' }}>
-                                    <Lightbulb size={18} color="#0284c7" />
-                                    <span>PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ TỪ MÁY CHỦ VLEARN:</span>
+                              {/* 3. NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT QUỐC TẾ (REFERENCE SOURCE) */}
+                              {(currentQ.reference_source || currentQ.reference || currentQ.source || currentQ.sources) && (
+                                <div style={{
+                                  padding: '14px 18px',
+                                  borderRadius: '10px',
+                                  background: '#f8fafc',
+                                  border: '1px solid #cbd5e1',
+                                  color: '#334155'
+                                }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '13px', marginBottom: '8px', color: '#475569' }}>
+                                    <BookOpen size={16} color="#0284c7" />
+                                    <span>NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:</span>
                                   </div>
-                                  <div style={{ whiteSpace: 'pre-line', fontSize: '14px', lineHeight: 1.6 }}>
-                                    {currentQ.explanation}
+                                  <div style={{ fontSize: '13px', lineHeight: 1.6, color: '#475569', wordBreak: 'break-word' }}>
+                                    {String(currentQ.reference_source || currentQ.reference || currentQ.source || currentQ.sources)}
                                   </div>
                                 </div>
                               )}
 
-                              {/* Hints */}
+                              {/* 4. GỢI Ý CỐT LÕI (CORE HINTS) */}
                               {currentQ.hints && currentQ.hints.length > 0 && (
                                 <div style={{ padding: '12px 16px', borderRadius: '8px', background: '#fffbeb', border: '1px solid #fde68a', color: '#92400e', fontSize: '13px' }}>
                                   <strong>💡 Gợi ý cốt lõi: </strong> {currentQ.hints.map(h => h.text).join(' ')}
                                 </div>
                               )}
+
                             </div>
                           )}
                         </div>
@@ -1621,21 +1660,7 @@ export default function App() {
                                           {optionsMap[oid] || oid}
                                         </span>
                                       </div>
-                                      
-                          {/* Nút lật thẻ đáp án cho câu tự luận */}
-                          {currentQ.interaction?.type === 'essay_short_text' && (
-                            <button
-                              id="btn-bottom-essay-toggle"
-                              className="btn-primary"
-                              style={{ background: showEssaySolution[currentQId] ? '#0d9488' : '#0284c7' }}
-                              onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !prev[currentQId] }))}
-                            >
-                              <Eye size={16} />
-                              {showEssaySolution[currentQId] ? 'Đóng lời giải' : 'Xem phân tích lời giải'}
-                            </button>
-                          )}
-
-                          {currentQ.interaction?.type !== 'essay_short_text' && !isChecked && !studyMode && (
+                                      {!isChecked && !studyMode && (
                                         <div style={{ display: 'flex', gap: '4px' }}>
                                           <button 
                                             disabled={idx === 0}
@@ -1839,7 +1864,8 @@ export default function App() {
                               Đã ổn câu này · Bỏ ra
                             </button>
                           )}
-                          {!isChecked && !studyMode && (
+                          {/* Dành cho câu trắc nghiệm / matching / ordering / numeric khi chưa kiểm tra */}
+                          {!isChecked && !studyMode && currentQ.interaction?.type !== 'essay_short_text' && (
                             <>
                               <button 
                                 className="nav-tab-btn"
@@ -1857,6 +1883,19 @@ export default function App() {
                                 Kiểm tra đáp án
                               </button>
                             </>
+                          )}
+
+                          {/* Dành cho câu tự luận ở thanh thao tác Desktop */}
+                          {currentQ.interaction?.type === 'essay_short_text' && (
+                            <button
+                              id="btn-bottom-essay-toggle"
+                              className="btn-primary"
+                              style={{ background: isEssayRevealed ? '#0d9488' : '#0284c7' }}
+                              onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !isEssayRevealed }))}
+                            >
+                              <Eye size={16} />
+                              {isEssayRevealed ? 'Thu gọn Lời giải & Rubric' : 'Xem Lời giải & Rubric'}
+                            </button>
                           )}
 
                           {(isChecked || studyMode || currentQ.interaction?.type === 'essay_short_text') && (
@@ -1923,10 +1962,10 @@ export default function App() {
             {currentQ.interaction?.type === 'essay_short_text' ? (
               <button
                 className="mobile-btn-cta mobile-btn-essay"
-                onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !prev[currentQId] }))}
+                onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !isEssayRevealed }))}
               >
                 <Eye size={17} />
-                <span>{showEssaySolution[currentQId] ? 'Đóng lời giải' : 'Xem lời giải & Rubric'}</span>
+                <span>{isEssayRevealed ? 'Đóng lời giải' : 'Xem lời giải & Rubric'}</span>
               </button>
             ) : !isChecked && !studyMode ? (
               <div className="mobile-cta-dual">

@@ -1,0 +1,1316 @@
+Total questions for Day 12: 73
+
+================================================================================
+Question 1/73 | ID: d12-q002 | Points: 4
+KC: [kc-agent-production-gap] Agent Production Gap
+PROMPT:
+Bối cảnh:
+Instance mới không có `.env` local, session trong memory mất khi restart và health check chỉ kiểm tra process.
+
+Câu hỏi:
+Chẩn đoán ba giả định local sai trong bối cảnh, nêu phép kiểm cho từng giả định, rồi bổ sung phép kiểm concurrency/chi phí trước production.
+HINTS: ['💡 Nối từng dấu hiệu trong bối cảnh với một thay đổi và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nối từng dấu hiệu trong bối cảnh với một thay đổi và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Nối từng dấu hiệu trong bối cảnh với một thay đổi và phép kiểm có thể quan sát.
+
+================================================================================
+Question 2/73 | ID: d12-q004 | Points: 5
+KC: [kc-cloud-resource-layer-mapping] Cloud Resource Layer Mapping
+PROMPT:
+Bối cảnh:
+Agent cần đọc tài liệu private, gọi model provider và mở một public endpoint; worker chưa có identity để truy cập storage.
+
+Câu hỏi:
+Gán từng thành phần và ranh giới tin cậy vào các lớp tài nguyên, rồi tìm dependency còn thiếu.
+HINTS: ['💡 Nối từng thành phần với lớp tài nguyên, rồi kiểm tra identity còn thiếu ở ranh giới nào.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 5 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nối từng thành phần với lớp tài nguyên, rồi kiểm tra identity còn thiếu ở ranh giới nào.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Nối từng thành phần với lớp tài nguyên, rồi kiểm tra identity còn thiếu ở ranh giới nào.
+
+================================================================================
+Question 3/73 | ID: d12-q006 | Points: 4
+KC: [kc-cloud-service-responsibility-model] Cloud Service Responsibility Model
+PROMPT:
+Bối cảnh:
+Một ngân hàng cần cô lập network tùy biến, lịch patch và quyền kiểm soát runtime mức thấp; team có nhân sự platform.
+
+Câu hỏi:
+Chọn service model và phân chia trách nhiệm giữ lại/giao cho provider.
+HINTS: ['💡 Đối chiếu mức kiểm soát cần giữ với phần gánh nặng vận hành có thể giao cho provider.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đối chiếu mức kiểm soát cần giữ với phần gánh nặng vận hành có thể giao cho provider.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đối chiếu mức kiểm soát cần giữ với phần gánh nặng vận hành có thể giao cho provider.
+
+================================================================================
+Question 4/73 | ID: d12-q008 | Points: 4
+KC: [kc-environment-promotion-parity] Environment Promotion Parity
+PROMPT:
+Bối cảnh:
+Image digest D đã pass staging; prod cần scale 10 replicas, credential riêng và database production.
+
+Câu hỏi:
+Thiết kế promotion/rollback để giữ parity nhưng tách config an toàn.
+HINTS: ['💡 Giữ nguyên artifact; chỉ tách config, data và capacity theo environment rồi thử đường rollback.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ nguyên artifact; chỉ tách config, data và capacity theo environment rồi thử đường rollback.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Giữ nguyên artifact; chỉ tách config, data và capacity theo environment rồi thử đường rollback.
+
+================================================================================
+Question 5/73 | ID: d12-q010 | Points: 4
+KC: [kc-twelve-factor-config-port-parity] Twelve Factor Config Port Parity
+PROMPT:
+Bối cảnh:
+Cùng một image phải chạy ở staging với PORT=5000 và mock endpoint, production với PORT=7000 và real endpoint.
+
+Câu hỏi:
+Định nghĩa config contract và phép kiểm parity.
+HINTS: ['💡 Kiểm tra giá trị nào thuộc environment, giá trị nào là secret bắt buộc và image có giữ nguyên không.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kiểm tra giá trị nào thuộc environment, giá trị nào là secret bắt buộc và image có giữ nguyên không.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Kiểm tra giá trị nào thuộc environment, giá trị nào là secret bắt buộc và image có giữ nguyên không.
+
+================================================================================
+Question 6/73 | ID: d12-q012 | Points: 4
+KC: [kc-model-dependency-release-planning] Model Dependency Release Planning
+PROMPT:
+Bối cảnh:
+Traffic là 100 rps; R hiện chỉ được cấp 60 rps; prompt contract chưa được kiểm và M còn 21 ngày.
+
+Câu hỏi:
+Lập lịch chuyển đổi có tính đến capacity, kiểm chứng, chuyển traffic và phương án quay lui.
+HINTS: ['💡 Tính capacity của R trước, rồi kiểm contract, chuyển traffic theo giai đoạn và giữ phương án quay lui cho M.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính capacity của R trước, rồi kiểm contract, chuyển traffic theo giai đoạn và giữ phương án quay lui cho M.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tính capacity của R trước, rồi kiểm contract, chuyển traffic theo giai đoạn và giữ phương án quay lui cho M.
+
+================================================================================
+Question 7/73 | ID: d12-q014 | Points: 4
+KC: [kc-container-artifact-runtime-boundary] Container Artifact Runtime Boundary
+PROMPT:
+Bối cảnh:
+Ứng dụng ghi tệp tải lên vào volume có tên V; image I2 được đẩy lên registry rồi ba container được tạo qua các lần triển khai.
+
+Câu hỏi:
+Theo dõi mã trong artifact, dữ liệu bền vững, địa chỉ service và định danh instance qua việc xóa rồi triển khai lại.
+HINTS: ['💡 Theo dõi riêng mã, dữ liệu, địa chỉ service và instance khi container bị xóa rồi tạo lại.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi riêng mã, dữ liệu, địa chỉ service và instance khi container bị xóa rồi tạo lại.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Theo dõi riêng mã, dữ liệu, địa chỉ service và instance khi container bị xóa rồi tạo lại.
+
+================================================================================
+Question 8/73 | ID: d12-q017 | Points: 4
+KC: [kc-reproducible-container-dependencies] Reproducible Container Dependencies
+PROMPT:
+Bối cảnh:
+Gói native chỉ có wheel cho glibc amd64; môi trường production đích là arm64 Alpine.
+
+Câu hỏi:
+Thiết kế cách xác minh clean build và xử lý tương thích.
+HINTS: ['💡 Kiểm tra architecture và libc trước; sau đó mới pin dependency và build lại từ cache rỗng.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kiểm tra architecture và libc trước; sau đó mới pin dependency và build lại từ cache rỗng.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Kiểm tra architecture và libc trước; sau đó mới pin dependency và build lại từ cache rỗng.
+
+================================================================================
+Question 9/73 | ID: d12-q019 | Points: 4
+KC: [kc-docker-layer-cache-ordering] Docker Layer Cache Ordering
+PROMPT:
+Bối cảnh:
+Repo có manifest dependency đổi hàng tháng và mã nguồn đổi mỗi giờ.
+
+Câu hỏi:
+Sắp xếp layer để thay đổi chỉ ở mã nguồn vẫn tái dùng dependency cache, và nêu khi nào bước cài dependency phải build lại.
+HINTS: ['💡 So sánh file nào đổi với cache key của layer cài dependency.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So sánh file nào đổi với cache key của layer cài dependency.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: So sánh file nào đổi với cache key của layer cài dependency.
+
+================================================================================
+Question 10/73 | ID: d12-q021 | Points: 4
+KC: [kc-multistage-runtime-minimization] Multistage Runtime Minimization
+PROMPT:
+Bối cảnh:
+Builder tạo wheel và asset đã compile; runtime thiếu shared library sẽ crash.
+
+Câu hỏi:
+Thiết kế hai stage và xác minh filesystem cuối.
+HINTS: ['💡 Tách build artifact trước, rồi kiểm tra chính final image có đủ thư viện để khởi động.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách build artifact trước, rồi kiểm tra chính final image có đủ thư viện để khởi động.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách build artifact trước, rồi kiểm tra chính final image có đủ thư viện để khởi động.
+
+================================================================================
+Question 11/73 | ID: d12-q023 | Points: 4
+KC: [kc-container-nonroot-runtime] Container Nonroot Runtime
+PROMPT:
+Bối cảnh:
+Agent chỉ cần ghi `/data/jobs`, không cần bind cổng đặc quyền hay cài package.
+
+Câu hỏi:
+Thiết kế runtime non-root và kiểm thử các thao tác phải bị từ chối.
+HINTS: ['💡 Phân biệt quyền cần cấp cho `/data/jobs` với thao tác phải bị từ chối ở path đặc quyền.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Phân biệt quyền cần cấp cho `/data/jobs` với thao tác phải bị từ chối ở path đặc quyền.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Phân biệt quyền cần cấp cho `/data/jobs` với thao tác phải bị từ chối ở path đặc quyền.
+
+================================================================================
+Question 12/73 | ID: d12-q025 | Points: 4
+KC: [kc-docker-build-context-exclusion] Docker Build Context Exclusion
+PROMPT:
+Bối cảnh:
+Dockerfile COPY `app/` và `requirements.txt`; runtime cần file migration nhưng rule `**/*.sql` đang loại tất cả.
+
+Câu hỏi:
+Thiết kế boundary loại trừ và kiểm thử để chứng minh secret vắng nhưng file bắt buộc còn.
+HINTS: ['💡 Mỗi rule phải trả lời hai việc: secret không vào context và migration vẫn vào final image.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Mỗi rule phải trả lời hai việc: secret không vào context và migration vẫn vào final image.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Mỗi rule phải trả lời hai việc: secret không vào context và migration vẫn vào final image.
+
+================================================================================
+Question 13/73 | ID: d12-q027 | Points: 4
+KC: [kc-image-vulnerability-provenance-release] Image Vulnerability Provenance Release
+PROMPT:
+Bối cảnh:
+Digest D2 có high CVE còn reachable; bản sửa dự kiến sau 5 ngày, business xin exception 48 giờ.
+
+Câu hỏi:
+Nêu quyết định phát hành và bằng chứng/lịch kiểm tra lại cần giữ.
+HINTS: ['💡 Ngoại lệ chỉ có hiệu lực trong thời hạn đã ghi; khóa identity bằng digest và đặt mốc scan lại.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ngoại lệ chỉ có hiệu lực trong thời hạn đã ghi; khóa identity bằng digest và đặt mốc scan lại.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Ngoại lệ chỉ có hiệu lực trong thời hạn đã ghi; khóa identity bằng digest và đặt mốc scan lại.
+
+================================================================================
+Question 14/73 | ID: d12-q029 | Points: 4
+KC: [kc-compose-service-network-and-health] Compose Service Network And Health
+PROMPT:
+Bối cảnh:
+Agent, Redis và proxy phải scale agent lên 3; session phải sống qua việc thay container và proxy chỉ route khi agent ready.
+
+Câu hỏi:
+Sửa contract Compose và nêu cách xác minh.
+HINTS: ['💡 Theo dõi ba ranh giới: service discovery, readiness và state persistence.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi ba ranh giới: service discovery, readiness và state persistence.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Theo dõi ba ranh giới: service discovery, readiness và state persistence.
+
+================================================================================
+Question 15/73 | ID: d12-q031 | Points: 4
+KC: [kc-agent-response-lifecycle-selection] Agent Response Lifecycle Selection
+PROMPT:
+Bối cảnh:
+Một cuộc chat trả token đầu tiên sau 300ms và hoàn tất sau 20 giây; client muốn đọc dần và có thể ngắt kết nối.
+
+Câu hỏi:
+Chọn vòng đời và mô tả hành vi khi ngắt kết nối hoặc khi hoàn tất.
+HINTS: ['💡 Tách ba mốc: token đầu tiên, lúc stream kết thúc và hành vi khi client disconnect.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách ba mốc: token đầu tiên, lúc stream kết thúc và hành vi khi client disconnect.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách ba mốc: token đầu tiên, lúc stream kết thúc và hành vi khi client disconnect.
+
+================================================================================
+Question 16/73 | ID: d12-q033 | Points: 4
+KC: [kc-sse-event-stream-contract] Sse Event Stream Contract
+PROMPT:
+Bối cảnh:
+Cần stream hai chunk `A`, `B` rồi gửi completion kèm usage.
+
+Câu hỏi:
+Thiết kế chuỗi event và bộ kiểm tra.
+HINTS: ['💡 Đếm terminal event và kiểm thứ tự A→B trước khi kiểm completion/usage.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đếm terminal event và kiểm thứ tự A→B trước khi kiểm completion/usage.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đếm terminal event và kiểm thứ tự A→B trước khi kiểm completion/usage.
+
+================================================================================
+Question 17/73 | ID: d12-q036 | Points: 4
+KC: [kc-sse-proxy-reconnect-contract] Sse Proxy Reconnect Contract
+PROMPT:
+Bối cảnh:
+Luồng im lặng 70 giây giữa các chunk; proxy idle timeout 60 giây; client reconnect với `Last-Event-ID`.
+
+Câu hỏi:
+Thiết kế cơ chế gửi dần và reconnect không trùng event.
+HINTS: ['💡 Đầu tiên giữ connection sống dưới 60 giây, sau đó dùng ID để resume đúng điểm mà không phát trùng.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đầu tiên giữ connection sống dưới 60 giây, sau đó dùng ID để resume đúng điểm mà không phát trùng.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đầu tiên giữ connection sống dưới 60 giây, sau đó dùng ID để resume đúng điểm mà không phát trùng.
+
+================================================================================
+Question 18/73 | ID: d12-q038 | Points: 4
+KC: [kc-async-agent-job-lifecycle] Async Agent Job Lifecycle
+PROMPT:
+Bối cảnh:
+Job J đã được nhận; worker crash sau khi chuyển sang running, queue giao lại và cuối cùng job fail terminal.
+
+Câu hỏi:
+Theo dõi state phía client nhìn thấy và xác định trách nhiệm retry.
+HINTS: ['💡 Theo dõi state theo một chiều và tách retry của queue khỏi bảo đảm side effect.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi state theo một chiều và tách retry của queue khỏi bảo đảm side effect.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Theo dõi state theo một chiều và tách retry của queue khỏi bảo đảm side effect.
+
+================================================================================
+Question 19/73 | ID: d12-q040 | Points: 4
+KC: [kc-externalized-agent-state] Externalized Agent State
+PROMPT:
+Bối cảnh:
+Conversation C có messages và workflow status; replica bị thay thế sau mỗi request.
+
+Câu hỏi:
+Thiết kế ranh giới state và kiểm thử khi thay replica.
+HINTS: ['💡 Theo dõi nơi lưu message/status qua lần đổi replica; đừng dùng sticky session làm invariant.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi nơi lưu message/status qua lần đổi replica; đừng dùng sticky session làm invariant.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Theo dõi nơi lưu message/status qua lần đổi replica; đừng dùng sticky session làm invariant.
+
+================================================================================
+Question 20/73 | ID: d12-q042 | Points: 4
+KC: [kc-conversation-state-retention-isolation] Conversation State Retention Isolation
+PROMPT:
+Bối cảnh:
+Policy giữ tối đa 20 message và TTL 24 giờ tính từ activity; hai request cùng conversation đến đồng thời.
+
+Câu hỏi:
+Thiết kế key, thứ tự, giới hạn và kiểm thử isolation.
+HINTS: ['💡 Tách bốn invariant: scope, order, bound và TTL; mỗi invariant cần một phép kiểm riêng.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách bốn invariant: scope, order, bound và TTL; mỗi invariant cần một phép kiểm riêng.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách bốn invariant: scope, order, bound và TTL; mỗi invariant cần một phép kiểm riêng.
+
+================================================================================
+Question 21/73 | ID: d12-q044 | Points: 4
+KC: [kc-agent-io-concurrency-control] Agent Io Concurrency Control
+PROMPT:
+Bối cảnh:
+Provider cho tối đa 20 call đồng thời; 100 request đến theo burst và p95 tăng mạnh.
+
+Câu hỏi:
+Thiết kế worker, concurrency, giới hạn queue và hành vi khi quá tải.
+HINTS: ['💡 Tách giới hạn downstream, queue bound và tín hiệu quan sát; đừng dùng CPU làm tín hiệu duy nhất.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách giới hạn downstream, queue bound và tín hiệu quan sát; đừng dùng CPU làm tín hiệu duy nhất.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách giới hạn downstream, queue bound và tín hiệu quan sát; đừng dùng CPU làm tín hiệu duy nhất.
+
+================================================================================
+Question 22/73 | ID: d12-q046 | Points: 4
+KC: [kc-agent-cold-start-warm-capacity] Agent Cold Start Warm Capacity
+PROMPT:
+Bối cảnh:
+Traffic có burst mỗi giờ, SLO độ trễ là 2 giây; giữ một warm instance là chi phí chấp nhận được, còn scale-to-zero gây 18 giây cho request đầu tiên.
+
+Câu hỏi:
+Biện minh warm capacity và hành vi startup.
+HINTS: ['💡 Cân bằng burst/SLO với chi phí: readiness phải đợi init, còn warm capacity quyết định first-hit latency.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Cân bằng burst/SLO với chi phí: readiness phải đợi init, còn warm capacity quyết định first-hit latency.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Cân bằng burst/SLO với chi phí: readiness phải đợi init, còn warm capacity quyết định first-hit latency.
+
+================================================================================
+Question 23/73 | ID: d12-q048 | Points: 4
+KC: [kc-agent-execution-placement] Agent Execution Placement
+PROMPT:
+Bối cảnh:
+Ứng dụng camera cần độ trễ thấp khi offline; cloud chỉ xử lý aggregate đã loại định danh, còn tool doanh nghiệp cần credential phía server.
+
+Câu hỏi:
+Mô tả vị trí thực thi, ranh giới tin cậy, đường đi dữ liệu, vị trí credential và phương án dự phòng; có thể trả lời bằng sơ đồ chữ hoặc gạch đầu dòng.
+HINTS: ['💡 Vẽ đường đi của raw data, aggregate, user consent và credential; sau đó kiểm fallback offline.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Vẽ đường đi của raw data, aggregate, user consent và credential; sau đó kiểm fallback offline.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Vẽ đường đi của raw data, aggregate, user consent và credential; sau đó kiểm fallback offline.
+
+================================================================================
+Question 24/73 | ID: d12-q050 | Points: 4
+KC: [kc-browser-bff-secret-boundary] Browser Bff Secret Boundary
+PROMPT:
+Bối cảnh:
+SPA cần gọi model; mỗi user có quota và scope khác nhau.
+
+Câu hỏi:
+Thiết kế lại request path qua BFF và kiểm thử boundary.
+HINTS: ['💡 Theo dõi user token đi vào BFF, còn provider key phải ở lại server và không xuất hiện trong bằng chứng.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi user token đi vào BFF, còn provider key phải ở lại server và không xuất hiện trong bằng chứng.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Theo dõi user token đi vào BFF, còn provider key phải ở lại server và không xuất hiện trong bằng chứng.
+
+================================================================================
+Question 25/73 | ID: d12-q053 | Points: 4
+KC: [kc-hybrid-device-cloud-routing] Hybrid Device Cloud Routing
+PROMPT:
+Bối cảnh:
+Thiết bị mất mạng giữa một task đã consent lên cloud; local model chỉ hỗ trợ summary ngắn.
+
+Câu hỏi:
+Thiết kế route, escalation và fallback.
+HINTS: ['💡 Giữ nguyên policy dữ liệu khi offline: chỉ dùng local fallback trong capability đã biết hoặc hỏi/queue lại.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ nguyên policy dữ liệu khi offline: chỉ dùng local fallback trong capability đã biết hoặc hỏi/queue lại.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Giữ nguyên policy dữ liệu khi offline: chỉ dùng local fallback trong capability đã biết hoặc hỏi/queue lại.
+
+================================================================================
+Question 26/73 | ID: d12-q055 | Points: 3
+KC: [kc-cloud-runtime-tier-fit] Cloud Runtime Tier Fit
+PROMPT:
+Bối cảnh:
+Workload HTTP stateless 2 giây, traffic bursty, team nhỏ; pricing và limits có thể thay đổi.
+
+Câu hỏi:
+Chọn runtime tier và ghi các thông tin thực tế cần xác minh.
+HINTS: ['💡 Ghi rõ thông tin thực tế phải kiểm chứng trong ngày quyết định, không dùng bảng giá hay giới hạn cũ.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Ghi rõ thông tin thực tế phải kiểm chứng trong ngày quyết định, không dùng bảng giá hay giới hạn cũ.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Ghi rõ thông tin thực tế phải kiểm chứng trong ngày quyết định, không dùng bảng giá hay giới hạn cũ.
+
+================================================================================
+Question 27/73 | ID: d12-q057 | Points: 4
+KC: [kc-managed-agent-runtime-tradeoff] Managed Agent Runtime Tradeoff
+PROMPT:
+Bối cảnh:
+Doanh nghiệp cần private network, observability tùy chỉnh, portability nghiêm ngặt và có SRE team.
+
+Câu hỏi:
+Chọn managed hay self-deployed và lập bản đồ trách nhiệm cùng điều kiện rời nền tảng.
+HINTS: ['💡 Đối chiếu các ràng buộc compliance/network/staffing với phần trách nhiệm team phải giữ và điều kiện rời mô hình.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đối chiếu các ràng buộc compliance/network/staffing với phần trách nhiệm team phải giữ và điều kiện rời mô hình.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đối chiếu các ràng buộc compliance/network/staffing với phần trách nhiệm team phải giữ và điều kiện rời mô hình.
+
+================================================================================
+Question 28/73 | ID: d12-q059 | Points: 4
+KC: [kc-cloud-service-binding-verification] Cloud Service Binding Verification
+PROMPT:
+Bối cảnh:
+Deployment có DB URL là runtime secret, assigned port, `/health` và API auth.
+
+Câu hỏi:
+Lập chuỗi kiểm chứng với bằng chứng an toàn.
+HINTS: ['💡 Giữ value bí mật ngoài log; lần lượt kiểm config, bind, readiness rồi request public có auth.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Giữ value bí mật ngoài log; lần lượt kiểm config, bind, readiness rồi request public có auth.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Giữ value bí mật ngoài log; lần lượt kiểm config, bind, readiness rồi request public có auth.
+
+================================================================================
+Question 29/73 | ID: d12-q062 | Points: 4
+KC: [kc-remote-mcp-hosting-boundary] Remote Mcp Hosting Boundary
+PROMPT:
+Bối cảnh:
+Cần chia sẻ MCP cho nhiều tenant qua remote HTTP và delegated user access.
+
+Câu hỏi:
+Thiết kế boundary hosting/auth/resource-audience.
+HINTS: ['💡 Tách ba lớp: remote transport, token audience/scope và vòng đời khác với stdio.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách ba lớp: remote transport, token audience/scope và vòng đời khác với stdio.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách ba lớp: remote transport, token audience/scope và vòng đời khác với stdio.
+
+================================================================================
+Question 30/73 | ID: d12-q064 | Points: 4
+KC: [kc-api-gateway-admission-order] Api Gateway Admission Order
+PROMPT:
+Bối cảnh:
+Yêu cầu công khai có thân sai định dạng, thiếu xác thực, đã hết hạn mức hoặc vượt ngân sách; model và tool đều tốn phí.
+
+Câu hỏi:
+Sắp luồng kiểm duyệt và chứng minh mỗi lần từ chối không gọi các bước xử lý phía sau.
+HINTS: ['💡 Nối từng lỗi trong bối cảnh với gate xử lý nó và một dấu vết có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Nối từng lỗi trong bối cảnh với gate xử lý nó và một dấu vết có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Nối từng lỗi trong bối cảnh với gate xử lý nó và một dấu vết có thể quan sát.
+
+================================================================================
+Question 31/73 | ID: d12-q066 | Points: 4
+KC: [kc-auth-pattern-caller-fit] Auth Pattern Caller Fit
+PROMPT:
+Bối cảnh:
+Đối tác B2B gọi thay người dùng; token phải hết hạn và chỉ được dùng cho API có audience A.
+
+Câu hỏi:
+Chọn mẫu xác thực và các claim cần kiểm tra.
+HINTS: ['💡 Tách ba việc: ai cấp token, token dành cho API nào và token còn hạn/quyền gì.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách ba việc: ai cấp token, token dành cho API nào và token còn hạn/quyền gì.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách ba việc: ai cấp token, token dành cho API nào và token còn hạn/quyền gì.
+
+================================================================================
+Question 32/73 | ID: d12-q068 | Points: 4
+KC: [kc-api-key-verification-boundary] Api Key Verification Boundary
+PROMPT:
+Bối cảnh:
+Có hai client key hợp lệ ánh xạ tới hai tenant identity; yêu cầu bị từ chối không được làm tăng mức sử dụng provider.
+
+Câu hỏi:
+Thiết kế verifier và bộ test.
+HINTS: ['💡 Kiểm riêng ba đường đi: key đúng, key sai và không có key; quan sát status cùng provider_calls.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Kiểm riêng ba đường đi: key đúng, key sai và không có key; quan sát status cùng provider_calls.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Kiểm riêng ba đường đi: key đúng, key sai và không có key; quan sát status cùng provider_calls.
+
+================================================================================
+Question 33/73 | ID: d12-q071 | Points: 4
+KC: [kc-rate-limit-policy-selection] Rate Limit Policy Selection
+PROMPT:
+Bối cảnh:
+Các gói Free/Pro cần hạn mức riêng theo route; response phải giúp client retry đúng lúc.
+
+Câu hỏi:
+Thiết kế key, thuật toán và quy ước của 429 trong policy.
+HINTS: ['💡 Tách policy thành ba phần: khóa đếm, tham số thuật toán và thông tin trả về khi bị giới hạn.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách policy thành ba phần: khóa đếm, tham số thuật toán và thông tin trả về khi bị giới hạn.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách policy thành ba phần: khóa đếm, tham số thuật toán và thông tin trả về khi bị giới hạn.
+
+================================================================================
+Question 34/73 | ID: d12-q073 | Points: 4
+KC: [kc-sliding-window-rate-limiter] Sliding Window Rate Limiter
+PROMPT:
+Bối cảnh:
+Limiter theo identity có limit 3/60s. Hai yêu cầu đồng thời có cùng timestamp, nhưng member chỉ là chuỗi timestamp nên một entry bị ghi đè.
+
+Câu hỏi:
+Sửa thao tác và kiểm tra boundary/isolation.
+HINTS: ['💡 Tìm hai rủi ro riêng: ghi đè do member trùng và race condition giữa các bước đếm–thêm.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm hai rủi ro riêng: ghi đè do member trùng và race condition giữa các bước đếm–thêm.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tìm hai rủi ro riêng: ghi đè do member trùng và race condition giữa các bước đếm–thêm.
+
+================================================================================
+Question 35/73 | ID: d12-q075 | Points: 4
+KC: [kc-precall-cost-estimation] Precall Cost Estimation
+PROMPT:
+Bối cảnh:
+Trần chi phí của yêu cầu là 0,004 USD; ước tính từ tokenizer là 0,006 USD trước khi gọi model.
+
+Câu hỏi:
+Nêu quyết định và bằng chứng/giới hạn làm căn cứ.
+HINTS: ['💡 So sánh chi phí tối đa ước tính với trần trước khi nghĩ đến chi phí thực tế.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So sánh chi phí tối đa ước tính với trần trước khi nghĩ đến chi phí thực tế.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: So sánh chi phí tối đa ước tính với trần trước khi nghĩ đến chi phí thực tế.
+
+================================================================================
+Question 36/73 | ID: d12-q077 | Points: 4
+KC: [kc-tenant-budget-accounting] Tenant Budget Accounting
+PROMPT:
+Bối cảnh:
+Tenant A được cho qua với chi phí ước tính 1 USD nhưng thực tế là 0,7 USD; tenant B có sổ chi tiêu riêng; sang tháng mới có khóa kỳ khác.
+
+Câu hỏi:
+Thiết kế việc ghi sổ và chuyển kỳ.
+HINTS: ['💡 Tách ba thời điểm: reserve khi admission, đối soát khi có chi phí thực tế và tạo bucket khi sang kỳ mới.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách ba thời điểm: reserve khi admission, đối soát khi có chi phí thực tế và tạo bucket khi sang kỳ mới.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách ba thời điểm: reserve khi admission, đối soát khi có chi phí thực tế và tạo bucket khi sang kỳ mới.
+
+================================================================================
+Question 37/73 | ID: d12-q079 | Points: 4
+KC: [kc-deployment-secret-lifecycle] Deployment Secret Lifecycle
+PROMPT:
+Bối cảnh:
+API key xuất hiện trong git history và log CI, đồng thời có phạm vi quyền rộng; nhiều consumer production đang dùng key này.
+
+Câu hỏi:
+Sắp quy trình ứng phó sự cố và bước xác minh.
+HINTS: ['💡 Tách containment/revoke khỏi cleanup: dọn git history không tự vô hiệu key đã lộ.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách containment/revoke khỏi cleanup: dọn git history không tự vô hiệu key đã lộ.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách containment/revoke khỏi cleanup: dọn git history không tự vô hiệu key đã lộ.
+
+================================================================================
+Question 38/73 | ID: d12-q081 | Points: 5
+KC: [kc-https-cors-auth-boundary] Https Cors Auth Boundary
+PROMPT:
+Bối cảnh:
+Yêu cầu từ trình duyệt có origin đúng, TLS hợp lệ và JWT hợp lệ nhưng thiếu scope `write`.
+
+Câu hỏi:
+Dự đoán kết quả của từng cơ chế kiểm soát.
+HINTS: ['💡 Đánh giá lần lượt kênh truyền, origin, identity của token rồi mới kiểm scope của thao tác.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 5 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đánh giá lần lượt kênh truyền, origin, identity của token rồi mới kiểm scope của thao tác.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đánh giá lần lượt kênh truyền, origin, identity của token rồi mới kiểm scope của thao tác.
+
+================================================================================
+Question 39/73 | ID: d12-q083 | Points: 4
+KC: [kc-vertical-horizontal-scaling-decision] Vertical Horizontal Scaling Decision
+PROMPT:
+Bối cảnh:
+Một yêu cầu đơn lẻ cần 20GB RAM và không thể chia nhỏ để chạy song song; lưu lượng thấp.
+
+Câu hỏi:
+Chọn chiều mở rộng, nêu giới hạn mới và cách xử lý nếu yêu cầu vượt trần tài nguyên.
+HINTS: ['💡 Hỏi yêu cầu có chia nhỏ được không; nếu không, replica mới không giúp yêu cầu đó dùng ít RAM hơn.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Hỏi yêu cầu có chia nhỏ được không; nếu không, replica mới không giúp yêu cầu đó dùng ít RAM hơn.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Hỏi yêu cầu có chia nhỏ được không; nếu không, replica mới không giúp yêu cầu đó dùng ít RAM hơn.
+
+================================================================================
+Question 40/73 | ID: d12-q085 | Points: 3
+KC: [kc-load-balancing-policy-selection] Load Balancing Policy Selection
+PROMPT:
+Bối cảnh:
+Trạng thái session legacy chưa được externalize; rollout sẽ thay replica trong khi stream vẫn dài.
+
+Câu hỏi:
+Chọn policy tạm thời và dự đoán lỗi/thay thế.
+HINTS: ['💡 Tách giải pháp tạm thời cho trạng thái session khỏi đích đến stateless có thể thay replica.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách giải pháp tạm thời cho trạng thái session khỏi đích đến stateless có thể thay replica.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách giải pháp tạm thời cho trạng thái session khỏi đích đến stateless có thể thay replica.
+
+================================================================================
+Question 41/73 | ID: d12-q087 | Points: 4
+KC: [kc-concurrency-queue-autoscaling] Concurrency Queue Autoscaling
+PROMPT:
+Bối cảnh:
+Queue tăng nhưng quota provider đã chạm 200 cuộc gọi; tiếp tục scale replica chỉ làm 429 nhiều hơn.
+
+Câu hỏi:
+Thiết kế policy mở rộng và cách xử lý khi quota bị giới hạn.
+HINTS: ['💡 Phân biệt tín hiệu khiến mở rộng với trần quota khiến phải backpressure hoặc degrade.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Phân biệt tín hiệu khiến mở rộng với trần quota khiến phải backpressure hoặc degrade.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Phân biệt tín hiệu khiến mở rộng với trần quota khiến phải backpressure hoặc degrade.
+
+================================================================================
+Question 42/73 | ID: d12-q090 | Points: 4
+KC: [kc-liveness-readiness-startup] Liveness Readiness Startup
+PROMPT:
+Bối cảnh:
+App đã từng ready nhưng sau đó bị deadlock; DB là dependency bắt buộc và tạm thời không khả dụng; metrics exporter là dependency tùy chọn, có thể chạy ở degraded mode.
+
+Câu hỏi:
+Thiết kế ba probe và dự đoán orchestrator sẽ xử lý thế nào.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 43/73 | ID: d12-q093 | Points: 5
+KC: [kc-graceful-shutdown-signal-handoff] Graceful Shutdown Signal Handoff
+PROMPT:
+Bối cảnh:
+Có request mới đến sau khi nhận tín hiệu termination; một request đang chạy vượt quá thời hạn grace.
+
+Câu hỏi:
+Mô tả thứ tự shutdown và kết quả xử lý của từng request.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 5 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 44/73 | ID: d12-q095 | Points: 5
+KC: [kc-zero-downtime-rollout-sequencing] Zero Downtime Rollout Sequencing
+PROMPT:
+Bối cảnh:
+Schema tương thích ngược, tài nguyên đủ để chạy song song hai phiên bản và rủi ro phát hành cao.
+
+Câu hỏi:
+Chọn chiến lược rollout và thứ tự các gate/rollback.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 5 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 45/73 | ID: d12-q097 | Points: 5
+KC: [kc-circuit-breaker-state-control] Circuit Breaker State Control
+PROMPT:
+Bối cảnh:
+Breaker ở Closed đã ghi nhận đủ threshold lỗi dependency và chuyển sang Open; các request trong Open bị fail fast. Cooldown hết, Half-open cho một probe; probe thành công rồi request sau đến.
+
+Câu hỏi:
+Theo dõi chuyển trạng thái và các call được thực thi hay bị chặn.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 5 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 46/73 | ID: d12-q099 | Points: 4
+KC: [kc-bounded-backoff-retry] Bounded Backoff Retry
+PROMPT:
+Bối cảnh:
+Một dependency được gọi bằng GET trả 429 kèm Retry-After=5; còn 12 giây trước deadline và tối đa 3 attempt. Attempt 1 vừa thất bại.
+
+Câu hỏi:
+Nêu delay và attempt tiếp theo, cùng cách kết thúc khi hết thời gian hoặc số lần thử.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 47/73 | ID: d12-q102 | Points: 4
+KC: [kc-timeout-bulkhead-isolation] Timeout Bulkhead Isolation
+PROMPT:
+Bối cảnh:
+Đồ thị gọi có model, search và payment với latency budget khác nhau.
+
+Câu hỏi:
+Thiết kế timeout/bulkhead và dự đoán workload nào vẫn phục vụ được.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 48/73 | ID: d12-q104 | Points: 4
+KC: [kc-sli-slo-sla-error-budget] Sli Slo Sla Error Budget
+PROMPT:
+Bối cảnh:
+Trong 10.000 request đủ điều kiện, 9.950 đạt latency ≤2s. SLA cam kết 99,0% với mức phạt, dùng cùng cách tính SLI và cùng cửa sổ đo; SLO nội bộ là 99,7% trong cửa sổ đó.
+
+Câu hỏi:
+Phân biệt mục tiêu nội bộ với cam kết bên ngoài và tính trạng thái error budget.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 49/73 | ID: d12-q107 | Points: 4
+KC: [kc-controlled-chaos-experiment] Controlled Chaos Experiment
+PROMPT:
+Bối cảnh:
+Nhận định: search chậm không được khiến payment ngừng phục vụ.
+
+Câu hỏi:
+Thiết kế một chaos experiment có kiểm soát để kiểm tra nhận định này.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 50/73 | ID: d12-q109 | Points: 4
+KC: [kc-structured-request-observability] Structured Request Observability
+PROMPT:
+Bối cảnh:
+Một request đi gateway→agent→model→tool và thất bại 502.
+
+Câu hỏi:
+Thiết kế event schema và phép query metric.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 51/73 | ID: d12-q111 | Points: 4
+KC: [kc-ci-cd-release-stage-distinction] Ci Cd Release Stage Distinction
+PROMPT:
+Bối cảnh:
+Pull request đạt test, merge vào main tạo digest D; staging/production có các gate phê duyệt khác nhau.
+
+Câu hỏi:
+Gắn nhãn stage và mô tả đường promotion.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 52/73 | ID: d12-q113 | Points: 5
+KC: [kc-ci-job-dependency-gating] Ci Job Dependency Gating
+PROMPT:
+Bối cảnh:
+Build cần lint+test; deploy chỉ chạy trên main với trusted event và pinned actions.
+
+Câu hỏi:
+Dựng DAG và các đường đi khi có lỗi.
+HINTS: ['💡 Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 5 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện trong bối cảnh rồi nối nó với một quyết định và phép kiểm có thể quan sát.
+
+================================================================================
+Question 53/73 | ID: d12-q115 | Points: 4
+KC: [kc-clean-build-test-selection] Clean Build Test Selection
+PROMPT:
+Bối cảnh:
+Danh sách kiểm tra gồm: unit test dùng mock; build container; smoke test trên public URL; và một test kiểm badge/trạng thái của chính workflow khi workflow còn chưa hoàn tất.
+
+Câu hỏi:
+Xếp từng bài kiểm tra vào đúng giai đoạn và nêu cách sửa bài kiểm tra tự tham chiếu.
+HINTS: ['💡 Đọc từng điều kiện rồi nối nó với giai đoạn chạy và phép kiểm có thể quan sát.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc từng điều kiện rồi nối nó với giai đoạn chạy và phép kiểm có thể quan sát.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc từng điều kiện rồi nối nó với giai đoạn chạy và phép kiểm có thể quan sát.
+
+================================================================================
+Question 54/73 | ID: d12-q117 | Points: 4
+KC: [kc-postdeploy-smoke-traceability] Postdeploy Smoke Traceability
+PROMPT:
+Bối cảnh:
+Rollout D7 đã hoàn tất; `/version` trả digest D7, `/health` đạt, nhưng request tối thiểu có xác thực trả 500.
+
+Câu hỏi:
+Quyết định giữ hay rollback release, và ghi lại bằng chứng thế nào?
+HINTS: ['💡 Đọc cả ba tín hiệu: định danh, health và đường chức năng có xác thực; đừng kết luận từ một tín hiệu.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đọc cả ba tín hiệu: định danh, health và đường chức năng có xác thực; đừng kết luận từ một tín hiệu.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đọc cả ba tín hiệu: định danh, health và đường chức năng có xác thực; đừng kết luận từ một tín hiệu.
+
+================================================================================
+Question 55/73 | ID: d12-q119 | Points: 4
+KC: [kc-llm-gateway-failover-routing] Llm Gateway Failover Routing
+PROMPT:
+Bối cảnh:
+Primary bị rate limit; F1 đang hoạt động nhưng data region không được phép; F2 tương thích nhưng budget cap đã hết.
+
+Câu hỏi:
+Tính chuỗi route/failover và kết quả khi không còn route hợp lệ.
+HINTS: ['💡 Lọc từng ứng viên theo policy trước; chỉ sau đó mới xét health hoặc chi phí.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Lọc từng ứng viên theo policy trước; chỉ sau đó mới xét health hoặc chi phí.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Lọc từng ứng viên theo policy trước; chỉ sau đó mới xét health hoặc chi phí.
+
+================================================================================
+Question 56/73 | ID: d12-q121 | Points: 4
+KC: [kc-prompt-semantic-cache-validity] Prompt Semantic Cache Validity
+PROMPT:
+Bối cảnh:
+Entry được tạo với source v3; source lên v4 và policy prompt đổi; query có ý nghĩa gần giống.
+
+Câu hỏi:
+Phân loại hit/miss và quyết định invalidation.
+HINTS: ['💡 So sánh version của model, prompt và source trước khi xét độ tương đồng của query.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So sánh version của model, prompt và source trước khi xét độ tương đồng của query.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: So sánh version của model, prompt và source trước khi xét độ tương đồng của query.
+
+================================================================================
+Question 57/73 | ID: d12-q124 | Points: 4
+KC: [kc-continuous-batching-utilization] Continuous Batching Utilization
+PROMPT:
+Bối cảnh:
+Request A, B, C có độ dài output lần lượt là 2/10/3 token; slot của A rỗng sau bước 2.
+
+Câu hỏi:
+So sánh lịch của static batching và continuous batching.
+HINTS: ['💡 Theo dõi thời điểm slot A rảnh và thời điểm request C được nhận vào.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Theo dõi thời điểm slot A rảnh và thời điểm request C được nhận vào.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Theo dõi thời điểm slot A rảnh và thời điểm request C được nhận vào.
+
+================================================================================
+Question 58/73 | ID: d12-q126 | Points: 4
+KC: [kc-paged-kv-cache-memory] Paged Kv Cache Memory
+PROMPT:
+Bối cảnh:
+GPU có ngân sách 160 KV token slot, block 16; có năm sequence, mỗi sequence dài 17 token.
+
+Câu hỏi:
+Tính ảnh hưởng lên capacity.
+HINTS: ['💡 Tính số block cần cho một sequence trước, rồi nhân với năm.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tính số block cần cho một sequence trước, rồi nhân với năm.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tính số block cần cho một sequence trước, rồi nhân với năm.
+
+================================================================================
+Question 59/73 | ID: d12-q128 | Points: 4
+KC: [kc-speculative-decoding-verification] Speculative Decoding Verification
+PROMPT:
+Bối cảnh:
+Draft model chậm gần bằng target và tỷ lệ proposal được chấp nhận thấp.
+
+Câu hỏi:
+So sánh work/latency của speculative decoding với decoding thông thường trong điều kiện này.
+HINTS: ['💡 So sánh chi phí draft và kiểm chứng với số proposal thực sự được chấp nhận.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: So sánh chi phí draft và kiểm chứng với số proposal thực sự được chấp nhận.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: So sánh chi phí draft và kiểm chứng với số proposal thực sự được chấp nhận.
+
+================================================================================
+Question 60/73 | ID: d12-q130 | Points: 4
+KC: [kc-disaggregated-prefill-decode] Disaggregated Prefill Decode
+PROMPT:
+Bối cảnh:
+Một workload khác có prompt 20 token và output 5k token; KV transfer latency là 200ms và network không ổn định.
+
+Câu hỏi:
+Đánh giá placement và bottleneck, rồi quyết định có nên disaggregate không.
+HINTS: ['💡 Đặt độ dài output cạnh bottleneck decode và chi phí KV transfer trước khi chọn placement.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đặt độ dài output cạnh bottleneck decode và chi phí KV transfer trước khi chọn placement.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đặt độ dài output cạnh bottleneck decode và chi phí KV transfer trước khi chọn placement.
+
+================================================================================
+Question 61/73 | ID: d12-q132 | Points: 4
+KC: [kc-agent-sideeffect-retry-ambiguity] Agent Sideeffect Retry Ambiguity
+PROMPT:
+Bối cảnh:
+Timeline A timeout trước khi connect; B provider trả receipt; C timeout sau thời điểm commit không rõ.
+
+Câu hỏi:
+Phân loại completion và đánh giá retry safety.
+HINTS: ['💡 Phân biệt timeout trước connect với timeout sau khi request đã được gửi.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Phân biệt timeout trước connect với timeout sau khi request đã được gửi.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Phân biệt timeout trước connect với timeout sau khi request đã được gửi.
+
+================================================================================
+Question 62/73 | ID: d12-q135 | Points: 4
+KC: [kc-stable-intent-idempotency] Stable Intent Idempotency
+PROMPT:
+Bối cảnh:
+Ba attempt cùng intent và key K; attempt đầu tạo effect/result một cách atomic nhưng mất response, rồi các attempt tiếp theo đến.
+
+Câu hỏi:
+Theo dõi lần thực thi và replay.
+HINTS: ['💡 Tách attempt đầu tạo record khỏi các attempt chỉ replay record đó.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách attempt đầu tạo record khỏi các attempt chỉ replay record đó.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách attempt đầu tạo record khỏi các attempt chỉ replay record đó.
+
+================================================================================
+Question 63/73 | ID: d12-q137 | Points: 4
+KC: [kc-agent-semantic-intent-deduplication] Agent Semantic Intent Deduplication
+PROMPT:
+Bối cảnh:
+Bốn request cùng order O7: R1 “hoàn tiền toàn bộ”; R2 “hoàn toàn bộ đơn” với cùng authority; R3 “hoàn tiền 20%”; R4 chỉ ghi “hoàn tiền như cũ” nhưng không có intent trước đó đã được xác nhận.
+
+Câu hỏi:
+Phân loại R1–R4 thành cùng intent, intent khác hoặc chưa xác định; sau đó chọn cách dùng identity.
+HINTS: ['💡 Xác minh authority và business identifier trước khi gộp hai request.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Xác minh authority và business identifier trước khi gộp hai request.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Xác minh authority và business identifier trước khi gộp hai request.
+
+================================================================================
+Question 64/73 | ID: d12-q139 | Points: 4
+KC: [kc-durable-agent-replay] Durable Agent Replay
+PROMPT:
+Bối cảnh:
+Process crash xảy ra trước khi tool T commit vào journal, nhưng provider có thể đã trả kết quả.
+
+Câu hỏi:
+Theo dõi phần việc đã ghi/chưa ghi và external effect.
+HINTS: ['💡 Phân biệt record đã commit với call đã gửi nhưng chưa được journal ghi nhận.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Phân biệt record đã commit với call đã gửi nhưng chưa được journal ghi nhận.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Phân biệt record đã commit với call đã gửi nhưng chưa được journal ghi nhận.
+
+================================================================================
+Question 65/73 | ID: d12-q141 | Points: 4
+KC: [kc-checkpoint-replay-boundary] Checkpoint Replay Boundary
+PROMPT:
+Bối cảnh:
+Workflow có node A đã checkpoint; node B có hai call bên trong và crash sau call đầu.
+
+Câu hỏi:
+So sánh node checkpoint với call-level journal.
+HINTS: ['💡 Đếm granularity của record: node hay từng call bên trong node.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Đếm granularity của record: node hay từng call bên trong node.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Đếm granularity của record: node hay từng call bên trong node.
+
+================================================================================
+Question 66/73 | ID: d12-q143 | Points: 4
+KC: [kc-saga-compensation-design] Saga Compensation Design
+PROMPT:
+Bối cảnh:
+Trip workflow đặt chuyến bay → đặt khách sạn → mua vé sự kiện không hoàn tiền; khách sạn lỗi trước khi mua vé.
+
+Câu hỏi:
+Lập saga và xác định irreversible pivot.
+HINTS: ['💡 Tìm inverse của từng bước và đặt bước không thể hoàn tác ở cuối.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tìm inverse của từng bước và đặt bước không thể hoàn tác ở cuối.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tìm inverse của từng bước và đặt bước không thể hoàn tác ở cuối.
+
+================================================================================
+Question 67/73 | ID: d12-q145 | Points: 4
+KC: [kc-irreversible-pivot-approval-placement] Irreversible Pivot Approval Placement
+PROMPT:
+Bối cảnh:
+Plan tạo report, reserve resource, publish public và cleanup.
+
+Câu hỏi:
+Sắp xếp lại thứ tự và đặt cổng duyệt cho pivot.
+HINTS: ['💡 Phân biệt bước chuẩn bị có thể bù trừ với lệnh public publish không thể thu hồi.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Phân biệt bước chuẩn bị có thể bù trừ với lệnh public publish không thể thu hồi.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Phân biệt bước chuẩn bị có thể bù trừ với lệnh public publish không thể thu hồi.
+
+================================================================================
+Question 68/73 | ID: d12-q147 | Points: 4
+KC: [kc-durable-wait-validity-recheck] Durable Wait Validity Recheck
+PROMPT:
+Bối cảnh:
+Token hết hạn, inventory đã đổi và approver đã duyệt amount cũ.
+
+Câu hỏi:
+Chọn path resume, reapprove, re-plan hoặc cancel.
+HINTS: ['💡 Tách dữ liệu đã lưu trong journal khỏi các điều kiện có thể đã hết hạn bên ngoài.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách dữ liệu đã lưu trong journal khỏi các điều kiện có thể đã hết hạn bên ngoài.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách dữ liệu đã lưu trong journal khỏi các điều kiện có thể đã hết hạn bên ngoài.
+
+================================================================================
+Question 69/73 | ID: d12-q149 | Points: 4
+KC: [kc-egress-exfiltration-condition-model] Egress Exfiltration Condition Model
+PROMPT:
+Bối cảnh:
+Architecture vẫn cần private DB và email, nhưng job này không cần outbound.
+
+Câu hỏi:
+Chọn biện pháp kiểm soát phá path với mức mất chức năng nhỏ.
+HINTS: ['💡 Chọn edge có thể bỏ mà không làm mất tra cứu riêng tư và email cần thiết.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Chọn edge có thể bỏ mà không làm mất tra cứu riêng tư và email cần thiết.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Chọn edge có thể bỏ mà không làm mất tra cứu riêng tư và email cần thiết.
+
+================================================================================
+Question 70/73 | ID: d12-q151 | Points: 4
+KC: [kc-trusted-channel-egress-limitation] Trusted Channel Egress Limitation
+PROMPT:
+Bối cảnh:
+Provider proxy là allowed channel để user nhận rendered content có thể chứa secret.
+
+Câu hỏi:
+Bổ sung cơ chế kiểm soát mà không bỏ channel.
+HINTS: ['💡 Bổ sung cơ chế ở payload, rendered output và tool boundary; đừng bỏ qua content.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Bổ sung cơ chế ở payload, rendered output và tool boundary; đừng bỏ qua content.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Bổ sung cơ chế ở payload, rendered output và tool boundary; đừng bỏ qua content.
+
+================================================================================
+Question 71/73 | ID: d12-q154 | Points: 4
+KC: [kc-sandbox-isolation-strength-tradeoff] Sandbox Isolation Strength Tradeoff
+PROMPT:
+Bối cảnh:
+Expression evaluator rủi ro thấp cần dưới 10ms, không được truy cập file/network và có grammar ngôn ngữ hẹp.
+
+Câu hỏi:
+Chọn isolation và nêu residual boundary.
+HINTS: ['💡 Bắt đầu từ risk thấp, grammar hẹp và deny file/network rồi mới cân nhắc startup.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Bắt đầu từ risk thấp, grammar hẹp và deny file/network rồi mới cân nhắc startup.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Bắt đầu từ risk thấp, grammar hẹp và deny file/network rồi mới cân nhắc startup.
+
+================================================================================
+Question 72/73 | ID: d12-q156 | Points: 4
+KC: [kc-failclosed-sandbox-policy] Failclosed Sandbox Policy
+PROMPT:
+Bối cảnh:
+Test có config empty, missing, invalid JSON và config populated cho `/tmp`.
+
+Câu hỏi:
+Sửa decision table cho restrictive policy.
+HINTS: ['💡 Tách ba trạng thái lỗi/empty khỏi nhánh populated được phép truy cập.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 4 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Tách ba trạng thái lỗi/empty khỏi nhánh populated được phép truy cập.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Tách ba trạng thái lỗi/empty khỏi nhánh populated được phép truy cập.
+
+================================================================================
+Question 73/73 | ID: d12-q159 | Points: 3
+KC: [kc-per-agent-shortlived-identity] Per Agent Shortlived Identity
+PROMPT:
+Bối cảnh:
+Task T chỉ đọc bucket B trong 5 phút; token lại có audience billing và quyền write-all.
+
+Câu hỏi:
+Thiết kế identity và rejection test.
+HINTS: ['💡 Thu hẹp subject, scope, audience và lifetime đúng theo task T.']
+CURRENT_RUBRIC:
+👉 Tiêu chí chấm (Rubric 3 điểm):
+- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
+- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
+- Gợi ý cốt lõi: Thu hẹp subject, scope, audience và lifetime đúng theo task T.
+CURRENT_EXPLANATION:
+Phân tích theo nguyên lý thiết kế: Thu hẹp subject, scope, audience và lifetime đúng theo task T.
+

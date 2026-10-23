@@ -457,10 +457,14 @@ def run_all_sync() -> None:
     sync_txt_files(audit_map)
     sync_master_excel(audit_map)
     sync_quizizz_workbooks(audit_map)
-    repack_and_mirror_zip()
+    try:
+        from scripts.sync_essay_quizzes import run_essay_sync
+        run_essay_sync()
+    except Exception as e:
+        print(f"Essay sync note: {e}")
 
     print("================================================================")
-    print("Synchronization Complete: All 7 Targets Successfully Synchronized!")
+    print("Synchronization Complete: All Targets Successfully Synchronized!")
     print("================================================================")
 
 

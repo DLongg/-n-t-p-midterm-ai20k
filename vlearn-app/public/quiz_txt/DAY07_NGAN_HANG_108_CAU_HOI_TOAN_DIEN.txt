@@ -63,12 +63,23 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một nguồn là kho tri thức; nguồn kia là trạng thái vận hành.
+- [Phân loại & Phương thức] (1.5 điểm): Xác định đúng RAG qua Vector DB cho chính sách tĩnh và Tool Calling/API cho số dư ngày phép thời gian thực.
+- [Bản chất dữ liệu & Bất tương thích] (1.5 điểm): Phân tích sâu sắc sự khác biệt giữa tri thức phi cấu trúc (semantic search, trích dẫn) và dữ liệu trạng thái giao dịch (ACID, biến động cao, nguy cơ stale/hallucination khi index vào Vector DB).
+- [Trích dẫn & Kiểm soát an toàn] (1.0 điểm): Nêu rõ cơ chế trích dẫn nguồn cho chính sách và xác thực danh tính bảo mật khi gọi API dữ liệu cá nhân.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một nguồn là kho tri thức; nguồn kia là trạng thái vận hành.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Lựa chọn phương thức cung cấp dữ liệu cho từng nguồn:
+  - Kho chính sách nội bộ (đổi hàng tháng): Sử dụng RAG Pipeline (Retrieval-Augmented Generation) với cơ sở dữ liệu vector (Vector DB). Tài liệu chính sách được trích xuất văn bản, phân đoạn (chunking), gắn metadata phân loại, sinh vector embeddings và lập chỉ mục. Khi người dùng truy vấn, hệ thống tìm kiếm các đoạn văn bản tương đồng cao nhất để đưa vào ngữ cảnh (context) kèm theo trích dẫn (citations) nguồn.
+  - Số dư ngày phép còn lại (đổi thời gian thực theo từng giao dịch): Sử dụng cơ chế Gọi công cụ/Hàm (Tool Calling / Function Calling) kết nối trực tiếp đến API của hệ thống Quản lý nhân sự (HRIS / Core ERP Database) thông qua REST/gRPC endpoint có định danh người dùng và xác thực bảo mật.
+  2. Lý do không thể dùng một phương thức duy nhất:
+  Hai nguồn dữ liệu mang đặc tính và yêu cầu vận hành hoàn toàn trái ngược nhau. Chính sách nội bộ là tri thức phi cấu trúc, tĩnh trong chu kỳ dài (hàng tháng), đòi hỏi khả năng tìm kiếm ngữ nghĩa (semantic search) và trích dẫn nguyên văn điều khoản; nếu lưu trong bảng quan hệ cứng nhắc sẽ rất khó truy vấn tự nhiên. Ngược lại, số dư ngày phép là trạng thái vận hành thời gian thực (operational state), có tính biến động cao sau từng giao dịch và đòi hỏi tính toàn vẹn, chính xác tuyệt đối (ACID). Nếu đưa số dư ngày phép vào Vector DB, dữ liệu sẽ liên tục bị lỗi thời (stale), tốn chi phí re-indexing khổng lồ và đối mặt nguy cơ mô hình ngôn ngữ ảo giác (hallucination) về số ngày phép của nhân viên.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong kiến trúc ứng dụng AI doanh nghiệp, nguyên lý phân tách nguồn dữ liệu chỉ rõ sự khác biệt giữa 'Kho tri thức' (Knowledge Base) và 'Trạng thái vận hành thời gian thực' (Operational State). Kho tri thức phi cấu trúc phù hợp với RAG Pipeline vì dữ liệu ổn định và cần trích dẫn ngữ cảnh. Trạng thái vận hành đòi hỏi tính nhất quán giao dịch và dữ liệu mới nhất (freshness) từng giây, bắt buộc phải truy xuất qua Transactional API / Tool Calling để triệt tiêu nguy cơ stale index và ảo giác dữ liệu.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  OpenAI Documentation: 'Function Calling and Retrieval in Enterprise Architectures' (https://platform.openai.com/docs/guides/function-calling)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một nguồn là kho tri thức; nguồn kia là trạng thái vận hành.
 
@@ -118,12 +129,22 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Hỏi trạng thái của ai/cái gì và nó thay đổi khi nào.
+- [Phân loại chính xác 3 trường] (1.5 điểm): Phân loại đúng course_policy là tri thức tĩnh, seat_remaining là trạng thái vận hành thời gian thực, student_language là trạng thái phiên tạm thời.
+- [Bên phụ trách & Nhịp cập nhật] (1.5 điểm): Xác định đúng chủ thể quản lý và nhịp độ thay đổi (học kỳ vs mili-giây giao dịch vs theo phiên).
+- [Phương thức truy cập kỹ thuật] (1.0 điểm): Đề xuất đúng kênh truy xuất: Vector DB RAG, Transactional API/SQL, và Session Context Injection.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hỏi trạng thái của ai/cái gì và nó thay đổi khi nào.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Phân loại 3 trường dữ liệu:
+  - `course_policy`: Dữ liệu tri thức tham chiếu / Chính sách đào tạo tĩnh (Static Reference Knowledge). Phụ trách bởi: Phòng Đào tạo (Academic Affairs). Nhịp cập nhật: Theo học kỳ hoặc chu kỳ năm học (tần suất rất thấp, hàng quý/năm). Cách truy cập phù hợp: Lưu trữ trong Document/Vector Store và truy xuất qua RAG với bộ lọc metadata.
+  - `seat_remaining`: Dữ liệu trạng thái vận hành thời gian thực (Real-time Operational State). Phụ trách bởi: Hệ thống Quản lý Đào tạo / Đăng ký tín chỉ (Core SIS/LMS Database). Nhịp cập nhật: Theo từng giao dịch đặt/hủy chỗ của sinh viên (liên tục từng giây/mili-giây). Cách truy cập phù hợp: Gọi Tool/API trực tiếp đến dịch vụ kiểm tra chỗ hoặc truy vấn Redis/SQL với cơ chế khóa dữ liệu (locking/optimistic concurrency).
+  - `student_language`: Dữ liệu trạng thái phiên tương tác người dùng (Session / Ephemeral Context State). Phụ trách bởi: Client / Web UI Frontend hoặc Session Manager. Nhịp cập nhật: Theo phiên làm việc hiện tại của người học (tồn tại tạm thời trong phiên chat, không lưu lâu dài). Cách truy cập phù hợp: Tiêm trực tiếp vào system prompt/ngữ cảnh hội thoại (Context Injection) trong payload gửi tới LLM.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Hệ thống thông tin phân tán cần phân định ranh giới ngữ nghĩa truy cập dữ liệu (Access Semantics). Dữ liệu tham chiếu chu kỳ dài (course_policy) thuộc về hệ thống tri thức. Dữ liệu tài nguyên có thể cạnh tranh (seat_remaining) thuộc về hệ thống giao dịch thời gian thực. Trạng thái phiên cục bộ (student_language) thuộc về ngữ cảnh runtime, không làm biến đổi cơ sở dữ liệu backend.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Google Cloud Architecture Framework: 'Data Categorization and Access Semantics' (https://cloud.google.com/architecture/framework/system-design)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hỏi trạng thái của ai/cái gì và nó thay đổi khi nào.
 
@@ -207,12 +228,23 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Mục tiêu chỉ là so sánh nhóm chương trình và loại vấn đề, không phải theo dõi một người hay một ca hỗ trợ.
+- [Loại bỏ PII & Dữ liệu nhạy cảm] (1.5 điểm): Chỉ rõ việc xóa advisor_name, student_email, support_case_id và giải thích căn cứ không cần liên kết ca/người học.
+- [Tái cấu trúc & Làm giàu ngữ cảnh] (1.5 điểm): Thiết kế định dạng văn bản đưa vào embedder với tiền tố chương trình và danh mục vấn đề chuẩn hóa.
+- [Thiết kế Metadata lọc] (1.0 điểm): Chuyển program và issue_category thành trường metadata có cấu trúc để phục vụ pre-filtering/grouping.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mục tiêu chỉ là so sánh nhóm chương trình và loại vấn đề, không phải theo dõi một người hay một ca hỗ trợ.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế phép biến đổi dữ liệu trước khi tạo embeddings (Pre-embedding Transformation Pipeline):
+  - Loại bỏ hoàn toàn dữ liệu định danh cá nhân (PII Elimination): Xóa bỏ các trường `advisor_name`, `student_email`, và `support_case_id`. Vì mục tiêu là so sánh các vấn đề phổ biến theo chương trình và không cần nối các ca hỗ trợ của cùng người học, các mã định danh này không mang giá trị ngữ nghĩa mà lại gây rủi ro rò rỉ dữ liệu nhạy cảm theo chuẩn GDPR/HIPAA và làm nhiễu không gian vector.
+  - Chuẩn hóa và làm giàu ngữ cảnh (Contextual Normalization): Chuẩn hóa giá trị `program` (ví dụ: viết hoa thống nhất 'CS', 'AI', 'BA') và `issue_category` (chuyển thành taxonomy chuẩn hóa). Ghép tiền tố ngữ cảnh vào nội dung văn bản phản hồi, ví dụ: 'Chương trình: [program] | Chủ đề: [issue_category] | Nội dung phản hồi: [text]'.
+  - Lưu trữ Metadata có cấu trúc: Đưa `program` và `issue_category` vào payload/metadata của vector để phục vụ việc lọc có điều kiện (filtered search / aggregate grouping) sau này.
+  2. Lợi ích kỹ thuật: Việc loại bỏ PII giúp vector không gian chỉ tập trung vào ngữ nghĩa của vấn đề học thuật/hỗ trợ, tránh hiện tượng clustering theo tên cố vấn hay ID ca, đồng thời tuân thủ nghiêm ngặt nguyên tắc tối thiểu hóa dữ liệu (data minimization).
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trước khi sinh vector embeddings, dữ liệu phải trải qua bước tiền xử lý nhằm bảo vệ quyền riêng tư và tối ưu hóa không gian biểu diễn. Dữ liệu PII vừa không có giá trị phân tích xu hướng vừa có thể bị trích xuất ngược qua các tấn công suy diễn (inversion attacks). Việc đưa thông tin phân loại vào metadata cho phép kết hợp giữa tìm kiếm tương đồng ngữ nghĩa và thống kê phân nhóm có cấu trúc.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  NIST Special Publication 800-122: 'Guide to Protecting the Confidentiality of Personally Identifiable Information (PII)' & OWASP Top 10 for LLM: LLM06 Sensitive Information Disclosure
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mục tiêu chỉ là so sánh nhóm chương trình và loại vấn đề, không phải theo dõi một người hay một ca hỗ trợ.
 
@@ -299,12 +331,27 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: PDF là định dạng bao chứa; kiểm tra xem có lớp chữ hay chỉ có ảnh.
+- [Nhận diện PDF dạng ảnh] (1.0 điểm): Nêu rõ cách phát hiện khi MIME là application/pdf nhưng độ dài chuỗi ký tự bằng 0 hoặc dưới ngưỡng kèm đối tượng ảnh.
+- [Quy trình xử lý Fallback OCR] (1.0 điểm): Mô tả rõ quy trình chuyển đổi trang sang ảnh (render DPI) và áp dụng OCR engine.
+- [Phương pháp kiểm tra chất lượng] (1.0 điểm): Nêu các tiêu chí kiểm tra: độ tin cậy OCR, độ dài ký tự, kiểm thử tính toàn vẹn.
+- [Đặc tả nhật ký/Audit Log] (1.0 điểm): Định nghĩa cấu trúc log chi tiết ghi lại sự kiện fallback, lý do, và thông số thực thi.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: PDF là định dạng bao chứa; kiểm tra xem có lớp chữ hay chỉ có ảnh.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Cách nhận diện (Detection):
+  Kiểm tra nội dung văn bản trích xuất từ các thư viện PDF thông thường (như PyPDF, PDFMiner, pypdfium2). Nếu MIME type là `application/pdf` nhưng tổng số ký tự trích xuất được (character count) bằng 0 hoặc tỷ lệ ký tự/trang dưới ngưỡng tối thiểu (ví dụ < 20 ký tự/trang), đồng thời trang chứa đối tượng hình ảnh (XObject Image), hệ thống xác định đây là 'Scanned PDF' hoặc 'Image-only PDF'.
+  2. Cách xử lý (Processing Strategy):
+  Kích hoạt luồng xử lý dự phòng tự động (Fallback Routing): Chuyển hướng tài liệu sang bộ xử lý OCR chuyên dụng (như Tesseract, PaddleOCR, AWS Textract, hoặc Azure Document Intelligence). Chuyển từng trang PDF thành ảnh chất lượng cao (300 DPI), tiến hành tiền xử lý ảnh (khử nghiêng - deskew, khử nhiễu - denoise, tăng tương phản) và chạy OCR để trích xuất văn bản có tọa độ.
+  3. Cách kiểm tra (Verification):
+  So sánh kết quả đầu ra: Đo lường độ dài ký tự thu được, kiểm tra độ tin cậy của OCR (OCR confidence score > 85%), và kiểm tra tính hợp lệ về mặt từ điển ngôn ngữ. Đối chiếu bằng mắt hoặc dùng phương pháp ngẫu nhiên kiểm tra trang có bảng/chữ.
+  4. Nhật ký cần lưu giữ (Audit Logging):
+  Ghi log chi tiết: `{file_id, file_name, mime_type, extractor_attempted: 'native_pdf', status: 'fallback_triggered', reason: 'empty_text_layer', fallback_extractor: 'tesseract_ocr', dpi: 300, extracted_char_count: 1420, avg_confidence: 0.92, processing_time_ms: 1250}`.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  PDF là một định dạng đóng gói bao chứa (container format). Một tệp PDF có thể chứa văn bản số (digital native text) hoặc chỉ chứa ảnh quét (raster images). Hệ thống trích xuất tài liệu bắt buộc phải có cơ chế định tuyến linh hoạt (Extractor Routing): kiểm tra lớp văn bản trước, nếu rỗng thì kích hoạt pipeline OCR kèm nhật ký kiểm toán rõ ràng để phục vụ giám sát và gỡ lỗi.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LangChain Documentation: 'Unstructured Document Loaders and OCR Fallbacks' (https://python.langchain.com/docs/integrations/document_loaders/unstructured_file/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 PDF là định dạng bao chứa; kiểm tra xem có lớp chữ hay chỉ có ảnh.
 
@@ -389,12 +436,26 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Truy vấn phụ thuộc ngoại lệ thuộc mục nào.
+- [Lựa chọn dạng biểu diễn] (1.0 điểm): Chọn Markdown có cấu trúc phân cấp và bảng Markdown.
+- [Phần giữ lại có căn cứ] (1.5 điểm): Nêu rõ việc giữ tiêu đề lồng nhau và bảng ngoại lệ gắn kèm mục cha để đảm bảo truy vấn đúng phạm vi.
+- [Phần loại bỏ triệt để] (1.0 điểm): Loại bỏ các thành phần điều hướng HTML, thẻ DOM rác, header/footer.
+- [Đánh giá chi phí biểu diễn] (0.5 điểm): Phân tích chi phí overhead token nhỏ nhưng đổi lại độ chính xác ngữ cảnh cao.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Truy vấn phụ thuộc ngoại lệ thuộc mục nào.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Lựa chọn dạng biểu diễn (Representation Format):
+  Sử dụng định dạng Markdown có cấu trúc phân cấp (Hierarchical Markdown). Cấu trúc tiêu đề sử dụng các cấp `#`, `##`, `###` tương ứng với phân cấp chính sách. Bảng ngoại lệ được giữ nguyên dưới dạng bảng Markdown (Markdown Table) hoặc danh sách định dạng kèm ngữ cảnh rõ ràng.
+  2. Phần cần giữ và phần cần bỏ:
+  - Phần cần giữ: Giữ nguyên vẹn toàn bộ chuỗi tiêu đề tổ tiên (breadcrumbs/ancestor headings), nội dung điều khoản chính sách, và bảng ngoại lệ gắn liền với mục tương ứng. Mỗi bảng ngoại lệ phải được gắn kèm tiêu đề mục cha để bảo toàn phạm vi áp dụng.
+  - Phần cần bỏ: Loại bỏ toàn bộ các thành phần điều hướng HTML (header, footer, navbar, sidebar, breadcrumb click elements, nút back-to-top, thẻ script, CSS style, div container vô nghĩa). Các thành phần này gây lãng phí token, làm loãng mật độ ngữ nghĩa và gây nhiễu cho mô hình embedding.
+  3. Giải thích chi phí biểu diễn chấp nhận được:
+  Việc giữ lại tiêu đề Markdown và bảng biểu chỉ làm tăng một lượng nhỏ overhead ký tự (khoảng 5-10% token so với văn bản thuần), nhưng mang lại giá trị sống còn: giúp retriever và LLM liên kết chính xác ngoại lệ với mục chính sách cha, ngăn chặn hoàn toàn lỗi gán nhầm ngoại lệ sang điều khoản khác.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong hệ thống RAG, biểu diễn văn bản phải tối ưu hóa giữa tỷ lệ tín hiệu trên nhiễu (Signal-to-Noise Ratio) và chi phí token. Markdown là chuẩn biểu diễn tối ưu cho LLM vì cú pháp gọn nhẹ nhưng bảo toàn đầy đủ quan hệ thứ bậc của tiêu đề và quan hệ hàng-cột của bảng dữ liệu, trong khi việc loại bỏ nhiễu giao diện HTML giúp embedding vector tập trung vào nội dung tri thức cốt lõi.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LlamaIndex Documentation: 'Markdown Node Parser & Document Cleaners' (https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/usage_documents/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Truy vấn phụ thuộc ngoại lệ thuộc mục nào.
 
@@ -438,12 +499,36 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một trường dữ liệu chỉ hữu ích khi danh tính và tập giá trị nhất quán.
+- [Đặc tả Schema Contract] (1.5 điểm): Định nghĩa cấu trúc trường rõ ràng gồm department, language, semester với kiểu dữ liệu chuẩn.
+- [Tập giá trị cho phép] (1.5 điểm): Xác định tập giá trị đóng hoặc regex chuẩn cho từng trường (ISO ngôn ngữ, mã khoa, định dạng học kỳ).
+- [Hai quy tắc từ chối rõ ràng] (1.0 điểm): Đưa ra 2 quy tắc từ chối cụ thể khi thiếu trường, sai danh mục giá trị hoặc sai regex.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một trường dữ liệu chỉ hữu ích khi danh tính và tập giá trị nhất quán.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Quy ước Metadata (Metadata Schema Contract):
+  Mỗi bản ghi chunk chính sách khi nhập kho phải chứa trường metadata với định dạng JSON chuẩn hóa:
+  ```json
+  {
+    "doc_id": "string (mã định danh duy nhất của chính sách)",
+    "department": "string (mã khoa/phòng ban)",
+    "language": "string (mã ngôn ngữ chuẩn ISO 639-1)",
+    "semester": "string (mã học kỳ chuẩn định dạng YYYY-S)",
+    "is_active": "boolean"
+  }
+  ```
+  2. Tập giá trị cho phép (Allowed Values / Value Constraints):
+  - `department`: Thuộc danh mục mã khoa chuẩn hóa: `["CS", "EE", "BA", "LAW", "MED", "ALL"]` (viết hoa, không nhận biến thể tên dài).
+  - `language`: Thuộc tập mã ISO 639-1 cho phép: `["vi", "en"]`.
+  - `semester`: Chuỗi theo định dạng regex `^20\d{2}-(1|2|3|SUMMER)$` (ví dụ: `"2026-1"`, `"2026-2"`).
+  3. Hai quy tắc từ chối bản ghi (Rejection / Quarantine Rules):
+  - Quy tắc 1 (Thiếu trường bắt buộc hoặc giá trị ngoài danh mục): Bản ghi bị từ chối nhập kho nếu thiếu bất kỳ trường nào trong `{department, language, semester}` hoặc giá trị trường không thuộc tập giá trị cho phép (ví dụ `department="computer-science"` hoặc `language="vn"` thay vì `"vi"`).
+  - Quy tắc 2 (Vi phạm định dạng thời gian/học kỳ): Bản ghi bị từ chối nếu `semester` không khớp biểu thức chính quy (ví dụ: `"Kỳ 1 năm 2026"` hoặc `"2026"`), để tránh làm gãy bộ lọc tiền truy vấn (pre-filter).
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Metadata contract đóng vai trò là hàng rào bảo vệ tính toàn vẹn của chỉ mục vector (vector index integrity). Nếu metadata bị ô nhiễm bởi các giá trị tự do, bộ lọc metadata pre-filtering sẽ loại bỏ sai các tài liệu hợp lệ hoặc giữ lại các tài liệu rác. Một quy ước chặt chẽ với schema validation và chính sách cách ly (quarantine) ngay tại ingestion pipeline là điều kiện tiên quyết cho hệ thống RAG doanh nghiệp.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Pinecone Documentation: 'Metadata Filtering & Schema Enforcement' (https://docs.pinecone.io/guides/data/filter-by-metadata)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một trường dữ liệu chỉ hữu ích khi danh tính và tập giá trị nhất quán.
 
@@ -463,12 +548,32 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Cửa sổ tiến theo bước, không theo chunk_size.
+- [Tính đúng bước trượt] (1.0 điểm): Tính chính xác step = 400 - 100 = 300 ký tự.
+- [Liệt kê các vị trí bắt đầu] (1.0 điểm): Liệt kê chính xác 4 vị trí: 0, 300, 600, 900.
+- [Tính độ dài chunk cuối] (1.0 điểm): Tính chính xác độ dài chunk 4 là 150 ký tự (từ index 900 đến 1050).
+- [Xác định tổng số chunk] (1.0 điểm): Kết luận đúng tổng số chunk là 4.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Cửa sổ tiến theo bước, không theo chunk_size.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Tính bước trượt (Step / Stride):
+  `step = chunk_size - overlap = 400 - 100 = 300` ký tự.
+  2. Xác định các vị trí bắt đầu (Start Positions) và phạm vi từng chunk:
+  - Chunk 1: Bắt đầu tại index 0. Kết thúc tại: `min(0 + 400, 1050) = 400`. Phạm vi: [0, 400). Độ dài: 400 ký tự.
+  - Chunk 2: Bắt đầu tại index `0 + 300 = 300`. Kết thúc tại: `min(300 + 400, 1050) = 700`. Phạm vi: [300, 700). Độ dài: 400 ký tự.
+  - Chunk 3: Bắt đầu tại index `300 + 300 = 600`. Kết thúc tại: `min(600 + 400, 1050) = 1000`. Phạm vi: [600, 1000). Độ dài: 400 ký tự.
+  - Chunk 4: Bắt đầu tại index `600 + 300 = 900`. Kết thúc tại: `min(900 + 400, 1050) = 1050`. Phạm vi: [900, 1050). Độ dài: `1050 - 900 = 150` ký tự.
+  Vị trí bắt đầu tiếp theo nếu có sẽ là `900 + 300 = 1200 >= 1050` (vượt quá độ dài văn bản), do đó dừng thuật toán.
+  3. Tổng kết kết quả:
+  - Bước trượt (Step): 300 ký tự.
+  - Các vị trí bắt đầu: `[0, 300, 600, 900]`.
+  - Độ dài chunk cuối cùng: 150 ký tự.
+  - Tổng số chunk: 4 chunk.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong thuật toán phân đoạn cửa sổ trượt cố định (Fixed-size Sliding Window Chunking), cửa sổ dịch chuyển theo giá trị `step = chunk_size - overlap`, chứ không dịch chuyển theo `chunk_size`. Khi chỉ số bắt đầu cộng bước trượt đạt tới đoạn cuối của tài liệu, chunk cuối cùng sẽ được cắt ngắn tại độ dài thực tế của tài liệu (`total_length - start`), đảm bảo toàn bộ ký tự của tài liệu đều được bao phủ.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LangChain Documentation: 'CharacterTextSplitter and Chunk Overlap Arithmetic' (https://python.langchain.com/docs/how_to/character_text_splitter/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Cửa sổ tiến theo bước, không theo chunk_size.
 
@@ -640,12 +745,28 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Hai lỗi cần hai kiểm soát: phạm vi và mục quá lớn.
+- [Chiến lược kết hợp có cấu trúc] (1.5 điểm): Đề xuất phân đoạn theo heading kết hợp chia nhỏ đệ quy khi vượt budget, kèm kế thừa metadata tổ tiên.
+- [Giải pháp neo giữ ngoại lệ] (1.0 điểm): Nêu cơ chế neo giữ ngoại lệ cùng phạm vi với điều kiện chính sách, không để ngắt giữa chừng.
+- [Bằng chứng quyết định thực nghiệm] (1.5 điểm): Xác định rõ 2 chỉ số đo lường trên bộ kiểm thử đóng băng (độ phủ đồng thời điều kiện-ngoại lệ và tỷ lệ nhiễm chéo) cùng ngưỡng nghiệm thu.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hai lỗi cần hai kiểm soát: phạm vi và mục quá lớn.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Đề xuất chiến lược kết hợp (Hybrid / Hierarchical Chunking Strategy):
+  - Cấu trúc phân đoạn theo tiêu đề kèm phân đoạn con (Heading-aware Section Chunking with Sub-chunking / Parent-Document Retrieval):
+    + Cấp độ 1 (Section Boundary): Phân chia tài liệu theo cấu trúc phân cấp tiêu đề (`#`, `##`, `###`). Mỗi mục chính sách tạo thành một Parent Document tự chứa trọn vẹn ngữ cảnh điều kiện và ngoại lệ.
+    + Cấp độ 2 (Size Budget Enforcement): Nếu một section quá dài (vượt quá ngân sách token tối ưu, ví dụ > 500 tokens), áp dụng Recursive Character Splitting để chia nhỏ thành các Child Chunks, nhưng bắt buộc gắn metadata `parent_id` và sao chép tiêu đề tổ tiên (`breadcrumbs`) vào từng child chunk.
+    + Gắn kết ngoại lệ: Các ghi chú ngoại lệ luôn được neo giữ (anchor) vào cùng block với điều kiện áp dụng tương ứng, không bị ngắt quãng giữa hai chunk.
+  2. Bằng chứng quyết định dựa trên bộ kiểm thử đã đóng băng (Empirical Decision Evidence):
+  - Đo lường trên bộ câu hỏi đóng băng: Đánh giá bằng 2 chỉ số cụ thể:
+    (a) Tỷ lệ câu hỏi ngoại lệ tìm thấy cả điều kiện lẫn ngoại lệ trong Top-K (Condition & Exception Co-occurrence Recall@5);
+    (b) Tỷ lệ chunk bị nhiễm chéo thông tin giữa hai chính sách khác nhau (Cross-policy Contamination Rate).
+  - Điều kiện nghiệm thu chiến lược kết hợp: Đạt Co-occurrence Recall >= 95% (khắc phục lỗi của fixed-window) và Cross-policy Contamination = 0% (khắc phục lỗi của long-heading chunking).
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Cửa sổ cố định (fixed window) thường cắt ngang giữa điều kiện và ngoại lệ vì không hiểu ranh giới ngữ nghĩa. Ngược lại, chunking thuần túy theo tiêu đề dễ tạo ra những đoạn quá dài hoặc gộp lẫn nội dung nếu tài liệu viết lỏng lẻo. Giải pháp tối ưu là phân đoạn có cấu trúc phân cấp (Hierarchical/Parent-Child Chunking) kết hợp gắn metadata tổ tiên, được kiểm chứng bằng bộ benchmark cố định với các chỉ số đo lường lỗi cụ thể.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LlamaIndex Documentation: 'Hierarchical Node Parser & Parent Document Retrieval' (https://docs.llamaindex.ai/en/stable/examples/retrievers/auto_merging_retriever/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hai lỗi cần hai kiểm soát: phạm vi và mục quá lớn.
 
@@ -709,12 +830,25 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Mức nhỏ nhất đã giữ đủ mối liên hệ là ứng viên mạnh.
+- [Quyết định chính sách chính xác] (1.5 điểm): Chọn mức overlap nhỏ nhất giữ đủ liên kết (40 ký tự) và bác bỏ có lý lẽ mức 0 (mất liên kết) và mức 180 (trùng lặp, lãng phí top-k).
+- [Phân tích đánh đổi kỹ thuật] (1.5 điểm): Phân tích trade-off rõ ràng giữa bảo toàn ngữ nghĩa liên đoạn và sự đa dạng của tập kết quả truy xuất.
+- [Phương pháp kiểm tra thực nghiệm] (1.0 điểm): Đề xuất cách kiểm tra truy xuất mệnh đề biên và đo lường tỷ lệ trùng lặp nội dung giữa các chunk.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mức nhỏ nhất đã giữ đủ mối liên hệ là ứng viên mạnh.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Lựa chọn chính sách Overlap (Overlap Policy Selection):
+  Chọn mức overlap nhỏ nhất đủ để bảo toàn liên kết ngữ nghĩa giữa hai chunk kề nhau, trong trường hợp này là `overlap = 40 ký tự` (hoặc mức tương đương 1-2 câu trọn vẹn ngữ nghĩa).
+  - Giải thích vì sao không chọn 0: Overlap = 0 tạo ra ranh giới cứng (hard cutoff), làm đứt gãy mối liên hệ giữa điều kiện ở cuối chunk A và ngoại lệ ở đầu chunk B, khiến retriever bỏ sót thông tin liên quan khi câu hỏi yêu cầu cả hai.
+  - Giải thích vì sao không chọn 180: Overlap = 180 ký tự quá lớn, chiếm tỷ lệ cao trong chunk, dẫn đến hiện tượng trùng lặp thông tin nghiêm trọng (near-duplicate chunks). Điều này làm cho danh sách Top-K bị chiếm dụng bởi 3 chunk gần giống nhau, làm giảm đa dạng ngữ cảnh (diversity), lãng phí token ngân sách và tăng chi phí LLM.
+  2. Phương pháp kiểm thử và xác thực chính sách (Verification Method):
+  - Kiểm thử truy xuất (Retrieval Test): Chạy bộ kiểm thử với các query liên đới biên (boundary-spanning queries) và kiểm tra xem cả hai mệnh đề (điều kiện và ngoại lệ) có xuất hiện trong cùng một chunk hoặc trong Top-2 chunk liền kề hay không.
+  - Kiểm tra độ dư thừa ngữ cảnh (Redundancy / Deduplication Test): Tính toán điểm tương đồng Jaccard hoặc Cosine giữa các chunk liên tiếp; đảm bảo mức overlap không tạo ra các chunk có độ trùng lặp nội dung > 40%.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Nguyên tắc thiết lập chunk overlap tuân theo định lý biên ngữ nghĩa: overlap phải đủ lớn để một ý nghĩa bị cắt ngang ở cuối chunk trước xuất hiện trọn vẹn ở đầu chunk sau, nhưng phải là mức tối thiểu cần thiết để không gây ô nhiễm danh sách Top-K bằng các bản sao gần trùng lặp (redundant chunks), gây nghẽn context window của mô hình tạo sinh.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Pinecone Learning Center: 'Chunking Strategies for LLM Applications' (https://www.pinecone.io/learn/chunking-strategies/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mức nhỏ nhất đã giữ đủ mối liên hệ là ứng viên mạnh.
 
@@ -784,12 +918,26 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một vector không biết chính sách nào đang có hiệu lực.
+- [Phân tích vai trò của Embedding] (1.5 điểm): Nêu rõ embedding chỉ phản ánh sự tương đồng ngữ nghĩa/chủ đề trong không gian vector biểu diễn.
+- [Chỉ rõ giới hạn bản chất] (1.5 điểm): Khẳng định dứt khoát embedding không đo lường được tính đúng sai, tính cập nhật thời gian hay hiệu lực pháp lý của chính sách.
+- [Đề xuất giải pháp kiến trúc] (1.0 điểm): Đưa ra giải pháp dùng Metadata Filtering quản lý phiên bản và ngày hiệu lực để lọc trước khi truy xuất.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một vector không biết chính sách nào đang có hiệu lực.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Những điều Embedding vector hỗ trợ kết luận:
+  - Hỗ trợ kết luận về độ tương đồng ngữ nghĩa bề mặt và chủ đề (Semantic Topical Similarity): Vector embeddings chuyển đổi văn bản thành tọa độ trong không gian ngữ nghĩa tiềm ẩn. Điểm cosine 0,91 cao hơn 0,87 chứng minh rằng chunk 0,91 có sự tương đồng từ vựng/ngữ nghĩa gần gũi hơn với các từ khóa và ý đồ trong câu hỏi của người dùng so với chunk 0,87.
+  2. Những điều Embedding vector KHÔNG hỗ trợ kết luận:
+  - Không thể kết luận về tính chân thực khách quan (Factual Truth / Validity): Mô hình embedding không có cơ chế xác minh tính đúng đắn của thông tin.
+  - Không thể kết luận về tính cập nhật và hiệu lực pháp lý (Temporal Freshness / Policy Lifecycle): Vector không gian hoàn toàn không có trục thời gian nội tại; nó không biết chính sách nào là bản cũ và chính sách nào là bản hiện hành đang có hiệu lực thi hành.
+  - Không thể thay thế bộ lọc trạng thái nghiệp vụ: Một chính sách cũ đã bị thu hồi nhưng viết hay hơn, trùng từ khóa nhiều hơn vẫn có thể có điểm cosine cao hơn chính sách mới.
+  3. Giải pháp thiết kế hệ thống bắt buộc:
+  Phải tách rời việc tìm kiếm ngữ nghĩa khỏi quản lý vòng đời tài liệu: Sử dụng Metadata Filtering (ví dụ: `is_active: true`, `version: 'v3'`, `effective_date <= CURRENT_DATE`) để sàng lọc trước khi thực hiện tính điểm tương đồng vector.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Không gian embedding phản ánh sự tương đồng hình thức và khái niệm ngữ nghĩa, hoàn toàn bất khả tri (agnostic) đối với tính chân lý và hiệu lực thời gian. Một sai lầm phổ biến trong thiết kế RAG là đồng nhất điểm cosine cao với 'câu trả lời đúng'. Để hệ sinh thái RAG tin cậy, việc kiểm soát phiên bản và hiệu lực bắt buộc phải được giải quyết ở tầng metadata và dữ liệu có cấu trúc.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Reimers & Gurevych (2019): 'Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks' (EMNLP 2019) & OpenAI Embeddings Guide
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một vector không biết chính sách nào đang có hiệu lực.
 
@@ -888,12 +1036,26 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 3 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Giữ phân biệt điểm quan sát được và nguyên nhân mới là giả thuyết.
+- [Bản chất điểm quan sát] (1.0 điểm): Nêu đúng điểm cosine chỉ phản ánh góc vector trong không gian tiềm ẩn, không phản ánh độ chi tiết hữu ích.
+- [Điều chưa chứng minh] (1.0 điểm): Phân biệt rõ điểm số cao không chứng minh tính đầy đủ hay câu trả lời đúng trọng tâm nhu cầu người dùng.
+- [Thiết kế thử nghiệm tiếp theo] (1.0 điểm): Đề xuất thử nghiệm cụ thể với Cross-Encoder Reranker hoặc đo lường chất lượng câu trả lời đầu ra.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Giữ phân biệt điểm quan sát được và nguyên nhân mới là giả thuyết.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Điều điểm số Cosine cho biết (Observed Fact):
+  Chunk A đạt cosine 0,84 và Chunk B đạt 0,80 cho thấy: theo không gian vector của mô hình embedder hiện tại, vector biểu diễn của Chunk A có góc lệch nhỏ hơn so với vector truy vấn so với Chunk B. Điều này chỉ phản ánh mức độ trùng khớp ngữ nghĩa bề mặt (surface semantic overlap) hoặc chứa nhiều từ vựng bao quát chủ đề của câu hỏi.
+  2. Điều điểm số CHƯA chứng minh (Unproven Hypotheses):
+  - Chưa chứng minh Chunk A là câu trả lời tốt hơn cho người dùng. Thực tế Chunk A chỉ nói chung chung trong khi Chunk B mới chứa câu trả lời cụ thể có thể hành động được.
+  - Chưa chứng minh mô hình embedder hiểu được chiều sâu nghiệp vụ; các embedder dạng bi-encoder thường bị thiên vị (bias) đối với các đoạn văn bản chứa nhiều từ khóa tần suất cao hoặc các câu khẳng định chung.
+  3. Thử nghiệm kế tiếp (Next Controlled Experiment):
+  - Thử nghiệm 1 (Tầng Re-ranking): Đưa cả Top-K (bao gồm Chunk A và B) qua một mô hình Cross-Encoder Re-ranker (ví dụ: BGE-Reranker-Large hoặc Cohere Rerank) để đánh giá độ liên quan thực sự ở cấp độ tương tác qua lại giữa query và document.
+  - Thử nghiệm 2 (End-to-End Generation & Human/LLM Evaluation): Đưa lần lượt Chunk A và Chunk B vào context của generator và đo lường Answer Relevance / Completeness trên bộ câu hỏi thử nghiệm chuẩn hóa.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Điểm số Cosine từ Bi-Encoder chỉ là phép ước lượng gần đúng về sự gần gũi trong không gian tiềm ẩn (latent space), thường ưu tiên các văn bản tổng quát có mật độ từ khóa cao. Điểm số quan sát được không đồng nghĩa với giá trị thông tin thực tế. Quy trình hai tầng (Two-stage Retrieval: Bi-encoder retrieval + Cross-encoder reranking) là giải pháp tiêu chuẩn để giải quyết sự sai lệch này.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Thakur et al. (2021): 'BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models' (NeurIPS 2021)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Giữ phân biệt điểm quan sát được và nguyên nhân mới là giả thuyết.
 
@@ -968,12 +1130,28 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một mô hình không đáp ứng độ trễ SLO không phải lựa chọn mặc định.
+- [Quyết định chọn Model A có căn cứ] (1.5 điểm): Chọn Mô hình A vì thỏa mãn SLO p95 <= 100ms, loại Mô hình B vì vi phạm SLO (190ms) và chi phí RAM 3072d cho 5M chunk quá cao.
+- [Nhận diện hạn chế của Model A] (1.0 điểm): Nêu rõ hạn chế về Recall@5 thấp hơn 2% trên tập ngữ liệu Việt–Anh.
+- [Điều kiện xem xét lại lựa chọn] (1.5 điểm): Đưa ra các điều kiện cụ thể: kỹ thuật lượng tử hóa (quantization/Matryoshka), tối ưu hạ tầng đạt SLO latency, và ngân sách re-indexing 5M chunk.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một mô hình không đáp ứng độ trễ SLO không phải lựa chọn mặc định.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Lựa chọn mô hình cho đợt phát hành hiện tại:
+  Chọn **Mô hình A** (768 chiều, Recall@5 = 0,86, p95 latency = 45 ms).
+  Căn cứ quyết định: Tiêu chí SLO kỹ thuật quy định nghiêm ngặt độ trễ `p95 <= 100 ms`. Mô hình B có Recall@5 nhỉnh hơn 2% (0,88 vs 0,86) nhưng độ trễ p95 lên tới 190 ms, vi phạm nghiêm trọng SLO kỹ thuật (vượt 90% giới hạn cho phép). Ngoài ra, Mô hình B có 3.072 chiều (gấp 4 lần Mô hình A), sẽ làm tăng gấp 4 lần dung lượng RAM lưu trữ index cho 5 triệu chunk, đẩy chi phí hạ tầng và độ trễ tìm kiếm vector lên rất cao mà không mang lại lợi ích tương xứng.
+  2. Các hạn chế của Mô hình A:
+  - Độ bao phủ Recall@5 thấp hơn Mô hình B 2% trên bộ kiểm thử Việt–Anh, có nguy cơ bỏ sót một số tài liệu hiếm hoặc câu hỏi đa ngữ phức tạp.
+  - Khả năng biểu diễn ngữ nghĩa đa chiều trong các lĩnh vực chuyên sâu có thể kém hơn các mô hình embedding kích thước lớn (large dimensional embeddings).
+  3. Điều kiện để xem xét lại lựa chọn (Re-evaluation Criteria):
+  - Khi áp dụng các kỹ thuật tối ưu hóa chỉ mục cho Mô hình B thành công: như lượng tử hóa vector (Scalar Quantization SQ8 hoặc Product Quantization PQ) hoặc Matryoshka Embeddings cắt ngắn chiều xuống 768/1536 mà vẫn giữ recall cao và hạ p95 xuống dưới 80 ms.
+  - Khi nâng cấp hạ tầng phần cứng (GPU indexing / HNSW acceleration) giúp hạ p95 của Mô hình B vào phạm vi SLO hợp lệ.
+  - Khi có ngân sách tài chính và thời gian bảo trì được duyệt để chi trả chi phí re-embed cho toàn bộ 5 triệu chunk tài liệu.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong kỹ thuật hệ thống sản xuất (Production Engineering), việc tuân thủ SLO (Service Level Objective) là điều kiện tiên quyết bắt buộc (hard constraint). Một mô hình dù có độ chính xác cao hơn nhưng vi phạm SLO độ trễ sẽ bị loại bỏ khỏi danh sách triển khai thực tế. Việc chuyển đổi mô hình embedding trên tập dữ liệu lớn (5M chunks) phải tính toán toàn diện giữa chi phí tính toán lại, dung lượng RAM chỉ mục và độ trễ phục vụ.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Google SRE Book: 'Service Level Objectives and Latency Budgets' & Pinecone Benchmark: 'Embedding Dimension vs Latency and Memory Footprint'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một mô hình không đáp ứng độ trễ SLO không phải lựa chọn mặc định.
 
@@ -1113,12 +1291,26 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: top-k không tạo thêm bản ghi.
+- [Kết quả của Kho A] (1.5 điểm): Xác định đúng Kho A trả về chính xác 2 bản ghi (áp dụng min(N, k)), không tạo bản ghi ảo.
+- [Kết quả của Kho B] (1.0 điểm): Xác định đúng Kho B trả về danh sách rỗng [] an toàn, không báo lỗi sập hệ thống.
+- [Quy tắc sắp xếp khi bằng điểm] (1.5 điểm): Nêu rõ cơ chế tie-breaking theo record_id tăng dần để đảm bảo tính tất định và khả năng tái lập.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: top-k không tạo thêm bản ghi.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Kết quả mong đợi cho mỗi kho dữ liệu:
+  - Với Kho A (đang có 2 bản ghi, yêu cầu `top_k = 5`):
+    + Kết quả trả về: Trả về chính xác **2 bản ghi**. Thuật toán Top-K truy xuất tối đa `k` ứng viên hiện có trong kho; nếu số lượng bản ghi thỏa mãn điều kiện nhỏ hơn `k`, hệ thống chỉ trả về toàn bộ các bản ghi tìm thấy (`min(N, k)`), tuyệt đối không tự bịa thêm bản ghi giả lập hay trả về các phần tử rác.
+  - Với Kho B (kho rỗng, yêu cầu `top_k = 5`):
+    + Kết quả trả về: Trả về danh sách rỗng `[]` (empty list) với mã trạng thái thành công (HTTP 200 OK), không sinh lỗi ngoại lệ hệ thống.
+  2. Quy tắc sắp xếp khi điểm số tương đồng bằng nhau (Tie-breaking Rule):
+  - Quy tắc: Khi hai hoặc nhiều bản ghi có điểm tương đồng cosine/similarity bằng nhau (ví dụ cùng bằng 0.8500), hệ thống áp dụng cơ chế xác định thứ tự đơn định (Deterministic Tie-breaking) bằng cách so sánh trường `record_id` theo thứ tự tăng dần (ascending order: `record_id_1 < record_id_2`).
+  - Tầm quan trọng: Đảm bảo tính nhất quán và khả năng tái lập (idempotency/reproducibility) của kết quả tìm kiếm qua các lần gọi API khác nhau.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Giao diện tìm kiếm vector ngữ nghĩa (Vector Semantic Search) phải tuân thủ chặt chẽ hợp đồng API: trả về `min(count_matching, k)` phần tử. Khi có hiện tượng bằng điểm (tie), nếu không quy định thứ tự tie-breaking bằng một khóa đơn định duy nhất (như record_id), thứ tự trả về sẽ phụ thuộc vào cách duyệt vùng nhớ của thuật toán tìm kiếm gần đúng (ANN), gây ra lỗi không nhất quán dữ liệu giữa các lần truy vấn giống hệt nhau.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Milvus Documentation: 'Vector Search Query Parameters, Limit/Top-K and Consistency' (https://milvus.io/docs/search.md)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 top-k không tạo thêm bản ghi.
 
@@ -1138,12 +1330,27 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Áp top-k sau khi đã xác định candidate hợp lệ.
+- [Phân tích cơ chế Pre-filtering] (1.5 điểm): Giải thích rõ quy trình lọc ứng viên trước rồi xếp hạng, trả về đúng bản ghi Engineering (0.90).
+- [Phân tích cơ chế Post-filtering & Hậu quả] (1.5 điểm): Giải thích rõ việc lấy Top-1 Marketing (0.95) rồi lọc sẽ dẫn đến kết quả rỗng [], bỏ sót tài liệu hợp lệ.
+- [Kết luận kiến trúc] (1.0 điểm): Khẳng định ưu thế tuyệt đối của Pre-filtering trong hệ thống RAG doanh nghiệp.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Áp top-k sau khi đã xác định candidate hợp lệ.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. So sánh chi tiết hai cơ chế lọc:
+  - Lọc trước khi xếp hạng (Pre-filtering):
+    + Cơ chế: Hệ thống áp dụng bộ lọc metadata `department = 'engineering'` lên toàn bộ tập dữ liệu (hoặc sử dụng inverted index trên metadata) để lọc ra tập các ứng viên hợp lệ trước. Sau đó, thuật toán tìm kiếm vector chỉ tính toán tương đồng và xếp hạng trên tập ứng viên này để lấy `top_k = 1`.
+    + Kết quả: Kết quả Engineering tốt nhất (điểm 0.90) được trả về ở vị trí số 1. Yêu cầu của người dùng được thỏa mãn trọn vẹn.
+  - Xếp hạng trước khi lọc (Post-filtering):
+    + Cơ chế: Thuật toán vector tìm kiếm `top_k = 1` trên toàn bộ kho dữ liệu trước; sau đó mới áp dụng bộ lọc `department = 'engineering'` trên danh sách kết quả trả về.
+    + Kết quả: Bước tìm kiếm vector trả về bản ghi Marketing (điểm 0.95). Bước lọc sau đó kiểm tra thấy bản ghi này không khớp phòng ban Engineering nên loại bỏ. Kết quả cuối cùng trả về danh sách rỗng `[]`, hoàn toàn bỏ lỡ bản ghi Engineering điểm 0.90!
+  2. Kết luận thiết kế:
+  Trong các hệ thống tìm kiếm có điều kiện ràng buộc kinh doanh nghiêm ngặt, Post-filtering cực kỳ nguy hiểm và dễ gây hiện tượng 'kết quả rỗng giả tạo' khi `k` nhỏ. Bắt buộc phải triển khai **Pre-filtering** (hoặc Single-stage Filtered Search kết hợp HNSW với payload filter như trong Qdrant/Milvus).
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Post-filtering (lấy Top-K rồi mới lọc) chịu rủi ro nghiêm trọng về độ phủ vì tập Top-K ban đầu có thể bị thống trị hoàn toàn bởi các tài liệu không thỏa mãn bộ lọc. Pre-filtering đảm bảo 100% các phần tử được xếp hạng đều hợp lệ. Các vector database hiện đại sử dụng kỹ thuật Single-stage filtering (lọc trực tiếp trong quá trình duyệt đồ thị HNSW) để vừa đạt hiệu năng cao vừa bảo đảm không bao giờ bỏ sót kết quả hợp lệ.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Qdrant Documentation: 'Filtering Clause & Pre-filtering in Vector Search' (https://qdrant.tech/documentation/concepts/filtering/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Áp top-k sau khi đã xác định candidate hợp lệ.
 
@@ -1208,12 +1415,31 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Mỗi experiment chỉ đổi một control rồi mới kết hợp các thay đổi.
+- [Nguyên tắc kiểm soát biến số] (1.0 điểm): Nêu rõ nguyên tắc cô lập từng biến số trên tập testset đóng băng.
+- [Thứ tự xử lý từng tầng lỗi] (1.5 điểm): Sắp xếp đúng trình tự logic: sửa filter semester trước, quét tối ưu k, rồi mới nới lỏng similarity threshold.
+- [Chỉ số đo lường cho từng bước] (1.5 điểm): Đưa ra metric cụ thể cho từng bước: Zero-result rate, Recall@k, Noise ratio, Context Precision.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi experiment chỉ đổi một control rồi mới kết hợp các thay đổi.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Kế hoạch tinh chỉnh có kiểm soát (Controlled Retrieval Tuning Plan):
+  Áp dụng nguyên tắc tách biệt biến số (Single-Variable Isolation): Mỗi thí nghiệm chỉ thay đổi duy nhất một tham số, đo lường trên tập kiểm thử chuẩn hóa đã đóng băng (Frozen Gold Testset) trước khi kết hợp.
+  - Bước 1: Khắc phục lỗi lọc sai thời kỳ (Eligibility Filter Fix)
+    + Hành động: Sửa điều kiện lọc `semester` để không loại bỏ đáp án mới (cho phép `semester IN ('current', 'upcoming')` hoặc bỏ lọc semester tạm thời để xác lập ground-truth).
+    + Phép đo: Xác nhận 100% truy vấn có tài liệu mới không bị chặn ở tầng metadata.
+  - Bước 2: Tinh chỉnh tham số Top-K (Search Depth Tuning)
+    + Hành động: Giữ cố định không dùng similarity threshold. Thử nghiệm quét giá trị `k` từ 2 đến 8 (các bước: `k = 3, 4, 5, 6`).
+    + Phép đo: Đo Recall@k (đảm bảo không bỏ sót bằng chứng thứ ba) và Noise Ratio (tỷ lệ chunk rác lọt vào context). Xác định điểm uốn tối ưu (ví dụ `k = 4` hoặc `k = 5`).
+  - Bước 3: Tinh chỉnh Ngưỡng tương đồng (Similarity Threshold Tuning)
+    + Hành động: Nhận diện ngưỡng 0.85 quá chặt làm rỗng 30% truy vấn. Hạ dần ngưỡng `threshold` từ 0.85 xuống 0.75, 0.70, 0.65 với `k` tối ưu đã tìm ở Bước 2.
+    + Phép đo: Đo Zero-result Query Rate (mục tiêu < 2%) kết hợp Context Precision.
+  - Bước 4: Đánh giá tổng hợp và nghiệm thu (Integration Validation)
+    + Chạy toàn bộ pipeline tích hợp với bộ tham số tối ưu đã chọn, so sánh với baseline ban đầu.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Khi hệ thống truy xuất đồng thời gặp nhiều lỗi (thiếu bằng chứng, thừa nhiễu, tỷ lệ rỗng cao do threshold chặt, filter chặn sai), việc thay đổi nhiều tham số cùng lúc sẽ dẫn đến hỗn loạn thực nghiệm và không xác định được nguyên nhân gốc rễ. Quy trình chuẩn hóa yêu cầu sửa lỗi bộ lọc điều kiện tiên quyết trước, sau đó tối ưu hóa k, và cuối cùng mới điều chỉnh ngưỡng similarity.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Google SRE: 'Controlled Experimentation and Tuning Principles' & Ragas Documentation: 'Retrieval Metrics'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi experiment chỉ đổi một control rồi mới kết hợp các thay đổi.
 
@@ -1282,12 +1508,29 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Đừng biến tên vendor hoặc giá hiện tại thành kiến thức cố định.
+- [Lựa chọn Managed DBaaS có căn cứ] (1.5 điểm): Chọn Managed Cloud Vector Database dựa trên đánh đổi năng lực 2 kỹ sư, yêu cầu HA/Backup cho 10M vectors.
+- [Ràng buộc độ trễ theo vùng] (1.0 điểm): Nhấn mạnh yêu cầu colocation cùng Cloud Region để đảm bảo latency thấp.
+- [Danh mục thông tin phiên bản cần kiểm tra] (1.5 điểm): Liệt kê các yếu tố kiểm tra trước: SLA, indexing metadata cost, payload size, SLA backup/restore.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đừng biến tên vendor hoặc giá hiện tại thành kiến thức cố định.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Lựa chọn lớp triển khai (Deployment Class Selection):
+  Chọn **Managed Cloud Vector Database (DBaaS)** (ví dụ: Pinecone Serverless/Standard, Qdrant Cloud Managed, hoặc AWS OpenSearch Serverless / Azure AI Search).
+  Căn cứ lựa chọn:
+  - Quy mô đội ngũ: Startup chỉ có 2 kỹ sư; việc tự host (self-hosted) cụm Milvus hoặc Elasticsearch phân tán đòi hỏi chi phí vận hành (ops overhead), thiết lập sharding, backup snapshot và quản lý node quá tải, vượt quá nguồn lực nhân sự.
+  - Quy mô dữ liệu và độ khả dụng: 10 triệu vector đòi hỏi cụm phân tán để đảm bảo tính sẵn sàng cao (High Availability - HA) và tự động sao lưu dự phòng (Automated Backups/Disaster Recovery).
+  - Độ trễ: Cần chọn nhà cung cấp có Data Plane triển khai tại cùng Region/Availability Zone với ứng dụng chính (ví dụ: `ap-southeast-1` Singapore) để đảm bảo độ trễ mạng cực thấp (< 10 ms).
+  2. Các thông tin phụ thuộc phiên bản cần kiểm tra trước khi quyết định:
+  - Hỗ trợ lọc Metadata có chỉ mục (Indexed Metadata Filtering) và chi phí gắn kèm trên 10 triệu bản ghi.
+  - Giới hạn kích thước payload/metadata trên mỗi vector và chính sách tính phí theo dung lượng lưu trữ (Storage/Read-Write Unit pricing).
+  - Cơ chế High Availability và SLA cam kết thời gian hoạt động (uptime SLA >= 99.9%).
+  - Quy trình sao lưu định kỳ, restore point-in-time và chính sách mã hóa dữ liệu khi nghỉ (encryption at rest) đáp ứng compliance.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Quyết định chọn hạ tầng cơ sở dữ liệu vector phải cân bằng giữa năng lực vận hành của đội ngũ (team operational capacity) và các ràng buộc kỹ thuật. Với đội ngũ mỏng (2 kỹ sư), giải pháp Managed Service giúp chuyển giao gánh nặng bảo trì HA/Backup sang nhà cung cấp. Các thông số phụ thuộc phiên bản về định tuyến vùng (regional latency) và cơ chế lọc metadata là yếu tố then chốt quyết định tính khả thi dài hạn.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  AWS Architecture Center: 'Selecting Managed Vector Databases for Production Workloads' & Pinecone Architecture Guide
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng biến tên vendor hoặc giá hiện tại thành kiến thức cố định.
 
@@ -1336,12 +1579,28 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Đóng băng đầu ra nào ở giữa hai pha?
+- [Thiết kế kích hoạt pha Offline] (1.5 điểm): Xác định đúng pha offline chỉ kích hoạt khi tài liệu thay đổi, tạo ra chỉ mục đóng băng có phiên bản.
+- [Thiết kế luồng pha Online] (1.0 điểm): Xác định pha online chỉ embed câu hỏi và tìm kiếm trên chỉ mục sẵn có.
+- [Cơ chế vô hiệu hóa Cache] (1.5 điểm): Đưa ra giải pháp gắn index version vào cache key để tự động invalidate cache cũ khi có chính sách mới.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đóng băng đầu ra nào ở giữa hai pha?
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế phân tách ranh giới Ngoại tuyến và Trực tuyến (Offline / Online Separation):
+  - Pha Ngoại tuyến (Offline Ingestion Pipeline - Xử lý theo sự kiện hoặc định kỳ):
+    + Kích hoạt (Trigger): Chỉ chạy khi có sự kiện thay đổi dữ liệu nguồn (Webhook tài liệu cập nhật, CI/CD pipeline tài liệu, hoặc batch job định kỳ ban đêm). Tuyệt đối không chạy khi người dùng gửi câu hỏi!
+    + Ranh giới đầu ra đóng băng: Đầu ra của pha offline là Chỉ mục Vector có phiên bản (Versioned Vector Index, ví dụ `index_v2.1`) kèm bản đồ siêu dữ liệu (Metadata Store). Khi hoàn tất nhập liệu, hệ thống chạy kiểm thử kiểm tra tính sẵn sàng rồi chuyển cờ 'active_version' sang chỉ mục mới.
+  - Pha Trực tuyến (Online Serving Pipeline - Xử lý thời gian thực per query):
+    + Kích hoạt: Người dùng gửi câu hỏi truy vấn.
+    + Luồng thực thi: Chỉ thực hiện sinh vector embedding cho chính câu hỏi (Query Embedding), áp dụng bộ lọc metadata, truy vấn Top-K trên chỉ mục vector đang hoạt động (Active Index) và đưa vào LLM để sinh câu trả lời.
+  2. Xử lý bộ đệm truy vấn khi chính sách thay đổi (Cache Invalidation Strategy):
+  - Cơ chế: Khi chỉ mục offline phát hành phiên bản mới, hệ thống tự động vô hiệu hóa toàn bộ cache truy vấn (Cache Invalidation) bằng cách gắn `index_version` vào khóa cache (`key = hash(query + index_version)`).
+  - Kết quả: Ngăn chặn triệt để tình trạng cache query trả về kết quả thuộc chính sách cũ.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Một lỗi kiến trúc sơ đẳng là trộn lẫn Ingestion Pipeline vào Serving Request Path, khiến mọi câu hỏi đều phải trích xuất và embed lại toàn bộ kho tri thức, làm sập hệ thống vì độ trễ khủng khiếp. Nguyên tắc vàng của RAG là 'Embed once offline, query fast online' với cơ chế version-based cache invalidation.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Gao et al. (2023): 'Retrieval-Augmented Generation for Large Language Models: A Survey' & Martin Fowler: 'Cache Invalidation Strategies'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đóng băng đầu ra nào ở giữa hai pha?
 
@@ -1361,12 +1620,32 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một document-level field phải xuất hiện ở mọi chunk cần dùng nó.
+- [Đặc tả ID & Metadata 3 chunk] (1.5 điểm): Thiết kế đúng định danh duy nhất (library::chunk_0, 1, 2) và sao chép đầy đủ metadata cấp tài liệu cho cả 3 chunk.
+- [Kiểm tra tính kế thừa metadata] (1.5 điểm): Nêu rõ điều kiện kiểm tra trường cấp tài liệu phải xuất hiện ở 100% các chunk con.
+- [Kiểm tra tính liên tục của index] (1.0 điểm): Kiểm tra chunk_index liên tục từ 0 đến N-1 và tính duy nhất của khóa chính.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một document-level field phải xuất hiện ở mọi chunk cần dùng nó.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế Danh tính bản ghi (Record Identity) và Metadata cho từng chunk:
+  Khi tệp có thông tin đầu tệp `{doc_id: 'library', audience: 'student', source_url: 'https://edu.vn/lib'}` tạo ra 3 chunk, metadata phải được kế thừa đầy đủ:
+  - Chunk 0:
+    + `record_id`: `"library::chunk_0"`
+    + `metadata`: `{"doc_id": "library", "audience": "student", "source_url": "https://edu.vn/lib", "chunk_index": 0, "total_chunks": 3}`
+  - Chunk 1:
+    + `record_id`: `"library::chunk_1"`
+    + `metadata`: `{"doc_id": "library", "audience": "student", "source_url": "https://edu.vn/lib", "chunk_index": 1, "total_chunks": 3}`
+  - Chunk 2:
+    + `record_id`: `"library::chunk_2"`
+    + `metadata`: `{"doc_id": "library", "audience": "student", "source_url": "https://edu.vn/lib", "chunk_index": 2, "total_chunks": 3}`
+  2. Điều kiện kiểm tra tính toàn vẹn (Verification Invariants):
+  - Điều kiện 1 (Document-level Metadata Propagation): Mọi chunk con đều phải chứa 100% các trường cấp tài liệu (`doc_id`, `audience`, `source_url`) trùng khớp với tài liệu gốc.
+  - Điều kiện 2 (Chunk-level Uniqueness & Sequence): Mỗi chunk phải có `record_id` duy nhất dạng `{doc_id}::chunk_{index}` và `chunk_index` phải là dãy số liên tục từ `0` đến `total_chunks - 1`.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Quá trình phân đoạn (chunking) phá vỡ tài liệu lớn thành các đoạn nhỏ nhưng không được làm thất thoát ngữ cảnh cấp tài liệu. Kỹ thuật Metadata Propagation đảm bảo mọi chunk con đều mang đầy đủ thuộc tính phân quyền (`audience`) và nguồn gốc (`source_url`), giúp các bộ lọc metadata hoạt động chính xác trên từng đơn vị tìm kiếm.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LlamaIndex Documentation: 'Metadata Extraction and Ingestion Pipeline' (https://docs.llamaindex.ai/en/stable/module_guides/loading/ingestion_pipeline/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một document-level field phải xuất hiện ở mọi chunk cần dùng nó.
 
@@ -1412,12 +1691,30 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một record trả lời “thế giới nói gì”; record kia trả lời “người dùng này đang ở trạng thái nào”.
+- [Tách biệt quy ước đọc/cập nhật] (1.5 điểm): Phân định rõ kho tri thức toàn cục (quản trị viên cập nhật, công khai) và bộ nhớ cá nhân (user_id riêng, cập nhật theo phiên, TTL).
+- [Rủi ro rò rỉ quyền riêng tư] (1.5 điểm): Phân tích rủi ro nghiêm trọng khi ghi chú nhạy cảm cá nhân bị trả về cho người khác khi query chung.
+- [Rủi ro sai lệch nghiệp vụ] (1.0 điểm): Nêu rủi ro ô nhiễm context khiến câu trả lời chính sách bị thiên vị hoặc sai lệch.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một record trả lời “thế giới nói gì”; record kia trả lời “người dùng này đang ở trạng thái nào”.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Phân tách quy ước đọc và cập nhật (Separation of Contracts):
+  - Kho Tri thức Chính sách (Policy Knowledge Base):
+    + Bản chất: Tri thức khách quan toàn cục (Global Objective Knowledge) mô tả quy định tổ chức.
+    + Quy ước đọc: Được truy cập bởi mọi người dùng; hỗ trợ tìm kiếm ngữ nghĩa kèm metadata filter (khoa, phiên bản).
+    + Quy ước cập nhật: Chỉ do Quản trị viên/Phòng ban chức năng cập nhật qua Ingestion Pipeline có kiểm duyệt.
+  - Kho Bộ nhớ Người dùng (User Ephemeral / Personal Memory):
+    + Bản chất: Trạng thái chủ quan cá nhân (Personal Context / Affective State) mô tả hồ sơ hoặc cảm xúc người học.
+    + Quy ước đọc: Được phân vùng nghiêm ngặt theo `user_id` (chỉ truy xuất khi xác thực đúng phiên của Lan).
+    + Quy ước cập nhật: Tự động cập nhật theo thời gian thực từ các lượt tương tác của người dùng, có cơ chế hết hạn (TTL/expiry).
+  2. Rủi ro nghiêm trọng nếu truy vấn chung (Risks of Unified Querying):
+  - Rò rỉ thông tin riêng tư (PII / Privacy Leakage): Trạng thái cá nhân nhạy cảm của Lan ('đang stress') có thể bị trả về cho người dùng khác nếu câu hỏi của họ tương đồng về ngữ nghĩa với đoạn ghi chú này.
+  - Ô nhiễm ngữ cảnh chính sách (Context Pollution): Khi hỏi về quy chế học vụ, việc nhầm lẫn giữa quy định chung và ghi chú tâm lý cá nhân sẽ khiến LLM đưa ra câu trả lời thiên vị hoặc sai lệch quy định đào tạo.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong hệ thống tác tử thông minh, việc nhầm lẫn giữa Bộ nhớ ngữ cảnh người dùng (User Memory) và Cơ sở tri thức (Domain Knowledge) là một lỗ hổng nghiêm trọng về quyền riêng tư và an toàn thông tin. Chúng phải được lưu trữ trong các Collection hoặc Namespace độc lập với các chính sách phân quyền truy cập (Access Control Lists) khác nhau.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LangChain Documentation: 'Agent Memory vs. Vector Store Retrievers' & OWASP LLM06: Sensitive Information Disclosure
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một record trả lời “thế giới nói gì”; record kia trả lời “người dùng này đang ở trạng thái nào”.
 
@@ -1437,12 +1734,27 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Điểm truy xuất không thay thế điều kiện đủ dùng/nguồn chính.
+- [Lọc ngữ cảnh theo độ tin cậy] (1.5 điểm): Giữ lại duy nhất C1 (chính sách hiện hành), loại bỏ dứt khoát C2 (blog không nguồn) và C3 (chính sách cũ).
+- [Đặc tả Answer Contract] (1.5 điểm): Thiết lập ràng buộc trích dẫn nguồn cụ thể [Doc 1] cho mọi khẳng định.
+- [Quy tắc từ chối khi thiếu bằng chứng] (1.0 điểm): Nêu rõ cơ chế từ chối trả lời (abstention) nếu C1 không chứa thông tin, cấm bịa đặt.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Điểm truy xuất không thay thế điều kiện đủ dùng/nguồn chính.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế cách chọn ngữ cảnh (Context Selection & Filtering Protocol):
+  - Phân loại độ tin cậy và hiệu lực nguồn (Source Authority Filtering):
+    + C1 (Chính sách hiện hành): Nguồn thẩm quyền cao nhất (Primary Ground-Truth), thỏa mãn metadata `is_active: true`, được giữ lại làm ngữ cảnh cốt lõi.
+    + C2 (Blog không nguồn): Nguồn không có thẩm quyền (Unverified Secondary Source), tiềm ẩn thông tin sai lệch; bị loại bỏ hoàn toàn khỏi context prompt.
+    + C3 (Chính sách cũ): Đã hết hiệu lực (`is_active: false`); bị loại bỏ để tránh gây mâu thuẫn thông tin và ảo giác.
+  - Ngữ cảnh cuối cùng đưa vào Prompt: Chỉ chứa duy nhất C1 kèm định danh trích dẫn `[Doc 1: Policy v3]`. Tuyệt đối không đưa C2 và C3 vào prompt.
+  2. Hợp đồng câu trả lời có căn cứ (Answer Contract):
+  - System Prompt Constraint: Yêu cầu mô hình chỉ trả lời dựa trên bằng chứng được cung cấp trong ngữ cảnh đã duyệt. Mọi mốc thời gian/deadline phải đi kèm trích dẫn chính xác `[Doc 1]`.
+  - Quy tắc từ chối (Abstention Rule): Nếu ngữ cảnh hợp lệ (C1) không chứa thông tin về deadline mới được hỏi, mô hình bắt buộc phải trả lời: 'Tài liệu chính sách hiện hành không có thông tin về thời hạn này', tuyệt đối không được suy diễn từ kiến thức chung bên ngoài.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Hệ thống RAG tin cậy phải thực hiện thanh lọc ngữ cảnh (Context Curation) trước khi đưa vào mô hình tạo sinh. Điểm tương đồng vector cao không đồng nghĩa với nguồn tin cậy. Việc loại bỏ các nguồn không chính thức và chính sách hết hạn là tuyến phòng thủ then chốt để chống ảo giác và câu trả lời sai lệch.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Lewis et al. (2020): 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks' & Anthropic Claude Prompt Engineering Guide
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Điểm truy xuất không thay thế điều kiện đủ dùng/nguồn chính.
 
@@ -1479,12 +1791,37 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Mỗi gold phải chỉ về nguồn cụ thể trước experiment.
+- [Thiết kế 3 dòng testset đầy đủ] (1.5 điểm): Xây dựng 3 dòng kiểm thử rõ ràng với câu hỏi thực tế, trong đó có 1 dòng phụ thuộc metadata (audience=staff/student).
+- [Xác định rõ ràng Gold Chunks & Ground Truth] (1.5 điểm): Cung cấp expected_doc_ids cụ thể và câu trả lời chuẩn xác thực từ nguồn.
+- [Quy tắc đóng băng nghiêm ngặt] (1.0 điểm): Nêu rõ quy tắc khóa dữ liệu trước thử nghiệm và cấm sửa đổi sau khi thấy kết quả.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi gold phải chỉ về nguồn cụ thể trước experiment.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế 3 dòng dữ liệu kiểm thử chuẩn (Benchmark Gold Dataset):
+  - Dòng 1 (Sinh viên tra cứu học vụ):
+    + `query`: 'Thời hạn sinh viên nộp đơn hoãn thi kết thúc học phần là khi nào?'
+    + `filter_criteria`: `{"audience": "student", "department": "academic"}`
+    + `expected_doc_ids`: `["academic_policy_2026::chunk_12"]`
+    + `gold_answer`: 'Sinh viên phải nộp đơn trước ngày thi ít nhất 03 ngày làm việc kèm minh chứng hợp lệ.'
+  - Dòng 2 (Cán bộ/Giảng viên tra cứu chế độ - Phụ thuộc Metadata):
+    + `query`: 'Quy định định mức giờ nghiên cứu khoa học bắt buộc đối với giảng viên cơ hữu.'
+    + `filter_criteria`: `{"audience": "staff", "role": "faculty"}`
+    + `expected_doc_ids`: `["staff_handbook_v4::chunk_45"]`
+    + `gold_answer`: 'Giảng viên cơ hữu phải hoàn thành tối thiểu 600 giờ chuẩn nghiên cứu khoa học trong năm học.'
+  - Dòng 3 (Đăng ký môn học - Trường hợp ngoại lệ):
+    + `query`: 'Điều kiện đăng ký môn học vượt số tín chỉ tối đa trong một học kỳ.'
+    + `filter_criteria`: `{"audience": "student", "category": "course_registration"}`
+    + `expected_doc_ids`: `["registration_rules::chunk_08"]`
+    + `gold_answer`: 'Chỉ sinh viên có GPA tích lũy >= 3.2 mới được đăng ký tối đa 24 tín chỉ khi có phê duyệt của Trưởng khoa.'
+  2. Quy tắc đóng băng bộ dữ liệu (Freezing Rules):
+  - Bộ kiểm thử (câu hỏi, filter, gold chunks, gold answer) phải được phiên bản hóa và khóa chặt (frozen) trước khi thực hiện bất kỳ thử nghiệm thuật toán nào.
+  - Tuyệt đối không được chỉnh sửa câu hỏi hoặc thêm bớt expected chunks sau khi quan sát kết quả của một chiến lược cụ thể nhằm tránh rò rỉ dữ liệu (benchmark contamination/overfitting).
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Benchmark retrieval chuẩn phải gắn liền với thực tế nghiệp vụ và bao quát cả tìm kiếm ngữ nghĩa lẫn lọc thuộc tính metadata. Quy tắc đóng băng bộ dữ liệu (Dataset Freezing) là nguyên tắc cốt lõi của phương pháp luận khoa học, ngăn ngừa hiện tượng thiên vị thực nghiệm hoặc 'chữa đề theo kết quả'.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Es et al. (2023): 'Ragas: Automated Evaluation of Retrieval Augmented Generation' & TREC Benchmark Guidelines
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi gold phải chỉ về nguồn cụ thể trước experiment.
 
@@ -1504,12 +1841,32 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: MRR chỉ nhìn rank của relevant đầu tiên.
+- [Tính đúng Precision@5] (1.0 điểm): Tính chính xác 2/5 = 0.40 (40%).
+- [Tính đúng Recall@5] (1.0 điểm): Tính chính xác 2/4 = 0.50 (50%).
+- [Tính đúng MRR] (1.0 điểm): Tính chính xác RR = 1/1 = 1.0 (100%).
+- [Diễn giải ý nghĩa nhiễu & bỏ sót] (1.0 điểm): Phân tích sâu sắc: 60% kết quả là nhiễu và bỏ sót 50% tài liệu liên quan trong kho.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: MRR chỉ nhìn rank của relevant đầu tiên.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Tính toán các chỉ số xếp hạng truy xuất (Retrieval Metrics Computation):
+  Theo đề bài: Danh sách Top-5 có nhãn liên quan là `[1, 0, 1, 0, 0]`. Tổng số tài liệu liên quan trong toàn bộ kho tài liệu là `N_rel = 4`.
+  - **Precision@5**:
+    `Precision@5 = (Số tài liệu liên quan trong Top-5) / 5 = 2 / 5 = 0.40` (hoặc 40%).
+  - **Recall@5**:
+    `Recall@5 = (Số tài liệu liên quan trong Top-5) / (Tổng số tài liệu liên quan trong kho) = 2 / 4 = 0.50` (hoặc 50%).
+  - **MRR (Mean Reciprocal Rank)**:
+    Vị trí đầu tiên xuất hiện tài liệu liên quan (first relevant rank) là vị trí 1 (`rank = 1`).
+    `RR = 1 / 1 = 1.0` (hoặc 100%).
+  2. Diễn giải kết quả phân tích:
+  - Dấu hiệu kết quả nhiễu: Precision@5 chỉ đạt 0.40 (có tới 3 trên 5 chunk ở các vị trí 2, 4, 5 là hoàn toàn không liên quan). Điều này cho thấy tập kết quả chứa 60% nhiễu, làm lãng phí context window của LLM và tăng nguy cơ gây ảo giác.
+  - Dấu hiệu mục tiêu bị bỏ sót: Recall@5 chỉ đạt 0.50, chứng minh hệ thống đã bỏ sót một nửa số tài liệu liên quan trong kho (2/4 tài liệu liên quan không lọt vào Top-5).
+  - Điểm tích cực: MRR = 1.0 cho thấy hệ thống rất xuất sắc trong việc đưa ngay một tài liệu liên quan lên vị trí cao nhất (hạng 1).
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Các chỉ số đánh giá truy xuất phản ánh các khía cạnh khác nhau: Precision@K đo mật độ thông tin hữu ích trong vùng ngữ cảnh; Recall@K đo độ bao phủ toàn diện của bằng chứng; MRR đo tốc độ tiếp cận tài liệu đúng đầu tiên. Một hệ thống có MRR cao nhưng Precision thấp vẫn gây rủi ro lớn cho mô hình tạo sinh do lượng nhiễu trong context quá cao.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Manning, Raghavan & Schütze: 'Introduction to Information Retrieval' (Cambridge University Press) - Chapter 8: Evaluation in information retrieval
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 MRR chỉ nhìn rank của relevant đầu tiên.
 
@@ -1558,12 +1915,30 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Mỗi defect cần một boundary-level repair riêng.
+- [Đánh giá chính xác lỗi của Chunk A và B] (1.5 điểm): Chỉ ra lỗi đứt gãy mệnh đề ở Chunk A và mất ngữ cảnh dẫn nhập/điều kiện ở Chunk B.
+- [Đánh giá chính xác lỗi của Chunk C] (1.0 điểm): Nhận diện lỗi ô nhiễm ngữ cảnh chéo do gộp 2 chính sách không liên quan.
+- [Đề xuất sửa theo đúng tầng kiến trúc] (1.5 điểm): Đưa ra giải pháp chuẩn: Sentence-boundary/Parent-document cho A-B và Markdown heading splitting cho C.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi defect cần một boundary-level repair riêng.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Chấm điểm tính mạch lạc của từng chunk (Coherence & Boundary Assessment):
+  - **Chunk A** (Kết thúc bằng 'Được hoàn phí nếu...'): Điểm kém / Lỗi đứt gãy biên ngữ nghĩa (Dangling Clause Defect). Mệnh đề điều kiện bị cắt cụt ở cuối, không cung cấp được điều kiện cụ thể để được hoàn tiền.
+  - **Chunk B** (Bắt đầu bằng mức tiền nhưng thiếu điều kiện): Điểm kém / Lỗi mất ngữ cảnh dẫn nhập (Missing Antecedent Defect). Nêu con số tiền tệ nhưng không biết áp dụng cho trường hợp nào, gây rủi ro hiểu sai lệch chính sách.
+  - **Chunk C** (Chứa hai chính sách không liên quan): Điểm kém / Lỗi ô nhiễm ngữ cảnh chéo (Cross-Topic Contamination Defect). Gộp hai chủ đề độc lập vào một chunk làm loãng vector embedding và gây nhiễu cho bước tạo sinh.
+  2. Đề xuất sửa chữa theo đúng tầng kiến trúc (Layer-wise Repair Proposal):
+  - Sửa chữa tầng Phân đoạn (Chunking Boundary Repair) cho Chunk A và B:
+    + Chuyển từ Fixed-length Chunking sang Sentence-boundary Chunking hoặc Recursive Character Splitting có phân tách theo dấu câu (`. `, `
+
+  `).
+    + Áp dụng `chunk_overlap` từ 40-80 ký tự hoặc dùng Parent-Document Retriever để khi tìm thấy mệnh đề con, toàn bộ đoạn văn bản đầy đủ chứa cả điều kiện và mức tiền sẽ được đưa vào context.
+  - Sửa chữa tầng Cấu trúc tài liệu (Document Structure Parsing) cho Chunk C:
+    + Bổ sung bước phân tách theo cấu trúc tiêu đề (Markdown Heading Splitter) trước khi chunking để mỗi chính sách nằm trong một ranh giới độc lập, không bị gộp chung.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Tính mạch lạc của chunk (Chunk Coherence) ảnh hưởng trực tiếp đến chất lượng embedding và khả năng suy luận của LLM. Các lỗi cắt ngang câu (broken syntax) và trộn lẫn chủ đề (topic contamination) phải được khắc phục tận gốc ở tầng tiền xử lý tài liệu và chiến lược phân đoạn, thay vì cố gắng xử lý bằng prompt.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LangChain Documentation: 'Text Splitters & Semantic Chunker' & LlamaIndex Document Processing Guide
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi defect cần một boundary-level repair riêng.
 
@@ -1583,12 +1958,26 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Tách lỗi của filter logic khỏi lỗi metadata độ bao phủ.
+- [Đánh giá Utility của bộ lọc] (1.5 điểm): Chỉ ra bộ lọc tăng Precision@3 lên 3/3 nhưng làm giảm Recall do loại bỏ chính sách thiếu thẻ.
+- [Tách biệt tầng lỗi] (1.0 điểm): Phân định dứt khoát lỗi thuộc về tầng chất lượng dữ liệu (metadata coverage) chứ không phải lỗi logic của bộ lọc.
+- [Kế hoạch hành động cụ thể] (1.5 điểm): Đưa ra 2 bước xử lý chuẩn xác: Backfill/chuẩn hóa dữ liệu nguồn và áp dụng điều kiện lọc an toàn tạm thời (OR audience IS NULL).
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách lỗi của filter logic khỏi lỗi metadata độ bao phủ.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Đánh giá tính hữu dụng của bộ lọc (Metadata Filter Utility Assessment):
+  - Hiệu quả tăng độ chính xác (Precision Gain): Bộ lọc `audience=student` đã nâng số lượng bản ghi liên quan trong top-3 từ 2 lên 3 bản ghi (tăng Precision@3 từ 66.7% lên 100% đối với các tài liệu có gắn thẻ). Bộ lọc hoạt động hoàn hảo về mặt logic phân loại.
+  - Tổn hại về độ bao phủ (Recall Trade-off / False Negative): Bộ lọc vô tình loại bỏ một chính sách đúng và có giá trị cao chỉ vì bản ghi đó bị khuyết thiếu trường metadata `audience` (Missing Metadata Defect).
+  2. Phân định ranh giới lỗi:
+  Cần tách bạch rõ ràng: Logic lọc của truy vấn là hoàn toàn đúng đắn; lỗi cốt lõi nằm ở **tầng chất lượng dữ liệu và độ bao phủ metadata (Data Ingestion Coverage Defect)** chứ không phải lỗi của thuật toán lọc.
+  3. Quyết định bước xử lý tiếp theo:
+  - Bước 1 (Sửa dữ liệu nguồn): Chạy pipeline kiểm tra và điền bù metadata (Metadata Backfill & Imputation) cho toàn bộ các bản ghi bị thiếu trường `audience` trong kho dữ liệu.
+  - Bước 2 (Chính sách lọc an toàn tạm thời): Trong khi chờ dữ liệu được làm sạch hoàn toàn, triển khai logic lọc nới lỏng: `WHERE audience = 'student' OR audience IS NULL` hoặc gán nhãn mặc định `audience='all'` cho các tài liệu công khai.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Một bộ lọc metadata chỉ có thể phát huy tối đa giá trị khi tỷ lệ bao phủ của metadata đạt 100%. Lỗi thiếu metadata (Missing Tagging) trong quá trình nạp dữ liệu sẽ biến một bộ lọc đúng thành nguyên nhân gây đứt gãy thông tin (False Negatives). Cần phân biệt rõ lỗi logic của bộ lọc với lỗi chất lượng của dữ liệu đầu vào.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Pinecone Documentation: 'Metadata Filtering Best Practices & Null Value Handling' (https://docs.pinecone.io/guides/data/filter-by-metadata)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách lỗi của filter logic khỏi lỗi metadata độ bao phủ.
 
@@ -1629,12 +2018,27 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Theo gold fact từ source tới extracted corpus trước khi nhìn model.
+- [Xác định đúng lỗi sớm nhất] (1.5 điểm): Xác định chính xác lỗi nằm ở Tầng Trích xuất Tài liệu (Document Parser làm mất bảng), không đổ lỗi cho Generator.
+- [Phương án kỹ thuật thay thế] (1.5 điểm): Đề xuất sử dụng Layout-aware parser / Table extractor xuất ra bảng Markdown/HTML bảo toàn cấu trúc.
+- [Quy trình Rerun & Kiểm tra] (1.0 điểm): Mô tả rõ quy trình chạy lại từ trích xuất, re-index đến kiểm tra xác minh câu trả lời của mô hình.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Theo gold fact từ source tới extracted corpus trước khi nhìn model.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Xác định lỗi sớm nhất trong chuỗi xử lý (Earliest Defect Localization):
+  - Lỗi sớm nhất nằm ở **Tầng Trích xuất Dữ liệu (Document Extraction Layer)**.
+  - Cụ thể: Bộ trích xuất văn bản (Text Parser / PDF Extractor) đã làm mất hoàn toàn bảng dữ liệu chứa câu trả lời chuẩn (Gold Answer). Các tầng phía sau (Chunking, Embedding, Vector Search, Generator) hoạt động hoàn toàn bình thường dựa trên dữ liệu đã nhận, nhưng vì dữ liệu đầu vào đã bị rỗng phần bảng nên việc Generator trả 'không có thông tin' là phản ứng hoàn toàn chính xác.
+  2. Phương án thay thế kỹ thuật (Alternative Extraction Strategy):
+  - Thay thế bộ parser văn bản thô bằng Bộ trích xuất nhận biết bố cục và bảng biểu chuyên dụng (Layout-Aware / Table-Aware Parser, ví dụ: Unstructured.io với mô hình `hi_res`, Azure Document Intelligence Layout API, Camelot, hoặc pdfplumber).
+  - Trích xuất bảng thành định dạng có cấu trúc giữ nguyên mối liên hệ hàng - cột (Markdown Table, HTML Table hoặc cấu trúc JSON key-value) kèm tiêu đề ngữ cảnh của bảng.
+  3. Quy trình chạy lại và xác minh (Rerun & Verification Workflow):
+  - Chạy lại trích xuất văn bản cho tài liệu nguồn với parser mới -> Kiểm tra trực quan xem bảng dữ liệu đã có trong văn bản sau trích xuất chưa.
+  - Re-chunk và Re-embed tài liệu vào Vector Store -> Thực hiện lại truy vấn tìm kiếm và kiểm tra xem đoạn ngữ cảnh chứa bảng có lọt vào Top-K và LLM có trả lời chính xác dữ kiện chuẩn hay không.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Nguyên tắc 'Garbage In, Garbage Out' trong RAG: nếu thông tin bị thất thoát ngay từ bước trích xuất ban đầu, không có bất kỳ kỹ thuật prompt engineering hay mô hình LLM tiên tiến nào có thể phục hồi được thông tin đó. Việc chẩn đoán lỗi phải lần ngược từ nguồn qua từng artifact trung gian để định vị chính xác mắt xích đứt gãy sớm nhất.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Unstructured Documentation: 'Extracting Tables from PDF Documents' & LlamaIndex 'PDF Table Extraction Guides'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo gold fact từ source tới extracted corpus trước khi nhìn model.
 
@@ -1654,12 +2058,24 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Nếu unfiltered result đã đúng, failure nằm ở eligibility control.
+- [Chẩn đoán chính xác nguyên nhân] (1.5 điểm): Chỉ ra việc gán cứng sai tham số lọc semester=2025 đã triệt tiêu bản ghi đúng có semester=2026.
+- [Chứng minh tầng retrieval hoạt động tốt] (1.0 điểm): Khẳng định tầng embedding và vector search đúng vì unfiltered đạt hạng 1.
+- [Cách sửa tối thiểu & Phép kiểm tra] (1.5 điểm): Đưa ra cách sửa đúng tham số semester=2026 và viết test kiểm tra mapping tham số từ session.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Nếu unfiltered result đã đúng, failure nằm ở eligibility control.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Chẩn đoán nguyên nhân lỗi (Root Cause Diagnosis):
+  - Kết quả chạy không lọc đưa bản ghi đáp án chuẩn lên hạng 1 chứng minh rằng: Mô hình embedding, chiến lược chunking và thuật toán tìm kiếm vector hoạt động hoàn toàn chính xác về mặt ngữ nghĩa.
+  - Lỗi xảy ra hoàn toàn do **Cấu hình sai điều kiện lọc thẩm quyền (Eligibility Filter Misconfiguration)**: Người truy vấn muốn tìm chính sách cho học viên kỳ `semester=2026`, nhưng tham số gửi vào bộ lọc metadata lại bị gán cứng là `semester=2025` (`department=engineering, semester=2025`). Vì bản ghi đúng có `semester=2026`, bộ lọc tiền truy vấn (pre-filter) đã loại bỏ bản ghi này ngay từ bước sàng lọc, dẫn đến kết quả trả về bị rỗng.
+  2. Phép kiểm tra hoặc cách sửa tối thiểu (Minimal Fix & Verification Test):
+  - Cách sửa tối thiểu trong mã nguồn/API: Cập nhật tham số truy vấn của bộ lọc để lấy động từ ngữ cảnh phiên của người dùng hoặc cho phép giá trị khớp với kỳ yêu cầu: `filter = {"department": "engineering", "semester": "2026"}`.
+  - Phép kiểm tra hồi quy (Regression Test): Thiết lập bài kiểm thử tự động (Unit Test / Integration Test) xác nhận rằng tham số lọc `semester` trong query payload luôn được ánh xạ tự động từ thuộc tính học kỳ hiện tại của sinh viên (`user_session.target_semester`), không bị hardcode giá trị quá khứ.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Khi việc tìm kiếm không lọc (unfiltered retrieval) cho kết quả hoàn hảo nhưng tìm kiếm có lọc lại trả về rỗng, lỗi 100% thuộc về tầng điều phối bộ lọc (Eligibility / Metadata Filter Layer). Cần kiểm tra mapping giữa biến môi trường/người dùng và tham số query payload.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Qdrant Documentation: 'Payload Based Filtering & Debugging Empty Search Results' (https://qdrant.tech/documentation/)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Nếu unfiltered result đã đúng, failure nằm ở eligibility control.
 
@@ -1699,12 +2115,29 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Aggregate gần bằng nhau vẫn có thể che strategy thắng ở từng query class.
+- [Thiết kế bảng thực nghiệm đa chiều] (1.5 điểm): Xây dựng bảng so sánh đầy đủ các tham số, tách biệt chỉ số tổng thể với từng nhóm query (ngoại lệ vs định nghĩa).
+- [Phân tích đánh đổi khách quan] (1.5 điểm): Không overclaim; chỉ rõ Heading chunking thắng ở câu hỏi ngoại lệ nhưng thua ở câu hỏi ngắn/định nghĩa.
+- [Quy tắc quyết định kỹ thuật] (1.0 điểm): Đưa ra decision rule dựa trên ưu tiên nghiệp vụ và đề xuất giải pháp kết hợp.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Aggregate gần bằng nhau vẫn có thể che strategy thắng ở từng query class.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế Bảng Thí nghiệm Có kiểm soát (Controlled Experiment Table):
+  Thực nghiệm được chạy trên cùng một tài liệu Handbook đóng băng với tập 50 câu hỏi thử nghiệm chuẩn hóa được phân loại thành 2 nhóm query:
+  | Chiến lược Chunking | Kích thước & Tham số | Recall@5 Toàn cục | Recall@5 Nhóm Ngoại lệ (25 queries) | Recall@5 Nhóm Định nghĩa chung (25 queries) | Độ trễ p95 (ms) | Dung lượng Vector Store |
+  |---|---|---|---|---|---|---|
+  | Baseline: Fixed Window | `chunk_size=300`, `overlap=50` | 0.81 | 0.68 | 0.94 | 42 ms | 1.200 vectors |
+  | Candidate: Heading Section | Chia theo `#`, `##`, `###` (dynamic) | 0.84 | 0.92 | 0.76 | 48 ms | 850 vectors |
+  2. Quy tắc Quyết định Không thổi phồng (Objective Decision Rule):
+  - Không tuyên bố 'Chiến lược Heading vượt trội toàn diện': Bảng số liệu cho thấy rõ tính chất đánh đổi (Trade-off). Chiến lược Heading thắng áp đảo ở nhóm câu hỏi về ngoại lệ và quy định lồng nhau (0.92 vs 0.68), nhưng lại kém hơn Fixed-300 ở các câu hỏi định nghĩa ngắn (0.76 vs 0.94) do các mục định nghĩa nhỏ bị gộp thành chunk lớn chứa nhiều từ ngữ thừa.
+  - Quy tắc nghiệm thu triển khai:
+    + Nếu ứng dụng ưu tiên cao nhất về tính chính xác của các điều khoản ngoại lệ học vụ: Chọn Chiến lược Heading Section Chunking.
+    + Hướng đi tiếp theo: Triển khai chiến lược kết hợp (Hybrid Chunking: Heading splitting cho phần chính sách, Fixed splitting cho phần bảng thuật ngữ/FAQ) để tối ưu hóa cả hai nhóm truy vấn.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong nghiên cứu thực nghiệm AI, việc kết luận một chiến lược 'tốt hơn toàn diện' dựa trên chỉ số trung bình tổng thể là một lỗi thiên vị nguy hiểm (Aggregation Bias). Cần phân rã hiệu năng theo từng nhóm truy vấn chuyên biệt (Query Classes) để thấy rõ ưu - nhược điểm và ra quyết định kiến trúc dựa trên trọng số nghiệp vụ thực tế.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LangChain Documentation: 'Evaluating Different Chunking Strategies' & Ragas Benchmarking Guidelines
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Aggregate gần bằng nhau vẫn có thể che strategy thắng ở từng query class.
 
@@ -1724,12 +2157,33 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Đối với từng nguồn, tách “đọc được” khỏi “được phép và phù hợp để index”.
+- [Quyết định chuẩn xác cho 4 nguồn] (2.0 điểm): Đưa ra quyết định đúng cho từng nguồn: duyệt nguồn 1 và 3; từ chối dứt khoát nguồn 2 (chứa PII, chưa duyệt) và nguồn 4 (không rõ nguồn gốc).
+- [Căn cứ pháp lý & an toàn thông tin] (1.0 điểm): Nêu rõ lý do về bảo vệ dữ liệu cá nhân (PII) và trách nhiệm của Data Owner.
+- [Thiết kế cổng chặn Pre-indexing Gate] (1.0 điểm): Định nghĩa cổng kiểm soát tự động với whitelist, quét PII và kiểm tra metadata trước khi index.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đối với từng nguồn, tách “đọc được” khỏi “được phép và phù hợp để index”.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Hoàn thiện danh mục quyết định cho bốn nguồn dữ liệu (Data Inventory Decisions):
+  - Nguồn 1 (Tài liệu kỹ thuật công khai có giấy phép rõ ràng):
+    + Quyết định: **Được duyệt lập chỉ mục (APPROVED TO INDEX)**.
+    + Căn cứ: Bản quyền công khai rõ ràng, phục vụ trực tiếp kiến thức kỹ thuật, không chứa thông tin riêng tư.
+  - Nguồn 2 (Xuất dữ liệu CRM chứa số điện thoại nhưng chưa duyệt):
+    + Quyết định: **TỪ CHỐI / CHẶN TUYỆT ĐỐI (REJECTED / BLOCKED)**.
+    + Căn cứ: Vi phạm bảo mật thông tin cá nhân (PII - Phone numbers) và chưa được Data Owner phê duyệt. Việc nạp dữ liệu này vào Vector Store vi phạm nghiêm trọng quy định bảo vệ dữ liệu (GDPR/Nghị định 13) và đối mặt nguy cơ rò rỉ dữ liệu.
+  - Nguồn 3 (Nhật ký thay đổi do Engineering sở hữu, cập nhật mỗi phát hành):
+    + Quyết định: **ĐƯỢC DUYỆT CÓ ĐIỀU KIỆN (APPROVED WITH AUTOMATION)**.
+    + Căn cứ: Có chủ quản rõ ràng (Engineering), dữ liệu chính thống. Cần thiết lập webhook tự động cập nhật và thu hồi phiên bản cũ trong index.
+  - Nguồn 4 (Thư mục cá nhân không rõ nguồn gốc):
+    + Quyết định: **TỪ CHỐI HOÀN TOÀN (REJECTED / QUARANTINED)**.
+    + Căn cứ: Thiếu tính minh chứng xuất xứ (Untracked Provenance), không xác minh được bản quyền và độ tin cậy.
+  2. Điểm chặn kiểm soát trước khi lập chỉ mục (Pre-indexing Ingestion Gate):
+  Thiết lập cổng kiểm soát tự động tại Ingestion Pipeline bắt buộc kiểm tra 3 điều kiện: (1) Nguồn có trong Danh mục Nguồn được phê duyệt (Whitelisted Sources); (2) Đã quét tự động không phát hiện PII (PII Scanning Check); (3) Có metadata xác định rõ Data Owner và Ngày có hiệu lực.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Quản trị dữ liệu (Data Governance) cho hệ thống RAG đòi hỏi nguyên tắc 'Chỉ vì đọc được không có nghĩa là được phép lập chỉ mục'. Dữ liệu đưa vào vector store phải có nguồn gốc hợp pháp, không vi phạm PII và có chủ quản rõ ràng để đảm bảo an toàn pháp lý và chất lượng tri thức.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  NIST AI Risk Management Framework (AI RMF 1.0): 'Data Governance and Information Integrity' & OWASP Top 10 for LLM: LLM06
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đối với từng nguồn, tách “đọc được” khỏi “được phép và phù hợp để index”.
 
@@ -1749,12 +2203,41 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Reviewer cần biết tệp đến từ đâu, phiên bản nào và dựa trên quyền nào.
+- [Xác định đúng ranh giới thu thập] (1.5 điểm): Xác định thu thập 6 trang web và 2 PDF công khai; loại bỏ hoàn toàn trang yêu cầu đăng nhập vì chưa có quyền sử dụng.
+- [Đặc tả Sổ theo dõi Provenance] (1.5 điểm): Thiết kế schema manifest đầy đủ: URL, access_tier, license, timestamp, mã băm SHA256, version.
+- [Khả năng tái lập và kiểm toán độc lập] (1.0 điểm): Nêu rõ cơ chế kiểm chứng độc lập bằng hash và kiểm toán quyền truy cập.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Reviewer cần biết tệp đến từ đâu, phiên bản nào và dựa trên quyền nào.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế ranh giới thu thập dữ liệu (Collection Boundaries):
+  - Ranh giới được phép (In-scope / Authorized Boundary):
+    + 6 trang hướng dẫn công khai: Được phép thu thập và lập chỉ mục.
+    + 2 tệp PDF công khai có gắn version: Được phép tải về, ghi nhận hash và số phiên bản phát hành.
+  - Ranh giới cấm vượt quyền (Out-of-scope / Forbidden Boundary):
+    + Trang yêu cầu đăng nhập: **Cấm tuyệt đối** việc sử dụng tài khoản cá nhân hoặc bypass màn hình đăng nhập để cào dữ liệu khi chưa có thỏa thuận cấp phép bằng văn bản từ chủ quản hệ thống.
+  2. Sổ theo dõi nguồn gốc tài liệu (Source Provenance Registry):
+  Tạo tệp theo dõi `provenance_manifest.json` ghi lại thông tin xác thực để bất kỳ kiểm toán viên nào cũng có thể tái tạo tập ngữ liệu một cách hợp pháp:
+  ```json
+  [
+    {
+      "source_id": "guide-01",
+      "source_url": "https://portal.edu.vn/guide-1",
+      "access_tier": "public",
+      "license": "CC-BY-4.0",
+      "retrieved_at": "2026-10-23T10:00:00Z",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "version": "v2.1"
+    }
+  ]
+  ```
+  3. Cơ chế tái tạo độc lập (Independent Reproducibility):
+  Kiểm toán viên chỉ cần chạy script tải tự động dựa trên manifest; script sẽ so khớp mã băm SHA256 và xác nhận không có bất kỳ lệnh gọi truy cập nào vượt qua hàng rào đăng nhập trái phép.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Tính minh chứng nguồn gốc (Source Provenance) là yêu cầu cốt lõi trong nghiên cứu và triển khai AI tuân thủ chuẩn mực đạo đức và pháp lý. Một kho ngữ liệu có giá trị kiểm định phải chứng minh được mọi tài liệu đều có xuất xứ rõ ràng, có bản quyền sử dụng hợp pháp và có thể tái tạo nguyên bản thông qua mã băm mật mã học (cryptographic hash).
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  W3C PROV-O: The PROV Ontology & IEEE Standard for Machine Learning Data Provenance
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Reviewer cần biết tệp đến từ đâu, phiên bản nào và dựa trên quyền nào.
 
@@ -1774,12 +2257,27 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Mỗi sửa đổi cần chỉ ra vùng nguồn nào xác nhận nó.
+- [Sửa đổi được phép có căn cứ] (1.5 điểm): Cho phép sửa 'Top-k = S' thành 5 vì có ảnh nguồn xác thực; cho phép xóa footer lặp 'Internal draft'.
+- [Giữ nguyên bất định cho vùng mất dữ liệu] (1.5 điểm): Cấm bịa tên tiêu đề cột 2 bị che; bắt buộc đánh dấu rõ trạng thái không xác định.
+- [Bằng chứng kiểm tra và vết kiểm toán] (1.0 điểm): Yêu cầu lưu giữ vùng ảnh cắt ROI và cờ metadata kiểm toán chất lượng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mỗi sửa đổi cần chỉ ra vùng nguồn nào xác nhận nó.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Các sửa đổi ĐƯỢC PHÉP dựa trên bằng chứng xác thực (Permitted Repairs):
+  - Sửa ký tự nhận diện lỗi: Sửa `Top-k = S` thành `Top-k = 5`. Căn cứ: Ảnh nguồn gốc xác nhận rõ ràng ký tự đó là số `5` (có minh chứng thị giác không thể chối cãi).
+  - Loại bỏ thành phần lặp phi ngữ nghĩa (Boilerplate Stripping): Xóa bỏ dòng footer 'Internal draft' lặp lại ở mọi trang vì đây là artifact của văn bản in ấn, không mang nội dung tri thức và gây loãng vector.
+  2. Phần PHẢI GIỮ nguyên trạng thái bất định (Mandatory Uncertainty Retention):
+  - Tiêu đề cột thứ hai của bảng: Vì tiêu đề bị che mất hoàn toàn trong ảnh nguồn, **tuyệt đối không được tự ý bịa đặt hoặc suy đoán** tên cột. Hệ thống bắt buộc phải giữ nhãn bất định, ví dụ: `[Cột 2: Không xác định / Bị che]` (Unlabeled Column).
+  - Cấu trúc bảng xen kẽ: Tách các dòng xen kẽ thành 2 cột dữ liệu độc lập theo cấu trúc ô tương ứng, nhưng phần tiêu đề cột 2 phải được đánh dấu rõ là thiếu thông tin.
+  3. Bằng chứng kiểm tra lại (Verification Evidence & Audit Trail):
+  - Lưu trữ ảnh cắt vùng gốc (Image Crop ROI) của số `5` và vùng bị che của bảng vào thư mục kiểm toán kèm ghi chú tọa độ.
+  - Trong metadata của chunk, lưu cờ: `{"data_quality": "repaired", "repaired_fields": ["top_k_value"], "uncertain_fields": ["table_col2_header"], "source_roi": "page1_box2.png"}`.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong xử lý dữ liệu phục vụ AI, nguyên tắc toàn vẹn dữ liệu nghiêm cấm việc suy diễn vô căn cứ khi trích xuất OCR lỗi. Chỉ được phép sửa đổi khi có bằng chứng đối chiếu trực tiếp từ ảnh gốc. Các vùng dữ liệu bị mất hoặc không thể đọc được bắt buộc phải được đánh dấu là 'không xác định' (explicit uncertainty) để tránh tạo ra ảo giác dây chuyền sang mô hình ngôn ngữ.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Google SRE / Data Quality Principles: 'Handling Incomplete Data and OCR Error Correction' & ISO 8000 Data Quality Standards
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mỗi sửa đổi cần chỉ ra vùng nguồn nào xác nhận nó.
 
@@ -1799,12 +2297,38 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Hãy xác định điều kiện GPA thuộc mục nào trước khi quyết định cách lưu nó.
+- [Biểu diễn chuẩn hóa có phân cấp] (1.5 điểm): Xây dựng biểu diễn Markdown/JSON phân cấp rõ ràng 2 mục Học bổng và Gia hạn, gắn điều kiện GPA vào đúng mục Học bổng.
+- [Bảo toàn bảng biểu trong phạm vi mục] (1.0 điểm): Giữ nguyên bảng học bổng trong phạm vi của mục Học bổng.
+- [Cơ chế kỹ thuật chống nhầm lẫn] (1.5 điểm): Sử dụng scoped chunking và metadata injection để neo giữ phạm vi áp dụng, ngăn chặn việc gán nhầm sang mục Gia hạn.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hãy xác định điều kiện GPA thuộc mục nào trước khi quyết định cách lưu nó.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Dựng biểu diễn chuẩn hóa để bảo toàn cấu trúc ngữ nghĩa (Normalized Representation):
+  Chuyển đổi trang tài liệu sang cấu trúc tài liệu phân cấp dựa trên JSON-LD hoặc Markdown mở rộng có neo giữ phạm vi (Scoped Markdown):
+  ```markdown
+  # Quy chế Hỗ trợ Tài chính Học tập
+
+  ## 1. Học bổng
+  - **Điều kiện tiên quyết**: Chỉ áp dụng khi GPA >= 3.2.
+  - **Danh mục các loại học bổng và mức hỗ trợ**:
+    | Loại học bổng | Mức hỗ trợ | Đối tượng |
+    |---|---|---|
+    | Xuất sắc | 100% học phí | Sinh viên GPA >= 3.6 |
+    | Giỏi | 50% học phí | Sinh viên GPA từ 3.2 đến 3.59 |
+
+  ## 2. Gia hạn thời gian nộp học phí
+  - **Quy định**: Sinh viên có thể nộp đơn xin gia hạn tối đa 30 ngày kể từ hạn chót nộp học phí thông thường.
+  ```
+  2. Giải pháp kỹ thuật ngăn chặn gán nhầm sang mục Gia hạn:
+  - Ràng buộc thứ bậc phân cấp (Hierarchical Scope Binding): Đưa điều kiện 'GPA >= 3.2' và Bảng học bổng vào cùng một Node/Chunk con của Section `## 1. Học bổng`.
+  - Metadata Scope Injection: Mỗi chunk sinh ra từ mục Học bổng đều được gắn thuộc tính `metadata = {"section_title": "Học bổng", "section_id": "sec_scholarship", "applies_to": "scholarship_only"}`.
+  - Ngăn chặn đứt gãy do Layout trôi: Bộ parser phải tôn trọng ranh giới dòng của Section 1 trước khi bắt đầu đọc Section 2, tuyệt đối không dùng bộ trích xuất thuần túy theo tọa độ từ trên xuống dưới mà không nhận diện khối phân cấp.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Lỗi trôi nổi điều kiện (Floating Condition Defect) xảy ra khi bộ trích xuất văn bản phẳng (flat text extraction) làm đứt gãy mối liên kết giữa điều kiện áp dụng và chủ đề của nó, dẫn đến việc điều kiện của mục này bị gán sang mục khác nằm kế cận. Việc áp dụng biểu diễn phân cấp có cấu trúc (Scoped Hierarchy) là giải pháp dứt điểm để bảo tồn ngữ nghĩa nguyên bản.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LlamaIndex Documentation: 'Structured Document Parsers and Node Hierarchy' (https://docs.llamaindex.ai)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hãy xác định điều kiện GPA thuộc mục nào trước khi quyết định cách lưu nó.
 
@@ -1824,12 +2348,28 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Kiểm danh tính, tập giá trị và nguồn gốc riêng biệt.
+- [Quyết định từ chối bản ghi thứ ba] (1.5 điểm): Xác định đúng việc từ chối bản ghi thứ 3 vì thiếu trường bắt buộc source_url.
+- [Đưa 2 bản ghi đầu vào vùng chờ] (1.0 điểm): Nhận diện xung đột trùng lặp khóa chính và không nhất quán giá trị thuộc tính department.
+- [Quy trình chuẩn hóa cụ thể] (1.5 điểm): Nêu rõ việc chuẩn hóa taxonomy (CS vs computer-science) và phân định chunk_index cho khóa chính.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Kiểm danh tính, tập giá trị và nguồn gốc riêng biệt.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Phân loại và xử lý từng bản ghi theo quy ước metadata (Metadata Compliance Decision):
+  - Bản ghi thứ ba (Có tiêu đề nhưng thiếu trường bắt buộc `source_url`):
+    + Quyết định: **TỪ CHỐI NHẬP KHO HOÀN TOÀN (REJECTED)**.
+    + Lý do: Vi phạm hợp đồng dữ liệu cơ bản (Missing Mandatory Field). `source_url` là trường định danh nguồn gốc bắt buộc để phục vụ trích dẫn và kiểm toán pháp lý. Thiếu nguồn gốc sẽ biến tài liệu thành 'unverified data'.
+  - Hai bản ghi đầu (Cùng `doc_id=policy-9`, cùng `source_url`, cùng `document_version=v3`; một bản ghi dùng `department=CS`, bản ghi kia dùng `department=computer-science`):
+    + Quyết định: **ĐƯA VÀO VÙNG CHỜ CHUẨN HÓA (QUARANTINED FOR NORMALIZATION)**.
+    + Lý do: Xung đột tính duy nhất của khóa danh tính (Duplicate Primary Key Conflict) và không nhất quán về giá trị thuộc tính phân loại (Taxonomy Inconsistency).
+  2. Yêu cầu chuẩn hóa và lý giải nguyên nhân kỹ thuật:
+  - Chuẩn hóa Taxonomy mã phòng ban: Quy ước một tập giá trị đóng duy nhất (Controlled Vocabulary), chuẩn hóa `"computer-science"` thành `"CS"` (hoặc ngược lại tùy chuẩn hệ thống).
+  - Xử lý trùng lặp khóa chính: Nếu đây là hai chunk khác nhau của cùng một tài liệu, phải bổ sung `chunk_index` vào khóa chính: `"policy-9::chunk_0"` và `"policy-9::chunk_1"`. Nếu là hai phiên bản gửi trùng, chỉ giữ bản ghi mới nhất sau khi đã chuẩn hóa mã khoa.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Trong kho lưu trữ vector, tính toàn vẹn của metadata phụ thuộc vào hai yếu tố: Khóa định danh duy nhất (Unique Identification) và Tập từ vựng được kiểm soát (Controlled Taxonomy). Sự thiếu nhất quán giữa 'CS' và 'computer-science' sẽ làm hỏng các truy vấn lọc phân loại chính xác, trong khi việc thiếu nguồn gốc làm mất khả năng truy vết trách nhiệm.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Pinecone / Milvus Documentation: 'Vector Database Metadata Schema Constraints & Ingestion Quarantine'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Kiểm danh tính, tập giá trị và nguồn gốc riêng biệt.
 
@@ -1853,12 +2393,38 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Tách câu trước rồi mới nhóm tối đa ba câu.
+- [Liệt kê chính xác 5 câu] (1.5 điểm): Xác định đúng 5 câu tách biệt: 'Một.', 'Hai!', 'Ba?', 'Bốn.', 'Năm.'.
+- [Xác định đúng 2 chunk đầu ra] (1.0 điểm): Nhóm đúng Chunk 1 (3 câu đầu) và Chunk 2 (2 câu còn lại).
+- [3 điều kiện kiểm thử biên độc lập] (1.5 điểm): Đưa ra 3 test cases biên cụ thể: từ viết tắt/số thập phân, dấu câu kép/rỗng, và chuỗi không có dấu câu.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tách câu trước rồi mới nhóm tối đa ba câu.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Danh sách các câu được tách theo quy ước (Extracted Sentences):
+  Quy ước nhận các dấu ngắt `. `, `! `, `? `, dấu chấm trước `
+  ` và dấu chấm ở cuối văn bản:
+  - Câu 1: `"Một."` (tách bởi `. `)
+  - Câu 2: `"Hai!"` (tách bởi `! `)
+  - Câu 3: `"Ba?"` (tách bởi `? `)
+  - Câu 4: `"Bốn."` (tách bởi dấu chấm ngay trước ký tự xuống dòng `
+  `)
+  - Câu 5: `"Năm."` (tách bởi dấu chấm ở cuối đầu vào)
+  Tổng cộng tách được chính xác **5 câu**.
+  2. Các chunk đầu ra với `max_sentences_per_chunk = 3`:
+  - Chunk 1: Chứa 3 câu đầu: `"Một. Hai! Ba?"`
+  - Chunk 2: Chứa 2 câu còn lại: `"Bốn. Năm."` (hoặc `"Bốn.
+  Năm."` tùy theo chính sách giữ nguyên định dạng xuống dòng).
+  3. Ba điều kiện kiểm thử độc lập cho trường hợp biên (Edge Case Test Conditions):
+  - Test Case 1 (Từ viết tắt và số thập phân): Văn bản chứa từ viết tắt như `"TS. Nam đến lúc 14.50."`. Kiểm tra bộ tách câu không được coi dấu chấm sau `TS.` hoặc trong số `14.50` là ranh giới kết thúc câu.
+  - Test Case 2 (Dấu kết thúc câu liên tiếp và khoảng trắng thừa): Văn bản chứa `"Thật sao?! Tuyệt vời... Hết."` hoặc nhiều dấu xuống dòng `
+
+  `. Kiểm tra không sinh ra câu rỗng (`""`) và xử lý mượt mà chuỗi dấu câu phức.
+  - Test Case 3 (Văn bản không có dấu ngắt câu hoặc chuỗi rỗng): Đầu vào là một chuỗi dài không có bất kỳ dấu kết thúc câu nào. Kiểm tra hệ thống không rơi vào vòng lặp vô tận và trả về một chunk duy nhất chứa toàn bộ chuỗi.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Sentence Boundary Chunker yêu cầu thuật toán nhận diện ranh giới câu (Sentence Boundary Disambiguation) chính xác trước khi thực hiện gom cụm. Các trường hợp biên về từ viết tắt, số thập phân và dấu câu lặp là những điểm yếu kinh điển của các bộ tokenizer đơn giản.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  NLTK / spaCy Documentation: 'Sentence Boundary Disambiguation (SBD)' & LangChain SentenceTransformersTokenSplitter
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tách câu trước rồi mới nhóm tối đa ba câu.
 
@@ -1878,12 +2444,33 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Theo dõi hai đại lượng phải giảm: dấu phân tách còn lại và chiều dài phần văn bản.
+- [Theo dõi nhánh đệ quy chính xác] (1.5 điểm): Mô tả đúng quy trình: tách P1 (12) và P2 (28) bằng '. ', sau đó tách P2 thành P2a (14) và P2b (13) bằng dấu cách.
+- [Liệt kê thứ tự đầu ra] (1.0 điểm): Liệt kê đúng thứ tự các phần tử: P1, P2a, P2b với kích thước đều thỏa mãn <= 18.
+- [Bất biến bảo đảm kết thúc] (1.5 điểm): Phát biểu rõ hai bất biến giảm: chiều dài chuỗi và tập phân tách cạn kiệt về ký tự đơn rỗng.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Theo dõi hai đại lượng phải giảm: dấu phân tách còn lại và chiều dài phần văn bản.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Theo dõi các nhánh đệ quy (Recursive Splitting Trace):
+  - Tham số: `size = 18`, separators: `["\n\n", "\n", ". ", " ", ""]`.
+  - Mục đầu vào dài 42 ký tự (không có `\n\n` và `\n`), chuyển xuống separator thứ 3 là `". "`.
+  - Bước 1: Tách bằng `". "` thành hai phần:
+    + Phần 1 (P1): Độ dài 12 ký tự <= 18 -> Đạt kích thước cho phép, không cần tách tiếp, đưa vào kết quả.
+    + Phần 2 (P2): Độ dài 28 ký tự > 18 -> Cần đệ quy tiếp với danh sách separator còn lại: `[" ", ""]`.
+  - Bước 2: Tách P2 bằng khoảng trắng `" "` thành hai phần:
+    + Phần 2a (P2a): Độ dài 14 ký tự <= 18 -> Đạt kích thước, đưa vào kết quả.
+    + Phần 2b (P2b): Độ dài 13 ký tự <= 18 -> Đạt kích thước, đưa vào kết quả.
+  2. Danh sách các phần đầu ra theo đúng thứ tự:
+  Thứ tự trả về: `[P1, P2a, P2b]` (độ dài tương ứng: 12, 14, 13 ký tự, tất cả đều <= 18).
+  3. Bất biến bảo đảm thuật toán luôn kết thúc (Termination Invariant):
+  Thuật toán bảo đảm dừng hữu hạn dựa trên hai đại lượng giảm đơn điệu nghiêm ngặt (Strictly Monotonic Decreasing Quantities):
+  (a) Chiều dài của đoạn văn bản cần xử lý giảm sau mỗi lần phân tách thành công (`len(chunk) < len(parent)`);
+  (b) Danh sách dấu phân tách (separators list) thu hẹp dần sau mỗi tầng đệ quy; khi rơi về separator rỗng `""` (ký tự đơn lẻ), độ dài mỗi phần tử là 1 ký tự <= `size` (với `size >= 1`), bảo đảm thuật toán luôn chạm điều kiện dừng.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Thuật toán Recursive Character Text Splitter hoạt động bằng cách thử lần lượt các dấu phân tách có tính ngữ nghĩa cao nhất. Bất biến bảo đảm dừng của thuật toán đệ quy là sự kết hợp giữa việc giảm độ dài chuỗi và sự cạn kiệt của tập dấu phân tách, tránh lỗi tràn ngăn xếp (stack overflow).
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LangChain Source Code & Documentation: 'RecursiveCharacterTextSplitter Implementation Details' (https://python.langchain.com)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Theo dõi hai đại lượng phải giảm: dấu phân tách còn lại và chiều dài phần văn bản.
 
@@ -1903,12 +2490,36 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một chunk con vẫn phải biết toàn bộ tổ tiên tiêu đề và phạm vi của ghi chú.
+- [Thiết kế chia chunk hợp lý] (1.0 điểm): Chia mục Điều kiện vượt kích thước thành các sub-chunk và giữ ngoại lệ thành chunk có neo giữ.
+- [Đặc tả Metadata phân cấp đầy đủ] (1.5 điểm): Thiết kế metadata chứa ancestor_headings, breadcrumb, section_scope và is_exception.
+- [Cơ chế truy vấn đúng phạm vi] (1.5 điểm): Nêu giải pháp contextual prefix enrichment và bộ lọc phạm vi để truy vấn ngoại lệ không bị nhầm sang mục khác.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một chunk con vẫn phải biết toàn bộ tổ tiên tiêu đề và phạm vi của ghi chú.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế cấu trúc Chunk (Hierarchical Scoped Chunking):
+  - Mục `### Điều kiện` dài vượt ngân sách kích thước được chia thành các chunk con bằng Recursive Separator: `Chunk_Cond_1`, `Chunk_Cond_2`.
+  - Ghi chú ngoại lệ ở cuối tạo thành một chunk riêng biệt: `Chunk_Exception` (hoặc gắn kèm vào chunk điều kiện liền kề nếu kích thước cho phép).
+  2. Thiết kế Metadata bảo toàn phạm vi phân cấp (Metadata Breadcrumb Contract):
+  Mỗi chunk sinh ra đều được gắn trường metadata có cấu trúc bảo toàn cây phả hệ tiêu đề:
+  ```json
+  {
+    "chunk_id": "admissions::scholarship::exception_01",
+    "ancestor_headings": ["Tuyển sinh", "Học bổng", "Điều kiện"],
+    "breadcrumb": "Tuyển sinh > Học bổng > Điều kiện > Ngoại lệ",
+    "section_scope": "scholarship",
+    "is_exception": true,
+    "context_prefix": "[Tuyển sinh - Học bổng - Điều kiện - Ghi chú ngoại lệ]: "
+  }
+  ```
+  3. Cơ chế giúp truy vấn ngoại lệ tìm đúng phạm vi:
+  - Bổ sung Tiền tố ngữ cảnh (Contextual Chunk Enrichment): Chèn chuỗi `breadcrumb` vào đầu nội dung chunk trước khi đưa vào mô hình embedding. Khi người dùng hỏi 'Ngoại lệ điều kiện học bổng', vector của chunk sẽ khớp chính xác nhờ có từ khóa 'Học bổng' và 'Điều kiện'.
+  - Lọc trước theo phạm vi (Pre-filtering): Cho phép hệ thống áp dụng bộ lọc `section_scope = 'scholarship'` để ngăn chặn việc trả về ngoại lệ của mục `Hồ sơ`.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Khi tài liệu phân cấp sâu bị chia nhỏ, các đoạn văn bản phía dưới (đặc biệt là các ghi chú ngoại lệ ngắn) sẽ mất hoàn toàn ngữ cảnh cha nếu không được kế thừa tiêu đề. Việc chèn chuỗi đường dẫn (Breadcrumb Injection) vào cả nội dung văn bản và metadata là kỹ thuật chuẩn công nghiệp giúp mô hình vector và LLM hiểu chính xác phạm vi áp dụng của ngoại lệ.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LlamaIndex Documentation: 'Node Parser with Metadata & Sub-Question Retrieval' & Anthropic: 'Contextual Retrieval'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một chunk con vẫn phải biết toàn bộ tổ tiên tiêu đề và phạm vi của ghi chú.
 
@@ -1928,12 +2539,26 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Hai con số đẹp không đủ nếu dữ liệu đầu vào và thô đầu ra không cùng quy ước.
+- [Chỉ rõ lỗi không cùng dữ liệu đầu vào] (1.5 điểm): Nhận diện sự sai lệch nghiêm trọng khi so sánh trên văn bản thô 960 ký tự và văn bản sạch 900 ký tự.
+- [Chỉ rõ lỗi thiếu Artifacts đầu ra] (1.0 điểm): Nêu rõ việc không lưu giữ các chunk thực tế khiến không thể kiểm chứng chất lượng cắt câu.
+- [Thiết kế lần chạy lại chuẩn hóa] (1.5 điểm): Cố định tập dữ liệu sạch 900 ký tự cho cả 3 chiến lược, lưu trữ đầy đủ artifacts và bổ sung metric đánh giá ranh giới ngữ nghĩa.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Hai con số đẹp không đủ nếu dữ liệu đầu vào và thô đầu ra không cùng quy ước.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Kiểm tra và chỉ ra các sai phạm trong phép so sánh (Flaw Identification):
+  - Sai phạm 1 (Bất bình đẳng dữ liệu đầu vào / Uncontrolled Input Baseline): Cửa sổ cố định chạy trên văn bản thô 960 ký tự, trong khi hai chiến lược còn lại chạy trên văn bản đã làm sạch 900 ký tự. Sự chênh lệch 60 ký tự (chứa nhiễu hoặc khoảng trắng) làm sai lệch hoàn toàn số lượng chunk và độ dài trung bình, khiến kết quả so sánh vô giá trị khoa học.
+  - Sai phạm 2 (Thiếu tính kiểm chứng / Không lưu giữ Chunk Artifacts): Đầu ra chỉ báo 2 con số tổng kết (số lượng, độ dài trung bình) mà không lưu lại danh sách các chunk thực tế được tạo ra. Không thể kiểm tra được chất lượng ngữ nghĩa, điểm cắt có gãy câu hay không và mức độ toàn vẹn của thông tin.
+  2. Thiết kế lần chạy lại có kiểm soát tối thiểu (Minimal Controlled Re-run):
+  - Bước 1 (Chuẩn hóa đầu vào): Chọn duy nhất một phiên bản văn bản đã được làm sạch chuẩn (900 ký tự) làm đầu vào cố định cho cả ba chiến lược.
+  - Bước 2 (Cố định siêu tham số ngân sách): Thiết lập cùng một kích thước chunk mục tiêu (ví dụ `target_size = 150` ký tự, `overlap = 30` ký tự nếu áp dụng).
+  - Bước 3 (Lưu trữ và đối chiếu Artifact): Lưu toàn bộ danh sách các chunk đầu ra của từng chiến lược vào tệp JSON: `{strategy, chunk_index, text, char_length, token_length}`.
+  - Bước 4 (Đánh giá đa chiều): Ngoài số lượng và độ dài trung bình, bổ sung các phép đo: Số lượng câu bị cắt ngang (Broken Sentence Count) và Độ tương đồng ngữ nghĩa nội tại.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Một phép so sánh khoa học phải tuân thủ nghiêm ngặt nguyên tắc đối chứng chuẩn (Controlled Experiment Baseline): cùng dữ liệu đầu vào, cùng quy chuẩn tiền xử lý và lưu giữ đầy đủ hiện vật đầu ra (artifacts) để phục vụ kiểm toán độc lập và tái lập kết quả.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Google SRE / ML Engineering: 'Reproducibility and Controlled Experimentation in ML Pipelines'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Hai con số đẹp không đủ nếu dữ liệu đầu vào và thô đầu ra không cùng quy ước.
 
@@ -1953,12 +2578,27 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Xác định giai đoạn đầu tiên không còn nhìn thấy bốn token cuối.
+- [Theo dõi chuẩn xác 5 giai đoạn luồng] (1.5 điểm): Mô tả đúng tuần tự: Tokenize (12 tokens) -> Truncate (còn 8) -> Encode (8 states) -> Mean-pool -> Normalize.
+- [Chỉ rõ vị trí mất thông tin sớm nhất] (1.5 điểm): Xác định chính xác 4 token cuối bị mất ngay tại bước Truncation trước khi đưa vào encoder.
+- [Phân tích tác động của Mean-pooling] (1.0 điểm): Nêu rõ việc mean-pooling nén phẳng các trạng thái và làm mờ cấu trúc vị trí từ.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Xác định giai đoạn đầu tiên không còn nhìn thấy bốn token cuối.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Theo dõi luồng xử lý chi tiết (Pipeline Execution Flow Tracing):
+  - Giai đoạn 1 (Tokenization): Văn bản gốc tạo ra 12 tokens: `[T_0, T_1, ..., T_11]`.
+  - Giai đoạn 2 (Truncation Pipeline): Pipeline phát hiện giới hạn đầu vào của embedder là 8 tokens. Hệ thống thực hiện cắt cụt (truncation), chỉ giữ lại 8 tokens đầu tiên: `[T_0, ..., T_7]`; bốn tokens cuối `[T_8, T_9, T_10, T_11]` bị loại bỏ vĩnh viễn ngay tại đây.
+  - Giai đoạn 3 (Transformer Encoder Forward Pass): Bộ mã hóa chỉ nhận 8 tokens, sinh ra 8 vector trạng thái ẩn tương ứng: `[h_0, h_1, ..., h_7]` (mỗi vector có số chiều `d`).
+  - Giai đoạn 4 (Mean-Pooling): Tính toán vector trung bình: `v_mean = (1/8) * sum_{i=0..7} h_i`.
+  - Giai đoạn 5 (L2 Normalization): Chuẩn hóa L2: `v_norm = v_mean / ||v_mean||_2` để đưa độ dài vector về 1.
+  2. Thông tin bị thất thoát trước khi vector được tạo ra:
+  - **Thông tin bị mất vĩnh viễn ở Giai đoạn 2 (Truncation)**: Toàn bộ nội dung ngữ nghĩa, từ khóa và các thực thể nằm trong 4 tokens cuối `[T_8, T_9, T_10, T_11]` bị mất hoàn toàn. Bộ mã hóa và các bước mean-pool phía sau hoàn toàn 'mù' đối với 4 tokens này.
+  - **Thông tin bị nén mờ ở Giai đoạn 4 (Mean-pooling)**: Bước gộp trung bình làm mất thứ tự tuần tự (word order) và các mối quan hệ tương tác tinh tế giữa các từ trong 8 tokens còn lại.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Quá trình sinh vector embedding trải qua nhiều biến đổi làm suy hao thông tin. Trong đó, việc cắt cụt token (Truncation) là nguyên nhân gây thất thoát thông tin nghiêm trọng nhất vì nó hoàn toàn loại bỏ một phần văn bản khỏi sự chú ý của mô hình. Cần đảm bảo kích thước chunking luôn nhỏ hơn ngưỡng `max_seq_length` của bộ mã hóa.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Hugging Face Transformers Documentation: 'BertTokenizer Truncation and Sentence Embeddings Mean Pooling'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Xác định giai đoạn đầu tiên không còn nhìn thấy bốn token cuối.
 
@@ -1995,12 +2635,37 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: danh tính phải cho phép giữ, lọc và xóa từng phiên bản độc lập.
+- [Thiết kế Record ID độc lập phiên bản] (1.5 điểm): Định nghĩa khóa duy nhất kết hợp doc_id, version và chunk_index để không bị ghi đè.
+- [Đặc tả Metadata Schema vòng đời] (1.0 điểm): Thiết kế đầy đủ các trường version, is_active, effective_date, supersedes.
+- [Cơ chế tìm kiếm, trích dẫn & xóa độc lập] (1.5 điểm): Trình bày rõ ràng cách pre-filter is_active=true, trích dẫn có version và API xóa theo phiên bản.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: danh tính phải cho phép giữ, lọc và xóa từng phiên bản độc lập.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Thiết kế Bản ghi Danh tính (Record Identity Contract):
+  Khóa chính (Primary Key / Record ID) phải là sự kết hợp duy nhất giữa mã tài liệu, phiên bản và chỉ số chunk: `"{doc_id}::{version}::{chunk_index}"`.
+  - Chunk thuộc v2: `"policy_admission::v2::chunk_0"`
+  - Chunk thuộc v3: `"policy_admission::v3::chunk_0"`
+  2. Thiết kế Metadata có cấu trúc (Structured Metadata Schema):
+  ```json
+  {
+    "doc_id": "policy_admission",
+    "version": "v3",
+    "is_active": true,
+    "effective_date": "2026-09-01",
+    "supersedes": "v2",
+    "source_url": "https://edu.vn/policies/v3.pdf"
+  }
+  ```
+  3. Cơ chế tìm kiếm, trích dẫn và quản lý vòng đời không trộn lẫn:
+  - Khi tìm kiếm (Search Isolation): Sử dụng Metadata Pre-filtering bắt buộc `WHERE is_active = true` (hoặc phân vùng theo Namespace/Collection `policies_v3`), đảm bảo chỉ có bản ghi của v3 được xếp hạng.
+  - Khi trích dẫn (Citation Traceability): LLM trích dẫn kèm số phiên bản cụ thể từ metadata: `[Nguồn: policy_admission v3, hiệu lực từ 01/09/2026]`, phân biệt rạch ròi với v2.
+  - Quản lý vòng đời (Lifecycle Management): Khi v3 được kích hoạt, hệ thống cập nhật bản ghi của v2 thành `is_active: false` hoặc xóa bỏ v2 qua lệnh `delete_many(filter={"version": "v2"})` mà không ảnh hưởng tới v3.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Nội dung trùng lặp ('Hạn nộp là 30/9') giữa các phiên bản là bài toán kinh điển trong quản trị vòng đời tài liệu. Khóa định danh của bản ghi bắt buộc phải bao gồm thông tin phiên bản để tránh hiện tượng ghi đè (overwrite) và cho phép quản lý vòng đời (giữ, lọc, vô hiệu hóa, xóa) từng phiên bản hoàn toàn độc lập.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Pinecone Documentation: 'Namespaces and Metadata Versioning' & Milvus Partition Management
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 danh tính phải cho phép giữ, lọc và xóa từng phiên bản độc lập.
 
@@ -2020,12 +2685,27 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Trạng thái sẵn sàng phải xác nhận cả danh tính của bộ sưu tập lẫn embedder.
+- [Hành vi dừng sớm dứt khoát] (1.5 điểm): Khẳng định hệ thống phải fail-fast ngay lập tức, cấm âm thầm fallback sang bộ nhớ test cũ hoặc policies-v2.
+- [Cảnh báo rủi ro kỹ thuật] (1.0 điểm): Nêu rõ rủi ro mismatch embedding giữa E2 và E3 cùng nguy cơ trả dữ liệu sai lệch cho người dùng.
+- [Bộ điều kiện kiểm tra an toàn khởi động] (1.5 điểm): Thiết lập 4 điều kiện kiểm tra toàn diện: tên collection, embedder identity/dimension, môi trường cách ly, canary test.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Trạng thái sẵn sàng phải xác nhận cả danh tính của bộ sưu tập lẫn embedder.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Hành vi Dừng sớm (Fail-Fast / Early Abort Behavior):
+  Hệ thống phải lập tức chặn đứng quá trình khởi động (Fail-fast / Crash immediately), không cho phép nhận yêu cầu từ người dùng và không âm thầm fallback sang bộ nhớ chứa dữ liệu test cũ.
+  - Lý do: Ứng dụng yêu cầu bộ sưu tập `policies-v3` gắn embedder E3. Việc kết nối nhầm sang `policies-v2` gắn embedder E2 sẽ gây ra hai thảm họa: (a) Không tương thích vector (Dimension/Embedding Mismatch hoặc ô nhiễm không gian vector giữa E2 và E3); (b) Trả về dữ liệu chính sách cũ đã hết hạn hoặc dữ liệu test giả mạo cho người dùng thật.
+  2. Điều kiện kiểm tra an toàn lúc khởi động (Startup Healthcheck Invariants):
+  Hệ thống chỉ chuyển sang trạng thái Sẵn sàng (Readiness Probe = 200 OK) khi thỏa mãn đồng thời 4 điều kiện:
+  - Điều kiện 1 (Collection Identity Verification): Kiểm tra tên collection thực tế trả về từ backend phải khớp chính xác với cấu hình mong đợi (`assert client.collection_name == 'policies-v3'`).
+  - Điều kiện 2 (Embedder Model & Dimension Match): Kiểm tra định danh embedder và số chiều vector thực tế của collection phải khớp chính xác với mô hình E3 (`assert client.embedding_dim == E3.dimension`).
+  - Điều kiện 3 (Environment/Tenant Isolation): Xác nhận kết nối đang trỏ vào môi trường Production, từ chối mọi fallback âm thầm sang Mock/In-Memory Test Store.
+  - Điều kiện 4 (Readiness Ping): Thực hiện một truy vấn kiểm tra (canary search) trên collection mục tiêu thành công.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Nguyên tắc 'Fail-Safe Defaults' trong kiến trúc hệ thống tin cậy: khi phát hiện cấu hình sai lệch giữa các thành phần trọng yếu (Collection version, Embedding model), hệ thống phải dừng sớm để bảo vệ người dùng, thay vì tự ý fallback về dữ liệu test hoặc phiên bản cũ.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Google SRE Book: 'Fail-Safe Design and Readiness Probes' & Kubernetes Documentation: 'Configure Liveness and Readiness Probes'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Trạng thái sẵn sàng phải xác nhận cả danh tính của bộ sưu tập lẫn embedder.
 
@@ -2045,12 +2725,30 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: nội dung bằng nhau không thay thế bản ghi danh tính; theo dõi trạng thái trước và sau từng lần thêm.
+- [Trạng thái sau lần thêm thứ nhất] (1.5 điểm): Xác định kho có 3 bản ghi (X::0, A::0, B::0); giải thích trùng nội dung không ghi đè vì khác ID.
+- [Trạng thái sau lần thêm thứ hai] (1.0 điểm): Xác định kho có 4 bản ghi (thêm mới A::1).
+- [Các điều kiện kiểm thử toàn vẹn] (1.5 điểm): Thiết lập kiểm thử kiểm tra số lượng bản ghi (count=4), tính phân biệt của ID và tính bảo toàn của metadata.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: nội dung bằng nhau không thay thế bản ghi danh tính; theo dõi trạng thái trước và sau từng lần thêm.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Trạng thái và bản ghi tạo mới sau hai lần thêm:
+  - Trạng thái ban đầu: Kho có **1 bản ghi**: `{"id": "X::0"}`.
+  - Lần thêm thứ nhất (Nhận `A::0` và `B::0` cùng nội dung 'Chính sách hoàn tiền' nhưng khác metadata/doc_id):
+    + Bản ghi tạo mới: Cả hai bản ghi `A::0` và `B::0` đều được thêm thành công vào kho. Vì hệ thống định danh bản ghi bằng Khóa chính (Primary Key / Record ID) chứ không định danh bằng nội dung văn bản. Do đó, việc trùng lặp nội dung không gây ghi đè hay thay thế bản ghi.
+    + Trạng thái kho sau lần 1: Gồm **3 bản ghi**: `X::0`, `A::0`, `B::0`.
+  - Lần thêm thứ hai (Nhận `A::1` với nội dung khác):
+    + Bản ghi tạo mới: Bản ghi `A::1` được thêm mới thành công (đây là chunk thứ 2 của tài liệu A, có ID hoàn toàn mới so với `A::0`).
+    + Trạng thái kho sau lần 2: Gồm **4 bản ghi**: `X::0`, `A::0`, `B::0`, `A::1`.
+  2. Các điều kiện kiểm thử cần xác nhận (Verification Invariants):
+  - Kiểm thử số lượng (Count Invariant): `assert store.count() == 4` sau hai lần thêm.
+  - Kiểm thử tính toàn vẹn danh tính (ID Distinctness): 4 ID `['X::0', 'A::0', 'B::0', 'A::1']` đều tồn tại và độc lập.
+  - Kiểm thử bảo toàn nội dung và metadata: Truy xuất `A::0` và `B::0`, xác nhận cả hai đều giữ nguyên nội dung 'Chính sách hoàn tiền' nhưng mang `doc_id` tương ứng là `'A'` và `'B'`.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Cơ sở dữ liệu vector hoạt động dựa trên hợp đồng định danh bản ghi (Record Contract): Khóa chính (ID) quyết định việc tạo mới (Insert) hay cập nhật (Upsert). Hai bản ghi có nội dung hoàn toàn giống nhau nhưng mang ID khác nhau sẽ cùng tồn tại độc lập trong không gian chỉ mục, cho phép trích dẫn chính xác nguồn gốc của từng tài liệu.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Pinecone Documentation: 'Upsert Limits and Record Uniqueness' & Milvus 'Insert Entities'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 nội dung bằng nhau không thay thế bản ghi danh tính; theo dõi trạng thái trước và sau từng lần thêm.
 
@@ -2070,12 +2768,30 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 3 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Tên API cho biết đơn vị phải bị xóa là tài liệu hay một chunk.
+- [Hành vi đúng khi truyền nhầm ID] (1.0 điểm): Chỉ ra API không xóa bản ghi nào hoặc báo lỗi do không tìm thấy doc_id='P::1'.
+- [Kiểm soát kỹ thuật ngăn chặn] (1.0 điểm): Đề xuất validation cú pháp ID (chặn ký tự '::' trong doc_id) và tách biệt rõ API cấp document vs cấp chunk.
+- [Trạng thái sau khi xóa P hợp lệ] (1.0 điểm): Xác định đúng kho còn lại duy nhất bản ghi Q::0 (đã xóa sạch P::0, P::1, P::2).
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Tên API cho biết đơn vị phải bị xóa là tài liệu hay một chunk.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Hành vi đúng của API nhận Document ID (Correct Behavior):
+  - Khi giao diện truyền nhầm `chunk_id = 'P::1'` vào API xóa tài liệu (`delete_by_doc_id`):
+    + API nhận diện không có tài liệu nào có `doc_id == 'P::1'` (vì tài liệu gốc có `doc_id == 'P'`).
+    + Hành vi an toàn: Không xóa bất kỳ bản ghi nào trong kho (xóa 0 bản ghi), hoặc trả về mã lỗi `400 Bad Request / 404 Not Found` cảnh báo ID truyền vào không hợp lệ. Tuyệt đối không được tự ý xóa chunk `P::1` khi hợp đồng API quy định xóa cấp tài liệu.
+  2. Kiểm soát cần có để ngăn chặn nhầm lẫn (Preventive Controls):
+  - Kiểm soát kiểu dữ liệu và định dạng ID (ID Schema Validation): Áp dụng regex kiểm tra tham số: `doc_id` không được chứa ký tự phân cách chunk (`::`). Nếu phát hiện chuỗi có dạng `*::*`, hệ thống lập tức từ chối và cảnh báo giao diện đang truyền nhầm chunk ID.
+  - Tách biệt rõ ràng hai Endpoint API:
+    + `DELETE /documents/{doc_id}`: Xóa toàn bộ các chunk có `metadata.doc_id == doc_id`.
+    + `DELETE /chunks/{chunk_id}`: Chỉ xóa duy nhất 1 chunk cụ thể.
+  3. Trạng thái sau khi thực hiện xóa P hợp lệ (`delete_by_doc_id('P')`):
+  - Hệ thống tìm và xóa toàn bộ các bản ghi có `doc_id == 'P'` (bao gồm 3 bản ghi: `P::0`, `P::1`, `P::2`).
+  - Trạng thái còn lại trong kho: Duy nhất **1 bản ghi**: `Q::0`.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Sự bất tương thích giữa đơn vị tài liệu (Document-level) và đơn vị phân đoạn (Chunk-level) trong các thao tác vòng đời (CRUD) dễ dẫn đến lỗi xóa nhầm hoặc xóa sót dữ liệu. Việc xác thực chặt chẽ cú pháp ID tại API Gateway và phân tách rõ ràng endpoint là biện pháp phòng vệ sống còn.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Qdrant Documentation: 'Points Deletion and Filter-based Deletion' & REST API Design Guidelines
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Tên API cho biết đơn vị phải bị xóa là tài liệu hay một chunk.
 
@@ -2095,12 +2811,34 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: So từng trường cấp tài liệu và trường cấp chunk trên cả hai bản ghi.
+- [Chẩn đoán hậu quả mất audience] (1.0 điểm): Nêu rõ việc chunk 2 bị filter loại bỏ khiến người dùng mất nửa sau chính sách.
+- [Chẩn đoán hậu quả trùng chunk_index=0] (1.0 điểm): Nêu rõ nguy cơ ghi đè bản ghi và mất thứ tự đọc tài liệu.
+- [Đặc tả 2 bản ghi chuẩn hóa] (1.0 điểm): Viết đúng schema của cả 2 chunk với đầy đủ audience=staff và chunk_index là 0 và 1.
+- [Thiết lập điều kiện kiểm tra Ingestion] (1.0 điểm): Định nghĩa 2 invariant kiểm tra kế thừa metadata cấp doc và chỉ số chunk liên tục.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: So từng trường cấp tài liệu và trường cấp chunk trên cả hai bản ghi.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Chẩn đoán hậu quả của các lỗi metadata (Defect Impact Diagnosis):
+  - Lỗi 1: Chunk thứ hai bị mất trường `audience=staff`:
+    + Hậu quả: Khi cán bộ/nhân viên truy vấn chính sách hoàn phí với bộ lọc bảo mật `audience=staff`, chunk thứ hai sẽ bị bộ lọc metadata loại bỏ hoàn toàn. Người dùng chỉ đọc được nửa đầu của chính sách và mất nửa sau, gây đứt gãy thông tin nghiêm trọng.
+  - Lỗi 2: Cả hai chunk đều dùng chung `chunk_index=0`:
+    + Hậu quả: Gây xung đột khóa chính (Primary Key Collision) nếu ID được sinh theo công thức `{doc_id}::{chunk_index}` (`refund::0`), dẫn đến chunk sau ghi đè chunk trước. Nếu ID ngẫu nhiên, hệ thống sẽ không thể tái lập đúng thứ tự đọc của tài liệu khi nạp vào context của LLM.
+  2. Đặc tả các bản ghi sau khi đã sửa chữa (Corrected Records):
+  - Bản ghi 1 (Chunk 0):
+    + `id`: `"refund::chunk_0"`
+    + `metadata`: `{"doc_id": "refund", "source_url": "/v4", "audience": "staff", "chunk_index": 0, "total_chunks": 2}`
+  - Bản ghi 2 (Chunk 1):
+    + `id`: `"refund::chunk_1"`
+    + `metadata`: `{"doc_id": "refund", "source_url": "/v4", "audience": "staff", "chunk_index": 1, "total_chunks": 2}`
+  3. Điều kiện kiểm tra trong Ingestion Pipeline (Validation Invariants):
+  - Invariant 1: Toàn bộ các trường cấp tài liệu (`doc_id`, `source_url`, `audience`) phải được kế thừa 100% trên mọi chunk con.
+  - Invariant 2: `chunk_index` phải là một chuỗi số nguyên tăng dần liên tục không trùng lặp: `0, 1, ..., total_chunks - 1`.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Lỗi thất thoát metadata (Metadata Dropping) và trùng lặp chỉ số chunk (Index Duplication) trong quá trình nạp dữ liệu là nguyên nhân phổ biến khiến hệ thống RAG hoạt động sai lệch. Việc thiết lập kiểm thử tính bất biến (Assertion Invariants) ngay tại pipeline nạp dữ liệu giúp phát hiện và loại bỏ lỗi này trước khi đưa vào chỉ mục vector.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LlamaIndex Documentation: 'Ingestion Pipeline Assertions and Transformations' (https://docs.llamaindex.ai)
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 So từng trường cấp tài liệu và trường cấp chunk trên cả hai bản ghi.
 
@@ -2120,12 +2858,28 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Mọi thành phần nào bị thay sau khi nhìn kết quả đều có thể gây rò rỉ.
+- [Rà soát đầy đủ 4 lỗi của bản nháp] (1.5 điểm): Chỉ ra câu hỏi mơ hồ, đáp án tự sinh thiếu kiểm duyệt, thiếu expected docs, và đặc biệt là lỗi rò rỉ dữ liệu khi sửa truy vấn theo Chiến lược B.
+- [Quy trình 4 bước chuẩn hóa] (1.5 điểm): Thiết kế lại quy trình: câu hỏi thực tế, ground-truth từ tài liệu gốc, đóng băng dữ liệu, đánh giá đối chứng độc lập.
+- [Nguyên tắc toàn vẹn dữ liệu] (1.0 điểm): Nhấn mạnh quy tắc bất di bất dịch: không bao giờ thay đổi benchmark sau khi quan sát kết quả thử nghiệm.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Mọi thành phần nào bị thay sau khi nhìn kết quả đều có thể gây rò rỉ.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Rà soát các lỗi nghiêm trọng trong bản nháp kiểm thử (Flaw Audit):
+  - Lỗi 1 (Câu hỏi mơ hồ, không có căn cứ đánh giá): Truy vấn 'Chính sách nào tốt nhất?' mang tính chủ quan cảm tính, không có tiêu chí định lượng khách quan.
+  - Lỗi 2 (Tự viết đáp án chuẩn không qua thẩm định nguồn): Đáp án do mô hình tự sinh mà không có chuyên gia đối chiếu văn bản gốc dễ chứa ảo giác.
+  - Lỗi 3 (Thiếu Ground-Truth Document ID): Để trống trường tài liệu mong đợi khiến không thể đo lường các chỉ số truy xuất cốt lõi (Recall@K, MRR).
+  - Lỗi 4 (Rò rỉ dữ liệu và thiên vị thực nghiệm cực kỳ nghiêm trọng): Sửa truy vấn sau khi thấy Chiến lược B thắng để 'hợp thức hóa' đầu ra của B là hành vi gian lận khoa học (Data Leakage / Contamination), làm mất hoàn toàn giá trị của bộ benchmark.
+  2. Viết lại quy trình xây dựng bộ kiểm thử chuẩn hóa (Redesigned Benchmark Protocol):
+  - Bước 1 (Thiết kế câu hỏi dựa trên nhu cầu thực tế): Chọn câu hỏi có tính thực tế cao, ví dụ: 'Quy trình và điều kiện xin học bổng khuyến khích học tập học kỳ 1 năm học 2026?'.
+  - Bước 2 (Xác định Ground-Truth Document & Facts từ nguồn gốc): Chuyên gia tra cứu tài liệu chính sách gốc, chỉ định chính xác danh sách các `expected_chunk_ids` và viết câu trả lời chuẩn có trích dẫn điều khoản cụ thể.
+  - Bước 3 (Đóng băng bộ dữ liệu kiểm thử - Benchmark Freezing): Phiên bản hóa bộ dữ liệu kiểm thử (ví dụ: `gold_v1.0.json`) và khóa quyền chỉnh sửa.
+  - Bước 4 (Thực hiện đánh giá đối chứng mù): Chạy độc lập tất cả các chiến lược (Chiến lược A, B, C...) trên bộ dữ liệu đã đóng băng, đo lường tự động bằng Recall@K, Context Precision và Faithfulness mà không được sửa đổi câu hỏi.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Một bộ benchmark đánh giá RAG chỉ có giá trị khi nó được xây dựng độc lập với các hệ thống được đánh giá. Việc thay đổi câu hỏi theo đầu ra của một mô hình chiến thắng là hành vi vi phạm nghiêm trọng tính toàn vẹn nghiên cứu (Research Integrity), biến benchmark thành công cụ tự chứng minh sai lệch.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Es et al. (2023): 'Ragas: Automated Evaluation of Retrieval Augmented Generation' & NeurIPS Benchmark Guidelines
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Mọi thành phần nào bị thay sau khi nhìn kết quả đều có thể gây rò rỉ.
 
@@ -2145,12 +2899,30 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Một chunk có thể đọc trôi chảy nhưng vẫn thuộc sai quy ước.
+- [Chấm điểm chính xác 3 chunks] (1.5 điểm): Nhận diện đúng: R1 thiếu tiêu đề/ngữ cảnh cha, R2 bị cắt cụt mệnh đề sau 'trừ khi', R3 hoàn chỉnh nhưng sai quy ước áp dụng.
+- [Đề xuất sửa tầng Chunking cho R2] (1.0 điểm): Áp dụng sentence boundary chunking hoặc tăng overlap để cứu câu ngoại lệ.
+- [Đề xuất sửa tầng Metadata & Breadcrumbs cho R1 và R3] (1.5 điểm): Tiêm breadcrumb cho R1 và áp dụng bộ lọc metadata phiên bản/domain cho R3.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Một chunk có thể đọc trôi chảy nhưng vẫn thuộc sai quy ước.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Chấm điểm từng chunk về độ đầy đủ ngữ nghĩa và mức độ liên quan (Evaluation):
+  Query: 'Ai được miễn phí trễ hạn?'
+  - **R1**: Mức liên quan: Trung bình / Ngữ nghĩa: Không đầy đủ. R1 chỉ chứa danh sách đối tượng nhưng thiếu tiêu đề quy định ngữ cảnh; người đọc không thể biết danh sách này áp dụng cho 'miễn phí trễ hạn', 'miễn phí tài liệu' hay một chính sách khác.
+  - **R2**: Mức liên quan: Cao / Ngữ nghĩa: Bị đứt gãy nghiêm trọng (Dangling Clause). R2 có tiêu đề đúng nhưng câu ngoại lệ cốt lõi bị cắt cụt ngay sau từ 'trừ khi...', làm mất hoàn toàn điều kiện miễn trừ thực tế.
+  - **R3**: Mức liên quan: Sai / Không hợp lệ (Irrelevant / Wrong Context). R3 hoàn chỉnh về câu chữ nhưng thuộc về một quy ước/chính sách khác (ví dụ: quy ước năm cũ hoặc quy định của đơn vị khác), không áp dụng cho đối tượng của câu hỏi.
+  2. Đề xuất sửa chữa theo từng tầng kiến trúc (Layer-wise Repair Proposals):
+  - Sửa tầng Phân đoạn (Chunking Boundary Repair) cho R2:
+    + Thay thế bộ cắt văn bản bằng Sentence Splitter hoặc tăng `chunk_overlap` từ 0 lên 50 ký tự để câu ngoại lệ không bị cắt cụt sau 'trừ khi'.
+  - Sửa tầng Ngữ cảnh & Cấu trúc (Context Enrichment) cho R1:
+    + Bổ sung tiền tố tiêu đề tổ tiên (Ancestor Heading / Breadcrumb Injection) vào đầu chunk R1 trước khi sinh embedding để chunk luôn mang ngữ cảnh của quy định cha.
+  - Sửa tầng Lọc Metadata (Metadata Filtering) cho R3:
+    + Bổ sung bộ lọc tiền truy vấn `policy_domain` và `version` để loại bỏ các tài liệu thuộc quy ước không liên quan.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Một chunk hoàn chỉnh về mặt ngữ pháp (như R3) vẫn có thể hoàn toàn sai nếu không đúng phạm vi quy định. Ngược lại, chunk đúng chủ đề nhưng bị đứt gãy cú pháp (như R2) hoặc thiếu ngữ cảnh cha (như R1) đều đòi hỏi các giải pháp sửa chữa chuyên biệt ở từng tầng: metadata filtering, sentence chunking và breadcrumb enrichment.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  Anthropic Documentation: 'Contextual Retrieval' & TruLens 'Context Relevance Evaluation'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Một chunk có thể đọc trôi chảy nhưng vẫn thuộc sai quy ước.
 
@@ -2170,12 +2942,31 @@ Dạng bài tập tự luận / thực hành viết code theo tiêu chí chấp 
 
 ĐÁP ÁN ĐÚNG & HƯỚNG DẪN:
 👉 Tiêu chí chấm (Rubric 4 điểm):
-- Đúng bản chất vấn đề và yêu cầu kỹ thuật.
-- Đầy đủ các tiêu chí chấp nhận / test case tối thiểu.
-- Gợi ý cốt lõi: Đừng để một tổng hợp gần bằng nhau xóa mất bên thắng/bên thua theo lớp truy vấn.
+- [Diễn giải sâu sắc hiện tượng phân rã] (1.5 điểm): Phân tích rõ việc con số tổng thể (0.80 vs 0.79) che giấu ưu thế tuyệt đối của Heading ở nhóm ngoại lệ (6/8) và của Fixed ở nhóm FAQ ngắn (5/6).
+- [Quy tắc quyết định không overclaim] (1.0 điểm): Không overclaim; đề xuất cơ chế định tuyến truy xuất dựa trên đặc trưng câu hỏi.
+- [Thiết kế thử nghiệm kế tiếp với Parent-Child] (1.5 điểm): Đề xuất thử nghiệm cụ thể với Parent-Child Retriever để dung hòa ưu điểm của cả hai chiến lược.
 
 PHÂN TÍCH LỜI GIẢI / NGUYÊN LÝ THIẾT KẾ TỪ VLEARN:
-  Phân tích theo nguyên lý thiết kế: Đừng để một tổng hợp gần bằng nhau xóa mất bên thắng/bên thua theo lớp truy vấn.
+  CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):
+  1. Diễn giải kết quả thực nghiệm (Empirical Result Interpretation):
+  - Tổng hợp Recall@5: Chiến lược Heading đạt 0.80, Chiến lược Fixed-300 đạt 0.79 (chênh lệch chỉ 0.01 - gần như tương đương nếu chỉ nhìn con số tổng thể).
+  - Phân rã theo nhóm câu hỏi (Sub-cohort Analysis):
+    + Ở nhóm truy vấn ngoại lệ (8 queries): Heading thắng áp đảo (thắng 6/8, hòa 2, thua 0). Lý do: Cấu trúc heading giữ trọn vẹn ngữ cảnh lồng nhau giữa điều kiện và ngoại lệ.
+    + Ở nhóm truy vấn FAQ ngắn (6 queries): Fixed-300 thắng áp đảo (thắng 5/6, hòa 1, thua 0). Lý do: FAQ ngắn chỉ cần các đoạn cố định nhỏ gọn, không bị loãng vector bởi các phần văn bản dài của cả section.
+    + Ở 6 truy vấn còn lại: Hai bên hòa nhau (6/6).
+  2. Quy tắc Quyết định Kỹ thuật Không thổi phồng (Objective Decision Rule):
+  - **Không tuyên bố** 'Chiến lược Heading vượt trội' chỉ dựa trên Recall tổng hợp 0.80 vs 0.79 vì con số trung bình đã che giấu sự thất bại ở nhóm FAQ.
+  - Quy tắc triển khai nghiệp vụ: Nếu hệ thống định tuyến (Query Router) nhận diện được loại câu hỏi:
+    + Truy vấn tìm kiếm điều khoản / ngoại lệ chính sách: Định tuyến tìm kiếm trên Collection chia theo Heading.
+    + Truy vấn câu hỏi đáp ngắn / FAQ: Định tuyến tìm kiếm trên Collection chia theo Fixed-300.
+  3. Thiết kế Thử nghiệm Kế tiếp (Next Controlled Experiment):
+  - Thử nghiệm chiến lược phân đoạn lai (Hybrid / Hierarchical Chunking): Sử dụng Heading Chunking làm Parent Document kết hợp Fixed-length Chunking làm Child Document (Parent-Child Retriever), đo lường trên cả 20 truy vấn với mục tiêu đạt Recall@5 >= 0.90 trên cả hai nhóm câu hỏi.
+
+  PHÂN TÍCH THEO NGUYÊN LÝ THIẾT KẾ:
+  Hiện tượng nghịch lý Simpson và lỗi tổng hợp trung bình (Aggregation Smoothing) thường xuyên làm lu mờ các đặc tính đối lập của từng thuật toán. Một kỹ sư AI có năng lực chuyên môn cao sẽ không bao giờ vội vã kết luận dựa trên con số tổng thể gần bằng nhau, mà phải phân rã hiệu năng theo từng nhóm đặc thù để thiết kế chiến lược định tuyến truy xuất hoặc kiến trúc lai phù hợp.
+
+  NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:
+  LlamaIndex Documentation: 'Auto-merging & Hierarchical Retrievers' & Kohavi et al.: 'Trustworthy Online Controlled Experiments'
 
 GỢI Ý CỐT LÕI TỪ VLEARN: 💡 Đừng để một tổng hợp gần bằng nhau xóa mất bên thắng/bên thua theo lớp truy vấn.
 
