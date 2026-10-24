@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import courseData from './multiphase_course_data.json';
-import { 
-  BookOpen, 
-  HelpCircle, 
-  CheckCircle, 
+import {
+  BookOpen,
+  HelpCircle,
+  CheckCircle,
   XCircle,
-  Lightbulb, 
-  ChevronRight, 
-  ChevronLeft, 
-  Download, 
+  Lightbulb,
+  ChevronRight,
+  ChevronLeft,
+  Download,
   FileSpreadsheet,
   FileText,
   Award,
@@ -25,68 +25,410 @@ import {
   Shuffle,
   Hash,
   Database,
-  Layers,
   X,
   Bookmark,
   AlertTriangle,
   Flame,
-  Trash2,
-  Filter,
-  BarChart3,
-  Target,
-  TrendingUp,
-  RefreshCw,
   PlayCircle,
-  FileDown,
-  Search,
   CheckCheck,
   Menu,
-  MoreVertical
+  MoreVertical,
+  Lock,
+  LogOut,
+  Users,
+  Shield,
+  UserPlus,
+  Trash2
 } from 'lucide-react';
 
+// ============================================================================
+// CẤU HÌNH TÀI KHOẢN MẶC ĐỊNH & HỖ TRỢ LƯU TRỮ RIÊNG TỪNG NGƯỜI DÙNG
+// ============================================================================
+const ACCOUNTS_STORAGE_KEY = 'vlearn_accounts_v1';
+const CURRENT_USER_STORAGE_KEY = 'vlearn_current_user_v1';
+
+const DEFAULT_ACCOUNTS = [
+  {
+    username: 'admin',
+    password: '123',
+    displayName: 'Quản trị viên (Admin)',
+    role: 'admin',
+    createdAt: '2026-10-01T00:00:00.000Z'
+  },
+  {
+    username: 'user1',
+    password: '123',
+    displayName: 'Học viên A (user1)',
+    role: 'user',
+    createdAt: '2026-10-01T00:00:00.000Z'
+  },
+  {
+    username: 'user2',
+    password: '123',
+    displayName: 'Học viên B (user2)',
+    role: 'user',
+    createdAt: '2026-10-01T00:00:00.000Z'
+  }
+];
+
+function loadAccounts() {
+  try {
+    const raw = localStorage.getItem(ACCOUNTS_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      localStorage.setItem(ACCOUNTS_STORAGE_KEY, JSON.stringify(DEFAULT_ACCOUNTS));
+      return DEFAULT_ACCOUNTS;
+    }
+    // Đảm bảo tài khoản admin luôn tồn tại
+    const hasAdmin = parsed.some(a => a.username.toLowerCase() === 'admin');
+    if (!hasAdmin) {
+      const merged = [DEFAULT_ACCOUNTS[0], ...parsed];
+      localStorage.setItem(ACCOUNTS_STORAGE_KEY, JSON.stringify(merged));
+      return merged;
+    }
+    return parsed;
+  } catch {
+    return DEFAULT_ACCOUNTS;
+  }
+}
+
+function getUserStorageKey(username, suffix) {
+  const clean = String(username || 'guest').trim().toLowerCase();
+  return `vlearn_u_${clean}_${suffix}`;
+}
+
+function getUserSummaryStats(username) {
+  try {
+    const checkedRaw = localStorage.getItem(getUserStorageKey(username, 'checked'));
+    const mistakesRaw = localStorage.getItem(getUserStorageKey(username, 'mistakes'));
+    const sessionRaw = localStorage.getItem(getUserStorageKey(username, 'session'));
+    const checked = checkedRaw ? JSON.parse(checkedRaw) : {};
+    const mistakes = mistakesRaw ? JSON.parse(mistakesRaw) : {};
+    const session = sessionRaw ? JSON.parse(sessionRaw) : {};
+
+    const totalDone = Object.values(checked).filter(c => c?.isChecked).length;
+    const totalCorrect = Object.values(checked).filter(c => c?.isChecked && c?.isCorrect).length;
+    const activeWrong = Object.values(mistakes).filter(m => !m?.isMastered).length;
+    const lastDay = session.selectedDayId || 'day01';
+    const lastPosKey = `${lastDay}__${session.quizBankMode || 'standard'}`;
+    const lastQ = (session.questionPositions?.[lastPosKey] ?? 0) + 1;
+
+    return { totalDone, totalCorrect, activeWrong, lastDay, lastQ };
+  } catch {
+    return { totalDone: 0, totalCorrect: 0, activeWrong: 0, lastDay: 'day01', lastQ: 1 };
+  }
+}
+
+// ============================================================================
+// COMPONENT MÀN HÌNH ĐĂNG NHẬP / ĐĂNG KÝ
+// ============================================================================
+function AuthScreen({ accounts, onLoginSuccess, onRegisterAccount }) {
+  const [mode, setMode] = useState('login'); // 'login' | 'register'
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [displayName, setDisplayName] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError('');
+
+    const cleanUser = username.trim().toLowerCase();
+    const cleanPass = password.trim();
+
+    if (!cleanUser || !cleanPass) {
+      setError('Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.');
+      return;
+    }
+
+    if (mode === 'login') {
+      const found = accounts.find(
+        acc => acc.username.toLowerCase() === cleanUser && acc.password === cleanPass
+      );
+      // Hỗ trợ mật khẩu admin123 hoặc 123 cho tài khoản admin mặc định
+      const isAdminFallback =
+        cleanUser === 'admin' && (cleanPass === 'admin123' || cleanPass === '123') &&
+        accounts.find(a => a.username.toLowerCase() === 'admin');
+
+      const matchedAccount = found || isAdminFallback;
+      if (!matchedAccount) {
+        setError('Tên đăng nhập hoặc mật khẩu không chính xác.');
+        return;
+      }
+      onLoginSuccess(matchedAccount);
+    } else {
+      if (cleanUser.length < 3) {
+        setError('Tên đăng nhập phải có ít nhất 3 ký tự.');
+        return;
+      }
+      if (!/^[a-z0-9_.-]+$/.test(cleanUser)) {
+        setError('Tên đăng nhập chỉ dùng chữ cái không dấu, số, dấu chấm hoặc gạch dưới.');
+        return;
+      }
+      const exists = accounts.some(acc => acc.username.toLowerCase() === cleanUser);
+      if (exists) {
+        setError('Tên đăng nhập này đã tồn tại. Vui lòng chọn tên khác.');
+        return;
+      }
+      const newAcc = {
+        username: cleanUser,
+        password: cleanPass,
+        displayName: displayName.trim() || cleanUser,
+        role: 'user',
+        createdAt: new Date().toISOString()
+      };
+      onRegisterAccount(newAcc);
+      onLoginSuccess(newAcc);
+    }
+  };
+
+  return (
+    <div className="auth-page-wrapper">
+      <div className="auth-card">
+        <div className="auth-brand-header">
+          <div className="brand-badge" style={{ fontSize: '26px', justifyContent: 'center' }}>
+            V<span>Learn</span>
+          </div>
+          <p className="auth-subtitle">Hệ thống ôn tập & luyện đề cá nhân hóa</p>
+        </div>
+
+        <div className="auth-tabs">
+          <button
+            type="button"
+            className={`auth-tab-btn ${mode === 'login' ? 'active' : ''}`}
+            onClick={() => { setMode('login'); setError(''); }}
+          >
+            Đăng nhập
+          </button>
+          <button
+            type="button"
+            className={`auth-tab-btn ${mode === 'register' ? 'active' : ''}`}
+            onClick={() => { setMode('register'); setError(''); }}
+          >
+            Tạo tài khoản mới
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="auth-form">
+          {mode === 'register' && (
+            <div className="auth-field">
+              <label>Tên hiển thị</label>
+              <input
+                type="text"
+                placeholder="VD: Nguyễn Văn A"
+                value={displayName}
+                onChange={(e) => setDisplayName(e.target.value)}
+              />
+            </div>
+          )}
+
+          <div className="auth-field">
+            <label>Tên đăng nhập</label>
+            <input
+              type="text"
+              placeholder="Nhập username..."
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              autoFocus
+            />
+          </div>
+
+          <div className="auth-field">
+            <label>Mật khẩu</label>
+            <input
+              type="password"
+              placeholder="Nhập mật khẩu..."
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          {error && (
+            <div className="auth-error-box">
+              <AlertTriangle size={15} style={{ flexShrink: 0 }} />
+              <span>{error}</span>
+            </div>
+          )}
+
+          <button type="submit" className="btn-primary auth-submit-btn">
+            {mode === 'login' ? 'Đăng nhập vào hệ thống' : 'Đăng ký & Bắt đầu học'}
+          </button>
+        </form>
+
+        <div className="auth-info-footer">
+          <p>
+            Mỗi tài khoản có <strong>bộ nhớ riêng biệt</strong>: tự động lưu câu đang làm dở theo từng Day và sổ tay câu sai riêng.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// COMPONENT CHÍNH (ROOT APP)
+// ============================================================================
 export default function App() {
-  const [activePhaseId, setActivePhaseId] = useState('phase1'); // 'phase1' | 'phase2'
+  const [accounts, setAccounts] = useState(() => loadAccounts());
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem(CURRENT_USER_STORAGE_KEY);
+      if (!saved) return null;
+      const parsed = JSON.parse(saved);
+      const latestAcc = loadAccounts().find(
+        a => a.username.toLowerCase() === parsed.username?.toLowerCase()
+      );
+      return latestAcc || null;
+    } catch {
+      return null;
+    }
+  });
+
+  const handleLoginSuccess = (account) => {
+    const safeUser = {
+      username: account.username,
+      displayName: account.displayName || account.username,
+      role: account.role || 'user'
+    };
+    setCurrentUser(safeUser);
+    try {
+      localStorage.setItem(CURRENT_USER_STORAGE_KEY, JSON.stringify(safeUser));
+    } catch {}
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    try {
+      localStorage.removeItem(CURRENT_USER_STORAGE_KEY);
+    } catch {}
+  };
+
+  const handleRegisterAccount = (newAcc) => {
+    setAccounts(prev => {
+      const next = [...prev, newAcc];
+      try {
+        localStorage.setItem(ACCOUNTS_STORAGE_KEY, JSON.stringify(next));
+      } catch {}
+      return next;
+    });
+  };
+
+  const handleUpdateAccounts = (nextAccounts) => {
+    setAccounts(nextAccounts);
+    try {
+      localStorage.setItem(ACCOUNTS_STORAGE_KEY, JSON.stringify(nextAccounts));
+    } catch {}
+  };
+
+  if (!currentUser) {
+    return (
+      <AuthScreen
+        accounts={accounts}
+        onLoginSuccess={handleLoginSuccess}
+        onRegisterAccount={handleRegisterAccount}
+      />
+    );
+  }
+
+  return (
+    <AuthenticatedWorkspace
+      key={currentUser.username.toLowerCase()}
+      currentUser={currentUser}
+      accounts={accounts}
+      onUpdateAccounts={handleUpdateAccounts}
+      onLogout={handleLogout}
+    />
+  );
+}
+
+// ============================================================================
+// WORKSPACE CHO TỪNG TÀI KHOẢN (KHỞI TẠO BỘ NHỚ ĐỘC LẬP THEO USERNAME)
+// ============================================================================
+function AuthenticatedWorkspace({ currentUser, accounts, onUpdateAccounts, onLogout }) {
+  const isAdmin = currentUser?.role === 'admin';
+  const username = currentUser.username.toLowerCase();
+
+  // Đọc phiên làm việc đã lưu của riêng tài khoản này
+  const initialSession = useMemo(() => {
+    try {
+      const raw = localStorage.getItem(getUserStorageKey(username, 'session'));
+      return raw ? JSON.parse(raw) : {};
+    } catch {
+      return {};
+    }
+  }, [username]);
+
+  const [rawPhaseId, setActivePhaseId] = useState(() => {
+    if (!isAdmin) return 'phase1';
+    return initialSession.activePhaseId === 'phase2' ? 'phase2' : 'phase1';
+  });
+
+  const activePhaseId = isAdmin ? rawPhaseId : 'phase1';
   const currentPhase = courseData.phases.find(p => p.id === activePhaseId) || courseData.phases[0];
 
-  const [selectedDayId, setSelectedDayId] = useState(currentPhase.days[0].day_id);
-  const [activeTab, setActiveTab] = useState('quiz'); // 'quiz' | 'slide'
-  const [currentQIndex, setCurrentQIndex] = useState(0);
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [selectedDayId, setSelectedDayId] = useState(() => {
+    const savedDay = initialSession.selectedDayId;
+    const validInPhase = currentPhase.days.some(d => d.day_id === savedDay);
+    return validInPhase ? savedDay : currentPhase.days[0].day_id;
+  });
 
-  // Chế độ kho câu hỏi: 'standard' (Đề chuẩn) | 'expanded' (Kho mở rộng) | 'wrong' (Câu hay sai Day này) | 'all_wrong' (Toàn bộ câu sai các Day)
-  const [quizBankMode, setQuizBankMode] = useState('standard');
-
-  // Chế độ học tập (Hiện sẵn đáp án và lời giải)
-  const [studyMode, setStudyMode] = useState(false);
-
-  // Bộ lọc câu hỏi: 'all' | 'unanswered' | 'correct' | 'wrong' | 'need_review'
+  const [activeTab, setActiveTab] = useState(() => initialSession.activeTab || 'quiz');
+  const [quizBankMode, setQuizBankMode] = useState(() => initialSession.quizBankMode || 'standard');
+  const [studyMode, setStudyMode] = useState(() => Boolean(initialSession.studyMode));
   const [filterType, setFilterType] = useState('all');
 
-  // Modal Hướng dẫn cấu trúc đề thi
+  // Lưu vị trí câu hỏi đang làm của từng (Day + Chế độ đề)
+  const [questionPositions, setQuestionPositions] = useState(() => {
+    return initialSession.questionPositions && typeof initialSession.questionPositions === 'object'
+      ? initialSession.questionPositions
+      : {};
+  });
+
+  // Lưu vị trí slide đang xem của từng Day
+  const [slidePositions, setSlidePositions] = useState(() => {
+    return initialSession.slidePositions && typeof initialSession.slidePositions === 'object'
+      ? initialSession.slidePositions
+      : {};
+  });
+
+  // Modal trạng thái
   const [showGuideModal, setShowGuideModal] = useState(false);
-
-  // Modal/Sheet Lưới câu hỏi trên Mobile
   const [showGridModal, setShowGridModal] = useState(false);
-
-  // Sheet Thao tác khác & Tài liệu tải về trên Mobile
   const [showMoreActions, setShowMoreActions] = useState(false);
-
-  // Trạng thái mở/đóng Sidebar Drawer trên Mobile
+  const [showAdminModal, setShowAdminModal] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Trạng thái câu trả lời người dùng (Tự động nạp từ LocalStorage)
+  // State tạo tài khoản trong modal Admin
+  const [newAccUsername, setNewAccUsername] = useState('');
+  const [newAccPassword, setNewAccPassword] = useState('');
+  const [newAccDisplay, setNewAccDisplay] = useState('');
+  const [newAccRole, setNewAccRole] = useState('user');
+  const [adminMsg, setAdminMsg] = useState('');
+
+  // Dữ liệu câu trả lời của riêng user
   const [userAnswers, setUserAnswers] = useState(() => {
     try {
-      const saved = localStorage.getItem('vlearn_user_answers_v2');
+      const saved = localStorage.getItem(getUserStorageKey(username, 'answers'));
       return saved ? JSON.parse(saved) : {};
     } catch {
       return {};
     }
   });
 
+  // Trạng thái chấm câu hỏi của riêng user
   const [checkedState, setCheckedState] = useState(() => {
     try {
-      const saved = localStorage.getItem('vlearn_checked_state_v2');
+      const saved = localStorage.getItem(getUserStorageKey(username, 'checked'));
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+
+  // Sổ tay câu sai của riêng user
+  const [mistakeBook, setMistakeBook] = useState(() => {
+    try {
+      const saved = localStorage.getItem(getUserStorageKey(username, 'mistakes'));
       return saved ? JSON.parse(saved) : {};
     } catch {
       return {};
@@ -96,54 +438,57 @@ export default function App() {
   const [showHint, setShowHint] = useState({});
   const [showEssaySolution, setShowEssaySolution] = useState({});
 
-  // SỔ TAY CÂU HAY SAI (Lưu trữ bền vững trong LocalStorage)
-  const [mistakeBook, setMistakeBook] = useState(() => {
-    try {
-      const saved = localStorage.getItem('vlearn_mistake_book_v2');
-      return saved ? JSON.parse(saved) : {};
-    } catch {
-      return {};
-    }
-  });
-
-  // Đồng bộ LocalStorage tự động
+  // Đồng bộ tự động sang bộ nhớ riêng của tài khoản hiện tại
   useEffect(() => {
     try {
-      localStorage.setItem('vlearn_mistake_book_v2', JSON.stringify(mistakeBook));
-    } catch (e) {
-      console.error(e);
-    }
-  }, [mistakeBook]);
+      localStorage.setItem(getUserStorageKey(username, 'answers'), JSON.stringify(userAnswers));
+    } catch {}
+  }, [username, userAnswers]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('vlearn_user_answers_v2', JSON.stringify(userAnswers));
-    } catch (e) {}
-  }, [userAnswers]);
+      localStorage.setItem(getUserStorageKey(username, 'checked'), JSON.stringify(checkedState));
+    } catch {}
+  }, [username, checkedState]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('vlearn_checked_state_v2', JSON.stringify(checkedState));
-    } catch (e) {}
-  }, [checkedState]);
+      localStorage.setItem(getUserStorageKey(username, 'mistakes'), JSON.stringify(mistakeBook));
+    } catch {}
+  }, [username, mistakeBook]);
+
+  useEffect(() => {
+    try {
+      const sessionPayload = {
+        activePhaseId: isAdmin ? activePhaseId : 'phase1',
+        selectedDayId,
+        activeTab,
+        quizBankMode,
+        studyMode,
+        questionPositions,
+        slidePositions
+      };
+      localStorage.setItem(getUserStorageKey(username, 'session'), JSON.stringify(sessionPayload));
+    } catch {}
+  }, [username, isAdmin, activePhaseId, selectedDayId, activeTab, quizBankMode, studyMode, questionPositions, slidePositions]);
 
   const currentDay = currentPhase.days.find(d => d.day_id === selectedDayId) || currentPhase.days[0];
 
-  // Danh sách câu hay sai của Day hiện tại (chưa bỏ ra)
+  // Danh sách câu sai của Day hiện tại
   const dayWrongQuestions = useMemo(() => {
     return Object.values(mistakeBook)
       .filter(m => m.dayId === selectedDayId && !m.isMastered && m.question)
       .map(m => m.question);
   }, [mistakeBook, selectedDayId]);
 
-  // Toàn bộ câu hay sai trên tất cả các Day
+  // Toàn bộ câu sai các Day
   const totalWrongQuestions = useMemo(() => {
     return Object.values(mistakeBook)
       .filter(m => !m.isMastered && m.question)
       .map(m => m.question);
   }, [mistakeBook]);
 
-  // Bộ câu hỏi hiển thị cho Quiz theo chế độ lựa chọn
+  // Danh sách câu hỏi theo chế độ
   const allQuestions = useMemo(() => {
     if (quizBankMode === 'wrong') return dayWrongQuestions;
     if (quizBankMode === 'all_wrong') return totalWrongQuestions;
@@ -154,14 +499,36 @@ export default function App() {
 
   const slides = currentDay.slides || [];
 
-  // Bảo vệ currentQIndex luôn hợp lệ khi đổi kho câu hỏi
-  useEffect(() => {
-    if (currentQIndex >= allQuestions.length && allQuestions.length > 0) {
-      setCurrentQIndex(allQuestions.length - 1);
-    }
-  }, [allQuestions.length, currentQIndex]);
+  // Khóa lưu vị trí câu hỏi theo từng (Day + Mode)
+  const currentPosKey = quizBankMode === 'all_wrong'
+    ? 'all__all_wrong'
+    : `${selectedDayId}__${quizBankMode}`;
 
-  // Lọc câu hỏi theo filterType
+  const rawSavedQIndex = questionPositions[currentPosKey] ?? 0;
+  const currentQIndex = allQuestions.length > 0
+    ? Math.min(Math.max(0, rawSavedQIndex), allQuestions.length - 1)
+    : 0;
+
+  const setCurrentQIndex = (nextVal) => {
+    setQuestionPositions(prev => {
+      const currentVal = prev[currentPosKey] ?? 0;
+      const resolved = typeof nextVal === 'function' ? nextVal(currentVal) : nextVal;
+      const clamped = allQuestions.length > 0
+        ? Math.min(Math.max(0, resolved), allQuestions.length - 1)
+        : 0;
+      return { ...prev, [currentPosKey]: clamped };
+    });
+  };
+
+  const activeSlideIndex = slides.length > 0
+    ? Math.min(Math.max(0, slidePositions[selectedDayId] ?? 0), slides.length - 1)
+    : 0;
+
+  const setActiveSlideIndex = (idx) => {
+    setSlidePositions(prev => ({ ...prev, [selectedDayId]: idx }));
+  };
+
+  // Bộ lọc câu hỏi
   const filteredQuestionIndices = useMemo(() => {
     return allQuestions.map((q, idx) => {
       const qId = q.question_id || `${selectedDayId}_q${idx}`;
@@ -170,7 +537,11 @@ export default function App() {
       if (filterType === 'correct') return status?.isChecked && status?.isCorrect ? idx : null;
       if (filterType === 'wrong') return status?.isChecked && !status?.isCorrect ? idx : null;
       if (filterType === 'unanswered') return !status?.isChecked ? idx : null;
-      if (filterType === 'need_review') return (mistake && !mistake.isMastered) || (status?.isChecked && !status?.isCorrect) || mistake?.isPinned ? idx : null;
+      if (filterType === 'need_review') {
+        return (mistake && !mistake.isMastered) || (status?.isChecked && !status?.isCorrect) || mistake?.isPinned
+          ? idx
+          : null;
+      }
       return idx;
     }).filter(x => x !== null);
   }, [allQuestions, checkedState, filterType, selectedDayId, mistakeBook]);
@@ -178,7 +549,7 @@ export default function App() {
   const currentQ = allQuestions[currentQIndex] || null;
   const currentSlide = slides[activeSlideIndex] || slides[0] || null;
 
-  // CƠ CHẾ BỎ RA KHỎI CÂU HAY SAI KHI USER THẤY ỔN CÂU ĐÓ RỒI
+  // Bỏ câu hỏi khỏi danh sách câu sai
   const handleRemoveFromWrong = (qIdToRemove) => {
     const qId = qIdToRemove || currentQ?.question_id || `${selectedDayId}_q${currentQIndex}`;
     setMistakeBook(prev => {
@@ -186,7 +557,6 @@ export default function App() {
       delete next[qId];
       return next;
     });
-    // Nếu đang ở mode câu sai và xóa câu, điều chỉnh index
     if (quizBankMode === 'wrong' || quizBankMode === 'all_wrong') {
       if (currentQIndex >= allQuestions.length - 1 && currentQIndex > 0) {
         setCurrentQIndex(currentQIndex - 1);
@@ -194,7 +564,7 @@ export default function App() {
     }
   };
 
-  // Thêm câu vào danh sách câu hay sai
+  // Thêm câu vào danh sách câu sai
   const handleAddToWrong = (q, day) => {
     const isEvent = q && (q.nativeEvent || q.target || q.preventDefault);
     const targetQ = (!isEvent && q && q.interaction) ? q : currentQ;
@@ -220,14 +590,16 @@ export default function App() {
     }));
   };
 
-  // Chuyển Phase
+  // Chuyển Phase (Chặn tài khoản thường vào Phase 2 / Chapter 3)
   const handleSwitchPhase = (phaseId) => {
+    if (phaseId === 'phase2' && !isAdmin) {
+      alert('Nội dung Phần 2 (Chapter 3 - Track 3) chỉ dành cho tài khoản Admin.');
+      return;
+    }
     setActivePhaseId(phaseId);
     const targetPhase = courseData.phases.find(p => p.id === phaseId);
     if (targetPhase && targetPhase.days.length > 0) {
       setSelectedDayId(targetPhase.days[0].day_id);
-      setCurrentQIndex(0);
-      setActiveSlideIndex(0);
       setQuizBankMode('standard');
       setFilterType('all');
       if (phaseId === 'phase2') {
@@ -253,7 +625,7 @@ export default function App() {
     }
   };
 
-  // Kiểm tra đáp án (Tự động ghi nhận câu sai vào Sổ tay ôn tập)
+  // Kiểm tra đáp án & tự động lưu câu sai vào sổ tay riêng
   const handleCheckAnswer = (qOverride, dayOverride) => {
     const isEvent = qOverride && (qOverride.nativeEvent || qOverride.target || qOverride.preventDefault);
     const targetQ = (!isEvent && qOverride && qOverride.interaction) ? qOverride : currentQ;
@@ -261,9 +633,14 @@ export default function App() {
     const targetDayId = targetDay.day_id || targetDay.dayId || selectedDayId;
     const qId = targetQ?.question_id || `${targetDayId}_q${currentQIndex}`;
     const user = userAnswers[qId];
-    
-    if (user === undefined || user === null || (Array.isArray(user) && user.length === 0) || (typeof user === 'object' && !Array.isArray(user) && Object.keys(user).length === 0)) {
-      alert("Vui lòng chọn hoặc nhập câu trả lời trước khi bấm kiểm tra!");
+
+    if (
+      user === undefined ||
+      user === null ||
+      (Array.isArray(user) && user.length === 0) ||
+      (typeof user === 'object' && !Array.isArray(user) && Object.keys(user).length === 0)
+    ) {
+      alert('Vui lòng chọn hoặc nhập câu trả lời trước khi kiểm tra!');
       return;
     }
 
@@ -294,10 +671,9 @@ export default function App() {
 
     setCheckedState(prev => ({
       ...prev,
-      [qId]: { isChecked: true, isCorrect: isCorrect }
+      [qId]: { isChecked: true, isCorrect }
     }));
 
-    // Tự động cập nhật Sổ tay câu sai (Mistake Book)
     setMistakeBook(prev => {
       const existing = prev[qId];
       if (!isCorrect) {
@@ -317,218 +693,56 @@ export default function App() {
             isMastered: false
           }
         };
-      } else {
-        if (existing) {
-          const newCorrectCount = (existing.correctCount || 0) + 1;
-          return {
-            ...prev,
-            [qId]: {
-              ...existing,
-              correctCount: newCorrectCount,
-              lastAttemptAt: new Date().toISOString(),
-              isMastered: newCorrectCount >= 2
-            }
-          };
-        }
-        return prev;
-      }
-    });
-  };
-
-  // Ghim hoặc bỏ ghim câu hỏi vào Sổ tay câu chưa ổn
-  const handleTogglePin = (q, day) => {
-    const isEvent = q && (q.nativeEvent || q.target || q.preventDefault);
-    const targetQ = (!isEvent && q && q.interaction) ? q : currentQ;
-    const targetDay = (!isEvent && day && (day.day_id || day.dayId)) ? day : currentDay;
-    const targetDayId = targetDay.day_id || targetDay.dayId || selectedDayId;
-    const qId = targetQ?.question_id || `${targetDayId}_q${currentQIndex}`;
-    
-    setMistakeBook(prev => {
-      const existing = prev[qId];
-      if (existing) {
-        if (existing.isPinned && (!existing.wrongCount || existing.wrongCount === 0)) {
-          const next = { ...prev };
-          delete next[qId];
-          return next;
-        }
+      } else if (existing) {
+        const newCorrectCount = (existing.correctCount || 0) + 1;
         return {
           ...prev,
           [qId]: {
             ...existing,
-            isPinned: !existing.isPinned
-          }
-        };
-      } else {
-        return {
-          ...prev,
-          [qId]: {
-            qId,
-            dayId: targetDay.day_id || targetDay.dayId || selectedDayId,
-            dayLabel: targetDay.day_label || targetDay.dayLabel || 'Day',
-            dayTitle: targetDay.title || targetDay.dayTitle || '',
-            phaseId: activePhaseId,
-            question: targetQ,
-            wrongCount: 0,
-            correctCount: 0,
+            correctCount: newCorrectCount,
             lastAttemptAt: new Date().toISOString(),
-            isPinned: true,
-            isMastered: false
+            isMastered: newCorrectCount >= 2
           }
         };
       }
+      return prev;
     });
   };
 
-  // Đánh dấu đã nắm vững hoặc cần ôn lại
-  const handleToggleMastered = (qId) => {
-    setMistakeBook(prev => {
-      if (!prev[qId]) return prev;
-      return {
-        ...prev,
-        [qId]: {
-          ...prev[qId],
-          isMastered: !prev[qId].isMastered
-        }
-      };
-    });
-  };
-
-  // Xóa 1 câu khỏi sổ tay
-  const handleRemoveMistake = (qId) => {
-    setMistakeBook(prev => {
-      const next = { ...prev };
-      delete next[qId];
-      return next;
-    });
-  };
-
-  // Xóa toàn bộ sổ tay câu sai
-  const handleClearAllMistakes = () => {
-    if (window.confirm("Bạn có chắc chắn muốn làm sạch toàn bộ Sổ tay câu sai không?")) {
-      setMistakeBook({});
-    }
-  };
-
-  // Nạp 4 câu khó mẫu để trải nghiệm ngay
-  const handleLoadSampleMistakes = () => {
-    const samples = {};
-    const p1 = courseData.phases[0];
-    if (p1 && p1.days.length > 0) {
-      p1.days.forEach(day => {
-        (day.questions || []).forEach(q => {
-          const t = q.interaction?.type;
-          const qId = q.question_id;
-          if (t === 'multi_select' && !samples['sample_multi']) {
-            samples[qId] = {
-              qId,
-              dayId: day.day_id,
-              dayLabel: day.day_label,
-              dayTitle: day.title,
-              phaseId: 'phase1',
-              question: q,
-              wrongCount: 2,
-              correctCount: 0,
-              lastAttemptAt: new Date().toISOString(),
-              isPinned: true,
-              isMastered: false
-            };
-            samples['sample_multi'] = true;
-          } else if (t === 'matching' && !samples['sample_matching']) {
-            samples[qId] = {
-              qId,
-              dayId: day.day_id,
-              dayLabel: day.day_label,
-              dayTitle: day.title,
-              phaseId: 'phase1',
-              question: q,
-              wrongCount: 1,
-              correctCount: 0,
-              lastAttemptAt: new Date().toISOString(),
-              isPinned: false,
-              isMastered: false
-            };
-            samples['sample_matching'] = true;
-          } else if (t === 'ordering' && !samples['sample_ordering']) {
-            samples[qId] = {
-              qId,
-              dayId: day.day_id,
-              dayLabel: day.day_label,
-              dayTitle: day.title,
-              phaseId: 'phase1',
-              question: q,
-              wrongCount: 3,
-              correctCount: 1,
-              lastAttemptAt: new Date().toISOString(),
-              isPinned: true,
-              isMastered: false
-            };
-            samples['sample_ordering'] = true;
-          } else if (t === 'single_select' && !samples['sample_single']) {
-            samples[qId] = {
-              qId,
-              dayId: day.day_id,
-              dayLabel: day.day_label,
-              dayTitle: day.title,
-              phaseId: 'phase1',
-              question: q,
-              wrongCount: 2,
-              correctCount: 0,
-              lastAttemptAt: new Date().toISOString(),
-              isPinned: false,
-              isMastered: false
-            };
-            samples['sample_single'] = true;
-          }
-        });
-      });
-      delete samples['sample_multi'];
-      delete samples['sample_matching'];
-      delete samples['sample_ordering'];
-      delete samples['sample_single'];
-    }
-    setMistakeBook(prev => ({ ...prev, ...samples }));
-  };
-
-  // Xuất file text tổng hợp câu sai
+  // Xuất file text tổng hợp câu sai (Chỉ dành cho Admin)
   const handleExportMistakesTxt = () => {
-    if (allMistakeList.length === 0) {
-      alert("Sổ tay câu sai hiện đang trống!");
+    if (!isAdmin) return;
+    const mistakeList = Object.values(mistakeBook);
+    if (mistakeList.length === 0) {
+      alert('Sổ tay câu sai hiện đang trống!');
       return;
     }
 
     let content = `===================================================================\n`;
-    content += `       VLEARN - SỔ TAY CÂU HAY SAI & ÔN TẬP KIẾN THỨC YẾU\n`;
+    content += `       VLEARN - SỔ TAY CÂU HAY SAI (${currentUser.username})\n`;
     content += `       Thời gian xuất: ${new Date().toLocaleString('vi-VN')}\n`;
-    content += `       Tổng số câu cần ôn: ${allMistakeList.length} câu\n`;
+    content += `       Tổng số câu: ${mistakeList.length} câu\n`;
     content += `===================================================================\n\n`;
 
-    allMistakeList.forEach((item, idx) => {
+    mistakeList.forEach((item, idx) => {
       const q = item.question;
       content += `[CÂU ${idx + 1}] ${item.dayLabel}: ${item.dayTitle} · Mã: ${item.qId}\n`;
-      content += `Số lần làm sai: ${item.wrongCount || 0} lần | Trạng thái: ${item.isMastered ? 'Đã nắm vững' : 'Chưa ổn / Cần ôn'}\n`;
-      content += `Loại câu hỏi: ${
-        q.interaction?.type === 'multi_select' ? 'Trắc nghiệm nhiều đáp án' :
-        q.interaction?.type === 'matching' ? 'Ghép cặp tương ứng' :
-        q.interaction?.type === 'ordering' ? 'Sắp xếp quy trình' :
-        q.interaction?.type === 'numeric_input' ? 'Điền số tính toán' :
-        'Trắc nghiệm 1 đáp án'
-      }\n\n`;
-      content += `ĐỀ BÀI:\n${q.interaction?.prompt || ''}\n\n`;
+      content += `Số lần sai: ${item.wrongCount || 0} lần\n\n`;
+      content += `ĐỀ BÀI:\n${q?.interaction?.prompt || ''}\n\n`;
 
-      if (q.interaction?.choices) {
-        content += `CÁC PHƯƠNG ÁN LỰA CHỌN:\n`;
+      if (q?.interaction?.choices) {
+        content += `LỰA CHỌN:\n`;
         q.interaction.choices.forEach((c, cIdx) => {
           const letter = String.fromCharCode(65 + cIdx);
-          const isCorrect = Array.isArray(q.correct_answer) 
+          const isTrue = Array.isArray(q.correct_answer)
             ? q.correct_answer.includes(c.choice_id)
             : q.correct_answer === c.choice_id;
-          content += `  [${letter}] ${c.text} ${isCorrect ? ' <<== [ĐÁP ÁN ĐÚNG]' : ''}\n`;
+          content += `  [${letter}] ${c.text}${isTrue ? ' <<== [ĐÚNG]' : ''}\n`;
         });
         content += `\n`;
       }
-
-      if (q.explanation) {
-        content += `LỜI GIẢI CHI TIẾT:\n${q.explanation}\n\n`;
+      if (q?.explanation) {
+        content += `LỜI GIẢI:\n${q.explanation}\n\n`;
       }
       content += `-------------------------------------------------------------------\n\n`;
     });
@@ -537,44 +751,38 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `VLEARN_SO_TAY_CAU_HAY_SAI_${new Date().toISOString().slice(0, 10)}.txt`;
+    a.download = `VLEARN_CAU_SAI_${currentUser.username}_${new Date().toISOString().slice(0, 10)}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
 
-  // Xem đáp án ngay câu hiện tại (Reveal Answer)
+  // Xem đáp án câu hiện tại
   const handleRevealAnswer = () => {
     const qId = currentQ?.question_id || `${selectedDayId}_q${currentQIndex}`;
     const correctAns = currentQ?.correct_answer;
-    
-    setUserAnswers(prev => ({
-      ...prev,
-      [qId]: correctAns
-    }));
 
+    setUserAnswers(prev => ({ ...prev, [qId]: correctAns }));
     setCheckedState(prev => ({
       ...prev,
       [qId]: { isChecked: true, isCorrect: true, isRevealed: true }
     }));
   };
 
-  // Mở tất cả đáp án của Day hiện tại (Reveal All)
+  // Mở toàn bộ đáp án trong Day
   const handleRevealAllInDay = () => {
     const newAnswers = { ...userAnswers };
     const newChecked = { ...checkedState };
-
     allQuestions.forEach(q => {
       newAnswers[q.question_id] = q.correct_answer;
       newChecked[q.question_id] = { isChecked: true, isCorrect: true, isRevealed: true };
     });
-
     setUserAnswers(newAnswers);
     setCheckedState(newChecked);
   };
 
-  // Reset quiz của Day hiện tại
+  // Làm lại Day hiện tại từ đầu
   const handleResetDayQuiz = () => {
     const newAnswers = { ...userAnswers };
     const newChecked = { ...checkedState };
@@ -588,6 +796,61 @@ export default function App() {
     setFilterType('all');
   };
 
+  // Quản lý tài khoản (Admin)
+  const handleAdminAddAccount = (e) => {
+    e.preventDefault();
+    setAdminMsg('');
+    const cleanU = newAccUsername.trim().toLowerCase();
+    const cleanP = newAccPassword.trim();
+    if (!cleanU || !cleanP) {
+      setAdminMsg('Vui lòng nhập tên đăng nhập và mật khẩu.');
+      return;
+    }
+    if (accounts.some(a => a.username.toLowerCase() === cleanU)) {
+      setAdminMsg('Tên đăng nhập này đã tồn tại.');
+      return;
+    }
+    const created = {
+      username: cleanU,
+      password: cleanP,
+      displayName: newAccDisplay.trim() || cleanU,
+      role: newAccRole,
+      createdAt: new Date().toISOString()
+    };
+    onUpdateAccounts([...accounts, created]);
+    setNewAccUsername('');
+    setNewAccPassword('');
+    setNewAccDisplay('');
+    setNewAccRole('user');
+    setAdminMsg(`Đã tạo tài khoản "${cleanU}" thành công!`);
+  };
+
+  const handleAdminDeleteAccount = (targetUsername) => {
+    if (targetUsername.toLowerCase() === 'admin') {
+      alert('Không thể xóa tài khoản Admin gốc.');
+      return;
+    }
+    if (!window.confirm(`Xóa tài khoản "${targetUsername}"?`)) return;
+    onUpdateAccounts(accounts.filter(a => a.username.toLowerCase() !== targetUsername.toLowerCase()));
+  };
+
+  const handleAdminResetUserMemory = (targetUsername) => {
+    if (!window.confirm(`Xóa toàn bộ lịch sử làm bài & câu sai của "${targetUsername}"?`)) return;
+    try {
+      localStorage.removeItem(getUserStorageKey(targetUsername, 'answers'));
+      localStorage.removeItem(getUserStorageKey(targetUsername, 'checked'));
+      localStorage.removeItem(getUserStorageKey(targetUsername, 'mistakes'));
+      localStorage.removeItem(getUserStorageKey(targetUsername, 'session'));
+      if (targetUsername.toLowerCase() === username) {
+        setUserAnswers({});
+        setCheckedState({});
+        setMistakeBook({});
+        setQuestionPositions({});
+      }
+      setAdminMsg(`Đã làm mới bộ nhớ của "${targetUsername}".`);
+    } catch {}
+  };
+
   const currentQId = currentQ?.question_id || `${selectedDayId}_q${currentQIndex}`;
   const isCurrentInMistakes = Boolean(mistakeBook[currentQId] && !mistakeBook[currentQId].isMastered);
   const currentCheckStatus = checkedState[currentQId] || null;
@@ -599,212 +862,184 @@ export default function App() {
   // Thống kê số câu đúng/sai trong Day hiện tại
   const dayCheckedCount = allQuestions.filter(q => checkedState[q.question_id]?.isChecked).length;
   const dayCorrectCount = allQuestions.filter(q => checkedState[q.question_id]?.isCorrect).length;
+  const dayReviewCount = allQuestions.filter((q, i) => {
+    const qId = q.question_id || `${selectedDayId}_q${i}`;
+    const status = checkedState[qId];
+    const m = mistakeBook[qId];
+    return (m && !m.isMastered) || (status?.isChecked && !status?.isCorrect) || m?.isPinned;
+  }).length;
 
-  // File txt bài giải tương ứng
+  // File txt bài giải tương ứng (chỉ dùng khi là Admin)
   const txtFileName = `${currentDay.folder}_QUIZ_CHI_TIET_DAP_AN.txt`;
   const txtFileUrl = `/quiz_txt/${txtFileName}`;
 
-  // Helper tính chữ cái đáp án cho multi_select
-  const getMultiSelectLetters = (q) => {
-    if (!q || !q.interaction?.choices || !Array.isArray(q.correct_answer)) return [];
-    return q.interaction.choices
-      .map((c, idx) => q.correct_answer.includes(c.choice_id) ? String.fromCharCode(65 + idx) : null)
-      .filter(Boolean);
-  };
-
-  // Helper tính chữ cái đáp án cho single_select
-  const getSingleSelectLetter = (q) => {
-    if (!q || !q.interaction?.choices) return '';
-    const idx = q.interaction.choices.findIndex(c => c.choice_id === q.correct_answer);
-    return idx >= 0 ? String.fromCharCode(65 + idx) : '';
-  };
-
   return (
     <div className="vlearn-wrapper">
-      {/* Top Header */}
+      {/* Top Header (Đã tối giản, không lặp nút) */}
       <header className="app-header">
         <div className="brand-section">
-          {/* Mobile Hamburger Button */}
-          <button 
-            className="mobile-header-toggle" 
+          <button
+            className="mobile-header-toggle"
             onClick={() => setIsSidebarOpen(true)}
             aria-label="Mở danh sách buổi học"
-            title="Danh sách buổi học"
           >
-            <Menu size={22} />
+            <Menu size={20} />
           </button>
 
           <div className="brand-badge">
             V<span>Learn</span>
           </div>
 
-          {/* Quick Day Indicator for Tablet/Mobile */}
-          <button 
+          <button
             className="mobile-day-indicator"
             onClick={() => setIsSidebarOpen(true)}
-            title="Bấm để đổi buổi học"
           >
             <span>{currentDay.day_label}</span>
             <span style={{ fontSize: '10px', opacity: 0.7 }}>▾</span>
           </button>
 
-          {/* Phase Switcher Tabs (Desktop) */}
+          {/* Chuyển Phase trên Desktop */}
           <div className="phase-switcher-container">
             <button
               className={`phase-btn ${activePhaseId === 'phase1' ? 'active' : ''}`}
               onClick={() => handleSwitchPhase('phase1')}
             >
-              Phase 1: Day 1 - 16
+              Phase 1 (Day 1–16)
             </button>
             <button
-              className={`phase-btn ${activePhaseId === 'phase2' ? 'active' : ''}`}
+              className={`phase-btn ${activePhaseId === 'phase2' ? 'active' : ''} ${!isAdmin ? 'locked' : ''}`}
               onClick={() => handleSwitchPhase('phase2')}
+              title={!isAdmin ? 'Nội dung Phần 2 (Chapter 3) chỉ dành cho Admin' : 'Phase 2: Track 3 (Day 16 - 29)'}
             >
-              Phase 2: Track 3 (Day 16 - 29)
+              {!isAdmin && <Lock size={13} />}
+              <span>Phase 2 (Chapter 3)</span>
             </button>
           </div>
         </div>
 
-        {/* Desktop Header Nav */}
+        {/* Điều hướng trung tâm & Thông tin tài khoản */}
         <div className="header-nav">
-          <button 
+          <button
             className={`nav-tab-btn ${activeTab === 'quiz' ? 'active' : ''}`}
             onClick={() => setActiveTab('quiz')}
           >
-            <HelpCircle size={18} />
-            Luyện tập & Quiz {allQuestions.length > 0 ? `(${allQuestions.length} câu)` : ''}
+            <HelpCircle size={16} />
+            <span>Quiz ({allQuestions.length})</span>
           </button>
-          
-          <button 
+
+          <button
             className={`nav-tab-btn ${activeTab === 'slide' ? 'active' : ''}`}
             onClick={() => setActiveTab('slide')}
           >
-            <BookOpen size={18} />
-            Slide Bài giảng gốc ({slides.length} file)
+            <BookOpen size={16} />
+            <span>Slide ({slides.length})</span>
           </button>
 
-          {/* Nút Hướng Dẫn Cấu Trúc Đề */}
-          <button 
+          <button
             className="nav-tab-btn"
-            style={{ background: '#f8fafc', border: '1px solid #cbd5e1', color: '#0369a1' }}
-            onClick={() => setShowGuideModal(true)}
-            title="Xem giải thích cấu trúc 5 dạng câu hỏi và thống kê đề thi"
+            style={{ background: '#f8fafc', border: '1px solid #cbd5e1', color: '#334155' }}
+            onClick={() => setShowMoreActions(true)}
           >
-            <Info size={16} />
-            Cấu trúc đề (165 câu)
+            <MoreVertical size={15} />
+            <span>Tiện ích</span>
           </button>
 
-          {/* Nút tải Excel Master */}
-          <a 
-            href="/VLEARN_K4P1_TOAN_BO_QUIZ_VA_SLIDES.xlsx" 
-            download 
-            className="btn-excel-download"
-            title="Tải bảng tính Excel tổng hợp toàn bộ 165 câu Quiz và Ngân hàng 150 câu Day 1"
-          >
-            <FileSpreadsheet size={16} />
-            Tải Bảng Excel (.xlsx)
-          </a>
+          {isAdmin && (
+            <button
+              className="nav-tab-btn"
+              style={{ background: '#eff6ff', border: '1px solid #bfdbfe', color: '#1d4ed8' }}
+              onClick={() => { setAdminMsg(''); setShowAdminModal(true); }}
+              title="Quản lý danh sách tài khoản & tiến độ"
+            >
+              <Users size={15} />
+              <span>Quản lý TK</span>
+            </button>
+          )}
 
-          {/* Nút tải Trọn Bộ Excel Quizizz / Quiz.com (~20 câu/file) */}
-          <a 
-            href="/TONG_HOP_QUIZ_15_NGAY_EXCEL.zip" 
-            download="TONG_HOP_QUIZ_15_NGAY_EXCEL.zip"
-            className="btn-excel-download"
-            style={{ background: '#7c3aed', color: '#ffffff', borderColor: '#6d28d9' }}
-            title="Tải toàn bộ thư mục Excel 15 Ngày (chia nhỏ ~20 câu/file chuẩn Quizizz / Quiz.com) dạng file nén ZIP"
-          >
-            <FileSpreadsheet size={16} />
-            Bộ Quiz.com / Quizizz (.zip)
-          </a>
+          {/* Huy hiệu tài khoản đang đăng nhập */}
+          <div className="user-profile-pill">
+            <span className={`role-dot ${isAdmin ? 'admin' : 'user'}`} />
+            <span className="user-name-text">{currentUser.displayName || currentUser.username}</span>
+            <span className={`role-badge-mini ${isAdmin ? 'admin' : 'user'}`}>
+              {isAdmin ? 'Admin' : 'User'}
+            </span>
+            <button
+              className="btn-logout-icon"
+              onClick={onLogout}
+              title="Đăng xuất tài khoản"
+            >
+              <LogOut size={15} />
+            </button>
+          </div>
         </div>
 
-        {/* Mobile More Actions Button */}
-        <button 
-          className="mobile-more-btn"
-          onClick={() => setShowMoreActions(true)}
-          title="Tài liệu & Tiện ích khác"
-        >
-          <MoreVertical size={20} />
-        </button>
+        {/* Nút menu phụ trên Mobile */}
+        <div className="mobile-right-actions">
+          <button
+            className="mobile-more-btn"
+            onClick={() => setShowMoreActions(true)}
+            title="Tiện ích & Tài khoản"
+          >
+            <MoreVertical size={19} />
+          </button>
+        </div>
       </header>
 
-      {/* Mobile View Switcher Tabs (Segmented Control below header) */}
+      {/* Thanh chuyển Quiz / Slide trên Mobile */}
       <div className="mobile-view-tabs">
         <button
           className={`mobile-view-tab-btn ${activeTab === 'quiz' ? 'active' : ''}`}
           onClick={() => setActiveTab('quiz')}
         >
           <HelpCircle size={15} />
-          <span>Luyện Quiz ({allQuestions.length})</span>
+          <span>Quiz ({allQuestions.length})</span>
         </button>
         <button
           className={`mobile-view-tab-btn ${activeTab === 'slide' ? 'active' : ''}`}
           onClick={() => setActiveTab('slide')}
         >
           <BookOpen size={15} />
-          <span>Slide Bài giảng ({slides.length})</span>
+          <span>Slide ({slides.length})</span>
         </button>
       </div>
 
-      {/* Main Container */}
+      {/* Khung chính */}
       <div className="app-container">
-        {/* Mobile Backdrop Overlay for Sidebar */}
-        <div 
+        <div
           className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`}
           onClick={() => setIsSidebarOpen(false)}
         />
 
-        {/* Left Sidebar (Desktop column & Mobile Drawer) */}
+        {/* Thanh bên danh sách buổi học (Đã loại bỏ chữ lặp 📁 01_Day01) */}
         <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span className="sidebar-title">{currentPhase.name.split(':')[0]}</span>
-                <button 
+                <span className="sidebar-title">
+                  {activePhaseId === 'phase1' ? 'Phase 1 · 16 Buổi học' : 'Phase 2 · Chapter 3'}
+                </span>
+                <button
                   className="sidebar-close-btn"
                   onClick={() => setIsSidebarOpen(false)}
-                  title="Đóng danh sách"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
-              <p style={{ fontSize: '11px', color: '#64748b', marginTop: '2px' }}>
-                {currentPhase.course_id.toUpperCase()} · {currentPhase.days.length} Buổi học
-              </p>
 
-              {/* Phase Switcher inside drawer for Mobile */}
-              <div style={{ display: 'flex', gap: '4px', background: '#f1f5f9', padding: '3px', borderRadius: '8px', marginTop: '8px' }}>
+              {/* Chuyển Phase trong Drawer Mobile */}
+              <div className="mobile-drawer-phase-switch">
                 <button
-                  style={{
-                    flex: 1,
-                    padding: '5px 8px',
-                    borderRadius: '6px',
-                    border: 'none',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                    background: activePhaseId === 'phase1' ? '#0284c7' : 'transparent',
-                    color: activePhaseId === 'phase1' ? '#ffffff' : '#64748b'
-                  }}
+                  className={activePhaseId === 'phase1' ? 'active' : ''}
                   onClick={() => handleSwitchPhase('phase1')}
                 >
-                  Phase 1 (Day 1-16)
+                  Phase 1
                 </button>
                 <button
-                  style={{
-                    flex: 1,
-                    padding: '5px 8px',
-                    borderRadius: '6px',
-                    border: 'none',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                    background: activePhaseId === 'phase2' ? '#0284c7' : 'transparent',
-                    color: activePhaseId === 'phase2' ? '#ffffff' : '#64748b'
-                  }}
+                  className={`${activePhaseId === 'phase2' ? 'active' : ''} ${!isAdmin ? 'locked' : ''}`}
                   onClick={() => handleSwitchPhase('phase2')}
                 >
-                  Phase 2 (Track 3)
+                  {!isAdmin && <Lock size={11} style={{ marginRight: '3px' }} />}
+                  Phase 2 (Ch.3)
                 </button>
               </div>
             </div>
@@ -813,8 +1048,12 @@ export default function App() {
           <div className="sidebar-list">
             {currentPhase.days.map(item => {
               const isSelected = item.day_id === selectedDayId;
-              const hasQuiz = item.quiz_count > 0;
-              const dayWrongCount = Object.values(mistakeBook).filter(m => m.dayId === item.day_id && !m.isMastered).length;
+              const stdQuestions = item.questions || [];
+              const doneInDay = stdQuestions.filter(q => checkedState[q.question_id]?.isChecked).length;
+              const dayWrongCount = Object.values(mistakeBook).filter(
+                m => m.dayId === item.day_id && !m.isMastered
+              ).length;
+              const savedIdx = questionPositions[`${item.day_id}__standard`];
 
               return (
                 <button
@@ -822,42 +1061,45 @@ export default function App() {
                   className={`day-item-btn ${isSelected ? 'selected' : ''}`}
                   onClick={() => {
                     setSelectedDayId(item.day_id);
-                    setCurrentQIndex(0);
-                    setActiveSlideIndex(0);
-                    setQuizBankMode('standard');
                     setFilterType('all');
-                    setIsSidebarOpen(false); // Tự động đóng mobile drawer khi chọn Day
+                    if (quizBankMode === 'wrong' || quizBankMode === 'all_wrong') {
+                      setQuizBankMode('standard');
+                    }
+                    setIsSidebarOpen(false);
                   }}
                 >
                   <div className="day-title-row">
                     <span className="day-code-label">
                       {item.day_label}: {item.title}
                     </span>
-                    <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
-                      {dayWrongCount > 0 && (
-                        <span className="day-badge" style={{ background: '#fee2e2', color: '#b91c1c', fontWeight: 800 }}>
-                          🔥 {dayWrongCount} sai
-                        </span>
-                      )}
-                      {hasQuiz ? (
-                        <span className="day-badge">
-                          {item.total_bank_count ? `${item.quiz_count} câu (Kho: ${item.total_bank_count})` : `${item.quiz_count} câu quiz`}
-                        </span>
-                      ) : item.day_num === 16 || item.day_num === 29 ? (
-                        <span className="day-badge" style={{ background: '#fef3c7', color: '#92400e' }}>
-                          Hackathon
-                        </span>
-                      ) : (
-                        <span className="day-badge" style={{ background: '#f1f5f9', color: '#475569' }}>
-                          Track 3
-                        </span>
-                      )}
-                    </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '8px', marginTop: '4px', fontSize: '12px', color: '#64748b' }}>
-                    <span>📁 {item.folder}</span>
-                    <span>·</span>
-                    <span>📑 {item.slides.length} slides</span>
+
+                  <div className="day-meta-row">
+                    {item.quiz_count > 0 ? (
+                      <span className="day-badge">
+                        {doneInDay > 0 ? `${doneInDay}/${item.quiz_count} đã làm` : `${item.quiz_count} câu`}
+                      </span>
+                    ) : (
+                      <span className="day-badge" style={{ background: '#f1f5f9', color: '#64748b' }}>
+                        Thực hành
+                      </span>
+                    )}
+
+                    {savedIdx > 0 && item.quiz_count > 0 && (
+                      <span className="day-badge" style={{ background: '#e0f2fe', color: '#0369a1' }}>
+                        Đang ở câu {savedIdx + 1}
+                      </span>
+                    )}
+
+                    {dayWrongCount > 0 && (
+                      <span className="day-badge" style={{ background: '#fee2e2', color: '#b91c1c' }}>
+                        🔥 {dayWrongCount} sai
+                      </span>
+                    )}
+
+                    <span style={{ fontSize: '11px', color: '#94a3b8', marginLeft: 'auto' }}>
+                      {item.slides.length} slide
+                    </span>
                   </div>
                 </button>
               );
@@ -865,239 +1107,165 @@ export default function App() {
           </div>
         </aside>
 
-        {/* Right Main Content */}
-        <main className="main-view-area">
+        {/* Nội dung chính */}
+        <main
+          className="main-view-area"
+          onContextMenu={(e) => {
+            if (!isAdmin && activeTab === 'slide') {
+              e.preventDefault();
+            }
+          }}
+        >
           {activeTab === 'slide' ? (
-            /* SLIDE VIEWER TAB */
+            /* TAB XEM SLIDE BÀI GIẢNG */
             <div className="slide-screen">
               <div className="slide-toolbar">
-                <div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a' }}>
-                    {currentDay.day_label}: {currentDay.title}
-                  </h3>
-                  <p style={{ fontSize: '13px', color: '#64748b', marginTop: '2px' }}>
-                    {slides.length > 0 
-                      ? `Có ${slides.length} file slide bài giảng gốc chất lượng cao cho ngày này`
-                      : 'Ngày làm bài tập thực hành / Hackathon'}
-                  </p>
-                </div>
-                
-                {currentSlide && (
-                  <div className="slide-actions" style={{ display: 'flex', gap: '10px' }}>
-                    <a 
-                      href={currentSlide.url} 
-                      target="_blank" 
-                      rel="noreferrer" 
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+                  {currentDay.day_label}: {currentDay.title}
+                </h3>
+
+                {/* Chỉ tài khoản Admin mới được tải Slide hoặc mở tab PDF gốc */}
+                {currentSlide && isAdmin && (
+                  <div className="slide-actions">
+                    <a
+                      href={currentSlide.url}
+                      target="_blank"
+                      rel="noreferrer"
                       className="nav-tab-btn"
                     >
                       <ExternalLink size={15} />
-                      Mở trong tab mới
+                      <span>Mở tab mới</span>
                     </a>
-                    <a 
-                      href={currentSlide.url} 
-                      target="_blank" 
-                      rel="noreferrer" 
+                    <a
+                      href={currentSlide.url}
+                      target="_blank"
+                      rel="noreferrer"
                       className="btn-primary"
                       download
                     >
-                      <Download size={16} />
-                      Tải slide này (.PDF)
+                      <Download size={15} />
+                      <span>Tải PDF</span>
                     </a>
                   </div>
                 )}
               </div>
 
-              {/* Multi-slide Subtabs */}
               {slides.length > 1 && (
-                <div className="slide-subtabs-row">
-                  {slides.map((s, idx) => {
-                    const isAct = idx === activeSlideIndex;
-                    return (
-                      <button
-                        key={idx}
-                        className={`slide-subtab-pill ${isAct ? 'active' : ''}`}
-                        onClick={() => setActiveSlideIndex(idx)}
-                      >
-                        <FileText size={14} />
-                        Slide {idx + 1}: {s.title}
-                      </button>
-                    );
-                  })}
+                <div className="slide-subtabs-row" style={{ padding: '8px 20px' }}>
+                  {slides.map((s, idx) => (
+                    <button
+                      key={idx}
+                      className={`slide-subtab-pill ${idx === activeSlideIndex ? 'active' : ''}`}
+                      onClick={() => setActiveSlideIndex(idx)}
+                    >
+                      <FileText size={14} />
+                      <span>{s.title || `Slide ${idx + 1}`}</span>
+                    </button>
+                  ))}
                 </div>
               )}
 
               {currentSlide ? (
-                <iframe 
-                  key={currentSlide.url}
-                  src={`${currentSlide.url}#toolbar=1`} 
-                  className="pdf-frame" 
+                <iframe
+                  key={`${currentSlide.url}_${isAdmin ? 'admin' : 'user'}`}
+                  src={
+                    isAdmin
+                      ? `${currentSlide.url}#toolbar=1`
+                      : `${currentSlide.url}#toolbar=0&navpanes=0&scrollbar=1`
+                  }
+                  className="pdf-frame"
                   title="Slide Viewer"
                 />
               ) : (
-                <div className="q-card" style={{ textAlign: 'center', padding: '60px' }}>
-                  <Award size={56} color="#0284c7" style={{ margin: '0 auto 16px' }} />
-                  <h3 style={{ fontSize: '20px', fontWeight: 700 }}>Ngày thi đấu Hackathon / Báo cáo</h3>
-                  <p style={{ color: '#64748b', fontSize: '14px', marginTop: '6px' }}>
-                    Ngày này là phần thi thực chiến theo nhóm, không sử dụng tài liệu slide lý thuyết.
+                <div className="q-card" style={{ textAlign: 'center', padding: '48px', margin: '24px' }}>
+                  <Award size={48} color="#0284c7" style={{ margin: '0 auto 12px' }} />
+                  <h3 style={{ fontSize: '18px', fontWeight: 700 }}>Buổi thực hành / Hackathon</h3>
+                  <p style={{ color: '#64748b', fontSize: '14px' }}>
+                    Buổi học này không sử dụng slide lý thuyết.
                   </p>
                 </div>
               )}
             </div>
           ) : (
-            /* QUIZ PRACTICE TAB */
+            /* TAB LUYỆN QUIZ */
             <div className="quiz-screen">
               {(currentDay.quiz_count > 0 || (currentDay.questions && currentDay.questions.length > 0)) ? (
                 <>
-                  {/* Quiz Header Card */}
+                  {/* Khung điều khiển Quiz gọn gàng */}
                   <div className="quiz-header-card">
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px' }}>
-                      <div style={{ flex: 1, minWidth: '260px' }}>
-                        <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-                          Quiz cuối Day: {currentDay.day_label} - {currentDay.title}
-                        </h2>
-
-                        {/* BỘ NÚT CHUYỂN ĐỔI: ĐỀ CHUẨN / KHO MỞ RỘNG / CÂU HAY SAI DAY NÀY (Cuộn ngang) */}
-                        <div className="bank-switcher-pills">
-                          <button
-                            id="btn-bank-standard"
-                            className={`bank-pill-btn ${quizBankMode === 'standard' ? 'active-standard' : ''}`}
-                            onClick={() => { setQuizBankMode('standard'); setCurrentQIndex(0); setFilterType('all'); }}
-                          >
-                            🎯 Đề chuẩn ({currentDay.questions?.length || 0} câu)
-                          </button>
-
-                          {currentDay.expanded_questions && (
-                            <button
-                              id="btn-bank-expanded"
-                              className={`bank-pill-btn ${quizBankMode === 'expanded' ? 'active-expanded' : ''}`}
-                              onClick={() => { setQuizBankMode('expanded'); setCurrentQIndex(0); setFilterType('all'); }}
-                              title={`Mở khóa toàn bộ ${currentDay.expanded_questions.length} câu hỏi trắc nghiệm của ${currentDay.day_label}`}
-                            >
-                              📚 Toàn bộ kho ({currentDay.expanded_questions.length} câu)
-                            </button>
-                          )}
-
-                          {currentDay.essay_questions && currentDay.essay_questions.length > 0 && (
-                            <button
-                              id="btn-bank-essay"
-                              className={`bank-pill-btn ${quizBankMode === 'essay' ? 'active-essay' : ''}`}
-                              onClick={() => { setQuizBankMode('essay'); setCurrentQIndex(0); setFilterType('all'); }}
-                              title={`Mở khóa ${currentDay.essay_questions.length} câu hỏi tự luận, phân tích tình huống của ${currentDay.day_label}`}
-                            >
-                              ✍️ Thẻ tự luận ({currentDay.essay_questions.length} câu)
-                            </button>
-                          )}
-
-                          <button
-                            id="btn-day-wrong-questions"
-                            className={`bank-pill-btn ${quizBankMode === 'wrong' ? 'active-wrong' : ''}`}
-                            style={{
-                              background: quizBankMode === 'wrong' ? '#dc2626' : (dayWrongQuestions.length > 0 ? '#fff1f2' : undefined),
-                              color: quizBankMode === 'wrong' ? '#ffffff' : (dayWrongQuestions.length > 0 ? '#b91c1c' : undefined),
-                              borderColor: quizBankMode === 'wrong' ? '#dc2626' : (dayWrongQuestions.length > 0 ? '#fecaca' : undefined)
-                            }}
-                            onClick={() => { setQuizBankMode('wrong'); setCurrentQIndex(0); setFilterType('all'); }}
-                            title={`Luyện tập riêng các câu làm sai / chưa ổn của ${currentDay.day_label}`}
-                          >
-                            <Flame size={14} color={quizBankMode === 'wrong' ? '#ffffff' : '#ef4444'} />
-                            🔥 Câu hay sai ({dayWrongQuestions.length})
-                          </button>
-
-                          {totalWrongQuestions.length > 0 && (
-                            <button
-                              id="btn-all-wrong-questions"
-                              className={`bank-pill-btn ${quizBankMode === 'all_wrong' ? 'active-all-wrong' : ''}`}
-                              onClick={() => { setQuizBankMode('all_wrong'); setCurrentQIndex(0); setFilterType('all'); }}
-                              title="Luyện tập gom tất cả câu hay sai từ toàn bộ các Day"
-                            >
-                              <AlertTriangle size={13} />
-                              Tổng câu sai các Day ({totalWrongQuestions.length})
-                            </button>
-                          )}
-                        </div>
-
-                        <p style={{ fontSize: '12px', color: '#64748b', marginTop: '6px' }}>
-                          {quizBankMode === 'wrong'
-                            ? `🔥 Luyện tập các câu hay sai của ${currentDay.day_label}. Khi đã nắm vững câu nào, bấm "Đã ổn · Bỏ khỏi câu hay sai" để loại khỏi danh sách.`
-                            : quizBankMode === 'all_wrong'
-                            ? `⚡ Luyện tập gom tất cả các câu làm sai từ toàn bộ các Day (${allQuestions.length} câu).`
-                            : quizBankMode === 'expanded'
-                            ? `📚 Ngân hàng đề thi mở rộng (${allQuestions.length} câu trắc nghiệm bao phủ toàn bộ kiến thức của ${currentDay.day_label}).`
-                            : `🎯 Đề thi chuẩn chính thức từ máy chủ VLearn (${allQuestions.length} câu).`}
-                        </p>
-                      </div>
-
-                      {/* Header Quick Controls & Action Button */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                        {/* Toggle Study Mode */}
-                        <label 
-                          style={{ 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            gap: '7px', 
-                            padding: '6px 12px', 
-                            borderRadius: '8px', 
-                            background: studyMode ? '#f0fdf4' : '#f8fafc', 
-                            border: studyMode ? '1px solid #86efac' : '1px solid #cbd5e1', 
-                            cursor: 'pointer',
-                            fontSize: '12px',
-                            fontWeight: 700,
-                            color: studyMode ? '#15803d' : '#475569',
-                            whiteSpace: 'nowrap'
-                          }}
-                        >
-                          <input 
-                            type="checkbox" 
-                            checked={studyMode} 
-                            onChange={(e) => setStudyMode(e.target.checked)}
-                            style={{ accentColor: '#10b981', cursor: 'pointer' }}
-                          />
-                          <BookMarked size={15} color={studyMode ? '#10b981' : '#64748b'} />
-                          Chế độ Ôn thi
-                        </label>
-
-                        {/* Nút Thao tác & Tài liệu mở rộng */}
+                    <div className="quiz-controls-top">
+                      {/* Chọn nguồn câu hỏi */}
+                      <div className="bank-switcher-pills">
                         <button
-                          className="nav-tab-btn"
-                          style={{ 
-                            padding: '6px 12px', 
-                            fontSize: '12px', 
-                            background: '#f1f5f9', 
-                            border: '1px solid #cbd5e1', 
-                            color: '#0f172a',
-                            fontWeight: 700,
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '6px'
-                          }}
-                          onClick={() => setShowMoreActions(true)}
-                          title="Tải Excel, file txt bài giải, hiện hết đáp án, làm lại"
+                          id="btn-bank-standard"
+                          className={`bank-pill-btn ${quizBankMode === 'standard' ? 'active-standard' : ''}`}
+                          onClick={() => { setQuizBankMode('standard'); setFilterType('all'); }}
                         >
-                          <Download size={14} />
-                          <span>Tài liệu & Tiện ích ▾</span>
+                          🎯 Đề chuẩn ({currentDay.questions?.length || 0})
                         </button>
+
+                        {currentDay.expanded_questions && (
+                          <button
+                            id="btn-bank-expanded"
+                            className={`bank-pill-btn ${quizBankMode === 'expanded' ? 'active-expanded' : ''}`}
+                            onClick={() => { setQuizBankMode('expanded'); setFilterType('all'); }}
+                          >
+                            📚 Kho mở rộng ({currentDay.expanded_questions.length})
+                          </button>
+                        )}
+
+                        {currentDay.essay_questions && currentDay.essay_questions.length > 0 && (
+                          <button
+                            id="btn-bank-essay"
+                            className={`bank-pill-btn ${quizBankMode === 'essay' ? 'active-essay' : ''}`}
+                            onClick={() => { setQuizBankMode('essay'); setFilterType('all'); }}
+                          >
+                            ✍️ Tự luận ({currentDay.essay_questions.length})
+                          </button>
+                        )}
+
+                        <button
+                          id="btn-day-wrong-questions"
+                          className={`bank-pill-btn ${quizBankMode === 'wrong' ? 'active-wrong' : ''}`}
+                          onClick={() => { setQuizBankMode('wrong'); setFilterType('all'); }}
+                        >
+                          <Flame size={13} />
+                          <span>Câu sai ({dayWrongQuestions.length})</span>
+                        </button>
+
+                        {totalWrongQuestions.length > 0 && (
+                          <button
+                            id="btn-all-wrong-questions"
+                            className={`bank-pill-btn ${quizBankMode === 'all_wrong' ? 'active-all-wrong' : ''}`}
+                            onClick={() => { setQuizBankMode('all_wrong'); setFilterType('all'); }}
+                          >
+                            <AlertTriangle size={13} />
+                            <span>Tổng sai ({totalWrongQuestions.length})</span>
+                          </button>
+                        )}
                       </div>
+
+                      {/* Chế độ Ôn thi (Hiện sẵn đáp án) */}
+                      <label className={`study-mode-toggle ${studyMode ? 'active' : ''}`}>
+                        <input
+                          type="checkbox"
+                          checked={studyMode}
+                          onChange={(e) => setStudyMode(e.target.checked)}
+                        />
+                        <BookMarked size={14} />
+                        <span>Hiện đáp án</span>
+                      </label>
                     </div>
 
-                    {/* Progress Bar & Filter Row */}
-                    <div style={{ marginTop: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', borderTop: '1px solid #f1f5f9', paddingTop: '10px' }}>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#0369a1' }}>
-                        Tiến độ: {studyMode ? `${allQuestions.length}/${allQuestions.length} (Đang mở toàn bộ)` : `${dayCorrectCount}/${dayCheckedCount} đúng (${dayCheckedCount}/${allQuestions.length} đã làm)`}
-                      </div>
-
-                      {/* Filter Buttons */}
+                    {/* Hàng lọc câu hỏi (Không lặp lại dòng chữ Tiến độ bên cạnh) */}
+                    <div className="filter-bar-row">
                       <div className="filter-chips-row">
                         {[
                           { id: 'all', label: `Tất cả (${allQuestions.length})` },
+                          { id: 'unanswered', label: `Chưa làm (${allQuestions.length - dayCheckedCount})` },
                           { id: 'correct', label: `Đúng (${dayCorrectCount})` },
                           { id: 'wrong', label: `Sai (${dayCheckedCount - dayCorrectCount})` },
-                          { id: 'need_review', label: `Cần ôn (${allQuestions.filter((q, i) => {
-                            const qId = q.question_id || `${selectedDayId}_q${i}`;
-                            const status = checkedState[qId];
-                            const m = mistakeBook[qId];
-                            return (m && !m.isMastered) || (status?.isChecked && !status?.isCorrect) || m?.isPinned;
-                          }).length})` },
-                          { id: 'unanswered', label: `Chưa làm (${allQuestions.length - dayCheckedCount})` }
+                          { id: 'need_review', label: `Cần ôn (${dayReviewCount})` }
                         ].map(f => (
                           <button
                             key={f.id}
@@ -1110,7 +1278,7 @@ export default function App() {
                       </div>
                     </div>
 
-                    {/* Mobile Compact Question Navigation Row */}
+                    {/* Điều hướng câu hỏi rút gọn trên Mobile */}
                     <div className="mobile-nav-summary-row">
                       <button
                         className="nav-step-btn"
@@ -1123,14 +1291,11 @@ export default function App() {
                       <button
                         className="nav-open-grid-btn"
                         onClick={() => setShowGridModal(true)}
-                        title="Bấm để mở danh sách câu hỏi"
                       >
                         <span className="nav-grid-main">
                           Câu {currentQIndex + 1} / {allQuestions.length}
                         </span>
-                        <span className="nav-grid-sub">
-                          <Hash size={11} style={{ display: 'inline', verticalAlign: 'middle' }} /> Xem bảng {allQuestions.length} câu ▾
-                        </span>
+                        <span className="nav-grid-sub">Bấm chọn câu ▾</span>
                       </button>
 
                       <button
@@ -1142,13 +1307,13 @@ export default function App() {
                       </button>
                     </div>
 
-                    {/* Desktop Question Navigation Grid */}
-                    <div className="question-nav-grid desktop-question-nav-grid" style={{ marginTop: '12px', maxHeight: '180px', overflowY: 'auto', padding: '4px' }}>
+                    {/* Lưới số thứ tự câu hỏi trên Desktop */}
+                    <div className="question-nav-grid desktop-question-nav-grid">
                       {allQuestions.map((q, idx) => {
                         const qId = q.question_id || `${selectedDayId}_q${idx}`;
                         const isAct = idx === currentQIndex;
                         const status = checkedState[qId];
-                        
+
                         let pillClass = '';
                         if (studyMode) {
                           pillClass = 'correct';
@@ -1156,16 +1321,14 @@ export default function App() {
                           pillClass = status.isCorrect ? 'correct' : 'wrong';
                         }
 
-                        // Kiểm tra xem câu này có nằm trong bộ lọc không
                         const isDimmed = !filteredQuestionIndices.includes(idx);
 
                         return (
                           <button
                             key={idx}
                             className={`q-nav-pill ${isAct ? 'active' : ''} ${pillClass}`}
-                            style={{ opacity: isDimmed ? 0.35 : 1 }}
+                            style={{ opacity: isDimmed ? 0.3 : 1 }}
                             onClick={() => setCurrentQIndex(idx)}
-                            title={`Câu ${idx + 1}: ${q.question_id}`}
                           >
                             {idx + 1}
                           </button>
@@ -1174,353 +1337,147 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Empty state khi không còn câu sai nào trong Day này */}
-                  {quizBankMode === 'wrong' && dayWrongQuestions.length === 0 && (
-                    <div className="q-card" style={{ textAlign: 'center', padding: '50px 24px', background: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', marginTop: '16px' }}>
-                      <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: '#dcfce7', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-                        <CheckCircle size={32} color="#16a34a" />
-                      </div>
-                      <h3 style={{ fontSize: '19px', fontWeight: 800, color: '#0f172a' }}>
-                        Tuyệt vời! Không có câu sai nào trong {currentDay.day_label}
+                  {/* Trạng thái trống khi không có câu sai */}
+                  {(quizBankMode === 'wrong' || quizBankMode === 'all_wrong') && allQuestions.length === 0 && (
+                    <div className="q-card" style={{ textAlign: 'center', padding: '44px 24px' }}>
+                      <CheckCircle size={36} color="#16a34a" style={{ margin: '0 auto 10px' }} />
+                      <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a' }}>
+                        Không có câu sai nào trong danh sách này!
                       </h3>
-                      <p style={{ color: '#64748b', fontSize: '14px', maxWidth: '520px', margin: '8px auto 20px', lineHeight: 1.6 }}>
-                        Bạn chưa làm sai câu nào trong ngày này, hoặc đã ôn kỹ và bấm "Đã ổn · Bỏ khỏi câu hay sai" cho toàn bộ các câu!
-                      </p>
-                      <button
-                        id="btn-back-to-standard-quiz"
-                        className="btn-primary"
-                        onClick={() => { setQuizBankMode('standard'); setCurrentQIndex(0); }}
-                        style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '9px 18px' }}
-                      >
-                        <PlayCircle size={16} /> Luyện tập Đề chuẩn ({currentDay.questions?.length || 0} câu)
-                      </button>
+                      <div style={{ marginTop: '12px' }}>
+                        <button
+                          id="btn-back-to-standard-quiz"
+                          className="btn-primary"
+                          onClick={() => setQuizBankMode('standard')}
+                        >
+                          <PlayCircle size={16} /> Quay lại Đề chuẩn
+                        </button>
+                      </div>
                     </div>
                   )}
 
-                  {/* Empty state khi không còn câu sai nào trong toàn bộ các Day */}
-                  {quizBankMode === 'all_wrong' && totalWrongQuestions.length === 0 && (
-                    <div className="q-card" style={{ textAlign: 'center', padding: '50px 24px', background: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', marginTop: '16px' }}>
-                      <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: '#dcfce7', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-                        <CheckCircle size={32} color="#16a34a" />
-                      </div>
-                      <h3 style={{ fontSize: '19px', fontWeight: 800, color: '#0f172a' }}>
-                        Tuyệt vời! Bạn không còn câu sai nào trong toàn bộ khoá học!
-                      </h3>
-                      <button
-                        className="btn-primary"
-                        onClick={() => { setQuizBankMode('standard'); setCurrentQIndex(0); }}
-                        style={{ marginTop: '16px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-                      >
-                        <PlayCircle size={16} /> Quay lại Đề chuẩn ({currentDay.day_label})
-                      </button>
-                    </div>
-                  )}
-
-                  {/* Active Question Card */}
+                  {/* THẺ CÂU HỎI HIỆN TẠI (Đã lược bỏ mọi thông báo lặp chữ) */}
                   {currentQ && (
                     <div className="q-card">
-                      {/* Question Format Banner */}
-                      <div className="q-badge-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                          <span 
-                            style={{
-                              padding: '4px 10px',
-                              borderRadius: '6px',
-                              fontSize: '12px',
-                              fontWeight: 700,
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '6px',
-                              background: currentQ.interaction?.type === 'essay_short_text' ? '#ccfbf1' :
-                                          currentQ.interaction?.type === 'multi_select' ? '#eff6ff' :
-                                          currentQ.interaction?.type === 'matching' ? '#faf5ff' :
-                                          currentQ.interaction?.type === 'ordering' ? '#fffbeb' :
-                                          currentQ.interaction?.type === 'numeric_input' ? '#fef2f2' : '#ecfdf5',
-                              color: currentQ.interaction?.type === 'essay_short_text' ? '#0f766e' :
-                                     currentQ.interaction?.type === 'multi_select' ? '#1d4ed8' :
-                                     currentQ.interaction?.type === 'matching' ? '#7c3aed' :
-                                     currentQ.interaction?.type === 'ordering' ? '#b45309' :
-                                     currentQ.interaction?.type === 'numeric_input' ? '#b91c1c' : '#047857',
-                              border: `1px solid ${
-                                currentQ.interaction?.type === 'essay_short_text' ? '#99f6e4' :
-                                currentQ.interaction?.type === 'multi_select' ? '#bfdbfe' :
-                                currentQ.interaction?.type === 'matching' ? '#e9d5ff' :
-                                currentQ.interaction?.type === 'ordering' ? '#fde68a' :
-                                currentQ.interaction?.type === 'numeric_input' ? '#fecaca' : '#a7f3d0'
-                              }`
-                            }}
-                          >
-                            {currentQ.interaction?.type === 'essay_short_text' ? <><FileText size={14} /> TỰ LUẬN & PHÂN TÍCH TÌNH HUỐNG ({currentQ.points || 1} ĐIỂM)</> :
-                             currentQ.interaction?.type === 'multi_select' ? <><CheckSquare size={14} /> TRẮC NGHIỆM NHIỀU ĐÁP ÁN (CHỌN TẤT CẢ Ý ĐÚNG)</> :
-                             currentQ.interaction?.type === 'matching' ? <><Shuffle size={14} /> GHÉP CẶP TƯƠNG ỨNG (MATCHING)</> :
-                             currentQ.interaction?.type === 'ordering' ? <><ArrowUpDown size={14} /> SẮP XẾP QUY TRÌNH (ORDERING)</> :
-                             currentQ.interaction?.type === 'numeric_input' ? <><Hash size={14} /> TÍNH TOÁN ĐIỀN SỐ</> :
-                             <><CircleDot size={14} /> TRẮC NGHIỆM 1 ĐÁP ÁN (CHỈ CHỌN 1)</>}
+                      {/* Hàng thông tin câu hỏi gọn gàng */}
+                      <div className="q-badge-row">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                          <span className={`q-type-pill type-${currentQ.interaction?.type || 'single_select'}`}>
+                            {currentQ.interaction?.type === 'essay_short_text' ? (
+                              <><FileText size={13} /> Tự luận ({currentQ.points || 1}đ)</>
+                            ) : currentQ.interaction?.type === 'multi_select' ? (
+                              <><CheckSquare size={13} /> Chọn nhiều đáp án</>
+                            ) : currentQ.interaction?.type === 'matching' ? (
+                              <><Shuffle size={13} /> Ghép cặp</>
+                            ) : currentQ.interaction?.type === 'ordering' ? (
+                              <><ArrowUpDown size={13} /> Sắp xếp thứ tự</>
+                            ) : currentQ.interaction?.type === 'numeric_input' ? (
+                              <><Hash size={13} /> Điền số</>
+                            ) : (
+                              <><CircleDot size={13} /> Chọn 1 đáp án</>
+                            )}
                           </span>
 
                           {currentQ.kc_title && (
-                            <span style={{ fontSize: '12px', background: '#f1f5f9', color: '#475569', padding: '3px 8px', borderRadius: '4px', fontWeight: 600 }}>
-                              {currentQ.kc_title}
+                            <span className="q-kc-tag">{currentQ.kc_title}</span>
+                          )}
+
+                          {mistakeBook[currentQId]?.wrongCount > 0 && (
+                            <span className="q-wrong-count-tag">
+                              Sai {mistakeBook[currentQId].wrongCount} lần
                             </span>
                           )}
                         </div>
 
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                          {/* Badge nếu từng làm sai */}
-                          {mistakeBook[currentQId]?.wrongCount > 0 && (
-                            <span style={{ 
-                              fontSize: '11px', 
-                              background: '#fee2e2', 
-                              color: '#b91c1c', 
-                              padding: '3px 8px', 
-                              borderRadius: '4px', 
-                              fontWeight: 700, 
-                              display: 'inline-flex', 
-                              alignItems: 'center', 
-                              gap: '4px' 
-                            }}>
-                              <AlertTriangle size={12} /> Từng sai {mistakeBook[currentQId].wrongCount} lần
-                            </span>
-                          )}
-
-                          {/* CƠ CHẾ BỎ RA KHỎI CÂU HAY SAI KHI USER THẤY ỔN CÂU ĐÓ RỒI */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: 'auto' }}>
                           {isCurrentInMistakes ? (
                             <button
                               id="btn-remove-from-wrong"
+                              className="btn-mistake-toggle active"
                               onClick={() => handleRemoveFromWrong(currentQId)}
-                              style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                background: '#ecfdf5',
-                                color: '#059669',
-                                border: '1.5px solid #10b981',
-                                padding: '5px 14px',
-                                borderRadius: '8px',
-                                fontSize: '12px',
-                                fontWeight: 700,
-                                cursor: 'pointer',
-                                transition: 'all 0.15s',
-                                boxShadow: '0 1px 2px rgba(16, 185, 129, 0.15)'
-                              }}
-                              title="Bấm vào đây khi bạn đã nắm vững câu này để bỏ ra khỏi danh sách câu hay sai"
                             >
-                              <CheckCheck size={15} color="#059669" />
-                              ✅ Đã ổn · Bỏ khỏi câu hay sai
+                              <CheckCheck size={14} />
+                              <span>Đã ổn · Bỏ câu sai</span>
                             </button>
                           ) : (
                             <button
                               id="btn-add-to-wrong"
+                              className="btn-mistake-toggle"
                               onClick={() => handleAddToWrong(currentQ, currentDay)}
-                              style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '5px',
-                                background: '#f8fafc',
-                                color: '#64748b',
-                                border: '1px solid #cbd5e1',
-                                padding: '5px 10px',
-                                borderRadius: '8px',
-                                fontSize: '12px',
-                                fontWeight: 600,
-                                cursor: 'pointer'
-                              }}
-                              title="Gom câu này vào danh sách câu hay sai để ôn lại"
                             >
                               <Bookmark size={13} />
-                              + Gom vào câu hay sai
+                              <span>Lưu câu sai</span>
                             </button>
                           )}
 
-                          <span style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>
-                            Câu {currentQIndex + 1} / {allQuestions.length} · Mã: {currentQ.question_id} · Độ khó: {currentQ.estimated_difficulty || 'Vừa'}
+                          <span className="q-index-meta">
+                            Câu {currentQIndex + 1}/{allQuestions.length}
                           </span>
                         </div>
                       </div>
 
-                      {/* Hướng dẫn riêng cho dạng nhiều đáp án */}
-                      {currentQ.interaction?.type === 'multi_select' && (
-                        <div style={{ 
-                          margin: '12px 0', 
-                          padding: '10px 14px', 
-                          borderRadius: '6px', 
-                          background: '#eff6ff', 
-                          borderLeft: '4px solid #3b82f6', 
-                          fontSize: '13px', 
-                          color: '#1e40af',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px'
-                        }}>
-                          <Info size={16} style={{ flexShrink: 0 }} />
-                          <span>
-                            <strong>Lưu ý khảo thí:</strong> Câu hỏi này có <strong>nhiều đáp án đúng</strong>. Bạn phải tích chọn đủ tất cả các ý đúng thì VLearn mới chấm điểm chính xác.
-                          </span>
-                        </div>
-                      )}
-
-                      {/* Question Prompt */}
-                      <div className="q-prompt-text" style={{ whiteSpace: 'pre-line', fontSize: '15px', lineHeight: 1.6, marginTop: '12px' }}>
+                      {/* Nội dung câu hỏi */}
+                      <div className="q-prompt-text">
                         {currentQ.interaction?.prompt}
                       </div>
 
-                      
-                      {/* DÀNH CHO CÂU HỎI TỰ LUẬN & PHÂN TÍCH TÌNH HUỐNG (FLASHCARD) */}
+                      {/* 1. DẠNG TỰ LUẬN (FLASHCARD) */}
                       {currentQ.interaction?.type === 'essay_short_text' && (
-                        <div style={{ marginTop: '20px' }}>
+                        <div>
                           <button
                             id="btn-toggle-essay-solution"
+                            className={`essay-flip-btn ${isEssayRevealed ? 'open' : ''}`}
                             onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !isEssayRevealed }))}
-                            style={{
-                              width: '100%',
-                              padding: '13px 20px',
-                              borderRadius: '10px',
-                              background: isEssayRevealed ? '#f0fdf4' : '#f8fafc',
-                              border: isEssayRevealed ? '2px solid #10b981' : '2px dashed #94a3b8',
-                              color: isEssayRevealed ? '#15803d' : '#334155',
-                              fontWeight: 700,
-                              fontSize: '14px',
-                              cursor: 'pointer',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              gap: '8px',
-                              transition: 'all 0.2s',
-                              boxShadow: isEssayRevealed ? '0 2px 6px rgba(16, 185, 129, 0.15)' : 'none'
-                            }}
                           >
-                            <Eye size={18} color={isEssayRevealed ? '#10b981' : '#64748b'} />
-                            {isEssayRevealed
-                              ? (studyMode ? '📖 Đang mở ở Chế độ học tập (Bấm để thu gọn)' : 'Thu gọn Lời giải, Rubric & Tham khảo')
-                              : '💡 Bấm để lật thẻ: Xem Câu trả lời mẫu, Rubric chấm điểm & Nguồn tham khảo'}
+                            <Eye size={17} />
+                            <span>
+                              {isEssayRevealed ? 'Thu gọn Lời giải & Rubric' : 'Xem Câu trả lời mẫu & Rubric chấm điểm'}
+                            </span>
                           </button>
 
                           {isEssayRevealed && (
-                            <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                              
-                              {/* 1. CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER) */}
+                            <div className="essay-solution-stack">
                               {(currentQ.sample_answer || currentQ.explanation) && (
-                                <div style={{
-                                  padding: '16px 20px',
-                                  borderRadius: '10px',
-                                  background: '#f0fdf4',
-                                  border: '1.5px solid #86efac',
-                                  boxShadow: '0 1px 3px rgba(16, 185, 129, 0.08)'
-                                }}>
-                                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '14px', color: '#166534' }}>
-                                      <Sparkles size={18} color="#16a34a" />
-                                      <span>CÂU TRẢ LỜI MẪU CHI TIẾT (MODEL ANSWER):</span>
-                                    </div>
-                                    <span style={{ fontSize: '12px', background: '#dcfce7', color: '#15803d', padding: '2px 8px', borderRadius: '4px', fontWeight: 700 }}>
-                                      Thang điểm: {currentQ.points || 1} điểm
-                                    </span>
+                                <div className="essay-box model-answer">
+                                  <div className="essay-box-header">
+                                    <Sparkles size={16} />
+                                    <span>Câu trả lời mẫu</span>
                                   </div>
-                                  <div style={{ whiteSpace: 'pre-line', fontSize: '14px', lineHeight: 1.65, color: '#14532d' }}>
+                                  <div className="essay-box-body">
                                     {currentQ.sample_answer || currentQ.explanation}
                                   </div>
                                 </div>
                               )}
 
-                              {/* 2. TIÊU CHÍ CHẤM ĐIỂM (SPECIFIC GRADING RUBRIC) */}
                               {currentQ.rubric && (
-                                <div style={{
-                                  padding: '16px 20px',
-                                  borderRadius: '10px',
-                                  background: '#eff6ff',
-                                  border: '1.5px solid #bfdbfe',
-                                  boxShadow: '0 1px 3px rgba(59, 130, 246, 0.08)'
-                                }}>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '14px', marginBottom: '10px', color: '#1e40af' }}>
-                                    <CheckSquare size={18} color="#2563eb" />
-                                    <span>TIÊU CHÍ CHẤM ĐIỂM CHI TIẾT (GRADING RUBRIC):</span>
+                                <div className="essay-box rubric-box">
+                                  <div className="essay-box-header">
+                                    <CheckSquare size={16} />
+                                    <span>Tiêu chí chấm điểm (Rubric)</span>
                                   </div>
-                                  <div style={{ whiteSpace: 'pre-line', fontSize: '14px', lineHeight: 1.65, color: '#1e3a8a' }}>
-                                    {currentQ.rubric}
-                                  </div>
+                                  <div className="essay-box-body">{currentQ.rubric}</div>
                                 </div>
                               )}
 
-                              {/* 3. NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT QUỐC TẾ (REFERENCE SOURCE) */}
                               {(currentQ.reference_source || currentQ.reference || currentQ.source || currentQ.sources) && (
-                                <div style={{
-                                  padding: '14px 18px',
-                                  borderRadius: '10px',
-                                  background: '#f8fafc',
-                                  border: '1px solid #cbd5e1',
-                                  color: '#334155'
-                                }}>
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800, fontSize: '13px', marginBottom: '8px', color: '#475569' }}>
-                                    <BookOpen size={16} color="#0284c7" />
-                                    <span>NGUỒN THAM KHẢO & TÀI LIỆU KỸ THUẬT:</span>
+                                <div className="essay-box ref-box">
+                                  <div className="essay-box-header">
+                                    <BookOpen size={15} />
+                                    <span>Tài liệu tham khảo</span>
                                   </div>
-                                  <div style={{ fontSize: '13px', lineHeight: 1.6, color: '#475569', wordBreak: 'break-word' }}>
+                                  <div className="essay-box-body">
                                     {String(currentQ.reference_source || currentQ.reference || currentQ.source || currentQ.sources)}
                                   </div>
                                 </div>
                               )}
-
-                              {/* 4. GỢI Ý CỐT LÕI (CORE HINTS) */}
-                              {currentQ.hints && currentQ.hints.length > 0 && (
-                                <div style={{ padding: '12px 16px', borderRadius: '8px', background: '#fffbeb', border: '1px solid #fde68a', color: '#92400e', fontSize: '13px' }}>
-                                  <strong>💡 Gợi ý cốt lõi: </strong> {currentQ.hints.map(h => h.text).join(' ')}
-                                </div>
-                              )}
-
                             </div>
                           )}
                         </div>
                       )}
 
-                      {/* TÓM TẮT ĐÁP ÁN ĐÚNG KHI ĐÃ KIỂM TRA HOẶC Ở CHẾ ĐỘ ÔN TẬP */}
-                      {isChecked && currentQ.interaction?.type !== 'essay_short_text' && (
-                        <div style={{
-                          margin: '16px 0',
-                          padding: '12px 16px',
-                          borderRadius: '8px',
-                          background: '#f0fdf4',
-                          border: '1px solid #86efac',
-                          color: '#166534',
-                          fontSize: '14px',
-                          fontWeight: 600,
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px'
-                        }}>
-                          <CheckCircle size={18} color="#16a34a" style={{ flexShrink: 0 }} />
-                          <div>
-                            {currentQ.interaction?.type === 'multi_select' ? (
-                              <span>
-                                <strong>ĐÁP ÁN ĐÚNG CHUẨN XÁC:</strong> Cần chọn cả {getMultiSelectLetters(currentQ).length} phương án: <strong>{getMultiSelectLetters(currentQ).map(l => `[${l}]`).join(', ')}</strong>
-                              </span>
-                            ) : currentQ.interaction?.type === 'single_select' ? (
-                              <span>
-                                <strong>ĐÁP ÁN ĐÚNG DUY NHẤT:</strong> Phương án <strong>[{getSingleSelectLetter(currentQ)}]</strong>
-                              </span>
-                            ) : currentQ.interaction?.type === 'numeric_input' ? (
-                              <span>
-                                <strong>GIÁ TRỊ ĐIỀN CHUẨN XÁC:</strong> {currentQ.correct_answer} {currentQ.interaction?.required_unit || ''}
-                              </span>
-                            ) : currentQ.interaction?.type === 'ordering' ? (
-                              <span>
-                                <strong>THỨ TỰ QUY TRÌNH CHUẨN:</strong> Đã được sắp xếp tự động từ Bước 1 đến Bước N bên dưới.
-                              </span>
-                            ) : (
-                              <span>
-                                <strong>KẾT QUẢ GHÉP CẶP CHUẨN:</strong> Đã nối chuẩn xác 100% từng cặp bên dưới.
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* CHOICES / FORM */}
+                      {/* 2. DẠNG GHÉP CẶP (MATCHING) */}
                       {currentQ.interaction?.type === 'matching' ? (
-                        /* MATCHING */
                         <div className="matching-grid">
-                          <div style={{ fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>
-                            Chọn ý nghĩa tương ứng cho từng mệnh đề bên dưới:
-                          </div>
                           {currentQ.interaction?.left?.map((lItem, lIdx) => {
                             const userSelected = userAns?.[lItem.id] || '';
                             const trueMatch = currentQ.correct_answer?.[lItem.id];
@@ -1528,30 +1485,19 @@ export default function App() {
                             const rightObj = currentQ.interaction?.right?.find(r => r.id === trueMatch);
 
                             return (
-                              <div key={lIdx} style={{ 
-                                marginBottom: '12px', 
-                                padding: '12px 14px', 
-                                borderRadius: '8px', 
-                                border: isChecked ? (isPairCorrect ? '2px solid #10b981' : '2px solid #ef4444') : '1px solid #cbd5e1', 
-                                background: isChecked ? (isPairCorrect ? '#ecfdf5' : '#fef2f2') : '#ffffff' 
-                              }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
-                                  <div style={{ fontWeight: 600, color: '#0f172a', fontSize: '14px' }}>
-                                    {lIdx + 1}. {lItem.text}
-                                  </div>
+                              <div
+                                key={lIdx}
+                                className={`matching-item-card ${isChecked ? (isPairCorrect ? 'correct' : 'wrong') : ''}`}
+                              >
+                                <div className="matching-item-title">
+                                  <span>{lIdx + 1}. {lItem.text}</span>
                                   {isChecked && (
-                                    isPairCorrect ? (
-                                      <span style={{ color: '#059669', fontSize: '12px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                        <CheckCircle size={15} /> ĐÚNG
-                                      </span>
-                                    ) : (
-                                      <span style={{ color: '#dc2626', fontSize: '12px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                        <XCircle size={15} /> SAI
-                                      </span>
-                                    )
+                                    <span className={`pair-status-tag ${isPairCorrect ? 'ok' : 'err'}`}>
+                                      {isPairCorrect ? '✓ Đúng' : '✗ Sai'}
+                                    </span>
                                   )}
                                 </div>
-                                <select 
+                                <select
                                   className="matching-select"
                                   disabled={isChecked && !studyMode}
                                   value={studyMode ? trueMatch : userSelected}
@@ -1559,9 +1505,8 @@ export default function App() {
                                     const next = { ...(userAns || {}), [lItem.id]: e.target.value };
                                     setUserAnswers({ ...userAnswers, [currentQId]: next });
                                   }}
-                                  style={{ width: '100%', padding: '10px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '14px', background: isChecked ? '#f8fafc' : '#ffffff' }}
                                 >
-                                  <option value="">-- Chọn ý nghĩa đối ứng --</option>
+                                  <option value="">-- Chọn mệnh đề tương ứng --</option>
                                   {currentQ.interaction?.right?.map((rItem, rIdx) => (
                                     <option key={rIdx} value={rItem.id || rIdx}>
                                       ({String.fromCharCode(65 + rIdx)}) {rItem.text}
@@ -1569,8 +1514,8 @@ export default function App() {
                                   ))}
                                 </select>
                                 {isChecked && !isPairCorrect && rightObj && (
-                                  <div style={{ marginTop: '8px', fontSize: '13px', color: '#047857', fontWeight: 600, background: '#f0fdf4', padding: '6px 10px', borderRadius: '4px', borderLeft: '3px solid #10b981' }}>
-                                    ✓ Đáp án đúng phải ghép với: ({String.fromCharCode(65 + currentQ.interaction.right.findIndex(r => r.id === trueMatch))}) {rightObj.text}
+                                  <div className="matching-correct-hint">
+                                    ✓ Đáp án đúng: ({String.fromCharCode(65 + currentQ.interaction.right.findIndex(r => r.id === trueMatch))}) {rightObj.text}
                                   </div>
                                 )}
                               </div>
@@ -1578,16 +1523,13 @@ export default function App() {
                           })}
                         </div>
                       ) : currentQ.interaction?.type === 'numeric_input' ? (
-                        /* NUMERIC INPUT */
-                        <div style={{ margin: '16px 0' }}>
-                          <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, marginBottom: '8px', color: '#334155' }}>
-                            Nhập kết quả tính toán {currentQ.interaction?.required_unit ? `(${currentQ.interaction.required_unit})` : ''}:
-                          </label>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <input 
-                              type="text" 
+                        /* 3. DẠNG ĐIỀN SỐ */
+                        <div className="numeric-box">
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                            <input
+                              type="text"
                               className="numeric-input-field"
-                              placeholder="Nhập số..."
+                              placeholder="Nhập giá trị số..."
                               value={studyMode ? currentQ.correct_answer : (userAns || '')}
                               onChange={(e) => setUserAnswers({ ...userAnswers, [currentQId]: e.target.value })}
                               disabled={isChecked && !studyMode}
@@ -1598,28 +1540,26 @@ export default function App() {
                               </span>
                             )}
                           </div>
-                          {isChecked && !isCorrect && (
-                            <div style={{ marginTop: '10px', fontSize: '14px', color: '#047857', fontWeight: 600 }}>
-                              ✓ Đáp án đúng chuẩn xác: {currentQ.correct_answer} {currentQ.interaction?.required_unit || ''}
+                          {isChecked && (
+                            <div style={{ marginTop: '8px', fontSize: '14px', fontWeight: 600, color: isCorrect ? '#059669' : '#dc2626' }}>
+                              {isCorrect
+                                ? `✓ Chính xác (${currentQ.correct_answer} ${currentQ.interaction?.required_unit || ''})`
+                                : `✗ Đáp án đúng: ${currentQ.correct_answer} ${currentQ.interaction?.required_unit || ''}`}
                             </div>
                           )}
                         </div>
                       ) : currentQ.interaction?.type === 'ordering' || currentQ.interaction?.options ? (
-                        /* ORDERING */
-                        <div style={{ margin: '16px 0' }}>
-                          <div style={{ fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>
-                            Sắp xếp các bước theo đúng thứ tự:
-                          </div>
+                        /* 4. DẠNG SẮP XẾP THỨ TỰ */
+                        <div>
                           {(() => {
                             const optionsList = currentQ.interaction?.options || currentQ.interaction?.items || [];
                             const correctOrder = currentQ.correct_answer || [];
-                            
-                            const orderIds = studyMode 
-                              ? correctOrder 
-                              : (Array.isArray(userAns) && userAns.length === optionsList.length 
-                                  ? userAns 
+                            const orderIds = studyMode
+                              ? correctOrder
+                              : (Array.isArray(userAns) && userAns.length === optionsList.length
+                                  ? userAns
                                   : optionsList.map(o => o.option_id || o.id));
-                            
+
                             const optionsMap = {};
                             optionsList.forEach(o => { optionsMap[o.option_id || o.id] = o.text; });
 
@@ -1639,40 +1579,29 @@ export default function App() {
                                 {orderIds.map((oid, idx) => {
                                   const isPosCorrect = isChecked && correctOrder[idx] === oid;
                                   return (
-                                    <div 
-                                      key={oid} 
-                                      style={{ 
-                                        display: 'flex', 
-                                        alignItems: 'center', 
-                                        justifyContent: 'space-between',
-                                        padding: '12px 16px', 
-                                        background: isChecked ? (isPosCorrect ? '#ecfdf5' : '#fef2f2') : '#f8fafc', 
-                                        border: isChecked ? (isPosCorrect ? '2px solid #10b981' : '2px solid #ef4444') : '1px solid #e2e8f0', 
-                                        borderRadius: '8px', 
-                                        marginBottom: '8px' 
-                                      }}
+                                    <div
+                                      key={oid}
+                                      className={`ordering-item-row ${isChecked ? (isPosCorrect ? 'correct' : 'wrong') : ''}`}
                                     >
                                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
-                                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#0284c7', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '13px' }}>
-                                          {idx + 1}
-                                        </div>
+                                        <span className="ordering-step-num">{idx + 1}</span>
                                         <span style={{ fontSize: '14px', color: '#0f172a', fontWeight: 500 }}>
                                           {optionsMap[oid] || oid}
                                         </span>
                                       </div>
                                       {!isChecked && !studyMode && (
                                         <div style={{ display: 'flex', gap: '4px' }}>
-                                          <button 
+                                          <button
                                             disabled={idx === 0}
                                             onClick={() => handleMove(idx, -1)}
-                                            style={{ padding: '4px 8px', borderRadius: '4px', border: '1px solid #cbd5e1', background: idx === 0 ? '#f1f5f9' : '#ffffff', cursor: idx === 0 ? 'not-allowed' : 'pointer' }}
+                                            className="ordering-move-btn"
                                           >
                                             ↑
                                           </button>
-                                          <button 
+                                          <button
                                             disabled={idx === orderIds.length - 1}
                                             onClick={() => handleMove(idx, 1)}
-                                            style={{ padding: '4px 8px', borderRadius: '4px', border: '1px solid #cbd5e1', background: idx === orderIds.length - 1 ? '#f1f5f9' : '#ffffff', cursor: idx === orderIds.length - 1 ? 'not-allowed' : 'pointer' }}
+                                            className="ordering-move-btn"
                                           >
                                             ↓
                                           </button>
@@ -1683,13 +1612,13 @@ export default function App() {
                                 })}
 
                                 {isChecked && !isCorrect && Array.isArray(correctOrder) && (
-                                  <div style={{ marginTop: '14px', background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', padding: '14px' }}>
-                                    <div style={{ fontWeight: 700, color: '#166534', marginBottom: '8px', fontSize: '14px' }}>
-                                      ✓ Thứ tự quy trình chuẩn xác 100% từ VLearn:
+                                  <div className="ordering-solution-box">
+                                    <div style={{ fontWeight: 700, color: '#166534', marginBottom: '6px', fontSize: '13px' }}>
+                                      ✓ Thứ tự đúng:
                                     </div>
                                     <ol style={{ margin: 0, paddingLeft: '20px', color: '#15803d', fontSize: '13px', lineHeight: 1.6 }}>
                                       {correctOrder.map((coid, cidx) => (
-                                        <li key={cidx}><strong>Bước {cidx + 1}:</strong> {optionsMap[coid] || coid}</li>
+                                        <li key={cidx}>{optionsMap[coid] || coid}</li>
                                       ))}
                                     </ol>
                                   </div>
@@ -1699,75 +1628,57 @@ export default function App() {
                           })()}
                         </div>
                       ) : currentQ.interaction?.choices ? (
-                        /* SINGLE OR MULTI SELECT */
+                        /* 5. DẠNG TRẮC NGHIỆM 1 HOẶC NHIỀU ĐÁP ÁN (Tối giản, không lặp chữ [SAI]) */
                         <div className="choices-container">
                           {currentQ.interaction.choices.map((c, cIdx) => {
                             const letter = String.fromCharCode(65 + cIdx);
                             const isMulti = currentQ.interaction.type === 'multi_select';
-                            const isSel = isMulti 
+                            const isSel = isMulti
                               ? (userAns || []).includes(c.choice_id)
                               : userAns === c.choice_id;
 
-                            const isTrueChoice = isMulti 
+                            const isTrueChoice = isMulti
                               ? (currentQ.correct_answer || []).includes(c.choice_id)
                               : currentQ.correct_answer === c.choice_id;
 
-                            // Trạng thái hiển thị đúng/sai sau khi kiểm tra hoặc ở studyMode
                             let stateClass = '';
-                            let badgeText = '';
+                            let statusLabel = '';
 
                             if (studyMode) {
                               if (isTrueChoice) {
-                                stateClass = 'revealed-correct';
-                                badgeText = 'ĐÚNG';
-                              } else {
-                                badgeText = 'SAI';
+                                stateClass = 'user-correct';
+                                statusLabel = '✓ Đáp án đúng';
                               }
                             } else if (isChecked) {
                               if (isSel && isTrueChoice) {
                                 stateClass = 'user-correct';
-                                badgeText = 'ĐÚNG';
+                                statusLabel = '✓ Đúng';
                               } else if (isSel && !isTrueChoice) {
                                 stateClass = 'user-wrong';
-                                badgeText = 'SAI';
+                                statusLabel = '✗ Chọn sai';
                               } else if (!isSel && isTrueChoice) {
                                 stateClass = 'revealed-correct';
-                                badgeText = 'ĐÁP ÁN ĐÚNG';
-                              } else {
-                                badgeText = 'SAI';
+                                statusLabel = '✓ Đáp án đúng';
                               }
                             } else if (isSel) {
                               stateClass = 'selected';
                             }
 
                             return (
-                              <div 
+                              <div
                                 key={c.choice_id || cIdx}
                                 className={`choice-label-card ${stateClass}`}
                                 onClick={() => handleSelectChoice(c.choice_id, isMulti)}
-                                style={{ position: 'relative' }}
                               >
                                 <div className="choice-circle">
-                                  {isMulti ? (
-                                    <span style={{ fontSize: '12px' }}>{isSel ? '☑' : letter}</span>
-                                  ) : (
-                                    <span>{letter}</span>
-                                  )}
+                                  {isMulti ? (isSel ? '✓' : letter) : letter}
                                 </div>
                                 <span style={{ fontSize: '15px', color: '#1e293b', fontWeight: 500, flex: 1 }}>
                                   {c.text}
                                 </span>
-                                {badgeText && (
-                                  <span style={{ 
-                                    fontSize: '11px', 
-                                    fontWeight: 700, 
-                                    padding: '3px 8px', 
-                                    borderRadius: '4px',
-                                    background: badgeText.includes('ĐÚNG') ? '#dcfce7' : '#fee2e2',
-                                    color: badgeText.includes('ĐÚNG') ? '#15803d' : '#b91c1c',
-                                    marginLeft: '8px'
-                                  }}>
-                                    [{badgeText}]
+                                {statusLabel && (
+                                  <span className={`choice-status-pill ${isTrueChoice ? 'ok' : 'err'}`}>
+                                    {statusLabel}
                                   </span>
                                 )}
                               </div>
@@ -1776,63 +1687,49 @@ export default function App() {
                         </div>
                       ) : null}
 
-                      {/* Hint Section */}
-                      {currentQ.hints && currentQ.hints.length > 0 && (
-                        <div style={{ margin: '16px 0' }}>
-                          {showHint[currentQId] || studyMode ? (
+                      {/* Gợi ý (nếu có và chưa mở đáp án) */}
+                      {currentQ.hints && currentQ.hints.length > 0 && currentQ.interaction?.type !== 'essay_short_text' && !isChecked && (
+                        <div>
+                          {showHint[currentQId] ? (
                             <div className="hint-box">
-                              <Lightbulb size={18} style={{ flexShrink: 0 }} />
-                              <div>
-                                <strong>Gợi ý từ VLearn: </strong>
-                                {currentQ.hints.map(h => h.text).join(' ')}
-                              </div>
+                              <Lightbulb size={16} style={{ flexShrink: 0 }} />
+                              <div>{currentQ.hints.map(h => h.text).join(' ')}</div>
                             </div>
                           ) : (
-                            <button 
-                              style={{
-                                background: 'none',
-                                border: 'none',
-                                color: '#d97706',
-                                fontWeight: 600,
-                                fontSize: '13px',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '6px'
-                              }}
+                            <button
+                              className="btn-hint-link"
                               onClick={() => setShowHint({ ...showHint, [currentQId]: true })}
                             >
-                              <Lightbulb size={16} />
-                              Xem gợi ý / nguyên lý giải từ VLearn
+                              <Lightbulb size={15} />
+                              <span>Xem gợi ý</span>
                             </button>
                           )}
                         </div>
                       )}
 
-                      {/* Real Verified Feedback Box */}
+                      {/* Hộp giải thích kết quả (Chỉ hiện 1 lần duy nhất) */}
                       {isChecked && currentQ.interaction?.type !== 'essay_short_text' && (
                         <div className={`feedback-box ${isCorrect ? 'correct' : 'incorrect'}`}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700, marginBottom: '6px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 700, marginBottom: '4px' }}>
                             {isCorrect ? (
                               <>
-                                <CheckCircle size={20} color="#10b981" />
-                                <span>CHÍNH XÁC! Lời giải thích từ máy chủ VLearn:</span>
+                                <CheckCircle size={18} color="#10b981" />
+                                <span>Chính xác! Giải thích:</span>
                               </>
                             ) : (
                               <>
-                                <XCircle size={20} color="#ef4444" />
-                                <span>CHƯA CHÍNH XÁC! Hãy xem lại phân tích lời giải:</span>
+                                <XCircle size={18} color="#ef4444" />
+                                <span>Chưa chính xác. Giải thích:</span>
                               </>
                             )}
                           </div>
-                          
-                          <p style={{ fontSize: '14px', marginTop: '8px', lineHeight: 1.6 }}>
-                            {currentQ.explanation || currentQ.hints?.[0]?.text || 'Lời giải chi tiết chuẩn xác theo logic chấm điểm của VLearn.'}
+                          <p style={{ fontSize: '14px', lineHeight: 1.6 }}>
+                            {currentQ.explanation || currentQ.hints?.[0]?.text || 'Đã đối chiếu theo đáp án chuẩn.'}
                           </p>
                         </div>
                       )}
 
-                      {/* Actions Bottom Bar (Desktop view) */}
+                      {/* Thanh thao tác dưới thẻ câu hỏi (Desktop) */}
                       <div className="quiz-action-bar desktop-quiz-action-bar">
                         <button
                           className="nav-tab-btn"
@@ -1842,41 +1739,18 @@ export default function App() {
                           <ChevronLeft size={16} /> Câu trước
                         </button>
 
-                        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-                          {/* Nút Đã ổn câu này · Bỏ ra ở thanh thao tác cuối */}
-                          {isCurrentInMistakes && (
-                            <button 
-                              id="btn-bottom-remove-wrong"
-                              className="nav-tab-btn"
-                              style={{ 
-                                background: '#ecfdf5', 
-                                color: '#059669', 
-                                border: '1.5px solid #10b981',
-                                fontWeight: 700,
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '6px'
-                              }}
-                              onClick={() => handleRemoveFromWrong(currentQId)}
-                              title="Bạn đã thấy ổn câu này rồi? Bấm để bỏ ra khỏi danh sách câu sai"
-                            >
-                              <CheckCheck size={16} color="#059669" />
-                              Đã ổn câu này · Bỏ ra
-                            </button>
-                          )}
-                          {/* Dành cho câu trắc nghiệm / matching / ordering / numeric khi chưa kiểm tra */}
+                        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                           {!isChecked && !studyMode && currentQ.interaction?.type !== 'essay_short_text' && (
                             <>
-                              <button 
+                              <button
                                 className="nav-tab-btn"
                                 style={{ background: '#fef3c7', color: '#92400e', border: '1px solid #fde68a' }}
                                 onClick={handleRevealAnswer}
-                                title="Xem ngay đáp án đúng và lời giải câu này"
                               >
-                                <Eye size={16} /> Xem đáp án câu này
+                                <Eye size={15} /> Xem đáp án
                               </button>
-                              
-                              <button 
+
+                              <button
                                 className="btn-primary"
                                 onClick={() => handleCheckAnswer()}
                               >
@@ -1885,23 +1759,10 @@ export default function App() {
                             </>
                           )}
 
-                          {/* Dành cho câu tự luận ở thanh thao tác Desktop */}
-                          {currentQ.interaction?.type === 'essay_short_text' && (
-                            <button
-                              id="btn-bottom-essay-toggle"
-                              className="btn-primary"
-                              style={{ background: isEssayRevealed ? '#0d9488' : '#0284c7' }}
-                              onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !isEssayRevealed }))}
-                            >
-                              <Eye size={16} />
-                              {isEssayRevealed ? 'Thu gọn Lời giải & Rubric' : 'Xem Lời giải & Rubric'}
-                            </button>
-                          )}
-
                           {(isChecked || studyMode || currentQ.interaction?.type === 'essay_short_text') && (
-                            <button 
+                            <button
                               className="btn-primary"
-                              style={{ background: '#0284c7' }}
+                              disabled={currentQIndex >= allQuestions.length - 1}
                               onClick={() => {
                                 if (currentQIndex < allQuestions.length - 1) {
                                   setCurrentQIndex(currentQIndex + 1);
@@ -1917,26 +1778,24 @@ export default function App() {
                   )}
                 </>
               ) : (
-                /* EMPTY STATE FOR DAYS WITHOUT QUIZ */
-                <div className="q-card" style={{ textAlign: 'center', padding: '60px' }}>
-                  <Award size={56} color="#d97706" style={{ margin: '0 auto 16px' }} />
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0f172a' }}>
+                /* Trạng thái các buổi không có Quiz */
+                <div className="q-card" style={{ textAlign: 'center', padding: '48px' }}>
+                  <Award size={48} color="#d97706" style={{ margin: '0 auto 12px' }} />
+                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a' }}>
                     {currentDay.day_label}: {currentDay.title}
                   </h3>
-                  <p style={{ color: '#64748b', fontSize: '15px', marginTop: '10px', maxWidth: '580px', margin: '10px auto 0', lineHeight: 1.6 }}>
-                    {activePhaseId === 'phase2' 
-                      ? 'Các bài học thuộc Phase 2 (Track 3: Advanced Agents) tập trung vào nghiên cứu kiến trúc sâu và thực hành Lab. Hệ thống VLearn không cấu hình bài thi trắc nghiệm lý thuyết. Vui lòng chuyển sang tab "Slide Bài giảng gốc" để xem tài liệu.'
-                      : 'Ngày thi đấu Mini Hackathon thực chiến theo nhóm, không có bài kiểm tra lý thuyết (Quiz).'}
+                  <p style={{ color: '#64748b', fontSize: '14px', marginTop: '6px' }}>
+                    Buổi học này thực hành dự án / Lab, không có bài trắc nghiệm lý thuyết.
                   </p>
-                  
-                  {activePhaseId === 'phase2' && slides.length > 0 && (
-                    <button 
-                      className="btn-primary" 
-                      style={{ marginTop: '20px', display: 'inline-flex' }}
-                      onClick={() => setActiveTab('slide')}
-                    >
-                      <BookOpen size={16} /> Xem {slides.length} file slide bài giảng của ngày này
-                    </button>
+                  {slides.length > 0 && (
+                    <div style={{ marginTop: '16px' }}>
+                      <button
+                        className="btn-primary"
+                        onClick={() => setActiveTab('slide')}
+                      >
+                        <BookOpen size={16} /> Chuyển sang xem Slide ({slides.length})
+                      </button>
+                    </div>
                   )}
                 </div>
               )}
@@ -1945,14 +1804,13 @@ export default function App() {
         </main>
       </div>
 
-      {/* MOBILE STICKY BOTTOM ACTION BAR (Cố định ở đáy màn hình điện thoại) */}
+      {/* THANH THAO TÁC CỐ ĐỊNH Ở ĐÁY MÀN HÌNH MOBILE */}
       {activeTab === 'quiz' && currentQ && (
         <div className="mobile-bottom-action-bar">
           <button
             className="mobile-btn-nav"
             disabled={currentQIndex === 0}
             onClick={() => setCurrentQIndex(currentQIndex - 1)}
-            aria-label="Câu trước"
           >
             <ChevronLeft size={18} />
             <span>Trước</span>
@@ -1965,14 +1823,13 @@ export default function App() {
                 onClick={() => setShowEssaySolution(prev => ({ ...prev, [currentQId]: !isEssayRevealed }))}
               >
                 <Eye size={17} />
-                <span>{isEssayRevealed ? 'Đóng lời giải' : 'Xem lời giải & Rubric'}</span>
+                <span>{isEssayRevealed ? 'Thu gọn lời giải' : 'Xem lời giải & Rubric'}</span>
               </button>
             ) : !isChecked && !studyMode ? (
               <div className="mobile-cta-dual">
                 <button
                   className="mobile-btn-reveal"
                   onClick={handleRevealAnswer}
-                  title="Xem đáp án câu này"
                 >
                   <Eye size={16} />
                   <span>Đáp án</span>
@@ -1982,12 +1839,13 @@ export default function App() {
                   onClick={() => handleCheckAnswer()}
                 >
                   <Check size={18} />
-                  <span>Kiểm tra đáp án</span>
+                  <span>Kiểm tra</span>
                 </button>
               </div>
             ) : (
               <button
                 className="mobile-btn-cta mobile-btn-next"
+                disabled={currentQIndex >= allQuestions.length - 1}
                 onClick={() => {
                   if (currentQIndex < allQuestions.length - 1) {
                     setCurrentQIndex(currentQIndex + 1);
@@ -2004,7 +1862,6 @@ export default function App() {
             className="mobile-btn-nav"
             disabled={currentQIndex === allQuestions.length - 1}
             onClick={() => setCurrentQIndex(currentQIndex + 1)}
-            aria-label="Câu tiếp theo"
           >
             <ChevronRight size={18} />
             <span>Tiếp</span>
@@ -2012,48 +1869,21 @@ export default function App() {
         </div>
       )}
 
-      {/* MODAL / BOTTOM SHEET LƯỚI SỐ CÂU HỎI TRÊN MOBILE */}
+      {/* BẢNG CHỌN CÂU HỎI TRÊN MOBILE */}
       {showGridModal && (
         <div className="bottom-sheet-overlay" onClick={() => setShowGridModal(false)}>
           <div className="bottom-sheet-content" onClick={e => e.stopPropagation()}>
             <div className="bottom-sheet-header">
               <div>
                 <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
-                  Danh sách câu hỏi ({allQuestions.length} câu)
+                  Chọn câu hỏi ({allQuestions.length} câu)
                 </h3>
-                <p style={{ fontSize: '12px', color: '#64748b', marginTop: '2px' }}>
-                  {currentDay.day_label} · Chạm vào số câu để chuyển nhanh
-                </p>
               </div>
-              <button 
-                className="btn-close-sheet" 
-                onClick={() => setShowGridModal(false)}
-                aria-label="Đóng bảng câu hỏi"
-              >
+              <button className="btn-close-sheet" onClick={() => setShowGridModal(false)}>
                 <X size={20} />
               </button>
             </div>
 
-            {/* Filter Chips inside sheet */}
-            <div className="sheet-filter-chips">
-              {[
-                { id: 'all', label: `Tất cả (${allQuestions.length})` },
-                { id: 'correct', label: `Đúng (${dayCorrectCount})` },
-                { id: 'wrong', label: `Sai (${dayCheckedCount - dayCorrectCount})` },
-                { id: 'need_review', label: `Cần ôn` },
-                { id: 'unanswered', label: `Chưa làm (${allQuestions.length - dayCheckedCount})` }
-              ].map(f => (
-                <button
-                  key={f.id}
-                  className={`sheet-filter-pill ${filterType === f.id ? 'active' : ''}`}
-                  onClick={() => setFilterType(f.id)}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Question Pills Grid */}
             <div className="sheet-grid-container">
               {allQuestions.map((q, idx) => {
                 const qId = q.question_id || `${selectedDayId}_q${idx}`;
@@ -2063,18 +1893,14 @@ export default function App() {
                 if (studyMode) pillClass = 'correct';
                 else if (status?.isChecked) pillClass = status.isCorrect ? 'correct' : 'wrong';
 
-                const isDimmed = !filteredQuestionIndices.includes(idx);
-
                 return (
                   <button
                     key={idx}
                     className={`q-nav-pill ${isAct ? 'active' : ''} ${pillClass}`}
-                    style={{ opacity: isDimmed ? 0.35 : 1 }}
                     onClick={() => {
                       setCurrentQIndex(idx);
                       setShowGridModal(false);
                     }}
-                    title={`Câu ${idx + 1}: ${q.question_id}`}
                   >
                     {idx + 1}
                   </button>
@@ -2085,30 +1911,26 @@ export default function App() {
         </div>
       )}
 
-      {/* MODAL / BOTTOM SHEET THAO TÁC KHÁC & TÀI LIỆU TẢI VỀ */}
+      {/* MENU TIỆN ÍCH & TÀI LIỆU (Phân quyền rõ ràng: User thường không có nút tải) */}
       {showMoreActions && (
         <div className="bottom-sheet-overlay" onClick={() => setShowMoreActions(false)}>
           <div className="bottom-sheet-content more-actions-sheet" onClick={e => e.stopPropagation()}>
             <div className="bottom-sheet-header">
               <div>
                 <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
-                  Tài Liệu & Tiện Ích Mở Rộng
+                  Tiện ích & Tài khoản
                 </h3>
                 <p style={{ fontSize: '12px', color: '#64748b', marginTop: '2px' }}>
-                  {currentDay.day_label}: {currentDay.title}
+                  Đang đăng nhập: <strong>{currentUser.displayName || currentUser.username}</strong> ({isAdmin ? 'Admin' : 'Tài khoản thường'})
                 </p>
               </div>
-              <button 
-                className="btn-close-sheet" 
-                onClick={() => setShowMoreActions(false)}
-                aria-label="Đóng tiện ích"
-              >
+              <button className="btn-close-sheet" onClick={() => setShowMoreActions(false)}>
                 <X size={20} />
               </button>
             </div>
 
             <div className="more-actions-list">
-              {/* Guide modal button */}
+              {/* Xem cấu trúc đề */}
               <button
                 className="more-action-item"
                 onClick={() => {
@@ -2120,94 +1942,12 @@ export default function App() {
                   <Info size={18} />
                 </div>
                 <div className="action-item-info">
-                  <span className="action-item-title">Cấu trúc đề & Phân bổ (165 câu)</span>
-                  <span className="action-item-desc">Xem giải thích 5 dạng câu hỏi khảo thí năng lực AI</span>
+                  <span className="action-item-title">Cấu trúc đề thi (5 dạng câu hỏi)</span>
+                  <span className="action-item-desc">Giải thích quy tắc chấm điểm của VLearn</span>
                 </div>
               </button>
 
-              {/* Master Excel */}
-              <a
-                href="/VLEARN_K4P1_TOAN_BO_QUIZ_VA_SLIDES.xlsx"
-                download
-                className="more-action-item"
-                onClick={() => setShowMoreActions(false)}
-              >
-                <div className="action-icon-wrap" style={{ background: '#dcfce7', color: '#15803d' }}>
-                  <FileSpreadsheet size={18} />
-                </div>
-                <div className="action-item-info">
-                  <span className="action-item-title">Tải Bảng Excel Master (.xlsx)</span>
-                  <span className="action-item-desc">Tổng hợp toàn bộ 165 câu chuẩn + 150 câu Day 1</span>
-                </div>
-              </a>
-
-              {/* Quizizz Zip */}
-              <a
-                href="/TONG_HOP_QUIZ_15_NGAY_EXCEL.zip"
-                download="TONG_HOP_QUIZ_15_NGAY_EXCEL.zip"
-                className="more-action-item"
-                onClick={() => setShowMoreActions(false)}
-              >
-                <div className="action-icon-wrap" style={{ background: '#f3e8ff', color: '#7c3aed' }}>
-                  <FileSpreadsheet size={18} />
-                </div>
-                <div className="action-item-info">
-                  <span className="action-item-title">Bộ Quiz.com / Quizizz 45 file (.zip)</span>
-                  <span className="action-item-desc">Chia nhỏ ~20 câu/file chuẩn import Quizizz/Quiz.com</span>
-                </div>
-              </a>
-
-              {/* Day Txt Solution */}
-              <a
-                href={txtFileUrl}
-                download={txtFileName}
-                className="more-action-item"
-                onClick={() => setShowMoreActions(false)}
-              >
-                <div className="action-icon-wrap" style={{ background: '#f1f5f9', color: '#334155' }}>
-                  <Download size={18} />
-                </div>
-                <div className="action-item-info">
-                  <span className="action-item-title">Tải bài giải chi tiết {currentDay.day_label} (.txt)</span>
-                  <span className="action-item-desc">File text phân tích lời giải chi tiết từng câu</span>
-                </div>
-              </a>
-
-              {/* Day Expanded Txt */}
-              {currentDay.expanded_txt_url && (
-                <a
-                  href={currentDay.expanded_txt_url}
-                  download={currentDay.expanded_txt_name || `${currentDay.folder}_NGAN_HANG_TOAN_DIEN.txt`}
-                  className="more-action-item"
-                  onClick={() => setShowMoreActions(false)}
-                >
-                  <div className="action-icon-wrap" style={{ background: '#f5f3ff', color: '#6d28d9' }}>
-                    <Database size={18} />
-                  </div>
-                  <div className="action-item-info">
-                    <span className="action-item-title">Tải kho mở rộng ({currentDay.total_bank_count} câu .txt)</span>
-                    <span className="action-item-desc">Toàn bộ ngân hàng đề thi mở rộng kèm lời giải</span>
-                  </div>
-                </a>
-              )}
-
-              {/* Day Quizizz Excel */}
-              <a
-                href={`/quiz_excel/Day_${String(currentDay.day_num).padStart(2, '0')}_FULL_TOAN_BO_${currentDay.expanded_questions?.length || currentDay.questions?.length}_CAU.xlsx`}
-                download
-                className="more-action-item"
-                onClick={() => setShowMoreActions(false)}
-              >
-                <div className="action-icon-wrap" style={{ background: '#faf5ff', color: '#7c3aed' }}>
-                  <FileSpreadsheet size={18} />
-                </div>
-                <div className="action-item-info">
-                  <span className="action-item-title">Excel Quizizz Day này ({currentDay.expanded_questions?.length || currentDay.questions?.length} câu)</span>
-                  <span className="action-item-desc">File Excel trắc nghiệm chuẩn mẫu nhập Quizizz</span>
-                </div>
-              </a>
-
-              {/* Reveal all */}
+              {/* Hiện tất cả đáp án Day này */}
               {!studyMode && (
                 <button
                   className="more-action-item"
@@ -2220,13 +1960,13 @@ export default function App() {
                     <Eye size={18} />
                   </div>
                   <div className="action-item-info">
-                    <span className="action-item-title">Hiện tất cả đáp án của Day này</span>
-                    <span className="action-item-desc">Mở toàn bộ lời giải và đáp án các câu trong danh sách</span>
+                    <span className="action-item-title">Mở đáp án tất cả câu trong Day này</span>
+                    <span className="action-item-desc">Hiển thị đáp án đúng và lời giải cho cả Day</span>
                   </div>
                 </button>
               )}
 
-              {/* Reset */}
+              {/* Làm lại bài thi Day này */}
               {dayCheckedCount > 0 && !studyMode && (
                 <button
                   className="more-action-item"
@@ -2239,109 +1979,298 @@ export default function App() {
                     <RotateCcw size={18} />
                   </div>
                   <div className="action-item-info">
-                    <span className="action-item-title" style={{ color: '#dc2626' }}>Làm lại bài thi từ đầu</span>
-                    <span className="action-item-desc">Xóa toàn bộ các câu trả lời đã làm trong Day này</span>
+                    <span className="action-item-title" style={{ color: '#dc2626' }}>Làm lại Day này từ đầu</span>
+                    <span className="action-item-desc">Xóa các câu đã chọn trong {currentDay.day_label} và về Câu 1</span>
                   </div>
                 </button>
               )}
+
+              {/* CHỈ ADMIN MỚI ĐƯỢC TẢI CÂU HỎI, SLIDE VÀ FILE XUẤT QUIZ */}
+              {isAdmin ? (
+                <>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', marginTop: '8px', paddingLeft: '4px' }}>
+                    Tải tài liệu & Xuất Quiz (Quyền Admin)
+                  </div>
+
+                  <a
+                    href="/VLEARN_K4P1_TOAN_BO_QUIZ_VA_SLIDES.xlsx"
+                    download
+                    className="more-action-item"
+                    onClick={() => setShowMoreActions(false)}
+                  >
+                    <div className="action-icon-wrap" style={{ background: '#dcfce7', color: '#15803d' }}>
+                      <FileSpreadsheet size={18} />
+                    </div>
+                    <div className="action-item-info">
+                      <span className="action-item-title">Tải Bảng Excel Master (.xlsx)</span>
+                      <span className="action-item-desc">Tổng hợp toàn bộ ngân hàng câu hỏi và đáp án</span>
+                    </div>
+                  </a>
+
+                  <a
+                    href="/TONG_HOP_QUIZ_15_NGAY_EXCEL.zip"
+                    download="TONG_HOP_QUIZ_15_NGAY_EXCEL.zip"
+                    className="more-action-item"
+                    onClick={() => setShowMoreActions(false)}
+                  >
+                    <div className="action-icon-wrap" style={{ background: '#f3e8ff', color: '#7c3aed' }}>
+                      <FileSpreadsheet size={18} />
+                    </div>
+                    <div className="action-item-info">
+                      <span className="action-item-title">Tải Bộ file xuất Quizizz / Quiz.com (.zip)</span>
+                      <span className="action-item-desc">45 file Excel chia sẵn ~20 câu/file</span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`/quiz_excel/Day_${String(currentDay.day_num).padStart(2, '0')}_FULL_TOAN_BO_${currentDay.expanded_questions?.length || currentDay.questions?.length}_CAU.xlsx`}
+                    download
+                    className="more-action-item"
+                    onClick={() => setShowMoreActions(false)}
+                  >
+                    <div className="action-icon-wrap" style={{ background: '#faf5ff', color: '#7c3aed' }}>
+                      <FileSpreadsheet size={18} />
+                    </div>
+                    <div className="action-item-info">
+                      <span className="action-item-title">Xuất Excel Quizizz {currentDay.day_label} (.xlsx)</span>
+                      <span className="action-item-desc">File xuất câu hỏi trắc nghiệm của riêng buổi này</span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={txtFileUrl}
+                    download={txtFileName}
+                    className="more-action-item"
+                    onClick={() => setShowMoreActions(false)}
+                  >
+                    <div className="action-icon-wrap" style={{ background: '#f1f5f9', color: '#334155' }}>
+                      <Download size={18} />
+                    </div>
+                    <div className="action-item-info">
+                      <span className="action-item-title">Tải bài giải {currentDay.day_label} (.txt)</span>
+                      <span className="action-item-desc">File văn bản đáp án và giải thích chi tiết</span>
+                    </div>
+                  </a>
+
+                  {currentDay.expanded_txt_url && (
+                    <a
+                      href={currentDay.expanded_txt_url}
+                      download={currentDay.expanded_txt_name || `${currentDay.folder}_NGAN_HANG_TOAN_DIEN.txt`}
+                      className="more-action-item"
+                      onClick={() => setShowMoreActions(false)}
+                    >
+                      <div className="action-icon-wrap" style={{ background: '#f5f3ff', color: '#6d28d9' }}>
+                        <Database size={18} />
+                      </div>
+                      <div className="action-item-info">
+                        <span className="action-item-title">Tải kho câu hỏi mở rộng (.txt)</span>
+                        <span className="action-item-desc">Toàn bộ {currentDay.total_bank_count} câu của buổi này</span>
+                      </div>
+                    </a>
+                  )}
+
+                  <button
+                    className="more-action-item"
+                    onClick={() => {
+                      handleExportMistakesTxt();
+                      setShowMoreActions(false);
+                    }}
+                  >
+                    <div className="action-icon-wrap" style={{ background: '#fff1f2', color: '#e11d48' }}>
+                      <FileText size={18} />
+                    </div>
+                    <div className="action-item-info">
+                      <span className="action-item-title">Xuất danh sách câu sai (.txt)</span>
+                      <span className="action-item-desc">Tải file tổng hợp các câu làm sai của tài khoản này</span>
+                    </div>
+                  </button>
+
+                  <button
+                    className="more-action-item"
+                    onClick={() => {
+                      setShowMoreActions(false);
+                      setAdminMsg('');
+                      setShowAdminModal(true);
+                    }}
+                  >
+                    <div className="action-icon-wrap" style={{ background: '#eff6ff', color: '#1d4ed8' }}>
+                      <Users size={18} />
+                    </div>
+                    <div className="action-item-info">
+                      <span className="action-item-title">Quản lý danh sách tài khoản</span>
+                      <span className="action-item-desc">Thêm/xóa tài khoản và xem tiến độ từng người</span>
+                    </div>
+                  </button>
+                </>
+              ) : (
+                <div className="restricted-notice-box">
+                  <Lock size={15} style={{ flexShrink: 0 }} />
+                  <span>
+                    Tài khoản thường chỉ hỗ trợ làm bài và xem slide trực tuyến (không tải câu hỏi, slide hoặc xuất file Quiz).
+                  </span>
+                </div>
+              )}
+
+              {/* Nút Đăng xuất */}
+              <button
+                className="more-action-item"
+                onClick={onLogout}
+              >
+                <div className="action-icon-wrap" style={{ background: '#f1f5f9', color: '#475569' }}>
+                  <LogOut size={18} />
+                </div>
+                <div className="action-item-info">
+                  <span className="action-item-title">Đăng xuất ({currentUser.username})</span>
+                  <span className="action-item-desc">Chuyển sang tài khoản khác (tiến độ đã được lưu tự động)</span>
+                </div>
+              </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* MODAL HƯỚNG DẪN CẤU TRÚC ĐỀ THI VLEARN */}
-      {showGuideModal && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(15, 23, 42, 0.65)',
-          backdropFilter: 'blur(4px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 999,
-          padding: '20px'
-        }}>
-          <div style={{
-            background: '#ffffff',
-            borderRadius: '12px',
-            maxWidth: '750px',
-            width: '100%',
-            maxHeight: '90vh',
-            overflowY: 'auto',
-            padding: '24px',
-            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2)'
-          }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e2e8f0', paddingBottom: '14px', marginBottom: '16px' }}>
+      {/* MODAL QUẢN LÝ TÀI KHOẢN DÀNH CHO ADMIN */}
+      {isAdmin && showAdminModal && (
+        <div className="modal-backdrop" onClick={() => setShowAdminModal(false)}>
+          <div className="modal-card" onClick={e => e.stopPropagation()} style={{ maxWidth: '680px' }}>
+            <div className="modal-header">
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Info size={22} color="#0284c7" />
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a' }}>
-                  Cấu Trúc Khảo Thí & Phân Bổ 165 Câu Quiz VLearn
-                </h3>
+                <Shield size={20} color="#0284c7" />
+                <h3 style={{ fontSize: '17px', fontWeight: 700 }}>Quản lý Tài khoản & Bộ nhớ riêng</h3>
               </div>
-              <button 
-                onClick={() => setShowGuideModal(false)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748b' }}
-              >
-                <X size={20} />
+              <button className="btn-close-sheet" onClick={() => setShowAdminModal(false)}>
+                <X size={18} />
               </button>
             </div>
 
-            <div style={{ fontSize: '14px', color: '#334155', lineHeight: 1.6 }}>
-              <h4 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-                1. Vì sao có những câu có nhiều hơn một đáp án đúng?
-              </h4>
-              <p style={{ marginBottom: '12px' }}>
-                Đề thi VLearn được thiết kế theo chuẩn khảo thí năng lực AI nâng cao. Hệ thống gồm <strong>5 dạng câu hỏi</strong> khác nhau:
-              </p>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '10px', marginBottom: '18px' }}>
-                <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#ecfdf5', border: '1px solid #a7f3d0' }}>
-                  <strong style={{ color: '#065f46' }}>🟢 Trắc nghiệm 1 đáp án:</strong> 70 câu (42.4%)
-                  <p style={{ fontSize: '12px', color: '#047857', marginTop: '4px' }}>Dùng nút Radio tròn, chỉ có duy nhất 1 đáp án đúng.</p>
-                </div>
-                <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#eff6ff', border: '1px solid #bfdbfe' }}>
-                  <strong style={{ color: '#1e40af' }}>🔵 Trắc nghiệm NHIỀU đáp án:</strong> 28 câu (17.0%)
-                  <p style={{ fontSize: '12px', color: '#1d4ed8', marginTop: '4px' }}>Dùng ô Checkbox vuông. Đề bài yêu cầu "Chọn tất cả...". Bắt buộc chọn đủ tất cả các ý đúng mới có điểm.</p>
-                </div>
-                <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#faf5ff', border: '1px solid #e9d5ff' }}>
-                  <strong style={{ color: '#6b21a8' }}>🟣 Ghép cặp tương ứng (Matching):</strong> 46 câu (27.9%)
-                  <p style={{ fontSize: '12px', color: '#7c3aed', marginTop: '4px' }}>Ghép nối từng mệnh đề cột trái với cột phải.</p>
-                </div>
-                <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#fffbeb', border: '1px solid #fde68a' }}>
-                  <strong style={{ color: '#92400e' }}>🟠 Sắp xếp quy trình (Ordering):</strong> 15 câu (9.1%)
-                  <p style={{ fontSize: '12px', color: '#b45309', marginTop: '4px' }}>Sắp xếp các bước thực thi từ Bước 1 đến Bước N.</p>
-                </div>
-                <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#fef2f2', border: '1px solid #fecaca' }}>
-                  <strong style={{ color: '#991b1b' }}>🟡 Điền số tính toán:</strong> 6 câu (3.6%)
-                  <p style={{ fontSize: '12px', color: '#b91c1c', marginTop: '4px' }}>Điền giá trị số cụ thể theo đơn vị yêu cầu.</p>
-                </div>
+            {/* Form thêm tài khoản mới */}
+            <form onSubmit={handleAdminAddAccount} className="admin-add-user-form">
+              <div style={{ fontSize: '13px', fontWeight: 700, marginBottom: '8px', color: '#0f172a' }}>
+                + Tạo tài khoản mới
               </div>
+              <div className="admin-form-grid">
+                <input
+                  type="text"
+                  placeholder="Username (VD: user3)"
+                  value={newAccUsername}
+                  onChange={e => setNewAccUsername(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Mật khẩu"
+                  value={newAccPassword}
+                  onChange={e => setNewAccPassword(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Tên hiển thị"
+                  value={newAccDisplay}
+                  onChange={e => setNewAccDisplay(e.target.value)}
+                />
+                <select value={newAccRole} onChange={e => setNewAccRole(e.target.value)}>
+                  <option value="user">Tài khoản thường (User)</option>
+                  <option value="admin">Quản trị viên (Admin)</option>
+                </select>
+                <button type="submit" className="btn-primary" style={{ justifyContent: 'center' }}>
+                  <UserPlus size={15} /> Thêm
+                </button>
+              </div>
+              {adminMsg && (
+                <div style={{ marginTop: '8px', fontSize: '12px', color: '#0369a1', fontWeight: 600 }}>
+                  {adminMsg}
+                </div>
+              )}
+            </form>
 
-              <h4 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-                2. Ngân hàng đề thi mở rộng toàn diện (1,679 câu hỏi cho cả 15 Day):
-              </h4>
-              <p style={{ marginBottom: '12px' }}>
-                Toàn bộ 15 buổi học đều đã được trích xuất trọn vẹn ngân hàng đề thi gốc từ máy chủ VLearn với tổng cộng <strong>1,679 câu hỏi</strong> (trong đó có <strong>904 câu trắc nghiệm tương tác trực tuyến</strong> và 775 câu tự luận thực hành code). Bạn có thể bấm chuyển sang <strong>"📚 Toàn bộ kho"</strong> ở bất kỳ Day nào để làm toàn bộ câu hỏi mở rộng!
-              </p>
+            {/* Danh sách tài khoản hiện có */}
+            <div className="admin-users-list">
+              {accounts.map(acc => {
+                const stats = getUserSummaryStats(acc.username);
+                return (
+                  <div key={acc.username} className="admin-user-row">
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <strong style={{ fontSize: '14px', color: '#0f172a' }}>{acc.displayName || acc.username}</strong>
+                        <span style={{ fontSize: '12px', color: '#64748b' }}>@{acc.username}</span>
+                        <span className={`role-badge-mini ${acc.role === 'admin' ? 'admin' : 'user'}`}>
+                          {acc.role === 'admin' ? 'Admin' : 'User'}
+                        </span>
+                      </div>
+                      <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+                        Đã làm: <strong>{stats.totalDone}</strong> câu ({stats.totalCorrect} đúng) ·
+                        Câu sai đang lưu: <strong style={{ color: '#dc2626' }}>{stats.activeWrong}</strong> ·
+                        Vị trí gần nhất: <strong>{stats.lastDay.toUpperCase()} - Câu {stats.lastQ}</strong>
+                      </div>
+                    </div>
 
-              <h4 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-                3. Bộ đề chia nhỏ ~20 câu/file chuẩn Quiz.com & Quizizz:
-              </h4>
-              <p style={{ marginBottom: '12px' }}>
-                Toàn bộ 904 câu hỏi trắc nghiệm đã được chia thành <strong>45 file Excel độc lập</strong> (mỗi file từ 16 - 23 câu, thời lượng 15 phút), định dạng 100% chuẩn mẫu Quizizz & Quiz.com với đầy đủ lựa chọn A-E và tự động chấm điểm. Bạn có thể tải trọn bộ bằng nút <strong>"Bộ Quiz.com / Quizizz (.zip)"</strong> ở thanh tiêu đề trên cùng!
-              </p>
+                    <div style={{ display: 'flex', gap: '6px' }}>
+                      <button
+                        type="button"
+                        className="admin-action-btn"
+                        onClick={() => handleAdminResetUserMemory(acc.username)}
+                        title="Xóa lịch sử làm bài của tài khoản này"
+                      >
+                        <RotateCcw size={14} /> Reset nhớ
+                      </button>
+                      {acc.username.toLowerCase() !== 'admin' && (
+                        <button
+                          type="button"
+                          className="admin-action-btn danger"
+                          onClick={() => handleAdminDeleteAccount(acc.username)}
+                          title="Xóa tài khoản"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL CẤU TRÚC ĐỀ THI */}
+      {showGuideModal && (
+        <div className="modal-backdrop" onClick={() => setShowGuideModal(false)}>
+          <div className="modal-card" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Info size={20} color="#0284c7" />
+                <h3 style={{ fontSize: '17px', fontWeight: 700 }}>Cấu trúc 5 dạng câu hỏi</h3>
+              </div>
+              <button className="btn-close-sheet" onClick={() => setShowGuideModal(false)}>
+                <X size={18} />
+              </button>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '10px', fontSize: '13px' }}>
+              <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#ecfdf5', border: '1px solid #a7f3d0' }}>
+                <strong style={{ color: '#065f46' }}>1. Chọn 1 đáp án:</strong>
+                <p style={{ color: '#047857', marginTop: '4px' }}>Chỉ có duy nhất 1 phương án đúng.</p>
+              </div>
+              <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#eff6ff', border: '1px solid #bfdbfe' }}>
+                <strong style={{ color: '#1e40af' }}>2. Chọn nhiều đáp án:</strong>
+                <p style={{ color: '#1d4ed8', marginTop: '4px' }}>Tích chọn đầy đủ tất cả các phương án đúng.</p>
+              </div>
+              <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#faf5ff', border: '1px solid #e9d5ff' }}>
+                <strong style={{ color: '#6b21a8' }}>3. Ghép cặp (Matching):</strong>
+                <p style={{ color: '#7c3aed', marginTop: '4px' }}>Ghép từng mệnh đề với ý nghĩa tương ứng.</p>
+              </div>
+              <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#fffbeb', border: '1px solid #fde68a' }}>
+                <strong style={{ color: '#92400e' }}>4. Sắp xếp (Ordering):</strong>
+                <p style={{ color: '#b45309', marginTop: '4px' }}>Sắp xếp các bước theo đúng trình tự.</p>
+              </div>
+              <div style={{ padding: '10px 12px', borderRadius: '8px', background: '#fef2f2', border: '1px solid #fecaca' }}>
+                <strong style={{ color: '#991b1b' }}>5. Điền số & Tự luận:</strong>
+                <p style={{ color: '#b91c1c', marginTop: '4px' }}>Tính toán điền số hoặc đối chiếu Rubric tự luận.</p>
+              </div>
             </div>
 
             <div style={{ textAlign: 'right', marginTop: '16px' }}>
-              <button 
-                className="btn-primary"
-                onClick={() => setShowGuideModal(false)}
-              >
-                Đã hiểu, quay lại làm bài
+              <button className="btn-primary" onClick={() => setShowGuideModal(false)}>
+                Đóng
               </button>
             </div>
           </div>

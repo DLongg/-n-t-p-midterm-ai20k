@@ -1,43 +1,13 @@
-# Node & Dependencies
-node_modules/
-**/node_modules/
-dist/
-**/dist/
-dist-ssr/
-*.local
+# Mặc định bỏ qua mọi file và thư mục ở ngoài gốc (chỉ giữ vlearn-app)
+/*
 
-# Browser Profiles & Cache
-vlearn_browser_profile/
-**/vlearn_browser_profile/
+# Cho phép theo dõi file .gitignore và thư mục vlearn-app
+!/.gitignore
+!/vlearn-app/
 
-# Logs & Temporary files
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-.tempmediaStorage/
-scratch/
-
-# IDE & Editor
-.vscode/
-.idea/
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Local Backup & Multi-Agent Workspaces
-.agents/
-.audit_work/
-.backup/
-backup_original_files/
-ORIGINAL_REQUEST.md
-PROJECT.md
-TEST_INFRA.md
-TEST_READY.md
-all_numeric_questions.json
-__pycache__/
-.pytest_cache/
+# Bỏ qua các thư mục phụ thuộc và bản build bên trong vlearn-app
+vlearn-app/node_modules/
+vlearn-app/dist/
+vlearn-app/dist-ssr/
+vlearn-app/*.local
+vlearn-app/*.log
